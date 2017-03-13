@@ -1,0 +1,9 @@
+<html>
+    <body>
+        <h3>Hi ${displayName},  !!!!!!!!!!!!!!!!!</h3>
+
+        <div>
+            Click on <a href="${userVerifyURL}">Verify</a> to complete your registration
+        </div>
+    </body>
+</html>

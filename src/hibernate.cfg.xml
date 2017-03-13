@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+ 
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>  
+        
+        <!-- FOR Local connection  -->
+        <property name="connection.url">jdbc:mysql://127.0.0.1:3306/ipl</property>
+        <property name="connection.username">admin</property>
+        <property name="connection.password">admin</property>
+        
+        <!-- FOR Staging
+         <property name="connection.url">jdbc:mysql://149.56.37.30:3306/fantasyl_league</property>
+        <property name="connection.username">fantasyl_Staging</property>
+        <property name="connection.password">League_Staging</property> -->
+        
+        <!-- FOR Live connection
+        <property name="connection.url">jdbc:mysql://149.56.37.30:3306/fantasyl_league_live</property>
+        <property name="connection.username">fantasyl_live</property>
+        <property name="connection.password">live@987</property>-->
+ 
+        <!-- JDBC connection pool (use the built-in) -->
+        <property name="connection.pool_size">4</property> 
+ 
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+ 
+        <!-- Disable the second-level cache  -->
+        <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+ 
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">false</property>
+        <!--<property name="show_sql">true</property>-->
+        
+       <!--  TO FIX CONNECTION TIMEOUT after 8 hours of inactivity -->
+ 		<property name="spring.datasource.testOnBorrow">true</property>
+        <property name="spring.datasource.validationQuery">SELECT 1</property>
+      
+        <!-- Drop and re-create the database schema on startup -->
+        <!-- <property name="hbm2ddl.auto">create</property>  -->
+ 
+ <!-- The mapping information of entities -->
+        <!-- <mapping class="com.event.tracker.model.entity.Address"/> -->	
+        <mapping class="com.sportmgmt.model.entity.User"/>
+        <mapping class="com.sportmgmt.model.entity.CountryStateCity"/>
+        <mapping class="com.sportmgmt.model.entity.Game"/>
+        <mapping class="com.sportmgmt.model.entity.Club"/>
+        <mapping class="com.sportmgmt.model.entity.Player"/>
+        <mapping class="com.sportmgmt.model.entity.GameClubPlayer"/>
+        <mapping class="com.sportmgmt.model.entity.UserPlayer"/>
+        <mapping class="com.sportmgmt.model.entity.LeaguePlan"/>
+        <mapping class="com.sportmgmt.model.entity.PlanDiscount"/>
+        <mapping class="com.sportmgmt.model.entity.UserPayment"/>
+        <mapping class="com.sportmgmt.model.entity.UserPlan"/>
+        <mapping class="com.sportmgmt.model.entity.GameWeek"/>
+        <mapping class="com.sportmgmt.model.entity.Match"/>
+        <mapping class="com.sportmgmt.model.entity.Point"/>
+        <mapping class="com.sportmgmt.model.entity.UserGame"/>
+        <mapping class="com.sportmgmt.model.entity.PaymentExt"/>
+        <mapping class="com.sportmgmt.model.entity.PlayerGroup"/>
+        <mapping class="com.sportmgmt.model.entity.PlayerGroupPlayer"/>
+   </session-factory>
+</hibernate-configuration>

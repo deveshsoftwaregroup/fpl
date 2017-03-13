@@ -1,0 +1,51 @@
+@import url(https://fonts.googleapis.com/css?family=Racing+Sans+One);
+#main-content {/*width:380px;*/ width:100%; height:522px; position:absolute; bottom:-30px; background:transparent; z-index:2; box-sizing:border-box;}
+#main-content .content {font-family:"brandon-grotesque"; font-size: 26px; color: #E21F26; line-height: 30px; font-weight:500; padding:17px 32px 12px; border-bottom:#f1f1f1 thin solid;}
+.main-banner {
+    padding: 50px 0;
+	text-align:center;
+	    font-family: sans-serif;
+}
+/*.main-banner p{    font-family: sans-serif;}*/
+.euro-headings {
+    font-family: 'Racing Sans One',cursive;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 60px;
+}
+main-banner .euro-headings p{font-family: 'Racing Sans One',cursive;}
+
+.euro-divider {
+    width: 60%; margin:auto;
+}
+
+@font-face {
+  font-family: 'LOGOTOPFONT';
+  src: url(../fonts/Precious.ttf) format('truetype');
+}
+
+
+button.bigRegister {
+    font-size: 16px;
+    letter-spacing: 2px;
+    padding: 12px;
+    text-transform: uppercase;
+    background: rgba(27, 117, 188, .8);
+    color: rgba(255,255,255,1);
+	
+    width: 30%;
+    border-radius: 0;
+    border: 1px solid #009688;
+    -webkit-transition: all .1s cubic-bezier(0,0,1,1);
+    -moz-transition: all .1s cubic-bezier(0,0,1,1);
+    -o-transition: all .1s cubic-bezier(0,0,1,1);
+    -ms-transition: all .1s cubic-bezier(0,0,1,1);
+    transition: all .1s cubic-bezier(0,0,1,1);
+}
+
+button.bigRegister:hover {
+    background: rgba(27, 117, 188, 1);
+    border: 1px solid #fff;
+    color: #fff;
+}
+.hide{ display:none !important;}

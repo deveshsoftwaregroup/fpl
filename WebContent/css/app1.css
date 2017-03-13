@@ -1,0 +1,464 @@
+@import url(https://fonts.googleapis.com/css?family=Bad+Script);
+@font-face {
+  font-family: 'MyFontDecor';
+  src: url(../font/Richardson%20Brand%20Accelerator.otf) format('opentype');
+}
+@font-face {
+  font-family: 'MyFontRegular';
+    
+       url(../font/KrinkesRegularPERSONAL.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'LOGOTOPFONT';
+  src: url(../font/Precious.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'OpenSans-reg';
+  src: url(../font/Regular/OpenSans-Regular.eot?v=1.1.0);
+  src: url(../font/Regular/OpenSans-Regular.eot?#iefix&v=1.1.0) format("embedded-opentype"), 
+  		url("../font/Regular/OpenSans-Regular.woff2?v=1.1.0") format("woff2"), 
+  		url("../font/Regular/OpenSans-Regular.woff?v=1.1.0") format("woff"), 
+  		url(../font/Regular/OpenSans-Regular.ttf?v=1.1.0) format("truetype"), 
+  		url("../font/Regular/OpenSans-Regular.svg?v=1.1.0#Regular") format("svg");
+  font-weight: normal;
+  font-style: normal; 
+}
+@font-face {
+  font-family: 'OpenSans-semibold';
+  src: url(../font/Semibold/OpenSans-Semibold.eot?v=1.1.0);
+  src: url(../font/Semibold/OpenSans-Semibold.eot?#iefix&v=1.1.0) format("embedded-opentype"), 
+  		url(../font/Semibold/OpenSans-Semibold.woff2?v=1.1.0) format("woff2"), 
+  		url(../font/Semibold/OpenSans-Semibold.woff?v=1.1.0) format("woff"), 
+  		url(../font/Semibold/OpenSans-Semibold.ttf?v=1.1.0) format("truetype"),
+  		url(../font/Semibold/OpenSans-Semibold.svg?v=1.1.0#Semibold) format("svg");
+  font-style: normal; 
+  }
+  @font-face {
+  font-family: 'OpenSans-bold';
+  src: url(../font/Bold/OpenSans-Bold.eot?v=1.1.0);
+  src: url(../font/Bold/OpenSans-Bold.eot?#iefix&v=1.1.0) format("embedded-opentype"), 
+  	url(../font/Bold/OpenSans-Bold.woff2?v=1.1.0) format("woff2"), 
+  	url(../font/Bold/OpenSans-Bold.woff?v=1.1.0) format("woff"), 
+  	url(../font/Bold/OpenSans-Bold.ttf?v=1.1.0) format("truetype"), 
+  	url(../font/Bold/OpenSans-Bold.svg?v=1.1.0#Bold) format("svg");
+  font-weight: bold;
+  font-style: normal; 
+  }
+#main-content { width:100%; height:522px; position:absolute; bottom:-30px; background:transparent; z-index:2; box-sizing:border-box;}
+#main-content .content {/*font-family:"brandon-grotesque"; */font-size: 26px; color: #E21F26; line-height: 30px; font-weight:500; padding:17px 32px 12px; border-bottom:#f1f1f1 thin solid;}
+.main-banner {
+    padding: 50px 0;
+ text-align:center;
+     font-family: sans-serif;
+}
+.shade {
+    background: rgba(0, 0, 0, 0.4);
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+.euro-headings {
+    font-family: 'MyFontDecor';
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 48px;
+	
+   /*  background: -webkit-linear-gradient(#c99f17, #4ecb57);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+}
+.main-banner .euro-headings  .topHeaderText{
+	font-family: 'MyFontDecor' !important;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-size: 30px;
+   /*  background: -webkit-linear-gradient(#ffed19, #de4242);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+    word-spacing: normal !important;
+    margin-bottom: 20px;
+}
+.main-banner .euro-headings p{
+	letter-spacing: .1px;
+    line-height: normal;
+    margin-bottom: 0px;
+    display: block; 
+    font-family: OpenSans-bold;
+    text-shadow: 0px 1px 1px #000;
+}
+.main-banner .euro-headings  .topHeaderText span {
+    color: #ff2f4b;
+    text-shadow: -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff;
+    font-size: 60px;
+}
+.main-banner .euro-headings .highlight {
+    color: #ffed19;
+}
+.euro-divider {
+    width: 60%; margin:auto; margin-bottom: 20px;
+}
+.euro-divider hr{  border-top: 1px solid #fff;
+    background-color: transparent;
+    border-bottom: none;
+	width: 1px;
+    height: 0px;
+    background: none;
+    -webkit-transition-property: width; /* Safari */
+    -webkit-transition-duration: 5s; /* Safari */
+    -webkit-transition-delay: s; /* Safari */
+    transition-property: width;
+    transition-duration: 5s;
+    transition-delay: 0s;
+	}
+button.bigRegister {
+    font-size: 16px;
+    letter-spacing: 2px;
+    padding: 16px;
+    text-transform: uppercase;
+    background: rgba(10, 10, 10, 0.43);
+    color: #fff;
+    width: 100%;
+    max-width: 230px;
+    border-radius: 0;
+    border: solid 2px #fff;
+	text-align: center;
+	position: relative;
+	
+}
+button.bigRegister:after {
+    content: "";
+    position: absolute;
+    transition: all 0.3s ease 0s;
+    z-index: 1;
+    background: #2b1e1e;
+    height: 0;
+    left: 50%;
+    opacity: 0;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 100%;
+}
+button.bigRegister:hover:after {
+    height: 100%;
+    opacity: 1;
+}
+button.bigRegister span {
+    z-index: 2;
+    position: relative;
+}
+button.bigRegister:hover {
+}
+.row.big-register {
+    margin-bottom: 20px;
+}
+
+#height_ref {position:Absolute; height:86%;width:1px; z-index:-1; }
+#height_ref span {display:none;}
+
+/* new style for menu start*/
+header { width: 100%; z-index: 9;     background: rgba(26, 26, 27, 0.91) none repeat scroll 0% 0%;
+    position: absolute; position: absolute; border-bottom: 1px solid rgb(86, 86, 86); padding-bottom: 5px; height: 65px; opacity: 1; }
+header nav {}
+header nav ul {list-style:none; text-align:right; margin:0px}
+header nav ul li {display:inline-block; position:relative; font-family:OpenSans-Semibold;}
+header nav ul li a {display:block; margin:14px 15px 0px; color:#c7c7c7; font-size:13px; text-transform:uppercase; position:relative; transition: all .3s ease; padding:8px 10px; }
+header nav ul li a:hover{color:#ffed19; text-align:center; padding-bottom:7px; position:relative; }
+header nav ul.d-menu li:hover ul {display:block;}
+
+#logo{position:relative; width:auto;}
+#logo a{ color:#fff; font-size:24px; display:block; padding: 13px 8px;  }
+ 
+
+
+.menuText { color: #fff; display: inline-block; padding: 4px 7px 5px 7px; float: left; height: 33px;  margin-right: 4px; font-size: 14px; line-height: 25px;  }
+.menuLine { width: 35px; display: inline-block; padding: 4px 7px 8px 2px; }
+
+body { right: 0px;  transition: all .1s ease; }
+
+.rightMenu ul.nav { position:relative; list-style: none; padding: 40px 0px 10px 0px; margin: 0px; width:100%; height: 90%; overflow-y:hidden; }
+
+.rightMenu ul.nav li { margin: 1px 40px 1.5px 55px; position: relative; padding: 10px; display:block; height: auto; text-align:center; }
+
+.rightMenu ul.nav li a {font-size: 14px; color:#fff; display:block; line-height:normal; padding:2px 0px; text-align:center; text-align:right; margin:auto 10px; }
+
+.rightMenu ul.nav li a:hover{color:#ff7479;}
+
+.rightMenu ul.nav li a.menuHeader { font-size: 23px; border-box; letter-spacing:.4px; font-family: "freight-neo-pro",sans-serif; font-style: normal; font-weight: 500;  line-height:28px; padding:2px 0px; text-transform:uppercase;   }
+
+.rightMenu ul.nav li a.menuSmall{ font-style: normal; font-weight: 400; display:block; line-height:24px; font-size:14px;  }
+
+body.rightMenuOpen a#menuicon { right:56px; background:transparent; }
+
+a#menuicon {  position: fixed; right: 40px; top: 18px; display: block; cursor: pointer; -webkit-transition: all .2s ease; -moz-transition: all .6s ease; -ms-transition: all .6s ease; -o-transition: all .6s ease; transition: all .6s ease; z-index: 999; height:33px; overflow: hidden;}
+
+a#menuicon span { width: 100%; height: 3px; background: #fff; display: block; margin-bottom: 6px; -webkit-transition: all .2s ease; -moz-transition: all .6s ease; -ms-transition: all .6s ease; -o-transition: all .6s ease; transition: all .6s ease;  margin-top:7px;}
+a#menuicon span:nth-child(3) {margin-bottom:0px;}
+
+#mmenu { position:fixed; top:0px; bottom:auto; width:318px; right:25px; background:rgba(27, 28, 31, 0.97) none repeat scroll 0% 0%; z-index:200; right:-100%; transition: all 1.5s ease;  overflow:hidden; padding-top:65px; opacity:0; height:100%;}
+
+body.rightMenuOpen #mmenu { right:0px; opacity: 1; transition: all .7s ease;} 
+
+body.rightMenuOpen { /* right: 320px;*/ padding-right:320px; transition: all .7s ease; background: none; overflow: hidden !important; transition: all .7s ease; position:fixed; }
+
+body { background: #fff; transition: all 1.05s ease; position:relative; overflow-x:hidden; }
+
+.rightMenu ul.nav li.more-menu  ul{ top:34px;  background:none; }
+.rightMenu ul.nav li.more-menu  ul li{margin: 2px 15px 1.5px; padding:2px; }
+
+#menuOpenOverlay { position: fixed; top: 0px; bottom: auto; left: 0px; right: 0px; background: rgba(226, 31, 38,.15); z-index: 99; opacity: 0; -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -ms-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    transition: all .3s ease-out; }
+
+body.rightMenuOpen #menuOpenOverlay { bottom: 0px; opacity: 1; right:320px; }
+
+#menuOpenOverlay span { display: none; }
+
+html{overflow-x:hidden;}
+/* new style for menu end*/
+ #exampleModal1{ padding: 30px 20px 40px; background:#fff;}
+ .reveal h3 {
+    text-transform: uppercase;
+    font-size: 1.2em;
+    font-family: OpenSans-Semibold;
+    text-align: center;
+    border-bottom: solid 1px #e4e4e4;
+    padding-bottom: 10px;
+    margin: 0 14px 20px;
+}
+ input[type="text"], input[type="email"], input[type="password"], select{ height: 36px; border: 1px solid #c3c3c3; font-size: 13px; }
+ #exampleModal1 input{ margin-bottom:25px; }
+ select option:first-child{ color:#ccc;}
+ .btnSubmit{ display: block; width: 100%; margin: 20px 0px; background: #0074c1; font-size: 16px; padding: 14px 20px;}
+ 
+ 	.fbox{ /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8c5d47+0,0f2a0b+0,0f2a0b+27,0f2a0b+73,8c5d47+85,0f2a0b+85,0f2a0b+100&0.26+0,0.67+53,0.26+96,0.39+100 */
+background: -moz-linear-gradient(top,  rgba(15,42,11,0.26) 0%, rgba(15,42,11,0.47) 27%, rgba(15,42,11,0.67) 53%, rgba(15,42,11,0.48) 73%, rgba(15,42,11,0.37) 85%, rgba(15,42,11,0.26) 96%, rgba(15,42,11,0.39) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(15,42,11,0.26) 0%,rgba(15,42,11,0.47) 27%,rgba(15,42,11,0.67) 53%,rgba(15,42,11,0.48) 73%,rgba(15,42,11,0.37) 85%,rgba(15,42,11,0.26) 96%,rgba(15,42,11,0.39) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(15,42,11,0.26) 0%,rgba(15,42,11,0.47) 27%,rgba(15,42,11,0.67) 53%,rgba(15,42,11,0.48) 73%,rgba(15,42,11,0.37) 85%,rgba(15,42,11,0.26) 96%,rgba(15,42,11,0.39) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#420f2a0b', endColorstr='#630f2a0b',GradientType=0 ); /* IE6-9 */
+
+position:absolute; padding:20px 30px; /*color:#9FF901;*/ color:#ffffff; font-size:30px; border: 1px solid #0F2A0B; text-shadow: 2px 2px #000; font-size: 30px;
+ }
+    
+	#fbox1{ left:-100%; 
+    /*background: rgba(140, 93, 71, 0.62); */
+    
+ }
+	#fbox2{ right:-350px; -webkit-transition-delay: 2.35s; /* Safari */
+    transition-delay: 2.35s; }
+    
+    .tag-bold{    font-size: 34px;
+    text-transform: uppercase;
+    color: #ea2c2c;    
+	/*font-family: 'Bad Script', cursive;
+	letter-spacing: 3px;*/
+	 font-family: 'MyFontDecor';
+    letter-spacing: 1px;}
+	.and{    font-family: 'Bad Script', cursive;
+    letter-spacing: 3px;}
+	
+	
+	
+	
+	body.rightMenuOpen #menuOpenOverlay {
+    bottom: 0px;
+    opacity: 1;
+    right: 320px;
+}
+#menuOpenOverlay {
+    position: fixed;
+    top: 0px;
+    bottom: auto;
+    left: 0px;
+    right: 0px;
+    background: rgba(0, 0, 0, 0.68);
+    z-index: 99;
+    opacity: 0;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -ms-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+}
+@media (max-width:600px){
+	.main-banner .euro-headings .topHeaderText {
+		font-size:32px;
+	}
+	o-headings {
+	    font-size: 26px;
+	}
+}
+/* static page css */
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css");
+.static_container{
+	font-family: Opensans-reg, "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+}
+.panel-heading > a > .panel-title:before{
+    float: right !important;
+    font-family: FontAwesome;
+    content:"\f067";
+    padding-right: 5px;
+}
+.panel-heading > a.collapsed > .panel-title:before {
+    float: right !important;
+    content:"\f068";
+}
+a > .panel-title:hover, 
+a > .panel-title:active, 
+a > .panel-title:focus  {
+    text-decoration:none;
+	color:#fff;
+}
+.panel-heading > a { color: inherit; text-decoration:none; display:block;border-top-left-radius: 3px; border-top-right-radius: 3px; color: #fff; border: solid 1px #00adc3; padding: 8px 15px; background: #00BCD4;}
+.panel-heading > a.collapsed {
+    color: #565656;
+    background-color: #f5f5f5;
+    border-color: transparent;
+}
+.panel-heading > a.collapsed:hover {
+    background: #00BCD4;
+    border: solid 1px #00adc3;
+	color: #fff;
+}
+.panel {
+    margin-bottom: 12px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+.panel-default {
+    border-color: #ddd;
+}
+.panel-heading {
+
+}
+.panel-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 15px;
+    color: inherit;
+	font-weight: normal;
+}
+.collapse {
+    display: none;
+}
+.collapse.in {
+    display: block;
+}
+.panel-body {
+    padding: 15px;
+}
+.panel-default > .panel-heading + .panel-collapse > .panel-body {
+    border-top: solid 1px #ddd;
+}
+.panel-body:before{
+	display: table;
+    content: " ";
+}
+.panel-body:after{
+	display: table;
+    content: " ";
+	clear:both;
+}
+.collapsing {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    -webkit-transition-timing-function: ease;
+    -o-transition-timing-function: ease;
+    transition-timing-function: ease;
+    -webkit-transition-duration: .35s;
+    -o-transition-duration: .35s;
+    transition-duration: .35s;
+    -webkit-transition-property: height, visibility;
+    -o-transition-property: height, visibility;
+    transition-property: height, visibility;
+}
+h2.head {margin: 15px 0 5px 0; font-size: 17px;}
+.panel-body ol.list {
+    margin: 0 0 0 20px;
+    padding: 0;
+}
+.static_container p {margin:5px 0;}
+
+/*----- new customize css ------*/
+header { background: rgba(255, 255, 255, 0.8) ;}
+header nav ul li a {color: #4c3232;}
+header nav ul li a:hover {color: #ff455e;}
+#logo img { height: 110px; margin-top: 5px; border: solid 4px #fff;}
+.banner-wrapper {float: left; clear: both; color: #fff; padding: 50px; font-size: 30px;}
+.banner-wrapper p.topHeaderText { text-transform: uppercase; font-family: 'MyFontDecor'; text-shadow: 0px 1px 2px #000;}
+.banner-wrapper .topHeaderText span { font-size: 64px; display: block; line-height: 60px; color: #fff;}
+.smtxt {background: #000; padding: 8px 25px; display: inline; color: #ffed19;}
+.fbox{ background: rgba(255, 255, 255, 0.5); border:none;padding: 12px 25px; color: #000; text-shadow: none;
+    font-family: openSans-Semibold; font-size: 22px;}
+.banner-info {float: right; color: #fff; padding: 55px 25px; overflow: hidden; width: 260px; height: 260px; background: rgba(60, 60, 60, 0.6);
+ border-radius: 50%; text-align: center; font-size: 14px; margin:30px 30px 20px 0; position:relative;}
+ .banner-info { 
+  -webkit-animation: growUp 5s .5s; /* You can remove 1.5s if you don't want delay */
+  -moz-animation: growUp 8s .5s; 
+  -ms-animation: growUp 8s .5s; 
+  -o-animation: growUp 8s .5s; 
+  animation: growUp 8s .5s; 
+}
+
+
+@-webkit-keyframes growUp {   
+  0%  { -webkit-transform: scale(0); opacity:0; }
+  100% { -webkit-transform: scale(1); opacity:1; }
+}
+
+@-moz-keyframes growUp {
+  0%  { -moz-transform: scale(0); }
+  100% { -moz-transform: scale(1); }
+}
+.banner-info span.s2 {
+    color: #68de00;
+}
+.banner-info span.s3 {
+    color: #ffca00;
+}
+.banner-info a {color:#ffda19;}
+.banner-info img { position: absolute; left: 29px; top: 8px;}
+.menuText {color: #292121; font-family: opensans-Semibold;}
+a#menuicon span{background: #292121;}
+.rightMenuOpen .menuText { color: #ffcf19;}
+.rightMenuOpen a#menuicon span{background: #ffcf19;}
+
+@media (max-width:1024px){
+	.banner-wrapper .topHeaderText span {font-size: 54px; line-height: 50px;}
+}
+@media (max-width:768px){
+	#main-content { top: 100px; bottom: auto;}
+}
+@media (max-width:767px){
+	.banner-wrapper {padding: 30px; font-size: 26px;}
+	.banner-wrapper .topHeaderText span {font-size: 46px; line-height: 42px;}
+	#slides{overflow:visible !important;}
+	#fbox2 {display: none;}
+}
+@media (max-width:480px){
+	.banner-wrapper { padding: 20px;  font-size: 26px;  width: 100%;  text-align: center;}
+	.smtxt {background:none;}
+	.banner-info {margin: 0 auto; float: none; margin-bottom: 10px; font-size: 12px; width: 230px;height:230px;}
+	.banner-wrapper {padding: 20px; font-size: 22px;}
+	.banner-wrapper .topHeaderText span {font-size: 40px; line-height: 36px;}
+	.tag-bold { font-size: 22px !important;}
+	.fbox {width: 100%; text-align: center;  font-size: 18px;}
+	p.topHeaderText {margin-bottom: 0;}
+	#logo img {height: 55px; border: none; }
+}
+@media (max-width: 320px){
+	#main-content {	top: 88px;}
+	.tag-bold { font-size: 16px !important;}
+}

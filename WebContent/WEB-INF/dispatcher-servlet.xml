@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.0.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+        http://www.springframework.org/schema/task 
+        http://www.springframework.org/schema/task/spring-task-4.0.xsd">
+	<context:component-scan base-package="com.sportmgmt.controller.action" />
+	<!-- <context:property-placeholder location="${catalina.home}/conf/resources/sportmgmt.properties" /> -->
+	<!-- <context:property-placeholder location="classpath:sportmgmt.properties" /> -->
+	
+	<mvc:annotation-driven />
+	<task:annotation-driven />
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">  
+	  	<property name="host" value="smtp.gmail.com" />
+	  	<property name="port" value="587" />
+	    <property name="username" value="deveshsoftwaregroup@gmail.com" />  
+	    <property name="password" value="software@123" />
+	    <!-- <property name="host" value="mail.the12thman.in" />
+	  	<property name="port" value="25" />
+	    <property name="username" value="ravijha@the12thman.in" />  
+	    <property name="password" value="xp.Qkl1(I,=E" /> -->
+	    <property name="javaMailProperties">  
+	       <props>  
+	              <prop key="mail.smtp.auth">true</prop>  
+	              <prop key="mail.smtp.starttls.enable">true</prop>
+	              <prop key="mail.smtp.socketFactory.port">465</prop>  
+	              <prop key="mail.smtp.socketFactory.class">javax.net.ssl.SSLSocketFactory</prop>
+	              	 <!-- <prop key="mail.smtp.starttls.enable">true</prop>
+                    <prop key="mail.smtp.auth">true</prop>
+                    <prop key="mail.smtps.ssl.checkserveridentity">true</prop>
+                    <prop key="mail.smtps.ssl.trust">*</prop>-->
+	        </props>  
+	    </property>   
+	</bean>
+	<!--<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+      <property name="host" value="mail.csonth.gov.uk"/>
+      <property name="session" ref="smtpSession" />
+    </bean> -->
+	<bean id="velocityEngine" class="org.springframework.ui.velocity.VelocityEngineFactoryBean">
+      <property name="velocityProperties">
+         <value>
+          resource.loader=class
+          class.resource.loader.class=org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+         </value>
+      </property>
+   </bean>
+	<bean id="mailUtility" class="com.sportmgmt.utility.common.MailUtility">  
+	    <property name="mailSender" ref="mailSender" /> 
+	    <property name="velocityEngine" ref="velocityEngine" />  
+	</bean>
+	<bean id="propFileUtility" class="com.sportmgmt.utility.common.PropertyFileUtility">  
+	</bean>
+ 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+      <property name="prefix" value="/" />
+      <property name="suffix" value=".jsp" />
+   	</bean>
+   	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value="clubmap" />
+    </bean>
+    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+        <property name="defaultLocale" value="en" />
+    </bean>
+    <bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+        <property name="paramName" value="lang" />
+    </bean>
+    <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
+        <property name="interceptors">
+            <list>
+                <ref bean="localeChangeInterceptor" />
+            </list>
+        </property>
+    </bean>
+    <bean id="applicationDataUtility" class="com.sportmgmt.utility.common.ApplicationDataUtility">  
+	    <property name="msg" value="This is load message" /> 
+	</bean>
+	<bean id="SortUtility" class="com.sportmgmt.utility.common.SortUtility">  
+	    <property name="applicationDataUtility" ref="applicationDataUtility" /> 
+	</bean>
+	<bean id="pointRankingUtility" class="com.sportmgmt.utility.common.PointRankingUtility">  
+	    <property name="applicationDataUtility" ref="applicationDataUtility" /> 
+	</bean>
+    <!-- <bean id="sportSchedular" class="com.sportmgmt.utility.common.SportSchedular"></bean> -->
+    <import resource="spring-social.xml" />
+</beans>

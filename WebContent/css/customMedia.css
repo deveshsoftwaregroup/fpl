@@ -1,0 +1,81 @@
+/* Small screens */
+@media only screen {
+	/* for the menu */
+	header {left: 0; margin-left: 0px; width: 100%; }
+	.d-menu { display:none;}
+	.rightMenu { display:block;}
+	#logo a { width:200px; }
+	body.rightMenuOpen { padding-right:90%;}
+	
+	#mmenu{ width:90%; }
+	#height_ref { height:400px;}
+	
+	.euro-headings { font-size: 30px; }
+		.euro-divider { width: 80%; }
+		hr{ margin:6px auto;}
+		.euro-headings p{ margin-bottom:0px}
+		body.rightMenuOpen #menuOpenOverlay {
+    right: 90%;
+}
+		.tag-bold{ font-size:26px;}
+		
+		
+	} /* Define mobile styles */
+
+@media only screen and (max-width: 40em) {
+	body.rightMenuOpen #menuOpenOverlay { right:90%; }
+	 } /* max-width 640px, mobile-only styles, use when QAing mobile issues */
+
+/* Medium screens */
+@media only screen and (min-width: 40.063em) {	
+#logo a{ width:220px; }
+	body.rightMenuOpen {  padding-right:320px;}
+	body.rightMenuOpen #menuOpenOverlay { right:320px; }
+	#mmenu{ width:318px; }
+	} /* min-width 641px, medium screens */
+
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+	
+	} /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
+
+@media only screen and (min-width: 54.063em) {
+	.euro-headings  .topHeaderText{ font-size:45px;}
+.euro-headings { font-size: 30px; }	
+	.euro-divider { width: 50%; }	
+	hr{ margin:10px auto;}
+	.euro-headings p{ margin-bottom:16px}
+	#fbox2{ display:block;}
+	#fbox1{ margin-top:0px; font-size::30px;}
+	.tag-bold{ font-size:30px;}
+		
+	} /* mi
+
+
+/* Large screens */
+@media only screen and (min-width: 64.063em) { 
+.euro-headings  .topHeaderText{ font-size:55px;}
+	.euro-headings { font-size: 32px; }	
+	.d-menu { display:block;}
+	.rightMenu { display:none;}
+	header nav ul li a {margin: 14px 15px 0px;}	
+	#height_ref { height:86%;}
+
+		
+	} /* min-width 1025px, large screens */
+
+@media only screen and (min-width: 64.063em) and (max-width: 90em) {
+	
+		
+	} /* min-width 1025px and max-width 1440px, use when QAing large screen-only issues */
+
+/* XLarge screens */
+@media only screen and (min-width: 90.063em) {
+	
+		
+	} /* min-width 1441px, xlarge screens */
+
+@media only screen and (min-width: 90.063em) and (max-width: 120em) { } /* min-width 1441px and max-width 1920px, use when QAing xlarge screen-only issues */
+
+/* XXLarge screens */
+@media only screen and (min-width: 120.063em) { } /* min-width 1921px, xxlarge screens */
+
