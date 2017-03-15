@@ -4,10 +4,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <title>Forgot Password Result</title>
 </head>
 <body>
-error Message: ${errorMessage} <br/>
-message: ${message}
+<c:if test="${not empty errorMessage}">
+<c:out value="${errorMessage}"/>
+<br/>
+</c:if>
+<c:if test="${not empty message}">
+<c:out value="${message}"/>
+<br/>
+</c:if>
 </body>
 </html>
