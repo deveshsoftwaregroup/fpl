@@ -435,7 +435,7 @@ public class UserAction {
 				catch (Exception ex)
 				{
 					logger.error("----------- Excepton in Sending Mail ----------"+ex);
-					modeMap.put("message", "Could not send mail on provided email Id");
+					modeMap.put("message", "Could not send mail on email Id: "+emailId);
 				}
 			 		 
 		 }
