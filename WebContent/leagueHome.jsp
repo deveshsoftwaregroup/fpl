@@ -224,7 +224,15 @@
             <input type="password" name="logonPasswordConfirm" placeholder="Confirm Password" required
                 id="password2" />
         </div>
-          
+        <div class="large-12 columns">
+            <select name="country" placeholder="Mobile Number" required
+                id="country">
+            <option value="">Select Country</option>
+            <c:forEach var="countryObj" items="${countryMap}">
+            <option value="${countryObj.key}">${countryObj.key}</option>
+            </c:forEach>
+            </select>
+        </div>
         <div class="large-12 columns">
             <input type="input" name="contactNumber" placeholder="Mobile Number1" required
                 id="contactNumber" />
@@ -240,12 +248,8 @@
                     Male</label>
             </div>
         </div>
-  
-  
-  
-            <div class="large-12 columns">
-            
-                <div align="right">
+              <div class="large-12 columns">
+                      <div align="right">
                     <a href="javascript:void(0);" class="button-lrg" onclick="submitForm();"><input type="button" class="button btnSubmit" value="REGISTER"></a>
                      </div>
             </div>

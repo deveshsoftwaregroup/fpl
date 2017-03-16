@@ -191,7 +191,14 @@
 		   <div class="form-group">
 		       <input type="password" name="logonPasswordConfirm" placeholder="Confirm Password" required id="password2" class="form-control" />
 		   </div>
-		    
+		  <div class="form-group">
+		       <select name="country" placeholder="Mobile Number" required id="country" class="form-control">
+		       <option value="">Select Country</option>
+		       <c:forEach var="countryObj" items="${countryMap}">
+		       <option value="${countryObj.key}">${countryObj.key}</option>
+		       </c:forEach>
+		       </select>
+		   </div>  
         <div class="form-group">
             <input type="input" name="contactNumber" placeholder="Mobile Number" required  id="contactNumber" class="form-control" />
         </div>
