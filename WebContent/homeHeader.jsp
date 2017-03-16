@@ -148,6 +148,7 @@
 				             	
 	                              <button type="submit" class="btn btn-primary btn-block" onclick="doLogin();">Login</button>
 	                              </a>
+	                              <a href="javascript:void(0);" data-toggle="modal" data-target="#myModal3">Forgot Password</a> 
 	                          </form>
 	                      </div>
 	                  </div>
@@ -243,6 +244,30 @@
 	      </div>
 	  </div>
 </div>
+
+<div id="myModal3" class="modal fade" role="dialog">
+  	<div id="login-overlay" class="modal-dialog">
+	      <div class="modal-content">
+	          <div class="modal-header">
+	              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+	              <h4 class="modal-title" id="myModalLabel">Forgot Password</h4>
+	          </div>
+	          <div class="modal-body">
+	          <form name="ResetPassForm" action="user/forgotPassword" method="get">
+				   <div class="form-group">
+				       <input type="email" name="emailId" placeholder="Email / Login ID" required id="email" class="form-control" />
+				   </div>
+				  <div class="form-group">            
+		            <div align="center">
+		                <a href="javascript:void(0);" class="button-lrg" onclick="submitRSForm();"><input type="button" class="btn btn-primary" value="Send Password"></a>
+		            </div> 
+		          </div>
+		    </form>
+	       </div>
+	      </div>
+	  </div>
+</div>
+
 <%-- <div class="reveal medium" id="exampleModal3" data-reveal>
      <div class="large-12 column text-center">
          <!--<p align="center" class="button btnSubmit" style="background:none; color:rgba(0,0,102,1); font-size:22px;" >
@@ -406,6 +431,22 @@
    			}
     	}
     	regForm.submit();
+ }
+    function submitRSForm()
+    {
+    	var resetPassForm = document.forms['ResetPassForm'];
+    	if(typeof resetPassForm['emailId'] == 'undefined' || resetPassForm['emailId'].value=='')
+    	{
+    		alert("Please enter Email ID");
+    		return false;
+    	}
+    	var isEmailValid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(resetPassForm['emailId'].value);
+    	if(!isEmailValid)
+   		{
+    		alert("Email ID is not valid");
+    		return false;
+   		}
+    	resetPassForm.submit();
  }
 function doLogin()
 {
