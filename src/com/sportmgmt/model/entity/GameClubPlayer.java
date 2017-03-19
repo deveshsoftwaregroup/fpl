@@ -30,7 +30,7 @@ public class GameClubPlayer {
 	private String priceCurrency;
 	
 	@Column(name="PRICE")
-	private Integer price;
+	private Double price;
 	
 	@Column(name="PLAYER_TOTAL_POINT")
 	private Integer playerTotalPoint;
@@ -79,11 +79,11 @@ public class GameClubPlayer {
 		this.priceCurrency = priceCurrency;
 	}
 
-	public Integer getPrice() {
+	public Double getPrice() {
 		return price;
 	}
 
-	public void setPrice(Integer price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}
 

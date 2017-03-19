@@ -833,7 +833,7 @@ public class GameManager {
 		{
 			if(totalPlayerPriceFetchList.get(0) != null)
 			{
-				totalPlayersPrice = ((java.math.BigDecimal)totalPlayerPriceFetchList.get(0)).doubleValue();
+				totalPlayersPrice = ((Double)totalPlayerPriceFetchList.get(0)).doubleValue();
 			}
 				
 		}
@@ -920,21 +920,21 @@ public class GameManager {
 	return playerUserSelectedByPercentageMap;
 	}
 	
-	public static Map<String,Integer>  getPlayerPriceMap(List gameClubPlayerIdList)
+	public static Map<String,Double>  getPlayerPriceMap(List gameClubPlayerIdList)
 	{
 		logger.info("---------- Inside getPlayerPriceMap: ");
 		List<Object[]> playerWithPriceList = fetchPlayerWithPrice(gameClubPlayerIdList);
-		Map<String,Integer> playerPriceMap = new LinkedHashMap<String,Integer>();
+		Map<String,Double> playerPriceMap = new LinkedHashMap<>();
 		
 		for(Object[] row:playerWithPriceList)
 		{
-			playerPriceMap.put(row[0].toString(), (Integer)row[1]);
+			playerPriceMap.put(row[0].toString(), (Double)row[1]);
 		}
 		for(Object gameClubPlayerIdObj:gameClubPlayerIdList)
 		{
 			if(!playerPriceMap.containsKey(gameClubPlayerIdObj.toString()))
 			{
-				playerPriceMap.put(gameClubPlayerIdObj.toString(), 0);
+				playerPriceMap.put(gameClubPlayerIdObj.toString(), 0.0);
 			}
 				
 		}	
