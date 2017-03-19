@@ -365,7 +365,12 @@ only screen and (min-resolution: 2dppx) {
 @media(min-width:38.125em) {
     .league .league-pitch {
         min-height: 524px;
-        background-image: url('../images/pitch-820.png')
+       
+        background: url('../images/pitch-820.png') no-repeat center center; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
     }
 }
 @media only screen and (min-width: 38.125em) and (-webkit-min-device-pixel-ratio: 2),
@@ -373,8 +378,11 @@ only screen and (min-width: 38.125em) and (min--moz-device-pixel-ratio: 2),
 only screen and (min-width: 38.125em) and (min-resolution: 192dpi),
 only screen and (min-width: 38.125em) and (min-resolution: 2dppx) {
     .league .league-pitch {
-        background-image: url('../images/pitch-1640.png');
-        background-size: 820px 524px
+        background: url('../images/pitch-820.png') no-repeat center center; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
     }
 }
 @media(min-width:38.125em) {
@@ -393,6 +401,7 @@ only screen and (min-width: 38.125em) and (min-resolution: 2dppx) {
     background: url('../images/shirt-shadow-167.png') no-repeat center bottom;
     background-size: 33px 6px;
         max-width: 40px;
+        max-height: 60px !important;
 }
 .league .league-element__name {
     font-family: opensans-semibold, Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -436,8 +445,11 @@ only screen and (min-width: 64em) and (min--moz-device-pixel-ratio: 2),
 only screen and (min-width: 64em) and (min-resolution: 192dpi),
 only screen and (min-width: 64em) and (min-resolution: 2dppx) {
     .league .league-pitch {
-        background-image: url('../images/pitch-2160.png');
-        background-size: 1080px 690px
+       background: url('../images/pitch-820.png') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
     }
 }
 @media(min-width:64em) {
@@ -471,7 +483,7 @@ only screen and (min-width: 64em) and (min-resolution: 2dppx) {
         max-width: 895px
     }
     .league .league-element-row--pitch {
-        padding-bottom: 1.9rem
+        padding-bottom: 0px;
     }
 }
 .league .league-element {
@@ -493,12 +505,12 @@ only screen and (min-width: 64em) and (min-resolution: 2dppx) {
     .league .league-element__name {
         padding-top: .2em;
         padding-bottom: .2em;
-        font-size: 1.2rem
+        font-size: 10px;
     }
     .league .league-element__data {
         padding-top: .1rem;
         padding-bottom: .1rem;
-        font-size: 1.2rem
+        font-size: 10px;
     }
     .league .league-element__control--primary {
         left: 5%
@@ -547,8 +559,8 @@ only screen and (min-width: 64em) and (min-resolution: 2dppx) {
 @media(min-width:64em) {
     .league {}.league .league-element {
         width: 14rem;
-        padding-right: 1rem;
-        padding-left: 1rem
+        padding-right: 0px;
+        padding-left: 0px;
     }
     .league .league-element__shirt {
         padding-bottom: .9rem;
@@ -557,7 +569,7 @@ only screen and (min-width: 64em) and (min-resolution: 2dppx) {
     .league .league-element__name {
         padding-top: .4em;
         padding-bottom: .4em;
-        font-size: 1.3rem
+        font-size: 10px;
     }
     .league .league-element__type::after {
         content: attr(title)

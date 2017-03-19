@@ -9029,8 +9029,8 @@ text-transform:uppercase
 }
 
 .ism .ism-copy {
-padding-left:1rem;
-padding-right:1rem;
+padding-left:0px;
+padding-right:0px;
 margin-bottom:2rem
 }
 
@@ -11302,6 +11302,7 @@ background-size:33px 6px
     -ms-transition: -ms-transform .8s ease-in-out;
     transition: transform .8s ease-in-out;
         max-width: 40px;
+            max-height: 60px;
 }
 
 .ism .ismjs-select:hover .ism-element__shirt {
@@ -11408,6 +11409,8 @@ width:10.5rem
 .ism .ism-element__shirt {
 padding-bottom:.7rem;
 background-size:44px 8px
+width: 90% !important;
+    margin: auto !important;
 }
 
 .ism .ism-element__name {
@@ -11475,8 +11478,11 @@ right:1rem
 @media(min-width:64em) {
 .ism .ism-element {
 width:12rem;
-padding-right:1rem;
-padding-left:1rem
+padding-right:0px;
+padding-left:0px;
+    width: 90% !important;
+    margin: auto !important;
+    max-width: 100px !important;
 }
 
 .ism .ism-element__shirt {
@@ -11487,7 +11493,7 @@ background-size:55px 10px
 .ism .ism-element__name {
 padding-top:.4em;
 padding-bottom:.4em;
-font-size:1.3rem
+font-size:10px;
 }
 
 .ism .ism-element__type:after {
@@ -11547,7 +11553,7 @@ max-width:895px
 }
 
 .ism .ism-element-row--pitch {
-padding-bottom:2rem
+padding-bottom:0px;
 }
 }
 
@@ -11969,9 +11975,11 @@ margin-bottom:2rem
 
 .ism .ism-pitch {
 min-height:330px;
-background-image:url('../images/pitch-516.png');
-background-repeat:no-repeat;
-background-position:center 0
+background: url('../images/pitch-820.png')no-repeat center center; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio:2),only screen and (min--moz-device-pixel-ratio:2),only screen and (min-resolution:192dpi),only screen and (min-resolution:2dppx) {
@@ -12032,7 +12040,12 @@ background-color:red
 @media(min-width:610px) {
 .ism .ism-pitch {
 min-height:524px;
-background-image:url('../images/pitch-820.png')
+background: url('../images/pitch-820.png') no-repeat center center; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  
 }
 }
 
@@ -12051,7 +12064,12 @@ min-height:96px
 /* @media(min-width:64em) {
 .ism .ism-pitch {
 min-height:690px;
-background-image:url('../images/pitch-1080.png')
+background: url('../images/pitch-820.png')no-repeat center center; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
 }
 } */
 
