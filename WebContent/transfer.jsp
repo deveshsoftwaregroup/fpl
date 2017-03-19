@@ -77,6 +77,7 @@
                                 <p>Free Transfer: 1 Available/Used</p>
                         	 
                                 <p>Wild Card: 1 Available/Used
+                                <p class="added-player-count"></p>
                                 <c:if test="${sessionScope.hasFreeWildCard}">
                                 <input type="button" class="link" value="Use Wild Card" data-toggle="modal" data-target="#myModal-1">
                                 </p>
@@ -1286,6 +1287,7 @@
 	</c:if>
 	
 	$(document).ready(function() {
+		$("p.added-player-count").text(""+userGameJson.playerList.length+"/15");
 		$("div.ismjs-select.added-player-css").each(function(){
 			var gameClubPlayerId = $(this).attr('id');
 			console.info('gameClubPlayerId: '+gameClubPlayerId);
@@ -1515,7 +1517,7 @@
 				
 			});
 		}
-	  $("p.ism-elements-shown strong.ism-elements-shown__num").text($("tr.ismjs-menu.ism-row-select:visible").length);
+	  $("p.ism-elements-shown strong.ism-elements-shown__num").text(($("tr.ismjs-menu.ism-row-select:visible").length+1));
  }
      function addPlayer(userId, gameClubPlayerId)
      {
@@ -1617,6 +1619,7 @@
 	     			  if(resp.isSuccess)
 	     			  {
 	     				 userGameJson = resp.userGameJson; 
+	     				$("p.added-player-count").text(""+userGameJson.playerList.length+"/15");	     				
 	     				 var clubImage = clubIdImageMap[clubId];
 	     				 if(typeof $('#planBalanceDiv') != 'undefined')
 	     			 	 {
@@ -1702,6 +1705,7 @@
 	     		});
 
 		}
+		
 		</c:otherwise>
 		</c:choose>
      }
@@ -1728,6 +1732,7 @@
 	     			  if(resp.isSuccess)
 	     			  {
 	     				 userGameJson = resp.userGameJson;
+	     				$("p.added-player-count").text(""+userGameJson.playerList.length+"/15");
 	     				if(typeof $('#planBalanceDiv') != 'undefined')
 	     			 	 {
 	     					$('#planBalanceDiv').text(resp.activePlanBalance); 
@@ -1744,7 +1749,6 @@
 	     		  }
 	     		});
    		}
-		
      }
      $(document).ajaxStart(function(){
   		$("#ajaxloader").css("display", "block");

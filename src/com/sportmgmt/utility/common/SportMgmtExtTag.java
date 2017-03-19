@@ -125,8 +125,15 @@ public class SportMgmtExtTag extends TagSupport{
     				 {
     					 logger.error("Exception from reading and parsing : "+ex.getMessage());
     				 }
-    				 
-    				 String deadline = formatedStartTime +" "+ (startHour-deadLineHrsBeforeStart) + ":"+startMin;
+    				 String startMinStr = ""+startMin;
+    				 if(startMin <10)
+    				 {
+    					 startMinStr = "0"+startMinStr;
+    				 }
+    				 String startHrsStr= ""+(startHour-deadLineHrsBeforeStart);
+    				 if((startHour-deadLineHrsBeforeStart) <10)
+    					 startHrsStr = "0"+(startHour-deadLineHrsBeforeStart);
+    				 String deadline = formatedStartTime +" "+ startHrsStr + ":"+startMinStr;
     				 logger.info("--------- Game Week: deadline  -- :"+deadline);
     				 pageContext.setAttribute("deadline", deadline);
     				 List<Timestamp> lastMatchOfGameWeek = GameManager.lastFirstMatchOfGameWeek(gameWeekId);

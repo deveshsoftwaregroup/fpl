@@ -103,10 +103,25 @@
 				var secondClubId = matchesMapJson.gameWeekList[matchesMapJson.currentGameWeek-1].matchMap[key][index].secondClubId;
 				var startHour = matchesMapJson.gameWeekList[matchesMapJson.currentGameWeek-1].matchMap[key][index].startHour;
 				var startMinute = matchesMapJson.gameWeekList[matchesMapJson.currentGameWeek-1].matchMap[key][index].startMinute;
-				var startTime = startHour+':'+startMinute;
+				var startHourStr = ''+startHour;
+				if(parseInt(startHour) < 10)
+				{
+					startHourStr = '0'+startHour;
+					alert(startHourStr);
+				}
+				var startMinuteStr = ''+startMinute;
+				if(parseInt(startMinute) < 10)
+				{
+					startMinuteStr = '0'+startMinute;
+				}
+				var startTime = startHourStr+':'+startMinuteStr;
 				if(index == 0 && daycounter == 0)
 				{
-					headHtml +=' '+(startHour-1)+':'+startMinute;
+					if((parseInt(startHour)-1) < 10)
+					{
+						startHourStr = '0'+(parseInt(startHour)-1);
+					}
+					headHtml +=' '+startHourStr+':'+startMinuteStr;
 				}
 				var firstClubCss = clubLogoMap[firstClubId];
 				var secondClubCss = clubLogoMap[secondClubId];
