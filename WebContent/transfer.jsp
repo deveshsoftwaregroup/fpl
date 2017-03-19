@@ -47,7 +47,20 @@
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
+.transfer-Col-6{ width:50%; float: left;}
+
+.tabBtn{    width: 100%;
+    background: #36947a;
+    color: #ffffff;
+    padding: 5px 8px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;}
 </style>
+ <div id="preloader">
+  <div id="status">&nbsp;</div>
+</div>
 <s:sportExt retrieve="priceList" />
 <s:sportExt retrieve="deadLine" />
 <div class="addsbanner-lft"></div>
@@ -73,8 +86,28 @@
                         </div>
                         
                         <div>
-                        	<div class="plain_text">
-                                <p>Free Transfer: 1 Available/Used</p>
+                        	<div class="plain_text" style="padding-left:0px;">
+                        	
+                        	<div class="col-sm-12" style="margin-left: -15px; margin-right: -15x;">
+                        		<div class="transfer-Col-6">
+                        			<div class="tabBtn">hello there !!</div>
+                        		</div>
+                        		
+                        		<div class="transfer-Col-6">
+                        			<div class="tabBtn">hello there !!</div>
+                        		</div>
+                        		
+                        		<div class="transfer-Col-6">
+                        			<div class="tabBtn">hello there !!</div>
+                        		</div>
+                        		
+                        		<div class="transfer-Col-6">
+                        			<div class="tabBtn">hello there !!</div>
+                        		</div>
+                        		
+                        	</div>
+                        		
+                                
                         	 
                                 <p>Wild Card: 1 Available/Used
                                 <p class="added-player-count"></p>
