@@ -48,7 +48,7 @@ public class SportConstrant {
 	public final static String USER_VERIFY_PAGE = "verifyResult";
 	public final static String USER_UPDATE_RESULT_PAGE = "userUpdateResult";
 	public final static String USER_REG_RESULT_PAGE = "registerResult";
-	public final static String FORGOT_PASS_RESULT_PAGE = "forgotPasswordResult";
+	public final static String FORGOT_PASS_RESULT_PAGE = "homeIndex";
 	public final static String MAKE_PAYMENT_SUCCESS_PAGE = "payment/beginPayment";
 	public final static String MAKE_PAYMENT_ERROR_PAGE = "payment/beginPaymentFail";
 	public final static String PAYMENT_RESULT_PAGE = "payment/paymentResult";
