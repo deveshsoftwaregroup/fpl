@@ -340,7 +340,7 @@
 		}
 		function uploadRankingView()
 		{
-			url ="/SportMgmt/ranking.jsp";
+			url ="/SportMgmt/myPoint.jsp";
 				$.ajax({
 		     		  url: url,
 		     		  dataType: 'html',
