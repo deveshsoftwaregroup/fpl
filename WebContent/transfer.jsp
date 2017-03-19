@@ -73,7 +73,7 @@
                     <div id="ismr-scoreboard">
                         <div>
                         <div class="ism-copy">
-                                <p style="color: #ffcc00; font-weight: bold;"><i class="fa fa-angle-double-right" style="color: #f00;"></i> Select Players for the coming week</p>
+                                <p style="color: #ffcc00; font-weight: bold;"><i class="fa fa-angle-double-right" style="color: #f00;"></i> Select Players from the list</p>
                          </div> 
 
                             <!-- Scoreboard -->
@@ -90,51 +90,49 @@
                         	
                         	<div class="col-sm-12" style="margin-left: -15px; margin-right: -15x;">
                         		<div class="transfer-Col-6">
-                        			<div class="tabBtn">hello there !!</div>
+                        			<div class="tabBtn">
+										Want unlimited free transfer? : 
+										<c:if test="${sessionScope.hasFreeWildCard}">
+		                                  <input type="button" class="link" value="Use Wild Card" data-toggle="modal" data-target="#myModal-1">		                               
+		                                  <div id="myModal-1" class="modal fade" role="dialog">
+										  <div class="modal-dialog">
+										    <div class="modal-content">
+										      <div class="modal-header">
+										        <a type="button" class="close" data-dismiss="modal">&times;</a>
+										        <h4 class="modal-title"></h4>
+										      </div>
+										      <div class="modal-body buywildcard">
+												<h2>Are you Sure</h2>
+												<p style="text-align:center">
+													<a class="button" href="activateWildCard?userId=${sessionScope.user.userId}&planId=${sessionScope.freeWildCardPlanId}">Yes</a> &nbsp;
+													<a class="button no-btn" data-dismiss="modal">No</a>
+												</p>
+										      </div> 
+										    </div>
+										  </div>
+										</div>	
+										</c:if>
+                                		<input type="button" class="link" value="Buy Wildcard" data-toggle="modal" data-target="#paymentModel" > 
+                               			 
+									</div>
                         		</div>
                         		
                         		<div class="transfer-Col-6">
-                        			<div class="tabBtn">hello there !!</div>
+                        			<div class="tabBtn">Free Transfer : Used/Available</div>
                         		</div>
-                        		
-                        		<div class="transfer-Col-6">
-                        			<div class="tabBtn">hello there !!</div>
-                        		</div>
-                        		
-                        		<div class="transfer-Col-6">
-                        			<div class="tabBtn">hello there !!</div>
-                        		</div>
-                        		
                         	</div>
+                        	<div class="col-sm-12" style="margin-left: -15px; margin-right: -15x;">
+                        		<div class="transfer-Col-6">
+                        			<div class="tabBtn">
+										Player Count :                                 		
+                                </div>
+                        		</div>
                         		
-                                
-                        	 
-                                <p>Wild Card: 1 Available/Used
-                                <p class="added-player-count"></p>
-                                <c:if test="${sessionScope.hasFreeWildCard}">
-                                <input type="button" class="link" value="Use Wild Card" data-toggle="modal" data-target="#myModal-1">
-                                </p>
-                                  <div id="myModal-1" class="modal fade" role="dialog">
-								  <div class="modal-dialog">
-								    <div class="modal-content">
-								      <div class="modal-header">
-								        <a type="button" class="close" data-dismiss="modal">&times;</a>
-								        <h4 class="modal-title"></h4>
-								      </div>
-								      <div class="modal-body buywildcard">
-										<h2>Are you Sure</h2>
-										<p style="text-align:center">
-											<a class="button" href="activateWildCard?userId=${sessionScope.user.userId}&planId=${sessionScope.freeWildCardPlanId}">Yes</a> &nbsp;
-											<a class="button no-btn" data-dismiss="modal">No</a>
-										</p>
-								      </div> 
-								    </div>
-								  </div>
-								</div>	
-								</c:if>
-                                <p>Want unlimited transfer? : 
-                                <input type="button" class="link" value="Buy Wildcard" data-toggle="modal" data-target="#paymentModel" > 
-                                </p>
+                        		<div class="transfer-Col-6">
+                        			<div class="tabBtn added-player-count"> </div>
+                        		</div>                        		
+                        	</div>  
+                        	                              
                                 <div id="paymentModel" class="modal fade" role="dialog">
 									  <div class="modal-dialog modal-lg">
 									
@@ -183,14 +181,9 @@
 									
 									  </div>
 									</div>
-                              
-                                <p>Cost : -4                                
-                                </p>
-                                
-                                <p>Note: Cost will be deducted from your total points. You can make your cost 0 by using WIldCard.                                
-                                </p>                                
+                                                              
                         	 </div> 
-                        	 <input type="button" value="Confirm" onclick="updatePoints('${sessionScope.user.userId}');">
+                        	 <input type="button" value="v" onclick="updatePoints('${sessionScope.user.userId}');">
 								
                         </div>
                     </div>
@@ -1320,7 +1313,7 @@
 	</c:if>
 	
 	$(document).ready(function() {
-		$("p.added-player-count").text(""+userGameJson.playerList.length+"/15");
+		$(".added-player-count").text(""+userGameJson.playerList.length+"/15");
 		$("div.ismjs-select.added-player-css").each(function(){
 			var gameClubPlayerId = $(this).attr('id');
 			console.info('gameClubPlayerId: '+gameClubPlayerId);
