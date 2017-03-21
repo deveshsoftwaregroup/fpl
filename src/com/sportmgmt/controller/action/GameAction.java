@@ -98,7 +98,7 @@ public class GameAction {
 				if(hasActivePlan)
 				{
 					isSuccess = GameManager.addPlayeOfGametToUserAccount(userId, gameClubPlayerId);
-					Integer price = null;
+					Double price = null;
 					logger.info("------------ Add Player Call isSuccess: "+isSuccess);
 					if(isSuccess)
 					{
@@ -126,7 +126,7 @@ public class GameAction {
 									if(playerDetailMap.get("gameClubPlayerId") !=null && playerDetailMap.get("gameClubPlayerId").equals(gameClubPlayerId))
 									{
 										playerDetails.put("playerType", (String)playerDetailMap.get("type"));
-										price = (Integer)playerDetailMap.get("price");
+										price = (Double)playerDetailMap.get("price");
 									}
 								}
 							}
@@ -297,7 +297,7 @@ public class GameAction {
 					{
 						if(user.getActivePlan().getPlanTypeVal() == 0)
 						{
-							Integer price =null;
+							Double price =null;
 							List playersList = (List)session.getAttribute("playerList");
 							if(playersList.size()>0)
 							{
@@ -306,7 +306,7 @@ public class GameAction {
 									Map playerDetailMap = (Map)playerDetailObj;
 									if(playerDetailMap.get("gameClubPlayerId") !=null && playerDetailMap.get("gameClubPlayerId").equals(gameClubPlayerId))
 									{
-										price = (Integer)playerDetailMap.get("price");
+										price = (Double)playerDetailMap.get("price");
 									}
 								}
 							}
