@@ -553,6 +553,68 @@ public class UserAction {
 		return SportConstrant.USER_UPDATE_RESULT_PAGE;
 
 	}
+	@RequestMapping(value = "resetPassword", method = RequestMethod.GET)
+	public @ResponseBody String resetPassword(ModelMap modeMap,@RequestParam String emailId)
+	{
+	 logger.info("---------- Entry in forgotPassword  ---- Path Variable EmailId:  "+emailId);
+	 modeMap.clear();
+	 String response = null;
+	 if(emailId == null || emailId.equals(SportConstrant.NULL))
+	 {
+		 response = "Invalid URL";
+	 }
+	
+	 if(modeMap.size() == 0)
+	 {
+		 logger.info("---------- Calling Hibernate getPasswordByEmail Method: ");
+		 String password = UserManager.getPasswordByEmail(emailId);
+		 logger.info("---------- Fetche User Passoword: "+password);
+		 if(password != null && !password.equals(SportConstrant.NULL))
+		 {
+				try
+				{
+					password = EncodeDecoder.decrypt(password);
+					logger.info("--------- password: After Decoding:  "+password);
+				}
+				catch(Exception ex)
+				{
+					logger.error("--------- Error in encoding password: "+ex);
+					
+				}
+			 logger.info("---------- Starting to send mail");
+			 try
+				{
+					Map<String,Object> mailMap = new java.util.HashMap<String,Object>();
+					
+					mailMap.put(SportConstrant.FROM, propFileUtility.getEnvProperty().getString(SportConstrant.FROM));
+					mailMap.put(SportConstrant.TO,emailId);
+					mailMap.put("password", password);
+					mailMap.put(SportConstrant.VELOCIYY_FILE_LOC,propFileUtility.getEnvProperty().getString(SportConstrant.FORGOT_PASS_EMAIL_LOC) );
+					mailMap.put(SportConstrant.SUBJECT, propFileUtility.getEnvProperty().getString(SportConstrant.FORGOT_PASSWORD_EMAIL_SUB));
+					mailUtility.sendHtmlMail(mailMap);
+					logger.info("----------- end to send mail------");
+					response = "Password is sent to provided email";
+				}
+				catch (Exception ex)
+				{
+					logger.error("----------- Excepton in Sending Mail ----------"+ex);
+					response = "Error to send password password";
+				}
+			 		 
+		 }
+		 else
+		 {
+			
+			 response = UserManager.getErrorMessage();
+			 if(UserManager.getErrorCode().equals(ErrorConstrant.TRANSACTION_ERROR))
+			 response = "Invalid URL";
+		 }
+		
+	}
+	 logger.info("---------- Forwardng to : "+SportConstrant.FORGOT_PASS_RESULT_PAGE);
+	 return response;
+	}
+
 	@RequestMapping(value = "UserUpdateView", method = RequestMethod.GET)
 	public  String updateView(ModelMap modeMap,HttpServletRequest request)
 	{
