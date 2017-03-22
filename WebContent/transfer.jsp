@@ -75,7 +75,7 @@
                         <div class="ism-copy">
                                 <p style="color: #ffcc00; font-weight: bold;"><i class="fa fa-angle-double-right" style="color: #f00;"></i> Select Players from the list</p>
                          </div> 
-
+							<h2 style="color: #ffcc00; font-weight: bold;">${sessionScope.user.displayName}</h2>
                             <!-- Scoreboard -->
                             <div class="ism-scoreboard">
 							<div class="league-deadline-bar">
