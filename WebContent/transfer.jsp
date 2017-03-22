@@ -220,7 +220,8 @@
                                                         </c:choose>
                                                         >
                                                             <picture>
-                                                                <img src="https://ismdj.scdn5.secure.raxcdn.com/static/libsass/plfpl/dist/img/shirts/shirt_0-33.png"  alt="" title="Select a Wicket Keeper from the player list" class="ism-shirt ism-element__shirt">
+                                                            
+                                                                <img src="/SportMgmt/images/animated_wk.gif"  alt="" title="Select a Wicket Keeper from the player list" class="ism-shirt ism-element__shirt">
                                                             </picture>
                                                              <c:choose>
                                                              <c:when test="${isPlayerAvail}">
@@ -244,11 +245,10 @@
                                                     <div class="ism-element" tabindex="0">
                                                     	<div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
 
-                <picture>
-                    
-                    <img src="https://ismdj.scdn5.secure.raxcdn.com/static/libsass/plfpl/dist/img/shirts/shirt_0-33.png"                    
-                     title="Select a Wicket-Keeper" class="ism-shirt ism-element__shirt">
-                </picture>
+											                <picture>											                    
+											                    <img src="/SportMgmt/images/animated_wk.gif"                    
+											                     title="Select a Wicket-Keeper" class="ism-shirt ism-element__shirt">
+											                </picture>
 
                 											
                                                              <c:choose>
@@ -288,7 +288,7 @@
                                                         >
 
                                                             <picture>                                                                
-                                                                <img src="https://ismdj.scdn5.secure.raxcdn.com/static/libsass/plfpl/dist/img/shirts/shirt_0-33.png" 
+                                                                <img src="/SportMgmt/images/animated_bat.gif" 
                                                                 alt="" title="Select a Batsman from the player list" class="ism-shirt ism-element__shirt">
                                                             </picture>
 															
@@ -300,7 +300,7 @@
                                                              </c:when>
                                                              <c:otherwise>
                                                              <div class="ism-element__name ism-element__name--placeholder">
-                                                                 <abbr title="Defender" class="ism-element__type"><span class="ism-element__type__short">DEF</span></abbr>
+                                                                 <abbr title="Batsman" class="ism-element__type"><span class="ism-element__type__short">DEF</span></abbr>
                                                              </div>
                                                              </c:otherwise>
                                                              </c:choose>
@@ -319,7 +319,7 @@
 
                                                             <picture>
                                                                 
-                                                                <img src="https://ismdj.scdn5.secure.raxcdn.com/static/libsass/plfpl/dist/img/shirts/shirt_0-33.png"  alt="" title="Select a Batsman from the player list" class="ism-shirt ism-element__shirt">
+                                                                <img src="/SportMgmt/images/animated_bat.gif"  alt="" title="Select a Batsman from the player list" class="ism-shirt ism-element__shirt">
                                                             </picture>
 
                                                            
@@ -331,7 +331,7 @@
                                                              </c:when>
                                                              <c:otherwise>
                                                              <div class="ism-element__name ism-element__name--placeholder">
-                                                                 <abbr title="Defender" class="ism-element__type"><span class="ism-element__type__short">DEF</span></abbr>
+                                                                 <abbr title="Batsman" class="ism-element__type"><span class="ism-element__type__short">DEF</span></abbr>
                                                              </div>
                                                              </c:otherwise>
                                                              </c:choose>
@@ -349,7 +349,7 @@
 
                                                             <picture>
                                                                
-                                                                <img src="https://ismdj.scdn5.secure.raxcdn.com/static/libsass/plfpl/dist/img/shirts/shirt_0-33.png" alt="" title="Select a Batsman from the player list" class="ism-shirt ism-element__shirt">
+                                                                <img src="/SportMgmt/images/animated_bat.gif" alt="" title="Select a Batsman from the player list" class="ism-shirt ism-element__shirt">
                                                             </picture>
 
                                                            
@@ -361,7 +361,7 @@
                                                              </c:when>
                                                              <c:otherwise>
                                                              <div class="ism-element__name ism-element__name--placeholder">
-                                                                 <abbr title="Defender" class="ism-element__type"><span class="ism-element__type__short">DEF</span></abbr>
+                                                                 <abbr title="Batsman" class="ism-element__type"><span class="ism-element__type__short">DEF</span></abbr>
                                                              </div>
                                                              </c:otherwise>
                                                              </c:choose>
@@ -378,7 +378,7 @@
                                                         <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
 
                                                             <picture>
-                                                               <img src="https://ismdj.scdn5.secure.raxcdn.com/static/libsass/plfpl/dist/img/shirts/shirt_0-33.png" alt="" title="Select a Batsman from the player list" class="ism-shirt ism-element__shirt">
+                                                               <img src="/SportMgmt/images/animated_bat.gif" alt="" title="Select a Batsman from the player list" class="ism-shirt ism-element__shirt">
                                                             </picture>
 
                                                            
@@ -390,7 +390,7 @@
                                                              </c:when>
                                                              <c:otherwise>
                                                              <div class="ism-element__name ism-element__name--placeholder">
-                                                                 <abbr title="Defender" class="ism-element__type"><span class="ism-element__type__short">DEF</span></abbr>
+                                                                 <abbr title="Batsman" class="ism-element__type"><span class="ism-element__type__short">DEF</span></abbr>
                                                              </div>
                                                              </c:otherwise>
                                                              </c:choose>
@@ -407,7 +407,7 @@
                                                         <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
 
                                                             <picture>
-                                                                 <img src="https://ismdj.scdn5.secure.raxcdn.com/static/libsass/plfpl/dist/img/shirts/shirt_0-33.png" alt="" title="Select a Batsman from the player list" class="ism-shirt ism-element__shirt">
+                                                                 <img src="/SportMgmt/images/animated_bat.gif" alt="" title="Select a Batsman from the player list" class="ism-shirt ism-element__shirt">
                                                             </picture>                                                             <c:choose>
                                                              <c:when test="${isPlayerAvail}">
                                                              	<div class="ism-element__name ism-element__name--placeholder">
@@ -416,7 +416,7 @@
                                                              </c:when>
                                                              <c:otherwise>
                                                              <div class="ism-element__name ism-element__name--placeholder">
-                                                                 <abbr title="Defender" class="ism-element__type"><span class="ism-element__type__short">DEF</span></abbr>
+                                                                 <abbr title="Batsman" class="ism-element__type"><span class="ism-element__type__short">DEF</span></abbr>
                                                              </div>
                                                              </c:otherwise>
                                                              </c:choose>
@@ -437,7 +437,7 @@
                                                         <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
 
                                                             <picture>
-                                                                   <img src="https://ismdj.scdn5.secure.raxcdn.com/static/libsass/plfpl/dist/img/shirts/shirt_0-33.png" alt="" title="Select a All-Rounder from the player list" class="ism-shirt ism-element__shirt">
+                                                                   <img src="/SportMgmt/images/animated_ar.gif" alt="" title="Select a All-Rounder from the player list" class="ism-shirt ism-element__shirt">
                                                             </picture>
 															
                                                              <c:choose>
@@ -448,7 +448,7 @@
                                                              </c:when>
                                                              <c:otherwise>
                                                              <div class="ism-element__name ism-element__name--placeholder">
-                                                                 <abbr title="Forward" class="ism-element__type"><span class="ism-element__type__short">FWD</span></abbr>
+                                                                 <abbr title="All-Rounder" class="ism-element__type"><span class="ism-element__type__short">FWD</span></abbr>
                                                              </div>
                                                              </c:otherwise>
                                                              </c:choose>
@@ -465,7 +465,7 @@
                                                         <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
 
                                                             <picture>
-                                                               <img src="https://ismdj.scdn5.secure.raxcdn.com/static/libsass/plfpl/dist/img/shirts/shirt_0-33.png"  alt="" title="Select a All-Rounder from the player list" class="ism-shirt ism-element__shirt">
+                                                               <img src="/SportMgmt/images/animated_ar.gif"  alt="" title="Select a All-Rounder from the player list" class="ism-shirt ism-element__shirt">
                                                             </picture>
 
                                                             
@@ -477,7 +477,7 @@
                                                              </c:when>
                                                              <c:otherwise>
                                                              <div class="ism-element__name ism-element__name--placeholder">
-                                                                <abbr title="Forward" class="ism-element__type"><span class="ism-element__type__short">FWD</span></abbr>
+                                                                <abbr title="All-Rounder" class="ism-element__type"><span class="ism-element__type__short">FWD</span></abbr>
                                                              </div>
                                                              </c:otherwise>
                                                              </c:choose>
@@ -495,7 +495,7 @@
                                                         <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
 
                                                             <picture>
-                                                                  <img src="https://ismdj.scdn5.secure.raxcdn.com/static/libsass/plfpl/dist/img/shirts/shirt_0-33.png" alt="" title="Select a All-Rounder from the player list" class="ism-shirt ism-element__shirt">
+                                                                  <img src="/SportMgmt/images/animated_ar.gif" alt="" title="Select a All-Rounder from the player list" class="ism-shirt ism-element__shirt">
                                                             </picture>
 
                                                            
@@ -507,7 +507,7 @@
                                                              </c:when>
                                                              <c:otherwise>
                                                              <div class="ism-element__name ism-element__name--placeholder">
-                                                                <abbr title="Forward" class="ism-element__type"><span class="ism-element__type__short">FWD</span></abbr>
+                                                                <abbr title="All-Rounder" class="ism-element__type"><span class="ism-element__type__short">FWD</span></abbr>
                                                              </div>
                                                              </c:otherwise>
                                                              </c:choose>
@@ -525,7 +525,7 @@
                                                         <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
 
                                                             <picture>
-                                                                <img src="https://ismdj.scdn5.secure.raxcdn.com/static/libsass/plfpl/dist/img/shirts/shirt_0-33.png" alt="" title="Select a Bowler from the player list" class="ism-shirt ism-element__shirt">
+                                                                <img src="/SportMgmt/images/animated_bowl.gif" alt="" title="Select a Bowler from the player list" class="ism-shirt ism-element__shirt">
                                                             </picture>
 															
                                                              <c:choose>
@@ -536,7 +536,7 @@
                                                              </c:when>
                                                              <c:otherwise>
                                                              <div class="ism-element__name ism-element__name--placeholder">
-                                                                <abbr title="Midfielder" class="ism-element__type"><span class="ism-element__type__short">MID</span></abbr>
+                                                                <abbr title="Bowler" class="ism-element__type"><span class="ism-element__type__short">MID</span></abbr>
                                                              </div>
                                                              </c:otherwise>
                                                              </c:choose>
@@ -552,7 +552,7 @@
                                                         <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
 
                                                             <picture>
-                                                                <img src="https://ismdj.scdn5.secure.raxcdn.com/static/libsass/plfpl/dist/img/shirts/shirt_0-33.png"  alt="" title="Select a Bowler from the player list" class="ism-shirt ism-element__shirt">
+                                                                <img src="/SportMgmt/images/animated_bowl.gif"  alt="" title="Select a Bowler from the player list" class="ism-shirt ism-element__shirt">
                                                             </picture>
 
                                                            
@@ -564,7 +564,7 @@
                                                              </c:when>
                                                              <c:otherwise>
                                                              <div class="ism-element__name ism-element__name--placeholder">
-                                                                <abbr title="Midfielder" class="ism-element__type"><span class="ism-element__type__short">MID</span></abbr>
+                                                                <abbr title="Bowler" class="ism-element__type"><span class="ism-element__type__short">MID</span></abbr>
                                                              </div>
                                                              </c:otherwise>
                                                              </c:choose>
@@ -581,7 +581,7 @@
                                                         <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
 
                                                             <picture>
-                                                                 <img src="https://ismdj.scdn5.secure.raxcdn.com/static/libsass/plfpl/dist/img/shirts/shirt_0-33.png"  alt="" title="Select a Bowler from the player list" class="ism-shirt ism-element__shirt">
+                                                                 <img src="/SportMgmt/images/animated_bowl.gif"  alt="" title="Select a Bowler from the player list" class="ism-shirt ism-element__shirt">
                                                             </picture>
 
                                                            
@@ -593,7 +593,7 @@
                                                              </c:when>
                                                              <c:otherwise>
                                                              <div class="ism-element__name ism-element__name--placeholder">
-                                                                <abbr title="Midfielder" class="ism-element__type"><span class="ism-element__type__short">MID</span></abbr>
+                                                                <abbr title="Bowler" class="ism-element__type"><span class="ism-element__type__short">MID</span></abbr>
                                                              </div>
                                                              </c:otherwise>
                                                              </c:choose>
@@ -609,7 +609,7 @@
                                                         <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
 
                                                             <picture>
-                                                                     <img src="https://ismdj.scdn5.secure.raxcdn.com/static/libsass/plfpl/dist/img/shirts/shirt_0-33.png" alt="" title="Select a Bowler from the player list" class="ism-shirt ism-element__shirt">
+                                                                     <img src="/SportMgmt/images/animated_bowl.gif" alt="" title="Select a Bowler from the player list" class="ism-shirt ism-element__shirt">
                                                             </picture>                                                             <c:choose>
                                                              <c:when test="${isPlayerAvail}">
                                                              	<div class="ism-element__name ism-element__name--placeholder">
@@ -618,7 +618,7 @@
                                                              </c:when>
                                                              <c:otherwise>
                                                              <div class="ism-element__name ism-element__name--placeholder">
-                                                                 <abbr title="Midfielder" class="ism-element__type"><span class="ism-element__type__short">MID</span></abbr>
+                                                                 <abbr title="Bowler" class="ism-element__type"><span class="ism-element__type__short">MID</span></abbr>
                                                              </div>
                                                              </c:otherwise>
                                                              </c:choose>
@@ -635,7 +635,7 @@
                                                         <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
 
                                                             <picture>
-                                                                <img src="https://ismdj.scdn5.secure.raxcdn.com/static/libsass/plfpl/dist/img/shirts/shirt_0-33.png" alt="" title="Select a Bowler from the player list" class="ism-shirt ism-element__shirt">
+                                                                <img src="/SportMgmt/images/animated_bowl.gif" alt="" title="Select a Bowler from the player list" class="ism-shirt ism-element__shirt">
                                                             </picture>                                                             <c:choose>
                                                              <c:when test="${isPlayerAvail}">
                                                              	<div class="ism-element__name ism-element__name--placeholder">
@@ -644,7 +644,7 @@
                                                              </c:when>
                                                              <c:otherwise>
                                                              <div class="ism-element__name ism-element__name--placeholder">
-                                                                 <abbr title="Midfielder" class="ism-element__type"><span class="ism-element__type__short">MID</span></abbr>
+                                                                 <abbr title="Bowler" class="ism-element__type"><span class="ism-element__type__short">MID</span></abbr>
                                                              </div>
                                                              </c:otherwise>
                                                              </c:choose>
@@ -1236,7 +1236,7 @@
 	function aa(){
 		var elems2 = '<div class="ismjs-select">'+
 	     '<picture>'+
-	     '<img src="https://ismdj.scdn5.secure.raxcdn.com/static/libsass/plfpl/dist/img/shirts/shirt_0-33.png" alt="" title="Select a Wicket-Keeper" class="ism-shirt ism-element__shirt">'+
+	     '<img src="/SportMgmt/images/animated_wk.gif">'+
 	     '</picture>'+
 	     '<div class="ism-element__name ism-element__name--placeholder"> <abbr title="Wicket-Keeper" class="ism-element__type"><span class="ism-element__type__short">GKP</span></abbr></div>';
 	     
@@ -1252,9 +1252,9 @@
 	function defenderRemove(){
 		var def2 = '<div class="ismjs-select">'+
 	     '<picture>'+
-	    '<img src="https://ismdj.scdn5.secure.raxcdn.com/static/libsass/plfpl/dist/img/shirts/shirt_0-33.png"  alt="" title="Select a Defender" class="ism-shirt ism-element__shirt">'+
+	    '<img src="/SportMgmt/images/animated_bat.gif"  alt="" title="Select a Batsman from player list" class="ism-shirt ism-element__shirt">'+
 	     '</picture>'+
-	     '<div class="ism-element__name ism-element__name--placeholder"> <abbr title="Defender" class="ism-element__type"><span class="ism-element__type__short">DEF</span></abbr></div>';
+	     '<div class="ism-element__name ism-element__name--placeholder"> <abbr title="Batsman" class="ism-element__type"><span class="ism-element__type__short">DEF</span></abbr></div>';
 	     
 	     
 	     
@@ -1270,9 +1270,9 @@
 	function midfielderRemove(){
 		var midd2 = '<div class="ismjs-select">'+
 	     '<picture>'+
-	     '<img src="https://ismdj.scdn5.secure.raxcdn.com/static/libsass/plfpl/dist/img/shirts/shirt_0-33.png" alt="" title="Select a Defender" class="ism-shirt ism-element__shirt">'+
+	     '<img src="/SportMgmt/images/animated_bowl.gif" alt="" title="Select a Bowler from player list" class="ism-shirt ism-element__shirt">'+
 	     '</picture>'+
-	     '<div class="ism-element__name ism-element__name--placeholder"> <abbr title="Midfielder" class="ism-element__type"><span class="ism-element__type__short">MID</span></abbr></div>';
+	     '<div class="ism-element__name ism-element__name--placeholder"> <abbr title="Bowler" class="ism-element__type"><span class="ism-element__type__short">MID</span></abbr></div>';
 	    
 	     
 	     
@@ -1287,9 +1287,9 @@
 	function forwardRemove(){
 		var for2 = '<div class="ismjs-select">'+
 	     '<picture>'+
-	    '<img src="https://ismdj.scdn5.secure.raxcdn.com/static/libsass/plfpl/dist/img/shirts/shirt_0-33.png" alt="" title="Select a Defender" class="ism-shirt ism-element__shirt">'+
+	    '<img src="/SportMgmt/images/animated_ar.gif" alt="" title="Select a All-Rounder from player list" class="ism-shirt ism-element__shirt">'+
 	     '</picture>'+
-	     '<div class="ism-element__name ism-element__name--placeholder"> <abbr title="Forward" class="ism-element__type"><span class="ism-element__type__short">FWD</span></abbr></div>';
+	     '<div class="ism-element__name ism-element__name--placeholder"> <abbr title="All-Rounder" class="ism-element__type"><span class="ism-element__type__short">FWD</span></abbr></div>';
 	    
 	     
 	     
