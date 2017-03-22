@@ -565,7 +565,7 @@ input:-webkit-autofill {
 				   </div>
 				  <div class="form-group">            
 		            <div align="center">
-		                <a href="javascript:void(0);" class="button-lrg" onclick="submitRSForm();"><input id="resetBtn" type="button" class="btn btn-primary" value="Send Password"></a>
+		                <a href="javascript:void(0);" class="button-lrg" onclick="resetPassword();"><input id="resetBtn" type="button" class="btn btn-primary" value="Send Password"></a>
 		            </div> 
 		          </div>
 		       </form>
@@ -766,6 +766,31 @@ input:-webkit-autofill {
    		}
     	resetPassForm.submit();
  }
+    function resetPassword()
+    {
+    	var resetPassForm = document.forms['ResetPassForm'];
+    	if(typeof resetPassForm['emailId'] == 'undefined' || resetPassForm['emailId'].value=='')
+    	{
+    		alert("Please enter Email ID");
+    		return false;
+    	}
+    	var isEmailValid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(resetPassForm['emailId'].value);
+    	if(!isEmailValid)
+   		{
+    		alert("Email ID is not valid");
+    		return false;
+   		}   	var url = "user/resetPassword?emailId="+resetPassForm['emailId'].value;
+    	$.ajax({
+    		  url: url,
+    		  dataType: 'text',
+    		  success: function( resp ) {
+    			  alert(resp);
+    		  },
+    		  error: function( req, status, err ) {
+    		    console.log( 'something went wrong', status, err );
+    		  }
+    		});
+    }
 function doLogin()
 {
 	var loginForm = document.forms['LoginForm'];

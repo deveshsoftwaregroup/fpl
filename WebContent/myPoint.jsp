@@ -769,6 +769,11 @@
 
  <script src="/SportMgmt/js/jquery.js"></script> 
   <script src="/SportMgmt/js/bootstrap.min.js"></script> 
+  <c:if test="${empty sportMgmtRes.result}">
+  <script type="text/javascript">
+  uploadTeamView('${sessionScope.userId}','${sessionScope.gameDetails.gameId}');
+  </script>
+  </c:if>
 <script type="text/javascript">
    var gameDetailsJson = null;
    var playerListJson = null;
