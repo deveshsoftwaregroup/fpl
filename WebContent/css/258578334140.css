@@ -11304,7 +11304,9 @@ background-size:33px 6px
         max-width: 40px;
             max-height: 60px;
 }
-
+.ism #ismr-pos1 .ism-element__shirt, .ism #ismr-pos2 .ism-element__shirt {
+    max-height: 48px;
+}
 .ism .ismjs-select:hover .ism-element__shirt {
 transform:rotate(360deg);
     -ms-transform:rotate(360deg);
@@ -11482,7 +11484,8 @@ padding-right:0px;
 padding-left:0px;
     width: 90% !important;
     margin: auto !important;
-    max-width: 100px !important;
+    max-width: 70px !important;
+    max-height: 70px;
 }
 
 .ism .ism-element__shirt {
@@ -11505,7 +11508,7 @@ display:none
 }
 
 .ism .ism-element__control--primary {
-left:2rem
+left:0
 }
 
 .ism .ism-element__control--info {
@@ -13620,7 +13623,9 @@ background-image:url(data:image/gif;base64,R0lGODlhFAAUAPcAAAAAAJmZmZ2dnZ6enqKio
 .ism-element .ismjs-select {
     background: rgba(0,0,0,0.3);
     padding: 5px;
-    border-radius: 60px;
+    border-radius: 50%;
+        max-width: 70px;
+    max-height: 70px;
 }
 .ism-element .ismjs-select:hover {
     background: rgba(133, 255, 0, 0.75);

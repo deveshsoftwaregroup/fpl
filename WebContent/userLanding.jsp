@@ -26,24 +26,7 @@
     font-weight: bold;}
     /*  home  page */
 .ism-game-header h1 a{ color:#fff;}
- /*  #ajaxloader {
-    border: 16px solid #f3f3f3; 
-    border-top: 16px solid blue;
- 	border-right: 16px solid green;
- 	border-bottom: 16px solid red;
- 	border-left: 16px solid pink;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 1s linear infinite;
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    margin-left: -32px; 
-    margin-top: -32px;
-    z-index: 999;
-    display:none;
-} */
+  
 .mask{ background: #000; opacity: 0.5; position:fixed; top: 0; left: 0; width: 100%; height:100%;}
 
 
@@ -81,13 +64,13 @@
     <script src="/SportMgmt/js/jquery.superslides.js" type="text/javascript" charset="utf-8"></script>
      <script type="text/javascript">
         $(document).ajaxStart(function(){
- 		$("#ajaxloader").css("display", "block");
- 		$('.mask').show();
+ 		$("#ajaxloader").css("display", "none");
+ 		$('.mask').hide();
  	});
 
  	$(document).ajaxComplete(function(){
- 	    $("#ajaxloader").css("display", "none");
- 	    $('.mask').hide();
+ 	    $("#ajaxloader").css("display", "block");
+ 	    $('.mask').show();
  	});
 
    </script>
@@ -105,8 +88,9 @@
     </c:forEach>
    	</c:if>
     <%@ include file="footer.jsp" %>
-   <!--  <div id="ajaxloader"></div>
-   <div class="mask" style="display:none;"></div> -->
+    <div class="mask" style="display:none;"></div>
+    <div id="ajaxloader"></div>
+   
     </main>
   </body>
 	

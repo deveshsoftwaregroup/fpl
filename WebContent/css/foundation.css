@@ -4136,21 +4136,16 @@ table.hover tr:nth-of-type(even):hover {
     width: 150px !important;
     height: 200px !important;
     animation: none !important; */
-    margin-left: -50px !important;
-    margin-top: -50px !important;
-    position: fixed;
+    width: 500px;
+    height: 500px;
+    position: absolute;
     left: 50%;
     top: 50%;
-    background: url('../images/football-texture.png') 0 0 no-repeat !important;
-    background-size: auto 100%;
-    box-shadow: -10px -30px 40px -20px inset, 10px 10px 10px white inset, 0 8px 10px -10px, 0 1px 1px 0px #CCC inset;
-    width: 100px !important;
-    height: 100px !important;
-    overflow: hidden;
-    border: none !important;
-    border-radius: 100% !important;
-    -webkit-animation: 2s move infinite linear !important;
-    animation: 2s move infinite linear !important;
+    background-image: url(../images/preloader.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: -250px 0 0 -250px;
+    border-radius: 50%;
 }
 #ajaxloader : before {box-shadow: 0 0 50px 20px #000;}
 #ajaxloader :: before {
@@ -4436,4 +4431,20 @@ button.close {
 }
 .league-panel__body .btnSubmit:hover {
     background: #005790;
+}
+#preloader{position:fixed; top:0; left:0; right:0; bottom:0; background-color:rgba(0, 0, 0, 0.9); z-index:99999}
+#status{width: 500px;
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-image: url(../images/preloader.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: -250px 0 0 -250px;
+    border-radius: 50%;
+}
+#ismr-scoreboard .plain_text {
+    display: inline-block;
+    width: 100%;
 }

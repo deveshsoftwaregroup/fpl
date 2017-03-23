@@ -36,7 +36,7 @@
 .modal-dialog.loginForm{ width: 100%;
     max-width: 560px;}
 .loginForm .modal-content{background:rgba(255,255,255,1);-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;border-radius:0;padding:5px 10px;border:none}
-.loginForm .modal-header{min-height:16.43px;padding:15px;border-bottom:none;text-align:center}
+.loginForm .modal-header{min-height:16.43px;padding:15px;    border-bottom: solid 4.5px hsl(232, 51%, 33%);text-align:center}
 .loginForm .modal-title{margin:0;line-height:1.42857143;font-size:23px;letter-spacing:1px;font-weight:400;text-transform:uppercase;padding:6px 2px;color:#20295b;text-shadow:none}
 .loginForm .modal-header .close{color:#fff;opacity:1;font-size:24px;padding:6px;border-radius:50%;width:35px;height:35px;position:absolute;top:-16px;right:-16px;background:#D94B51;text-shadow:none;-webkit-font-smoothing:antialiased;font-weight:300;outline:none!important;-webkit-transition:all 600ms ease-in-out;-moz-transition:all 600ms ease-in-out;-ms-transition:all 600ms ease-in-out;-o-transition:all 600ms ease-in-out;transition:all 600ms ease-in-out}
 .loginForm .modal-header .close:hover{background:#fff;color:#D94B51}
@@ -229,8 +229,8 @@
 }
 
 .input__field--hoshi {
-	margin-top: 1em;
-	padding: 0.85em 0.15em;
+	margin-top: .6em;
+    padding: 1.2em 0.15em;
 	width: 100%;
 	background: transparent;
 	color: #595F6E;
@@ -334,7 +334,13 @@
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 1000px white inset !important;
 }
-
+.loginForm .modal-header img {
+    height: 75px;
+    position: absolute;
+    left: 5px;
+    top: 8px;
+    opacity: 1;
+}
 </style>
 </head>
 
@@ -347,6 +353,7 @@ input:-webkit-autofill {
 	<div id="login-overlay" class="modal-dialog loginForm">
 	      <div class="modal-content">
 	          <div class="modal-header">
+	          	<img alt="" src="../images/ipl.jpg">
 	              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
 	              <h4 class="modal-title" id="myModalLabel">Login Form</h4>
 	          </div>

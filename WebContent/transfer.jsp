@@ -9,11 +9,18 @@
     
     <style>
     .addPlayer a{ color:#ed3a28; font-size: 18px;padding: 5px 4px;}
-    .removePlayerIcon{ background: #de5e00;
-    color: #fff !important;
-    padding: 2px 5px;
+    .removePlayerIcon{     
+    background: #fff;
+    color: #e03333 !important;
+    padding: 3px 5px;
     font-size: 12px;
     font-weight: bold;
+    border-radius: 50%;
+    transition:all .3s;
+    }
+    .removePlayerIcon:hover{     
+    background: #e03333;
+    color: #fff !important;
     }
     .ism-table--el__status.text-center.addPlayer {
     padding-left: .2rem;
@@ -22,24 +29,7 @@
 }
     /*  home  page */
 .ism-game-header h1 a{ color:#fff;}
-#ajaxloader {
-    border: 16px solid #f3f3f3; /* Light grey */
-    border-top: 16px solid blue;
- 	border-right: 16px solid green;
- 	border-bottom: 16px solid red;
- 	border-left: 16px solid pink;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 1s linear infinite;
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    margin-left: -32px; 
-    margin-top: -32px;
-    z-index: 999;
-    display:none;
-}
+
 .mask{ background: #000; opacity: 0.5; position:fixed; top: 0; left: 0; width: 100%; height:100%;}
 
 
@@ -58,9 +48,6 @@
     font-size: 14px;
     line-height: 20px;}
 </style>
- <div id="preloader">
-  <div id="status">&nbsp;</div>
-</div>
 <s:sportExt retrieve="priceList" />
 <s:sportExt retrieve="deadLine" />
 <div class="addsbanner-lft"></div>
@@ -183,7 +170,7 @@
 									</div>
                                                               
                         	 </div> 
-                        	 <input type="button" value="v" onclick="updatePoints('${sessionScope.user.userId}');">
+                     
 								
                         </div>
                     </div>

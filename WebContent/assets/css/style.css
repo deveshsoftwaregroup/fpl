@@ -35,8 +35,18 @@ img:hover{opacity:0.75}
 .btn-theme{background-color:#d083cf; color:#fff}
 .btn-theme:hover{background-color:#ce39cc; color:#fff}
 .transition{-webkit-transition:all 0.5s; -moz-transition:all 0.5s; -ms-transition:all 0.5s; -o-transition:all 0.5s; transition:all 0.5s}
-#preloader{position:fixed; top:0; left:0; right:0; bottom:0; background-color:#fff; z-index:99999}
-#status{width:200px; height:200px; position:absolute; left:50%; top:50%; background-image:url(images/status.gif); background-repeat:no-repeat; background-position:center; margin:-100px 0 0 -100px}
+#preloader{position:fixed; top:0; left:0; right:0; bottom:0; background-color:rgba(0, 0, 0, 0.9); z-index:99999}
+#status{width: 500px;
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-image: url(images/preloader.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: -250px 0 0 -250px;
+    border-radius: 50%;
+}
 .scrollToTop{bottom:105px; display:none; font-size:32px; font-weight:bold; height:50px; position:fixed; right:75px; text-align:center; text-decoration:none; width:50px; z-index:9; border:1px solid; -webkit-transition:all 0.5s; -moz-transition:all 0.5s; -ms-transition:all 0.5s; -o-transition:all 0.5s; transition:all 0.5s}
 .scrollToTop:hover, .scrollToTop:focus{text-decoration:none; outline:none}
 #header{display:inline; float:left; width:100%; margin-top:10px; }
@@ -290,3 +300,4 @@ figure.effect-layla:hover figcaption::after, figure.effect-layla:hover h2, figur
    .header_bottom { padding: 15px;}
    .footer_top {padding: 10px 15px 48px;}
 }
+

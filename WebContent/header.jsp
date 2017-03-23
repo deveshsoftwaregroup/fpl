@@ -28,24 +28,7 @@
     font-weight: 600;
 }
 .ism-game-header h1 a{ color:#fff;}
-#ajaxloader {
-    border: 16px solid #f3f3f3; /* Light grey */
-    border-top: 16px solid blue;
- 	border-right: 16px solid green;
- 	border-bottom: 16px solid red;
- 	border-left: 16px solid pink;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 1s linear infinite;
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    margin-left: -32px; 
-    margin-top: -32px;
-    z-index: 999;
-    display:none;
-}
+
 .mask{ background: #000; opacity: 0.5; position:fixed; top: 0; left: 0; width: 100%; height:100%;}
 
 
