@@ -40,13 +40,13 @@
 
 .transfer-Col-6{ width:50%; float: left;}
 
-.tabBtn{    width: 100%;
-    background: #36947a;
-    color: #ffffff;
-    padding: 5px 8px;
-    text-align: center;
+.tabBtn{    
+	width: 100%;
+        padding: 5px 10px;
+    box-sizing: border-box;
     font-size: 14px;
-    line-height: 20px;}
+    line-height: 20px;
+    }
 </style>
 <s:sportExt retrieve="priceList" />
 <s:sportExt retrieve="deadLine" />
@@ -60,9 +60,9 @@
                     <div id="ismr-scoreboard">
                         <div>
                         <div class="ism-copy">
-                                <p style="color: #ffcc00; font-weight: bold;"><i class="fa fa-angle-double-right" style="color: #f00;"></i> Select Players from the list</p>
+                                <h3 style="color: #193782;"><i class="fa fa-angle-double-right" style="color: #f00;"></i> Select Players from the list</h3>
                          </div> 
-							<h2 style="color: #ffcc00; font-weight: bold;">${sessionScope.user.displayName}</h2>
+							
                             <!-- Scoreboard -->
                             <div class="ism-scoreboard">
 							<div class="league-deadline-bar">
@@ -75,7 +75,7 @@
                         <div>
                         	<div class="plain_text" style="padding-left:0px;">
                         	
-                        	<div class="col-sm-12" style="margin-left: -15px; margin-right: -15x;">
+                        	<div class="row">
                         		<div class="transfer-Col-6">
                         			<div class="tabBtn">
 										Want unlimited free transfer? : 
@@ -108,15 +108,17 @@
                         			<div class="tabBtn">Free Transfer : Used/Available</div>
                         		</div>
                         	</div>
-                        	<div class="col-sm-12" style="margin-left: -15px; margin-right: -15x;">
+                        	<div class="row">
                         		<div class="transfer-Col-6">
                         			<div class="tabBtn">
-										Player Count :                                 		
-                                </div>
+										Player Count :     <span class="added-player-count"> </span>                            		
+                                	</div>
                         		</div>
                         		
                         		<div class="transfer-Col-6">
-                        			<div class="tabBtn added-player-count"> </div>
+                        			 <c:if test="${sessionScope.user.hasActivePlan}">
+        <div class="tabBtn"><span>Remaining &#8377 :</span> <span id="planBalanceDiv">${sessionScope.user.activePlan.balance} </span><span> million</span></div>
+        </c:if>
                         		</div>                        		
                         	</div>  
                         	                              
@@ -863,9 +865,7 @@
         
         <div id="ismr-side" class="ism-sidebar">
             <div>
-        <c:if test="${sessionScope.user.hasActivePlan}">
-        <div class="remain_coin"><span>Remaining &#8377 :</span> <span id="planBalanceDiv">${sessionScope.user.activePlan.balance} </span><span> million</span></div>
-        </c:if>
+       
                 <section class="ism-bordered ism-bordered--primary">
 
                     <div class="ism-section-header">

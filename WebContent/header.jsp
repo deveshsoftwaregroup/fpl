@@ -198,11 +198,16 @@
 
                     <h1>
                     	<a href="/a/">THE 12TH MAN FANTASY LEAGUE</a>
-                    </h1>                    
+                    </h1>  
+                    <span class="user-name"><i class="fa fa-user" ></i> ${sessionScope.user.displayName}</span>                  
                 </div>
-                <nav role="navigation" class="ism-nav ismjs-priority-nav ismjs-nav priority-nav" instance="0">
-
-                    <ul class="ism-nav__list ismjs-main-nav">                        
+                
+            </div>
+        </div>
+        <nav role="navigation" class="ism-nav ismjs-priority-nav ismjs-nav priority-nav" instance="0">
+			<div class="wrapper">
+                    <ul class="ism-nav__list ismjs-main-nav">   
+                    <img src ="/SportMgmt/images/menu-logo.png" class="lft-logo">                     
 						<li class="ism-nav__list__item">                            
                             <a href="javascript:void(0);" class="ism-nav__tab" onclick="openHomeHome();">League Home</a>
                         </li>
@@ -233,15 +238,15 @@
                         <li class="ism-nav__list__item">
                             <a href="/SportMgmt/mvc/user/Logout" class="ism-nav__tab ">Sign Out</a>
                         </li>
-
+                        <li class="ism-nav__list__item"></li> 
+                        <img src ="/SportMgmt/images/menu-logo1.png" class="rgt-logo"> 
                     </ul>
                   <span class="ism-nav__dropdown-wrapper priority-nav__wrapper" aria-haspopup="false">
 					<button aria-controls="menu" type="button" class="ism-nav__dropdown-toggle priority-nav__dropdown-toggle priority-nav-is-hidden">More</button>
 					<ul aria-hidden="true" class="ism-nav__dropdown priority-nav__dropdown"></ul>
 					</span>
-                </nav>
-            </div>
-        </div>
+                </div>
+           </nav>
     </div>  
    </div>  
 

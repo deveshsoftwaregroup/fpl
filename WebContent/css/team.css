@@ -242,7 +242,7 @@ html {
 @media(min-width:43.75em) {
     .league {}.league .league-section-title {
         font-size: 2.2rem;
-            color: #ffcc00;
+            color: #333;
     }
     .league .league-sub-header {
         font-size: 1.8rem
@@ -275,7 +275,6 @@ html {
 .league .league-deadline-bar__heading {
     display: inline-block;
     margin-right: .8rem;
-    color: white;
     font-size: 1.5rem;
 }
 .league .league-deadline-bar__deadline {
@@ -849,7 +848,7 @@ button.close {
     margin-top: 1rem;
     margin-bottom: 1rem;
     font-size: 1.4rem;
-    color:#ffdf00;
+    color:#333;
 }
 .league .league-data-list {
     background-color: #fafafa
@@ -1104,7 +1103,7 @@ border-top: 1px solid #E8E8E8;
     text-align: center;
     font-size: 14px;
     font-family: opensans-reg;
-    color: #3adb76;
+    color: #056073;
 }
 .team-row.date:hover {
     background: none;
@@ -1194,7 +1193,7 @@ border-top: 1px solid #E8E8E8;
 .badge-25.OLD{background-position:-100px -125px}
 
 .fixtures {
-    color: #c7c7c7;
+    color: #333;
     min-height: 450px;
 }
 

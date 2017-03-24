@@ -102,7 +102,7 @@ h2.head {margin: 15px 0 20px 0; font-size: 17px;}
     margin: 0 0 0 20px;
     padding: 0;
 }
-.static_container p {margin:5px 0; color:#fff;}
+.static_container p {margin:5px 0; color:#333;}
 </style>
 
  <main id="mainContent" tabindex="0" class="ism">

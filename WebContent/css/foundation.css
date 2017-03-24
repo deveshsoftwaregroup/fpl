@@ -4162,7 +4162,7 @@ table.hover tr:nth-of-type(even):hover {
           transform: rotateX(80deg);
 }
 
-.remain_coin{color:#fff;margin-bottom:10px;}
+.remain_coin{color:#fff;margin-bottom:0;}
 .remain_coin span {
     color: #ec5840;
     font-size: 20px;
@@ -4237,7 +4237,7 @@ h1.rule-heading {
 }
 .link {
     background: none;
-    color: #ffca00;
+    color: #ffd843;
 }
 .link:hover {
     text-decoration: underline;
@@ -4447,4 +4447,6 @@ button.close {
 #ismr-scoreboard .plain_text {
     display: inline-block;
     width: 100%;
+        background: #4e6dbd;
+    color: #fff;
 }
