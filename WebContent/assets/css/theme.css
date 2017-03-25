@@ -172,3 +172,11 @@ ul.newsticker a > img{height:20px; margin-right:5px; width:25px}
     margin: 0;
     padding: 0;
 }
+span.fan {
+    position: absolute;
+    left: 112px;
+    top: 56px;
+    font-family: 'Oswald',sans-serif;
+    font-size: 16px;
+    color: #233373;
+}

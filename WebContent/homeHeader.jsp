@@ -354,6 +354,7 @@ input:-webkit-autofill {
 	      <div class="modal-content">
 	          <div class="modal-header">
 	          	<img alt="" src="../images/ipl.jpg">
+	          	<span class="fan">Fantasy</span>
 	              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
 	              <h4 class="modal-title" id="myModalLabel">Login Form</h4>
 	          </div>

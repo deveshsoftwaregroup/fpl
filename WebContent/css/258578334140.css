@@ -1,5 +1,5 @@
 @charset "UTF-8";
-
+@font-face{font-family:"Oswald"; font-style:normal; font-weight:400; src:local("Oswald Regular"),local("Oswald-Regular"),url("../font/Oswald-Regular-400.woff") format("woff")}
 html {
 font-family:sans-serif;
 -ms-text-size-adjust:100%;
@@ -3112,7 +3112,7 @@ font-size:1.2rem
 }
 
 h1,h2,h3,h4,h5,h6 {
-font-family:"PremierSans-Bold",Arial,"Helvetica Neue",Helvetica,sans-serif;
+font-family: 'Oswald',sans-serif;
 font-weight:400
 }
 
@@ -5931,7 +5931,8 @@ display:block
 .fixtures .date {
 display:block;
 font-size:2rem;
-margin-bottom:2rem;
+margin-top:2rem;
+margin-bottom:0;
 float:left;
 font-family:"PremierSans-Bold",Arial,"Helvetica Neue",Helvetica,sans-serif
 }
@@ -9260,14 +9261,14 @@ z-index:5
 }
 
 .ism .ism-form__select-wrap::after {
-content:'';
-background:url(https://ismdj.scdn5.secure.raxcdn.com/static/libsass/plfpl/dist/pulselive/i/sprites/global-sprite.png?27848e1b7541) -481px -453px no-repeat;
-width:10px;
+    content: "\f105";
+    font: normal normal normal 14px/1 FontAwesome;
+	width:10px;
 height:6px;
 position:absolute;
 top:50%;
 right:1rem;
-margin-top:-3px;
+margin-top:-6px;
 -webkit-transition:.3s;
 transition:.3s
 }
@@ -9893,9 +9894,15 @@ width:auto
 padding-left:1rem;
 padding-right:1rem;
 margin-top:0;
-background-color: #16224d;
+background-color: #1a398a;
 }
-
+.menu-bar .wrapper {
+    position: relative;
+}
+.menu-bar {
+    background-color: #16224d;
+    border-top: solid 1px #ffffff;
+}
 .ism .ism-nav__tab {
 padding:0 1.8rem;
 -webkit-transition:all .2s;
@@ -9918,12 +9925,12 @@ padding-left:1rem
 }
 
 .ism .ism-nav__list {
-display:inline-block;
+/* display:inline-block; */
 font-size:0;
 margin-left:0;
-width: 100%;
+/* width: 100%; */
 background: #1a398a;
-position: relative;
+/* position: relative; */
 }
 
 .ism .ism-nav__list .ism-nav__list__item {
@@ -9958,21 +9965,21 @@ display:inline-block
 }
 
 .ism .ism-nav__dropdown-toggle {
-padding:0 1.8rem;
--webkit-transition:all .2s;
-transition:all .2s;
-border-radius:2px 2px 0 0;
-cursor:pointer;
-font-size: 1.4rem;
-line-height: 3.3rem;
-text-align:center;
-text-decoration:none;
-position:absolute;
-border:0;
-background-color: #005821;
-    border: solid 1px #ececec;
+padding: 0 1.8rem;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+    border-radius: 0;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 5.3rem;
+    max-height: 52px;
+    text-align: center;
+    text-decoration: none;
+    position: absolute;
+    border: solid 1px #5468d8;
+    background-color: #3F51B5;
     border-bottom: none;
-color:#fff
+    color: #fff;
 }
 
 @media(min-width:43.75em) {
@@ -9983,14 +9990,14 @@ padding-left:3rem
 }
 
 .ism .ism-nav__dropdown-toggle:hover,.ism .ism-nav__dropdown-toggle:focus {
-background-color: #005630;
-    border: solid 1px #eaeaea;
+background-color: #16224d;
+    border: solid 1px #2c50ad;
     border-bottom: none;
 }
 
 .ism .ism-nav__dropdown-toggle::after {
-content:'';
-background:url(https://ismdj.scdn5.secure.raxcdn.com/static/libsass/plfpl/dist/pulselive/i/sprites/global-sprite.png?27848e1b7541) -471px -453px no-repeat;
+content: "\f107";
+font: normal normal normal 14px/1 FontAwesome;
 width:10px;
 height:6px;
 display:inline-block;
@@ -11532,7 +11539,8 @@ right:2rem
 .ism .ism-element-row {
 position:relative;
 max-width:410px;
-margin:auto
+margin:auto;
+    padding: 0 8%;
 }
 
 .ism .ism-element-row:after {
@@ -12080,7 +12088,9 @@ background: url('../images/pitch-820.png')no-repeat center center;
 
 }
 } */
-
+.ism .ism-pitch > div {
+    padding: 30px 0;outline: none;
+}
 @media only screen and (min-width:64em) and (-webkit-min-device-pixel-ratio:2),only screen and (min-width:64em) and (min--moz-device-pixel-ratio:2),only screen and (min-width:64em) and (min-resolution:192dpi),only screen and (min-width:64em) and (min-resolution:2dppx) {
 .ism .ism-pitch {
 background-image:url(https://ismdj.scdn5.secure.raxcdn.com/static/libsass/plfpl/dist/img/pitch-2160.png?27848e1b7541);
@@ -12090,7 +12100,7 @@ background-size:1080px 690px
 
 @media(min-width:64em) {
 .ism .ism-pitch__unit {
-min-height:116px
+min-height:100px
 }
 }
 
@@ -13672,12 +13682,12 @@ h4 time {
 }
 img.lft-logo {
     position: absolute;
-    left: -169px;
+    left: -160px;
     background-color: #1a398a;
 }
 img.rgt-logo {
     position: absolute;
-    right: -170px;
+    right: -160px;
     background-color: #1a398a;
 }
 .ism-container #mainContent {

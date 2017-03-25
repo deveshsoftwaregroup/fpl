@@ -398,7 +398,21 @@ header nav ul li a:hover {color: #ff455e;}
 #logo img { height: 110px; margin-top: 5px; border: solid 4px #fff;}
 .banner-wrapper {float: left; clear: both; color: #fff; padding: 50px; font-size: 30px;}
 .banner-wrapper p.topHeaderText { text-transform: uppercase; font-family: 'MyFontDecor'; text-shadow: 0px 1px 2px #000;}
-.banner-wrapper .topHeaderText span { font-size: 64px; display: block; line-height: 60px; color: #fff;}
+.banner-wrapper .topHeaderText span { 
+	font-size: 64px;
+    display: block;
+    line-height: 60px;
+    color: #000000;
+    background: #fff;
+    background: -webkit-linear-gradient(-90deg, #00ceff, #ffffff);
+    background: -o-linear-gradient(-90deg, #00ceff, #ffffff);
+    background: -moz-linear-gradient(-90deg, #00ceff, #ffffff);
+    background: linear-gradient(-90deg, #00ceff, #ffffff);
+    padding: 8px;
+    /* -webkit-background-clip: text; */
+    /* -webkit-text-fill-color: transparent; */
+    text-shadow: 0px 1px 3px #fff;
+	}
 .smtxt {background: #000; padding: 8px 25px; display: inline; color: #ffed19;}
 .fbox{ background: rgba(255, 255, 255, 0.5); border:none;padding: 12px 25px; color: #000; text-shadow: none;
     font-family: openSans-Semibold; font-size: 22px;}
@@ -436,7 +450,7 @@ a#menuicon span{background: #292121;}
 .rightMenuOpen a#menuicon span{background: #ffcf19;}
 
 @media (max-width:1024px){
-	.banner-wrapper .topHeaderText span {font-size: 54px; line-height: 50px;}
+	.banner-wrapper .topHeaderText span {font-size: 50px; line-height: 50px;}
 }
 @media (max-width:768px){
 	#main-content { top: 100px; bottom: auto;}

@@ -15,7 +15,8 @@
     <link rel="stylesheet" href="/SportMgmt/css/superslides.css">
     <link rel="stylesheet" type="text/css" href="/SportMgmt/css/customMedia.css">
     <link rel="stylesheet" type="text/css" href="/SportMgmt/css/258578334140.css">
-    <script src="https://use.fontawesome.com/d4e6d4c165.js"></script>
+    <link rel="stylesheet" type="text/css" href="/SportMgmt/css/font-awesome.css">
+    <%-- <script src="https://use.fontawesome.com/d4e6d4c165.js"></script> --%>
     <style>
     
 .ism .ism-element__name {
@@ -204,10 +205,13 @@
                 
             </div>
         </div>
+        <div class="menu-bar">
+        <div class="wrapper">
+       		 <img src ="/SportMgmt/images/menu-logo.png" class="lft-logo">   
+             <img src ="/SportMgmt/images/menu-logo1.png" class="rgt-logo"> 
         <nav role="navigation" class="ism-nav ismjs-priority-nav ismjs-nav priority-nav" instance="0">
-			<div class="wrapper">
+                    
                     <ul class="ism-nav__list ismjs-main-nav">   
-                    <img src ="/SportMgmt/images/menu-logo.png" class="lft-logo">                     
 						<li class="ism-nav__list__item">                            
                             <a href="javascript:void(0);" class="ism-nav__tab" onclick="openHomeHome();">League Home</a>
                         </li>
@@ -239,14 +243,15 @@
                             <a href="/SportMgmt/mvc/user/Logout" class="ism-nav__tab ">Sign Out</a>
                         </li>
                         <li class="ism-nav__list__item"></li> 
-                        <img src ="/SportMgmt/images/menu-logo1.png" class="rgt-logo"> 
                     </ul>
+                    
                   <span class="ism-nav__dropdown-wrapper priority-nav__wrapper" aria-haspopup="false">
 					<button aria-controls="menu" type="button" class="ism-nav__dropdown-toggle priority-nav__dropdown-toggle priority-nav-is-hidden">More</button>
 					<ul aria-hidden="true" class="ism-nav__dropdown priority-nav__dropdown"></ul>
 					</span>
-                </div>
            </nav>
+           </div>
+           </div>
     </div>  
    </div>  
 
@@ -328,7 +333,7 @@
 		}
 		function uploadRankingView()
 		{
-			url ="/SportMgmt/myPoint.jsp";
+			url ="/SportMgmt/ranking.jsp";
 				$.ajax({
 		     		  url: url,
 		     		  dataType: 'html',

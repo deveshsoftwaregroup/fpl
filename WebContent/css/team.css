@@ -280,7 +280,7 @@ html {
 .league .league-deadline-bar__deadline {
     font-family: Opensans-regular, "Helvetica Neue",Helvetica,Arial,sans-serif;
     display: inline-block;
-    color: #ffcc00;
+    color: #e90034;
     font-size: 1.5rem;
     line-height: 24px;
 }
@@ -1104,16 +1104,18 @@ border-top: 1px solid #E8E8E8;
     font-size: 14px;
     font-family: opensans-reg;
     color: #056073;
+        background: #dee6e1;
+            border-color: #ccc;
 }
 .team-row.date:hover {
     background: none;
-    color: #fff;
+    color: #32cc6b;
 }
 .badge-25 {
-    background-image: url('../images/badges-25-sprite.png');
+    background-image: url('../images/ipl-teamslogo.jpg');
     background-repeat: no-repeat;
-    width: 25px;
-    height: 25px;
+    width: 27px;
+    height: 27px;
     display: block;
     background-position: -175px -75px;
 }
@@ -1135,19 +1137,20 @@ border-top: 1px solid #E8E8E8;
     background-position: -125px -50px;
 }
 .badge-25.ARS {
-    background-position: -25px 0;
+    background-position: -42px -53px;
 }
 .badge-25.SOU {
     background-position: -150px -100px;
 }
 .badge-25.BOU {
-    background-position: -50px -50px;
+       background-position: -71px -43px;
+    background-size: 130px;
 }
 .badge-25.WBA {
     background-position: -125px -150px;
 }
 .badge-25.BUR {
-    background-position: 0 -75px;
+    background-position: -122px -48px
 }
 .badge-25.STK {
     background-position: -150px -125px;
@@ -1171,17 +1174,17 @@ border-top: 1px solid #E8E8E8;
 .badge-25.BRN{background-position:0 -75px}
 .badge-25.CAR{background-position:-25px -75px}
 .badge-25.CHA{background-position:-50px -75px}
-.badge-25.CHE{background-position:-75px -75px}
+.badge-25.CHE{background-position:-8px -40px}
 .badge-25.COV{background-position:-100px 0}
-.badge-25.CRY{background-position:-100px -25px}
+.badge-25.CRY{background-position:-6px -11px}
 .badge-25.DER-new{background-position:-100px -50px}
-.badge-25.DER{background-position:-100px -75px}
-.badge-25.EVE{background-position:0 -100px}
+.badge-25.DER{background-position:-120px -11px}
+.badge-25.EVE{background-position:-87px 0px}
 .badge-25.FUL{background-position:-25px -100px}
-.badge-25.HUL{background-position:-50px -100px}
+.badge-25.HUL{background-position:-49px -3px}
 .badge-25.IPS{background-position:-75px -100px}
 .badge-25.LEE{background-position:-100px -100px}
-.badge-25.LEI{background-position:-125px 0}
+.badge-25.LEI{background-position:-119px -9px}
 .badge-25.LIV{background-position:0 0}
 .badge-25.MCI{background-position:-125px -50px}
 .badge-25.MID{background-position:-125px -75px}
@@ -1199,7 +1202,7 @@ border-top: 1px solid #E8E8E8;
 
 .league .choose_capt {
         padding:5px 1rem;
-    background: #223541;
+    background: #ddd;
     margin: 10px;
 }
 .choose_capt .from_row {
@@ -1249,9 +1252,9 @@ border-top: 1px solid #E8E8E8;
 .pager-header .pager-heading {
     color: #e90052;
 }
-.pager a.pager-btn{background: #fff700;}
+.pager a.pager-btn{background: #3adb76; color:#fff;}
 .pager a.pager-btn:hover {
-    background: #00ff87;
+    background: #1bb755;
     color: #fff;
 }
 .pager .fa-angle-right {
@@ -1316,13 +1319,14 @@ border-top: 1px solid #E8E8E8;
 .points-container {
     margin-left: 175px;
     position: relative;
-	color: #fff;
+	color: #333;
+    font-size: 13px;
 }
 .points-container .point-row:nth-child(odd) {
-    background: rgba(0, 0, 0, .2);
+    background: #f1f1f1;
 }
 .points-container .point-row:nth-child(even) {
-    background:rgba(0, 0, 0, .5);
+    background:#dcdcdc;
 }
 .point-row:after {
     clear: both;
