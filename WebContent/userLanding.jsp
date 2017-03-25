@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="/SportMgmt/css/superslides.css">
     <link rel="stylesheet" type="text/css" href="/SportMgmt/css/customMedia.css">
     <link rel="stylesheet" type="text/css" href="/SportMgmt/css/258578334140.css">
-    <script src="https://use.fontawesome.com/d4e6d4c165.js"></script>
+    <%-- <script src="https://use.fontawesome.com/d4e6d4c165.js"></script> --%>
     <style>
     .addPlayer a{ color:#ed3a28; font-size: 18px; padding: 5px;}
     .removePlayerIcon{ background: #de5e00;

@@ -138,9 +138,11 @@
     	</header>
     <div id="slides">
         <div class="slides-container">
-            <img src="/SportMgmt/images/img-2.jpg">
-            <img src="/SportMgmt/images/img-1.jpg">
+            <div><img src="/SportMgmt/images/home-banner-current.jpg"><div class="overlay"></div></div>
+            
+            <div><img src="/SportMgmt/images/home-banner-current-2.jpg"><div class="overlay"></div></div>
         </div>
+        
         <!-- <div class="shade"></div> -->
         <div id="main-content">
             <div class="banner-wrapper clearfix">

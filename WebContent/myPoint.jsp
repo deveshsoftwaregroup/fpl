@@ -53,11 +53,6 @@
 .pager-header .pager-heading {
     color: #e90052;
 }
-.pager a.pager-btn{background: #fff700;}
-.pager a.pager-btn:hover {
-    background: #00ff87;
-    color: #fff;
-}
 .pager .fa-angle-right {
     position: absolute;
     top: 50%;
@@ -116,17 +111,6 @@
     font-size: 32px;
     color: #00ff87;
     font-family: Opensans-semibold, "Helvetica Neue",Helvetica,Arial,sans-serif;
-}
-.points-container {
-    margin-left: 175px;
-    position: relative;
-	color: #fff;
-}
-.points-container .point-row:nth-child(odd) {
-    background: rgba(0, 0, 0, .2);
-}
-.points-container .point-row:nth-child(even) {
-    background:rgba(0, 0, 0, .5);
 }
 .point-row:after {
     clear: both;
@@ -771,7 +755,7 @@
   <script src="/SportMgmt/js/bootstrap.min.js"></script> 
   <c:if test="${empty sportMgmtRes.result}">
   <script type="text/javascript">
-  uploadTeamView('${sessionScope.userId}','${sessionScope.gameDetails.gameId}');
+ // uploadTeamView('${sessionScope.userId}','${sessionScope.gameDetails.gameId}');
   </script>
   </c:if>
 <script type="text/javascript">

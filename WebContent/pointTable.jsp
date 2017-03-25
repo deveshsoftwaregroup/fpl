@@ -3,9 +3,9 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<div style="color: #ccc;font-size: 16px; padding:20px">
+<div class="rules">
 <h1 class="rule-heading">Point Table</h1>
-<table class="point-table" style="background:#ABC; color:Green">
+<table class="point-table">
 	<tr>
 		<th>Point Detail</th>
 		<th>Point To Be Added</th>
@@ -14,8 +14,8 @@
 	<c:forEach var="pointMap" items="${pointList}">
 	<tr>
 	<td><c:out value="${pointMap['pointName']}"/></td>
-	<td><c:out value="${pointMap['pointToAdd']}"/></td>
-	<td><c:out value="${pointMap['pointToDeduct']}"/> </td>
+	<td class="green-txt"><c:out value="${pointMap['pointToAdd']}"/></td>
+	<td class="red-txt"><c:out value="${pointMap['pointToDeduct']}"/> </td>
 	</tr>
 	</c:forEach>
 </table>

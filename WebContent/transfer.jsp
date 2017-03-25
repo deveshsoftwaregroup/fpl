@@ -30,7 +30,7 @@
     /*  home  page */
 .ism-game-header h1 a{ color:#fff;}
 
-.mask{ background: #000; opacity: 0.5; position:fixed; top: 0; left: 0; width: 100%; height:100%;}
+.mask{ background: #000; opacity: 0.5; position:fixed; top: 0; left: 0; width: 100%; height:100%; z-index: 9;}
 
 
 @keyframes spin {
