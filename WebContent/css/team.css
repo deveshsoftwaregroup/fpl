@@ -1024,14 +1024,14 @@ button.close {
     width: 100%;
 }
 .fixtures-logo {
-    float: left;
     color: #ff1048;
     text-transform: uppercase;
     font-family: opensans-bold;
     font-size: 18px;
 }
 .fixtures-pegination {
-    float: right;
+        background: #121315;
+    padding: 0px 20px;
 }
 .fixtures-pegination a.peg-lnk {
     padding: 0 2rem;
@@ -1349,5 +1349,20 @@ border-top: 1px solid #E8E8E8;
 .highest {
     color: #00ff87;
 }
-
+@media(max-width:768px){
+	.fixtures-pegination a.peg-lnk {
+    	padding: 0 1rem;
+	}
+	.fixtures-pegination img {
+    	max-width: 50%;
+	}
+	.fixtures-pegination {
+	    padding: 0px 10px;
+	}
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi){
+.badge-25 {
+    background-size: auto !important;
+}
+}
 /* MY POINTS CSS ENDS */

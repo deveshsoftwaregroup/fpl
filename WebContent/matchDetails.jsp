@@ -11,13 +11,15 @@
 					<div>
 						<div class="fixtures league-bordered league-bordered--highlight">
 							<div class="fixtures-head">
-								<h5> </h5>
-								<div class="head-main">
-									<div class="fixtures-logo">
+								<span class="fixtures-logo">
 										Fixtures <span></span>
-									</div>
+									</span> 
+									<h5> </h5>
+								<div class="head-main">
+									
 									<div class="fixtures-pegination">
 										<a class="peg-lnk" onclick="updateMatchDetails(false);" href="javascript:void(0);">Previous <i class="fa fa-angle-left"></i></a>
+										<img src ="/SportMgmt/images/fixture banner1 small.jpg" >   
 										<a class="peg-lnk" onclick="updateMatchDetails(true);" href="javascript:void(0);">Next <i class="fa fa-angle-right"></i></a>
 									</div>
 								</div>
