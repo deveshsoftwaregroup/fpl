@@ -883,8 +883,14 @@
 
                             <div class="ism-sideboard">
                                 <div class="ism-scoreboard__panel">
-                                    <h4 class="ism-scoreboard__panel__heading">Players Selected</h4>
+                                    <!-- <h4 class="ism-scoreboard__panel__heading">Players Selected</h4>
                                     <div class="ism-scoreboard__panel__value is-error">0/15</div>
+                                	 -->
+                                	 
+                                	 <div class="remain_coin">Players Selected : 
+                                	 	<span id="planBalanceDiv" class="added-player-count"></span>
+                                	 	</div>
+       
                                 </div>
                                <c:if test="${sessionScope.user.hasActivePlan}">
         <div class="remain_coin">Remaining &#8377 : <span id="planBalanceDiv">${sessionScope.user.activePlan.balance} Million &#8377</span></div>

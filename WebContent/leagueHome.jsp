@@ -157,16 +157,16 @@
             <img alt="info" src="/SportMgmt/images/football-1.png">
              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
              <span class="s1">
-             	Bad performance<br/>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;in previous game weeks ? 
+             	Fantasy IPL <br/>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;A Sports Zone for
              </span>
              <BR>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
              <span class="s2">
-             	Don't Worry ! 
+             	Cricket lovers ! 
              </span>
              <BR>
              <span class="s3">
-             	Start now and grab golden chance to kick up your performance.</span>
-           <BR><span class="s4"> Play and explore exciting prizes and new features.</span>
+             	Start now and grab golden chance to win Prizes and Cash.</span>
+           <BR><span class="s4"> Play and explore new features.</span>
             </div>
            <!--  <div class="row clearfix main-banner">
                 <div class="large-12 column logo">

@@ -666,10 +666,11 @@ input:-webkit-autofill {
 	         <li><a href="javascript:void(0);" data-toggle="modal" data-target="#myModal1">Sign Up</a></li> 
           </c:if> 
           <c:if test="${not empty sessionScope.user.displayName}">
+            <li><a href="javascript:void(0);" onclick="uploadTransferView();">Fantasy League</a></li>
           	<li><a href="/SportMgmt/mvc/user/Logout">Log out</a></li>
           </c:if> 
           <c:if test="${not empty sessionScope.user.displayName}">
-          <li style="float:right; color:#ffffff; padding-top: 13px;">Welcome <font color="blue">  ${sessionScope.user.displayName}</font></li>
+          <li style="float:right; color:#ffffff; padding-top: 13px;">Welcome ${sessionScope.user.displayName}<font color="blue">  </font></li>
           </c:if>
         </ul>
         
@@ -948,5 +949,22 @@ function loginWithFB()
 				})
 				
 			});
+			
+			function uploadTransferView()
+			{
+				alert("hi");
+				url ="/SportMgmt/transfer.jsp";
+					$.ajax({
+			     		  url: url,
+			     		  dataType: 'html',
+			     		  success: function( resp ) {
+			     			 //console.log(resp); 
+			     			 $('.ism-container').html(resp);
+			     		  },
+			     		  error: function( req, status, err ) {
+			     		    console.log( 'something went wrong', status, err );
+			     		  }
+			     		});	
+			}
 			
 		</script>
