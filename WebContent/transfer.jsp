@@ -647,6 +647,7 @@
 
                                     </div>
                                 </section>
+                               
                                 <section id="ismr-detail" class="ism-detail" role="tabpanel" aria-hidden="true">
                                     <div tabindex="-1">
                                         <div>
@@ -1185,12 +1186,7 @@
             </div>
         </div>
    
-    <script src="/SportMgmt/js/vendor/what-input.js"></script>
-    <script src="/SportMgmt/js/vendor/foundation.js"></script>
-    <script src="/SportMgmt/js/app.js"></script>
-    <script src="/SportMgmt/js/jquery.easing.1.3.js"></script>
-    <script src="/SportMgmt/js/jquery.animate-enhanced.min.js"></script>
-    <script src="/SportMgmt/js/jquery.superslides.js" type="text/javascript" charset="utf-8"></script>
+    
    <script type="text/javascript">
    var gameDetailsJson = null;
    var playerListJson = null;
@@ -1331,12 +1327,7 @@
 			}
 			console.info('playerClubId--: '+playerClubId);
 			var clubImage = clubIdImageMap[playerClubId];
-			console.info('clubImage--: '+clubImage);
-			/*if(typeof clubImage != 'undefined' && clubImage !='')
-			{
-				$(this).find('picture img').attr('src','/SportMgmt/images/'+clubImage);
-			}
-			*/
+			console.info('clubImage--: '+clubImage);			
 			if(playerType == 'wk')
 			 {
 				$("#Goalkeepers .addPlayer>a").closest('tr').attr('disabled', 'disabled');
@@ -1780,4 +1771,3 @@
   	});
 
   </script>
-<script src="/SportMgmt/js/bootstrap.min.js"></script>

@@ -610,8 +610,7 @@
 		</div>		
 	</main>
 
- <script src="/SportMgmt/js/jquery.js"></script> 
-  <script src="/SportMgmt/js/bootstrap.min.js"></script> 
+ 
 <script type="text/javascript">
    var gameDetailsJson = null;
    var playerListJson = null;
