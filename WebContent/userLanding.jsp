@@ -109,6 +109,18 @@ rotate
 <script src="/SportMgmt/js/jquery.animate-enhanced.min.js"></script>
 <script src="/SportMgmt/js/jquery.superslides.js" type="text/javascript" charset="utf-8"></script>
 <script src="/SportMgmt/js/bootstrap.min.js"></script>
-<script src="/SportMgmt/js/jquery.js"></script> 
+<script src="/SportMgmt/js/jquery.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+ <%-- <script src="/SportMgmt/js/vendor/jquery.js"></script>
+    <script src="/SportMgmt/js/bootstrap.min.js"></script>
+    <script src="/SportMgmt/js/vendor/what-input.js"></script>
+    <script src="/SportMgmt/js/vendor/foundation.js"></script>
+    <script src="/SportMgmt/js/app.js"></script>
+    <script src="/SportMgmt/js/jquery.easing.1.3.js"></script>
+    <script src="/SportMgmt/js/jquery.animate-enhanced.min.js"></script>
+    <script src="/SportMgmt/js/jquery.superslides.js" type="text/javascript" charset="utf-8"></script> --%>
+ 	<script type="text/javascript" src="/SportMgmt/js/69e9bb26ef46.js"></script>
+ 
  
 </html>
