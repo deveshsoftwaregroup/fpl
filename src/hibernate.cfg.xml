@@ -11,10 +11,10 @@
         <property name="connection.username">root</property>
         <property name="connection.password">root</property>
         
-        <!-- FOR Staging
-         <property name="connection.url">jdbc:mysql://149.56.37.30:3306/fantasyl_league</property>
-        <property name="connection.username">fantasyl_Staging</property>
-        <property name="connection.password">League_Staging</property> -->
+      <!-- FOR Staging
+         <property name="connection.url">jdbc:mysql://149.56.37.30:3306/fantasyl_ipl_staging</property>
+        <property name="connection.username">fantasyl_ipl1</property>
+        <property name="connection.password">P@ssw0rd</property> -->
         
         <!-- FOR Live connection
         <property name="connection.url">jdbc:mysql://149.56.37.30:3306/fantasyl_league_live</property>
@@ -37,6 +37,14 @@
        <!--  TO FIX CONNECTION TIMEOUT after 8 hours of inactivity -->
  		<property name="spring.datasource.testOnBorrow">true</property>
         <property name="spring.datasource.validationQuery">SELECT 1</property>
+        <property name="connection.maxActive">-1</property>
+        <property name="connection.minEvictableIdleTimeMillis">1800000</property>
+        <property name="connection.timeBetweenEvictionRunsMillis">1800000</property>
+        <property name="connection.numTestsPerEvictionRun">3</property>
+        <property name="connection.testOnBorrow">true</property>
+        <property name="connection.testWhileIdle">true</property>
+        <property name="connection.testOnReturn">true</property>
+        <property name="connection.validationQuery">SELECT 1</property>
       
         <!-- Drop and re-create the database schema on startup -->
         <!-- <property name="hbm2ddl.auto">create</property>  -->
