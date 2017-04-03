@@ -16,16 +16,18 @@
       </div>
       <div class="col-lg-8 col-md-8 col-sm-8 slider-col">
         <div class="slick_slider">
-          <div class="single_iteam"> <a target="_blank" href="http://the12thman.in/cwc-win-2016-brings-luck-real-madrid/"> <img src="/SportMgmt/images/homeIndex/CWC.jpg" alt=""></a>
+          <div class="single_iteam"> <a target="_blank" href="http://the12thman.in/cwc-win-2016-brings-luck-real-madrid/"> 
+          <img src="/SportMgmt/images/homeIndex/slider-img1.jpg" alt=""></a>
             <div class="slider_article">
-              <h2><a class="slider_tittle" target="_blank" href="http://the12thman.in/cwc-win-2016-brings-luck-real-madrid/">After CWC win, 2016 Has More Good News For Real Madrid</a></h2>
-              <p>Real Madrid finally have got some relief from the two-year transfer ban, as CAS reduces their sanction by a year.</p>
+              <h2><a class="slider_tittle" target="_blank" href="http://the12thman.in/cwc-win-2016-brings-luck-real-madrid/">Indian opener, KL Rahul may miss this season of Indian Premier League</a></h2>
+              <p>RCB wicket keeper-batsman, KL Rahul may miss IPL 10 KL Rahul, Royal Challengers Bangalore wicket keeper-batsman, is expected to miss this season of IPL</p>
             </div>
           </div>
-          <div class="single_iteam"> <a target="_blank" href="http://the12thman.in/antonio-conte-seeks-reunion-bayern-ace/"> <img src="/SportMgmt/images/homeIndex/Antonio.jpg" alt=""></a>
+          <div class="single_iteam"> <a target="_blank" href="http://the12thman.in/antonio-conte-seeks-reunion-bayern-ace/">
+           <img src="/SportMgmt/images/homeIndex/slider-img2.jpg" alt=""></a>
             <div class="slider_article">
-              <h2><a class="slider_tittle"  target="_blank" href="http://the12thman.in/antonio-conte-seeks-reunion-bayern-ace/">Antonio Conte seeks reunion with Bayern Ace</a></h2>
-              <p>Chelsea boss Antonio Conte wants £42m rated Bayern Munich ace at Stamford Bridge by next season</p>
+              <h2><a class="slider_tittle"  target="_blank" href="http://the12thman.in/virat-kohli-break-cricket-haddin/">Virat Kohli needs to take a break from cricket : Brad Haddin</a></h2>
+              <p>Australian wicket keeper believes Kohli needs to take a break from the game Brad Haddin wrote in his recent column</p>
             </div>
           </div>
           <div class="single_iteam"> <a target="_blank" href="http://the12thman.in/marouane-fellaini-set-move-serie-club/"> <img src="/SportMgmt/images/homeIndex/merouane.jpg" alt=""></a>
