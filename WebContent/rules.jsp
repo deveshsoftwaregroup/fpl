@@ -9,20 +9,19 @@
 <div class="rl-row">
 <h4>Squad Size</h4>
 To join the game select a fantasy football squad of 15 players, consisting of:
-2 Goalkeepers
-5 Defenders
-5 Midfielders
-3 Forwards
+2 Wicket-Keepers
+5 Bats-Men
+3 All-Rounders
+5 Bowlers
 </div>
 
 <div class="rl-row">
 <h4>Budget</h4>
-The total value of your initial squad must not exceed INR 1000. 
+The total value of your initial squad must not exceed INR 100 Million. 
 </div>
 
 <div class="rl-row">
-<h4>Players Per Team</h4>
-You can select up to 3 players from a single Premier League team.
+<h4></h4>
 </div>
 
 <div class="rl-row">
@@ -35,25 +34,14 @@ Choosing your starting 11
 
 From your 15 player squad, select 11 players by the Gameweek deadline to form your team.
 
-All your points for the Gameweek will be scored by these 11 players, however if one or more doesn't play they may be automatically substituted. 
+All your points for the Gameweek will be scored by these 11 players. 
 
-Your team can play in any formation providing that 1 goalkeeper, at least 3 defenders and at least 1 forward are selected at all times. 
+Your team can play in any formation providing that 1 wicket-keeper, at least 3 bats-men and at least 1 all-rounder are selected at all times. 
 
 Selecting a Captain and a Vice-Captain
 
 From your starting 11 you nominate a captain and a vice-captain. Your captain's score will be doubled.
 
-If your captain plays 0 minutes in the Gameweek, the captain will be changed to the vice-captain.
-
-If both captain and vice-captain play 0 minutes in a Gameweek, then no player's score will be doubled.
-
-Prioritising Your Bench For Automatic Substitutions
-
-Your substitutes provide cover for unforeseen events like injuries and postponements by automatically replacing starting players who don't play in a Gameweek.
-
-Based on the priorities you assign, automatic substitutions are processed at the end of the Gameweek as follows:
-•If your Goalkeeper plays 0 minutes in the Gameweek, he will be substituted by your replacement Goalkeeper, if he played in the Gameweek.
-•If any of your outfield players play 0 minutes in the Gameweek, they will be substituted by the highest priority outfield substitute who played in the Gameweek and doesn't break the formation rules (eg. If your starting team has 3 defenders, a defender can only be replaced by another defender).
 </div>
 
 <div class="rl-row">
@@ -62,7 +50,7 @@ Based on the priorities you assign, automatic substitutions are processed at the
 
 After selecting your squad you can buy and sell players in the transfer market. Unlimited transfers can be made at no cost until your first deadline.
 
-After your first deadline you will receive 1 free transfer each Gameweek. Each additional transfer you make in the same Gameweek will deduct 4 points from your total score (Classic scoring) and match score (Head-to-Head scoring) at the start of the next Gameweek. 
+After your first deadline you will receive 1 free transfer each Gameweek. Each additional transfer you make in the same Gameweek will deduct 4 points from your total score. 
 
 If you do not use your free transfer, you are able to make an additional free transfer the following Gameweek. If you do not use this saved free transfer in the following Gameweek, it will be carried over until you do. You can never have more than 1 saved transfer.
 </div>
@@ -75,7 +63,7 @@ To do free transfer in a week, you can use wildcard. One wild card will be free 
 <div class="rl-row">
 <h4>Player Prices</h4>
 
-Player prices change during the season dependent on the popularity of the player in the transfer market. Player prices do not change until the season starts.
+Player prices may change during the season dependent on the popularity of the player. Player prices do not change until the season starts.
 
 The price shown on your transfers page is a player's selling price.
 

@@ -859,6 +859,9 @@
                 <div id="ismr-squad-menu"></div>
                 <div id="ismr-help"></div>
                 <div id="ismr-confirm"></div>
+                <div class="transfer-banner">
+                <img src="/SportMgmt/images/addbanner_728x90_V1.jpg" alt="" class="img-responsive"></a>
+                </div>
             </div>
         </div>
 

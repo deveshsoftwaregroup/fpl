@@ -11410,7 +11410,7 @@ position:absolute
 }
 
 .ism .ism-element__control--primary {
-display:none;
+display:block;
 top:0;
 left:0
 }
@@ -12485,7 +12485,7 @@ width:10%
 }
 
 .ism .ism-table--el-list__name {
-width:46%
+width:95%
 }
 
 .ism .ism-table--el-list__price {
