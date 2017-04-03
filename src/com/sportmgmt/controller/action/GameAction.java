@@ -171,9 +171,9 @@ public class GameAction {
 								try
 								{
 									double balance = 0;
-									if(addedPlayerCount > 1)
+									/*if(addedPlayerCount > 1)
 									balance= PlanManager.deductPointFromUserPlan(user.getActivePlan().getUserPlanId(), price.doubleValue()+4);
-									else
+									else*/
 									balance= PlanManager.deductPointFromUserPlan(user.getActivePlan().getUserPlanId(), price.doubleValue());	
 									user.getActivePlan().setBalance(balance);
 									resultMap.put("activePlanBalance", balance);

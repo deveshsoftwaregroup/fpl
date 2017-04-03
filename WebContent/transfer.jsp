@@ -116,10 +116,8 @@
                         		</div>
                         		
                         		<div class="transfer-Col-6">
-                        			 <c:if test="${sessionScope.user.hasActivePlan}">
-        <div class="tabBtn"><span>Remaining &#8377 :</span> <span id="planBalanceDiv">${sessionScope.user.activePlan.balance} </span><span> million</span></div>
-        </c:if>
-                        		</div>                        		
+        						<div class="tabBtn"><span>Remaining &#8377 :</span> <span id="planBalanceDiv">${sessionScope.user.balanceCoins} </span><span> million</span></div>
+          						</div>                        		
                         	</div>  
                         	                              
                                 <div id="paymentModel" class="modal fade" role="dialog">
@@ -1195,6 +1193,7 @@
    var playerListJson = null;
    var clubListJson = null;
    var userGameJson = null;
+   var userJson = null;
    var purchableWildCardJson = null;
    </script>
    	<c:if test="${not empty sessionScope.gameDetailsJson}">
@@ -1222,6 +1221,11 @@
   	purchableWildCardJson = ${sessionScope.purchableWildCardJson};
   	var planDiscountId = '${sessionScope.planDiscountId}';
 		</script>
+	</c:if>
+	<c:if test="${not empty sessionScope.userJson}">
+   		<script type="text/javascript">
+   		userJson = ${sessionScope.userJson};
+  		</script>
 	</c:if>
 	<script type="text/javascript">
 	

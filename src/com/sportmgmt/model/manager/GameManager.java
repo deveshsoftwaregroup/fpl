@@ -1291,6 +1291,63 @@ public class GameManager {
 		
 		return isSuccess;
 	}
+	public static int getUserTotalPoint(String userId,String gameId)
+	{
+		int userTotalPoint =  0;
+	
+		setErrorMessage("");
+		SessionFactory factory = HibernateSessionFactory.getSessionFacotry();
+		logger.info("--------------- getUserTotalPoint ------------> userId:  "+userId+" gameId: "+gameId);
+		if(factory == null)
+		{
+			setErrorCode(ErrorConstrant.SESS_FACT_NULL);
+			setErrorMessage("Technical Error");
+		}
+		else
+		{
+			Session session = factory.openSession();
+			if(session != null)
+			{
+				try
+				{
+					Criteria cr = session.createCriteria(UserGame.class);
+					cr.add(Restrictions.eq("gameId", new Integer(gameId)));
+					cr.add(Restrictions.eq("userId", new Integer(userId)));
+					List results = cr.list();
+					if(results == null || results.size() ==0)
+					{
+						logger.info(" ------- Enty not found in UserGameStatus");
+					}
+					else
+					{
+						logger.info(" ------- Enty found in USER_GAME_STATUS table ");
+						UserGame userGame =(UserGame)results.get(0);
+						if(userGame.getTotalPoint() !=null)
+						{
+							userTotalPoint = userGame.getTotalPoint();
+						}
+					}
+				}
+				catch(Exception ex)
+				{
+					logger.error("Exception fetch getUserTotalPoint: "+ex.getMessage());
+					setErrorMessage("Technical Error");
+					setErrorCode(ErrorConstrant.TRANSACTION_ERROR);
+				}
+				finally
+				{
+					session.close();
+				}
+			}
+			else
+			{
+				setErrorCode(ErrorConstrant.SESS_NULL);
+				setErrorMessage("Technical Error");
+			}
+		}
+		
+		return userTotalPoint;
+	}
 	public static Map<String,String> getUserGameStatus(String userId,String gameId)
 	{
 		Map<String,String> userGameMap = new HashMap<String,String>();

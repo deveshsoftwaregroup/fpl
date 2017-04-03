@@ -69,6 +69,10 @@ public class User {
 		
 		private ActivePlan activePlan;
 		
+		private double balanceCoins;
+		
+		private Integer totalPoint;
+		
 		public Integer getUserId() {
 			return userId;
 		}
@@ -326,5 +330,20 @@ public class User {
 		public void setUserGameMap(Map<String, String> userGameMap) {
 			this.userGameMap = userGameMap;
 		}
-		
-}
+
+		public double getBalanceCoins() {
+			return balanceCoins;
+		}
+
+		public void setBalanceCoins(double balanceCoins) {
+			this.balanceCoins = balanceCoins;
+		}
+
+		public Integer getTotalPoint() {
+			return totalPoint;
+		}
+
+		public void setTotalPoint(Integer totalPoint) {
+			this.totalPoint = totalPoint;
+		}
+	}

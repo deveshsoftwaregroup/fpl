@@ -166,7 +166,7 @@ public class UserAction {
 		//return "redirect:/login/loginSuccess.jsp";
 		//return "redirect:/"+SportConstrant.LEAGUE_LANDING_HOME_PAGE+".jsp";
 		//return "redirect:/mvc/"+SportConstrant.LEAGUE_LANDING_HOME_PAGE;
-		return "redirect:/mvc/LeagueLandingHome";
+		return "redirect:/mvc/user/login/"+UserManager.getUserId();
 	}
 	
 	@RequestMapping(value = "validate", method = RequestMethod.GET)
@@ -278,6 +278,7 @@ public class UserAction {
 				 user.setActivePlan(activePlan);
 				 logger.info(activePlan);
 			 }
+			 user.setBalanceCoins(PlanManager.getUserCoins(userId));
 			 logger.info("---------- Getting HTTP Session: "+user);
 			 HttpSession session = request.getSession();
 			 logger.info("---------- Setting User to Sesison: "+user);
@@ -300,6 +301,7 @@ public class UserAction {
 					clubList = sortUtility.getApplicationDataUtility().getClubList();
 					playersList = sortUtility.sortPlayerListByPrice(playersList);
 					session.setAttribute("playersOrderBy", "price");
+					user.setTotalPoint(GameManager.getUserTotalPoint(userId, gameId));
 					
 				}
 				List<Map<String,String>> userPlayersList = GameManager.userPlayerDetailsList(user.getUserId(),Integer.valueOf(gameId)); 
@@ -325,6 +327,7 @@ public class UserAction {
 				String playerListJson = "";
 				String clubListJson = "";
 				String userGameJson = "";
+				String userJson = "";
 				 ObjectMapper mapperObj = new ObjectMapper();
 				 try
 				 {
@@ -335,11 +338,14 @@ public class UserAction {
 					 clubListJson = mapperObj.writeValueAsString(clubList);
 					 logger.info("-------- Login : clubListJson: "+clubListJson);
 					 userGameJson = mapperObj.writeValueAsString(userGameMap);
-					 logger.info("-------- Login : userGameJson: "+userGameJson);
+					 logger.info("-------- Login : userGameJson: "+userGameJson); 
+					 userJson = mapperObj.writeValueAsString(user);
+					 logger.info("-------- Login : userJson: "+userJson);
 					 session.setAttribute("gameDetailsJson", gameDetailsJson);
 					 session.setAttribute("playerListJson", playerListJson);
 					 session.setAttribute("clubListJson", clubListJson);
 					 session.setAttribute("userGameJson", userGameJson);
+					 session.setAttribute("userJson", userJson);
 				 }
 				 catch(Exception ex)
 				 {

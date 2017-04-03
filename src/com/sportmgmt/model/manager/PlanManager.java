@@ -426,41 +426,55 @@ public class PlanManager {
 			{
 				try
 				{
-					Criteria cr = session.createCriteria(UserPlan.class);
-					User user = new User();
-					user.setUserId(new Integer(userId));
+					
+					Criteria cr = session.createCriteria(LeaguePlan.class);
 					cr.add(Restrictions.eq("isActive", SportConstrant.YES));
-					cr.add(Restrictions.eq("user", user));
+					cr.add(Restrictions.eq("planName", "DEFAULT"));
+					cr.add(Restrictions.eq("planTypeVal", 0));
 					List results = cr.list();
-					if(results == null || results.size() ==0)
+					if(results !=null && results.size()!=0)
 					{
-						logger.info(" ------- Active Plans does not found--");
+						cr = session.createCriteria(UserPlan.class);
+						User user = new User();
+						user.setUserId(new Integer(userId));
+						cr.add(Restrictions.eq("isActive", SportConstrant.YES));
+						cr.add(Restrictions.eq("user", user));
+						cr.add(Restrictions.in("plan", results));
+						results = cr.list();
+						if(results == null || results.size() ==0)
+						{
+							logger.info(" ------- Active Plans does not found--");
+						}
+						else
+						{
+							
+								UserPlan userPlan = (UserPlan)results.get(0);
+								activePlan = new ActivePlan();
+								activePlan.setUserPlanId(userPlan.getUserPlanId());
+								if(userPlan.getPlan().getPlanName() != null)
+								activePlan.setPlanName(userPlan.getPlan().getPlanName());
+								if(userPlan.getPlan().getPlanTypeVal() != null)
+								activePlan.setPlanTypeVal(userPlan.getPlan().getPlanTypeVal());
+								activePlan.setIsFree(userPlan.getPlan().getIsFree());
+								if(userPlan.getStartDate() != null)
+								{
+									activePlan.setStartDay(userPlan.getStartDate().getDay());
+									activePlan.setStartMonth(userPlan.getStartDate().getMonth());
+									activePlan.setStartMonth(userPlan.getStartDate().getMonth());
+								}
+								if(userPlan.getEndDate() != null)
+								{
+									activePlan.setEndDay(userPlan.getEndDate().getDay());
+									activePlan.setEndMonth(userPlan.getEndDate().getMonth());
+									activePlan.setEndMonth(userPlan.getEndDate().getMonth());
+								}
+								if(userPlan.getBalanceAmount() != null)
+								activePlan.setBalance(userPlan.getBalanceAmount());							
+						}
 					}
 					else
 					{
-						
-							UserPlan userPlan = (UserPlan)results.get(0);
-							activePlan = new ActivePlan();
-							activePlan.setUserPlanId(userPlan.getUserPlanId());
-							if(userPlan.getPlan().getPlanName() != null)
-							activePlan.setPlanName(userPlan.getPlan().getPlanName());
-							if(userPlan.getPlan().getPlanTypeVal() != null)
-							activePlan.setPlanTypeVal(userPlan.getPlan().getPlanTypeVal());
-							activePlan.setIsFree(userPlan.getPlan().getIsFree());
-							if(userPlan.getStartDate() != null)
-							{
-								activePlan.setStartDay(userPlan.getStartDate().getDay());
-								activePlan.setStartMonth(userPlan.getStartDate().getMonth());
-								activePlan.setStartMonth(userPlan.getStartDate().getMonth());
-							}
-							if(userPlan.getEndDate() != null)
-							{
-								activePlan.setEndDay(userPlan.getEndDate().getDay());
-								activePlan.setEndMonth(userPlan.getEndDate().getMonth());
-								activePlan.setEndMonth(userPlan.getEndDate().getMonth());
-							}
-							if(userPlan.getBalanceAmount() != null)
-							activePlan.setBalance(userPlan.getBalanceAmount());							
+						logger.info("Wild Card plan does not found");
 					}
 				}
 				catch(Exception ex)
@@ -476,11 +490,83 @@ public class PlanManager {
 			}
 			else
 			{
-				setErrorCode(ErrorConstrant.SESS_NULL);
 				setErrorMessage("Technical Error");
 			}
 		}
 		return activePlan;
+	}
+	public static double getUserCoins(String userId)
+	{
+		setErrorMessage("");
+		SessionFactory factory = HibernateSessionFactory.getSessionFacotry();
+		logger.info("--------------- getUserCoins ------------> userId:  "+userId);
+		double userCoins = 0;
+		if(factory == null)
+		{
+			setErrorCode(ErrorConstrant.SESS_FACT_NULL);
+			setErrorMessage("Technical Error");
+		}
+		else
+		{
+			Session session = factory.openSession();
+			if(session != null)
+			{
+				try
+				{
+					Criteria cr = session.createCriteria(LeaguePlan.class);
+					cr.add(Restrictions.eq("isActive", SportConstrant.YES));
+					cr.add(Restrictions.eq("planName", "DEFAULT"));
+					cr.add(Restrictions.eq("planTypeVal", 0));
+					List results = cr.list();
+					if(results !=null && results.size() !=0)
+					{
+						LeaguePlan leaguePlan = (LeaguePlan)results.get(0);
+						cr = session.createCriteria(UserPlan.class);
+						User user = new User();
+						user.setUserId(new Integer(userId));
+						cr.add(Restrictions.eq("isActive", SportConstrant.YES));
+						cr.add(Restrictions.eq("user", user));
+						cr.add(Restrictions.eq("plan", leaguePlan));
+						results = cr.list();
+						if(results == null || results.size() ==0)
+						{
+							logger.info(" ------- Active Plans does not found--");
+						}
+						else
+						{
+							
+								UserPlan userPlan = (UserPlan)results.get(0);
+								if(userPlan !=null && userPlan.getBalanceAmount() !=null)
+								{
+									userCoins = userPlan.getBalanceAmount();
+								}
+						}
+
+					}
+					else
+					{
+						logger.info("Defualt Plan (Coins Plan) not found");
+					}
+				}
+				catch(Exception ex)
+				{
+					logger.error("Exception fetch getUserCoins: "+ex.getMessage());
+					setErrorMessage("Technical Error");
+					setErrorCode(ErrorConstrant.TRANSACTION_ERROR);
+				}
+				finally
+				{
+					session.close();
+				}
+			}
+			else
+			{
+				setErrorCode(ErrorConstrant.SESS_NULL);
+				setErrorMessage("Technical Error");
+			}
+		}
+		logger.info("---------------- Returning user coins:"+userCoins);
+		return userCoins;
 	}
 	public static boolean deActivateUserPlan(Integer userPlanId)
 	{

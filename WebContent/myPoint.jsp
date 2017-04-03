@@ -749,7 +749,7 @@
  
   <c:if test="${empty sportMgmtRes.result}">
   <script type="text/javascript">
-  alert("Hey ! No point has been generated for you yet. You will be redirected to My Team page ");
+   alert("Hey ! No point has been generated for you yet. You will be redirected to My Team page ");
   uploadTeamView('${sessionScope.userId}','${sessionScope.gameDetails.gameId}');
   </script>
   </c:if>
