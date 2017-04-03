@@ -666,7 +666,7 @@ input:-webkit-autofill {
 	         <li><a href="javascript:void(0);" data-toggle="modal" data-target="#myModal1">Sign Up</a></li> 
           </c:if> 
           <c:if test="${not empty sessionScope.user.displayName}">
-            <li><a href="javascript:void(0);" onclick="uploadTransferView();">Fantasy League</a></li>
+            <li><a href="/SportMgmt/mvc/user/UserLanding">Fantasy League</a></li>
           	<li><a href="/SportMgmt/mvc/user/Logout">Log out</a></li>
           </c:if> 
           <c:if test="${not empty sessionScope.user.displayName}">
