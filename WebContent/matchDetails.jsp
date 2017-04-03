@@ -39,7 +39,8 @@
 </div>
                 <!-- Secondary content -->
                 
- 
+ <script src="/SportMgmt/js/jquery.js"></script> 
+ <script src="/SportMgmt/js/bootstrap.min.js"></script> 
 <script type="text/javascript">
 	$(window).load(function(){
 	ToggleShow('.1-box', '.check_1'); ToggleShow('.2-box', '.check_2');
