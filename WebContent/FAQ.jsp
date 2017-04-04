@@ -4,7 +4,7 @@
     <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 	<%@ taglib uri="WEB-INF/sportmgmt.tld" prefix="s" %>  
  <style>
-@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css");
+
 .static_container{
 	font-family: Opensans-reg, "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 14px;
