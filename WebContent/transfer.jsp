@@ -4,8 +4,7 @@
     <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 	<%@ taglib uri="WEB-INF/sportmgmt.tld" prefix="s" %>  
 	<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-    <link rel="stylesheet" href="/SportMgmt/css/foundation.css">
-    <link rel="stylesheet" type="text/css" href="/SportMgmt/css/258578334140.css"> 
+    
     
     <style>
     .addPlayer a{ color:#ed3a28; font-size: 18px;padding: 5px 4px;}

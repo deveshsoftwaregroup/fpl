@@ -43,11 +43,12 @@
 					<div>
 						<div id="team-header">
 							<div>
-								<div class="league-section-header">
-									<h2 class="sectionTitle league-section-title league-section-header__title" tabindex="0" id="leaguejs-main-focus">Select your Team</h2>
-								</div>
-								<div class="league-copy">									
-								</div>
+								<div class="ism-copy">
+                                	<h3 style="color: #193782;"><i class="fa fa-angle-double-right" style="color: #f00;"></i> Select playing 11</h3>
+                        			
+                        		 </div>
+								<!-- <div class="league-copy">									
+								</div> -->
 
 								<!-- Deadline Bar -->
 								<div class="league-deadline-bar">
