@@ -1,5 +1,5 @@
 <jsp:include page="homeHeader.jsp" />
- 
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
   
   <section id="contentSection">
     <div class="row">
@@ -74,13 +74,17 @@
         <div ><a href="#"><img src="/SportMgmt/images/addbanner_728x90_V1.jpg" class="img-responsive" alt=""></a></div>
         <br>
       </div>
-      <div class="col-lg-4 col-md-4 col-sm-4">
-        <aside class="right_content">
-          <div class="single_sidebar wow fadeInDown">
-          <div class="choose-team"><img src="/SportMgmt/images/ball-1.jpg" class="img-responsive"> <span class="overlay-img">Select your Team <br/> & Play <br/> <a class="btn btn-black">Select Team</a></span></div>
-           
-          </div>
-        </aside>
+      <div class="col-lg-4 col-md-4 col-sm-4 select-team">
+        <div class="choose-team"><img src="/SportMgmt/images/ball-1.jpg" class="img-responsive"> 
+        	<span class="overlay-img">Select your Team <br/> & Play <br/>        	 
+	        	<c:if test="${empty sessionScope.user.displayName}">
+	        		<a class="btn btn-black" href="javascript:void(0);" data-toggle="modal" data-target="#myModal">Select Team</a>    
+	        	</c:if>
+	        		<c:if test="${not empty sessionScope.user.displayName}">
+	        	<a class="btn btn-black" onclick="redirectToLeague();">Select Team</a>   
+	        	</c:if>
+        	 </span>
+        </div>
       </div>
     </div>
   </section>

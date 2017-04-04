@@ -16,36 +16,41 @@
       </div>
       <div class="col-lg-8 col-md-8 col-sm-8 slider-col">
         <div class="slick_slider">
-          <div class="single_iteam"> <a target="_blank" href="http://the12thman.in/cwc-win-2016-brings-luck-real-madrid/"> 
+          <div class="single_iteam"> <a target="_blank" href="http://the12thman.in/lokesh-rahul-may-miss-ipl-10/"> 
           <img src="/SportMgmt/images/homeIndex/slider-img1.jpg" alt=""></a>
             <div class="slider_article">
-              <h2><a class="slider_tittle" target="_blank" href="http://the12thman.in/cwc-win-2016-brings-luck-real-madrid/">Indian opener, KL Rahul may miss this season of Indian Premier League</a></h2>
+              <h2><a class="slider_tittle" target="_blank" href="http://the12thman.in/lokesh-rahul-may-miss-ipl-10/">Indian opener, KL Rahul may miss this season of Indian Premier League</a></h2>
               <p>RCB wicket keeper-batsman, KL Rahul may miss IPL 10 KL Rahul, Royal Challengers Bangalore wicket keeper-batsman, is expected to miss this season of IPL</p>
             </div>
           </div>
-          <div class="single_iteam"> <a target="_blank" href="http://the12thman.in/antonio-conte-seeks-reunion-bayern-ace/">
+          <div class="single_iteam"> <a target="_blank" href="http://the12thman.in/virat-kohli-break-cricket-haddin/">
            <img src="/SportMgmt/images/homeIndex/slider-img2.jpg" alt=""></a>
             <div class="slider_article">
               <h2><a class="slider_tittle"  target="_blank" href="http://the12thman.in/virat-kohli-break-cricket-haddin/">Virat Kohli needs to take a break from cricket : Brad Haddin</a></h2>
               <p>Australian wicket keeper believes Kohli needs to take a break from the game Brad Haddin wrote in his recent column</p>
             </div>
           </div>
-          <div class="single_iteam"> <a target="_blank" href="http://the12thman.in/marouane-fellaini-set-move-serie-club/"> <img src="/SportMgmt/images/homeIndex/merouane.jpg" alt=""></a>
+          <div class="single_iteam"> <a target="_blank" href="http://the12thman.in/m-s-dhoni-ruled-ipl-10-hamstring-injury/"> 
+          	<img src="/SportMgmt/images/homeIndex/slider-img3.jpg" alt=""></a>
             <div class="slider_article">
-              <h2><a class="slider_tittle" target="_blank" href="http://the12thman.in/marouane-fellaini-set-move-serie-club/">Marouane Fellaini set for a move to Serie A club</a></h2>
-              <p>Manchester United midfielder Marouane Fellaini is set for a move to either of Milan clubs as per the latest reports</p>
+              <h2><a class="slider_tittle" target="_blank" href="http://the12thman.in/m-s-dhoni-ruled-ipl-10-hamstring-injury/">
+              M.S.Dhoni ruled out of IPL-10 with hamstring injury</a></h2>
+              <p>The Indian Premier League, India biggest sporting extravaganza is about to get underway </p>
             </div>
           </div>
-          <div class="single_iteam"> <a target="_blank" href="http://the12thman.in/hazard-names-title-challengers-chelsea/"> <img src="/SportMgmt/images/homeIndex/Hazard.jpg" alt=""></a>
+          <div class="single_iteam"> <a target="_blank" href="http://the12thman.in/australians-blow-virat-kohli/"> 
+          	<img src="/SportMgmt/images/homeIndex/slider-img4.jpg" alt=""></a>
             <div class="slider_article">
-              <h2><a class="slider_tittle" target="_blank" href="http://the12thman.in/hazard-names-title-challengers-chelsea/">Hazard names 2 clubs as the only title challengers to Chelsea.</a></h2>
-              <p>Chelsea Superstar, Eden Hazard has named Manchester City and Liverpool as the only title challengers to his rampant Chelsea side this season</p>
+              <h2><a class="slider_tittle" target="_blank" href="http://the12thman.in/australians-blow-virat-kohli/">Australians dealt with a parting blow courtesy of Virat Kohli</a></h2>
+              <p>Virat Kohli is no longer friends with the Australian cricketers </p>
             </div>
           </div>
-          <div class="single_iteam"> <a target="_blank" href="http://the12thman.in/chelsea-closing-in-on-world-class-real-madrid-star/"> <img src="/SportMgmt/images/homeIndex/real-madrid.jpg" alt=""></a>
+          <div class="single_iteam"> <a target="_blank" href="http://the12thman.in/five-cheap-buys-star-performers-ipl/"> 
+          	<img src="/SportMgmt/images/homeIndex/slider-img5.jpg" alt=""></a>
             <div class="slider_article">
-              <h2><a class="slider_tittle" target="_blank" href="http://the12thman.in/chelsea-closing-in-on-world-class-real-madrid-star/">Chelsea closing in on Transfer of World class Real Madrid star.</a></h2>
-              <p>Real Madrid ace, James Rodriguez has confessed that he could be on the move coming January transfer window...</p>
+              <h2><a class="slider_tittle" target="_blank" href="http://the12thman.in/five-cheap-buys-star-performers-ipl/">
+              Five cheap buys who could be the star performers this IPL</a></h2>
+              <p>Every Season of the IPL is characterised by the consistent performers, the big-hitters...</p>
             </div>
           </div>
         </div>
@@ -57,13 +62,10 @@
       <div class="col-lg-8 col-md-8 col-sm-8">
         <div class="left_content">
           <div class="single_post_content">
-            <blockquote>Chelsea closing in on Transfer of World class Real Madrid star. </blockquote>
-			<p>Chelsea Superstar, Eden Hazard has named Manchester City and Liverpool as the only title challengers to his rampant Chelsea side this season.
-
-Chelsea after shaky start to their season have now gone on to sit of the top of the Premier League for the second week in succession with a win over their London rivals Tottenham Hotspur.
-
-Conte's switch to 3-4-3 has done wonders to the Chelsea side who were down on confidence and belief. Their defense which was supposedly their biggest weakness going into the season has been in tremendous form, conceding just one goal in their last 5 matches.
-			<a target="_blank" href="http://the12thman.in/hazard-names-title-challengers-chelsea/">Read more..</a></p>
+            <blockquote>5 managers who are most likely to succeed Luis Enrique at Barcelona</blockquote>
+			<p>Luis Enrique, the current Barca manager announced his decision to leave the club after a 6-1 victory over Sporting Gijon. According to Guillem Balague, the reputed Spanish football journalist, Luis Enrique made his intentions clear about leaving the club as early as pre-season. 
+			Club president, Josep Maria Bartomeu left Enrique future in his own hands. The initial plan by Enrique was to announce his departure after the PSG tie. The 4-0 defeat in the first leg pushed things forward and the announcement was made before the second leg. Barcelona still remains in the Champions League and are second in the La Liga.
+			<a target="_blank" href="http://the12thman.in/5-managers-barcelona/">Read more..</a></p>
           	
           <div ><a href="#"><img class="img-responsive" src="/SportMgmt/images/addbanner_728x90_V1.jpg" alt=""></a></div>
           </div>
@@ -74,10 +76,10 @@ Conte's switch to 3-4-3 has done wonders to the Chelsea side who were down on co
             <div class="single_post_content_left">
               <ul class="business_catgnav">
                 <li>
-                  <figure class="bsbig_fig  wow fadeInDown"> <a class="featured_img" target="_blank" href="http://the12thman.in/cwc-win-2016-brings-luck-real-madrid/"> <img src="/SportMgmt/images/homeIndex/CWC.jpg" alt=""> <span class="overlay"></span> </a>
-                    <figcaption> <a target="_blank" href="http://the12thman.in/cwc-win-2016-brings-luck-real-madrid/">After CWC win, 2016 Has More Good News For Real Madrid</a> </figcaption>
-                    <div class="date">21st December 2016</div>
-                    <p>Real Madrid in the year 2016 was sentenced to a two-year ban, after FIFA's disciplinary committee found them guilty of breaking transfer regulations. Following this prohibition the club had appealed to FIFA, which was again rejected in September.....</p>
+                  <figure class="bsbig_fig  wow fadeInDown"> <a class="featured_img" target="_blank" href="http://the12thman.in/five-cheap-buys-star-performers-ipl/"> <img src="/SportMgmt/images/homeIndex/slider-img5.jpg" alt=""> <span class="overlay"></span> </a>
+                    <figcaption> <a target="_blank" href="http://the12thman.in/cwc-win-2016-brings-luck-real-madrid/">Five cheap buys who could be the star performers this IPL</a> </figcaption>
+                    <div class="date">3rd April 2017</div>
+                    <p>Every Season of the IPL is characterised by the consistent performers, the big-hitters, bowlers bowling toe-crushing yorkers and some complete packages who are batsmen, handy part-timers and excellent players. This theatre also features underdogs who set the stage on fire with their heroics......</p>
                   </figure>
                 </li>
               </ul>
@@ -85,28 +87,28 @@ Conte's switch to 3-4-3 has done wonders to the Chelsea side who were down on co
             <div class="single_post_content_right">
               <ul class="spost_nav">
                 <li>
-                  <div class="media wow fadeInDown"> <a target="_blank" href="http://the12thman.in/antonio-conte-seeks-reunion-bayern-ace/" class="media-left"> <img alt="" src="/SportMgmt/images/homeIndex/Antonio.jpg"> </a>
-                    <div class="media-body"> <a target="_blank" href="http://the12thman.in/antonio-conte-seeks-reunion-bayern-ace/" class="catg_title">Antonio Conte seeks reunion with Bayern Ace</a> <div class="date">21st December 2016</div></div>
+                  <div class="media wow fadeInDown"> <a target="_blank" href="http://the12thman.in/lokesh-rahul-may-miss-ipl-10/" class="media-left"> <img alt="" src="/SportMgmt/images/homeIndex/slider-img1.jpg"> </a>
+                    <div class="media-body"> <a target="_blank" href="http://the12thman.in/lokesh-rahul-may-miss-ipl-10/" class="catg_title">Indian opener, KL Rahul may miss this season of Indian Premier League</a> <div class="date">2nd April 2017</div></div>
                   </div>
                 </li>
                 <li>
-                  <div class="media wow fadeInDown"> <a target="_blank" href="http://the12thman.in/marouane-fellaini-set-move-serie-club/" class="media-left"> <img alt="" src="/SportMgmt/images/homeIndex/merouane.jpg"> </a>
-                    <div class="media-body"> <a target="_blank" href="http://the12thman.in/marouane-fellaini-set-move-serie-club/" class="catg_title">Marouane Fellaini set for a move to Serie A club</a> <div class="date">21st December 2016</div></div>
+                  <div class="media wow fadeInDown"> <a target="_blank" href="http://the12thman.in/virat-kohli-break-cricket-haddin/" class="media-left"> <img alt="" src="/SportMgmt/images/homeIndex/slider-img2.jpg"> </a>
+                    <div class="media-body"> <a target="_blank" href="http://the12thman.in/virat-kohli-break-cricket-haddin/" class="catg_title">Virat Kohli needs to take a break from cricket : Brad Haddin</a> <div class="date">2nd April 2017</div></div>
                   </div>
                 </li>
                 <li>
-                  <div class="media wow fadeInDown"> <a target="_blank" href="http://the12thman.in/hazard-names-title-challengers-chelsea/" class="media-left"> <img alt="" src="/SportMgmt/images/homeIndex/Hazard.jpg"> </a>
-                    <div class="media-body"> <a target="_blank" href="http://the12thman.in/hazard-names-title-challengers-chelsea/" class="catg_title">Hazard names 2 clubs as the only title challengers to Chelsea.</a> <div class="date">20th December 2016</div></div>
+                  <div class="media wow fadeInDown"> <a target="_blank" href="http://the12thman.in/m-s-dhoni-ruled-ipl-10-hamstring-injury/" class="media-left"> <img alt="" src="/SportMgmt/images/homeIndex/slider-img3.jpg"> </a>
+                    <div class="media-body"> <a target="_blank" href="http://the12thman.in/m-s-dhoni-ruled-ipl-10-hamstring-injury/" class="catg_title">M.S.Dhoni ruled out of IPL-10 with hamstring injury.</a> <div class="date">2nd April 2017</div></div>
                   </div>
                 </li>
                 <li>
-                  <div class="media wow fadeInDown"> <a target="_blank" href="http://the12thman.in/jorge-mendes-flies-manchester-complete-united-transfer/" class="media-left"> <img alt="" src="/SportMgmt/images/homeIndex/real-madrid.jpg"> </a>
-                    <div class="media-body"> <a target="_blank" href="http://the12thman.in/jorge-mendes-flies-manchester-complete-united-transfer/" class="catg_title"> Jorge Mendes flies into</a> <div class="date">20th December 2016</div></div>
+                  <div class="media wow fadeInDown"> <a target="_blank" href="http://the12thman.in/category/cricket/page/2/" class="media-left"> <img alt="" src="/SportMgmt/images/homeIndex/slider-img4.jpg"> </a>
+                    <div class="media-body"> <a target="_blank" href="http://the12thman.in/category/cricket/page/2/" class="catg_title">Australians dealt with a parting blow courtesy of Virat Kohli</a> <div class="date">30th March 2017</div></div>
                   </div>
                 </li>
                 <li>
-                  <div class="media wow fadeInDown"> <a target="_blank" href="http://the12thman.in/cristiano-ronaldo-workout-plan/" class="media-left"> <img alt="" src="/SportMgmt/images/homeIndex/ripped.jpg"> </a>
-                    <div class="media-body"> <a target="_blank" href="http://the12thman.in/cristiano-ronaldo-workout-plan/" class="catg_title"> Want to be Ripped like</a> <div class="date">20th December 2016</div></div>
+                  <div class="media wow fadeInDown"> <a target="_blank" href="http://the12thman.in/hazard-laughs-off-real-madrid-rumours/" class="media-left"> <img alt="" src="/SportMgmt/images/homeIndex/latest-img4.jpg"> </a>
+                    <div class="media-body"> <a target="_blank" href="http://the12thman.in/hazard-laughs-off-real-madrid-rumours/" class="catg_title"> Football: Hazard laughs off Real Madrid rumours</a> <div class="date">4th April 2017</div></div>
                   </div>
                 </li>
               </ul>
@@ -134,27 +136,27 @@ Conte's switch to 3-4-3 has done wonders to the Chelsea side who were down on co
           </div>
           <div class="single_sidebar">
           <div class="slick_slider ads-slide">
-	          <div class="single_iteam"> <a target="_blank" href="http://the12thman.in"> <img src="/SportMgmt/images/homeIndex/Antonio.jpg" alt=""></a>
+	          <div class="single_iteam"> <a target="_blank" href="http://the12thman.in"> <img src="/SportMgmt/images/homeIndex/slider-img1.jpg" alt=""></a>
 	            <div class="slider_article">
 	              <h2><a class="slider_tittle" target="_blank" href="http://the12thman.in">Space For Ad Banner</a></h2>
 	            </div>
 	          </div>
-	          <div class="single_iteam"> <a target="_blank" href="http://the12thman.in"> <img src="/SportMgmt/images/homeIndex/CWC.jpg" alt=""></a>
+	          <div class="single_iteam"> <a target="_blank" href="http://the12thman.in"> <img src="/SportMgmt/images/homeIndex/slider-img2.jpg" alt=""></a>
 	            <div class="slider_article">
 	              <h2><a class="slider_tittle" target="_blank" href="http://the12thman.in">Starting from INR 10000/month</a></h2>
 	            </div>
 	          </div>
-	          <div class="single_iteam"> <a target="_blank" href="http://the12thman.in"> <img src="/SportMgmt/images/homeIndex/Hazard.jpg" alt=""></a>
+	          <div class="single_iteam"> <a target="_blank" href="http://the12thman.in"> <img src="/SportMgmt/images/homeIndex/slider-img3.jpg" alt=""></a>
 	            <div class="slider_article">
 	              <h2><a class="slider_tittle" target="_blank" href="http://the12thman.in">Contact at contactus@the12thman.in</a></h2>
 	            </div>
 	          </div>
-	          <div class="single_iteam"> <a target="_blank" href="http://the12thman.in"> <img src="/SportMgmt/images/homeIndex/merouane.jpg" alt=""></a>
+	          <div class="single_iteam"> <a target="_blank" href="http://the12thman.in"> <img src="/SportMgmt/images/homeIndex/slider-img4.jpg" alt=""></a>
 	            <div class="slider_article">
 	              <h2><a class="slider_tittle" target="_blank" href="http://the12thman.in">Space For Ad Banner</a></h2>
 	            </div>
 	          </div>
-	          <div class="single_iteam"> <a target="_blank" href="http://the12thman.in"> <img src="/SportMgmt/images/homeIndex/real-madrid.jpg" alt=""></a>
+	          <div class="single_iteam"> <a target="_blank" href="http://the12thman.in"> <img src="/SportMgmt/images/homeIndex/slider-img3.jpg" alt=""></a>
 	            <div class="slider_article">
 	              <h2><a class="slider_tittle" target="_blank" href="http://the12thman.in">Starting from INR 10000/month</a></h2>
 	            </div>

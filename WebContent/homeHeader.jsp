@@ -633,18 +633,18 @@ input:-webkit-autofill {
       <div class="col-lg-12 col-md-12">
         <div class="latest_newsarea"> <span>Our Partners</span>
           <ul id="ticker01" class="news_sticker">
-            <li><a href="#"><img src="/SportMgmt/images/soccer-loader.gif" alt=""></a></li>
+            <li><a href="#"><img src="/SportMgmt/images/news_thumbnail2.jpg" alt=""></a></li>
             <li><a href="" target="_blank"><img src="/SportMgmt/images/news_thumbnail2.jpg" alt=""></a></li>    
             <li><a href="http://www.the12thman.in" target="_blank"><img src="/SportMgmt/images/logo.png" alt=""></a></li>  
             <li><a href="#"><img src="/SportMgmt/images/photograph_img2.jpg" alt=""></a></li>  
-            <li><a href="#"><img src="/SportMgmt/images/img-1.jpg" alt=""></a></li>  
-            <li><a href="#"><img src="/SportMgmt/images/img-2.jpg" alt=""></a></li>    
+            <li><a href="#"><img src="/SportMgmt/images/news_thumbnail2.jpg" alt=""></a></li>  
+            <li><a href="#"><img src="/SportMgmt/images/logo.png" alt=""></a></li>    
              <li><a href="#"><img src="/SportMgmt/images/football-1.png" alt=""></a></li>
             <li><a href="" target="_blank"><img src="/SportMgmt/images/news_thumbnail2.jpg" alt=""></a></li>    
             <li><a href="http://www.the12thman.in" target="_blank"><img src="/SportMgmt/images/logo.png" alt=""></a></li>  
             <li><a href="#"><img src="/SportMgmt/images/photograph_img2.jpg" alt=""></a></li>  
-            <li><a href="#"><img src="/SportMgmt/images/img-1.jpg" alt=""></a></li>  
-            <li><a href="#"><img src="/SportMgmt/images/img-2.jpg" alt=""></a></li>                  
+            <li><a href="#"><img src="/SportMgmt/images/photograph_img2.jpg" alt=""></a></li>  
+            <li><a href="#"><img src="/SportMgmt/images/logo.png" alt=""></a></li>                  
           </ul>          
         </div>
       </div>
@@ -684,12 +684,11 @@ input:-webkit-autofill {
       <div class="col-lg-12 col-md-12">
         <div class="latest_newsarea"> <span>Ongoing/Upcoming Leagues</span>
           <ul id="ticker01" class="news_sticker">
-            <li><a href="#"><img src="/SportMgmt/images/news_thumbnail3.jpg" alt="">Fantasy League</a></li>
+            <li><a href="#"><img src="/SportMgmt/images/news_thumbnail3.jpg" alt="">Fantasy IPL</a></li>
             <li><a href="http://www.google.co.in" target="_blank"><img src="/SportMgmt/images/news_thumbnail3.jpg" alt="">Double your money</a></li>    
             <li><a href="#"><img src="/SportMgmt/images/news_thumbnail3.jpg" alt="">Predict top 11</a></li>  
             <li><a href="#"><img src="/SportMgmt/images/news_thumbnail3.jpg" alt="">Player with highest no of goals</a></li>  
-            <li><a href="#"><img src="" alt=""></a>.</li>  
-            <li><a href="#"><img src="" alt=""></a>.</li>                  
+                             
           </ul>
           <div class="social_area">
             <ul class="social_nav">
@@ -708,7 +707,6 @@ input:-webkit-autofill {
 	function redirectToLeague()
 	{
 		window.location="user/UserLanding";
-		//window.open("http://localhost:7979/SportMgmt/mvc/user/UserLanding?isLogined=true");
 	}
 	function homeGameGuide()
 	{
@@ -950,7 +948,7 @@ function loginWithFB()
 				
 			});
 			
-			function uploadTransferView()
+			/* function uploadTransferView()
 			{
 				alert("hi");
 				url ="/SportMgmt/transfer.jsp";
@@ -965,6 +963,6 @@ function loginWithFB()
 			     		    console.log( 'something went wrong', status, err );
 			     		  }
 			     		});	
-			}
+			} */
 			
 		</script>
