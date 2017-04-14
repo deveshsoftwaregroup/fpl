@@ -673,8 +673,6 @@ input:-webkit-autofill {
           <li style="float:right; color:#ffffff; padding-top: 13px;">Welcome ${sessionScope.user.displayName}<font color="blue">  </font></li>
           </c:if>
         </ul>
-        
-        
       </div>
     </nav>
 </section>

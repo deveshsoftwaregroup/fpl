@@ -78,6 +78,7 @@ public class GameAction {
 	public @ResponseBody Map addPlayer(@RequestParam("userId") String userId, @RequestParam("gameClubPlayerId") String gameClubPlayerId,HttpServletRequest request)
 	{
 		Map resultMap = new HashMap();
+		resultMap.put("isPointDeducted",false);
 		boolean isSuccess = false;
 		String errorMessage = "";
 		String errorCode = "";
@@ -95,7 +96,7 @@ public class GameAction {
 			if(user != null)
 			{
 				boolean hasActivePlan = user.isHasActivePlan();
-				if(hasActivePlan)
+				if(hasActivePlan || true)
 				{
 					isSuccess = GameManager.addPlayeOfGametToUserAccount(userId, gameClubPlayerId);
 					Double price = null;
@@ -136,23 +137,6 @@ public class GameAction {
 							totalMap.put("price", GameManager.totalPlayersPriceOfUserByGame(Integer.valueOf(userId),Integer.valueOf(gameId)));
 							GameManager.updateTotalPlayerByPostion(Integer.valueOf(userId),Integer.valueOf(gameId),totalMap);
 							session.setAttribute("userGameDetails", userGameMap);
-							ObjectMapper mapperObj = new ObjectMapper();
-							 try
-							 {
-								 
-								 String userGameJson = mapperObj.writeValueAsString(userGameMap);
-								 logger.info("--------  : userGameJson: "+userGameJson);
-								 session.setAttribute("userGameJson", userGameJson);
-								 
-							 }
-							 catch(Exception ex)
-							 {
-								 logger.error("---------- Entry in parsing map to json: "+ex);
-							 }
-
-
-							resultMap.put("userGameJson", userGameMap);
-							int addedPlayerCount =GameManager.increaseAddedPlayerCountToUserGame(userId,gameId);
 							if((Integer)totalMap.get("player") ==15)
 							{
 								GameManager.checkAndIsertUserGameStatus(userId,gameId);
@@ -163,22 +147,36 @@ public class GameAction {
 							{
 								int playerTransfered = GameWeeKManager.updatePlayerTransfered(new Integer(userId), new Integer(gameWeekIdForPlayerTrasfer));
 								logger.info("total player transfer= "+playerTransfered+" for game_week: "+gameWeekIdForPlayerTrasfer);
+								int gameWeekNumberForTransferPlayer = GameManager.getGameWeekNumber(new Integer(gameWeekIdForPlayerTrasfer),new Integer(gameId));
+								user.setGameWeekIdForPlayerTransfer(gameWeekIdForPlayerTrasfer);
+								user.setGameWeekNumberForPlayerTransfer(gameWeekNumberForTransferPlayer);
+								user.setTotalTransferForGameWeek(playerTransfered);
+								if(!user.isHasActivePlan() && gameWeekNumberForTransferPlayer >1 && playerTransfered >1)
+								{
+									int totalPoint = GameManager.updateUserTotalPoint(userId, gameId, -4);
+									user.setTotalPoint(totalPoint);
+									resultMap.put("isPointDeducted",true);
+									
+								}
+								
+								
 							}
 							logger.info("--------  : Starting deducting point: "+price);
-							if(price != null && user.getActivePlan() != null && user.getActivePlan().getPlanTypeVal() == 0)
+							if(price != null)
 							{
-								logger.info("--------  : plan typ vlaue: "+user.getActivePlan().getPlanTypeVal());
 								try
 								{
 									double balance = 0;
 									/*if(addedPlayerCount > 1)
 									balance= PlanManager.deductPointFromUserPlan(user.getActivePlan().getUserPlanId(), price.doubleValue()+4);
-									else*/
+									else
 									balance= PlanManager.deductPointFromUserPlan(user.getActivePlan().getUserPlanId(), price.doubleValue());	
-									user.getActivePlan().setBalance(balance);
-									resultMap.put("activePlanBalance", balance);
 									
+									user.getActivePlan().setBalance(balance);*/
+									balance= PlanManager.deductPointFromUserPlan(user.getPlanIdForCoins(), price.doubleValue());
+									//resultMap.put("activePlanBalance", balance);
 									logger.info("--------  : Now balance is: "+balance);
+									user.setBalanceCoins(balance);
 									/*if(balance <=0)
 									{
 										if(PlanManager.deActivateUserPlan(user.getActivePlan().getUserPlanId()))
@@ -198,6 +196,25 @@ public class GameAction {
 								}
 								
 							}
+							ObjectMapper mapperObj = new ObjectMapper();
+							 try
+							 {
+								 
+								 String userGameJson = mapperObj.writeValueAsString(userGameMap);
+								 logger.info("--------  : userGameJson: "+userGameJson);
+								 session.setAttribute("userGameJson", userGameJson);
+								 String userJson = mapperObj.writeValueAsString(user);
+								 resultMap.put("userGameJson", userGameMap);
+								 resultMap.put("userJson", user);
+								 session.setAttribute("userJson", userJson);
+								 session.setAttribute("user", user);
+								 
+							 }
+							 catch(Exception ex)
+							 {
+								 logger.error("---------- Entry in parsing map to json: "+ex);
+							 }
+
 						}
 						catch(Exception ex)
 						{
@@ -276,6 +293,26 @@ public class GameAction {
 					totalMap.put("price", GameManager.totalPlayersPriceOfUserByGame(Integer.valueOf(userId),Integer.valueOf(gameId)));
 					GameManager.updateTotalPlayerByPostion(Integer.valueOf(userId),Integer.valueOf(gameId),totalMap);
 					session.setAttribute("userGameDetails", userGameMap);
+					User user = (User)session.getAttribute("user");
+					Double price =null;
+					List playersList = (List)session.getAttribute("playerList");
+					if(playersList.size()>0)
+					{
+						for(Object playerDetailObj :playersList)
+						{
+							Map playerDetailMap = (Map)playerDetailObj;
+							if(playerDetailMap.get("gameClubPlayerId") !=null && playerDetailMap.get("gameClubPlayerId").equals(gameClubPlayerId))
+							{
+								price = (Double)playerDetailMap.get("price");
+							}
+						}
+					}
+					logger.info("------ Started adding point---: "+price);
+					double balance= PlanManager.addPointToUserPlan(user.getPlanIdForCoins(), price.doubleValue());
+					//resultMap.put("activePlanBalance", balance);
+					//user.getActivePlan().setBalance(balance);
+					user.setBalanceCoins(balance);
+					logger.info("------ Current balance is ---: "+balance);
 					ObjectMapper mapperObj = new ObjectMapper();
 					 try
 					 {
@@ -283,40 +320,16 @@ public class GameAction {
 						 String userGameJson = mapperObj.writeValueAsString(userGameMap);
 						 logger.info("--------  : userGameJson: "+userGameJson);
 						 session.setAttribute("userGameJson", userGameJson);
+						 String userJson = mapperObj.writeValueAsString(user);
+						 session.setAttribute("userJson", userJson);
+						 resultMap.put("userJson", user);
+						 resultMap.put("userGameJson", userGameMap);
 						 
 					 }
 					 catch(Exception ex)
 					 {
 						 logger.error("---------- Entry in parsing map to json: "+ex);
 					 }
-
-
-					resultMap.put("userGameJson", userGameMap);
-					User user = (User)session.getAttribute("user");
-					if(user.isHasActivePlan() && user.getActivePlan() !=null)
-					{
-						if(user.getActivePlan().getPlanTypeVal() == 0)
-						{
-							Double price =null;
-							List playersList = (List)session.getAttribute("playerList");
-							if(playersList.size()>0)
-							{
-								for(Object playerDetailObj :playersList)
-								{
-									Map playerDetailMap = (Map)playerDetailObj;
-									if(playerDetailMap.get("gameClubPlayerId") !=null && playerDetailMap.get("gameClubPlayerId").equals(gameClubPlayerId))
-									{
-										price = (Double)playerDetailMap.get("price");
-									}
-								}
-							}
-							logger.info("------ Started adding point---: "+price);
-							double balance= PlanManager.addPointToUserPlan(user.getActivePlan().getUserPlanId(), price.doubleValue());
-							resultMap.put("activePlanBalance", balance);
-							user.getActivePlan().setBalance(balance);
-							logger.info("------ Current balance is ---: "+balance);
-						}
-					}
 				}
 				catch(Exception ex)
 				{

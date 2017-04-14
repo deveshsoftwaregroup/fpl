@@ -25,11 +25,13 @@ import com.sportmgmt.controller.bean.ActivePlan;
 import com.sportmgmt.controller.bean.User;
 import com.sportmgmt.controller.bean.WildCard;
 import com.sportmgmt.model.manager.GameManager;
+import com.sportmgmt.model.manager.GameWeeKManager;
 import com.sportmgmt.model.manager.PlanManager;
 import com.sportmgmt.model.manager.UserManager;
 import com.sportmgmt.utility.common.ApplicationDataUtility;
 import com.sportmgmt.utility.common.LeaguePlanUtil;
 import com.sportmgmt.utility.common.MailUtility;
+import com.sportmgmt.utility.common.PointRankingUtility;
 import com.sportmgmt.utility.common.PropertyFileUtility;
 import com.sportmgmt.utility.common.SortUtility;
 import com.sportmgmt.utility.constrant.ErrorConstrant;
@@ -77,6 +79,20 @@ public class UserAction {
 
 	public void setSortUtility(SortUtility sortUtility) {
 		this.sortUtility = sortUtility;
+	}
+	
+	@Autowired
+	private PointRankingUtility pointRankingUtility;
+	
+	
+	
+	public PointRankingUtility getPointRankingUtility() {
+		return pointRankingUtility;
+	}
+
+
+	public void setPointRankingUtility(PointRankingUtility pointRankingUtility) {
+		this.pointRankingUtility = pointRankingUtility;
 	}
 
 	@RequestMapping(value = "register", method = RequestMethod.POST)
@@ -279,6 +295,7 @@ public class UserAction {
 				 logger.info(activePlan);
 			 }
 			 user.setBalanceCoins(PlanManager.getUserCoins(userId));
+			 user.setPlanIdForCoins(PlanManager.getUserPlanIdForUserCoins(userId));
 			 logger.info("---------- Getting HTTP Session: "+user);
 			 HttpSession session = request.getSession();
 			 logger.info("---------- Setting User to Sesison: "+user);
@@ -302,7 +319,21 @@ public class UserAction {
 					playersList = sortUtility.sortPlayerListByPrice(playersList);
 					session.setAttribute("playersOrderBy", "price");
 					user.setTotalPoint(GameManager.getUserTotalPoint(userId, gameId));
-					
+					String gameWeekIdForPlayerTrasfer = pointRankingUtility.gameWeekIdForTransferPlayer(gameId);
+					if(gameWeekIdForPlayerTrasfer !=null && !gameWeekIdForPlayerTrasfer.equals(""))
+					{
+						int gameWeekNumberForTransferPlayer = GameManager.getGameWeekNumber(new Integer(gameWeekIdForPlayerTrasfer),new Integer(gameId));
+						int totalTransfered = GameWeeKManager.getTotalTransfered(new Integer(userId), new Integer(gameWeekIdForPlayerTrasfer));
+						user.setGameWeekIdForPlayerTransfer(gameWeekIdForPlayerTrasfer);
+						user.setGameWeekNumberForPlayerTransfer(gameWeekNumberForTransferPlayer);
+						user.setTotalTransferForGameWeek(totalTransfered);
+					}
+					else
+					{
+						user.setGameWeekNumberForPlayerTransfer(0);
+						user.setTotalTransferForGameWeek(0);
+					}
+						
 				}
 				List<Map<String,String>> userPlayersList = GameManager.userPlayerDetailsList(user.getUserId(),Integer.valueOf(gameId)); 
 				userGameMap.put("playerList", userPlayersList);

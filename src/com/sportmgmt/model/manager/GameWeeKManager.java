@@ -470,4 +470,53 @@ public class GameWeeKManager {
 		}
 		return 0;
 	}
+	
+	public static int getTotalTransfered(Integer userId,Integer gameWeekId)
+	{
+		setErrorMessage("");
+		SessionFactory factory = HibernateSessionFactory.getSessionFacotry();
+		logger.info("--------------- getTotalTransfered ------------> userId:  "+userId+" gameWeekId: "+gameWeekId);
+		if(factory == null)
+		{
+			setErrorCode(ErrorConstrant.SESS_FACT_NULL);
+			setErrorMessage("Technical Error");
+		}
+		else
+		{
+			Session session = factory.openSession();
+			if(session != null)
+			{
+				try
+				{
+					Criteria cr = session.createCriteria(GameWeekReport.class);
+					cr.add(Restrictions.eq("gameWeekId", gameWeekId));
+					cr.add(Restrictions.eq("userId", userId));
+					List<GameWeekReport> gameWeekReports = cr.list();
+					if(gameWeekReports != null || !gameWeekReports.isEmpty())
+					{
+						GameWeekReport gameWeekReport = gameWeekReports.get(0);
+						int playerTransfer = gameWeekReport.getTransfer();
+						return playerTransfer;
+					}
+				}
+				catch(Exception ex)
+				{
+					logger.error("Exception  getTotalTransfered: "+ex.getMessage());
+					setErrorMessage("Technical Error");
+					setErrorCode(ErrorConstrant.TRANSACTION_ERROR);
+				}
+				finally
+				{
+					session.close();
+				}
+			}
+			else
+			{
+				setErrorCode(ErrorConstrant.SESS_NULL);
+				setErrorMessage("Technical Error");
+			}
+		}
+		return 0;
+	}
+
 }

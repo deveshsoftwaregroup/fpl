@@ -73,6 +73,14 @@ public class User {
 		
 		private Integer totalPoint;
 		
+		private Integer planIdForCoins;
+		
+		private String gameWeekIdForPlayerTransfer;
+		
+		private Integer gameWeekNumberForPlayerTransfer;
+		
+		private Integer totalTransferForGameWeek;
+		
 		public Integer getUserId() {
 			return userId;
 		}
@@ -346,4 +354,37 @@ public class User {
 		public void setTotalPoint(Integer totalPoint) {
 			this.totalPoint = totalPoint;
 		}
+
+		public Integer getPlanIdForCoins() {
+			return planIdForCoins;
+		}
+
+		public void setPlanIdForCoins(Integer planIdForCoins) {
+			this.planIdForCoins = planIdForCoins;
+		}
+
+		public String getGameWeekIdForPlayerTransfer() {
+			return gameWeekIdForPlayerTransfer;
+		}
+
+		public void setGameWeekIdForPlayerTransfer(String gameWeekIdForPlayerTransfer) {
+			this.gameWeekIdForPlayerTransfer = gameWeekIdForPlayerTransfer;
+		}
+
+		public Integer getGameWeekNumberForPlayerTransfer() {
+			return gameWeekNumberForPlayerTransfer;
+		}
+
+		public void setGameWeekNumberForPlayerTransfer(Integer gameWeekNumberForPlayerTransfer) {
+			this.gameWeekNumberForPlayerTransfer = gameWeekNumberForPlayerTransfer;
+		}
+
+		public Integer getTotalTransferForGameWeek() {
+			return totalTransferForGameWeek;
+		}
+
+		public void setTotalTransferForGameWeek(Integer totalTransferForGameWeek) {
+			this.totalTransferForGameWeek = totalTransferForGameWeek;
+		}
+	
 	}

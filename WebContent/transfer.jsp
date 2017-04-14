@@ -104,7 +104,7 @@
                         		</div>
                         		
                         		<div class="transfer-Col-6">
-                        			<div class="tabBtn">Free Transfer : Used/Available</div>
+                        			<div class="tabBtn" id="freeTransUsedDiv">Free Transfer : <c:choose><c:when test="${sessionScope.user.totalTransferForGameWeek > 1}">Used</c:when><c:otherwise>Available</c:otherwise></c:choose></div>
                         		</div>
                         	</div>
                         	<div class="row">
@@ -1236,9 +1236,12 @@
 	     '<div class="ism-element__name ism-element__name--placeholder"> <abbr title="Wicket-Keeper" class="ism-element__type"><span class="ism-element__type__short">GKP</span></abbr></div>';
 	     
 	     $('.ism-element-row.ism-element-row--pitch:first-child .ismjs-remove').click(function () {
-	    	 var userId = $(this).parents('.ism-element').find('.ismjs-menu').attr('id').split('_')[0];
-	    	 var gameClubPlayerId = $(this).parents('.ism-element').find('.ismjs-menu').attr('id').split('_')[1];
-	    	 removePlayer(userId,gameClubPlayerId,this,elems2);
+	    	 var userId = userJson.userId;
+	    	 if($(this).parents('.ism-element').find('.ismjs-menu').attr('id') != undefined && typeof $(this).parents('.ism-element').find('.ismjs-menu').attr('id') != 'undefined')
+	    	 {
+	    		 var gameClubPlayerId = $(this).parents('.ism-element').find('.ismjs-menu').attr('id').split('_')[1];
+		    	 removePlayer(userId,gameClubPlayerId,this,elems2);
+	    	 }
 	    	 return false;
 	    })
 	};
@@ -1254,9 +1257,14 @@
 	     
 	     
 	     $('.ism-element-row.ism-element-row--pitch:nth-child(2) .ismjs-remove').click(function () {
-	    	 var userId = $(this).parents('.ism-element').find('.ismjs-menu').attr('id').split('_')[0];
-	    	 var gameClubPlayerId = $(this).parents('.ism-element').find('.ismjs-menu').attr('id').split('_')[1];
-	    	 removePlayer(userId,gameClubPlayerId,this,def2);
+	    	 var userId = userJson.userId;
+	    	 
+	    	 if($(this).parents('.ism-element').find('.ismjs-menu').attr('id') != undefined && typeof $(this).parents('.ism-element').find('.ismjs-menu').attr('id') != 'undefined')
+	    	 {
+	    		 var gameClubPlayerId = $(this).parents('.ism-element').find('.ismjs-menu').attr('id').split('_')[1];
+		    	 removePlayer(userId,gameClubPlayerId,this,def2);
+	    	 }
+	    	
 	    	 return false;
 	    })
 	};
@@ -1272,9 +1280,12 @@
 	     
 	     
 	     $('.ism-element-row.ism-element-row--pitch:nth-child(4) .ismjs-remove').click(function () {
-	    	 var userId = $(this).parents('.ism-element').find('.ismjs-menu').attr('id').split('_')[0];
-	    	 var gameClubPlayerId = $(this).parents('.ism-element').find('.ismjs-menu').attr('id').split('_')[1];
-	    	 removePlayer(userId,gameClubPlayerId,this,midd2);
+	    	 var userId = userJson.userId;
+	    	 if($(this).parents('.ism-element').find('.ismjs-menu').attr('id') != undefined && typeof $(this).parents('.ism-element').find('.ismjs-menu').attr('id') != 'undefined')
+	    	 {
+	    		 var gameClubPlayerId = $(this).parents('.ism-element').find('.ismjs-menu').attr('id').split('_')[1];
+		    	 removePlayer(userId,gameClubPlayerId,this,midd2);
+	    	 }
 	    	 return false;
 	    })
 	};
@@ -1286,12 +1297,13 @@
 	     '</picture>'+
 	     '<div class="ism-element__name ism-element__name--placeholder"> <abbr title="All-Rounder" class="ism-element__type"><span class="ism-element__type__short">FWD</span></abbr></div>';
 	    
-	     
-	     
 	     $('.ism-element-row.ism-element-row--pitch:nth-child(3) .ismjs-remove').click(function () {
-	    	 var userId = $(this).parents('.ism-element').find('.ismjs-menu').attr('id').split('_')[0];
-	    	 var gameClubPlayerId = $(this).parents('.ism-element').find('.ismjs-menu').attr('id').split('_')[1];
-	    	 removePlayer(userId,gameClubPlayerId,this,for2);
+	    	 var userId =userJson.userId;
+	    	 if($(this).parents('.ism-element').find('.ismjs-menu').attr('id') != undefined && typeof $(this).parents('.ism-element').find('.ismjs-menu').attr('id') != 'undefined')
+	    	 {
+	    		 var gameClubPlayerId = $(this).parents('.ism-element').find('.ismjs-menu').attr('id').split('_')[1];
+		    	 removePlayer(userId,gameClubPlayerId,this,for2);
+	    	 }
 	    	 return false;
 	    })
 	};
@@ -1316,7 +1328,7 @@
 			var playerType = "";
 			var playerPrice = "";
 			var playerName = "";
-			var userId = "${sessionScope.userId}";
+			var userId = userJson.userId;
 			if(typeof playerListJson != 'undefined')
 			{
 				for(var playerListIndex = 0; playerListIndex < playerListJson.length; playerListIndex++)
@@ -1538,14 +1550,10 @@
      function addPlayer(userId, gameClubPlayerId)
      {
      	<c:choose>
-     	<c:when test="${isUnderDeadline}">
+     	<c:when test="${not isUnderDeadline}">
      	alert("You are under deadline");
      	</c:when>
-     	<c:when test="${not sessionScope.user.hasActivePlan}">
-     	alert("You don't have any plan active");
-     	</c:when>
      	<c:otherwise>
-     	
     	 var playerType = '';
     	 var playerName = '';
     	 var playerPrice = '';
@@ -1566,19 +1574,23 @@
 			}
 		console.info("--- Player Type "+playerType);
 		var ajaxCall = true;
-		var avialBalance = parseInt($('#planBalanceDiv').text());
-		var planTypeVal =  '${sessionScope.user.activePlan.planTypeVal}'; /* Denoted plan is of unlimitted value (Days wise or price wise)*/
-		console.log('planTypeVal: '+planTypeVal+' , avialBalance: '+avialBalance);
-		var planTypeVal =  '${sessionScope.user.activePlan.planTypeVal}';
-		var hasActivePlan = '${sessionScope.user.hasActivePlan}';
+		var avialBalance = userJson.balanceCoins;
 		if(playerType == '')
 		{
 			ajaxCall = false;
 		}
-		else if(planTypeVal == 0 && avialBalance < playerPrice)
+		else if(avialBalance < playerPrice)
 		{
 			alert("Bank Account is less than player price");
 			ajaxCall = false;
+		}
+		else if(!(userJson.hasActivePlan || userJson.totalTransferForGameWeek <=1 || userJson.gameWeekNumberForPlayerTransfer <=1 || userJson.totalPoint > 4))
+		{
+			ajaxCall = false;
+			if(userJson.totalPoint < 4)
+			{
+				alert("Please active wild card to add player");
+			}
 		}
 		else if (playerType == 'wk')
 		{
@@ -1635,11 +1647,17 @@
 	     			  if(resp.isSuccess)
 	     			  {
 	     				 userGameJson = resp.userGameJson; 
+	     				 userJson = resp.userJson;
 	     				$("p.added-player-count").text(""+userGameJson.playerList.length+"/15");	     				
 	     				 var clubImage = clubIdImageMap[clubId];
 	     				 if(typeof $('#planBalanceDiv') != 'undefined')
 	     			 	 {
-	     					$('#planBalanceDiv').text(resp.activePlanBalance); 
+	     					$('#planBalanceDiv').text(userJson.balanceCoins); 
+	     				 }
+	     				 if(typeof $('#freeTransUsedDiv') != 'undefined')
+	     			 	 {
+	     					if(userJson.totalTransferForGameWeek > 1)
+	     					 $('#freeTransUsedDiv').text('used'); 
 	     				 }
 	     				 if(playerType == 'wk')
 	     				 {
@@ -1748,10 +1766,11 @@
 	     			  if(resp.isSuccess)
 	     			  {
 	     				 userGameJson = resp.userGameJson;
+	     				 userJson = resp.userJson;
 	     				$("p.added-player-count").text(""+userGameJson.playerList.length+"/15");
 	     				if(typeof $('#planBalanceDiv') != 'undefined')
 	     			 	 {
-	     					$('#planBalanceDiv').text(resp.activePlanBalance); 
+	     					$('#planBalanceDiv').text(userJson.balanceCoins); 
 	     				 }
 	     				$(elems1).parents('.ism-element').find('.ismjs-menu').replaceWith( elems2 );
 	     			  }
