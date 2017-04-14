@@ -59,7 +59,8 @@
                     <div id="ismr-scoreboard">
                         <div>
                         <div class="ism-copy">
-                                <h3 style="color: #193782;"><i class="fa fa-angle-double-right" style="color: #f00;"></i> Select Players from the list</h3>
+                            <h3 style="color: #193782;"><i class="fa fa-angle-double-right" style="color: #f00;"></i> Select Players from the list</h3>
+                        	
                          </div> 
 							
                             <!-- Scoreboard -->
@@ -856,9 +857,14 @@
                 <div id="ismr-squad-menu"></div>
                 <div id="ismr-help"></div>
                 <div id="ismr-confirm"></div>
+                <!-- <div class="transfer-banner">
+                <img src="/SportMgmt/images/addbanner_728x90_V1.jpg" alt="" class="img-responsive">
+                </div> -->
+                <BR>
                 <div class="transfer-banner">
-                <img src="/SportMgmt/images/addbanner_728x90_V1.jpg" alt="" class="img-responsive"></a>
+                <img src="/SportMgmt/images/ads-bottom.jpg" alt="" class="img-responsive">
                 </div>
+                
             </div>
         </div>
 
@@ -1551,7 +1557,7 @@
      {
      	<c:choose>
      	<c:when test="${not isUnderDeadline}">
-     	alert("You are under deadline");
+     	alert("Hey buddy ! You are deadline. Player can be added after deadline");
      	</c:when>
      	<c:otherwise>
     	 var playerType = '';

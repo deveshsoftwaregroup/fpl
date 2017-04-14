@@ -136,11 +136,11 @@
                 
             </nav>
     	</header>
-    <div id="slides">
+    <div id="slides-old">
         <div class="slides-container">
             <div><img src="/SportMgmt/images/home-banner-current.jpg"><div class="overlay"></div></div>
             
-            <div><img src="/SportMgmt/images/home-banner-current-2.jpg"><div class="overlay"></div></div>
+           <!--  <div><img src="/SportMgmt/images/home-banner-current-2.jpg"><div class="overlay"></div></div> -->
         </div>
         
         <!-- <div class="shade"></div> -->
@@ -168,19 +168,7 @@
              	Start now and grab golden chance to win Prizes and Cash.</span>
            <BR><span class="s4"> Play and explore new features.</span>
             </div>
-           <!--  <div class="row clearfix main-banner">
-                <div class="large-12 column logo">
-                    <div class="logo-container wow zoomIn" data-wow-duration=".8s" data-wow-delay="0.5s"
-                        style="visibility: visible; animation-duration: 0.8s; animation-delay: 0.5s;
-                        animation-name: zoomIn;">
-                    </div>
-                </div>
-                <div class="large-12 column euro-headings">
-                    <div class="euro-divider">
-                        <hr>
-                    </div>
-                </div> 
-            </div>-->
+          
             <div class="row clearfix big-register">
                 <div class="large-12 column text-center">
                     <button class="btn btn-default bigRegister" onclick="openHomeHome();"><span>Play Now</span></button>
@@ -199,10 +187,10 @@
     </div>
     
     
-    <nav class="slides-navigation">
+    <!-- <nav class="slides-navigation">
       <a href="#" class="next"></a>
       <a href="#" class="prev"></a>
-    </nav>
+    </nav> -->
    
     
     <!-- pop-up container -->
