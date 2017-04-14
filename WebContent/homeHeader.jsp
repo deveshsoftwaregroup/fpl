@@ -356,7 +356,7 @@ input:-webkit-autofill {
 	          	<img alt="" src="../images/ipl.jpg">
 	          	<span class="fan">Fantasy</span>
 	              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-	              <h4 class="modal-title" id="myModalLabel">Login Form</h4>
+	              <h4 class="modal-title" id="myModalLabel">Login</h4>
 	          </div>
 	          <div class="modal-body">
 	              <div class="row">
@@ -480,7 +480,13 @@ input:-webkit-autofill {
   
 	<div id="login-overlay" class="modal-dialog loginForm">
 	      <div class="modal-content">
+	          <%-- <div class="modal-header">
+	              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+	              <h4 class="modal-title" id="myModalLabel">Signup</h4>
+	          </div> --%>
 	          <div class="modal-header">
+	          	<img alt="" src="../images/ipl.jpg">
+	          	<span class="fan">Fantasy</span>
 	              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
 	              <h4 class="modal-title" id="myModalLabel">Signup</h4>
 	          </div>
