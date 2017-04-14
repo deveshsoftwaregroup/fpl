@@ -136,11 +136,13 @@
                 
             </nav>
     	</header>
+    	
+   	<!-- to make slides active...do id as slides... remove -old -->
     <div id="slides-old">
         <div class="slides-container">
             <div><img src="/SportMgmt/images/home-banner-current.jpg"><div class="overlay"></div></div>
             
-           <!--  <div><img src="/SportMgmt/images/home-banner-current-2.jpg"><div class="overlay"></div></div> -->
+           <div><img src="/SportMgmt/images/home-banner-current-2.jpg"><div class="overlay"></div></div>
         </div>
         
         <!-- <div class="shade"></div> -->

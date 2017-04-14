@@ -1556,8 +1556,8 @@
      function addPlayer(userId, gameClubPlayerId)
      {
      	<c:choose>
-     	<c:when test="${not isUnderDeadline}">
-     	alert("Hey buddy ! You are deadline. Player can be added after deadline");
+     	<c:when test="${isUnderDeadline}">
+     	alert("Hey buddy ! You are under deadline. Player can be added after deadline");
      	</c:when>
      	<c:otherwise>
     	 var playerType = '';
