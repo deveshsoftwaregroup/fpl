@@ -8,8 +8,8 @@
         
         <!-- FOR Local connection  -->
         <property name="connection.url">jdbc:mysql://localhost:3306/ipl</property>
-        <property name="connection.username">admin</property>
-        <property name="connection.password">admin</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">root</property>
         
       <!-- FOR Staging
          <property name="connection.url">jdbc:mysql://149.56.37.30:3306/fantasyl_ipl_staging</property>
@@ -69,5 +69,6 @@
         <mapping class="com.sportmgmt.model.entity.PaymentExt"/>
         <mapping class="com.sportmgmt.model.entity.PlayerGroup"/>
         <mapping class="com.sportmgmt.model.entity.PlayerGroupPlayer"/>
+        <mapping class="com.sportmgmt.model.entity.GameWeekReport"/>
    </session-factory>
 </hibernate-configuration>
