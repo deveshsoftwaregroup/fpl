@@ -743,7 +743,28 @@ public class UserAction {
 					 user.setActivePlan(activePlan);
 					 logger.info(activePlan);
 				 }
-				
+				 String freeWildCardPlanId = LeaguePlanUtil.getFreeWildCardId(String.valueOf(user.getUserId())); 
+				 if(freeWildCardPlanId ==null || freeWildCardPlanId.equals(""))
+				{
+					session.setAttribute("hasFreeWildCard", false);
+					logger.info("------------------- hasFreeWildCard: false");
+				}
+				else
+				{
+					session.setAttribute("hasFreeWildCard", true);
+					logger.info("------------------- hasFreeWildCard: true");
+					session.setAttribute("freeWildCardPlanId", freeWildCardPlanId);
+				}
+				try
+				{
+					ObjectMapper mapperObj = new ObjectMapper();
+					String userJson = mapperObj.writeValueAsString(user);
+					session.setAttribute("userJson", userJson);
+				}
+				catch(Exception ex)
+				 {
+					 logger.error("---------- Error in parsing map to json: "+ex);
+				 }
 			}
 			else
 			{
@@ -751,7 +772,7 @@ public class UserAction {
 				modelMap.put("message", "Plan is not activated");
 			}
 		}
-		return SportConstrant.USER_PLAN_PAGE;	
+		return SportConstrant.USER_LANDING_REDIRECT_PAGE;	
 	}
 	
 }

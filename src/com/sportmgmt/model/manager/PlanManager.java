@@ -523,7 +523,7 @@ public class PlanManager {
 						cr = session.createCriteria(UserPlan.class);
 						User user = new User();
 						user.setUserId(new Integer(userId));
-						cr.add(Restrictions.eq("isActive", SportConstrant.YES));
+						//cr.add(Restrictions.eq("isActive", SportConstrant.YES));
 						cr.add(Restrictions.eq("user", user));
 						cr.add(Restrictions.eq("plan", leaguePlan));
 						results = cr.list();
@@ -597,7 +597,7 @@ public class PlanManager {
 						cr = session.createCriteria(UserPlan.class);
 						User user = new User();
 						user.setUserId(new Integer(userId));
-						cr.add(Restrictions.eq("isActive", SportConstrant.YES));
+						//cr.add(Restrictions.eq("isActive", SportConstrant.YES));
 						cr.add(Restrictions.eq("user", user));
 						cr.add(Restrictions.eq("plan", leaguePlan));
 						results = cr.list();

@@ -1766,12 +1766,17 @@ public class GameManager {
 						int count = 1;
 						for(Integer tempGameWeekId:gameWeekList)
 						{
-							if(tempGameWeekId == gameWeekId)
+							if(tempGameWeekId.equals(gameWeekId))
 							{
 								gameWeekNumber = count;
+								break;
 							}
 							count++;
 						}
+					}
+					else
+					{
+						logger.info("------- Game Week List is empty");
 					}
 				}
 				catch(Exception ex)

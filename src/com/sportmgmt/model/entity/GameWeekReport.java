@@ -34,7 +34,25 @@ public class GameWeekReport {
 	@Column(name="OVERALL_POINT")
 	private Integer totalPoint;
 	
-	@Column(name="PLR_TRANSFER")
+	@Column(name="CLUB_RANK")
+	private Integer clubRank;
+	
+	@Column(name="COUNTRY_RANK")
+	private Integer countryRank;
+	
+	@Column(name="USER_FAV_CLUB_ID")
+	private Integer userFavClub;
+	
+	@Column(name="USER_COUNTRY_ID")
+	private Integer userCountryId;
+	
+	@Column(name="USER_START_GAME_WEEK_ID")
+	private Integer userStartGameWeekId;
+	
+	@Column(name="USER_START_GAME_WEEK_RANK")
+	private Integer userStartGameWeekRank;
+	
+	@Column(name="GAMEWEEK_TRANSFER")
 	private Integer transfer;
 	
 	@Column(name="FIELD1")
@@ -132,6 +150,54 @@ public class GameWeekReport {
 
 	public void setFiled3(String filed3) {
 		this.filed3 = filed3;
+	}
+
+	public Integer getClubRank() {
+		return clubRank;
+	}
+
+	public void setClubRank(Integer clubRank) {
+		this.clubRank = clubRank;
+	}
+
+	public Integer getCountryRank() {
+		return countryRank;
+	}
+
+	public void setCountryRank(Integer countryRank) {
+		this.countryRank = countryRank;
+	}
+
+	public Integer getUserFavClub() {
+		return userFavClub;
+	}
+
+	public void setUserFavClub(Integer userFavClub) {
+		this.userFavClub = userFavClub;
+	}
+
+	public Integer getUserCountryId() {
+		return userCountryId;
+	}
+
+	public void setUserCountryId(Integer userCountryId) {
+		this.userCountryId = userCountryId;
+	}
+
+	public Integer getUserStartGameWeekId() {
+		return userStartGameWeekId;
+	}
+
+	public void setUserStartGameWeekId(Integer userStartGameWeekId) {
+		this.userStartGameWeekId = userStartGameWeekId;
+	}
+
+	public Integer getUserStartGameWeekRank() {
+		return userStartGameWeekRank;
+	}
+
+	public void setUserStartGameWeekRank(Integer userStartGameWeekRank) {
+		this.userStartGameWeekRank = userStartGameWeekRank;
 	}
 	
 }
