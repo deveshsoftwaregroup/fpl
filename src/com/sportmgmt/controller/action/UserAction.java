@@ -342,10 +342,10 @@ public class UserAction {
 				double totalPrice = GameManager.totalPlayersPriceOfUserByGame(user.getUserId(),Integer.valueOf(gameId));
 				totalMap.put("price", totalPrice);
 				totalMap.put("player", totalPlayers);
-				System.out.println("---------------- totalMap: "+userGameMap);
+				//System.out.println("---------------- totalMap: "+userGameMap);
 				GameManager.updateTotalPlayerByPostion(user.getUserId(),Integer.valueOf(gameId),totalMap);
 				userGameMap.put("total", totalMap);
-				System.out.println("---------------- totalMap Now : "+userGameMap);
+				//System.out.println("---------------- totalMap Now : "+userGameMap);
 				user.setUserGameMap(GameManager.getUserGameStatus(userId, gameId));
 			}
 			if(gameMap != null)
