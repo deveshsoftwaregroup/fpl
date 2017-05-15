@@ -70,5 +70,9 @@
         <mapping class="com.sportmgmt.model.entity.PlayerGroup"/>
         <mapping class="com.sportmgmt.model.entity.PlayerGroupPlayer"/>
         <mapping class="com.sportmgmt.model.entity.GameWeekReport"/>
+        <mapping class="com.sportmgmt.model.entity.Coupon"/>
+        <mapping class="com.sportmgmt.model.entity.CouponCategory"/>
+        <mapping class="com.sportmgmt.model.entity.UsedCoupon"/>
+        <mapping class="com.sportmgmt.model.entity.Offer"/>
    </session-factory>
 </hibernate-configuration>
