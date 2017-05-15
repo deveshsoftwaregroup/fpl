@@ -47,7 +47,7 @@ public class PointRankingUtility {
 	private boolean isDeadlineStart(String gameWeekId)
 	{
 		List<Timestamp> firstMatchOfGameWeek = GameManager.fetchFirstMatchOfGameWeek(new Integer(gameWeekId));
-		if(firstMatchOfGameWeek != null && firstMatchOfGameWeek.size() >=0)
+		if(firstMatchOfGameWeek != null && firstMatchOfGameWeek.size() >0)
 		 {
 			Timestamp startTimeOfFirstMatch = firstMatchOfGameWeek.get(0);
 			 int deadLineHrsBeforeStart = 0;

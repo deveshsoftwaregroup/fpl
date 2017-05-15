@@ -4,7 +4,6 @@ import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeSet;
@@ -17,7 +16,6 @@ import javax.servlet.jsp.tagext.TagSupport;
 
 import org.apache.log4j.Logger;
 
-import com.sportmgmt.controller.action.UserAction;
 import com.sportmgmt.model.manager.GameManager;
 import com.sportmgmt.utility.constrant.SportConstrant;
 
