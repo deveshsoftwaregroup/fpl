@@ -71,4 +71,6 @@ public static final String SELECT_AVERAGE_RANK_OF_GAME_WEEK = "select avg(week_r
 public static final String SELECT_HIEGHEST_POINT_OF_GAME_WEEK = "select max(week_point) from game_week_report where game_week_id =:gameWeekId";
 
 public static final String SELECT_AVERAGE_POINT_OF_GAME_WEEK = "select avg(week_point) from game_week_report where game_week_id =:gameWeekId";
+
+public static final String SELECT_TOTAL_LIMIT_OF_OFFER ="select limit_total from offer where user_id =:userId and game_id =:gameId and game_week_id =:gameWeekId and offer_type =:offerType and is_active = 'Y'";
 }

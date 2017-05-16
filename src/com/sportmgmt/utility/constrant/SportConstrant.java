@@ -68,5 +68,6 @@ public class SportConstrant {
 	public final static String PREVIOUS = "prev";
 	public final static String NEXT = "next";
 	public final static String GAME_WEEK_HISTORY = "GAME_WEEK_HISTORY";
+	public final static String WEEKLY_COUPON = "WEEKLY_COUPON";
 
 }

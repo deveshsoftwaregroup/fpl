@@ -40,10 +40,10 @@ public class CouponCategory {
 	@Column(name="STATUS")
 	private String status;
 	
-	@Column(name="MIN_PONT")
+	@Column(name="MIN_POINT")
 	private Integer minPoint;
 	
-	@Column(name="MAX_PONT")
+	@Column(name="MAX_POINT")
 	private Integer maxPoint;
 	
 	@Column(name="FIELD1")

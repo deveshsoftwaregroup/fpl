@@ -26,6 +26,9 @@ public class Coupon {
 	@Column(name="DESCRIPTION")
 	private String description;
 	
+	@Column(name="COUPON_CATEGORY_ID")
+	private CouponCategory couponCategoryId;
+	
 	@ManyToOne(cascade=CascadeType.ALL,fetch=FetchType.EAGER)
 	@JoinColumn(name="COUPON_CATEGORY_ID",insertable=true, updatable=true,nullable=true,unique=true)
 	private CouponCategory couponCategory;
@@ -160,6 +163,14 @@ public class Coupon {
 	public void setField2(String field2) {
 		this.field2 = field2;
 	}
-	
 
+	public CouponCategory getCouponCategoryId() {
+		return couponCategoryId;
+	}
+
+	public void setCouponCategoryId(CouponCategory couponCategoryId) {
+		this.couponCategoryId = couponCategoryId;
+	}
+	
+	
 }
