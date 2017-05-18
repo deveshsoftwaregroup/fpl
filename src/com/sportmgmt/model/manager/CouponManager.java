@@ -114,6 +114,11 @@ public class CouponManager {
 					criteria.add(Restrictions.ge("maxPoint", userPoint));
 					logger.info("----------- Executing query to fetch coupon category");
 					couponCategoryList = criteria.list();
+					if(!couponCategoryList.isEmpty())
+					{
+						logger.info("----- Returning coupon category  ---- : "+couponCategoryList.get(0));
+						return couponCategoryList.get(0);
+					}
 					
 				}
 				catch(Exception ex)
@@ -134,8 +139,8 @@ public class CouponManager {
 				logger.info("----- Session Object is null----");
 			}
 		}
-		logger.info("----- Returning coupon category  ---- : "+couponCategoryList.get(0));
-		return couponCategoryList.get(0);
+		logger.info("----- Returning coupon category null ---- : ");
+		return null;
 	}
 	public static List<Coupon> getCouponByCategoryAndVendor(Integer couponCategoryId,String vendor)
 	{
