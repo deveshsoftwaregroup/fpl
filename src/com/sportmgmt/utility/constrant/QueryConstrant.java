@@ -73,4 +73,11 @@ public static final String SELECT_HIEGHEST_POINT_OF_GAME_WEEK = "select max(week
 public static final String SELECT_AVERAGE_POINT_OF_GAME_WEEK = "select avg(week_point) from game_week_report where game_week_id =:gameWeekId";
 
 public static final String SELECT_TOTAL_LIMIT_OF_OFFER ="select limit_total from offer where user_id =:userId and game_id =:gameId and game_week_id =:gameWeekId and offer_type =:offerType and is_active = 'Y'";
+
+public static final String SELECT_TOTAL_USED_OF_COUPON_LIST ="select coupon_id,count(*) from coupon_used where coupon_id in (:couponList) and game_week_id =:gameWeekId group by coupon_id";
+
+public static final String SELECT_TOTAL_USED_OF_COUPON_FOR_GAME_WEEK ="select count(*) from coupon_used where coupon_id=:couponId and game_week_id =:gameWeekId";
+
+public static final String SELECT_TOTAL_USED_COUPON_BY_USER_FOR_GAME_WEEK ="select count(*) from coupon_used where user_id=:userId and game_week_id =:gameWeekId";
+
 }

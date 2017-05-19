@@ -25,10 +25,73 @@ public class CouponUtility {
 		this.vendorList = vendorList;
 	}
 
-	public List<Coupon> getCouponList(String userId,String gameWeeKId)
+	public List<Coupon> getCouponList(String userId,String gameWeekId,String vendor)
     {
-		logger.info("method: getCouponList, userId:"+userId+" , gameWeeKId: "+gameWeeKId);
-		Map<String,String> gameWeeKReport = GameWeeKManager.getGameWeekReport(userId, gameWeeKId);
+		logger.info("method: getCouponList, userId:"+userId+" , gameWeeKId: "+gameWeekId);
+		Map<String,String> gameWeeKReport = GameWeeKManager.getGameWeekReport(userId, gameWeekId);
+		logger.info(" gameWeeKReport: "+gameWeeKReport);
+		if(gameWeeKReport !=null && !gameWeeKReport.isEmpty() && gameWeeKReport.get("point") !=null)
+		{
+			CouponCategory couponCategory = CouponManager.getCouponCategory(new Integer(gameWeeKReport.get("point")));
+			if(couponCategory !=null)
+			{
+				couponList = new ArrayList<Coupon>();
+				List<com.sportmgmt.model.entity.Coupon> allCouponList= couponCategory.getCouponList();
+				if(allCouponList !=null && !allCouponList.isEmpty())
+				{
+					
+					List<Integer> limittedCouponIdList = new ArrayList<Integer>();
+					for(com.sportmgmt.model.entity.Coupon couponModel:allCouponList)
+					{
+						if(couponModel.getIsActive().equals(SportConstrant.YES))
+						{
+							String vendorInDB = couponModel.getVendor();
+							vendorList.add(vendorInDB);
+							if(vendor.equals(vendorInDB))
+							{
+								Coupon couponBean = new Coupon();
+								couponBean.setCouponId(couponModel.getCouponId());
+								couponBean.setCode(couponModel.getCode());
+								couponBean.setAppURL(couponModel.getAppURL());
+								couponBean.setDescription(couponModel.getDescription());
+								couponBean.setName(couponModel.getName());
+								couponBean.setLogo(couponModel.getLogo());
+								couponBean.setTotal(couponModel.getTotal());
+								couponBean.setVendor(vendorInDB);
+								couponList.add(couponBean);
+								if(couponModel.getTotal() !=0)
+								limittedCouponIdList.add(couponBean.getCouponId());
+							}
+						}
+					}
+					
+					if(!limittedCouponIdList.isEmpty() && gameWeekId !=null && !gameWeekId.equals(""))
+					{
+						Map<Integer,Integer> couponIdAndTotalUsedMap = CouponManager.getTotalUsedForCouponList(gameWeekId, limittedCouponIdList);
+						if(!couponIdAndTotalUsedMap.isEmpty())
+						{
+							for(Coupon couponBean:couponList)
+							{
+								int totalCoupon = couponBean.getTotal();
+								Integer totalUsedCoupon = couponIdAndTotalUsedMap.get(couponBean.getCouponId());
+								if(totalCoupon !=0 && totalUsedCoupon!=null)
+								{
+									couponBean.setTotal_Avail(totalCoupon-totalUsedCoupon);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	
+		return couponList;
+    }
+	
+	public List<Coupon> getCouponList(String userId,String gameWeekId)
+    {
+		logger.info("method: getCouponList, userId:"+userId+" , gameWeeKId: "+gameWeekId);
+		Map<String,String> gameWeeKReport = GameWeeKManager.getGameWeekReport(userId, gameWeekId);
 		logger.info(" gameWeeKReport: "+gameWeeKReport);
 		if(gameWeeKReport !=null && !gameWeeKReport.isEmpty() && gameWeeKReport.get("point") !=null)
 		{
@@ -61,9 +124,21 @@ public class CouponUtility {
 						}
 					}
 					
-					if(!limittedCouponIdList.isEmpty() && gameWeeKId !=null && !gameWeeKId.equals(""))
+					if(!limittedCouponIdList.isEmpty() && gameWeekId !=null && !gameWeekId.equals(""))
 					{
-						
+						Map<Integer,Integer> couponIdAndTotalUsedMap = CouponManager.getTotalUsedForCouponList(gameWeekId, limittedCouponIdList);
+						if(!couponIdAndTotalUsedMap.isEmpty())
+						{
+							for(Coupon couponBean:couponList)
+							{
+								int totalCoupon = couponBean.getTotal();
+								Integer totalUsedCoupon = couponIdAndTotalUsedMap.get(couponBean.getCouponId());
+								if(totalCoupon !=0 && totalUsedCoupon!=null)
+								{
+									couponBean.setTotal_Avail(totalCoupon-totalUsedCoupon);
+								}
+							}
+						}
 					}
 				}
 			}
