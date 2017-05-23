@@ -89,6 +89,9 @@
 	<bean id="pointRankingUtility" class="com.sportmgmt.utility.common.PointRankingUtility">  
 	    <property name="applicationDataUtility" ref="applicationDataUtility" /> 
 	</bean>
+	
+	<bean id="couponUtility" class="com.sportmgmt.utility.common.CouponUtility">  
+	</bean>
     <!-- <bean id="sportSchedular" class="com.sportmgmt.utility.common.SportSchedular"></bean> -->
     <import resource="spring-social.xml" />
 </beans>

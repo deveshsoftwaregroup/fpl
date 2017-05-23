@@ -233,13 +233,26 @@ public class GameWeeKManager {
 					List<GameWeekReport> results = cr.list();
 					if(results != null && !results.isEmpty())
 					{
-						logger.info(" ------- Enrty found in GameWeekReport table");
+						logger.info(" ------- Enrty found in GameWeekReport table: "+results);
 						GameWeekReport gameWeekReport = (GameWeekReport)results.get(0);
 						Map<String,String> gameWeekReportMap = new HashMap<String,String>();
-						gameWeekReportMap.put("rank", gameWeekReport.getRank().toString());
-						gameWeekReportMap.put("point", gameWeekReport.getPoint().toString());
-						gameWeekReportMap.put("finalPoint", gameWeekReport.getTotalPoint().toString());
-						gameWeekReportMap.put("finalRank", gameWeekReport.getTotalRank().toString());
+						if(gameWeekReport.getRank() !=null)
+						{
+							gameWeekReportMap.put("rank", gameWeekReport.getRank().toString());
+						}
+						if(gameWeekReport.getPoint() !=null)
+						{
+							gameWeekReportMap.put("point", gameWeekReport.getPoint().toString());
+						}
+						if(gameWeekReport.getTotalPoint() !=null)
+						{
+							gameWeekReportMap.put("finalPoint", gameWeekReport.getTotalPoint().toString());
+						}
+						if(gameWeekReport.getTotalRank() !=null)
+						{
+							gameWeekReportMap.put("finalRank", gameWeekReport.getTotalRank().toString());
+						}
+									
 						if(gameWeekReport.getTransfer() !=null)
 						gameWeekReportMap.put("transfer", gameWeekReport.getTransfer().toString());
 						SQLQuery sqlQuery = session.createSQLQuery(QueryConstrant.SELECT_HIEGHEST_POINT_OF_GAME_WEEK);
@@ -263,7 +276,7 @@ public class GameWeeKManager {
 					}
 					else
 					{
-						logger.info(" ------- Enty not found in GAME_WEEK_REPORT table ");
+						logger.info(" ------- Enty not found in GAME_WEEK_REPORT table :"+results);
 					}
 									}
 				catch(Exception ex)
