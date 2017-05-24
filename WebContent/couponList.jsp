@@ -7,7 +7,7 @@
 <title>Coupon List</title>
 </head>
 <body>
-Coupon List: ${couponList}
+Coupon List: ${couponListJson}
 <br/>
 Vendor List: ${vendorList}
 </body>

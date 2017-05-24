@@ -18,13 +18,20 @@ public class CouponUtility {
 	private Logger logger = Logger.getLogger(CouponUtility.class);
 	private List<Coupon> couponList;
 	private Set<String> vendorList = new TreeSet<String>();
+	private Integer couponCategoryId;
 	public Set<String> getVendorList() {
 		return vendorList;
 	}
 	public void setVendorList(Set<String> vendorList) {
 		this.vendorList = vendorList;
 	}
-
+	
+	public Integer getCouponCategoryId() {
+		return couponCategoryId;
+	}
+	public void setCouponCategoryId(Integer couponCategoryId) {
+		this.couponCategoryId = couponCategoryId;
+	}
 	public List<Coupon> getCouponList(String userId,String gameWeekId,String vendor)
     {
 		logger.info("method: getCouponList, userId:"+userId+" , gameWeeKId: "+gameWeekId);
@@ -35,6 +42,7 @@ public class CouponUtility {
 			CouponCategory couponCategory = CouponManager.getCouponCategory(new Integer(gameWeeKReport.get("point")));
 			if(couponCategory !=null)
 			{
+				setCouponCategoryId(couponCategory.getCouponCategoryId());
 				couponList = new ArrayList<Coupon>();
 				List<com.sportmgmt.model.entity.Coupon> allCouponList= couponCategory.getCouponList();
 				if(allCouponList !=null && !allCouponList.isEmpty())
@@ -98,6 +106,7 @@ public class CouponUtility {
 			CouponCategory couponCategory = CouponManager.getCouponCategory(new Integer(gameWeeKReport.get("point")));
 			if(couponCategory !=null)
 			{
+				setCouponCategoryId(couponCategory.getCouponCategoryId());
 				couponList = new ArrayList<Coupon>();
 				List<com.sportmgmt.model.entity.Coupon> allCouponList= couponCategory.getCouponList();
 				if(allCouponList !=null && !allCouponList.isEmpty())
