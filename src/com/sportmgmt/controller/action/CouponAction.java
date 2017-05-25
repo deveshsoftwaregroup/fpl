@@ -48,7 +48,7 @@ public class CouponAction {
 	}
 	
 	@RequestMapping(value = "list/{userId}/{gameId}", method = RequestMethod.GET)
-	public String orderBy(ModelMap modeMap,@PathVariable String userId,@PathVariable String gameId)
+	public String couponList(ModelMap modeMap,@PathVariable String userId,@PathVariable String gameId)
 	{
 		Integer lastGameWeekId = PointRankManager.getLastGameWeekId(gameId);
 		logger.info("Last game week Id: "+lastGameWeekId);
@@ -76,7 +76,7 @@ public class CouponAction {
 	}
 	
 	@RequestMapping(value = "list/{userId}/{gameId}/{vendorName}", method = RequestMethod.GET)
-	public @ResponseBody java.util.Map orderBy(@PathVariable String userId,@PathVariable String gameId,@PathVariable String vendorName)
+	public @ResponseBody java.util.Map couponList(@PathVariable String userId,@PathVariable String gameId,@PathVariable String vendorName)
 	{
 		java.util.Map resultMap = new java.util.HashMap();
 		Integer lastGameWeekId = PointRankManager.getLastGameWeekId(gameId);
@@ -88,6 +88,13 @@ public class CouponAction {
 			resultMap.put("couponList", couponList);
 			
 		}
+		return resultMap;
+	}
+	
+	@RequestMapping(value = "avial", method = RequestMethod.GET)
+	public @ResponseBody java.util.Map avail(@PathVariable String userId,@PathVariable String gameId,@PathVariable String vendorName)
+	{
+		java.util.Map resultMap = new java.util.HashMap();
 		return resultMap;
 	}
 }

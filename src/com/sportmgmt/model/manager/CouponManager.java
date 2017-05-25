@@ -201,6 +201,51 @@ public class CouponManager {
 		return couponList;
 	}
 	
+	public static Coupon getCouponById(Integer couponId)
+	{
+		logger.info("----- Inside getCouponById ---- couponId: "+couponId);
+		setErrorMessage(SportConstrant.NULL);
+		setErrorCode(SportConstrant.NULL);
+		SessionFactory factory = HibernateSessionFactory.getSessionFacotry();
+		if(factory == null)
+		{
+			setErrorCode(ErrorConstrant.SESS_FACT_NULL);
+			setErrorMessage("Technical Error");
+			logger.info("----- Factory Object is null----");
+		}
+		else
+		{
+			Session session = factory.openSession();
+			if(session != null)
+			{
+				try
+				{
+					
+					Coupon coupon =(Coupon)session.load(Coupon.class, couponId);
+					return coupon;
+				}
+				catch(Exception ex)
+				{
+					logger.error("Exception in fetching coupon list for user: "+ex);
+					setErrorMessage("Technical Error");
+					setErrorCode(ErrorConstrant.TRANSACTION_ERROR);
+				}
+				finally
+				{
+					session.close();
+				}
+			}
+			else
+			{
+				setErrorCode(ErrorConstrant.SESS_NULL);
+				setErrorMessage("Technical Error");
+				logger.info("----- Session Object is null----");
+			}
+		}
+		logger.info("----- Returning coupon  ---- null");
+		return null;
+	}
+	
 	public static Map<Integer,Integer> getTotalUsedForCouponList(String gameWeekId,List<Integer> couponList)
 	{
 		logger.info("----- Inside getTotalUsedForCouponList ---- gameWeekId: "+gameWeekId+", couponList: "+couponList);
