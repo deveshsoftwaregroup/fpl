@@ -221,7 +221,9 @@ public class CouponManager {
 				try
 				{
 					
-					Coupon coupon =(Coupon)session.load(Coupon.class, couponId);
+					//Coupon coupon =(Coupon)session.load(Coupon.class, couponId);/*will get proxy exeption(Lazy initialization exception)*/
+					Coupon coupon =(Coupon)session.get(Coupon.class, couponId);																
+					logger.info("after load coupon: "+coupon);
 					return coupon;
 				}
 				catch(Exception ex)
@@ -309,7 +311,7 @@ public class CouponManager {
 		logger.info("----- Inside getTotalUsedOfCouponForGameWeek ---- gameWeekId: "+gameWeekId+", couponId: "+couponId);
 		setErrorMessage(SportConstrant.NULL);
 		setErrorCode(SportConstrant.NULL);
-		List<Integer> totalUsedCouponList = null;
+		List<Object> totalUsedCouponList = null;
 		SessionFactory factory = HibernateSessionFactory.getSessionFacotry();
 		if(factory == null)
 		{
@@ -332,8 +334,9 @@ public class CouponManager {
 					totalUsedCouponList = query.list();
 					if(totalUsedCouponList !=null && !totalUsedCouponList.isEmpty())
 					{
-						logger.info("------ returning total used coupon "+totalUsedCouponList.get(0));
-						return totalUsedCouponList.get(0);
+						Integer totalUsedCoupon = ((java.math.BigInteger)totalUsedCouponList.get(0)).intValue();
+						logger.info("------ returning total used coupon "+totalUsedCoupon);
+						return totalUsedCoupon;
 					}
 					
 				}
@@ -363,7 +366,7 @@ public class CouponManager {
 		logger.info("----- Inside getTotalUsedCouponByUserForGameWeek ---- gameWeekId: "+gameWeekId+", userId: "+userId);
 		setErrorMessage(SportConstrant.NULL);
 		setErrorCode(SportConstrant.NULL);
-		List<Integer> totalUsedCouponByUser = null;
+		List<Object> totalUsedCouponByUser = null;
 		SessionFactory factory = HibernateSessionFactory.getSessionFacotry();
 		if(factory == null)
 		{
@@ -386,8 +389,9 @@ public class CouponManager {
 					totalUsedCouponByUser = query.list();
 					if(totalUsedCouponByUser !=null && !totalUsedCouponByUser.isEmpty())
 					{
-						logger.info("------ returning total used coupon "+totalUsedCouponByUser.get(0));
-						return totalUsedCouponByUser.get(0);
+						Integer totalUsedCouponByUserInt = ((java.math.BigInteger)totalUsedCouponByUser.get(0)).intValue();
+						logger.info("------ returning total used coupon "+totalUsedCouponByUserInt);
+						return totalUsedCouponByUserInt;
 					}
 					
 				}

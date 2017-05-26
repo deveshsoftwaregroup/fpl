@@ -10,13 +10,16 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sportmgmt.controller.bean.Coupon;
+import com.sportmgmt.model.manager.CouponManager;
 import com.sportmgmt.model.manager.PointRankManager;
 import com.sportmgmt.utility.common.CouponUtility;
 import com.sportmgmt.utility.common.PointRankingUtility;
+import com.sportmgmt.utility.constrant.SportConstrant;
 @Controller
 @RequestMapping("/coupon")
 public class CouponAction {
@@ -91,10 +94,47 @@ public class CouponAction {
 		return resultMap;
 	}
 	
-	@RequestMapping(value = "avial", method = RequestMethod.GET)
-	public @ResponseBody java.util.Map avail(@PathVariable String userId,@PathVariable String gameId,@PathVariable String vendorName)
+	@RequestMapping(value = "avail", method = RequestMethod.POST)
+	public @ResponseBody java.util.Map avail(@RequestParam("userId") String userId,@RequestParam("gameWeekId") String gameWeekId,@RequestParam("couponId") String couponId)
 	{
 		java.util.Map resultMap = new java.util.HashMap();
+		resultMap.put("isAvialed", true);
+		resultMap.put("message", "Coupon is availed");
+		Integer couponIdInt = new Integer(couponId);
+		Integer userIdInt = new Integer(userId);
+		Integer gameWeekIdInt = new Integer(gameWeekId);
+		com.sportmgmt.model.entity.Coupon coupon=CouponManager.getCouponById(couponIdInt);
+		//logger.info("---- Coupon: "+coupon);
+		String couponCode = coupon.getCode();
+		String isActive = coupon.getIsActive();
+		logger.info("---- Coupon:code: "+couponCode);
+		resultMap.put("couponCode",couponCode);
+		logger.info("coupon isActive: "+isActive);
+		if(isActive.equals(SportConstrant.YES))
+		{
+			Integer couponCategoryId = coupon.getCouponCategory().getCouponCategoryId();
+			boolean isAlloted =CouponManager.allotCouponToUser(gameWeekIdInt, userIdInt, couponIdInt,  Integer.valueOf(couponCategoryId), null);
+			logger.info("Coupon Alloted: "+isAlloted);
+			int totalCoupon = coupon.getTotal();
+			logger.info("totalCoupon: "+totalCoupon);
+			if(isAlloted && totalCoupon!=0)
+			{
+				//int totalUsedByUser =CouponManager.getTotalUsedCouponByUserForGameWeek(gameWeekId, Integer.valueOf(userId));
+				int totalUsedCoupon = CouponManager.getTotalUsedOfCouponForGameWeek(gameWeekId, couponIdInt);
+				logger.info("totalUsedCoupon: "+totalUsedCoupon);
+				if(totalUsedCoupon >=totalCoupon)
+				{
+					CouponManager.deActivateCoupon(couponIdInt);
+				}
+			}
+			
+		}
+		else
+		{
+			resultMap.put("isAvialed", false);
+			resultMap.put("message", "Sorry Coupon is not aviable not, Pls choose other coupon");
+		}
 		return resultMap;
 	}
+	
 }
