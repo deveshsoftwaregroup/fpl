@@ -132,7 +132,7 @@ public class CouponAction {
 		else
 		{
 			resultMap.put("isAvialed", false);
-			resultMap.put("message", "Sorry Coupon is not aviable not, Pls choose other coupon");
+			resultMap.put("message", "Sorry Coupon is not aviable, Pls choose other coupon");
 		}
 		return resultMap;
 	}
