@@ -14,12 +14,12 @@
       <!-- FOR Staging
          <property name="connection.url">jdbc:mysql://149.56.37.30:3306/fantasyl_ipl_staging</property>
         <property name="connection.username">fantasyl_ipl1</property>
-        <property name="connection.password">P@ssw0rd</property> -->
+        <property name="connection.password">P@ssw0rd</property>-->
         
         <!-- FOR Live connection
-        <property name="connection.url">jdbc:mysql://149.56.37.30:3306/fantasyl_league_live</property>
-        <property name="connection.username">fantasyl_live</property>
-        <property name="connection.password">live@987</property>-->
+        <property name="connection.url">jdbc:mysql://149.56.37.30:3306/fantasyl_ipl_live</property>
+        <property name="connection.username">fantasyl_iplive</property>
+        <property name="connection.password">4s?a)+]zCk^h</property>-->
  
         <!-- JDBC connection pool (use the built-in) -->
         <property name="connection.pool_size">4</property> 
