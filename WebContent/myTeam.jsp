@@ -76,14 +76,14 @@
 												<div class="league-pitch__unit league-pitch__unit--4"></div>
 												<div id="leaguer-pos1" class="league-pitch__unit league-pitch__unit--4">
 													<div class="league-transfer--original">
-													<s:sport position="1" playerType="wk"/>
+													<s:sport position="1" playerType="Goalkeeper"/>
 														<div class="league-element" tabindex="0">
 															<div class="leaguejs-menu check_1">
 															<c:if test="${not empty clubId and clubId ne ''}">
 																<spring:message code="club_${clubId}_image" var="imageSrc" />
 															</c:if>
 																<picture>
-																	<img src="/SportMgmt/images/wk_${imageSrc}"  alt="Burnley" title="Burnleyyy" class="league-shirt league-element__shirt">
+																	<img src="/SportMgmt/images/Goalkeeper_${imageSrc}"  alt="Burnley" title="Burnleyyy" class="league-shirt league-element__shirt">
 																</picture>
 																<div class="league-element__name">${playerName}</div>
 																<div class="league-element__data">${price}</div>
@@ -115,14 +115,14 @@
 												</div>
 												<div id="leaguer-pos2" class="league-pitch__unit league-pitch__unit--4">
 													<div class="league-transfer--original">
-													<s:sport position="2" playerType="wk"/>
+													<s:sport position="2" playerType="Goalkeeper"/>
 														<div class="league-element" tabindex="0">
 															<div class="leaguejs-menu check_2">
 															<c:set var="imageSrc" value="" />
 															<c:if test="${not empty clubId and clubId ne ''}">
 																<spring:message code="club_${clubId}_image" var="imageSrc" />
 															</c:if>																<picture>
-																	<img src="/SportMgmt/images/wk_${imageSrc}"  alt="West Brom" title="West Brom" class="league-shirt league-element__shirt">
+																	<img src="/SportMgmt/images/Goalkeeper_${imageSrc}"  alt="West Brom" title="West Brom" class="league-shirt league-element__shirt">
 																</picture>
 																<div class="league-element__name">${playerName}</div>
 																<div class="league-element__data">${price}</div>
@@ -146,7 +146,7 @@
 											<div class="league-element-row league-element-row--pitch">
 												<div id="leaguer-pos3" class="league-pitch__unit league-pitch__unit--5">
 													<div class="league-transfer--original">
-													<s:sport position="1" playerType="bat"/>
+													<s:sport position="1" playerType="Defender"/>
 														<div class="league-element" tabindex="0">
 														<c:set var="imageSrc" value="" />
 														<c:if test="${not empty clubId and clubId ne ''}">
@@ -154,7 +154,7 @@
 															</c:if>		
 															<div class="leaguejs-menu check_3">
 																<picture>
-																	<img src="/SportMgmt/images/bat_${imageSrc}"  alt="West Brom" title="West Brom" class="league-shirt league-element__shirt">
+																	<img src="/SportMgmt/images/Defender_${imageSrc}"  alt="West Brom" title="West Brom" class="league-shirt league-element__shirt">
 																</picture>
 																<div class="league-element__name">${playerName}</div>
 																<div class="league-element__data">${price}</div>
@@ -173,7 +173,7 @@
 												</div>
 												<div id="leaguer-pos4" class="league-pitch__unit league-pitch__unit--5">
 													<div class="league-transfer--original">
-													<s:sport position="2" playerType="bat"/>
+													<s:sport position="2" playerType="Defender"/>
 														<div class="league-element" tabindex="0">
 														<c:set var="imageSrc" value="" />
 														<c:if test="${not empty clubId and clubId ne ''}">
@@ -181,7 +181,7 @@
 															</c:if>		
 															<div class="leaguejs-menu check_4">
 																<picture>
-																	<img src="/SportMgmt/images/bat_${imageSrc}" alt="West Ham" title="West Ham" class="league-shirt league-element__shirt">
+																	<img src="/SportMgmt/images/Defender_${imageSrc}" alt="West Ham" title="West Ham" class="league-shirt league-element__shirt">
 																</picture>
 																<div class="league-element__name">${playerName}</div>
 																<div class="league-element__data">${price}</div>
@@ -200,14 +200,14 @@
 												</div>
 												<div id="leaguer-pos5" class="league-pitch__unit league-pitch__unit--5">
 													<div class="league-transfer--original">
-													<s:sport position="3" playerType="bat"/>
+													<s:sport position="3" playerType="Defender"/>
 														<div class="league-element" tabindex="0">
 														<c:if test="${not empty clubId and clubId ne ''}">
 																<spring:message code="club_${clubId}_image" var="imageSrc" />
 															</c:if>		
 															<div class="leaguejs-menu check_5">
 																<picture>
-																	<img src="/SportMgmt/images/bat_${imageSrc}"  alt="Man Utd" title="Man Utd" class="league-shirt league-element__shirt">
+																	<img src="/SportMgmt/images/Defender_${imageSrc}"  alt="Man Utd" title="Man Utd" class="league-shirt league-element__shirt">
 																</picture>
 																<div class="league-element__name">${playerName}</div>
 																<div class="league-element__data">${price}</div>
@@ -226,14 +226,14 @@
 												</div>
 												<div id="leaguer-pos6" class="league-pitch__unit league-pitch__unit--5">
 													<div class="league-transfer--original">
-														<s:sport position="4" playerType="bat"/>
+														<s:sport position="4" playerType="Defender"/>
 														<div class="league-element" tabindex="0">
 															<div class="leaguejs-menu check_6">
 															<c:if test="${not empty clubId and clubId ne ''}">
 																<spring:message code="club_${clubId}_image" var="imageSrc" />
 															</c:if>		
 																<picture>
-																	<img src="/SportMgmt/images/bat_${imageSrc}"  alt="Spurs" title="Spurs" class="league-shirt league-element__shirt">
+																	<img src="/SportMgmt/images/Defender_${imageSrc}"  alt="Spurs" title="Spurs" class="league-shirt league-element__shirt">
 																</picture>
 																<div class="league-element__name">${playerName}</div>
 																<div class="league-element__data">${price}</div>
@@ -252,14 +252,14 @@
 												</div>
 												<div id="leaguer-pos7" class="league-pitch__unit league-pitch__unit--5">
 													<div class="league-transfer--original">
-													<s:sport position="5" playerType="bat"/>
+													<s:sport position="5" playerType="Defender"/>
 														<div class="league-element" tabindex="0">
 															<div class="leaguejs-menu check_7">
 															<c:if test="${not empty clubId and clubId ne ''}">
 																<spring:message code="club_${clubId}_image" var="imageSrc" />
 															</c:if>		
 																<picture>
-																	<img src="/SportMgmt/images/bat_${imageSrc}"  alt="Hull" title="Hull" class="league-shirt league-element__shirt">
+																	<img src="/SportMgmt/images/Defender_${imageSrc}"  alt="Hull" title="Hull" class="league-shirt league-element__shirt">
 																</picture>
 																<div class="league-element__name">${playerName}</div>
 																<div class="league-element__data">${price}</div>
@@ -277,99 +277,17 @@
 													</div>
 												</div>
 											</div>
-		
-											<div class="league-element-row league-element-row--pitch">
-												<div id="leaguer-pos13" class="league-pitch__unit league-pitch__unit--3">
-													<div class="league-transfer--original">
-													<s:sport position="1" playerType="ar"/>
-														<div class="league-element" tabindex="0">
-														<c:if test="${not empty clubId and clubId ne ''}">
-																<spring:message code="club_${clubId}_image" var="imageSrc" />
-															</c:if>		
-															<div class="leaguejs-menu check_13">
-																<picture>
-																	<img src="/SportMgmt/images/ar_${imageSrc}"  alt="Middlesbrough" title="Middlesbrough" class="league-shirt league-element__shirt">
-																</picture>
-																<div class="league-element__name">${playerName}</div>
-																<div class="league-element__data">${price}</div>
-																<div class="league-element__controls">
-																	<div class="leaguejs-remove league-element__control league-element__control--primary">
-																		<input class="13-box" type="checkbox" name="boxes" value="check_13" <c:if test="${isPlaying eq 'Y'}">checked</c:if> onclick="activatePlayer('${sessionScope.userId}','${gameClubPlayerId}',this);" />
-																	</div>
-																	<%-- <div class="leaguejs-info league-element__control league-element__control--info">
-																		<a href="javascript:void(0);" title="View player information" class="fa fa-info" onclick="showPlayerDetails('${gameClubPlayerId}');"></a>
-																	</div> --%>
-																</div>
-															</div>
-
-														</div>
-													</div>
-												</div>
-												<div id="leaguer-pos14" class="league-pitch__unit league-pitch__unit--3">
-													<div class="league-transfer--original">
-													<s:sport position="2" playerType="ar"/>
-														<div class="league-element" tabindex="0">
-															<div class="leaguejs-menu check_14">
-															<c:if test="${not empty clubId and clubId ne ''}">
-																<spring:message code="club_${clubId}_image" var="imageSrc" />
-															</c:if>		
-																<picture>
-																	<img src="/SportMgmt/images/ar_${imageSrc}"  alt="Middlesbrough" title="Middlesbrough" class="league-shirt league-element__shirt">
-																</picture>
-																<div class="league-element__name">${playerName}</div>
-																<div class="league-element__data">${price}</div>
-																<div class="league-element__controls">
-																	<div class="leaguejs-remove league-element__control league-element__control--primary">
-																		<input class="14-box" type="checkbox" name="boxes" value="check_14" <c:if test="${isPlaying eq 'Y'}">checked</c:if> onclick="activatePlayer('${sessionScope.userId}','${gameClubPlayerId}',this);" />
-																	</div>
-																	<%-- <div class="leaguejs-info league-element__control league-element__control--info">
-																		<a href="javascript:void(0);" title="View player information" class="fa fa-info" onclick="showPlayerDetails('${gameClubPlayerId}');"></a>
-																	</div> --%>
-																</div>
-															</div>
-
-														</div>
-													</div>
-												</div>
-												<div id="leaguer-pos15" class="league-pitch__unit league-pitch__unit--3">
-													<div class="league-transfer--original">
-													<s:sport position="3" playerType="ar"/>
-														<div class="league-element" tabindex="0">
-														<c:if test="${not empty clubId and clubId ne ''}">
-																<spring:message code="club_${clubId}_image" var="imageSrc" />
-															</c:if>		
-															<div class="leaguejs-menu check_15">
-																<picture>
-																	<img src="/SportMgmt/images/ar_${imageSrc}"  alt="Man City" title="Man City" class="league-shirt league-element__shirt">
-																</picture>
-																<div class="league-element__name">${playerName}</div>
-																<div class="league-element__data">${price}</div>
-																<div class="league-element__controls">
-																	<div class="leaguejs-remove league-element__control league-element__control--primary">
-																		<input class="15-box" type="checkbox" name="boxes" value="check_15" <c:if test="${isPlaying eq 'Y'}">checked</c:if> onclick="activatePlayer('${sessionScope.userId}','${gameClubPlayerId}',this);"/>
-																	</div>
-																	<%-- <div class="leaguejs-info league-element__control league-element__control--info">
-																		<a href="javascript:void(0);" title="View player information" class="fa fa-info" onclick="showPlayerDetails('${gameClubPlayerId}');"></a>
-																	</div> --%>
-																</div>
-															</div>
-
-														</div>
-													</div>
-												</div>
-											</div>
-											
-											<div class="league-element-row league-element-row--pitch">
+												<div class="league-element-row league-element-row--pitch">
 												<div id="leaguer-pos8" class="league-pitch__unit league-pitch__unit--5">
 													<div class="league-transfer--original">
-													<s:sport position="1" playerType="bowl"/>
+													<s:sport position="1" playerType="Midfielder"/>
 														<div class="league-element" tabindex="0">
 															<div class="leaguejs-menu check_8">
 															<c:if test="${not empty clubId and clubId ne ''}">
 																<spring:message code="club_${clubId}_image" var="imageSrc" />
 															</c:if>		
 																<picture>
-																	<img src="/SportMgmt/images/bowl_${imageSrc}"  alt="Liverpool" title="Liverpool" class="league-shirt league-element__shirt">
+																	<img src="/SportMgmt/images/Midfielder_${imageSrc}"  alt="Liverpool" title="Liverpool" class="league-shirt league-element__shirt">
 																</picture>
 																<div class="league-element__name">${playerName}</div>
 																<div class="league-element__data">${price}</div>
@@ -388,14 +306,14 @@
 												</div>
 												<div id="leaguer-pos9" class="league-pitch__unit league-pitch__unit--5">
 													<div class="league-transfer--original">
-													<s:sport position="2" playerType="bowl"/>
+													<s:sport position="2" playerType="Midfielder"/>
 														<div class="league-element" tabindex="0">
 															<div class="leaguejs-menu check_9">
 															<c:if test="${not empty clubId and clubId ne ''}">
 																<spring:message code="club_${clubId}_image" var="imageSrc" />
 															</c:if>		
 																<picture>
-																	<img src="/SportMgmt/images/bowl_${imageSrc}"  alt="Everton" title="Everton" class="league-shirt league-element__shirt">
+																	<img src="/SportMgmt/images/Midfielder_${imageSrc}"  alt="Everton" title="Everton" class="league-shirt league-element__shirt">
 																</picture>
 																<div class="league-element__name">${playerName}</div>
 																<div class="league-element__data">${price}</div>
@@ -415,14 +333,14 @@
 												</div>
 												<div id="leaguer-pos10" class="league-pitch__unit league-pitch__unit--5">
 													<div class="league-transfer--original">
-													<s:sport position="3" playerType="bowl"/>
+													<s:sport position="3" playerType="Midfielder"/>
 														<div class="league-element" tabindex="0">
 															<div class="leaguejs-menu check_10">
 															<c:if test="${not empty clubId and clubId ne ''}">
 																<spring:message code="club_${clubId}_image" var="imageSrc" />
 															</c:if>		
 																<picture>
-																	<img src="/SportMgmt/images/bowl_${imageSrc}"  alt="Chelsea" title="Chelsea" class="league-shirt league-element__shirt">
+																	<img src="/SportMgmt/images/Midfielder_${imageSrc}"  alt="Chelsea" title="Chelsea" class="league-shirt league-element__shirt">
 																</picture>
 																<div class="league-element__name">${playerName}</div>
 																<div class="league-element__data">${price}</div>
@@ -442,14 +360,14 @@
 												</div>
 												<div id="leaguer-pos11" class="league-pitch__unit league-pitch__unit--5">
 													<div class="league-transfer--original">
-													<s:sport position="4" playerType="bowl"/>
+													<s:sport position="4" playerType="Midfielder"/>
 														<div class="league-element" tabindex="0">
 															<div class="leaguejs-menu check_11">
 															<c:if test="${not empty clubId and clubId ne ''}">
 																<spring:message code="club_${clubId}_image" var="imageSrc" />
 															</c:if>		
 																<picture>
-																	<img src="/SportMgmt/images/bowl_${imageSrc}"  alt="Swanca" title="Swanca" class="league-shirt league-element__shirt">
+																	<img src="/SportMgmt/images/Midfielder_${imageSrc}"  alt="Swanca" title="Swanca" class="league-shirt league-element__shirt">
 																</picture>
 																<div class="league-element__name">${playerName}</div>
 																<div class="league-element__data">${price}</div>
@@ -469,13 +387,13 @@
 												<div id="leaguer-pos12" class="league-pitch__unit league-pitch__unit--5">
 													<div class="league-transfer--original">
 														<div class="league-element" tabindex="0">
-														<s:sport position="5" playerType="bowl"/>
+														<s:sport position="5" playerType="Midfielder"/>
 															<div class="leaguejs-menu check_12">
 															<c:if test="${not empty clubId and clubId ne ''}">
 																<spring:message code="club_${clubId}_image" var="imageSrc" />
 															</c:if>		
 																<picture>
-																	<img src="/SportMgmt/images/bowl_${imageSrc}"  alt="Man Utd" title="Man Utd" class="league-shirt league-element__shirt">
+																	<img src="/SportMgmt/images/Midfielder_${imageSrc}"  alt="Man Utd" title="Man Utd" class="league-shirt league-element__shirt">
 																</picture>
 																<div class="league-element__name">${playerName}</div>
 																<div class="league-element__data">${price}</div>
@@ -493,6 +411,87 @@
 														</div>
 													</div>
 												</div>
+											<div class="league-element-row league-element-row--pitch">
+												<div id="leaguer-pos13" class="league-pitch__unit league-pitch__unit--3">
+													<div class="league-transfer--original">
+													<s:sport position="1" playerType="Forward"/>
+														<div class="league-element" tabindex="0">
+														<c:if test="${not empty clubId and clubId ne ''}">
+																<spring:message code="club_${clubId}_image" var="imageSrc" />
+															</c:if>		
+															<div class="leaguejs-menu check_13">
+																<picture>
+																	<img src="/SportMgmt/images/Forward_${imageSrc}"  alt="Middlesbrough" title="Middlesbrough" class="league-shirt league-element__shirt">
+																</picture>
+																<div class="league-element__name">${playerName}</div>
+																<div class="league-element__data">${price}</div>
+																<div class="league-element__controls">
+																	<div class="leaguejs-remove league-element__control league-element__control--primary">
+																		<input class="13-box" type="checkbox" name="boxes" value="check_13" <c:if test="${isPlaying eq 'Y'}">checked</c:if> onclick="activatePlayer('${sessionScope.userId}','${gameClubPlayerId}',this);" />
+																	</div>
+																	<%-- <div class="leaguejs-info league-element__control league-element__control--info">
+																		<a href="javascript:void(0);" title="View player information" class="fa fa-info" onclick="showPlayerDetails('${gameClubPlayerId}');"></a>
+																	</div> --%>
+																</div>
+															</div>
+
+														</div>
+													</div>
+												</div>
+												<div id="leaguer-pos14" class="league-pitch__unit league-pitch__unit--3">
+													<div class="league-transfer--original">
+													<s:sport position="2" playerType="Forward"/>
+														<div class="league-element" tabindex="0">
+															<div class="leaguejs-menu check_14">
+															<c:if test="${not empty clubId and clubId ne ''}">
+																<spring:message code="club_${clubId}_image" var="imageSrc" />
+															</c:if>		
+																<picture>
+																	<img src="/SportMgmt/images/Forward_${imageSrc}"  alt="Middlesbrough" title="Middlesbrough" class="league-shirt league-element__shirt">
+																</picture>
+																<div class="league-element__name">${playerName}</div>
+																<div class="league-element__data">${price}</div>
+																<div class="league-element__controls">
+																	<div class="leaguejs-remove league-element__control league-element__control--primary">
+																		<input class="14-box" type="checkbox" name="boxes" value="check_14" <c:if test="${isPlaying eq 'Y'}">checked</c:if> onclick="activatePlayer('${sessionScope.userId}','${gameClubPlayerId}',this);" />
+																	</div>
+																	<%-- <div class="leaguejs-info league-element__control league-element__control--info">
+																		<a href="javascript:void(0);" title="View player information" class="fa fa-info" onclick="showPlayerDetails('${gameClubPlayerId}');"></a>
+																	</div> --%>
+																</div>
+															</div>
+
+														</div>
+													</div>
+												</div>
+												<div id="leaguer-pos15" class="league-pitch__unit league-pitch__unit--3">
+													<div class="league-transfer--original">
+													<s:sport position="3" playerType="Forward"/>
+														<div class="league-element" tabindex="0">
+														<c:if test="${not empty clubId and clubId ne ''}">
+																<spring:message code="club_${clubId}_image" var="imageSrc" />
+															</c:if>		
+															<div class="leaguejs-menu check_15">
+																<picture>
+																	<img src="/SportMgmt/images/Forward_${imageSrc}"  alt="Man City" title="Man City" class="league-shirt league-element__shirt">
+																</picture>
+																<div class="league-element__name">${playerName}</div>
+																<div class="league-element__data">${price}</div>
+																<div class="league-element__controls">
+																	<div class="leaguejs-remove league-element__control league-element__control--primary">
+																		<input class="15-box" type="checkbox" name="boxes" value="check_15" <c:if test="${isPlaying eq 'Y'}">checked</c:if> onclick="activatePlayer('${sessionScope.userId}','${gameClubPlayerId}',this);"/>
+																	</div>
+																	<%-- <div class="leaguejs-info league-element__control league-element__control--info">
+																		<a href="javascript:void(0);" title="View player information" class="fa fa-info" onclick="showPlayerDetails('${gameClubPlayerId}');"></a>
+																	</div> --%>
+																</div>
+															</div>
+
+														</div>
+													</div>
+												</div>
+											</div>									
+										
 											</div>
 
 											
