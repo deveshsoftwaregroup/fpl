@@ -178,7 +178,51 @@ public class GameManager {
 		logger.info("--------------- Returning gameClubPlayersList: -------------"+gameClubPlayersList);
 		return gameClubPlayersList;
 	}
-	
+	public static List<GameClubPlayer> fetchGameClubPlayers(Integer gameId,Integer matchId)
+	{
+		List<GameClubPlayer> gameClubPlayersList = null;
+		setErrorMessage("");
+		SessionFactory factory = HibernateSessionFactory.getSessionFacotry();
+		logger.info("--------------- fetchGamePlayers -------------");
+		if(factory == null)
+		{
+			setErrorCode(ErrorConstrant.SESS_FACT_NULL);
+			setErrorMessage("Technical Error");
+		}
+		else
+		{
+			Session session = factory.openSession();
+			if(session != null)
+			{
+				try
+				{
+					
+					SQLQuery query = session.createSQLQuery(QueryConstrant.SELECT_PLAYERS_CLUBD_OF_GAME_FOR_MATCH);
+					query.addEntity(GameClubPlayer.class);
+					query.setParameter("gameId", gameId);
+					query.setParameter("matchId", matchId);
+					gameClubPlayersList =query.list();
+				}
+				catch(Exception ex)
+				{
+					logger.error("Exception fetch gameClubPlayer: "+ex.getMessage());
+					setErrorMessage("Technical Error");
+					setErrorCode(ErrorConstrant.TRANSACTION_ERROR);
+				}
+				finally
+				{
+					session.close();
+				}
+			}
+			else
+			{
+				setErrorCode(ErrorConstrant.SESS_NULL);
+				setErrorMessage("Technical Error");
+			}
+		}
+		logger.info("--------------- Returning gameClubPlayersList: -------------"+gameClubPlayersList);
+		return gameClubPlayersList;
+	}
 	public static boolean isGameExistAndActive(String gameId)
 	{
 		setErrorMessage("");
@@ -224,6 +268,115 @@ public class GameManager {
 	{
 		logger.info("--------------- updateClubListAndPlayersList: ---gameId: "+gameId); 
 		List<GameClubPlayer> gameClubPlayersList = fetchGameClubPlayers(Integer.parseInt(gameId));
+		
+		if(gameClubPlayersList != null && gameClubPlayersList.size() > 0)
+		{
+			logger.info("--------Started Updating Club List---: "+clubList); 
+			logger.info("--------------- Started Updating Player List ---: "+playersList);
+			Iterator gameClubPlayerItr = gameClubPlayersList.iterator();
+			while(gameClubPlayerItr.hasNext())
+			{
+				GameClubPlayer gameClubPlayer = (GameClubPlayer)gameClubPlayerItr.next();
+				Player player = gameClubPlayer.getPlayer();
+				Club club = gameClubPlayer.getClub();
+				HashMap playerMap = null;
+				HashMap clubMap = null;
+				if(player != null)
+				{
+					playerMap = new HashMap();
+					
+					playerMap.put("gameClubPlayerId", gameClubPlayer.getGameClubPlayerId().toString());
+					
+					playerMap.put("playerId", player.getPlayerId().toString());
+					
+					playerMap.put("type", "");
+					if(gameClubPlayer.getPlayingPosition() != null)
+					playerMap.put("type", gameClubPlayer.getPlayingPosition());
+					
+					playerMap.put("bestPostion", "");
+					if(player.getBestPosition() !=null)
+					playerMap.put("bestPostion", player.getBestPosition());
+								
+					playerMap.put("price", 0);
+					if(gameClubPlayer.getPrice() !=null)
+					playerMap.put("price", gameClubPlayer.getPrice());
+					
+					playerMap.put("currency", "");
+					if(gameClubPlayer.getPriceCurrency() != null)
+					playerMap.put("currency", gameClubPlayer.getPriceCurrency());
+					
+					playerMap.put("totalPoint", 0);
+					if(gameClubPlayer.getPlayerTotalPoint()!=null)
+					playerMap.put("totalPoint", gameClubPlayer.getPlayerTotalPoint());
+					
+					playerMap.put("name", player.getPlayerName());
+					
+					playerMap.put("status", "");
+					if(player.getStatus() != null)
+					playerMap.put("status", player.getStatus());
+					
+					playerMap.put("worldRanking", 0);
+					if(player.getWorldRanking() !=null)
+					playerMap.put("worldRanking", player.getWorldRanking());
+					
+					playerMap.put("highestScore", 0);
+					if(player.getHeighetScore() !=null)
+					playerMap.put("highestScore", player.getHeighetScore());
+					
+					playerMap.put("totalScore", 0);
+					if(player.getTotalScore() !=null)
+					playerMap.put("totalScore", player.getTotalScore());
+					
+				}
+				if(club != null)
+				{
+					clubMap = new HashMap();
+					clubMap.put("clubId", club.getClubID().toString());
+					clubMap.put("name", club.getClubName());
+					if(playerMap != null)
+					{
+						playerMap.put("clubId", club.getClubID().toString());
+						playerMap.put("clubName", club.getClubName());
+					}
+					
+					clubMap.put("desc", "");
+					if(club.getClubDesc() != null)
+					clubMap.put("desc", club.getClubDesc());
+					
+					clubMap.put("createdDate", "");
+					if(club.getCreatedDate() != null)
+					clubMap.put("createdDate", club.getCreatedDate().toString());
+					
+					clubMap.put("logoPath", "");
+					if(club.getClubLogoPath() != null)
+					clubMap.put("logoPath", club.getClubLogoPath());
+					
+				}
+				if(playerMap !=null)
+				{
+					playersList.add(playerMap);
+				}
+				if(clubMap != null)
+				{
+					boolean isClubExist = false;
+					for(Object tempClubObj:clubList)
+					{
+						if(((HashMap)tempClubObj).get("clubId").equals(clubMap.get("clubId")))
+							isClubExist = true;
+					}
+					if(!isClubExist)
+					clubList.add(clubMap);
+				}
+			}
+		
+		}
+		logger.info("-------- Updated Club List ---: "+clubList); 
+		logger.info("--------------- Updated Player List ---: "+playersList);
+	}
+	public static void updateClubListAndPlayersList(List playersList, List clubList,String gameId,String matchId)
+	{
+		logger.info("--------------- updateClubListAndPlayersList: ---gameId: "+gameId+", matchId: "+matchId); 
+		List<GameClubPlayer> gameClubPlayersList = fetchGameClubPlayers(Integer.parseInt(gameId),Integer.parseInt(matchId));
 		
 		if(gameClubPlayersList != null && gameClubPlayersList.size() > 0)
 		{
@@ -1841,5 +1994,48 @@ public class GameManager {
 		}
 		logger.info("--------------- Returning endDateListOfGameWeekFromToday: -------------"+endDateListOfGameWeekFromToday);
 		return endDateListOfGameWeekFromToday;
+	}
+	public static List<Integer> fetchGameClubPlayerIdListSortedByPlayerName(List gameClubPlayerIdList)
+	{
+		List<Integer> gameClubPlayerIdSortedByNameList = null;
+		setErrorMessage("");
+		SessionFactory factory = HibernateSessionFactory.getSessionFacotry();
+		logger.info("--------------- fetchGameClubPlayerIdListSortedByPlayerName ------------> gameClubPlayerList:  "+gameClubPlayerIdList);
+		if(factory == null)
+		{
+			setErrorCode(ErrorConstrant.SESS_FACT_NULL);
+			setErrorMessage("Technical Error");
+		}
+		else
+		{
+			Session session = factory.openSession();
+			if(session != null)
+			{
+				try
+				{
+					
+					SQLQuery query = session.createSQLQuery(QueryConstrant.SELECT_PLAYERS_IN_ORDER_BY_NAME);
+					query.setParameterList("gameClubPlayerIdList", gameClubPlayerIdList);
+					gameClubPlayerIdSortedByNameList =query.list();
+				}
+				catch(Exception ex)
+				{
+					logger.error("Exception fetch : fetchGameClubPlayerIdListSortedByPlayerName"+ex.getMessage());
+					setErrorMessage("Technical Error");
+					setErrorCode(ErrorConstrant.TRANSACTION_ERROR);
+				}
+				finally
+				{
+					session.close();
+				}
+			}
+			else
+			{
+				setErrorCode(ErrorConstrant.SESS_NULL);
+				setErrorMessage("Technical Error");
+			}
+		}
+		logger.info("--------------- Returning user gameClubPlayerIdSortedByNameList: -------------"+gameClubPlayerIdSortedByNameList);
+		return gameClubPlayerIdSortedByNameList;
 	}
 }

@@ -65,6 +65,7 @@ private ArrayList playersList;
 private ArrayList clubList;
 private List games;
 private ArrayList<Integer> gameClubPlayerIdList;
+private ArrayList<Integer> gameClubPlayerIdsInMatch;
 /*private String playerListJson;
 private String clubListJson;*/
 
@@ -102,6 +103,8 @@ public String getMsg() {
 public void setMsg(String msg) {
 	this.msg = msg;
 }
+
+
 /*
 public String getPlayerListJson() {
 	return playerListJson;
@@ -120,6 +123,14 @@ public void setClubListJson(String clubListJson) {
 }
 */
 
+public ArrayList<Integer> getGameClubPlayerIdsInMatch() {
+	return gameClubPlayerIdsInMatch;
+}
+
+public void setGameClubPlayerIdsInMatch(ArrayList<Integer> gameClubPlayerIdsInMatch) {
+	this.gameClubPlayerIdsInMatch = gameClubPlayerIdsInMatch;
+}
+
 public ArrayList<Integer> getGameClubPlayerIdList() {
 	return gameClubPlayerIdList;
 }
@@ -128,5 +139,24 @@ public void setGameClubPlayerIdList(ArrayList<Integer> gameClubPlayerIdList) {
 	this.gameClubPlayerIdList = gameClubPlayerIdList;
 }
 
-
+public void loadPlayers(String gameId,String matchId,ArrayList playersList,ArrayList clubList)
+{
+	logger.info("-------- Calling to load players and clublist of gameId: "+gameId);
+	if(gameId != null && !gameId.equals(""))
+	{
+		GameManager.updateClubListAndPlayersList(playersList, clubList, gameId,matchId);
+		logger.info("---- playersList: "+playersList);
+		logger.info("---- clubList: "+clubList);
+		if(playersList !=null)
+		{
+			gameClubPlayerIdsInMatch = new ArrayList<Integer>();
+			for(Object playerObj :playersList)
+			{
+				Map<String,String> playerMap = (Map<String,String>)playerObj;
+				gameClubPlayerIdsInMatch.add(new Integer(playerMap.get("gameClubPlayerId")));
+			}
+		}
+		logger.info("---- gameClubPlayerIdsInMatch: "+gameClubPlayerIdsInMatch);
+	}
+}
 }

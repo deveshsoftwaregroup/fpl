@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.sportmgmt.utility.common.SortUtility;
 import com.sportmgmt.controller.response.SportMgmtResponse;
 import com.sportmgmt.model.entity.Point;
 import com.sportmgmt.model.manager.GameWeeKManager;
@@ -45,7 +46,17 @@ public class PointRankingAction {
 	public void setPointRankingUtility(PointRankingUtility pointRankingUtility) {
 		this.pointRankingUtility = pointRankingUtility;
 	}
-
+	
+	@Autowired
+	private SortUtility sortUtility;
+	
+	public SortUtility getSortUtility() {
+		return sortUtility;
+	}
+	public void setSortUtility(SortUtility sortUtility) {
+		this.sortUtility = sortUtility;
+	}
+	
 	@RequestMapping(value = "MyPoint/{gameId}/{userId}", method = RequestMethod.GET)
 	public String  gameWeekHistory(ModelMap modeMap,@PathVariable String gameId,@PathVariable String userId,HttpServletRequest request)
 	{
@@ -60,32 +71,7 @@ public class PointRankingAction {
 	public  String pointTableView(ModelMap modeMap,HttpServletRequest request,@PathVariable String gameId)
 	{
 		logger.info("---------- IN PointTableView to : "+gameId);
-		List<Point> pointObjList = PointRankManager.getMPointByGame(gameId);
-		List<Map<String,String>> pointList = new ArrayList<Map<String,String>>();
-		if(pointObjList != null)
-		{
-			for(Object pointObj:pointObjList)
-			{
-				Point point = (Point) pointObj;
-				Map<String,String> map = new TreeMap<String,String>();
-				map.put("pointId", point.getPointId().toString());
-				map.put("pointName", "");
-				map.put("pointDesc", "");
-				map.put("pointToAdd", "");
-				map.put("pointToDeduct", "");
-				if(point.getPointName() !=null)
-				map.put("pointName", point.getPointName());
-				if(point.getPointDesc() != null)
-				map.put("pointDesc", point.getPointDesc());
-				if(point.getPointToAdd() !=null)
-					System.out.println("pointToAdd="+point.getPointToAdd().toString());
-				map.put("pointToAdd", point.getPointToAdd().toString());
-				if(point.getPointToDeduct() != null)
-				map.put("pointToDeduct", point.getPointToDeduct().toString());
-				System.out.println("pointToDeduct="+point.getPointToDeduct().toString());
-				pointList.add(map);
-			}
-		}
+		List<Map<String,String>>pointList = pointRankingUtility.getPointList(gameId);
 		modeMap.put("message", "");
 		modeMap.put("pointList", pointList);
 		logger.info("------------- Point Info ----------> "+pointList);
@@ -138,5 +124,22 @@ public class PointRankingAction {
 			}
 			
 		return sportMgmtResponse;
+	}
+	@RequestMapping(value = "updatePlayerPoint/{gameId}/{matchId}", method = RequestMethod.GET)
+	public  String updatePointForm(ModelMap modeMap,@PathVariable String gameId,@PathVariable String matchId,HttpServletRequest request) throws Exception
+	{
+		logger.info("----------- Entry in updatePlayerPoint: --gameId: "+gameId+" ,matchId: "+matchId);
+		ArrayList playersList = new ArrayList();
+		ArrayList clubList = new ArrayList();
+		sortUtility.getApplicationDataUtility().loadPlayers(gameId, matchId, playersList, clubList);
+		playersList = sortUtility.sortPlayerListByPlayerName(playersList,sortUtility.getApplicationDataUtility().getGameClubPlayerIdsInMatch());
+		logger.info("----------- sorted by name playersList: "+playersList);
+		modeMap.put("playerList", playersList);
+		List<Map<String,String>>pointList = pointRankingUtility.getPointList(gameId);
+		logger.info("---- POint list: "+pointList);
+		modeMap.put("pointList", pointList);
+		modeMap.put("gameId", gameId);
+		modeMap.put("matchId", matchId);
+		return SportConstrant.UPDATE_PLAYER_POINT_PAGE;
 	}
 }

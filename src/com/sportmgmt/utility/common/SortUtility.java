@@ -77,4 +77,22 @@ public class SortUtility {
 		}
 		return sortedPlayerList;
 	}
+	public ArrayList<Map<String,String>> sortPlayerListByPlayerName(List playerList,List playerIdList)
+	{
+		List<Integer> sortedGameClubPlayerIdByName= GameManager.fetchGameClubPlayerIdListSortedByPlayerName(playerIdList);
+		ArrayList<Map<String,String>> sortedPlayerList = new ArrayList<Map<String,String>>(); 
+		for(Integer gameClubPlayerIdTemp:sortedGameClubPlayerIdByName)
+		{
+			for(Object playerListObj:playerList)
+			{
+				Map playerListMap = (Map)playerListObj;
+				if(playerListMap.get("gameClubPlayerId").toString().equals(gameClubPlayerIdTemp.toString()))
+				{
+					sortedPlayerList.add(playerListMap);
+					break;
+				}
+			}
+		}
+		return sortedPlayerList;
+	}
 }
