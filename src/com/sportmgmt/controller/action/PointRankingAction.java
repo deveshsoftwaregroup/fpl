@@ -18,6 +18,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.sportmgmt.utility.common.SortUtility;
@@ -125,10 +126,11 @@ public class PointRankingAction {
 			
 		return sportMgmtResponse;
 	}
-	@RequestMapping(value = "updatePlayerPoint/{gameId}/{matchId}", method = RequestMethod.GET)
-	public  String updatePointForm(ModelMap modeMap,@PathVariable String gameId,@PathVariable String matchId,HttpServletRequest request) throws Exception
+	@RequestMapping(value = "updatePlayerPoint/{gameWeekId}/{matchId}", method = RequestMethod.GET)
+	public  String updatePointForm(ModelMap modeMap,@PathVariable String gameWeekId,@PathVariable String matchId,HttpServletRequest request) throws Exception
 	{
-		logger.info("----------- Entry in updatePlayerPoint: --gameId: "+gameId+" ,matchId: "+matchId);
+		logger.info("----------- Entry in updatePlayerPoint: --gameWeekId: "+gameWeekId+" ,matchId: "+matchId);
+		String gameId = (String)((Map)request.getSession().getAttribute("gameDetails")).get("gameId");
 		ArrayList playersList = new ArrayList();
 		ArrayList clubList = new ArrayList();
 		sortUtility.getApplicationDataUtility().loadPlayers(gameId, matchId, playersList, clubList);
@@ -139,7 +141,53 @@ public class PointRankingAction {
 		logger.info("---- POint list: "+pointList);
 		modeMap.put("pointList", pointList);
 		modeMap.put("gameId", gameId);
+		modeMap.put("gameWeekId", gameWeekId);
 		modeMap.put("matchId", matchId);
 		return SportConstrant.UPDATE_PLAYER_POINT_PAGE;
 	}
+	
+	@RequestMapping(value = "updatePoint", method = RequestMethod.POST)
+	public @ResponseBody  Map<String,String> updatePoint(ModelMap modeMap, @RequestParam Map<String,String>requestParam, HttpServletRequest request)
+	{
+		Integer gameId = Integer.valueOf(requestParam.get("gameId"));
+		Integer matchId = Integer.valueOf(requestParam.get("matchId"));
+		Integer gameWeekId = Integer.valueOf(requestParam.get("gameWeekId"));
+		Integer gameClubPlayerId = Integer.valueOf(requestParam.get("gameClubPlayerId"));
+		Integer pointId = Integer.valueOf(requestParam.get("pointId"));
+		logger.info("------- gooing to insert point for player-");
+		Map<String,String> result = new java.util.HashMap<>();
+		result.put("isSuccess", "true");
+		try
+		{
+			java.util.List<Integer> playerPointAndPointToUpdateList = PointRankManager.insertPlayerPoint(gameId, matchId, gameClubPlayerId, pointId);
+			if(playerPointAndPointToUpdateList !=null && playerPointAndPointToUpdateList.size() >=2)
+			{
+				logger.info("------- Going to fetch user list who has been addded player: "+gameClubPlayerId+" in his team");
+				List<Integer> userIdList = PointRankManager.getUserListOfPlayerByMatch(gameClubPlayerId);
+				if(userIdList !=null && !userIdList.isEmpty())
+				{
+					Integer playerPointId = playerPointAndPointToUpdateList.get(0);
+					Integer pointToUpdate = playerPointAndPointToUpdateList.get(1);
+					logger.info("----- Goinng to insert point for user taken by player in user_point");
+					boolean isTransDone =PointRankManager.insertUsersPoint(gameId, matchId, userIdList, playerPointId, pointToUpdate);
+					if(isTransDone)
+					{
+						logger.info("----- Going to update game week point of user:"+gameWeekId);
+						PointRankManager.updateGameWeekPointForUsers(userIdList, gameWeekId, pointToUpdate);
+						Map<Integer,Integer> userAndPointMap= pointRankingUtility.getUserAndOderdPointMap(gameWeekId);
+						logger.info("------------ User And Game week Point Map: "+userAndPointMap);
+						//PointRankManager.updateRankForUser(contestUserAndPoitMap,matchId);
+					}
+				}
+			}
+		}
+		catch(Exception ex)
+		{
+			logger.error("---- Error occurs: "+ex);
+			result.put("isSuccess", "false");
+			result.put("errorMsg", "Technical error");
+		}
+		return result;
+	}
+	
 }

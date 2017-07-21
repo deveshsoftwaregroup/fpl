@@ -83,4 +83,6 @@ public static final String SELECT_TOTAL_USED_COUPON_BY_USER_FOR_GAME_WEEK ="sele
 public static final String SELECT_PLAYERS_CLUBD_OF_GAME_FOR_MATCH = "select gcp.* from game_club_player gcp,match_detail md where gcp.game_id =:gameId and md.match_id =:matchId and (gcp.club_id=md.club_one or gcp.club_id=md.club_two)";
 
 public static final String SELECT_PLAYERS_IN_ORDER_BY_NAME = "select gcp.game_club_player_id from game_club_player gcp,player pl where gcp.player_id = pl.player_id and gcp.game_club_player_id in (:gameClubPlayerIdList) order by pl.player_name";
+
+public static final String SELECT_USER_LIST_OF_PLAYER = "select user_Id from user_player where game_club_player_id =:gameClubPlayerId";
 }

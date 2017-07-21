@@ -35,10 +35,11 @@ $(document).ajaxStart(function(){
 			var point = $("#point");
 			var gameId = $("#gameId").val();
 			var matchId = $("#matchId").val();
+			var gameWeekId = $("#gameWeekId").val();
 			console.log("player: "+player+" , point:"+point+", gameId:"+gameId+", matchId: "+matchId);
-			if(player !='undefined' && point !='undefined' && gameId !='undefined' && matchId !='undefined')
+			if(player !='undefined' && point !='undefined' && gameId !='undefined' && matchId !='undefined' && gameWeekId !='undefined')
 			{
-				url ="/CricketLeague/mvc/game/updatePoint?gameId="+gameId+"&matchId="+matchId+"&gameClubPlayerId="+$(player).val()+"&pointId="+$(point).val();
+				url ="/SportMgmt/mvc/game/updatePoint?gameId="+gameId+"&matchId="+matchId+"&gameClubPlayerId="+$(player).val()+"&pointId="+$(point).val()+"&gameWeekId="+gameWeekId;
 				$.ajax({
 		     		  url: url,
 		     		  method: 'POST',
@@ -65,7 +66,7 @@ $(document).ajaxStart(function(){
 			console.log("matchId: "+matchId);
 			if(matchId !='undefined')
 			{
-				url ="/CricketLeague/mvc/game/updateRank/"+matchId;
+				url ="/SportMgmt/mvc/game/updateRank/"+matchId;
 				$.ajax({
 		     		  url: url,
 		     		  method: 'POST',
@@ -91,6 +92,7 @@ $(document).ajaxStart(function(){
 <body>
 <input type="hidden" id="gameId" value="${gameId}" />
 <input type="hidden" id="matchId" value="${matchId}" />
+<input type="hidden" id="gameWeekId" value="${gameWeekId}" />
 <select id="player" class="ism-form__select">
    <option value="0">Select Player</option>
    <c:forEach var="playerMap" items="${playerList}" >

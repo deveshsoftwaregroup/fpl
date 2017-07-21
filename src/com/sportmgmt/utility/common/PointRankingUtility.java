@@ -3,6 +3,7 @@ package com.sportmgmt.utility.common;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -10,6 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
 
+import com.sportmgmt.model.entity.GameWeekReport;
 import com.sportmgmt.model.entity.Point;
 import com.sportmgmt.model.manager.GameManager;
 import com.sportmgmt.model.manager.GameWeeKManager;
@@ -329,5 +331,23 @@ public class PointRankingUtility {
 		}
 		
 		return pointList;
+	}
+	
+	public Map<Integer,Integer> getUserAndOderdPointMap(Integer gameWeeKId)
+	{
+		if(gameWeeKId !=null)
+		{
+			List<GameWeekReport>  gameWeekReportList = PointRankManager.getUserAndPointListOrderByPoint(gameWeeKId);
+			if(gameWeekReportList !=null && !gameWeekReportList.isEmpty())
+			{
+				 Map<Integer,Integer> userAndPointMap = new LinkedHashMap<>();
+				for(GameWeekReport gameWeekReport:gameWeekReportList)
+				{
+					userAndPointMap.put(gameWeekReport.getUserId(), gameWeekReport.getPoint());							
+				}
+				return userAndPointMap;
+			}
+		}
+		return null;
 	}
 }
