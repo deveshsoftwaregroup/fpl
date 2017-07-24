@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.sportmgmt.utility.common.SortUtility;
 import com.sportmgmt.controller.response.SportMgmtResponse;
 import com.sportmgmt.model.entity.Point;
+import com.sportmgmt.model.manager.GameManager;
 import com.sportmgmt.model.manager.GameWeeKManager;
 import com.sportmgmt.model.manager.PlayerManager;
 import com.sportmgmt.model.manager.PointRankManager;
@@ -172,10 +173,16 @@ public class PointRankingAction {
 					boolean isTransDone =PointRankManager.insertUsersPoint(gameId, matchId, userIdList, playerPointId, pointToUpdate);
 					if(isTransDone)
 					{
-						logger.info("----- Going to update game week point of user:"+gameWeekId);
-						PointRankManager.updateGameWeekPointForUsers(userIdList, gameWeekId, pointToUpdate);
-						Map<Integer,Integer> userAndPointMap= pointRankingUtility.getUserAndOderdPointMap(gameWeekId);
-						logger.info("------------ User And Game week Point Map: "+userAndPointMap);
+						logger.info("----- Going to update total pointof users");
+						Map<Integer,Integer> userIdAndPointMap= PointRankManager.updateUserTotalPointForUserList(userIdList, gameId, pointToUpdate);
+						logger.info("----- Going to update game week point of users");
+						PointRankManager.updateGameWeekPointForUsers(userIdAndPointMap, gameWeekId, pointToUpdate);
+						Map<Integer,Integer> userAndGameWeeKPointMap= pointRankingUtility.getUserAndOderdGameWeeKPointMap(gameWeekId);
+						logger.info("------------ User And Game week Point Map: "+userAndGameWeeKPointMap);
+						Map<Integer,Integer> userAndGameWeeKTotalPointMap= pointRankingUtility.getUserAndOderdGameWeeKTotalPointMap(gameWeekId);
+						logger.info("------------ User And Game week total Point Map: "+userAndGameWeeKPointMap);
+						 Map<Integer,Integer> userAndTotalPointMap =  pointRankingUtility.getUserAndOderdTotalPointMap(gameId);
+						logger.info("User And Total Point Map: "+userAndTotalPointMap);
 						//PointRankManager.updateRankForUser(contestUserAndPoitMap,matchId);
 					}
 				}

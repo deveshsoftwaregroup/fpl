@@ -1,7 +1,9 @@
 package com.sportmgmt.model.manager;
 
 import java.sql.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.log4j.Logger;
 import org.hibernate.Criteria;
@@ -15,6 +17,7 @@ import org.hibernate.criterion.Restrictions;
 
 import com.sportmgmt.model.entity.UserPoint;
 import com.sportmgmt.model.entity.User;
+import com.sportmgmt.model.entity.UserGame;
 import com.sportmgmt.model.entity.GameClubPlayer;
 import com.sportmgmt.model.entity.GameWeekReport;
 import com.sportmgmt.model.entity.PlayerPoint;
@@ -342,9 +345,9 @@ public class PointRankManager {
 		}
 	}
 	
-	public static boolean updateGameWeekPointForUsers(List<Integer> userIdList,Integer gameWeekId,Integer pointToUpdate) throws SportMgmtException
+	public static boolean updateGameWeekPointForUsers(Map<Integer,Integer> userIdAndPointMap ,Integer gameWeekId,Integer pointToUpdate) throws SportMgmtException
 	{
-		logger.info("----- Inside updateGameWeekPointForUsers ---- gameWeekId: "+gameWeekId+" ,userIdList:"+userIdList+" ,pointToUpdate: "+pointToUpdate);
+		logger.info("----- Inside updateGameWeekPointForUsers ---- gameWeekId: "+gameWeekId+" ,userIdList:"+userIdAndPointMap+" ,pointToUpdate: "+pointToUpdate);
 		setErrorMessage(SportConstrant.NULL);
 		setErrorCode(SportConstrant.NULL);
 		SessionFactory factory = HibernateSessionFactory.getSessionFacotry();
@@ -362,15 +365,22 @@ public class PointRankManager {
 			{
 				try
 				{
-					for(Integer userId: userIdList)
+					for(Integer userId: userIdAndPointMap.keySet())
 					{
 						Criteria criteria = session.createCriteria(GameWeekReport.class);
 						criteria.add(Restrictions.eq("gameWeekId", gameWeekId));
 						criteria.add(Restrictions.eq("userId", userId));
 						GameWeekReport gameWeekReport = (GameWeekReport)criteria.uniqueResult();
+						if(gameWeekReport == null)
+						{
+							gameWeekReport = new GameWeekReport();
+							gameWeekReport.setUserId(userId);
+							gameWeekReport.setGameWeekId(gameWeekId);
+						}
 						gameWeekReport.setPoint(gameWeekReport.getPoint()+pointToUpdate);
+						gameWeekReport.setTotalPoint(userIdAndPointMap.get(userId));
 						logger.info("----------- Updating game week point for users: "+userId);
-						session.update(gameWeekReport);
+						session.saveOrUpdate(gameWeekReport);
 					}
 					logger.info("---- commiting game week point for user");
 					session.beginTransaction().commit();
@@ -398,7 +408,7 @@ public class PointRankManager {
 		return false;
 	}
 	
-	public static List<GameWeekReport> getUserAndPointListOrderByPoint(Integer gameWeekId)
+	public static List<GameWeekReport> getUserAndPointListOrderByPoint(Integer gameWeekId,String orderBy)
 	{
 		logger.info("----- Inside getUserAndPointListOrderByPoint ---- gameWeekId: "+gameWeekId);
 		setErrorMessage(SportConstrant.NULL);
@@ -422,7 +432,7 @@ public class PointRankManager {
 					Criteria criteria = session.createCriteria(GameWeekReport.class);
 					criteria.add(Restrictions.eq("gameWeekId",gameWeekId));
 					//criteria.addOrder(Order.asc("contest"));
-					criteria.addOrder(Order.desc("point"));
+					criteria.addOrder(Order.desc(orderBy));
 					List<GameWeekReport> gameWeekReportList= criteria.list();
 					logger.info("---- Returning game week report list:"+gameWeekReportList);
 					return gameWeekReportList;
@@ -447,4 +457,137 @@ public class PointRankManager {
 		}
 		return null;
 	}
+	
+	public static Map<Integer,Integer> updateUserTotalPointForUserList(List<Integer> userIdList,Integer gameId,Integer poinToUpdate) throws SportMgmtException
+	{
+		boolean isSuccess =  true;
+		setErrorMessage("");
+		SessionFactory factory = HibernateSessionFactory.getSessionFacotry();
+		logger.info("--------------- updateUserPointForUserList ------------> userIdList:  "+userIdList+" gameId: "+gameId+",poinToUpdate:"+poinToUpdate);
+		if(factory == null)
+		{
+			setErrorCode(ErrorConstrant.SESS_FACT_NULL);
+			setErrorMessage("Technical Error");
+			isSuccess =false;
+		}
+		else
+		{
+			Session session = factory.openSession();
+			if(session != null)
+			{
+				try
+				{
+					Map<Integer,Integer> userIdAndPointMap = new HashMap<>();
+					for(Integer userId:userIdList)
+					{
+						Criteria cr = session.createCriteria(UserGame.class);
+						cr.add(Restrictions.eq("gameId",gameId));
+						cr.add(Restrictions.eq("userId",userId));
+						List results = cr.list();
+						if(results == null || results.size() ==0)
+						{
+							logger.info(" ------- Enty not found in USER_GAME");
+							logger.info(" ------- Making new Entry in USER_GAME table for user userid:"+userId);
+							UserGame userGame = new UserGame();
+							userGame.setUserId(userId);
+							userGame.setGameId(gameId);
+							userGame.setTotalPoint(poinToUpdate);
+							userGame.setRank(0);
+							userGame.setAddedPlayerCount(0);
+							session.save(userGame);
+							userIdAndPointMap.put(userId, poinToUpdate);
+							
+						}
+						else
+						{
+							logger.info(" ------- Enty found in USER_GAME table ");
+							UserGame userGame = (UserGame)results.get(0);
+							int totalPoint = userGame.getTotalPoint()+poinToUpdate;
+							userGame.setTotalPoint(totalPoint);
+							logger.info(" ------- Updating user total point for user: "+userId);
+							session.update(userGame);
+							userIdAndPointMap.put(userId, totalPoint);
+						}
+					}
+					logger.info("--------- Committing all insert and update----");
+					session.beginTransaction().commit();
+					logger.info("--------- Returning and userIdAndPointMap"+userIdAndPointMap);
+					return userIdAndPointMap;
+									}
+				catch(Exception ex)
+				{
+					logger.error("Exception fetch updateUserPointForUserList: "+ex.getMessage());
+					setErrorMessage("Technical Error");
+					setErrorCode(ErrorConstrant.TRANSACTION_ERROR);
+					isSuccess = false;
+					throw new SportMgmtException(ex);
+				}
+				finally
+				{
+					session.close();
+				}
+			}
+			else
+			{
+				setErrorCode(ErrorConstrant.SESS_NULL);
+				setErrorMessage("Technical Error");
+				isSuccess = false;
+			}
+		}
+		
+		return null;
+	}
+	
+	public static List<UserGame> getUserGAmeForUserList(List<Integer> userIdList,Integer gameId,String orderBy)
+	{
+		setErrorMessage("");
+		SessionFactory factory = HibernateSessionFactory.getSessionFacotry();
+		if(factory == null)
+		{
+			setErrorCode(ErrorConstrant.SESS_FACT_NULL);
+			setErrorMessage("Technical Error");
+		}
+		else
+		{
+			Session session = factory.openSession();
+			if(session != null)
+			{
+				try
+				{
+					Criteria cr = session.createCriteria(UserGame.class);
+					cr.add(Restrictions.eq("gameId",gameId));
+					if(userIdList !=null && !userIdList.isEmpty())
+					{
+						cr.add(Restrictions.in("userId", userIdList));
+					}
+					if(orderBy == null && !orderBy.equals(orderBy))
+					{
+						cr.addOrder(Order.desc(orderBy));
+					}
+					List<UserGame>  userGAmeList = cr.list();
+					logger.info("--------- Returning user Game List: "+userGAmeList);
+					return userGAmeList;
+					
+				}
+				catch(Exception ex)
+				{
+					logger.error("Exception getUserGAmeForUserList: "+ex.getMessage());
+					setErrorMessage("Technical Error");
+					setErrorCode(ErrorConstrant.TRANSACTION_ERROR);
+				}
+				finally
+				{
+					session.close();
+				}
+			}
+			else
+			{
+				setErrorCode(ErrorConstrant.SESS_NULL);
+				setErrorMessage("Technical Error");
+			}
+		}
+		
+		return null;
+	}
+	
 }

@@ -13,6 +13,7 @@ import org.apache.log4j.Logger;
 
 import com.sportmgmt.model.entity.GameWeekReport;
 import com.sportmgmt.model.entity.Point;
+import com.sportmgmt.model.entity.UserGame;
 import com.sportmgmt.model.manager.GameManager;
 import com.sportmgmt.model.manager.GameWeeKManager;
 import com.sportmgmt.model.manager.PlayerManager;
@@ -333,11 +334,11 @@ public class PointRankingUtility {
 		return pointList;
 	}
 	
-	public Map<Integer,Integer> getUserAndOderdPointMap(Integer gameWeeKId)
+	public Map<Integer,Integer> getUserAndOderdGameWeeKPointMap(Integer gameWeeKId)
 	{
 		if(gameWeeKId !=null)
 		{
-			List<GameWeekReport>  gameWeekReportList = PointRankManager.getUserAndPointListOrderByPoint(gameWeeKId);
+			List<GameWeekReport>  gameWeekReportList = PointRankManager.getUserAndPointListOrderByPoint(gameWeeKId,"point");
 			if(gameWeekReportList !=null && !gameWeekReportList.isEmpty())
 			{
 				 Map<Integer,Integer> userAndPointMap = new LinkedHashMap<>();
@@ -346,6 +347,42 @@ public class PointRankingUtility {
 					userAndPointMap.put(gameWeekReport.getUserId(), gameWeekReport.getPoint());							
 				}
 				return userAndPointMap;
+			}
+		}
+		return null;
+	}
+	
+	public Map<Integer,Integer> getUserAndOderdGameWeeKTotalPointMap(Integer gameWeeKId)
+	{
+		if(gameWeeKId !=null)
+		{
+			List<GameWeekReport>  gameWeekReportList = PointRankManager.getUserAndPointListOrderByPoint(gameWeeKId,"totalPoint");
+			if(gameWeekReportList !=null && !gameWeekReportList.isEmpty())
+			{
+				 Map<Integer,Integer> userAndTotalPointMap = new LinkedHashMap<>();
+				for(GameWeekReport gameWeekReport:gameWeekReportList)
+				{
+					userAndTotalPointMap.put(gameWeekReport.getUserId(), gameWeekReport.getTotalPoint());							
+				}
+				return userAndTotalPointMap;
+			}
+		}
+		return null;
+	}
+	
+	public Map<Integer,Integer> getUserAndOderdTotalPointMap(Integer gameId)
+	{
+		if(gameId !=null)
+		{
+			List<UserGame>  userGAmeList = PointRankManager.getUserGAmeForUserList(null,gameId,"totalPoint");
+			if(userGAmeList !=null && !userGAmeList.isEmpty())
+			{
+				 Map<Integer,Integer> userAndTotalPointMap = new LinkedHashMap<>();
+				for(UserGame userGame:userGAmeList)
+				{
+					userAndTotalPointMap.put(userGame.getUserId(), userGame.getTotalPoint());							
+				}
+				return userAndTotalPointMap;
 			}
 		}
 		return null;
