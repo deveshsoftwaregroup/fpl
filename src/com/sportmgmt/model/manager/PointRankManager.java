@@ -376,6 +376,7 @@ public class PointRankManager {
 							gameWeekReport = new GameWeekReport();
 							gameWeekReport.setUserId(userId);
 							gameWeekReport.setGameWeekId(gameWeekId);
+							gameWeekReport.setPoint(0);
 						}
 						gameWeekReport.setPoint(gameWeekReport.getPoint()+pointToUpdate);
 						gameWeekReport.setTotalPoint(userIdAndPointMap.get(userId));
@@ -410,7 +411,7 @@ public class PointRankManager {
 	
 	public static List<GameWeekReport> getUserAndPointListOrderByPoint(Integer gameWeekId,String orderBy)
 	{
-		logger.info("----- Inside getUserAndPointListOrderByPoint ---- gameWeekId: "+gameWeekId);
+		logger.info("----- Inside getUserAndPointListOrderByPoint ---- gameWeekId: "+gameWeekId+", orderBy: "+orderBy);
 		setErrorMessage(SportConstrant.NULL);
 		setErrorCode(SportConstrant.NULL);
 		SessionFactory factory = HibernateSessionFactory.getSessionFacotry();

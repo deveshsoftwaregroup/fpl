@@ -145,7 +145,7 @@ public void loadPlayers(String gameId,String matchId,ArrayList playersList,Array
 	if(gameId != null && !gameId.equals(""))
 	{
 		GameManager.updateClubListAndPlayersList(playersList, clubList, gameId,matchId);
-		logger.info("---- playersList: "+playersList);
+		logger.info("---- 	: "+playersList);
 		logger.info("---- clubList: "+clubList);
 		if(playersList !=null)
 		{

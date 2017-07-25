@@ -18,7 +18,7 @@
 	height: 100%;
 }
 </style>
-<script src="/CricketLeague/js/jquery.js"></script>
+<script src="/SportMgmt/js/jquery.js"></script>
 <script type="text/javascript">
 $(document).ajaxStart(function(){
 		$("#ajaxloader").css("display", "block");
@@ -90,6 +90,8 @@ $(document).ajaxStart(function(){
 <title>Insert title here</title>
 </head>
 <body>
+<c:choose>
+<c:when test="${isSuccess}">
 <input type="hidden" id="gameId" value="${gameId}" />
 <input type="hidden" id="matchId" value="${matchId}" />
 <input type="hidden" id="gameWeekId" value="${gameWeekId}" />
@@ -112,5 +114,10 @@ $(document).ajaxStart(function(){
 <button onclick="updateRank();">UPDATE RANK</button>
 <div class="mask" style="display: none;"></div>
 <div id="ajaxloader" style="display:none;"></div>
+</c:when>
+<c:otherwise>
+<h1><c:out value="${message}" /></h1>
+</c:otherwise>
+</c:choose>
 </body>
 </html>
