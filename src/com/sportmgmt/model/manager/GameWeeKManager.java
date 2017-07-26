@@ -16,12 +16,14 @@ import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 
 import com.sportmgmt.model.entity.Game;
+import com.sportmgmt.model.entity.GameWeek;
 import com.sportmgmt.model.entity.GameWeekReport;
 import com.sportmgmt.model.entity.Match;
 import com.sportmgmt.model.entity.UserGame;
 import com.sportmgmt.utility.constrant.ErrorConstrant;
 import com.sportmgmt.utility.constrant.QueryConstrant;
 import com.sportmgmt.utility.constrant.SportConstrant;
+import com.sportmgmt.utility.exception.SportMgmtException;
 
 public class GameWeeKManager {
 	private static Logger logger = Logger.getLogger(GameWeeKManager.class);
@@ -197,7 +199,53 @@ public class GameWeeKManager {
 		}
 		return null;
 	}
-	
+	public static Integer getGameIdByGameWeeKId(Integer gameWeekId) throws SportMgmtException
+	{
+		logger.info("----- Inside getGameIdByGameWeeKId ---- gameWeekId: "+gameWeekId);
+		setErrorMessage(SportConstrant.NULL);
+		setErrorCode(SportConstrant.NULL);
+		SessionFactory factory = HibernateSessionFactory.getSessionFacotry();
+		if(factory == null)
+		{
+			setErrorCode(ErrorConstrant.SESS_FACT_NULL);
+			setErrorMessage("Technical Error");
+			logger.info("----- Factory Object is null----");
+		}
+		else
+		{
+			Session session = factory.openSession();
+			if(session != null)
+			{
+				try
+				{
+				
+					GameWeek gameWeek = (GameWeek)session.load(GameWeek.class, gameWeekId);
+					if(gameWeek !=null)
+					{
+						return gameWeek.getGame().getGameId();
+					}
+				}
+				catch(Exception ex)
+				{
+					logger.error("Exception in getGameIdByGameWeeKId: "+ex);
+					setErrorMessage("Technical Error");
+					setErrorCode(ErrorConstrant.TRANSACTION_ERROR);
+					throw new SportMgmtException(ex);
+				}
+				finally
+				{
+					session.close();
+				}
+			}
+			else
+			{
+				setErrorCode(ErrorConstrant.SESS_NULL);
+				setErrorMessage("Technical Error");
+				logger.info("----- Session Object is null----");
+			}
+		}
+		return null;
+	}
 	public static boolean isGameStarted(String gameId,List<Integer> sortedGameWeekIds)
 	{
 		Object[] startAndEndDate = fetchStartEndDate(sortedGameWeekIds.get(0).toString());

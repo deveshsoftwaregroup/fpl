@@ -15,14 +15,12 @@ import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 
-import com.sportmgmt.model.entity.UserPoint;
-import com.sportmgmt.model.entity.User;
-import com.sportmgmt.model.entity.UserGame;
 import com.sportmgmt.model.entity.GameClubPlayer;
 import com.sportmgmt.model.entity.GameWeekReport;
 import com.sportmgmt.model.entity.PlayerPoint;
-import com.sportmgmt.model.manager.HibernateSessionFactory;
 import com.sportmgmt.model.entity.Point;
+import com.sportmgmt.model.entity.UserGame;
+import com.sportmgmt.model.entity.UserPoint;
 import com.sportmgmt.utility.constrant.ErrorConstrant;
 import com.sportmgmt.utility.constrant.QueryConstrant;
 import com.sportmgmt.utility.constrant.SportConstrant;
@@ -591,4 +589,93 @@ public class PointRankManager {
 		return null;
 	}
 	
+	public static void updateRankForUser(Map<Integer,Integer> userAndTotalPointMap,Integer gameId) throws SportMgmtException
+	{
+		logger.info("----- Inside updateRankForUser ---- userAndTotalPointMap: "+userAndTotalPointMap+", gameId: "+gameId);
+		setErrorMessage(SportConstrant.NULL);
+		setErrorCode(SportConstrant.NULL);
+		SessionFactory factory = HibernateSessionFactory.getSessionFacotry();
+		if(factory == null)
+		{
+			setErrorCode(ErrorConstrant.SESS_FACT_NULL);
+			setErrorMessage("Technical Error");
+			logger.info("----- Factory Object is null----");
+		}
+		else
+		{
+			try
+			{
+				Session session = factory.openSession();
+				int rank=0;
+				for(Integer userId:userAndTotalPointMap.keySet())
+				{
+					rank = rank+1;
+					Criteria criteria = session.createCriteria(UserGame.class);
+					criteria.add(Restrictions.eq("userId", userId));
+					criteria.add(Restrictions.eq("gameId", gameId));
+					UserGame userGame = (UserGame)criteria.uniqueResult();
+					userGame.setRank(rank);
+					session.save(userGame);
+					
+				}
+				session.beginTransaction().commit();
+				logger.info("Rank committed successfully:");
+			}
+			catch(Exception ex)
+			{
+				logger.error("Exception in updating rank for user: "+ex);
+				throw new SportMgmtException(ex);
+			}
+			
+		}
+	}
+	
+	public static void updateRankOROverallRankForGameWeeK(Map<Integer,Integer> userAndGameWeeKPointOrTotalMap,Integer gameWeekId,String rankType) throws SportMgmtException
+	{
+		logger.info("----- Inside updateRankOROverallRankForGameWeeK ---- userAndGameWeeKPointOrTotalMap: "+userAndGameWeeKPointOrTotalMap+", gameWeekId: "+gameWeekId);
+		setErrorMessage(SportConstrant.NULL);
+		setErrorCode(SportConstrant.NULL);
+		SessionFactory factory = HibernateSessionFactory.getSessionFacotry();
+		if(factory == null)
+		{
+			setErrorCode(ErrorConstrant.SESS_FACT_NULL);
+			setErrorMessage("Technical Error");
+			logger.info("----- Factory Object is null----");
+		}
+		else
+		{
+			try
+			{
+				Session session = factory.openSession();
+				int rank=0;
+				for(Integer userId:userAndGameWeeKPointOrTotalMap.keySet())
+				{
+					rank = rank+1;
+					Criteria criteria = session.createCriteria(GameWeekReport.class);
+					criteria.add(Restrictions.eq("userId", userId));
+					criteria.add(Restrictions.eq("gameWeekId", gameWeekId));
+					GameWeekReport gameWeekReport = (GameWeekReport)criteria.uniqueResult();
+					if(rankType !=null && rankType.equals("rank"))
+					{
+						gameWeekReport.setRank(rank);
+					}
+					else if(rankType !=null && rankType.equals("totalRank"))
+					{
+						gameWeekReport.setTotalRank(rank);
+					}
+					
+					session.save(gameWeekReport);
+					
+				}
+				session.beginTransaction().commit();
+				logger.info("Rank committed successfully:");
+			}
+			catch(Exception ex)
+			{
+				logger.error("Exception in updating rank for gameWeek: "+ex);
+				throw new SportMgmtException(ex);
+			}
+			
+		}
+	}
 }

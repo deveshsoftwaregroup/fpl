@@ -30,6 +30,7 @@ import com.sportmgmt.model.manager.PlayerManager;
 import com.sportmgmt.model.manager.PointRankManager;
 import com.sportmgmt.utility.common.PointRankingUtility;
 import com.sportmgmt.utility.constrant.SportConstrant;
+import com.sportmgmt.utility.exception.SportMgmtException;
 
 @Controller
 @RequestMapping("/game")
@@ -127,19 +128,25 @@ public class PointRankingAction {
 			
 		return sportMgmtResponse;
 	}
-	@RequestMapping(value = "updatePlayerPoint/{gameId}/{gameWeekId}/{matchId}", method = RequestMethod.GET)
-	public  String updatePointForm(ModelMap modeMap,@PathVariable String gameId,@PathVariable String gameWeekId,@PathVariable String matchId,HttpServletRequest request) throws Exception
+	@RequestMapping(value = "updatePlayerPoint/{gameWeekId}/{matchId}", method = RequestMethod.GET)
+	public  String updatePointForm(ModelMap modeMap,@PathVariable String gameWeekId,@PathVariable String matchId,HttpServletRequest request) throws Exception
 	{
 		logger.info("----------- Entry in updatePlayerPoint: --gameWeekId: "+gameWeekId+" ,matchId: "+matchId);
 		try
 		{
 			ArrayList playersList = new ArrayList();
 			ArrayList clubList = new ArrayList();
-			sortUtility.getApplicationDataUtility().loadPlayers(gameId, matchId, playersList, clubList);
+			Integer gameId = GameWeeKManager.getGameIdByGameWeeKId(new Integer(gameWeekId));
+			if(gameId == null)
+			{
+				throw new SportMgmtException("Game Id is NULL");
+			}
+			String gameIdStr = gameId.toString();
+			sortUtility.getApplicationDataUtility().loadPlayers(gameIdStr, matchId, playersList, clubList);
 			playersList = sortUtility.sortPlayerListByPlayerName(playersList,sortUtility.getApplicationDataUtility().getGameClubPlayerIdsInMatch());
 			logger.info("----------- sorted by name playersList: "+playersList);
 			modeMap.put("playerList", playersList);
-			List<Map<String,String>>pointList = pointRankingUtility.getPointList(gameId);
+			List<Map<String,String>>pointList = pointRankingUtility.getPointList(gameIdStr);
 			logger.info("---- POint list: "+pointList);
 			modeMap.put("pointList", pointList);
 			modeMap.put("gameId", gameId);
@@ -160,7 +167,6 @@ public class PointRankingAction {
 	@RequestMapping(value = "updatePoint", method = RequestMethod.POST)
 	public @ResponseBody  Map<String,String> updatePoint(ModelMap modeMap, @RequestParam Map<String,String>requestParam, HttpServletRequest request)
 	{
-		Integer gameId = Integer.valueOf(requestParam.get("gameId"));
 		Integer matchId = Integer.valueOf(requestParam.get("matchId"));
 		Integer gameWeekId = Integer.valueOf(requestParam.get("gameWeekId"));
 		Integer gameClubPlayerId = Integer.valueOf(requestParam.get("gameClubPlayerId"));
@@ -170,6 +176,7 @@ public class PointRankingAction {
 		result.put("isSuccess", "true");
 		try
 		{
+			Integer gameId = GameWeeKManager.getGameIdByGameWeeKId(gameWeekId);
 			java.util.List<Integer> playerPointAndPointToUpdateList = PointRankManager.insertPlayerPoint(gameId, matchId, gameClubPlayerId, pointId);
 			if(playerPointAndPointToUpdateList !=null && playerPointAndPointToUpdateList.size() >=2)
 			{
@@ -187,14 +194,14 @@ public class PointRankingAction {
 						Map<Integer,Integer> userIdAndPointMap= PointRankManager.updateUserTotalPointForUserList(userIdList, gameId, pointToUpdate);
 						logger.info("----- Going to update game week point of users");
 						PointRankManager.updateGameWeekPointForUsers(userIdAndPointMap, gameWeekId, pointToUpdate);
-						Map<Integer,Integer> userAndGameWeeKPointMap= pointRankingUtility.getUserAndOderdGameWeeKPointMap(gameWeekId);
+						/*Map<Integer,Integer> userAndGameWeeKPointMap= pointRankingUtility.getUserAndOderdGameWeeKPointMap(gameWeekId);
 						logger.info("------------ User And Game week Point Map: "+userAndGameWeeKPointMap);
 						Map<Integer,Integer> userAndGameWeeKTotalPointMap= pointRankingUtility.getUserAndOderdGameWeeKTotalPointMap(gameWeekId);
 						logger.info("------------ User And Game week total Point Map: "+userAndGameWeeKTotalPointMap);
 						 Map<Integer,Integer> userAndTotalPointMap =  pointRankingUtility.getUserAndOderdTotalPointMap(gameId);
 						logger.info("User And Total Point Map: "+userAndTotalPointMap);
 						//PointRankManager.updateRankForUser(contestUserAndPoitMap,matchId);
-					}
+*/					}
 				}
 			}
 		}
@@ -203,6 +210,40 @@ public class PointRankingAction {
 			logger.error("---- Error occurs: "+ex);
 			result.put("isSuccess", "false");
 			result.put("errorMsg", "Technical error");
+		}
+		return result;
+	}
+	
+	@RequestMapping(value = "updateRank/{gameWeekId}", method = RequestMethod.POST)
+	public @ResponseBody  Map<String,String> updateRankOfMatch(ModelMap modeMap,@PathVariable String gameWeekId,HttpServletRequest request)
+	{
+		logger.info("------- Inside updateRank Action----gameWeekId: "+gameWeekId);
+		Integer gameWeekIdInt = Integer.valueOf(gameWeekId);
+		Map<String,String> result = new java.util.HashMap<>();
+		result.put("isSuccess", "true");
+		try
+		{
+			Integer gameId = GameWeeKManager.getGameIdByGameWeeKId(gameWeekIdInt);
+			Map<Integer,Integer> userAndGameWeeKPointMap= pointRankingUtility.getUserAndOderdGameWeeKPointMap(gameWeekIdInt);
+			//logger.info("------------ User And Game week Point Map: "+userAndGameWeeKPointMap);
+			logger.info("Going to update rank of every users for game week");
+			PointRankManager.updateRankOROverallRankForGameWeeK(userAndGameWeeKPointMap, gameWeekIdInt, "rank");
+			
+			Map<Integer,Integer> userAndGameWeeKTotalPointMap= pointRankingUtility.getUserAndOderdGameWeeKTotalPointMap(gameWeekIdInt);
+			//logger.info("------------ User And Game week total Point Map: "+userAndGameWeeKTotalPointMap);
+			logger.info("Going to update total rank of every users for game week");
+			PointRankManager.updateRankOROverallRankForGameWeeK(userAndGameWeeKTotalPointMap, gameWeekIdInt, "totalRank");
+			
+			Map<Integer,Integer> userAndTotalPointMap =  pointRankingUtility.getUserAndOderdTotalPointMap(gameId);
+			//logger.info("User And Total Point Map: "+userAndTotalPointMap);
+			logger.info("---- going to update rank for user ------");
+			PointRankManager.updateRankForUser(userAndTotalPointMap,gameWeekIdInt);
+		}
+		catch(Exception ex)
+		{
+			logger.error("---- Error occurs: "+ex);
+			result.put("isSuccess", "false");
+			result.put("errorMsg", ex.getMessage());
 		}
 		return result;
 	}

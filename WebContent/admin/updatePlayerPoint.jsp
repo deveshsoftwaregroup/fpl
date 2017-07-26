@@ -39,7 +39,7 @@ $(document).ajaxStart(function(){
 			console.log("player: "+player+" , point:"+point+", gameId:"+gameId+", matchId: "+matchId);
 			if(player !='undefined' && point !='undefined' && gameId !='undefined' && matchId !='undefined' && gameWeekId !='undefined')
 			{
-				url ="/SportMgmt/mvc/game/updatePoint?gameId="+gameId+"&matchId="+matchId+"&gameClubPlayerId="+$(player).val()+"&pointId="+$(point).val()+"&gameWeekId="+gameWeekId;
+				url ="/SportMgmt/mvc/game/updatePoint?matchId="+matchId+"&gameClubPlayerId="+$(player).val()+"&pointId="+$(point).val()+"&gameWeekId="+gameWeekId;
 				$.ajax({
 		     		  url: url,
 		     		  method: 'POST',
@@ -62,11 +62,11 @@ $(document).ajaxStart(function(){
 	
 	function updateRank()
 	{
-			var matchId = $("#matchId").val();
-			console.log("matchId: "+matchId);
-			if(matchId !='undefined')
+			var gameWeekId = $("#gameWeekId").val();
+			console.log("gameWeekId: "+gameWeekId);
+			if(gameWeekId !='undefined')
 			{
-				url ="/SportMgmt/mvc/game/updateRank/"+matchId;
+				url ="/SportMgmt/mvc/game/updateRank/"+gameWeekId;
 				$.ajax({
 		     		  url: url,
 		     		  method: 'POST',
