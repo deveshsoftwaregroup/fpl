@@ -70,5 +70,12 @@ public class SportConstrant {
 	public final static String GAME_WEEK_HISTORY = "GAME_WEEK_HISTORY";
 	public final static String WEEKLY_COUPON = "WEEKLY_COUPON";
 	public final static String UPDATE_PLAYER_POINT_PAGE = "admin/updatePlayerPoint";
+	public final static String GAME_WEEK_POINT = "point";
+	public final static String GAME_WEEK_OVERALL_POINT = "totalPoint";
+	public final static String USER_TOTAL_POINT = "totalPoint";
+	public final static String PLAYER_TOTAL_POINT = "playerTotalPoint";
+	public final static String GAME_WEEK_RANK = "rank";
+	public final static String GAME_WEEK_OVERALL_RANK = "totalRank";
+	
 
 }

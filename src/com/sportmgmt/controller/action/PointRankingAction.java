@@ -222,19 +222,26 @@ public class PointRankingAction {
 		{
 			Integer gameId = GameWeeKManager.getGameIdByGameWeeKId(gameWeekIdInt);
 			Map<Integer,Integer> userAndGameWeeKPointMap= pointRankingUtility.getUserAndOderdGameWeeKPointMap(gameWeekIdInt);
-			//logger.info("------------ User And Game week Point Map: "+userAndGameWeeKPointMap);
 			logger.info("Going to update rank of every users for game week");
-			PointRankManager.updateRankOROverallRankForGameWeeK(userAndGameWeeKPointMap, gameWeekIdInt, "rank");
+			PointRankManager.updateRankOROverallRankForGameWeeK(userAndGameWeeKPointMap, gameWeekIdInt, SportConstrant.GAME_WEEK_RANK);
 			
 			Map<Integer,Integer> userAndGameWeeKTotalPointMap= pointRankingUtility.getUserAndOderdGameWeeKTotalPointMap(gameWeekIdInt);
-			//logger.info("------------ User And Game week total Point Map: "+userAndGameWeeKTotalPointMap);
 			logger.info("Going to update total rank of every users for game week");
-			PointRankManager.updateRankOROverallRankForGameWeeK(userAndGameWeeKTotalPointMap, gameWeekIdInt, "totalRank");
+			PointRankManager.updateRankOROverallRankForGameWeeK(userAndGameWeeKTotalPointMap, gameWeekIdInt, SportConstrant.GAME_WEEK_OVERALL_RANK);
 			
 			Map<Integer,Integer> userAndTotalPointMap =  pointRankingUtility.getUserAndOderdTotalPointMap(gameId);
-			//logger.info("User And Total Point Map: "+userAndTotalPointMap);
 			logger.info("---- going to update rank for user ------");
 			PointRankManager.updateRankForUser(userAndTotalPointMap,gameWeekIdInt);
+			
+			List<Integer> gameClubPlayerIds =  pointRankingUtility.getGPlayerIdsOrderedByArg(gameWeekIdInt,SportConstrant.GAME_WEEK_POINT);
+			logger.info("--------- Going to update rank of players for game week");
+			PointRankManager.updatePlayer_Rank_OverallRank_For_GameWeeK(gameClubPlayerIds, gameWeekIdInt, SportConstrant.GAME_WEEK_RANK);
+			
+			gameClubPlayerIds =  pointRankingUtility.getGPlayerIdsOrderedByArg(gameWeekIdInt,SportConstrant.GAME_WEEK_OVERALL_POINT);
+			logger.info("--------- Going to update total rank of players for game week");
+			PointRankManager.updatePlayer_Rank_OverallRank_For_GameWeeK(gameClubPlayerIds, gameWeekIdInt, SportConstrant.GAME_WEEK_OVERALL_RANK);
+			
+			
 		}
 		catch(Exception ex)
 		{

@@ -11,6 +11,8 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
 
+import com.sportmgmt.model.entity.GameClubPlayer;
+import com.sportmgmt.model.entity.GameWeekPlayerReport;
 import com.sportmgmt.model.entity.GameWeekReport;
 import com.sportmgmt.model.entity.Point;
 import com.sportmgmt.model.entity.UserGame;
@@ -338,7 +340,7 @@ public class PointRankingUtility {
 	{
 		if(gameWeeKId !=null)
 		{
-			List<GameWeekReport>  gameWeekReportList = PointRankManager.getUserAndPointListOrderByPoint(gameWeeKId,"point");
+			List<GameWeekReport>  gameWeekReportList = PointRankManager.getUserAndPointListOrderByPoint(gameWeeKId,SportConstrant.GAME_WEEK_POINT);
 			if(gameWeekReportList !=null && !gameWeekReportList.isEmpty())
 			{
 				 Map<Integer,Integer> userAndPointMap = new LinkedHashMap<>();
@@ -356,7 +358,7 @@ public class PointRankingUtility {
 	{
 		if(gameWeeKId !=null)
 		{
-			List<GameWeekReport>  gameWeekReportList = PointRankManager.getUserAndPointListOrderByPoint(gameWeeKId,"totalPoint");
+			List<GameWeekReport>  gameWeekReportList = PointRankManager.getUserAndPointListOrderByPoint(gameWeeKId,SportConstrant.GAME_WEEK_OVERALL_POINT);
 			if(gameWeekReportList !=null && !gameWeekReportList.isEmpty())
 			{
 				 Map<Integer,Integer> userAndTotalPointMap = new LinkedHashMap<>();
@@ -374,7 +376,7 @@ public class PointRankingUtility {
 	{
 		if(gameId !=null)
 		{
-			List<UserGame>  userGAmeList = PointRankManager.getUserGAmeForUserList(null,gameId,"totalPoint");
+			List<UserGame>  userGAmeList = PointRankManager.getUserGAmeForUserList(null,gameId,SportConstrant.USER_TOTAL_POINT);
 			if(userGAmeList !=null && !userGAmeList.isEmpty())
 			{
 				 Map<Integer,Integer> userAndTotalPointMap = new LinkedHashMap<>();
@@ -385,6 +387,23 @@ public class PointRankingUtility {
 				return userAndTotalPointMap;
 			}
 		}
+		return null;
+	}
+	
+	public List<Integer> getGPlayerIdsOrderedByArg(Integer gameWeekId,String orderBy)
+	{
+		
+		List<GameWeekPlayerReport> gameWeekPlayersReport = PointRankManager.getGameWeekPlayersReportOrderByArgs(gameWeekId, orderBy);
+		 if(gameWeekPlayersReport !=null && !gameWeekPlayersReport.isEmpty())
+		 {
+			 List<Integer> gameClubPlayerIds = new ArrayList<>();
+			 for(GameWeekPlayerReport gameWeekPlayerReport :gameWeekPlayersReport)
+			 {
+				 gameClubPlayerIds.add(gameWeekPlayerReport.getGameClubPlayer().getGameClubPlayerId());
+			 }
+			 return gameClubPlayerIds;
+		 }
+		 
 		return null;
 	}
 }

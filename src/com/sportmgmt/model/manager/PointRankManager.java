@@ -15,6 +15,7 @@ import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 
+import com.sportmgmt.model.entity.Game;
 import com.sportmgmt.model.entity.GameClubPlayer;
 import com.sportmgmt.model.entity.GameWeekPlayerReport;
 import com.sportmgmt.model.entity.GameWeekReport;
@@ -560,7 +561,7 @@ public class PointRankManager {
 					{
 						cr.add(Restrictions.in("userId", userIdList));
 					}
-					if(orderBy == null && !orderBy.equals(orderBy))
+					if(orderBy != null && !orderBy.equals(""))
 					{
 						cr.addOrder(Order.desc(orderBy));
 					}
@@ -788,7 +789,153 @@ public class PointRankManager {
 				setErrorMessage("Technical Error");
 			}
 		}
-		
 	}
-
+	
+	public static List<GameWeekPlayerReport> getGameWeekPlayersReportOrderByArgs(Integer gameWeekId,String orderBy)
+	{
+		logger.info("----- Inside getGameWeekPlayersReportOrderByArgs ---- gameWeekId: "+gameWeekId+", orderBy: "+orderBy);
+		setErrorMessage(SportConstrant.NULL);
+		setErrorCode(SportConstrant.NULL);
+		SessionFactory factory = HibernateSessionFactory.getSessionFacotry();
+		if(factory == null)
+		{
+			setErrorCode(ErrorConstrant.SESS_FACT_NULL);
+			setErrorMessage("Technical Error");
+			logger.info("----- Factory Object is null----");
+			return null;
+		}
+		else
+		{
+			Session session = factory.openSession();
+			if(session != null)
+			{
+				try
+				{
+				
+					Criteria criteria = session.createCriteria(GameWeekPlayerReport.class);
+					criteria.add(Restrictions.eq("gameWeekId",gameWeekId));
+					//criteria.addOrder(Order.asc("contest"));
+					criteria.addOrder(Order.desc(orderBy));
+					List<GameWeekPlayerReport> gameWeekPlayerReportList= criteria.list();
+					logger.info("---- Returning game week playerReportreport list:"+gameWeekPlayerReportList);
+					return gameWeekPlayerReportList;
+				}
+				catch(Exception ex)
+				{
+					logger.error("Exception in getGameWeekOrderedPointForPlayers "+ex);
+					setErrorMessage("Technical Error");
+					setErrorCode(ErrorConstrant.TRANSACTION_ERROR);
+				}
+				finally
+				{
+					session.close();
+				}
+			}
+			else
+			{
+				setErrorCode(ErrorConstrant.SESS_NULL);
+				setErrorMessage("Technical Error");
+				logger.info("----- Session Object is null----");
+			}
+		}
+		return null;
+	}
+	
+	public static List<GameClubPlayer> getGameClubPlayersOrderedByArgs(Integer gameId,String orderBy)
+	{
+		setErrorMessage("");
+		SessionFactory factory = HibernateSessionFactory.getSessionFacotry();
+		if(factory == null)
+		{
+			setErrorCode(ErrorConstrant.SESS_FACT_NULL);
+			setErrorMessage("Technical Error");
+		}
+		else
+		{
+			Session session = factory.openSession();
+			if(session != null)
+			{
+				try
+				{
+					Criteria cr = session.createCriteria(GameClubPlayer.class);
+					Game game = (Game)session.get(Game.class, gameId) ;
+					cr.add(Restrictions.eq("game",game));
+					if(orderBy != null && !orderBy.equals(""))
+					{
+						cr.addOrder(Order.desc(orderBy));
+					}
+					List<GameClubPlayer>  gameClubPlayerList = cr.list();
+					logger.info("--------- Returning game club player listList: "+gameClubPlayerList);
+					return gameClubPlayerList;
+					
+				}
+				catch(Exception ex)
+				{
+					logger.error("Exception getGameClubPlayersOrderedByArgs: "+ex.getMessage());
+					setErrorMessage("Technical Error");
+					setErrorCode(ErrorConstrant.TRANSACTION_ERROR);
+				}
+				finally
+				{
+					session.close();
+				}
+			}
+			else
+			{
+				setErrorCode(ErrorConstrant.SESS_NULL);
+				setErrorMessage("Technical Error");
+			}
+		}
+		return null;
+	}
+	
+	public static void updatePlayer_Rank_OverallRank_For_GameWeeK(List<Integer> gameClubPlayerIds,Integer gameWeekId,String rankType) throws SportMgmtException
+	{
+		logger.info("----- Inside updatePlayer_Rank_OverallRank_For_GameWeeK ---- gameClubPlayerIds: "+gameClubPlayerIds+", gameWeekId: "+gameWeekId+", rankType:"+rankType);
+		setErrorMessage(SportConstrant.NULL);
+		setErrorCode(SportConstrant.NULL);
+		SessionFactory factory = HibernateSessionFactory.getSessionFacotry();
+		if(factory == null)
+		{
+			setErrorCode(ErrorConstrant.SESS_FACT_NULL);
+			setErrorMessage("Technical Error");
+			logger.info("----- Factory Object is null----");
+		}
+		else
+		{
+			try
+			{
+				Session session = factory.openSession();
+				int rank=0;
+				for(Integer gameClubPlayerId:gameClubPlayerIds)
+				{
+					rank = rank+1;
+					Criteria criteria = session.createCriteria(GameWeekPlayerReport.class);
+					GameClubPlayer gameClubPlayer = (GameClubPlayer) session.load(GameClubPlayer.class, gameClubPlayerId);
+					criteria.add(Restrictions.eq("gameClubPlayer", gameClubPlayer));
+					criteria.add(Restrictions.eq("gameWeekId", gameWeekId));
+					GameWeekPlayerReport GameWeekPlayerReport = (GameWeekPlayerReport)criteria.uniqueResult();
+					if(rankType !=null && rankType.equals(SportConstrant.GAME_WEEK_RANK))
+					{
+						GameWeekPlayerReport.setRank(rank);
+					}
+					else if(rankType !=null && rankType.equals(SportConstrant.GAME_WEEK_OVERALL_RANK))
+					{
+						GameWeekPlayerReport.setTotalRank(rank);
+					}
+					
+					session.save(GameWeekPlayerReport);
+					
+				}
+				session.beginTransaction().commit();
+				logger.info("Rank committed successfully:");
+			}
+			catch(Exception ex)
+			{
+				logger.error("Exception in updating rank of player for gameWeek : "+ex);
+				throw new SportMgmtException(ex);
+			}
+			
+		}
+	}
 }
