@@ -76,5 +76,6 @@
         <mapping class="com.sportmgmt.model.entity.Offer"/>
         <mapping class="com.sportmgmt.model.entity.PlayerPoint"/>
         <mapping class="com.sportmgmt.model.entity.UserPoint"/>
+         <mapping class="com.sportmgmt.model.entity.GameWeekPlayerReport"/>
    </session-factory>
 </hibernate-configuration>

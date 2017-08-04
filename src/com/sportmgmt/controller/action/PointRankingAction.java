@@ -180,12 +180,16 @@ public class PointRankingAction {
 			java.util.List<Integer> playerPointAndPointToUpdateList = PointRankManager.insertPlayerPoint(gameId, matchId, gameClubPlayerId, pointId);
 			if(playerPointAndPointToUpdateList !=null && playerPointAndPointToUpdateList.size() >=2)
 			{
+				Integer pointToUpdate = playerPointAndPointToUpdateList.get(1);
+				logger.info("Going to update player total point");
+				PointRankManager.updatePlayerTotalPoint(gameClubPlayerId, pointToUpdate);
+				logger.info("Going to update player point and overall point for game week");
+				PointRankManager.updatePlayerPointAndTotalPointForGameWeek(gameClubPlayerId, pointToUpdate, gameWeekId);
 				logger.info("------- Going to fetch user list who has been addded player: "+gameClubPlayerId+" in his team");
 				List<Integer> userIdList = PointRankManager.getUserListOfPlayerByMatch(gameClubPlayerId);
 				if(userIdList !=null && !userIdList.isEmpty())
 				{
 					Integer playerPointId = playerPointAndPointToUpdateList.get(0);
-					Integer pointToUpdate = playerPointAndPointToUpdateList.get(1);
 					logger.info("----- Goinng to insert point for user taken by player in user_point");
 					boolean isTransDone =PointRankManager.insertUsersPoint(gameId, matchId, userIdList, playerPointId, pointToUpdate);
 					if(isTransDone)
@@ -194,14 +198,7 @@ public class PointRankingAction {
 						Map<Integer,Integer> userIdAndPointMap= PointRankManager.updateUserTotalPointForUserList(userIdList, gameId, pointToUpdate);
 						logger.info("----- Going to update game week point of users");
 						PointRankManager.updateGameWeekPointForUsers(userIdAndPointMap, gameWeekId, pointToUpdate);
-						/*Map<Integer,Integer> userAndGameWeeKPointMap= pointRankingUtility.getUserAndOderdGameWeeKPointMap(gameWeekId);
-						logger.info("------------ User And Game week Point Map: "+userAndGameWeeKPointMap);
-						Map<Integer,Integer> userAndGameWeeKTotalPointMap= pointRankingUtility.getUserAndOderdGameWeeKTotalPointMap(gameWeekId);
-						logger.info("------------ User And Game week total Point Map: "+userAndGameWeeKTotalPointMap);
-						 Map<Integer,Integer> userAndTotalPointMap =  pointRankingUtility.getUserAndOderdTotalPointMap(gameId);
-						logger.info("User And Total Point Map: "+userAndTotalPointMap);
-						//PointRankManager.updateRankForUser(contestUserAndPoitMap,matchId);
-*/					}
+				}
 				}
 			}
 		}

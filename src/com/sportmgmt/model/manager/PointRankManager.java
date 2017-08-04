@@ -16,6 +16,7 @@ import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 
 import com.sportmgmt.model.entity.GameClubPlayer;
+import com.sportmgmt.model.entity.GameWeekPlayerReport;
 import com.sportmgmt.model.entity.GameWeekReport;
 import com.sportmgmt.model.entity.PlayerPoint;
 import com.sportmgmt.model.entity.Point;
@@ -678,4 +679,116 @@ public class PointRankManager {
 			
 		}
 	}
+	
+	public static void updatePlayerTotalPoint(Integer gameClubPlayerId,Integer pointToUpdate) throws SportMgmtException
+	{
+		setErrorMessage("");
+		SessionFactory factory = HibernateSessionFactory.getSessionFacotry();
+		logger.info("--------------- updatePlayerTotalPoint ------------> gameClubPlayerId:  "+gameClubPlayerId+" poinToUpdate: "+pointToUpdate);
+		if(factory == null)
+		{
+			setErrorCode(ErrorConstrant.SESS_FACT_NULL);
+			setErrorMessage("Technical Error");
+		}
+		else
+		{
+			Session session = factory.openSession();
+			if(session != null)
+			{
+				try
+				{
+					GameClubPlayer gameclubPlayer = (GameClubPlayer)session.load(GameClubPlayer.class, gameClubPlayerId);
+					int totalPoint =pointToUpdate;
+					if(gameclubPlayer.getPlayerTotalPoint() !=null)
+					{
+						totalPoint +=gameclubPlayer.getPlayerTotalPoint();
+					}
+					gameclubPlayer.setPlayerTotalPoint(totalPoint);
+					session.update(gameclubPlayer);
+					logger.info("--------- Committing player total point---- : "+totalPoint);
+					session.beginTransaction().commit();
+				}
+				catch(Exception ex)
+				{
+					logger.error("Exception updatePlayerTotalPoint: "+ex.getMessage());
+					setErrorMessage("Technical Error");
+					setErrorCode(ErrorConstrant.TRANSACTION_ERROR);
+					throw new SportMgmtException(ex);
+				}
+				finally
+				{
+					session.close();
+				}
+			}
+			else
+			{
+				setErrorCode(ErrorConstrant.SESS_NULL);
+				setErrorMessage("Technical Error");
+			}
+		}
+		
+	}
+
+	public static void updatePlayerPointAndTotalPointForGameWeek(Integer gameClubPlayerId,Integer pointToUpdate,Integer gameWeekId) throws SportMgmtException
+	{
+		setErrorMessage("");
+		SessionFactory factory = HibernateSessionFactory.getSessionFacotry();
+		logger.info("--------------- updatePlayerPointAndTotalPointForGameWeek ------------> gameClubPlayerId:  "+gameClubPlayerId+" pointToUpdate: "+pointToUpdate+" ,gameWeekId: "+gameWeekId);
+		if(factory == null)
+		{
+			setErrorCode(ErrorConstrant.SESS_FACT_NULL);
+			setErrorMessage("Technical Error");
+		}
+		else
+		{
+			Session session = factory.openSession();
+			if(session != null)
+			{
+				try
+				{
+					
+					GameClubPlayer gameClubPlayer = (GameClubPlayer)session.load(GameClubPlayer.class, gameClubPlayerId);
+					Criteria criteria = session.createCriteria(GameWeekPlayerReport.class);
+					criteria.add(Restrictions.eq("gameWeekId", gameWeekId));
+					criteria.add(Restrictions.eq("gameClubPlayer", gameClubPlayer));
+					GameWeekPlayerReport gameWeekPlayerReport = (GameWeekPlayerReport)criteria.uniqueResult();
+					if(gameWeekPlayerReport == null)
+					{
+						logger.info("------------- GAme Week Player Report not found, going to create new player report for gameweek:");
+						gameWeekPlayerReport = new GameWeekPlayerReport();
+						gameWeekPlayerReport.setGameWeekId(gameWeekId);
+						gameWeekPlayerReport.setGameClubPlayer(gameClubPlayer);
+					}
+					int gameWeekPoint = pointToUpdate;
+					if(gameWeekPlayerReport.getPoint() !=null)
+					{
+						gameWeekPoint += gameWeekPlayerReport.getPoint();
+					}
+					gameWeekPlayerReport.setPoint(gameWeekPoint);
+					gameWeekPlayerReport.setTotalPoint(gameClubPlayer.getPlayerTotalPoint());
+					session.saveOrUpdate(gameWeekPlayerReport);
+					logger.info("--------- Commiting point and total point for game week:");
+					session.beginTransaction().commit();
+				}
+				catch(Exception ex)
+				{
+					logger.error("Exception fetch updatePlayerPointAndTotalPointForGameWeek: "+ex.getMessage());
+					setErrorMessage("Technical Error");
+					setErrorCode(ErrorConstrant.TRANSACTION_ERROR);
+					throw new SportMgmtException(ex);
+				}
+				finally
+				{
+					session.close();
+				}
+			}
+			else
+			{
+				setErrorCode(ErrorConstrant.SESS_NULL);
+				setErrorMessage("Technical Error");
+			}
+		}
+		
+	}
+
 }
