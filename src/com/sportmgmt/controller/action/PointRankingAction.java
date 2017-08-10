@@ -194,7 +194,7 @@ public class PointRankingAction {
 					boolean isTransDone =PointRankManager.insertUsersPoint(gameId, matchId, userIdList, playerPointId, pointToUpdate);
 					if(isTransDone)
 					{
-						logger.info("----- Going to update total pointof users");
+						logger.info("----- Going to update total point of users");
 						Map<Integer,Integer> userIdAndPointMap= PointRankManager.updateUserTotalPointForUserList(userIdList, gameId, pointToUpdate);
 						logger.info("----- Going to update game week point of users");
 						PointRankManager.updateGameWeekPointForUsers(userIdAndPointMap, gameWeekId, pointToUpdate);
@@ -230,8 +230,8 @@ public class PointRankingAction {
 			PointRankManager.updateRankOROverallRankForGameWeeK(userAndGameWeeKTotalPointMap, gameWeekIdInt, SportConstrant.GAME_WEEK_OVERALL_RANK);
 			
 			Map<Integer,Integer> userAndTotalPointMap =  pointRankingUtility.getUserAndOderdTotalPointMap(gameId);
-			logger.info("---- going to update rank for user ------");
-			PointRankManager.updateRankForUser(userAndTotalPointMap,gameWeekIdInt);
+			logger.info("---- going to update rank for user in game------");
+			PointRankManager.updateRankForUser(userAndTotalPointMap,gameId);
 			
 			List<Integer> gameClubPlayerIds =  pointRankingUtility.getGPlayerIdsOrderedByArg(gameWeekIdInt,SportConstrant.GAME_WEEK_POINT);
 			logger.info("--------- Going to update rank of players for game week");
