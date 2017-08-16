@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sportmgmt.controller.bean.Coupon;
 import com.sportmgmt.model.manager.CouponManager;
+import com.sportmgmt.model.manager.GameWeeKManager;
 import com.sportmgmt.model.manager.PointRankManager;
 import com.sportmgmt.utility.common.CouponUtility;
 import com.sportmgmt.utility.common.PointRankingUtility;
@@ -54,6 +55,15 @@ public class CouponAction {
 	public String couponList(ModelMap modeMap,@PathVariable String userId,@PathVariable String gameId)
 	{
 		Integer lastGameWeekId = PointRankManager.getLastGameWeekId(gameId);
+		if(lastGameWeekId == null)
+		{
+			List<Integer> sortedGAmeWeekIds=  GameWeeKManager.sortedGameWeekIds(gameId);
+			if(sortedGAmeWeekIds !=null && !sortedGAmeWeekIds.isEmpty())
+			{
+				lastGameWeekId = sortedGAmeWeekIds.get(0);
+			}
+			
+		}
 		logger.info("Last game week Id: "+lastGameWeekId);
 		if(lastGameWeekId != null)
 		{

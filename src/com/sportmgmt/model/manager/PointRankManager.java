@@ -125,8 +125,11 @@ public class PointRankManager {
 					query.setParameter("date", new Date(System.currentTimeMillis()));
 					logger.info("----------- Executing query to point list by game");
 					lastGameWeekIdList = query.list();
-					logger.info("----- Returning Match List  ---- : "+lastGameWeekIdList);
+					logger.info("----- Returning last game week id  ---- : "+lastGameWeekIdList);
+					if(lastGameWeekIdList !=null && !lastGameWeekIdList.isEmpty())
 					return (Integer)lastGameWeekIdList.get(0);
+					else
+					return null;
 				}
 				catch(Exception ex)
 				{
