@@ -39,8 +39,8 @@ public class SportConstrant {
 	public final static String FAQ_PAGE = "FAQ";
 	public final static String RULES_PAGE = "rules";
 	public final static String POINT_TABLE_PAGE = "pointTable";
-	public final static String LEAGE_HOME_PAGE = "leagueHome";
-	//public final static String LEAGE_HOME_PAGE = "homeIndex";
+	//public final static String LEAGE_HOME_PAGE = "leagueHome";
+	public final static String LEAGE_HOME_PAGE = "homeIndex";
 	public final static String LEAGUE_LANDING_HOME_PAGE = "homeIndex";
 	public final static String HOME_GAME_GUIDE = "homeGameGuide";
 	public final static String LEAGE_LOGIN_PAGE = "leagueLogin";

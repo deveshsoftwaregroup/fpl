@@ -181,8 +181,8 @@ public class UserAction {
 		}
 		//return "redirect:/login/loginSuccess.jsp";
 		//return "redirect:/"+SportConstrant.LEAGUE_LANDING_HOME_PAGE+".jsp";
-		//return "redirect:/mvc/"+SportConstrant.LEAGUE_LANDING_HOME_PAGE;
-		return "redirect:/mvc/user/login/"+UserManager.getUserId();
+		return "redirect:/mvc/LeagueHome";
+		//return "redirect:/mvc/user/login/"+UserManager.getUserId();
 	}
 	
 	@RequestMapping(value = "validate", method = RequestMethod.GET)

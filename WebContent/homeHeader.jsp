@@ -3,348 +3,25 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<title>The 12th Man Fantasy League</title>
 
-
-<!--  <link rel="stylesheet" href="/SportMgmt/css/foundation.css"> -->
-
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The 12th Man League</title>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+ 	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+ 	<c:set var="context" value="/SportMgmt" />
     <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 	<%@ taglib uri="WEB-INF/sportmgmt.tld" prefix="s" %>  
 	<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<link rel="stylesheet" type="text/css" href="/SportMgmt/assets/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/SportMgmt/assets/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="/SportMgmt/assets/css/animate.css">
-<link rel="stylesheet" type="text/css" href="/SportMgmt/assets/css/theme.css">
-<link rel="stylesheet" type="text/css" href="/SportMgmt/assets/css/style.css">
-<!--[if lt IE 9]>
-<script src="assets/js/html5shiv.min.js"></script>
-<script src="assets/js/respond.min.js"></script>
-<![endif]-->
-
-<style>
-.successBox{ display: none;}
-.form-control{ border-radius:0px;}
-.modal-dialog.loginForm{ width: 100%;
-    max-width: 560px;}
-.loginForm .modal-content{background:rgba(255,255,255,1);-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;border-radius:0;padding:5px 10px;border:none}
-.loginForm .modal-header{min-height:16.43px;padding:15px;    border-bottom: solid 4.5px hsl(232, 51%, 33%);text-align:center}
-.loginForm .modal-title{margin:0;line-height:1.42857143;font-size:23px;letter-spacing:1px;font-weight:400;text-transform:uppercase;padding:6px 2px;color:#20295b;text-shadow:none}
-.loginForm .modal-header .close{color:#fff;opacity:1;font-size:24px;padding:6px;border-radius:50%;width:35px;height:35px;position:absolute;top:-16px;right:-16px;background:#D94B51;text-shadow:none;-webkit-font-smoothing:antialiased;font-weight:300;outline:none!important;-webkit-transition:all 600ms ease-in-out;-moz-transition:all 600ms ease-in-out;-ms-transition:all 600ms ease-in-out;-o-transition:all 600ms ease-in-out;transition:all 600ms ease-in-out}
-.loginForm .modal-header .close:hover{background:#fff;color:#D94B51}
-
-#name{background-image:url(images/user-silhouette.png)}
-#email{background-image:url(images/email-filled-closed-envelope.png)}
-#password,#password2{background-image:url(images/key.png)}
-.register-button:focus{outline:0}
-.register-switch{height:37px;margin-bottom:0;padding:0;background:#d7d7d7;border-radius:0}
-.register-switch-input{display:none}
-.register-switch-label{float:left;width:50%;line-height:30px;color:#585858;text-align:center;cursor:pointer; border: solid 1px #d7d7d7;}
-.register-switch-input:checked + .register-switch-label{font-weight:400;color:#585858;border-radius:0; border: solid 1px #ec5840;}
-[type='radio'] + label{padding:3px;margin-left:0;margin-right:0;margin-bottom:0;vertical-align:baseline}
-   
-    
-	@keyframes colorChange {
-	0% {
-        background: rgba(27, 117, 188, .8);   
-		border-color:rgba(27, 117, 188, .8);
-    }
-    20% {
-        background: rgba(14, 117, 112, .8);
-		border-color: rgba(14, 117, 112, .8);
-    }
-    40% {
-        background: rgba(101, 17, 111, .8);
-		border-color: rgba(101, 17, 111, .8);
-    }
-    60% {
-        background: rgba(27, 117, 188, .8);   
-		border-color:rgba(27, 117, 188, .8);
-    }
-    80% {
-        background: rgba(14, 117, 112, .8);
-		border-color: rgba(14, 117, 112, .8);   
-    }
-    100% {
-        background: rgba(101, 17, 111, .8);
-		border-color: rgba(101, 17, 111, .8); 
-    }
-}
-	
-	
-@keyframes scale {
-  0% {
-    transform: scale(.9);
-    opacity: .5;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-	
-.mask{ background: #000; opacity: 0.5; position:fixed; top: 0; left: 0; width: 100%; height:100%;z-index;9000;}
-@media (min-width: 768px){
-	#myModal1 .modal-dialog {
-	    width: 420px;
-	}
-}
-
-.forgotBtn{    text-decoration: none;
-    color: #2f2f2f;
-    color: #a7a7a7;
-    font-style: italic;
-    text-transform: lowercase;
-    font-size: 13px;
-    position: relative;
-    padding-bottom: 5px;    
-    /* line-height: 25px; */}
-    
-    .forgotBtn:hover:after{ position: absolute; content: ''; height: 1px; width: 100%; background: #D94B51; left:0; bottom:0;}
-#resetBtn{ width: 100%; border-color: rgba(0, 0, 0, 0);background-color: #3b5998;color: #fff; text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: 13px;}
-.btn-block + .btn-block {
-    margin-top: 5px;
-}
-.btn-facebook {
-    color: #fff;
-    background-color: #3b5998;
-    border-color: rgba(0, 0, 0, 0);
-}
-.btn-login{  color: #fff;
-    background-color: #D94B51;
-    border-color: rgba(0, 0, 0, 0);}
-
-.btn-social {
-    position: relative;
-    padding-left: 44px;
-    text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: 13px;
-}
-.btn-block {
-    display: block;
-    width: 100%;
-}
-
-.btn-social :first-child {
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 42px;
-    font-weight: 400;
-    line-height: 40px;
-    font-size: 16px;
-    text-align: center;
-    border-right: 1px solid rgb(255, 255, 255);
-}
-
-/* button design */
-.input {
-	position: relative;
-	z-index: 1;
-	display: inline-block;
-	margin: 0em;
-	max-width: 100%;
-	width: calc(100%);
-	vertical-align: top;
-}
-
-.input__field {
-	position: relative;
-	display: block;
-	float: right;
-	padding: 0.8em;
-	width: 60%;
-	border: none;
-	border-radius: 0;
-	background: #f0f0f0;
-	color: #aaa;
-	font-weight: bold;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	-webkit-appearance: none; /* for box shadows to show on iOS */
-}
-
-.input__field:focus {
-	outline: none;
-}
-
-.input__label {
-	display: inline-block;
-	float: right;
-	padding: 0 1em;
-	width: 40%;
-	color: #6a7989;
-	font-weight: 400;
-	font-size: 95%;
-	-webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-}
-
-.input__label-content {
-	position: relative;
-	display: block;
-	padding: 7px 0;
-	width: 100%;
-}
-
-.graphic {
-	position: absolute;
-	top: 0;
-	left: 0;
-	fill: none;
-}
-
-.icon {
-	color: #ddd;
-	font-size: 150%;
-}
-
-/* Individual styles */
-
-
-/* Hoshi */
-.input--hoshi {
-	overflow: hidden;
-}
-
-.input__field--hoshi {
-	margin-top: .6em;
-    padding: 1.2em 0.15em;
-	width: 100%;
-	background: transparent;
-	color: #595F6E;
-}
-
-.input__label--hoshi {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	padding: 0 0.25em;
-	width: 100%;
-	height: calc(100% - 1em);
-	text-align: left;
-	pointer-events: none;
-}
-
-.input__label-content--hoshi {
-	position: absolute;
-}
-
-.input__label--hoshi::before,
-.input__label--hoshi::after {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: calc(100% - 10px);
-	border-bottom: 1px solid #B9C1CA;
-}
-
-.input__label--hoshi::after {
-	margin-top: 2px;
-	border-bottom: 4px solid #00aaff;
-	-webkit-transform: translate3d(-100%, 0, 0);
-	transform: translate3d(-100%, 0, 0);
-	-webkit-transition: -webkit-transform 0.3s;
-	transition: transform 0.3s;
-}
-
-.input__label--hoshi-color-1::after {
-	border-color: hsl(200, 100%, 50%);
-}
-
-.input__label--hoshi-color-2::after {
-	border-color: hsl(160, 100%, 50%);
-}
-
-.input__label--hoshi-color-3::after {
-	border-color: hsl(20, 100%, 50%);
-}
-
-.input__field--hoshi:focus + .input__label--hoshi::after,
-.input--filled .input__label--hoshi::after {
-	-webkit-transform: translate3d(0, 0, 0);
-	transform: translate3d(0, 0, 0);
-}
-
-.input__field--hoshi:focus + .input__label--hoshi .input__label-content--hoshi,
-.input--filled .input__label-content--hoshi {
-	-webkit-animation: anim-1 0.3s forwards;
-	animation: anim-1 0.3s forwards;
-}
-
-@-webkit-keyframes anim-1 {
-	50% {
-		opacity: 0;
-		-webkit-transform: translate3d(1em, 0, 0);
-		transform: translate3d(1em, 0, 0);
-	}
-	51% {
-		opacity: 0;
-		-webkit-transform: translate3d(-1em, -40%, 0);
-		transform: translate3d(-1em, -40%, 0);
-	}
-	100% {
-		opacity: 1;
-		-webkit-transform: translate3d(0, -40%, 0);
-		transform: translate3d(0, -40%, 0);
-	}
-}
-
-@keyframes anim-1 {
-	50% {
-		opacity: 0;
-		-webkit-transform: translate3d(1em, 0, 0);
-		transform: translate3d(1em, 0, 0);
-	}
-	51% {
-		opacity: 0;
-		-webkit-transform: translate3d(-1em, -40%, 0);
-		transform: translate3d(-1em, -40%, 0);
-	}
-	100% {
-		opacity: 1;
-		-webkit-transform: translate3d(0, -40%, 0);
-		transform: translate3d(0, -40%, 0);
-	}
-}
-
-input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 1000px white inset !important;
-}
-.loginForm .modal-header img {
-    height: 75px;
-    position: absolute;
-    left: 5px;
-    top: 8px;
-    opacity: 1;
-}
-</style>
+<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/style.css">
+<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/jquery.bxslider.css">
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,400,600,700" rel="stylesheet">
 </head>
 
-<body>
+<body class="full-bg">
 
 
 
@@ -479,17 +156,10 @@ input:-webkit-autofill {
 <div id="myModal1" class="modal fade" role="dialog">
   
 	<div id="login-overlay" class="modal-dialog loginForm">
-	      <div class="modal-content">
-	          <%-- <div class="modal-header">
-	              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-	              <h4 class="modal-title" id="myModalLabel">Signup</h4>
-	          </div> --%>
+	      <div class="modal-content">	         
 	          <div class="modal-header">
-	          	<img alt="" src="../images/ipl.jpg">
-	          	<span class="fan">Fantasy</span>
 	              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-	              <h4 class="modal-title" id="myModalLabel">Signup</h4>
-	          </div>
+	      		</div>
 	          <div class="modal-body">
 	              <form name="RegisterForm" action="user/register" method="post">
 		  <div class="form-group">
@@ -530,14 +200,12 @@ input:-webkit-autofill {
             <div align="center">
                 <a href="javascript:void(0);" class="button-lrg" onclick="submitForm();" style="display: block;"><input type="button" class="btn btn-primary btn-block btn-social btn-facebook"  value="REGISTER"></a>
             </div> 
+            
             <div align="center">
-            	
-            	
-            	<a class="btn btn-block btn-social btn-facebook" href="javascript:void(0);"  onclick="loginWithFB()";>
-	                  					<span class="fa fa-facebook"></span> Sign in with Facebook
-	                  				</a>
-            	
-            </div>
+                <button class="loginBtn center-block loginBtn--facebook" onclick="loginWithFB()";>
+  				Login with Facebook
+				</button>
+			</div>
         </div>
     </form>
 	          </div>
@@ -600,112 +268,62 @@ input:-webkit-autofill {
 	  </div>
 </div>
 
-<%-- <div class="reveal medium" id="exampleModal3" data-reveal>
-     <div class="large-12 column text-center">
-         <!--<p align="center" class="button btnSubmit" style="background:none; color:rgba(0,0,102,1); font-size:22px;" >
-         <span class="thanksMsg">Thanks</span>
-         <span class="topThanksMsg">${message}${message1}</span><span>${message2}</span></span><span>${message3} &nbsp; ${message4} <a href="http://the12thman.in">${message5}</a>  </span></p>-->
-         
-         <p align="center" class="button btnSubmit" style="background:none; color:rgba(0,0,102,1); font-size:22px;" >
-         <span class="thanksMsg">Thanks</span>
-         <span class="topThanksMsg">You are registered successfully!</span>
-         <span class="s2">Launching very soon</span>
-         <span class="s3">The12thMan Fantasy League !</span>
-         <span class="bottomMsg"> <BR>Till then<BR>Visit our blog at <a href="http://the12thman.in/">THE TWELFTH MAN TIMES</a></span></p>
-     </div>
-     <button class="close-button" type="button" data-close="">×</button>
-</div> --%>   
 
-
-<div id="preloader">
-  <div id="status">&nbsp;</div>
-</div>
-<a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
 <div class="container">
-<header id="header">
-    <div class="row">
-      <div class="col-lg-12 col-md-12 col-sm-12">
-        <div class="header_bottom">
-          <div class="logo_area" ><a href="http://the12thman.in" target="_blank" class="logo"><img src="/SportMgmt/images/logo.png" alt="" height="92" width="92">
-          <span>The 12th Man <span>League</span></span>
-          </a></div>
-          <div class="add_banner"><a href="#"><img src="/SportMgmt/images/addbanner_728x90_V1.jpg" alt=""></a></div>
-        </div>
-      </div>
-    </div>
-</header>
-<section id="newsSection">
-    <div class="row">
-      <div class="col-lg-12 col-md-12">
-        <div class="latest_newsarea"> <span>Our Partners</span>
-          <ul id="ticker01" class="news_sticker">
-            <li><a href="#"><img src="/SportMgmt/images/news_thumbnail2.jpg" alt=""></a></li>
-            <li><a href="" target="_blank"><img src="/SportMgmt/images/news_thumbnail2.jpg" alt=""></a></li>    
-            <li><a href="http://www.the12thman.in" target="_blank"><img src="/SportMgmt/images/logo.png" alt=""></a></li>  
-            <li><a href="#"><img src="/SportMgmt/images/photograph_img2.jpg" alt=""></a></li>  
-            <li><a href="#"><img src="/SportMgmt/images/news_thumbnail2.jpg" alt=""></a></li>  
-            <li><a href="#"><img src="/SportMgmt/images/logo.png" alt=""></a></li>    
-             <li><a href="#"><img src="/SportMgmt/images/football-1.png" alt=""></a></li>
-            <li><a href="" target="_blank"><img src="/SportMgmt/images/news_thumbnail2.jpg" alt=""></a></li>    
-            <li><a href="http://www.the12thman.in" target="_blank"><img src="/SportMgmt/images/logo.png" alt=""></a></li>  
-            <li><a href="#"><img src="/SportMgmt/images/photograph_img2.jpg" alt=""></a></li>  
-            <li><a href="#"><img src="/SportMgmt/images/photograph_img2.jpg" alt=""></a></li>  
-            <li><a href="#"><img src="/SportMgmt/images/logo.png" alt=""></a></li>                  
-          </ul>          
-        </div>
-      </div>
-    </div>
-</section>
-  
-<section id="navArea">
-    <nav class="navbar navbar-inverse" role="navigation">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-      </div>
-      <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav main_nav" style=" width: 100%;">
-          <li class="active"><a href="javascript:void(0);" onclick="openHomeHome();"><span class="fa fa-home desktop-home"></span><span class="mobile-show">Home</span></a></li>
-          <li><a href="javascript:void(0);" onclick="homeGameGuide();">Game Guide</a></li> 
-          <li><a target="_blank "href="http://the12thman.in/">Blog</a></li>               
-          <c:if test="${empty sessionScope.user.displayName}">
-	         <li><a href="javascript:void(0);" data-toggle="modal" data-target="#myModal">Log in</a></li>           
-	         <li><a href="javascript:void(0);" data-toggle="modal" data-target="#myModal1">Sign Up</a></li> 
-          </c:if> 
-          <c:if test="${not empty sessionScope.user.displayName}">
-            <li><a href="/SportMgmt/mvc/user/UserLanding">Fantasy League</a></li>
-          	<li><a href="/SportMgmt/mvc/user/Logout">Log out</a></li>
-          </c:if> 
-          <c:if test="${not empty sessionScope.user.displayName}">
-          <li style="float:right; color:#ffffff; padding-top: 13px;">Welcome ${sessionScope.user.displayName}<font color="blue">  </font></li>
-          </c:if>
-        </ul>
-      </div>
-    </nav>
-</section>
 
-<section id="newsSection">
-    <div class="row">
-      <div class="col-lg-12 col-md-12">
-        <div class="latest_newsarea"> <span>Ongoing/Upcoming Leagues</span>
-          <ul id="ticker01" class="news_sticker">
-            <li><a href="#"><img src="/SportMgmt/images/news_thumbnail3.jpg" alt="">Fantasy IPL</a></li>
-            <li><a href="http://www.google.co.in" target="_blank"><img src="/SportMgmt/images/news_thumbnail3.jpg" alt="">Double your money</a></li>    
-            <li><a href="#"><img src="/SportMgmt/images/news_thumbnail3.jpg" alt="">Predict top 11</a></li>  
-            <li><a href="#"><img src="/SportMgmt/images/news_thumbnail3.jpg" alt="">Player with highest no of goals</a></li>  
-                             
-          </ul>
-          <div class="social_area">
-            <ul class="social_nav">
-              <li class="facebook"><a href="https://www.facebook.com/the12thman.in/" target="_blank"></a></li>
-              <li class="twitter"><a href="https://twitter.com/the12thmantimes" target="_blank"></a></li>              
-              <li class="googleplus"><a href="https://plus.google.com/105539643606954415470" target="_blank"></a></li>
-              <li class="youtube"><a href="#"></a></li>
-            </ul>
-          </div>
+	<div class="row">
+               <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1  marg_top">
+                 
+                   <div class="row top_header">
+                       <div class="col-lg-12">
+                        <ul>
+                       <li class="flex-item"><img src="images/logo.png" class="img-responsive"></li>
+                        <li class="pwr_text flex-item">Powered By</li>
+                        <li class="flex-item" ><img src="${context}/redBlackTheme/images/poweredby-logo.png" class="img-responsive pwr_logo"></li>
+                        <li class="flex-item"><img src="${context}/redBlackTheme/images/simple-bannr.png" class="img-responsive pull-right"></li>
+                       </ul>
+                       </div>
+                        
+                   </div>
+               </div>
         </div>
-      </div>
-    </div>
-</section>
+
+        <header>
+             <div class="row">
+                <div class="col-lg-1 col-sm-1"><div class="left_img"><img src="${context}/redBlackTheme/images/left_image.png"></div></div>    
+               <div class="col-lg-10 col-md-10 col-sm-10  ">
+          <nav class="navbar ">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>                        
+                  </button>
+
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                  <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">HOME</a></li>
+
+                    <li><a href="#">GUIDE</a></li>
+                    <li><a href="http://the12thman.in/">BLOG</a></li>
+                      <li><a href="" data-toggle="modal" data-target="#myModal1">FANTASY LEAGUE</a></li>
+                      <li><a href="" data-toggle="modal" data-target="#myModal1">PREDICT 11</a></li>
+                  </ul>
+                  <ul class="nav navbar-nav navbar-right">
+                    <li class="get_in_touch"><a href="" data-toggle="modal" data-target="#myModal1"> REGISTER</a></li>
+                  </ul>
+                </div>
+              </div>
+              </div>
+                <div class="col-lg-1  col-sm-1"><div class="right_img"><img src="${context}/redBlackTheme/images/left_image.png"></div></div> 
+              </div>
+            </nav>
+          </header> 
+
+
+
   
 <script>
 	function redirectToLeague()
@@ -848,7 +466,6 @@ popup.open();
 Foundation.libs.reveal.locked = true;
 $('#exampleModal3').data('revealInit').close_on_background_click = false 
 $('#exampleModal3').data('revealInit').close_on_esc = false 
-	//$('body.rightMenuOpen').parent('html').css('overflow','hidden');
 		  $('.more-menu').click(function(){
 			$(this).children('ul').slideToggle('fast');
 			})
@@ -900,14 +517,12 @@ function loginWithFB()
 }
 </script>
 
-<script src="/SportMgmt/js/vendor/jquery.js"></script>    
-<script src="/SportMgmt/js/vendor/foundation.js"></script>
-<script src="/SportMgmt/js/app.js"></script>   
-<script src="/SportMgmt/js/jquery.animate-enhanced.min.js"></script>
-   <script src="/SportMgmt/js/classie.js"></script>  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="${context}/redBlackTheme/js/bootstrap.js"></script>
+<script src="${context}/redBlackTheme/js/jquery.bxslider.js"></script>
+       
    <script>
 			(function() {
-				// trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
 				if (!String.prototype.trim) {
 					(function() {
 						// Make sure we trim BOM and NBSP
@@ -950,23 +565,24 @@ function loginWithFB()
 					$('.rsuccessBox').show('slow');
 				})
 				
-			});
-			
-			/* function uploadTransferView()
-			{
-				alert("hi");
-				url ="/SportMgmt/transfer.jsp";
-					$.ajax({
-			     		  url: url,
-			     		  dataType: 'html',
-			     		  success: function( resp ) {
-			     			 //console.log(resp); 
-			     			 $('.ism-container').html(resp);
-			     		  },
-			     		  error: function( req, status, err ) {
-			     		    console.log( 'something went wrong', status, err );
-			     		  }
-			     		});	
-			} */
+			});		
 			
 		</script>
+		<script>
+        $(document).ready(function(){
+  $('.bxslider').bxSlider({
+       auto: true
+      
+  });
+}); 
+       </script>
+        <script>
+        $(document).ready(function(){
+   $('.bxslider_1').bxSlider({
+ auto: true,
+  autoControls: true
+}); 
+            
+           
+});
+       </script>

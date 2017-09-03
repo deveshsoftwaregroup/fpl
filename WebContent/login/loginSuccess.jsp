@@ -8,5 +8,8 @@
 </head>
 <body>
 Login Sucess Mr ${param.userName}
+${message}
+aaaaaaaaaaaaaaa
+${modalmap.message}
 </body>
 </html>
