@@ -6,20 +6,21 @@
         <!-- Database connection settings -->
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>  
         
-        <!-- FOR Local connection  -->
+        <!-- FOR Local connection -->
         <property name="connection.url">jdbc:mysql://localhost:3306/fpl</property>
-        <property name="connection.username">root</property>
-        <property name="connection.password">root</property>
+        <property name="connection.username">admin</property>
+        <property name="connection.password">admin</property>
         
-      <!-- FOR Staging
-         <property name="connection.url">jdbc:mysql://149.56.37.30:3306/fantasyl_ipl_staging</property>
-        <property name="connection.username">fantasyl_ipl1</property>
-        <property name="connection.password">P@ssw0rd</property>-->
+        
+        <!-- FOR Stage connection
+        <property name="connection.url">jdbc:mysql://198.50.136.172:3306/justthin_stage</property>
+        <property name="connection.username">justthin_stage</property>
+        <property name="connection.password">justthin_stage</property>-->
         
         <!-- FOR Live connection
-        <property name="connection.url">jdbc:mysql://149.56.37.30:3306/fantasyl_ipl_live</property>
-        <property name="connection.username">fantasyl_iplive</property>
-        <property name="connection.password">4s?a)+]zCk^h</property>-->
+        <property name="connection.url">jdbc:mysql://198.50.136.172:3306/justthin_</property>
+        <property name="connection.username">justthin_live</property>
+        <property name="connection.password">justthin_live</property>-->
  
         <!-- JDBC connection pool (use the built-in) -->
         <property name="connection.pool_size">4</property> 
@@ -31,7 +32,7 @@
         <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
  
         <!-- Echo all executed SQL to stdout -->
-        <property name="show_sql">false</property>
+        <property name="show_sql">true</property>
         <!--<property name="show_sql">true</property>-->
         
        <!--  TO FIX CONNECTION TIMEOUT after 8 hours of inactivity -->
@@ -76,6 +77,6 @@
         <mapping class="com.sportmgmt.model.entity.Offer"/>
         <mapping class="com.sportmgmt.model.entity.PlayerPoint"/>
         <mapping class="com.sportmgmt.model.entity.UserPoint"/>
-         <mapping class="com.sportmgmt.model.entity.GameWeekPlayerReport"/>
+         
    </session-factory>
 </hibernate-configuration>
