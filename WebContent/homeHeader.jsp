@@ -19,11 +19,15 @@
 <link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/style.css">
 <link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/jquery.bxslider.css">
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,400,600,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,600" rel="stylesheet">
 </head>
 
 <body class="full-bg">
 
 
+ 
+   
+   
 
 <div id="myModal" class="modal fade" role="dialog">
   
@@ -277,7 +281,7 @@
                    <div class="row top_header">
                        <div class="col-lg-12">
                         <ul>
-                       <li class="flex-item"><img src="images/logo.png" class="img-responsive"></li>
+                       <li class="flex-item"><img src="${context}/redBlackTheme/images/logo.png" class="img-responsive "></li>
                         <li class="pwr_text flex-item">Powered By</li>
                         <li class="flex-item" ><img src="${context}/redBlackTheme/images/poweredby-logo.png" class="img-responsive pwr_logo"></li>
                         <li class="flex-item"><img src="${context}/redBlackTheme/images/simple-bannr.png" class="img-responsive pull-right"></li>
@@ -304,9 +308,9 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                   <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">HOME</a></li>
+                    <li class="active"><a href="javascript:void(0);" onclick="openHomeHome();">HOME</a></li>
 
-                    <li><a href="#">GUIDE</a></li>
+                    <li><a href="javascript:void(0);" onclick="homeGuide();">GUIDE</a></li>
                     <li><a href="http://the12thman.in/">BLOG</a></li>
                       <li><a href="" data-toggle="modal" data-target="#myModal1">FANTASY LEAGUE</a></li>
                       <li><a href="" data-toggle="modal" data-target="#myModal1">PREDICT 11</a></li>
@@ -520,7 +524,12 @@ function loginWithFB()
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="${context}/redBlackTheme/js/bootstrap.js"></script>
 <script src="${context}/redBlackTheme/js/jquery.bxslider.js"></script>
-       
+   <script>
+   function homeGuide()
+	{
+		window.location="HomeGuide";
+	}
+   </script>
    <script>
 			(function() {
 				if (!String.prototype.trim) {
