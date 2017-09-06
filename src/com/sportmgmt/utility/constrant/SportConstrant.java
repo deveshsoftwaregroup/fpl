@@ -43,6 +43,7 @@ public class SportConstrant {
 	public final static String LEAGE_HOME_PAGE = "homeIndex";
 	public final static String LEAGUE_LANDING_HOME_PAGE = "homeIndex";
 	public final static String HOME_GAME_GUIDE = "homeGameGuide";
+	public final static String HOME_GUIDE = "homeGuide";
 	public final static String LEAGE_LOGIN_PAGE = "leagueLogin";
 	public final static String FORGOT_PASSWORD_PAGE = "forgotPassword";
 	public final static String USER_VERIFY_PAGE = "verifyResult";

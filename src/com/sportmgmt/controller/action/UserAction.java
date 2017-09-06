@@ -147,7 +147,7 @@ public class UserAction {
 			modeMap.put("isRegistered",isRegistered);
 			if(isRegistered)
 			{
-				modeMap.put("message","You are registered");
+				modeMap.put("message","Congrats ! You are registered successfully!");
 				PlanManager.addDefaultPlanToUser(UserManager.getUserId());
 				logger.info("----------- start to send mail------");
 				/*try
@@ -171,7 +171,7 @@ public class UserAction {
 			}
 			else
 			{
-				modeMap.put("message","Your Registration is failed due to "+UserManager.getErrorMessage());
+				modeMap.put("message","Your Registration is failed as :  "+UserManager.getErrorMessage());
 			}
 		}
 		else
