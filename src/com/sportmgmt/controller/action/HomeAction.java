@@ -52,6 +52,15 @@ public class HomeAction {
 		logger.info("---------- Forwardng to : "+SportConstrant.HOME_GAME_GUIDE);
 		 return SportConstrant.HOME_GAME_GUIDE;
 	}
+	@RequestMapping(value = "HomeGuide", method = RequestMethod.GET)
+	public  String homeGuide(ModelMap map,HttpServletRequest request)
+	{
+		HashMap<String,HashMap<String,ArrayList<String>>> countryMap = UserManager.getCountryStateCityMap();
+		logger.info("--------- League Home , countryMap: "+countryMap);
+		map.put("countryMap", countryMap);
+		logger.info("---------- Forwardng to : "+SportConstrant.HOME_GUIDE);
+		 return SportConstrant.HOME_GUIDE;
+	}
 	@RequestMapping("/LeagueLogin")
 	public String login(ModelMap map)
 	{
