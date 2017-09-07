@@ -15,6 +15,7 @@
         http://www.springframework.org/schema/task 
         http://www.springframework.org/schema/task/spring-task-4.0.xsd">
 	<context:component-scan base-package="com.sportmgmt.controller.action" />
+	<context:component-scan base-package="com.sportmgmt.dreamEleven.controller.action" />
 	<!-- <context:property-placeholder location="${catalina.home}/conf/resources/sportmgmt.properties" /> -->
 	<!-- <context:property-placeholder location="classpath:sportmgmt.properties" /> -->
 	
@@ -90,7 +91,10 @@
 	    <property name="applicationDataUtility" ref="applicationDataUtility" /> 
 	</bean>
 	
-	<bean id="couponUtility" class="com.sportmgmt.utility.common.CouponUtility">  
+	
+
+
+<bean id="couponUtility" class="com.sportmgmt.utility.common.CouponUtility">  
 	</bean>
     <!-- <bean id="sportSchedular" class="com.sportmgmt.utility.common.SportSchedular"></bean> -->
     <import resource="spring-social.xml" />
