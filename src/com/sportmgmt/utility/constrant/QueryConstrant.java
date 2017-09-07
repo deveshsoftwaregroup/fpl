@@ -10,6 +10,8 @@ public static final String SELECT_USER_PLAYER_LIST = "select gcp.game_club_playe
 														+" and gcp.game_id =:gameId";
 public static final String SELECT_USER_PLAYER_DETAIL_LIST = "select gcp.game_club_player_id, gcp.playing_position, up.is_playing, up.user_player_id,up.player_category,up.seq_num from GAME_CLUB_PLAYER gcp, USER_PLAYER up where gcp.game_club_player_id = up.game_club_player_id and up.user_id =:userId" 
 		+" and gcp.game_id =:gameId";
+public static final String SELECT_USER_PLAYER_DETAIL_LIST_ELEVEN = "select gcp.game_club_player_id, gcp.playing_position, up.is_playing, up.user_player_id,up.player_category,up.seq_num from GAME_CLUB_PLAYER gcp, D_EL_USER_PLAYER up where gcp.game_club_player_id = up.game_club_player_id and up.user_id =:userId" 
+		+" and gcp.game_id =:gameId";
 
 public static final String SELECT_TOTAL_PLAYER_BY_POSITION = "select gcp.playing_position, count(*) from GAME_CLUB_PLAYER gcp, USER_PLAYER up where gcp.game_club_player_id = up.game_club_player_id and up.user_id =:userId"
 															 +" and gcp.game_id =:gameId group by gcp.playing_position";
