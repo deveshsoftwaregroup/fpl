@@ -1205,6 +1205,68 @@ public class GameManager {
 		return isAdded;
 	}
 	
+	public static boolean addPlayeOfGametToUserAccountForDrimEleven(String userId,String gameClubPlayerId)
+	{
+		boolean isAdded =  false;
+		setErrorMessage("");
+		SessionFactory factory = HibernateSessionFactory.getSessionFacotry();
+		logger.info("--------------- addPlayeOfGametToUserAccount ------------> userId:  "+userId+" gameClubPlayerId: "+gameClubPlayerId);
+		if(factory == null)
+		{
+			setErrorCode(ErrorConstrant.SESS_FACT_NULL);
+			setErrorMessage("Technical Error");
+		}
+		else
+		{
+			Session session = factory.openSession();
+			if(session != null)
+			{
+				try
+				{
+					Criteria cr = session.createCriteria(com.sportmgmt.dreamEleven.model.entity.UserPlayer.class);
+					cr.add(Restrictions.eq("gameClubPlayerId", new Integer(gameClubPlayerId)));
+					cr.add(Restrictions.eq("userId", new Integer(userId)));
+					List results = cr.list();
+					if(results == null || results.size() ==0)
+					{
+						com.sportmgmt.dreamEleven.model.entity.UserPlayer userPlayer = new com.sportmgmt.dreamEleven.model.entity.UserPlayer();
+						userPlayer.setGameClubPlayerId(new Integer(gameClubPlayerId)); 
+						userPlayer.setUserId(new Integer(userId));
+						userPlayer.setIsPlaying(SportConstrant.NO);
+						userPlayer.setPlayerCategory(SportConstrant.PLAYER_TYPE_NORMAL);
+						userPlayer.setSegNum(0);
+						session.save(userPlayer);
+						session.beginTransaction().commit();
+						isAdded = true;
+					}
+					else
+					{
+						logger.info(" ------- Player is already asssociated with user ");
+						setErrorMessage("Player is already added");
+						setErrorCode(ErrorConstrant.TRANSACTION_ERROR);
+					}
+					
+				}
+				catch(Exception ex)
+				{
+					logger.error("Exception fetch addPlayeOfEventToUserAccount: "+ex.getMessage());
+					setErrorMessage("Technical Error");
+					setErrorCode(ErrorConstrant.DUPLICATE_ENTRY);
+				}
+				finally
+				{
+					session.close();
+				}
+			}
+			else
+			{
+				setErrorCode(ErrorConstrant.SESS_NULL);
+				setErrorMessage("Technical Error");
+			}
+		}
+		
+		return isAdded;
+	}
 	public static boolean removePlayeOfGameFromUserAccount(String userId,String gameClubPlayerId)
 	{
 		boolean isRemoved =  false;
