@@ -6,10 +6,10 @@
         <!-- Database connection settings -->
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>  
         
-        <!-- FOR Local connection -->
+        <!-- FOR Local connection 
         <property name="connection.url">jdbc:mysql://localhost:3306/fpl</property>
         <property name="connection.username">admin</property>
-        <property name="connection.password">admin</property>
+        <property name="connection.password">admin</property>-->
         
         
         <!-- FOR Stage connection
@@ -17,10 +17,10 @@
         <property name="connection.username">justthin_stage</property>
         <property name="connection.password">justthin_stage</property>-->
         
-        <!-- FOR Live connection
-        <property name="connection.url">jdbc:mysql://198.50.136.172:3306/justthin_</property>
+        <!-- FOR Live connection-->
+        <property name="connection.url">jdbc:mysql://198.50.136.172:3306/justthin_live</property>
         <property name="connection.username">justthin_live</property>
-        <property name="connection.password">justthin_live</property>-->
+        <property name="connection.password">justthin_live</property>
  
         <!-- JDBC connection pool (use the built-in) -->
         <property name="connection.pool_size">4</property> 
@@ -78,5 +78,8 @@
         <mapping class="com.sportmgmt.model.entity.PlayerPoint"/>
         <mapping class="com.sportmgmt.model.entity.UserPoint"/>
          
+         <!--  Dream Eleven mapping starts -->
+         <mapping class="com.sportmgmt.dreamEleven.model.entity.UserPlayer"/>
+         <!--  Dream Eleven mapping ends -->
    </session-factory>
 </hibernate-configuration>
