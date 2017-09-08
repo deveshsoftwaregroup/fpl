@@ -157,6 +157,134 @@
 	  </div>
 </div>
 
+<div id="myModal11" class="modal fade" role="dialog">
+  
+	<div id="login-overlay" class="modal-dialog loginForm">
+	      <div class="modal-content">
+	          <div class="modal-header">
+	          	<img alt="" src="../images/ipl.jpg">
+	          	<span class="fan">Fantasy</span>
+	              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+	              <h4 class="modal-title" id="myModalLabel">Login</h4>
+	          </div>
+	          <div class="modal-body">
+	              <div class="row">
+	                  <div class="col-xs-12">
+	                  
+	                  <div class="col-xs-12">
+	                  	<div class="row">
+	                  	
+	                  	     
+	                          <form id="loginForm" name="LoginForme" action="" method="get" onsubmit="event.preventDefault();" autocomplete="off">
+	                              
+	                              <div class="col-xs-12">
+	                              	<div class="row">
+		                              <div class="form-group">
+		                              
+			                              <span class="input input--hoshi">
+			                              	<input class="input__field input__field--hoshi" type="email" name="emailId" autocomplete="off" />
+			                              	<label class="input__label input__label--hoshi input__label--hoshi-color-1" for="email">
+			                              		<span class="input__label-content input__label-content--hoshi">Email ID</span>
+			                              	</label>
+			                              </span>
+		                              	                              		
+		                              </div>
+		                             </div>
+	                              </div>
+	                              
+	                              <div class="col-xs-12">
+		                              	<div class="row">	                              
+			                              <div class="form-group">
+			                              
+			                              	<span class="input input--hoshi">
+				                              	<input class="input__field input__field--hoshi" type="password" name="logonPassword"  autocomplete="off" />
+				                              	<label class="input__label input__label--hoshi input__label--hoshi-color-1" for="logonPassword">
+				                              		<span class="input__label-content input__label-content--hoshi">Password</span>
+				                              	</label>
+				                              </span>
+				                              		                                  
+			                              </div>	                              
+		                              </div>
+	                              </div>
+	                              
+	                              <div class="col-xs-12">
+	                              	<div class="row">
+	                              		
+	                              			<div class="col-sm-6 hide">
+	                              				
+	                              				<div class="checkbox hide">
+				                                  <label>
+				                                      <input type="checkbox" name="remember" id="remember"> Remember login
+				                                  </label>
+				                                  <p class="help-block">(if this is a private computer)</p>
+				                              </div>
+	                              				
+	                              			</div>
+	                              			<div class="col-sm-12">
+		                              			<div class="row">
+			                              			<div class="form-group">
+			                              				<a href="javascript:void(0);" class="forgotBtn" data-toggle="modal" data-target="#myModal3">Forgot Password</a>
+			                              			</div>
+		                              			</div>
+	                              			</div>
+	                              		
+		                            </div>
+		                         </div>
+		                         
+		                         <div class="col-xs-12">
+		                         <div class="row">
+		                         
+	                              
+	                              <div id="loginErrorMsg" class="alert alert-error hide">Wrong username or password</div>
+	                              
+	                              <a href="javascript:void(0);" class="" style="position: relative;">
+				             	
+	                              <button type="submit" class="btn btn-block btn-social btn-login" onclick="doLogin11();">Login</button>
+	                              </a>
+	                              </div>
+	                              </div>
+	                               
+	                          </form>
+	                      
+	                  	</div>
+	                  </div>
+	                  
+	                  <div class="row">
+	                  
+	                  	<div class="col-xs-12">
+	                  		<div class="row">
+	                  			<div class="col-sm-6">
+	                  				
+	                  					<div class="form-group">
+	                  					
+	                  				<a href="javascript:void(0);" data-toggle="modal" data-target="#myModal1" class="btn btn-block btn-social btn-info">
+	                  					<span class="fa fa-envelope-o"></span>Register with Email ID!
+	                  				</a>
+	                  				
+	                  				</div>
+	                  	
+	                  			</div>
+	                  			<div class="col-sm-6">
+	                  				
+	                  					<div class="form-group">
+	                  				<a class="btn btn-block btn-social btn-facebook" href="javascript:void(0);" onclick="loginWithFB()">
+	                  					<span class="fa fa-facebook"></span> Sign in with Facebook
+	                  				</a>
+	                  				
+	                  				</div>
+	                  			</div>
+	                  		
+	                  		</div>
+	                  	</div>
+	                  </div>
+	                  </div>
+	                  
+	              </div>
+	          </div>
+	      </div>
+	  </div>
+</div>
+
 <div id="myModal1" class="modal fade" role="dialog">
   
 	<div id="login-overlay" class="modal-dialog loginForm">
@@ -334,6 +462,10 @@
 	{
 		window.location="user/UserLanding";
 	}
+	function redirectToLeague11()
+	{
+		window.location="user11/UserLanding11";
+	}
 	function homeGameGuide()
 	{
 		window.location="HomeGameGuide";
@@ -450,6 +582,43 @@ function doLogin()
 			  if(resp.isValidUser)
 			  {
 				  window.location="user/login/"+resp.userId;
+			  }
+			  else
+			  {
+			  	alert(resp.errorMessage);
+			  }
+		  },
+		  error: function( req, status, err ) {
+		    console.log( 'something went wrong', status, err );
+		  }
+		});
+}
+function doLogin11()
+{
+	var loginForm = document.forms['LoginForme'];
+	if(typeof loginForm['emailId'] == 'undefined' || loginForm['emailId'].value=='')
+	{
+		return false;
+	}
+	var isEmailValid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(loginForm['emailId'].value);
+	if(!isEmailValid)
+	{
+		return false;
+	}
+	if(typeof loginForm['logonPassword'] == 'undefined' || loginForm['logonPassword'].value =='')
+	{
+		return false;
+	}
+	
+	//alert(loginForm['emailId']);
+	var url = "user/validate?logonId="+loginForm['emailId'].value+"&logonPassword="+loginForm['logonPassword'].value
+	$.ajax({
+		  url: url,
+		  dataType: 'json',
+		  success: function( resp ) {
+			  if(resp.isValidUser)
+			  {
+				  window.location="user11/login11/"+resp.userId;
 			  }
 			  else
 			  {

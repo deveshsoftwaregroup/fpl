@@ -88,7 +88,7 @@
                     <br>
                      <a href="#"><img src="${context}/redBlackTheme/images/google-adbanner.png" class="img-responsive center-block"></a>
                     <br>
-                    <a href="" data-toggle="modal" data-target="#myModal1"><img src="${context}/redBlackTheme/images/predict_11_section.png" class="img-responsive center-block"></a>
+                    <a href="" data-toggle="modal" data-target="#myModal11"><img src="${context}/redBlackTheme/images/predict_11_section.png" class="img-responsive center-block"></a>
                 </div>
               </div>
             </div>
