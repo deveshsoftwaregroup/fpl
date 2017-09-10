@@ -10,9 +10,9 @@
 .dream11-top_header { text-align: right;}
 
 header {padding-top: 10px;}
-.navbar {background: url(../images/Dream11/navbar-bg.png) no-repeat center; }
+.navbar {background: url(../images/Dream11/navbar-bg.png) no-repeat center; height: 65px; }
 
-.navbar-nav > li > a { font-family: 'Source Sans Pro', sans-serif; font-weight: 400;    font-size: 17px; padding-left: 20px; padding-right: 20px;}
+.navbar-nav > li > a { font-family: 'Source Sans Pro', sans-serif !important; font-weight: 400;    font-size: 19px; padding-left: 20px; padding-right: 20px;}
 .nav > li > a:hover,
 .nav > li > a:focus { color:#a0e918;}
 .pddn_top { padding-top: 50px;}
@@ -127,7 +127,7 @@ header {padding-top: 10px;}
 .details_adjust p {padding-left: 32%; padding-top: 20px;padding-right: 20px;}
 .add_adjust {padding: 10px 20px; margin-top: 50px;}
 .claim_btn { float: right; margin-top: 15px; margin-right: 20px;
- border-radius: 0px; padding-top: 5px; padding-bottom: 5px; 
+ border-radius: 5px; padding-top: 5px; padding-bottom: 5px;  color:#fff !important;
 background-color: #f62b2b; background-image: -webkit-gradient(linear, left top, left bottom, from(#f62b2b), to(#d20202));
  background-image: -webkit-linear-gradient(top, #f62b2b, #d20202);
  background-image: -moz-linear-gradient(top, #f62b2b, #d20202);
@@ -141,18 +141,18 @@ background-color: #f62b2b; background-image: -webkit-gradient(linear, left top, 
 .modal-title {color:#fff;}
 
 /*--------------/ Gifts----------------------*/
-.glyphicon-plus{ padding-left: 60%;}
-.team_map ul {margin-left: -20px;}
+.glyphicon-plus{ padding-left: 55%;}
+ .team_map_dream11 ul {margin-left: -20px;}
 /*--------------My Team----------------------*/
 .my_team .image_ad p {color: #fff; font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400; padding-left: 30px;}
-.team_map { background: url(../images/Dream11/myteam_map.png) no-repeat center;
+.team_map , .team_map_dream11 { background: url(../images/Dream11/myteam_map.png) no-repeat center;
      height: 437px; 
     background-size: contain;
     margin-top: 70px; }
-.team_map ul {width:100%; text-align:center;}
-.team_map ul li { list-style: none; display: inline-block ;}
-.team_map ul li h4 {    margin-top: -22px;color:#fff; font-family: 'Source Sans Pro', sans-serif; font-weight: 600;}
+.team_map ul,  .team_map_dream11 ul  {width:100%; text-align:center;}
+.team_map ul li, .team_map_dream11 ul li { list-style: none; display: inline-block ;}
+.team_map ul li h4, .team_map_dream11 ul li h4 {    margin-top: -22px;color:#fff; font-family: 'Source Sans Pro', sans-serif; font-weight: 600;}
 .my_points h3{font-family: 'Legend M54'; color:#fff; padding-left: 0px; }
 .flex_items { display: inline-flex; align-content: space-between;}
 .flex_items img { padding-left: 100px;}
@@ -165,7 +165,7 @@ background-color: #dfe5df; background-image: -webkit-gradient(linear, left top, 
  background-image: -o-linear-gradient(top, #dfe5df, #839287);
  background-image: linear-gradient(to bottom, #dfe5df, #839287);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#f62b2b, endColorstr=#839287);
 text-align: center;padding-top: 10px; color:#000 !important;}
-.my_team_points {font-family: 'Source Sans Pro', sans-serif; font-weight: 600;  border: 1px solid #598e2d;  border-top: 0px; padding: 0px;}
+.my_team_points {font-family: 'Source Sans Pro', sans-serif; font-weight: 600;   padding: 0px;}
 .my_team_points li { color:#fff; padding: 10px;}
 .glyphicon-menu-right {padding-left: 30%;}
 .check_points li {list-style: none;}
@@ -176,7 +176,7 @@ text-align: center;padding-top: 10px; color:#000 !important;}
 .fixture_img_ad { padding-top: 30px;}
 .demo h3 { text-align: center; color:#fff;}
 #bottm_pd { padding-bottom: 30px;}
-.flex-buttons { display: flex; color:#fff; padding-left: 30px;    padding-left: 30px;}
+.flex-buttons { display: flex; color:#fff; }
 .flex-buttons .flex1 {font-family: 'Source Sans Pro', sans-serif; font-weight: 600;}
 .flex-buttons .claim_btn {margin-top: -10px; margin-left: 20px; }
 .plr_btn {margin-left: -25px;}
@@ -203,9 +203,115 @@ text-align: center;padding-top: 10px; color:#000 !important;}
 .team_points_flex { padding-left: 20px;display: -webkit-inline-box; }
 .next_team { padding-left:40%;}
 tbody { padding-top: 20px;}
- td, th { color:#fff !important; font-size: 18px;font-family: 'Source Sans Pro', sans-serif; font-weight: 100;}
+ td, th { color:#fff !important; font-size: 15px;font-family: 'Source Sans Pro', sans-serif; font-weight: 100;}
 .head_to_head h1{ font-size: 80px; color:red}
 /*--------------/ Fixtures----------------------*/
+
+/*-------------------Dream 11 Transfer -----------------------*/
+.predict11-bg{ 
+  background: url(../images/Predict11/Predict-Eleven-bg.png) no-repeat center top fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 130vh;
+}
+.transfers_predict11_map h3, .transfers_predict11_map h4, .transfers_predict11_map p{color:#fff; }
+.top_main_dream11  {width: 100%; border-radius: 5px; padding-top: 5px; padding-bottom: 5px; 
+background-color: #dfe5df; background-image: -webkit-gradient(linear, left top, left bottom, from(#dfe5df), to(#839287));
+ background-image: -webkit-linear-gradient(top, #dfe5df, #839287);
+ background-image: -moz-linear-gradient(top, #dfe5df, #839287);
+ background-image: -ms-linear-gradient(top, #dfe5df, #839287);
+ background-image: -o-linear-gradient(top, #dfe5df, #839287);
+ background-image: linear-gradient(to bottom, #dfe5df, #839287);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#f62b2b, endColorstr=#839287);
+padding-top: 10px; color:#000 !important; padding-left: 20px;}
+
+.my_points .bx-wrapper {border-left:0px; border-right: 0px;}
+.my_points .bx-wrapper .bx-controls-direction a { top:158px;}
+.my_points .bx-viewport {    border: 1px solid #598e2d;
+    border-top: 0px;}
+.goalkeeper_list .nav-tabs{ border-bottom: 0px; width: 30%;}
+.top_main_dream11 span {display: -webkit-inline-box;}
+.dream11_grad { padding-left: 115px; border-bottom: 0px !important; 
+
+width: 100%; border-radius: 0px; padding-top: 5px; padding-bottom: 5px;  color:#fff;
+background-color: #d80009;
+}
+.top_main_dream11_defender .dream11_grad,.top_main_dream11_midfielder .dream11_grad, .top_main_dream11_attacker .dream11_grad {padding-left: 125px;}
+
+.my_points .bx-viewport { height: 140px !important;}
+.my_points .bx-viewport ul li {width:300px !important;}
+.top_main_dream11_defender, .top_main_dream11_midfielder, .top_main_dream11_attacker {margin-top: 30px;}
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {background-color: transparent;}
+.my_points .dropdown a{color: #000; text-align: center;}
+.my_team_points {background-color: rgba(0,0,0,0.6);}
+.heading{
+width: 100%; border-radius: 5px; padding-top: 5px; padding-bottom: 5px; color:#000;  text-align: center;
+background-color: #dfe5df; background-image: -webkit-gradient(linear, left top, left bottom, from(#dfe5df), to(#839287));
+ background-image: -webkit-linear-gradient(top, #dfe5df, #839287);
+ background-image: -moz-linear-gradient(top, #dfe5df, #839287);
+ background-image: -ms-linear-gradient(top, #dfe5df, #839287);
+ background-image: -o-linear-gradient(top, #dfe5df, #839287);
+ background-image: linear-gradient(to bottom, #dfe5df, #839287);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#f62b2b, endColorstr=#839287);}
+.my_points .bx-wrapper{ margin-bottom: 40px;}
+ .dream_11transfer .team_map_dream11 ul  {margin-top: -20px;}
+/*-------------------/ Dream 11 Transfer -----------------------*/
+/*-------------------Footer -----------------------*/
+.footer_btn {color:#fff;}
+.footer_btn ul {margin-left: -30px;}
+.footer_btn ul li { list-style: none;}
+/*-------------------/ Footer -----------------------*/
+
+/*-------------------Dream 11 Predict My Team -----------------------*/
+.Dream_11_list {background-color: #222c3a; padding-top: 2px; padding-bottom: 2px;}
+.Dream_11_list h4 { text-align: center;}
+.Dream_11_players .head_table { background-color: #ff5733 !important;}
+.Dream_11_players tbody tr p { margin-bottom: 0px;}
+.Dream_11_players .head_table td{ padding-left: 5px !important; font-size: 16px;}
+.player_name_list { display: inline-block; padding-top: 5px;}
+.player_name_list img { padding-right: 5px;}
+.player_name_list img, .player_name_list p{ float: left; font-size: 14px;}
+.player_name_list p b {font-size: 12px;}
+
+tbody tr td:first-child {
+  width: 3em;
+  height: 2em; text-align: center;
+ }
+tbody tr {border-bottom: 1px solid #fff !important;    border-left: 1px solid #fff;     border-right: 1px solid #fff; height: 1px;}
+.claim_your_prize { margin-top: 50px;}
+.claim_your_prize h4 {text-align: right; padding-right: 20px;}
+.banner_align { margin-bottom: 100px;}
+.transfers_predict11 .our_partners , .coupon_predict .our_partners {margin-top: 138px;}
+.defenderr ul li:last-child {
+    background-color: red;
+  border-radius: 20%;
+    color: #ddd;
+    padding-top: 5px;
+}
+
+.midfielderr ul li:first-child {
+    background-color: red;
+   border-radius: 20%;
+    color: #ddd;
+    padding-top: 5px;
+}
+/*-------------------/ Dream 11 Predict My Team -----------------------*/
+/*------------------- Coupon -----------------------*/
+.coupon_predict .image_ad .coupon_card:not(:first-child) {
+   color: #fff; opacity: 0.5
+    }
+
+/*-------------------/ Coupon -----------------------*/
+
+.close_btn {position: relative; right:-35px; top:10px;}
+
+
+
+
+
+
+
+
 
 
 /* Shared */
@@ -298,8 +404,9 @@ tbody { padding-top: 20px;}
     .right_img { right: -60px !important;}
 }
 @media screen and (min-width: 1320px) and ( max-width: 1399px) {
-    .left_img { left: -50px !important;}
-    .right_img { right: -50px !important;}
+    .left_img { left: -30px !important;}
+    .right_img { right: -30px !important;}
+    
 }
 @media screen and (min-width: 1200px) and ( max-width: 1300px) {
     .top_header li:nth-last-child(2){padding-left: 25px !important;}
@@ -316,6 +423,9 @@ tbody { padding-top: 20px;}
     .scout_slide h4, .scout-news h4 {font-size: 15px !important; }
     .our_partners ul li {padding: 20px 9px !important;}
     .our_partners h3 {     font-size: 18px !important;}
+    
+    .my_points { margin-top: 200px;}
+    .navbar {  height: 53px; }
 }
 
 @media screen and (min-width: 700px) and ( max-width: 768px) {
@@ -331,6 +441,17 @@ tbody { padding-top: 20px;}
     .left_img { left:6px !important;}
     .prtnr li img {height:25px !important;}
     .our_partners h3 {     font-size: 18px !important; padding-left: 35px !important;}
+    .navbar-nav { float: none; }
+    .navbar-nav  {padding: 10px; font-size: 12px;}
+    .navbar-nav > li > a {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+	padding-left:5px !important;
+	padding-right:5px !important;
+	
+	font-size:14px !important;
+  }
+    .my_points {margin-top: 200px !important;}
 }
 
 @media screen and (min-width: 480px) and ( max-width: 699px) {
@@ -346,10 +467,20 @@ tbody { padding-top: 20px;}
     .prtnr li img {height:20px !important;}
      #myModal .form-group { height:auto !important;}
      .navbar {background-color: transparent !important;}
-    .navbar-toggle {     margin-top: -80px !important;}
+    
  .top_banner { margin-top: -20px !important;}
     .top_header li:last-child { display: none !important;}
     .navbar-nav > li > a { text-align: center !important;}
+    .my_points {margin-top: 200px !important;}
+    .btm_ftr, .btm_ftr1, .btm_ftr2{ text-align: center; padding: 20px 30px;}
+    .details_adjust {padding: 0px 50px;}
+     .coupon_card .claim_btn { margin-right: 50px;}
+    .details_adjust p{    padding-left: 23%;
+    padding-top: 10px; font-size: 12px;
+    padding-right: 0px;}
+    .coupon_card { padding: 10px 30px;}
+   
+    
 }
 
 @media screen and (min-width: 300px) and ( max-width: 439px) {
@@ -359,7 +490,7 @@ tbody { padding-top: 20px;}
     .left_img , .right_img { display: none!important;}
     .pwr_logo {height: 39px !important;    padding-top: 10px !important;}
     .top_header li:nth-last-child(2) { padding-top: 20px !important;}
-    .navbar-toggle {     margin-top: -60px !important;}
+  
     .navbar-toggle .icon-bar { background-color: #fff !important;}
     .all_play { padding-top: 30px !important;}
     .our_partners h3 {     font-size: 18px !important; text-align: center !important;}
@@ -372,8 +503,25 @@ tbody { padding-top: 20px;}
     .navbar {background-color: transparent !important;}
     .top_banner { margin-top: -20px !important;}
     .navbar-nav > li > a { text-align: center !important;}
+    
+    .tect_left{display: none;}
 
-
+    .team_map_dream11 ul li a img{height: 50px !important;}
+    .itemsContainer  {margin-top: 80px;}
+    .team_map_dream11 ul li h4 {    margin-top: -18px !important;}
+    .team_map_dream11 {margin-top: 0px !important;}
+    .flex-buttons .flex{width: 40%;}
+    .flex-buttons {flex: none !important;}
+    .flex1 {flex: none !important;}
+    .flex-buttons .claim_btn {margin-top: 0px !important; margin-left: 5px; }
+    .my_points {margin-top: 50px !important;}
+    .pddn_top_100 { padding-top: 20px !important;}
+    .unlimited_transfer { width: 30% !important;}
+    .navbar { height: 50px !important;}
+    .navbar-brand > img { margin-top: -50px !important;}
+    .btm_ftr, .btm_ftr1, .btm_ftr2{ text-align: center; padding: 20px 30px;}
+    .details_adjust {padding: 0px 50px;}
+    .coupon_card .claim_btn { margin-right: 50px;}
 }
 
 
