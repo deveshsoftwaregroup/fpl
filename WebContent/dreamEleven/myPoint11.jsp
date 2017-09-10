@@ -120,7 +120,7 @@
 
       <td>
           
-          <div class="player_name_list"><img src="images/top_11_tshirt.png"> <p>Ederson <br><b>MCI</b></p></div></td>
+          <div class="player_name_list"><img src="${context}/redBlackTheme/images/top_11_tshirt.png"> <p>Ederson <br><b>MCI</b></p></div></td>
 
       <td>$5.5</td>
 

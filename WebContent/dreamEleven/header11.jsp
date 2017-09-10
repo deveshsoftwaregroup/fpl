@@ -93,7 +93,7 @@
                             <a href="javascript:void(0);" onclick="uploadMyPointView11('${sessionScope.gameDetails.gameId}','${sessionScope.userId}','','');">My Points</a>
                         </li>   
                         <li>
-                            <a href="javascript:void(0);" onclick="uploadPointTableView11('${sessionScope.gameDetails.gameId}');">Point Table</a>
+                            <a href="javascript:void(0);" onclick="uploadCouponsView11('${sessionScope.gameDetails.gameId}');">Coupons</a>
                         </li> 
                         <li>
                             <a href="javascript:void(0)" onclick="uploadRulesView11();">Rules</a>
@@ -220,11 +220,11 @@
 		     		});	
 			}
 		}
-		function uploadPointTableView11(gameId)
+		function uploadCouponsView11(gameId)
 		{
 			if(typeof gameId != 'undefined' && gameId != '')
 			{
-				url ="/SportMgmt/mvc/game11/PointTableView11/"+gameId;
+				url ="/SportMgmt/mvc/game11/CouponsView11/"+gameId;
 				$.ajax({
 		     		  url: url,
 		     		  dataType: 'html',

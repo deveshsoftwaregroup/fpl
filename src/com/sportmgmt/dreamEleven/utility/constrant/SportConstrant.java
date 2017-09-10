@@ -38,7 +38,7 @@ public class SportConstrant {
 	public final static String MY_POINT_PAGE = "dreamEleven/myPoint11";
 	public final static String FAQ_PAGE = "dreamEleven/FAQ11";
 	public final static String RULES_PAGE = "dreamEleven/rules11";
-	public final static String POINT_TABLE_PAGE = "dreamEleven/pointTable11";
+	public final static String COUPONS_PAGE = "dreamEleven/coupons11";
 	public final static String LEAGE_HOME_PAGE = "leagueHome";
 	//public final static String LEAGE_HOME_PAGE = "homeIndex";
 	public final static String LEAGUE_LANDING_HOME_PAGE = "homeIndex";

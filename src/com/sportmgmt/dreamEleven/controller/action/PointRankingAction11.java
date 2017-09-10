@@ -68,15 +68,14 @@ public class PointRankingAction11 {
 		modeMap.put("sportMgmtRes", sportMgmtResponse);
 		return SportConstrant.MY_POINT_PAGE;
 	}
-	@RequestMapping(value = "PointTableView11/{gameId}", method = RequestMethod.GET)
+	@RequestMapping(value = "CouponsView11/{gameId}", method = RequestMethod.GET)
 	public  String pointTableView(ModelMap modeMap,HttpServletRequest request,@PathVariable String gameId)
 	{
-		logger.info("---------- IN PointTableView to : "+gameId);
-		List<Map<String,String>>pointList = pointRankingUtility.getPointList(gameId);
+		logger.info("---------- IN CouponsView11 gameID : "+gameId);
+		//List<Map<String,String>>pointList = pointRankingUtility.getPointList(gameId);
 		modeMap.put("message", "");
-		modeMap.put("pointList", pointList);
-		logger.info("------------- Point Info ----------> "+pointList);
-		return SportConstrant.POINT_TABLE_PAGE;
+		logger.info("------------- Coupon view ----------> ");
+		return SportConstrant.COUPONS_PAGE;
 	}
 	
 	private SportMgmtResponse<Map> getGameWeeKHistory(String gameId,String userId,String gameWeekIdParam,String direction,HttpServletRequest request)
