@@ -22,6 +22,9 @@
     <link rel="stylesheet" href="${context}/redBlackTheme/css/jquery.bxslider.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,400,600,700" rel="stylesheet">
     <link rel="stylesheet" href="${context}/redBlackTheme/css/theme.css" type="text/css">
+    <link rel="stylesheet" href="${context}/redBlackTheme/css/tab-style.css" type="text/css">
+    <script type='text/javascript'src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
     <script type='text/javascript'
          src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
 <style>
