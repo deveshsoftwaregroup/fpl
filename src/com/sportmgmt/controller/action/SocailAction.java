@@ -236,8 +236,21 @@ public class SocailAction {
         
         // extract access token from response
         String accessToken = null;
+        
         if(outputString.indexOf("access_token")!=-1) {
-            accessToken = outputString.substring(13,outputString.indexOf("&"));
+        	
+           try
+           {
+        	   accessToken = outputString.substring(13,outputString.indexOf("&"));
+           }
+           catch(Exception ex)
+           {
+        	   ObjectMapper mapperObj = new ObjectMapper();
+   			   Map<String, String> facebookMap = new HashMap<String, String>();
+   			   facebookMap = mapperObj.readValue(outputString, new TypeReference<Map<String, String>>(){});
+   			   accessToken = facebookMap.get("access_token");
+           }
+        	
         }
 				
 		
