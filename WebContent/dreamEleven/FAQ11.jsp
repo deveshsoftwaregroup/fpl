@@ -112,13 +112,13 @@ h2.head {margin: 15px 0 20px 0; font-size: 17px;}
 			            <div class="panel panel-default">
 			                <div class="panel-heading" role="tab" id="headingOne">
 			                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="collapsed">
-			                      <h4 class="panel-title">I want to reset my password. What can I do???????</h4>
+			                      <h4 class="panel-title">I have forgotten my password. What can I do?</h4>
 			                    </a>
 			                </div>
 			                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
 			                    <div class="panel-body">
 			                        
-			                        <p>You can write us at support@the12thman.in and we will resolve your problem</p>
+			                        <p>You can click on "Forgot password" on login page". Provide your registered email ID. We will send your password on your email ID.</p>
 			                        
 			                    </div>
 			                </div>

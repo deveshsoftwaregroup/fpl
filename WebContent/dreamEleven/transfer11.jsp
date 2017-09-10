@@ -5,173 +5,23 @@
 	<%@ taglib uri="sportmgmt.tld" prefix="s" %>  
 	<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
     
-    
-    <style>
-    .addPlayer a{ color:#ed3a28; font-size: 18px;padding: 5px 4px;}
-    .removePlayerIcon{     
-    background: #fff;
-    color: #e03333 !important;
-    padding: 3px 5px;
-    font-size: 12px;
-    font-weight: bold;
-    border-radius: 50%;
-    transition:all .3s;
-    }
-    .removePlayerIcon:hover{     
-    background: #e03333;
-    color: #fff !important;
-    }
-    .ism-table--el__status.text-center.addPlayer {
-    padding-left: .2rem;
-    padding-right: .2rem;
-    text-align: center;
-}
-    /*  home  page */
-.ism-game-header h1 a{ color:#fff;}
-
-.mask{ background: #000; opacity: 0.5; position:fixed; top: 0; left: 0; width: 100%; height:100%; z-index: 9;}
-
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-.transfer-Col-6{ width:50%; float: left;}
-
-.tabBtn{    
-	width: 100%;
-        padding: 5px 10px;
-    box-sizing: border-box;
-    font-size: 14px;
-    line-height: 20px;
-    }
-</style>
 <s:sportExt retrieve="priceList" />
 <s:sportExt retrieve="deadLine" />
-<div class="addsbanner-lft"></div>
-<div class="addsbanner-rgt"></div>
-<div class="ism-pusher ismjs-page-transition">
-            <!-- Primary content -->
-            <div id="ismr-main" class="ism-main">
-                <div>
-
-                    <div id="ismr-scoreboard">
-                        <div>
-                        <div class="ism-copy">
-                            <h3 style="color: #193782;"><i class="fa fa-angle-double-right" style="color: #f00;"></i> Select Players from the list</h3>
-                        	
-                         </div> 
-							
-                            <!-- Scoreboard -->
-                            <div class="ism-scoreboard">
-							<div class="league-deadline-bar">
-									<h4 class="league-deadline-bar__heading">Gameweek ${gameWeekNumber} Deadline: <time datetime="2016-08-27T10:30:00Z" class="league-deadline-bar__deadline">${deadline}</time></h4>
-								</div>
-								
-                            </div>
-                        </div>
+<div class="row">
+         <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 transfers_predict11_map">
+            <div>
+               <h3>Select Players from List</h3>
+                <p>Gameweek ${gameWeekNumber} Deadline: <time datetime="2016-08-27T10:30:00Z">${deadline}</time><p>
+               
+                <br>
+               <p>Player Count: <span class="added-player-count"> </span> </p>
+               
+               
+               
+									
+                       
                         
-                        <div>
-                        	<div class="plain_text" style="padding-left:0px;">
-                        	
-                        	<div class="row">
-                        		<div class="transfer-Col-6">
-                        			<div class="tabBtn">
-										Want unlimited free transfer? : 
-										<c:if test="${sessionScope.hasFreeWildCard}">
-		                                  <input type="button" class="link" value="Use Wild Card" data-toggle="modal" data-target="#myModal-1">		                               
-		                                  <div id="myModal-1" class="modal fade" role="dialog">
-										  <div class="modal-dialog">
-										    <div class="modal-content">
-										      <div class="modal-header">
-										        <a type="button" class="close" data-dismiss="modal">&times;</a>
-										        <h4 class="modal-title"></h4>
-										      </div>
-										      <div class="modal-body buywildcard">
-												<h2>Are you Sure</h2>
-												<p style="text-align:center">
-													<a class="button" href="activateWildCard?userId=${sessionScope.user.userId}&planId=${sessionScope.freeWildCardPlanId}">Yes</a> &nbsp;
-													<a class="button no-btn" data-dismiss="modal">No</a>
-												</p>
-										      </div> 
-										    </div>
-										  </div>
-										</div>	
-										</c:if>
-                                		<input type="button" class="link" value="Buy Wildcard" data-toggle="modal" data-target="#paymentModel" > 
-                               			 
-									</div>
-                        		</div>
-                        		
-                        		<div class="transfer-Col-6">
-                        			<div class="tabBtn" id="freeTransUsedDiv">Free Transfer : <c:choose><c:when test="${sessionScope.user.totalTransferForGameWeek > 1}">Used</c:when><c:otherwise>Available</c:otherwise></c:choose></div>
-                        		</div>
-                        	</div>
-                        	<div class="row">
-                        		<div class="transfer-Col-6">
-                        			<div class="tabBtn">
-										Player Count :     <span class="added-player-count"> </span>                            		
-                                	</div>
-                        		</div>
-                        		
-                        		                      		
-                        	</div>  
-                        	                              
-                                <div id="paymentModel" class="modal fade" role="dialog">
-									  <div class="modal-dialog modal-lg">
-									
-									    <!-- Modal content-->
-									    <div class="modal-content">
-									      <div class="modal-header">
-									        <a type="button" class="close" data-dismiss="modal">&times;</a>
-									        <h4 class="modal-title">Use Wild Card</h4>
-									      </div>
-									      <div class="modal-body">
-									        <div class="table-responsive prod-tbl">
-												<table class="table table-striped table-bordered table-hover">
-													<thead>
-													  <tr>
-														<th>Product Name</th>
-														<th>Product Price</th>
-														<th>Discount Code</th>
-														<th>Total Price</th>
-														<th>Purchase It</th>
-													  </tr>
-													</thead>
-													<tbody>
-													<c:forEach var="wildCard" items="${sessionScope.purchableWildCardList}" >
-													  <form  id="paymentForm_${wildCard.planId}" action="/SportMgmt/mvc/payment/MakePayment" method="post">
-													  <input type="hidden" name="leaguePlanId" value="${wildCard.planId}"></input>
-													  <input type="hidden" name="planDiscountId" value="${sessionScope.planDiscountId}"></input>
-													  <input type="hidden" name="amount" value="${wildCard.price}"></input>
-													  </form>
-													  <tr>
-														<td>${wildCard.name}</td>
-														<td>${wildCard.price}</td>
-														<td>
-														<input id="paymentDiscountCode_${wildCard.planId}" type="text" name="discount" value=""></input>
-														</td>
-														<td>${wildCard.price}</td>
-														<td>
-									        			<button id="paymentButton_${wildCard.planId}" type="button" class="button" >Buy Now</button>
-									     				</td>
-													  </tr>
-													  </c:forEach>													
-													</tbody>
-												  </table>
-											</div>
-									      </div>
-									    </div>
-									
-									  </div>
-									</div>
-                                                              
-                        	 </div> 
-                     
-								
-                        </div>
-                    </div>
+                   
                     <section>
                         <h3 class="visuallyHidden">My Squad</h3>
                         <div id="ismr-errors" class="ism-alert-wrap">
@@ -738,13 +588,9 @@
                 <div id="ismr-squad-menu"></div>
                 <div id="ismr-help"></div>
                 <div id="ismr-confirm"></div>
-                <!-- <div class="transfer-banner">
-                <img src="/SportMgmt/images/addbanner_728x90_V1.jpg" alt="" class="img-responsive">
-                </div> -->
+               
                 <BR>
-                <div class="transfer-banner">
-                <img src="/SportMgmt/images/ads-bottom.jpg" alt="" class="img-responsive">
-                </div>
+                
                 
             </div>
         </div>
@@ -1652,14 +1498,6 @@
 	     		});
    		}
      }
-     $(document).ajaxStart(function(){
-  		$("#ajaxloader").css("display", "block");
-  		$('.mask').show();
-  	});
-
-  	$(document).ajaxComplete(function(){
-  	    $("#ajaxloader").css("display", "none");
-  	    $('.mask').hide();
-  	});
+     
 
   </script>
