@@ -263,7 +263,7 @@ public class UserAction11 {
 	@RequestMapping(value = "login11/{userId}", method = RequestMethod.GET)
 	public  String doLogin(ModelMap modeMap,@PathVariable String userId,HttpServletRequest request)
 	{
-	 logger.info("---------- Entry in login  ---- Path Variable User Id:  "+userId);
+	 logger.info("---------- Entry in login11  ---- Path Variable User Id:  "+userId);
 	 modeMap.clear();
 	 if(userId == null || userId.equals(SportConstrant.NULL))
 	 {
@@ -294,7 +294,7 @@ public class UserAction11 {
 				 user.setActivePlan(activePlan);
 				 logger.info(activePlan);
 			 }
-			 user.setBalanceCoins(PlanManager.getUserCoins(userId));
+			 user.setBalanceCoins(1000);//PlanManager.getUserCoins(userId));
 			 user.setPlanIdForCoins(PlanManager.getUserPlanIdForUserCoins(userId));
 			 logger.info("---------- Getting HTTP Session: "+user);
 			 HttpSession session = request.getSession();
@@ -303,7 +303,7 @@ public class UserAction11 {
 			 ArrayList playersList = new ArrayList();
 			 ArrayList clubList = new ArrayList();
 			 HashMap gameMap = null;
-			 List games = GameManager.fetchGames();
+			 //List games = GameManager.fetchGames();
 			 List games1 = sortUtility.getApplicationDataUtility().getGames();
 			 HashMap userGameMap = new HashMap();
 			if(games1 != null && games1.size() ==1)

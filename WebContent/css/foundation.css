@@ -4210,9 +4210,9 @@ table.hover tr:nth-of-type(even):hover {
     color: #2199e8;
     /* border-color: #ccc; */
 }
-.ism-container {
+/* .ism-container {
     min-height: 600px;
-}
+} */
 .rules {
     padding: 20px;
     color: #333;
