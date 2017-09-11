@@ -9647,7 +9647,7 @@ margin-bottom:3rem
 }
 }
 
-/* .ism .ism-container {
+.ism .ism-container {
 max-width:980px;
 margin-left:auto;
 margin-right:auto;
@@ -9655,13 +9655,13 @@ overflow:visible;
 background: #fff;
 border-top: 0;
 position: relative;
-} */
+}
 
-/* .ism .ism-container:after {
+.ism .ism-container:after {
 content:" ";
 display:block;
 clear:both
-} */
+}
 
 .ism .ism-pusher {
 position:relative;
@@ -13759,6 +13759,6 @@ img.rgt-logo {
     right: -160px;
     background-color: #1a398a;
 }
-/* .ism-container #mainContent {
+.ism-container #mainContent {
     background: #fff;
-} */
+}
