@@ -94,10 +94,13 @@ public class CouponManager {
 		}
 		return null;
 	}
-
 	public static CouponCategory getCouponCategory(Integer userPoint)
 	{
-		logger.info("----- Inside getCouponCategory ---- userPoint: "+userPoint);
+		return getCouponCategory(userPoint,SportConstrant.WEEKLY_COUPON);
+	}
+	public static CouponCategory getCouponCategory(Integer userPoint,String couponType)
+	{
+		logger.info("----- Inside getCouponCategory ---- userPoint: "+userPoint+" , couponType: "+couponType);
 		setErrorMessage(SportConstrant.NULL);
 		setErrorCode(SportConstrant.NULL);
 		List<CouponCategory> couponCategoryList = null;
@@ -117,7 +120,7 @@ public class CouponManager {
 				{
 					Criteria criteria = session.createCriteria(CouponCategory.class);
 					criteria.add(Restrictions.eq("isActive", SportConstrant.YES));
-					criteria.add(Restrictions.eq("type", SportConstrant.WEEKLY_COUPON));
+					criteria.add(Restrictions.eq("type", couponType));
 					criteria.add(Restrictions.le("minPoint", userPoint));
 					criteria.add(Restrictions.ge("maxPoint", userPoint));
 					logger.info("----------- Executing query to fetch coupon category");
@@ -247,7 +250,10 @@ public class CouponManager {
 		logger.info("----- Returning coupon  ---- null");
 		return null;
 	}
-	
+	public static Map<Integer,Integer> getTotalUsedForCouponList(List<Integer> couponList)
+	{
+		return getTotalUsedForCouponList(null,couponList);
+	}
 	public static Map<Integer,Integer> getTotalUsedForCouponList(String gameWeekId,List<Integer> couponList)
 	{
 		logger.info("----- Inside getTotalUsedForCouponList ---- gameWeekId: "+gameWeekId+", couponList: "+couponList);
@@ -271,6 +277,9 @@ public class CouponManager {
 				{
 				
 					Query query	 = session.createSQLQuery(QueryConstrant.SELECT_TOTAL_USED_OF_COUPON_LIST);
+					if(gameWeekId ==null)
+					query.setParameter("gameWeekId", null);
+					else
 					query.setParameter("gameWeekId", new Integer(gameWeekId));
 					query.setParameter("couponList", couponList);
 					logger.info("----------- Executing query to get total used of coupon for coupon list");
@@ -361,9 +370,9 @@ public class CouponManager {
 		return null;
 	}
 	
-	public static Integer getTotalUsedCouponByUserForGameWeek(String gameWeekId,Integer userId)
+	public static Integer getTotalUsedCouponByUserForGameWeekByCatergory(String gameWeekId,Integer userId,Integer categoryId)
 	{
-		logger.info("----- Inside getTotalUsedCouponByUserForGameWeek ---- gameWeekId: "+gameWeekId+", userId: "+userId);
+		logger.info("----- Inside getTotalUsedCouponByUserForGameWeek ---- gameWeekId: "+gameWeekId+", userId: "+userId+" , categoryId:"+categoryId);
 		setErrorMessage(SportConstrant.NULL);
 		setErrorCode(SportConstrant.NULL);
 		List<Object> totalUsedCouponByUser = null;
@@ -382,9 +391,10 @@ public class CouponManager {
 				try
 				{
 				
-					Query query	 = session.createSQLQuery(QueryConstrant.SELECT_TOTAL_USED_COUPON_BY_USER_FOR_GAME_WEEK);
+					Query query	 = session.createSQLQuery(QueryConstrant.SELECT_TOTAL_USED_COUPON_BY_USER_FOR_GAME_WEEK_BY_CATEGORY);
 					query.setParameter("gameWeekId", new Integer(gameWeekId));
 					query.setParameter("userId", userId);
+					query.setParameter("couponCategoryId", categoryId);
 					logger.info("----------- Executing query to get total used coupon by user for gameweek");
 					totalUsedCouponByUser = query.list();
 					if(totalUsedCouponByUser !=null && !totalUsedCouponByUser.isEmpty())

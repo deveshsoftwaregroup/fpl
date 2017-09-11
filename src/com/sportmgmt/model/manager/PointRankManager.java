@@ -12,9 +12,11 @@ import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Projection;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 
+import com.sportmgmt.dreamEleven.model.entity.UserPlayer;
 import com.sportmgmt.model.entity.Game;
 import com.sportmgmt.model.entity.GameClubPlayer;
 import com.sportmgmt.model.entity.GameWeekPlayerReport;
@@ -272,7 +274,58 @@ public class PointRankManager {
 		}
 		return null;
 	}
-	
+	public static List<UserPlayer> getDreamElevenUserListOfPlayer(Integer gameClubPlayerId) throws SportMgmtException
+	{
+		logger.info("----- Inside getUserListOfPlayerByMatch ---- gameClubPlayerId: "+gameClubPlayerId);
+		setErrorMessage(SportConstrant.NULL);
+		setErrorCode(SportConstrant.NULL);
+		List<UserPlayer> userList = null;
+		SessionFactory factory = HibernateSessionFactory.getSessionFacotry();
+		if(factory == null)
+		{
+			setErrorCode(ErrorConstrant.SESS_FACT_NULL);
+			setErrorMessage("Technical Error");
+			logger.info("----- Factory Object is null----");
+			return null;
+		}
+		else
+		{
+			Session session = factory.openSession();
+			if(session != null)
+			{
+				try
+				{
+				
+					
+					Criteria criteria = session.createCriteria(UserPlayer.class);
+					criteria.add(Restrictions.eq("gameClubPlayerId", gameClubPlayerId));
+					logger.info("----------- Executing query get users list of player in match");
+					userList = criteria.list();
+					logger.info("----- Returning userIdList List  ---- : "+userList);
+					return userList;
+				}
+				catch(Exception ex)
+				{
+					logger.error("Exception in fetching user list of player in match: "+ex);
+					setErrorMessage("Technical Error");
+					setErrorCode(ErrorConstrant.TRANSACTION_ERROR);
+					new SportMgmtException(ex);
+				}
+				finally
+				{
+					session.close();
+				}
+			}
+			else
+			{
+				setErrorCode(ErrorConstrant.SESS_NULL);
+				setErrorMessage("Technical Error");
+				logger.info("----- Session Object is null----");
+				return null;
+			}
+		}
+		return null;
+	}
 	public static boolean insertUsersPoint(Integer gameId,Integer matchId,List<Integer> userIdList,Integer playerPointId,Integer pointToUpdate) throws SportMgmtException
 	{
 		logger.info("----- Inside insertUsersPoint ---- gameId: "+gameId+" ,matchId: "+matchId+" ,userIdList:"+userIdList+" , playerPointId: "+playerPointId+" ,pointToUpdate: "+pointToUpdate);
@@ -818,7 +871,10 @@ public class PointRankManager {
 					Criteria criteria = session.createCriteria(GameWeekPlayerReport.class);
 					criteria.add(Restrictions.eq("gameWeekId",gameWeekId));
 					//criteria.addOrder(Order.asc("contest"));
-					criteria.addOrder(Order.desc(orderBy));
+					if(orderBy.equals("rank") || orderBy.equals("totalRank"))
+					criteria.addOrder(Order.asc(orderBy));
+					else
+					criteria.addOrder(Order.desc(orderBy));	
 					List<GameWeekPlayerReport> gameWeekPlayerReportList= criteria.list();
 					logger.info("---- Returning game week playerReportreport list:"+gameWeekPlayerReportList);
 					return gameWeekPlayerReportList;

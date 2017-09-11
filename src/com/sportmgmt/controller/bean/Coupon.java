@@ -8,7 +8,7 @@ public class Coupon {
 	
 	private String description;
 	
-	//private CouponCategory couponCategoryId;
+	private Integer categoryId;
 	
 	//private String type;
 	
@@ -116,6 +116,14 @@ public class Coupon {
 
 	public void setTotal_Avail(Integer total_Avail) {
 		this.total_Avail = total_Avail;
+	}
+
+	public Integer getCategoryId() {
+		return categoryId;
+	}
+
+	public void setCategoryId(Integer categoryId) {
+		this.categoryId = categoryId;
 	}
 	
 }

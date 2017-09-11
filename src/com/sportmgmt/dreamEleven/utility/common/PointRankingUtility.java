@@ -337,7 +337,7 @@ public class PointRankingUtility {
 	{
 		if(gameWeeKId !=null)
 		{
-			List<GameWeekReport>  gameWeekReportList = PointRankManager.getUserAndPointListOrderByPoint(gameWeeKId);
+			/*List<GameWeekReport>  gameWeekReportList = PointRankManager.getUserAndPointListOrderByPoint(gameWeeKId);
 			if(gameWeekReportList !=null && !gameWeekReportList.isEmpty())
 			{
 				 Map<Integer,Integer> userAndPointMap = new LinkedHashMap<>();
@@ -346,7 +346,7 @@ public class PointRankingUtility {
 					userAndPointMap.put(gameWeekReport.getUserId(), gameWeekReport.getPoint());							
 				}
 				return userAndPointMap;
-			}
+			}*/
 		}
 		return null;
 	}

@@ -39,6 +39,7 @@ import org.springframework.web.servlet.view.RedirectView;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sportmgmt.model.manager.PlanManager;
 import com.sportmgmt.model.manager.UserManager;
 import com.sportmgmt.utility.common.FacebookUtil;
 import com.sportmgmt.utility.common.OAuthServiceProvider;
@@ -220,7 +221,7 @@ public class SocailAction {
                 "https://graph.facebook.com/oauth/access_token?client_id="
                         + clientID + "&redirect_uri=" + redirectURI
                         + "&client_secret=" + clientSecret
-                        + "&code=" + code+"&scope=public_profile");
+                        + "&code=" + code);
         
         // request for Access Token
         HttpURLConnection conn = (HttpURLConnection) url
@@ -255,7 +256,7 @@ public class SocailAction {
 				
 		
 		url = new URL("https://graph.facebook.com/me?access_token="
-                + accessToken+"&scope=public_profile");
+                + accessToken);
         System.out.println(url);
         URLConnection conn1 = url.openConnection();
         outputString = ""; line="";
@@ -318,7 +319,11 @@ public class SocailAction {
 			userMap.put("displayName", facebookName);
 			userMap.put("userType", "F");
 			if(UserManager.saveUser(userMap))
-			userId = UserManager.getUserId();
+			{
+				userId = UserManager.getUserId();
+				PlanManager.addDefaultPlanToUser(userId);
+				
+			}
 			else
 			logger.error("Error occured to create userid in our database, error code: "+UserManager.getErrorCode()+" , message: "+UserManager.getErrorMessage());
 			

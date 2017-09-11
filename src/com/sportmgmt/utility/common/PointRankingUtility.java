@@ -2,6 +2,7 @@ package com.sportmgmt.utility.common;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -11,6 +12,8 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
 
+import com.sportmgmt.controller.bean.Player;
+import com.sportmgmt.dreamEleven.model.entity.UserPlayer;
 import com.sportmgmt.model.entity.GameClubPlayer;
 import com.sportmgmt.model.entity.GameWeekPlayerReport;
 import com.sportmgmt.model.entity.GameWeekReport;
@@ -392,18 +395,112 @@ public class PointRankingUtility {
 	
 	public List<Integer> getGPlayerIdsOrderedByArg(Integer gameWeekId,String orderBy)
 	{
-		
-		List<GameWeekPlayerReport> gameWeekPlayersReport = PointRankManager.getGameWeekPlayersReportOrderByArgs(gameWeekId, orderBy);
-		 if(gameWeekPlayersReport !=null && !gameWeekPlayersReport.isEmpty())
+		List<Player> players =getPlayersOrderedByArg(gameWeekId,orderBy,"updateRank");
+		 if(players !=null && !players.isEmpty())
 		 {
 			 List<Integer> gameClubPlayerIds = new ArrayList<>();
-			 for(GameWeekPlayerReport gameWeekPlayerReport :gameWeekPlayersReport)
+			 for(Player player :players)
 			 {
-				 gameClubPlayerIds.add(gameWeekPlayerReport.getGameClubPlayer().getGameClubPlayerId());
+				 gameClubPlayerIds.add(player.getGameClubPlayerId());
+				 
 			 }
 			 return gameClubPlayerIds;
 		 }
 		 
 		return null;
+	}
+	public List<Player> getPlayersOrderedByArg(Integer gameWeekId,final String orderBy,String action)
+	{
+		List<Player> players  = null;
+		List<GameWeekPlayerReport> gameWeekPlayersReport = PointRankManager.getGameWeekPlayersReportOrderByArgs(gameWeekId, orderBy);
+		if(gameWeekPlayersReport !=null && !gameWeekPlayersReport.isEmpty())
+		 {
+			 players = new ArrayList<>();
+			 for(GameWeekPlayerReport gameWeekPlayerReport :gameWeekPlayersReport)
+			 {
+				 Player player = new Player();
+				 player.setGameClubPlayerId(gameWeekPlayerReport.getGameClubPlayer().getGameClubPlayerId());
+				 player.setName(gameWeekPlayerReport.getGameClubPlayer().getPlayer().getPlayerName());
+				 player.setType(gameWeekPlayerReport.getGameClubPlayer().getPlayingPosition());
+				 player.setPoint(gameWeekPlayerReport.getPoint());
+				 player.setTotalPoint(gameWeekPlayerReport.getTotalPoint());
+				 player.setPrice(gameWeekPlayerReport.getGameClubPlayer().getPrice());
+				 players.add(player);
+				 
+			 }
+			 // this is to for updating rank in table first time
+			 if(action !=null && action.equals("updateRank"))
+			 {
+				 Collections.sort(players, new java.util.Comparator<Player>()
+				 {
+
+					@Override
+					public int compare(Player player1, Player player2) {
+						// TODO Auto-generated method stub
+						if((orderBy.equals("point") && player1.getPoint() == player2.getPoint()) || (orderBy.equals("totalPoint") && player1.getPoint() == player2.getPoint()))
+						{
+							try
+							{
+								List<UserPlayer> userListForPlayer1= PointRankManager.getDreamElevenUserListOfPlayer(player1.getGameClubPlayerId());
+								List<UserPlayer> userListForPlayer2= PointRankManager.getDreamElevenUserListOfPlayer(player2.getGameClubPlayerId());
+								if(userListForPlayer1 !=null && userListForPlayer2 !=null)
+								{
+									if(userListForPlayer1.size() > userListForPlayer2.size())
+									return -1;
+									else
+									return 1;
+								}
+							}
+							catch(Exception ex)
+							{
+								
+							}
+							
+						}
+						return 0;
+					}
+					 
+				 }
+				);
+
+			 }
+			 return players;
+		 }
+		 
+		return null;
+	}
+	public List<Integer> getTopPlayerIdsOrderedByRankForGameWeek(List<Player> playersOrderedByRank)
+	{
+		if(playersOrderedByRank != null && !playersOrderedByRank.isEmpty())
+		{
+			List<Integer> topPlayesIdsByRank = new ArrayList<>();
+			updateTopPlayerIds(playersOrderedByRank, topPlayesIdsByRank, "Goalkeeper", 1);
+			updateTopPlayerIds(playersOrderedByRank, topPlayesIdsByRank, "Defender", 4);
+			updateTopPlayerIds(playersOrderedByRank, topPlayesIdsByRank, "Midfielder", 4);
+			updateTopPlayerIds(playersOrderedByRank, topPlayesIdsByRank, "Forward", 2);
+			return topPlayesIdsByRank;
+		}
+		return null;
+	}
+	public List<Integer> getTopPlayerIdsOrderedByRankForGameWeek(Integer gameWeekId)
+	{
+		List<Player> playersOrderedByRank=getPlayersOrderedByArg(gameWeekId, "rank", "");
+		return getTopPlayerIdsOrderedByRankForGameWeek(playersOrderedByRank);
+	}
+	private void updateTopPlayerIds(List<Player> playersOrderedByRank,List<Integer> topPlayesIdsByRank,String playerType,int totalPlayer)
+	{
+		int playerCount = 0;
+		for(Player player:playersOrderedByRank)
+		{
+			if(totalPlayer <=playerCount)
+			{
+				return;
+			}
+			if(player.getType().equals(playerType))
+			{
+				topPlayesIdsByRank.add(player.getGameClubPlayerId());
+				playerCount++;
+			}
+		}
 	}
 }

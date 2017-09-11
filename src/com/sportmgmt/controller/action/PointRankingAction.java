@@ -222,25 +222,40 @@ public class PointRankingAction {
 		{
 			Integer gameId = GameWeeKManager.getGameIdByGameWeeKId(gameWeekIdInt);
 			Map<Integer,Integer> userAndGameWeeKPointMap= pointRankingUtility.getUserAndOderdGameWeeKPointMap(gameWeekIdInt);
-			logger.info("Going to update rank of every users for game week");
-			PointRankManager.updateRankOROverallRankForGameWeeK(userAndGameWeeKPointMap, gameWeekIdInt, SportConstrant.GAME_WEEK_RANK);
+			if(userAndGameWeeKPointMap !=null && !userAndGameWeeKPointMap.isEmpty())
+			{
+				logger.info("Going to update rank of every users for game week");
+				PointRankManager.updateRankOROverallRankForGameWeeK(userAndGameWeeKPointMap, gameWeekIdInt, SportConstrant.GAME_WEEK_RANK);
+			}
 			
 			Map<Integer,Integer> userAndGameWeeKTotalPointMap= pointRankingUtility.getUserAndOderdGameWeeKTotalPointMap(gameWeekIdInt);
-			logger.info("Going to update total rank of every users for game week");
-			PointRankManager.updateRankOROverallRankForGameWeeK(userAndGameWeeKTotalPointMap, gameWeekIdInt, SportConstrant.GAME_WEEK_OVERALL_RANK);
+			if(userAndGameWeeKTotalPointMap !=null && !userAndGameWeeKTotalPointMap.isEmpty())
+			{
+				logger.info("Going to update total rank of every users for game week");
+				PointRankManager.updateRankOROverallRankForGameWeeK(userAndGameWeeKTotalPointMap, gameWeekIdInt, SportConstrant.GAME_WEEK_OVERALL_RANK);
+				
+			}
 			
 			Map<Integer,Integer> userAndTotalPointMap =  pointRankingUtility.getUserAndOderdTotalPointMap(gameId);
-			logger.info("---- going to update rank for user in game------");
-			PointRankManager.updateRankForUser(userAndTotalPointMap,gameId);
+			if(userAndTotalPointMap !=null && !userAndTotalPointMap.isEmpty())
+			{
+				logger.info("---- going to update rank for user in game------");
+				PointRankManager.updateRankForUser(userAndTotalPointMap,gameId);
+			}
 			
 			List<Integer> gameClubPlayerIds =  pointRankingUtility.getGPlayerIdsOrderedByArg(gameWeekIdInt,SportConstrant.GAME_WEEK_POINT);
-			logger.info("--------- Going to update rank of players for game week");
-			PointRankManager.updatePlayer_Rank_OverallRank_For_GameWeeK(gameClubPlayerIds, gameWeekIdInt, SportConstrant.GAME_WEEK_RANK);
+			if(gameClubPlayerIds !=null && !gameClubPlayerIds.isEmpty())
+			{
+				logger.info("--------- Going to update rank of players for game week");
+				PointRankManager.updatePlayer_Rank_OverallRank_For_GameWeeK(gameClubPlayerIds, gameWeekIdInt, SportConstrant.GAME_WEEK_RANK);
+			}
 			
 			gameClubPlayerIds =  pointRankingUtility.getGPlayerIdsOrderedByArg(gameWeekIdInt,SportConstrant.GAME_WEEK_OVERALL_POINT);
-			logger.info("--------- Going to update total rank of players for game week");
-			PointRankManager.updatePlayer_Rank_OverallRank_For_GameWeeK(gameClubPlayerIds, gameWeekIdInt, SportConstrant.GAME_WEEK_OVERALL_RANK);
-			
+			if(gameClubPlayerIds !=null && !gameClubPlayerIds.isEmpty())
+			{
+				logger.info("--------- Going to update total rank of players for game week");
+				PointRankManager.updatePlayer_Rank_OverallRank_For_GameWeeK(gameClubPlayerIds, gameWeekIdInt, SportConstrant.GAME_WEEK_OVERALL_RANK);
+			}
 			
 		}
 		catch(Exception ex)

@@ -172,10 +172,10 @@ public class PointRankingAction11 {
 					if(isTransDone)
 					{
 						logger.info("----- Going to update game week point of user:"+gameWeekId);
-						PointRankManager.updateGameWeekPointForUsers(userIdList, gameWeekId, pointToUpdate);
+						/*PointRankManager.updateGameWeekPointForUsers(userIdList, gameWeekId, pointToUpdate);
 						Map<Integer,Integer> userAndPointMap= pointRankingUtility.getUserAndOderdPointMap(gameWeekId);
 						logger.info("------------ User And Game week Point Map: "+userAndPointMap);
-						//PointRankManager.updateRankForUser(contestUserAndPoitMap,matchId);
+						*///PointRankManager.updateRankForUser(contestUserAndPoitMap,matchId);
 					}
 				}
 			}
