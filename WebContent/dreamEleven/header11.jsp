@@ -11,27 +11,14 @@
     <c:set var="context" value="/SportMgmt" />
     <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 	<%@ taglib uri="sportmgmt.tld" prefix="s" %>  
-    <!-- <link rel="stylesheet" href="/SportMgmt/css/foundation.css">
-    <link rel="stylesheet" href="/SportMgmt/css/app.css">
-    <link rel="stylesheet" href="/SportMgmt/css/superslides.css">
-    <link rel="stylesheet" type="text/css" href="/SportMgmt/css/customMedia.css">
-    <link rel="stylesheet" type="text/css" href="/SportMgmt/css/258578334140.css">
-    <link rel="stylesheet" type="text/css" href="/SportMgmt/css/font-awesome.css">
-	<link rel="stylesheet" href="/SportMgmt/css/team.css" type="text/css"> -->
+	<link rel="stylesheet" type="text/css" 	href="/SportMgmt/redBlackTheme/toDelete/258578334140_blp.css">
 	
-	<script type='text/javascript' src='http://code.jquery.com/jquery-1.9.1.js'></script>
 	<link rel="stylesheet" href="${context}/redBlackTheme/css/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="${context}/redBlackTheme/css/style-dream.css" type="text/css">
     <link rel="stylesheet" href="${context}/redBlackTheme/css/jquery.bxslider.css" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,400,600,700" rel="stylesheet">
     <link rel="stylesheet" href="${context}/redBlackTheme/css/theme.css" type="text/css">
-    <script type='text/javascript'
-         src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-	
-    
-
-
-
+    <link rel="stylesheet" href="${context}/redBlackTheme/css/tab-style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,400,600,700" rel="stylesheet">
 
 
 </head> 

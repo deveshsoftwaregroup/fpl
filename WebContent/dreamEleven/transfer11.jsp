@@ -7,6 +7,8 @@
     
 <s:sportExt retrieve="priceList" />
 <s:sportExt retrieve="deadLine" />
+<body class="predict11-bg transfers_predict11 dream_11transfer">
+<div class="container ">
 <div class="row">
          <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 transfers_predict11_map">
             <div>
@@ -686,7 +688,7 @@
             <tr class="ismjs-menu ism-row-select" id="${playerMap.gameClubPlayerId}">
     <td class="ism-table--el__status text-center addPlayer">
         
-            <a href="javascript:void(0);" onclick="addPlayer('${sessionScope.userId}','${playerMap.gameClubPlayerId}');"><i class="fa fa-plus" aria-hidden="true"></i></a>
+            <a href="javascript:void(0);" onclick="addPlayer('${sessionScope.userId}','${playerMap.gameClubPlayerId}');">+</a>
         
     </td>
     <td class="ism-table--el__primary">
@@ -741,7 +743,7 @@
             <tr class="ismjs-menu ism-row-select" id="${playerMap.gameClubPlayerId}">
     <td class="ism-table--el__status text-center addPlayer">
         
-            <a href="javascript:void(0);" onclick="addPlayer('${sessionScope.userId}','${playerMap.gameClubPlayerId}');"><i class="fa fa-plus" aria-hidden="true"></i></a>
+            <a href="javascript:void(0);" onclick="addPlayer('${sessionScope.userId}','${playerMap.gameClubPlayerId}');">+</a>
         
     </td>
     <td class="ism-table--el__primary">
@@ -799,7 +801,7 @@
             <tr class="ismjs-menu ism-row-select" id="${playerMap.gameClubPlayerId}">
     <td class="ism-table--el__status text-center addPlayer">
         
-            <a href="javascript:void(0);" onclick="addPlayer('${sessionScope.userId}','${playerMap.gameClubPlayerId}');"><i class="fa fa-plus" aria-hidden="true"></i></a>
+            <a href="javascript:void(0);" onclick="addPlayer('${sessionScope.userId}','${playerMap.gameClubPlayerId}');">+</a>
         
     </td>
     <td class="ism-table--el__primary">
@@ -854,7 +856,7 @@
             <c:if test="${playerMap.type eq 'Forward'}">
             <tr class="ismjs-menu ism-row-select ism-element-list__info--0" id="${playerMap.gameClubPlayerId}">
     <td class="ism-table--el__status text-center addPlayer">        
-            <a href="javascript:void(0);"  onclick="addPlayer('${sessionScope.userId}','${playerMap.gameClubPlayerId}');" ><i class="fa fa-plus" aria-hidden="true"></i></a>
+            <a href="javascript:void(0);"  onclick="addPlayer('${sessionScope.userId}','${playerMap.gameClubPlayerId}');" >+</a>
         
     </td>
     <td class="ism-table--el__primary">
@@ -891,6 +893,7 @@
 
             </div>
         </div>
+        </body>
    
     
    <script type="text/javascript">
