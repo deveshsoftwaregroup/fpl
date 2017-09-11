@@ -80,7 +80,7 @@
                             <a href="javascript:void(0);" onclick="uploadMyPointView11('${sessionScope.gameDetails.gameId}','${sessionScope.userId}','','');">My Points</a>
                         </li>   
                         <li>
-                            <a href="javascript:void(0);" onclick="uploadCouponsView11('${sessionScope.gameDetails.gameId}');">Coupons</a>
+                            <a href="javascript:void(0);" onclick="uploadCouponsView11('${sessionScope.userId}','${sessionScope.gameDetails.gameId}');">Coupons</a>
                         </li> 
                         <li>
                             <a href="javascript:void(0)" onclick="uploadRulesView11();">Rules</a>
@@ -207,11 +207,11 @@
 		     		});	
 			}
 		}
-		function uploadCouponsView11(gameId)
+		function uploadCouponsView11(userId, gameId)
 		{
-			if(typeof gameId != 'undefined' && gameId != '')
+			if(typeof userId != 'undefined' && userId != '' && typeof gameId != 'undefined' && gameId != '')
 			{
-				url ="/SportMgmt/mvc/game11/CouponsView11/"+gameId;
+				url ="/SportMgmt/mvc/coupon/dream-elevent/list/"+userId+"/"+gameId;
 				$.ajax({
 		     		  url: url,
 		     		  dataType: 'html',
