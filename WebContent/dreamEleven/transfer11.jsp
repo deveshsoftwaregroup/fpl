@@ -18,13 +18,10 @@
                 <br>
                <p>Player Count: <span class="added-player-count"> </span> </p>
                
-               
-               
-									
-                       
+                   
                         
                    
-                    <section>
+                   
                         <h3 class="visuallyHidden">My Squad</h3>
                         <div id="ismr-errors" class="ism-alert-wrap">
                             <div>
@@ -37,11 +34,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="ism-squad-wrapper">
-                            <div class="ismjs-a11y-tabs ism-tabs">
-                               
+                        
+                       <div class="col-lg-8 team_map_dream11">                              
 
-                                <section id="ismr-summary" class="ism-pitch" role="tabpanel">
+                                <section id="ismr-summary">
                                     <div tabindex="0">
 
                                         <div class="ism-element-row ism-element-row--pitch">
