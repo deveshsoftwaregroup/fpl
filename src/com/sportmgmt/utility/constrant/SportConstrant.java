@@ -69,6 +69,7 @@ public class SportConstrant {
 	public final static String PREVIOUS = "prev";
 	public final static String NEXT = "next";
 	public final static String GAME_WEEK_HISTORY = "GAME_WEEK_HISTORY";
+	public final static String DE_GAME_WEEK_HISTORY = "DE_GAME_WEEK_HISTORY";
 	public final static String WEEKLY_COUPON = "WEEKLY_COUPON";
 	public final static String UPDATE_PLAYER_POINT_PAGE = "admin/updatePlayerPoint";
 	public final static String GAME_WEEK_POINT = "point";
@@ -77,6 +78,7 @@ public class SportConstrant {
 	public final static String PLAYER_TOTAL_POINT = "playerTotalPoint";
 	public final static String GAME_WEEK_RANK = "rank";
 	public final static String GAME_WEEK_OVERALL_RANK = "totalRank";
+	public final static String DE_COUPON_LIST_REDIRECT_PAGE = "redirect:/mvc/coupon/dream-elevent/list";
 	
 
 }

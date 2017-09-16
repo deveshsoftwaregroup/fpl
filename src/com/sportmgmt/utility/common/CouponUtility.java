@@ -116,7 +116,7 @@ public class CouponUtility {
 	public List<Coupon> getDreamElevenCouponList(Integer point,String gameWeekId)
     {
 		logger.info("method: getDreamElevenCouponList, point:"+point+" , gameWeeKId: "+gameWeekId);
-		CouponCategory couponCategory = CouponManager.getCouponCategory(point,"WEEKLY_COUPON_11");
+		CouponCategory couponCategory = CouponManager.getCouponCategory(point,"DL_WEEKLY_COUPON");
 		if(couponCategory !=null)
 		{
 			getCouponListByCategory(gameWeekId, couponCategory);
@@ -210,6 +210,20 @@ public class CouponUtility {
 		else
 		{
 			throw new SportMgmtException("Coupon is aread used");
+		}
+		return null;
+	}
+	
+	public String getUsedCouponCodeOfUserByCategoryForGameWeek(String gameWeekId,Integer userId,Integer couponCategoryId)
+	{
+		Integer couponId =CouponManager.getUsedCouponIdByUserForGameWeekByCatergory(gameWeekId, userId, couponCategoryId);
+		if(couponId !=null)
+		{
+			com.sportmgmt.model.entity.Coupon coupon = CouponManager.getCouponById(couponId);
+			if(coupon !=null)
+			{
+				return coupon.getCode();
+			}
 		}
 		return null;
 	}

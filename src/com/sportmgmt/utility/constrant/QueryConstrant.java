@@ -64,6 +64,8 @@ public static final String SELECT_GAME_WEEK_HISTORY_PLAYER_GROUP = "select * fro
  
 public static final String SELECT_USERS_OF_GAME = "select distinct(up.USER_ID) from USER_PLAYER up,GAME_CLUB_PLAYER gcp where gcp.game_id =:gameId and up.GAME_CLUB_PLAYER_ID=gcp.GAME_CLUB_PLAYER_ID";
 
+public static final String SELECT_USERS_OF_GAME_FOR_DE = "select distinct(up.USER_ID) from D_EL_USER_PLAYER up,GAME_CLUB_PLAYER gcp where gcp.game_id =:gameId and up.GAME_CLUB_PLAYER_ID=gcp.GAME_CLUB_PLAYER_ID";
+
 public static final String SELECT_PLAYER_GROUP = "FROM PlayerGroup PLG WHERE PLG.userId =:userId AND PLG.gameWeekId=:gameWeekId AND PLG.groupType=:groupType";
 
 public static final String SELECT_HIEGHEST_RANK_OF_GAME_WEEK = "select max(week_rank) from game_week_report where game_week_id =:gameWeekId";

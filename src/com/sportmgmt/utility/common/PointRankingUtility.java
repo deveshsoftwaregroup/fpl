@@ -107,18 +107,34 @@ public class PointRankingUtility {
 	{
 		return PointRankManager.getLastGameWeekId(gameId);
 	}
+	private boolean isDreamEleven;
 	
+	public boolean isDreamEleven() {
+		return isDreamEleven;
+	}
+	public void setDreamEleven(boolean isDreamEleven) {
+		this.isDreamEleven = isDreamEleven;
+	}
 	private boolean createPlayerHistoryForGameWeek(String gameId,String gameWeekId,String userId) throws SportMgmtException
 	{
 		logMessage = "";
 		boolean isSuccess = true;
+		PlayerManager.setDreamEleven(isDreamEleven());
 		if(PlayerManager.isGameWeekPlayerHistoryExist(userId, gameWeekId))
 		{
 			logger.info("Game Week Player Group history already found for user: "+userId+" and gameWeekId: "+gameWeekId);
 		}
 		else
 		{
-			List<Map<String,String>> userPlayersList = GameManager.userPlayerDetailsList(new Integer(userId),Integer.valueOf(gameId));
+			List<Map<String,String>> userPlayersList = null;
+			if(isDreamEleven())
+			{
+				userPlayersList = com.sportmgmt.dreamEleven.model.manager.GameManager.userPlayerDetailsList(new Integer(userId),Integer.valueOf(gameId));
+			}
+			else
+			{
+				userPlayersList = GameManager.userPlayerDetailsList(new Integer(userId),Integer.valueOf(gameId));
+			}
 			if(userPlayersList != null && userPlayersList.size() !=0)
 			{
 				isSuccess = PlayerManager.createPlayerGroupWithPlayers(userPlayersList, userId, gameWeekId);
@@ -153,6 +169,7 @@ public class PointRankingUtility {
 	{
 		if(gameWeekId !=null && !gameWeekId.equals(""))
 		{
+			PlayerManager.setDreamEleven(isDreamEleven());
 			List<Integer> userListOfGame = PlayerManager.userListOfGame(gameId);
 			if(userListOfGame !=null && userListOfGame.size() !=0)
 			{

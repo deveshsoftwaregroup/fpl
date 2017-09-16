@@ -426,6 +426,58 @@ public class CouponManager {
 		return null;
 	}
 	
+	public static Integer getUsedCouponIdByUserForGameWeekByCatergory(String gameWeekId,Integer userId,Integer categoryId)
+	{
+		logger.info("----- Inside getUsedCouponIdByUserForGameWeekByCatergory ---- gameWeekId: "+gameWeekId+", userId: "+userId+" , categoryId:"+categoryId);
+		setErrorMessage(SportConstrant.NULL);
+		setErrorCode(SportConstrant.NULL);
+		List<Object> totalUsedCouponByUser = null;
+		SessionFactory factory = HibernateSessionFactory.getSessionFacotry();
+		if(factory == null)
+		{
+			setErrorCode(ErrorConstrant.SESS_FACT_NULL);
+			setErrorMessage("Technical Error");
+			logger.info("----- Factory Object is null----");
+		}
+		else
+		{
+			Session session = factory.openSession();
+			if(session != null)
+			{
+				try
+				{
+				
+					Criteria criteria = session.createCriteria(UsedCoupon.class);
+					criteria.add(Restrictions.eq("gameWeekId", new Integer(gameWeekId)));
+					criteria.add(Restrictions.eq("userId", userId));
+					criteria.add(Restrictions.eq("couponCategoryId", categoryId));
+					logger.info("----------- Executing query to get used coupon by user for gameweek");
+					UsedCoupon usedCoupon = (UsedCoupon)criteria.uniqueResult();
+					if(usedCoupon != null)
+						return usedCoupon.getCouponId();
+					
+				}
+				catch(Exception ex)
+				{
+					logger.error("Exception in getTotalUsedCouponByUserForGameWeek: "+ex);
+					setErrorMessage("Technical Error");
+					setErrorCode(ErrorConstrant.TRANSACTION_ERROR);
+				}
+				finally
+				{
+					session.close();
+				}
+			}
+			else
+			{
+				setErrorCode(ErrorConstrant.SESS_NULL);
+				setErrorMessage("Technical Error");
+				logger.info("----- Session Object is null----");
+			}
+		}
+		return null;
+	}
+	
 	public static boolean allotCouponToUser(Integer gameWeekId,Integer userId,Integer couponId,Integer couponCategoryId,Integer gameId)
 	{
 		logger.info("----- Inside allotCouponToUser ---- gameWeekId: "+gameWeekId+", userId: "+userId+", couponId: "+couponId+", couponCategoryId: "+couponCategoryId+" , gameId: "+gameId);

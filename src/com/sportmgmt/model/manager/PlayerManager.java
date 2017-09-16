@@ -6,10 +6,12 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
+import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 
 import com.sportmgmt.model.entity.PlayerGroup;
 import com.sportmgmt.model.entity.PlayerGroupPlayer;
@@ -21,7 +23,16 @@ public class PlayerManager {
 	private static Logger logger = Logger.getLogger(PlayerManager.class);
 	private static String errorCode;
 	private static String errorMessage;
+	private static boolean isDreamEleven;
 	
+	public static boolean isDreamEleven() {
+		return isDreamEleven;
+	}
+
+	public static void setDreamEleven(boolean isDreamEleven) {
+		PlayerManager.isDreamEleven = isDreamEleven;
+	}
+
 	public static String getErrorCode() {
 		return errorCode;
 	}
@@ -73,8 +84,16 @@ public class PlayerManager {
 						PlayerGroup playerGroup = new PlayerGroup();
 						playerGroup.setUserId(new Integer(userId));
 						playerGroup.setGameWeekId(new Integer(gameWeekId));
-						playerGroup.setGroupType(SportConstrant.GAME_WEEK_HISTORY);
-						playerGroup.setGroupName(userId+"|"+gameWeekId+"|"+SportConstrant.GAME_WEEK_HISTORY);
+				 		if(isDreamEleven)
+				 		{
+				 			playerGroup.setGroupType(SportConstrant.DE_GAME_WEEK_HISTORY);
+							playerGroup.setGroupName(userId+"|"+gameWeekId+"|"+SportConstrant.DE_GAME_WEEK_HISTORY);
+				 		}
+				 		else
+				 		{
+				 			playerGroup.setGroupType(SportConstrant.GAME_WEEK_HISTORY);
+							playerGroup.setGroupName(userId+"|"+gameWeekId+"|"+SportConstrant.GAME_WEEK_HISTORY);
+				 		}
 						playerGroup.setPlayerList(playerHistoryList);
 						session.save(playerGroup);
 						logger.info("---------- commiting player group player");
@@ -125,11 +144,21 @@ public class PlayerManager {
 				try
 				{
 				
-					SQLQuery query = session.createSQLQuery(QueryConstrant.SELECT_GAME_WEEK_HISTORY_PLAYER_GROUP);
-					query.setParameter("userId", new Integer(userId));
-					query.setParameter("gameWeekId", new Integer(gameWeekId));
-					List<Object[]> gameWeekPlayeGroupHistoryList =query.list();
-					if(gameWeekPlayeGroupHistoryList !=null && gameWeekPlayeGroupHistoryList.size() !=0)
+					 Criteria criteria = session.createCriteria(PlayerGroup.class);
+					 criteria.add(Restrictions.eq("userId", new Integer(userId)));
+					 criteria.add(Restrictions.eq("gameWeekId", new Integer(gameWeekId)));
+					 if(isDreamEleven())
+					 {
+						 criteria.add(Restrictions.eq("GROUP_TYPE",SportConstrant.DE_GAME_WEEK_HISTORY));
+					 }
+					 else
+					 {
+						 criteria.add(Restrictions.eq("GROUP_TYPE",SportConstrant.GAME_WEEK_HISTORY)); 
+					 }
+					 PlayerGroup playerGroup =(PlayerGroup)criteria.uniqueResult();
+					//SQLQuery query = session.createSQLQuery(QueryConstrant.SELECT_GAME_WEEK_HISTORY_PLAYER_GROUP);
+					
+					if(playerGroup !=null)
 					return true;
 				}
 				catch(Exception ex)
@@ -172,8 +201,16 @@ public class PlayerManager {
 			{
 				try
 				{
-				
-					SQLQuery query = session.createSQLQuery(QueryConstrant.SELECT_USERS_OF_GAME);
+					SQLQuery query = null;
+					if(isDreamEleven())
+					{
+						query = session.createSQLQuery(QueryConstrant.SELECT_USERS_OF_GAME_FOR_DE);
+					}
+					else
+					{
+						query = session.createSQLQuery(QueryConstrant.SELECT_USERS_OF_GAME);
+					}
+					
 					query.setParameter("gameId", new Integer(gameId));
 					List<Integer> userListOfGame =query.list();
 					logger.info("Returing userListOfGame: "+userListOfGame);
@@ -199,8 +236,11 @@ public class PlayerManager {
 		}
 		return null;
 	}
-	
 	public static List<Map<String,String>> gameWeekPlayerList(String userId,String gameWeekId)
+	{
+		return gameWeekPlayerList(userId,gameWeekId,null);
+	}
+	public static List<Map<String,String>> gameWeekPlayerList(String userId,String gameWeekId,String gameType)
 	{
 		logger.info("----- Inside gameWeekPlayerList ---- userId: "+userId+" ,:"+gameWeekId);
 		setErrorMessage(SportConstrant.NULL);
@@ -224,7 +264,14 @@ public class PlayerManager {
 					Query query = session.createQuery(QueryConstrant.SELECT_PLAYER_GROUP);
 					query.setParameter("gameWeekId", new Integer(gameWeekId));
 					query.setParameter("userId", new Integer(userId));
-					query.setParameter("groupType",SportConstrant.GAME_WEEK_HISTORY);
+					if(gameType !=null && gameType.equals("DREAM_ELEVEN"))
+					{
+						query.setParameter("groupType",SportConstrant.DE_GAME_WEEK_HISTORY);
+					}
+					else
+					{
+						query.setParameter("groupType",SportConstrant.GAME_WEEK_HISTORY);
+					}
 					List<PlayerGroup> playerGroupList =query.list();
 					if(playerGroupList !=null && !playerGroupList.isEmpty())
 					{

@@ -24,6 +24,7 @@ import com.sportmgmt.controller.bean.Player;
 import com.sportmgmt.dreamEleven.utility.exception.SportMgmtException;
 import com.sportmgmt.model.manager.CouponManager;
 import com.sportmgmt.model.manager.GameWeeKManager;
+import com.sportmgmt.model.manager.PlayerManager;
 import com.sportmgmt.model.manager.PointRankManager;
 import com.sportmgmt.utility.common.CouponUtility;
 import com.sportmgmt.utility.common.PointRankingUtility;
@@ -96,8 +97,8 @@ public class CouponAction {
 	public String dereamElevenCouponList(ModelMap modeMap,@PathVariable String userId,@PathVariable String gameId,HttpServletRequest request)
 	{
 		HttpSession session = request.getSession();
-		Integer lastGameWeekId = 1;
-		/*Integer lastGameWeekId = PointRankManager.getLastGameWeekId(gameId);
+		//Integer lastGameWeekId = 1;
+		Integer lastGameWeekId = PointRankManager.getLastGameWeekId(gameId);
 		if(lastGameWeekId == null)
 		{
 			List<Integer> sortedGAmeWeekIds=  GameWeeKManager.sortedGameWeekIds(gameId);
@@ -106,53 +107,58 @@ public class CouponAction {
 				lastGameWeekId = sortedGAmeWeekIds.get(0);
 			}
 			
-		}*/
+		}
 		logger.info("Last game week Id: "+lastGameWeekId);
 		if(lastGameWeekId != null)
 		{
-			HashMap userGameMap=(HashMap)session.getAttribute("userGameDetails");
-			logger.info("------------ userGameMap: "+userGameMap);
-			if(userGameMap !=null && !userGameMap.isEmpty())
+			List<Map<String,String>> gameWeekPlayerList = PlayerManager.gameWeekPlayerList(userId,lastGameWeekId.toString(),"DREAM_ELEVEN");
+			logger.info("---- user player list: "+gameWeekPlayerList);
+			if(gameWeekPlayerList !=null && !gameWeekPlayerList.isEmpty())
 			{
-				List<Map<String,String>> userPlayersList =(List<Map<String,String>>)userGameMap.get("playerList");
-				logger.info("---- user player list: "+userPlayersList);
-				if(userPlayersList !=null && !userPlayersList.isEmpty())
+				int userPoint = 0;
+				List<Integer> topPlayesIdsByRank = pointRankingUtility.getTopPlayerIdsOrderedByRankForGameWeek(lastGameWeekId);
+				logger.info("topPlayesIdsByRank : "+topPlayesIdsByRank);
+				if(topPlayesIdsByRank !=null && !topPlayesIdsByRank.isEmpty())
 				{
-					int userPoint = 0;
-					List<Integer> topPlayesIdsByRank = pointRankingUtility.getTopPlayerIdsOrderedByRankForGameWeek(lastGameWeekId);
-					logger.info("topPlayesIdsByRank : "+topPlayesIdsByRank);
-					if(topPlayesIdsByRank !=null && !topPlayesIdsByRank.isEmpty())
+					int totalTopPlayerInUserAccount = 0;
+					for(Map<String,String> playerMap:gameWeekPlayerList)
 					{
-						int totalTopPlayerInUserAccount = 0;
-						for(Map<String,String> playerMap:userPlayersList)
+						if(topPlayesIdsByRank.contains(new Integer(playerMap.get("gameClubPlayerId"))))
 						{
-							if(topPlayesIdsByRank.contains(new Integer(playerMap.get("gameClubPlayerId"))))
-							{
-								totalTopPlayerInUserAccount++;
-							}
+							totalTopPlayerInUserAccount++;
 						}
-						logger.info("----- total Match: "+totalTopPlayerInUserAccount);
-						userPoint = 150*totalTopPlayerInUserAccount;
 					}
-					List<Coupon> couponList =couponUtility.getDreamElevenCouponList(userPoint, lastGameWeekId.toString());
-					Set<String> vendorList = couponUtility.getVendorList();
-					logger.info("couponList: "+couponList);
-					logger.info("vendorList: "+vendorList);
-					modeMap.put("couponList", couponList);
-					modeMap.put("vendorList", vendorList);
-					try
-					{
-						ObjectMapper mapperObj = new ObjectMapper();
-						String couponListJson = mapperObj.writeValueAsString(couponList);
-						modeMap.put("couponListJson", couponListJson);
-					}
-					catch(Exception ex)
-					{
-						 logger.error("---------- Error in parsing map to json: "+ex);
-					}
+					logger.info("----- total Match: "+totalTopPlayerInUserAccount);
+					userPoint = 150*totalTopPlayerInUserAccount;
+				}
+				List<Coupon> couponList =couponUtility.getDreamElevenCouponList(userPoint, lastGameWeekId.toString());
+				Set<String> vendorList = couponUtility.getVendorList();
+				String couponCode = (String)request.getParameter("couponCode");
+				if(couponCode ==null || couponCode.equals(""))
+				{
+					couponCode = couponUtility.getUsedCouponCodeOfUserByCategoryForGameWeek(lastGameWeekId.toString(), new Integer(userId), couponUtility.getCouponCategoryId());
+				}
+				
+				logger.info("couponCode : "+couponCode);
+				logger.info("couponList: "+couponList);
+				logger.info("vendorList: "+vendorList);
+				modeMap.put("couponList", couponList);
+				modeMap.put("vendorList", vendorList);
+				modeMap.put("couponCode", couponCode);
+				modeMap.put("isTechnicalError", request.getParameter("isTechnicalError"));
+				modeMap.put("isCouponAlreadyUsed", request.getParameter("isCouponAlreadyUsed"));
+				
+				try
+				{
+					ObjectMapper mapperObj = new ObjectMapper();
+					String couponListJson = mapperObj.writeValueAsString(couponList);
+					modeMap.put("couponListJson", couponListJson);
+				}
+				catch(Exception ex)
+				{
+					 logger.error("---------- Error in parsing map to json: "+ex);
 				}
 			}
-			
 		}
 		return "dreamEleven/couponList";
 	}
@@ -197,5 +203,38 @@ public class CouponAction {
 			resultMap.put("message", "Technical issue");
 		}
 		return resultMap;
+	}
+	@RequestMapping(value = "dream-eleven-avail", method = RequestMethod.POST)
+	public String dreamElevenAvail(@RequestParam("userId") String userId,@RequestParam("gameId") String gameId,@RequestParam("couponId") String couponId)
+	{
+		boolean isCouponAlreadyUsed = false; 
+		boolean isTechnicalError = false;
+		String couponCode="";
+		Integer couponIdInt = new Integer(couponId);
+		Integer userIdInt = new Integer(userId);
+		Integer lastGameWeekId = PointRankManager.getLastGameWeekId(gameId);
+		if(lastGameWeekId == null)
+		{
+			List<Integer> sortedGAmeWeekIds=  GameWeeKManager.sortedGameWeekIds(gameId);
+			if(sortedGAmeWeekIds !=null && !sortedGAmeWeekIds.isEmpty())
+			{
+				lastGameWeekId = sortedGAmeWeekIds.get(0);
+			}
+			
+		}
+		try
+		{
+			couponCode = couponUtility.allotCoupon(lastGameWeekId, userIdInt, couponIdInt);
+		}
+		catch(SportMgmtException sme)
+		{
+			isCouponAlreadyUsed = true;
+		}
+		catch(Exception ex)
+		{
+			isTechnicalError = true;
+		}
+		logger.info("----------- Redirecting to coupon list page");
+		return SportConstrant.DE_COUPON_LIST_REDIRECT_PAGE+"/"+userId+"/"+gameId+"?couponCode="+couponCode+"&isTechnicalError="+isTechnicalError+"&isCouponAlreadyUsed="+isCouponAlreadyUsed;
 	}
 }

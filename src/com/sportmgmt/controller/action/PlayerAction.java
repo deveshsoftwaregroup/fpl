@@ -87,7 +87,7 @@ public class PlayerAction {
 	}
 	
 	@RequestMapping(value = "make-player-history/{gameId}", method = RequestMethod.GET)
-	public @ResponseBody SportMgmtResponse createGameWeekHistoryForPlayers(@PathVariable String gameId, HttpServletRequest request)
+	public @ResponseBody SportMgmtResponse createGameWeekHistoryForPlayers(@PathVariable String gameId,@RequestParam("gameType") String gameType, HttpServletRequest request)
 	{
 		SportMgmtResponse<Map> sportMgmtResponse = new SportMgmtResponse();
 		boolean isGameExist = GameManager.isGameExistAndActive(gameId);
@@ -95,6 +95,8 @@ public class PlayerAction {
 		{
 			try
 			{
+				if(gameType !=null && gameType.equals("dream_eleven"));
+				pointRankingUtility.setDreamEleven(true);
 				List<String> logList =pointRankingUtility.createPlayerHistoryForUsers(gameId);
 				sportMgmtResponse.setSuccess(true);
 				sportMgmtResponse.setLogList(logList);
@@ -115,7 +117,7 @@ public class PlayerAction {
 		return sportMgmtResponse;
 	}
 	@RequestMapping(value = "make-player-history/{gameId}/{gameWeekId}", method = RequestMethod.GET)
-	public @ResponseBody SportMgmtResponse createGameWeekHistoryForPlayers(@PathVariable String gameId, @PathVariable String gameWeekId)
+	public @ResponseBody SportMgmtResponse createGameWeekHistoryForPlayers(@PathVariable String gameId, @RequestParam("gameType") String gameType,@PathVariable String gameWeekId)
 	{
 		SportMgmtResponse sportMgmtResponse = new SportMgmtResponse();
 		boolean isGameExist = GameManager.isGameExistAndActive(gameId);
@@ -123,6 +125,8 @@ public class PlayerAction {
 		{
 			try
 			{
+				if(gameType !=null && gameType.equals("dream_eleven"));
+				pointRankingUtility.setDreamEleven(true);
 				List<String> logList =pointRankingUtility.createPlayerHistoryForUsers(gameId,gameWeekId);
 				sportMgmtResponse.setSuccess(true);
 				sportMgmtResponse.setLogList(logList);
