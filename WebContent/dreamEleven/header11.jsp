@@ -189,7 +189,7 @@
 		{
 			if(typeof gameId != 'undefined' && gameId != '')
 			{
-				url ="/SportMgmt/mvc/game11/MyPoint11/"+gameId+"/"+userId;
+				url ="/SportMgmt/mvc/game/dream-eleven-point/"+gameId+"/"+userId;
 				if(gameWeekId !='' && direction!='')
 				{
 					url =url+"?gameWeekId="+gameWeekId+"&game-week-for="+direction;
