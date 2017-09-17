@@ -39,6 +39,14 @@ public class PointRankingUtility {
 	
 	private String logMessage;
 	
+	private List<Player> topElevenPlayers;
+	
+	public List<Player> getTopElevenPlayers() {
+		return topElevenPlayers;
+	}
+	public void setTopElevenPlayers(List<Player> topElevenPlayers) {
+		this.topElevenPlayers = topElevenPlayers;
+	}
 	public String getlogMessage()
 	{
 		return logMessage;
@@ -491,10 +499,11 @@ public class PointRankingUtility {
 		if(playersOrderedByRank != null && !playersOrderedByRank.isEmpty())
 		{
 			List<Integer> topPlayesIdsByRank = new ArrayList<>();
+			topElevenPlayers = new ArrayList<>();
 			updateTopPlayerIds(playersOrderedByRank, topPlayesIdsByRank, "Goalkeeper", 1);
 			updateTopPlayerIds(playersOrderedByRank, topPlayesIdsByRank, "Defender", 4);
-			updateTopPlayerIds(playersOrderedByRank, topPlayesIdsByRank, "Midfielder", 4);
-			updateTopPlayerIds(playersOrderedByRank, topPlayesIdsByRank, "Forward", 2);
+			updateTopPlayerIds(playersOrderedByRank, topPlayesIdsByRank, "Midfielder", 3);
+			updateTopPlayerIds(playersOrderedByRank, topPlayesIdsByRank, "Forward", 3);
 			return topPlayesIdsByRank;
 		}
 		return null;
@@ -516,8 +525,34 @@ public class PointRankingUtility {
 			if(player.getType().equals(playerType))
 			{
 				topPlayesIdsByRank.add(player.getGameClubPlayerId());
+				topElevenPlayers.add(player);
 				playerCount++;
 			}
 		}
 	}
+	public int getTotalUserPlayerMatchInTopPlayer(List<Map<String,String>> gameWeekPlayerList,List<Integer> topPlayesIdsByRank)
+	{
+		int totalTopPlayerInUserAccount = 0;
+		for(Map<String,String> playerMap:gameWeekPlayerList)
+		{
+			if(topPlayesIdsByRank.contains(new Integer(playerMap.get("gameClubPlayerId"))))
+			{
+				totalTopPlayerInUserAccount++;
+			}
+		}
+		logger.info("----- total Match: "+totalTopPlayerInUserAccount);
+		return totalTopPlayerInUserAccount;
+	}
+	
+	public int calculateUserPoint(int totalUserPlayerMatchInTopPlayer)
+	{
+		return totalUserPlayerMatchInTopPlayer*150;
+	}
+	
+	public int calculateUserPoint(List<Map<String,String>> gameWeekPlayerList,List<Integer> topPlayesIdsByRank)
+	{
+		int totalTopPlayerInUserAccount =getTotalUserPlayerMatchInTopPlayer(gameWeekPlayerList, topPlayesIdsByRank);
+		return totalTopPlayerInUserAccount*150;
+	}
+	
 }

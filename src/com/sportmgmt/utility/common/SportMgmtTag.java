@@ -61,7 +61,7 @@ public class SportMgmtTag extends TagSupport{
 		    	HttpSession session = request.getSession();
 		    	List<Map<String,String>> playerList = null;
 		    	
-				if(pageName !=null && pageName.equals("MY_POINT"))
+				if(pageName !=null && (pageName.equals("MY_POINT") || pageName.equals("DE_MY_POINT")))
 				{
 					SportMgmtResponse<Map<Object,Object>> sprotMgmtRes = (SportMgmtResponse<Map<Object,Object>>)request.getAttribute("sportMgmtRes");
 					Map<Object,Object> result = sprotMgmtRes.getResult();
@@ -103,7 +103,6 @@ public class SportMgmtTag extends TagSupport{
 						}
 					}
 				}
-				
 				if(isPlayerAvail)
 				{
 					pageContext.setAttribute("gameClubPlayerId", gameClubPlayerId);
@@ -123,6 +122,21 @@ public class SportMgmtTag extends TagSupport{
 							}
 						}
 					}
+					if(pageName !=null && pageName.equals("DE_MY_POINT"))
+					{
+						
+						SportMgmtResponse<Map<Object,Object>> sprotMgmtRes = (SportMgmtResponse<Map<Object,Object>>)request.getAttribute("sportMgmtRes");
+						Map<Object,Object> result = sprotMgmtRes.getResult();
+						List<Integer> topPlayersIds = (List<Integer> )result.get("topPlayesIdsByRank");
+						if(topPlayersIds !=null && topPlayersIds.contains(new Integer(gameClubPlayerId)))
+						{
+							pageContext.setAttribute("isPlyaerInTopElevent", true);
+						}
+						else
+						{
+							pageContext.setAttribute("isPlyaerInTopElevent", false);
+						}
+					}
 				}
 			}
 	    	pageContext.setAttribute("isPlayerAvail", new Boolean(isPlayerAvail));
@@ -135,6 +149,7 @@ public class SportMgmtTag extends TagSupport{
 	    		pageContext.setAttribute("playerType", "");
 	    		pageContext.setAttribute("playerCategory", "");
 	    		pageContext.setAttribute("clubId", "");
+	    		pageContext.setAttribute("isPlyaerInTopElevent", false);
 	    	}
 	    	position = null;
 	    	playerType = null;

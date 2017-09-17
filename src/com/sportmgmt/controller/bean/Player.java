@@ -43,5 +43,8 @@ public String getType() {
 public void setType(String type) {
 	this.type = type;
 }
-
+public String toString()
+{
+	return "playerId: "+this.gameClubPlayerId+", playerName= "+this.name+", point = "+this.point;
+}
 }

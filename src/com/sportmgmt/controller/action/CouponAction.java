@@ -115,21 +115,12 @@ public class CouponAction {
 			logger.info("---- user player list: "+gameWeekPlayerList);
 			if(gameWeekPlayerList !=null && !gameWeekPlayerList.isEmpty())
 			{
-				int userPoint = 0;
 				List<Integer> topPlayesIdsByRank = pointRankingUtility.getTopPlayerIdsOrderedByRankForGameWeek(lastGameWeekId);
 				logger.info("topPlayesIdsByRank : "+topPlayesIdsByRank);
+				int userPoint = 0;
 				if(topPlayesIdsByRank !=null && !topPlayesIdsByRank.isEmpty())
 				{
-					int totalTopPlayerInUserAccount = 0;
-					for(Map<String,String> playerMap:gameWeekPlayerList)
-					{
-						if(topPlayesIdsByRank.contains(new Integer(playerMap.get("gameClubPlayerId"))))
-						{
-							totalTopPlayerInUserAccount++;
-						}
-					}
-					logger.info("----- total Match: "+totalTopPlayerInUserAccount);
-					userPoint = 150*totalTopPlayerInUserAccount;
+					userPoint = pointRankingUtility.calculateUserPoint(gameWeekPlayerList, topPlayesIdsByRank);
 				}
 				List<Coupon> couponList =couponUtility.getDreamElevenCouponList(userPoint, lastGameWeekId.toString());
 				Set<String> vendorList = couponUtility.getVendorList();

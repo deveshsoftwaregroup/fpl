@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.sportmgmt.utility.common.SortUtility;
+import com.sportmgmt.controller.bean.Player;
 import com.sportmgmt.controller.response.SportMgmtResponse;
 import com.sportmgmt.model.entity.Point;
 import com.sportmgmt.model.manager.GameManager;
@@ -70,6 +71,41 @@ public class PointRankingAction {
 		modeMap.put("sportMgmtRes", sportMgmtResponse);
 		return SportConstrant.MY_POINT_PAGE;
 	}
+	
+	@RequestMapping(value = "dream-eleven-point/{gameId}/{userId}", method = RequestMethod.GET)
+	public String  deGameWeekHistory(ModelMap modeMap,@PathVariable String gameId,@PathVariable String userId,HttpServletRequest request)
+	{
+		String gameWeekIdParam = request.getParameter("gameWeekId");
+		String direction = request.getParameter("game-week-for");
+		SportMgmtResponse<Map> 	sportMgmtResponse= getDEGameWeeKHistory(gameId, userId, gameWeekIdParam, direction,request);
+		Integer gameWeekId = null;
+		Map<String,String> gameWeek = (Map)sportMgmtResponse.getResult().get("gameWeek");
+		if(gameWeek !=null && gameWeek.get("gameWeekId") !=null)
+		{
+			
+			gameWeekId = new Integer(gameWeek.get("gameWeekId"));
+		}
+		if(gameWeekId !=null)
+		{
+			List<Player> playersOrderedByRank = pointRankingUtility.getPlayersOrderedByArg(gameWeekId, "rank", null);
+			List<Integer> topPlayesIdsByRank = pointRankingUtility.getTopPlayerIdsOrderedByRankForGameWeek(playersOrderedByRank);
+			List<Player> topElevenPlayer = pointRankingUtility.getTopElevenPlayers();
+			logger.info("topPlayesIdsByRank : "+topPlayesIdsByRank);
+			logger.info("topElevenPlayer : "+topElevenPlayer);
+			if(topPlayesIdsByRank !=null)
+			{
+				List<Map<String,String>> historyPlayerList =(List<Map<String,String>>)sportMgmtResponse.getResult().get("hisotryPlayerList");
+				int userPoint = pointRankingUtility.calculateUserPoint(historyPlayerList, topPlayesIdsByRank);
+				sportMgmtResponse.getResult().put("topPlayesIdsByRank", topPlayesIdsByRank);
+				sportMgmtResponse.getResult().put("topElevenPlayer", topElevenPlayer);
+				sportMgmtResponse.getResult().put("userPoint", userPoint);
+			}
+		}
+		logger.info("---- SortMgmtResponse: "+sportMgmtResponse);
+		modeMap.put("sportMgmtRes", sportMgmtResponse);
+		return SportConstrant.DE_MY_POINT_PAGE;
+	}
+	
 	@RequestMapping(value = "PointTableView/{gameId}", method = RequestMethod.GET)
 	public  String pointTableView(ModelMap modeMap,HttpServletRequest request,@PathVariable String gameId)
 	{
@@ -115,6 +151,50 @@ public class PointRankingAction {
 				gameWeek.putAll(gameWeekReport);
 				result.put("hisotryPlayerList", historyPlayerList);
 				result.put("gameWeek", gameWeek);
+				sportMgmtResponse.setSuccess(true);
+				sportMgmtResponse.setResult(result);
+				
+			}
+			catch(Exception sme)
+			{
+				sportMgmtResponse.setSuccess(false);
+				sportMgmtResponse.setMessage(sme.getMessage());
+				logger.error("--------------- Error Occured: "+sme);
+			}
+			
+		return sportMgmtResponse;
+	}
+	private SportMgmtResponse<Map> getDEGameWeeKHistory(String gameId,String userId,String gameWeekIdParam,String direction,HttpServletRequest request)
+	{
+		SportMgmtResponse<Map> 	sportMgmtResponse = new SportMgmtResponse<>();
+		try
+			{
+				
+				Map result = new HashMap();
+				Map<String,String> gameWeek =pointRankingUtility.getGameWeekForPointView(gameId, gameWeekIdParam, direction);
+				logger.info("-------- gameWeek: "+gameWeek);
+				String gameWeekId = gameWeek.get("gameWeekId");
+				List<Map<String,String>> historyPlayerList = PlayerManager.gameWeekPlayerList(userId, gameWeekId,"DREAM_ELEVEN");
+				if(historyPlayerList !=null && !historyPlayerList.isEmpty())
+				{
+					HttpSession session = request.getSession();
+					List<Map<Object,Object>> playerList = (List<Map<Object,Object>>)session.getAttribute("playerList");
+					for(Map<String,String> historyPlayer:historyPlayerList)
+					{
+						String historyPlayerGCPID = historyPlayer.get("gameClubPlayerId");
+						for(Map<Object,Object>player:playerList)
+						{
+							if(player.get("gameClubPlayerId").equals(historyPlayerGCPID))
+							{
+								historyPlayer.put("playerType",(String)player.get("type"));
+								break;
+							}
+						}
+					}
+				}
+				logger.info("-- History player list: "+historyPlayerList);
+				result.put("gameWeek", gameWeek);
+				result.put("hisotryPlayerList", historyPlayerList);
 				sportMgmtResponse.setSuccess(true);
 				sportMgmtResponse.setResult(result);
 				
