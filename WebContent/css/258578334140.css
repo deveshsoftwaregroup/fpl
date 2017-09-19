@@ -9201,12 +9201,12 @@ margin-bottom:0;
 cursor:pointer;
 font-size:12px;
 }
-.ism label {color: #333;}
+.ism label {color: #fff;}
 .ism-sidebar .subHeader {
     font-size: 1.8rem;
         margin-bottom: 4px;
     position: relative;
-    color: #242424;
+    color: #fff;
 }
 .ism .ism-form__label--bold {
 font-family:"PremierSans-Bold",Arial,"Helvetica Neue",Helvetica,sans-serif
