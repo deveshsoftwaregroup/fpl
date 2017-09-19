@@ -29,97 +29,56 @@
    
    
 
-<div id="myModal" class="modal fade" role="dialog">
-  
-	<div id="login-overlay" class="modal-dialog loginForm">
-	      <div class="modal-content">
-	          <div class="modal-header">
-	          	<img alt="" src="../images/ipl.jpg">
-	          	<span class="fan">Fantasy</span>
-	              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-	              <h4 class="modal-title" id="myModalLabel">Login</h4>
-	          </div>
-	          <div class="modal-body">
-	              <div class="row">
+<div id="myModal" class="row" role="dialog">
+	
+	<div id="login-overlay" class="col-lg-4 col-lg-offset-8 register_login">
+	          
+	          <ul class="nav nav-tabs">
+                        <li class="active"><a data-toggle="tab" href="#home">Login</a></li>
+                        <li><a data-toggle="tab" href="#menu1">Register</a></li>
+                     </ul>
+	          <div class="tab-content">
+	              <div id="home" class="tab-pane fade in active">
 	                  <div class="col-xs-12">
 	                  
-	                  <div class="col-xs-12">
-	                  	<div class="row">
-	                  	
-	                  	     
+	                      
 	                          <form id="loginForm" name="LoginForm" action="" method="get" onsubmit="event.preventDefault();" autocomplete="off">
-	                              
-	                              <div class="col-xs-12">
-	                              	<div class="row">
-		                              <div class="form-group">
-		                              
-			                              <span class="input input--hoshi">
+		                              <div class="form-group">		                              
+			                              <div class="col-sm-12">
 			                              	<input class="input__field input__field--hoshi" type="email" name="emailId" autocomplete="off" />
 			                              	<label class="input__label input__label--hoshi input__label--hoshi-color-1" for="email">
 			                              		<span class="input__label-content input__label-content--hoshi">Email ID</span>
 			                              	</label>
-			                              </span>
-		                              	                              		
-		                              </div>
-		                             </div>
-	                              </div>
-	                              
-	                              <div class="col-xs-12">
-		                              	<div class="row">	                              
+			                              </div>		                              	                              		
+		                              </div>                     
 			                              <div class="form-group">
-			                              
+			                              	<div class="col-sm-12">
 			                              	<span class="input input--hoshi">
 				                              	<input class="input__field input__field--hoshi" type="password" name="logonPassword"  autocomplete="off" />
 				                              	<label class="input__label input__label--hoshi input__label--hoshi-color-1" for="logonPassword">
 				                              		<span class="input__label-content input__label-content--hoshi">Password</span>
 				                              	</label>
 				                              </span>
-				                              		                                  
-			                              </div>	                              
-		                              </div>
-	                              </div>
-	                              
-	                              <div class="col-xs-12">
-	                              	<div class="row">
-	                              		
-	                              			<div class="col-sm-6 hide">
-	                              				
-	                              				<div class="checkbox hide">
-				                                  <label>
-				                                      <input type="checkbox" name="remember" id="remember"> Remember login
-				                                  </label>
-				                                  <p class="help-block">(if this is a private computer)</p>
-				                              </div>
-	                              				
-	                              			</div>
+				                              </div>				                              		                                  
+			                              </div>
+	                             			<div class="form-group">
 	                              			<div class="col-sm-12">
-		                              			<div class="row">
-			                              			<div class="form-group">
 			                              				<a href="javascript:void(0);" class="forgotBtn" data-toggle="modal" data-target="#myModal3">Forgot Password</a>
-			                              			</div>
-		                              			</div>
-	                              			</div>
-	                              		
-		                            </div>
-		                         </div>
-		                         
-		                         <div class="col-xs-12">
-		                         <div class="row">
-		                         
-	                              
+			                             	</div>
+	                              			</div>	                              		
+		                           	                         
+		                        
+		                        
 	                              <div id="loginErrorMsg" class="alert alert-error hide">Wrong username or password</div>
 	                              
 	                              <a href="javascript:void(0);" class="" style="position: relative;">
 				             	
 	                              <button type="submit" class="btn btn-block btn-social btn-login" onclick="doLogin();">Login</button>
 	                              </a>
-	                              </div>
-	                              </div>
-	                               
-	                          </form>
-	                      
-	                  	</div>
-	                  </div>
+	                             
+	                              	                               
+	                          </form>	                      
+	                  	
 	                  
 	                  <div class="row">
 	                  
@@ -153,7 +112,6 @@
 	                  
 	              </div>
 	          </div>
-	      </div>
 	  </div>
 </div>
 
