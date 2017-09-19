@@ -1,12 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-    <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-	<%@ taglib uri="sportmgmt.tld" prefix="s" %>  
-	<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="context" value="/SportMgmt" />
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib uri="sportmgmt.tld" prefix="s" %>  
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
     
 <s:sportExt retrieve="priceList" />
 <s:sportExt retrieve="deadLine" />
+
 <body class="predict11-bg transfers_predict11 dream_11transfer">
 <div class="container ">
 	<div class="row">
@@ -15,355 +17,315 @@
 				<h3>Select Players from List</h3>
 				<p>Gameweek ${gameWeekNumber} Deadline: <time datetime="2016-08-27T10:30:00Z">${deadline}</time><p>
 	            <p>Player Count: <span class="added-player-count"> </span> </p>			
-                   
-					<div class="col-lg-8 team_map_dream11">                              
-						<section id="ismr-summary">
-							<div class="ism-element-row ism-element-row--pitch">
-                            	<div class="ism-pitch__unit ism-pitch__unit--4"> 
-									<div id="ismr-pos1"  class="img-responsive gaolkeeper_hvr">
-                                    	<s:sport position="1" playerType="Goalkeeper"/>                                                
-										<div 
-										<c:choose>
-										<c:when test='${isPlayerAvail}'>class="" id="${gameClubPlayerId}"</c:when>
-										<c:otherwise>class=""</c:otherwise>
-										</c:choose>
-										>              
-								            <img src="/SportMgmt/redBlackTheme/images/Dream11/goalkeeper_old.png"  alt="" title="Select a Goalkeeper from the player list" class="img-responsive gaolkeeper_hvr">								       
-											<c:choose>
-												<c:when test="${isPlayerAvail}">
-												<div class="ism-element__name ism-element__name--placeholder">
-												  ${playerName} <abbr title="Goalkeeper" class="ism-element__type"><span class="ism-element__type__short">${price}</span></abbr>
-												</div>
-												</c:when>
-												<c:otherwise>
-												<div class="ism-element__name ism-element__name--placeholder">
-												   <abbr title="Goalkeeper" class="ism-element__type"><span class="ism-element__type__short">GKP</span></abbr>
-												</div>
-												</c:otherwise>
-											</c:choose>                                                            
-							    		</div>
-									</div>
-								</div>
-							</div>
-                                           
-							
-							
-								<div class="ism-element-row ism-element-row--pitch">
-	                                <div id="ismr-pos3" class="ism-pitch__unit ism-pitch__unit--5">
-	                                    <div>
-	                                    <s:sport position="1" playerType="Defender"/>
-	                                        <div class="ism-element" tabindex="0">
-	
-	                                            <div 
-	                                            <c:choose>
-	                                            	<c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"
-	                                            	
-	                                            	</c:when>
-	                                            	<c:otherwise>class="ismjs-select"</c:otherwise>
-	                                            </c:choose>
-	                                            >
-	                                                                                                                
-	                                                    <img src="/SportMgmt/redBlackTheme/images/Dream11/player.png" 
-	                                                    alt="" title="Select a Defender from the player list" class="center-block img-responsive">
-	                                        															
-	                                                 <c:choose>
-	                                                 <c:when test="${isPlayerAvail}">
-	                                                 	<div >
-	                                                    ${playerName} <abbr title="Defender">
-	                                                    <span class="ism-element__type__short">${price}</span></abbr>
-	                                                 </div>
-	                                                 </c:when>
-	                                                 <c:otherwise>
-	                                                  <div>
-	                                                      <abbr title="Defender" ><span >DEF</span></abbr>
-	                                                  </div>
-	                                                 </c:otherwise>
-	                                                 </c:choose>                                                            
-	                                              </div>
-	                                        </div>
-	                                    </div>
-	                                </div>
-                                            <div id="ismr-pos4" class="ism-pitch__unit ism-pitch__unit--5">
-                                                <div>
-                                                 <s:sport position="2" playerType="Defender"/>
-                                                    <div class="ism-element" tabindex="0">
-
-                                                        <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
-
-                                                            <img src="/SportMgmt/redBlackTheme/images/Dream11/player.png" 
-                                                                alt="" title="Select a Defender from the player list" class="center-block img-responsive">
-                                                    			
-
-                                                           
-                                                             <c:choose>
-                                                             <c:when test="${isPlayerAvail}">
-                                                             	<div class="ism-element__name ism-element__name--placeholder">
-                                                                ${playerName} <abbr title="Defender" class="ism-element__type"><span class="ism-element__type__short">${price}</span></abbr>
-                                                             </div>
-                                                             </c:when>
-                                                             <c:otherwise>
-                                                             <div class="ism-element__name ism-element__name--placeholder">
-                                                                 <abbr title="Defender" class="ism-element__type"><span class="ism-element__type__short">DEF</span></abbr>
-                                                             </div>
-                                                             </c:otherwise>
-                                                             </c:choose>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div id="ismr-pos5" class="ism-pitch__unit ism-pitch__unit--5">
-                                                <div>
-                                                 <s:sport position="3" playerType="Defender"/>
-                                                    <div class="ism-element" tabindex="0">
-
-                                                        <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
-
-                                                            <img src="/SportMgmt/redBlackTheme/images/Dream11/player.png" 
-                                                                alt="" title="Select a Defender from the player list" class="center-block img-responsive">
-                                                    			
-
-                                                           
-                                                             <c:choose>
-                                                             <c:when test="${isPlayerAvail}">
-                                                             	<div class="ism-element__name ism-element__name--placeholder">
-                                                                ${playerName} <abbr title="Defender" class="ism-element__type"><span class="ism-element__type__short">${price}</span></abbr>
-                                                             </div>
-                                                             </c:when>
-                                                             <c:otherwise>
-                                                             <div class="ism-element__name ism-element__name--placeholder">
-                                                                 <abbr title="Defender" class="ism-element__type"><span class="ism-element__type__short">DEF</span></abbr>
-                                                             </div>
-                                                             </c:otherwise>
-                                                             </c:choose>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div id="ismr-pos6" class="ism-pitch__unit ism-pitch__unit--5">
-                                                <div>
-                                                 <s:sport position="4" playerType="Defender"/>
-                                                    <div class="ism-element" tabindex="0">
-
-                                                        <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
-
-                                                           <img src="/SportMgmt/redBlackTheme/images/Dream11/player.png" 
-                                                           alt="" title="Select a Defender from the player list" class="center-block img-responsive">
-                                                    			
-
-                                                           
-                                                             <c:choose>
-                                                             <c:when test="${isPlayerAvail}">
-                                                             	<div class="ism-element__name ism-element__name--placeholder">
-                                                                ${playerName} <abbr title="Defender" class="ism-element__type"><span class="ism-element__type__short">${price}</span></abbr>
-                                                             </div>
-                                                             </c:when>
-                                                             <c:otherwise>
-                                                             <div class="ism-element__name ism-element__name--placeholder">
-                                                                 <abbr title="Defender" class="ism-element__type"><span class="ism-element__type__short">DEF</span></abbr>
-                                                             </div>
-                                                             </c:otherwise>
-                                                             </c:choose>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            
-                                        
-                                        </div>
-
-                                        
-
-                                        <div class="ism-element-row ism-element-row--pitch">
-                                            <div id="ismr-pos11" class="ism-pitch__unit ism-pitch__unit--5">
-                                                <div>
-                                                <s:sport position="1" playerType="Midfielder"/>
-                                                    <div class="ism-element" tabindex="0">
-                                                        <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
-
-                                                            <img src="/SportMgmt/redBlackTheme/images/Dream11/player.png" 
-                                                                alt="" title="Select a Defender from the player list" class="center-block img-responsive">
-                                                    			
-															
-                                                             <c:choose>
-                                                             <c:when test="${isPlayerAvail}">
-                                                             	<div class="ism-element__name ism-element__name--placeholder">
-                                                                ${playerName} <abbr title="Midfielder" class="ism-element__type"><span class="ism-element__type__short">${price}</span></abbr>
-                                                             </div>
-                                                             </c:when>
-                                                             <c:otherwise>
-                                                             <div class="ism-element__name ism-element__name--placeholder">
-                                                                <abbr title="Midfielder" class="ism-element__type"><span class="ism-element__type__short">MID</span></abbr>
-                                                             </div>
-                                                             </c:otherwise>
-                                                             </c:choose>
-                                                            </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div id="ismr-pos12" class="ism-pitch__unit ism-pitch__unit--5">
-                                                <div>
-                                                 <s:sport position="2" playerType="Midfielder"/>
-                                                    <div class="ism-element" tabindex="0">
-
-                                                        <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
-
-                                                            <picture>
-                                                                <img src="/SportMgmt/images/animated_bowl.gif"  alt="" title="Select a Midfielder from the player list" class="ism-shirt ism-element__shirt">
-                                                            </picture>
-
-                                                           
-                                                             <c:choose>
-                                                             <c:when test="${isPlayerAvail}">
-                                                             	<div class="ism-element__name ism-element__name--placeholder">
-                                                                ${playerName} <abbr title="Midfielder" class="ism-element__type"><span class="ism-element__type__short">${price}</span></abbr>
-                                                             </div>
-                                                             </c:when>
-                                                             <c:otherwise>
-                                                             <div class="ism-element__name ism-element__name--placeholder">
-                                                                <abbr title="Midfielder" class="ism-element__type"><span class="ism-element__type__short">MID</span></abbr>
-                                                             </div>
-                                                             </c:otherwise>
-                                                             </c:choose>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div id="ismr-pos13" class="ism-pitch__unit ism-pitch__unit--5">
-                                                <div>
-                                                 <s:sport position="3" playerType="Midfielder"/>
-                                                    <div class="ism-element" tabindex="0">
-
-                                                        <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
-
-                                                            <img src="/SportMgmt/redBlackTheme/images/Dream11/player.png" 
-                                                                alt="" title="Select a Defender from the player list" class="center-block img-responsive">
-                                                    			
-
-                                                           
-                                                             <c:choose>
-                                                             <c:when test="${isPlayerAvail}">
-                                                             	<div class="ism-element__name ism-element__name--placeholder">
-                                                                ${playerName} <abbr title="Midfielder" class="ism-element__type"><span class="ism-element__type__short">${price}</span></abbr>
-                                                             </div>
-                                                             </c:when>
-                                                             <c:otherwise>
-                                                             <div class="ism-element__name ism-element__name--placeholder">
-                                                                <abbr title="Midfielder" class="ism-element__type"><span class="ism-element__type__short">MID</span></abbr>
-                                                             </div>
-                                                             </c:otherwise>
-                                                             </c:choose>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div id="ismr-pos14" class="ism-pitch__unit ism-pitch__unit--5">
-                                                <div>
-                                                <s:sport position="4" playerType="Midfielder"/>
-                                                    <div class="ism-element" tabindex="0">
-                                                        <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
-
-                                                            <img src="/SportMgmt/redBlackTheme/images/Dream11/player.png" 
-                                                                alt="" title="Select a Defender from the player list" class="center-block img-responsive">
-                                                    			
-                                                    		<c:choose>
-                                                             <c:when test="${isPlayerAvail}">
-                                                             	<div class="ism-element__name ism-element__name--placeholder">
-                                                                ${playerName} <abbr title="Midfielder" class="ism-element__type"><span class="ism-element__type__short">${price}</span></abbr>
-                                                             </div>
-                                                             </c:when>
-                                                             <c:otherwise>
-                                                             <div class="ism-element__name ism-element__name--placeholder">
-                                                                 <abbr title="Midfielder" class="ism-element__type"><span class="ism-element__type__short">MID</span></abbr>
-                                                             </div>
-                                                             </c:otherwise>
-                                                             </c:choose>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                           
-                                        </div>
-                                        <div class="ism-element-row ism-element-row--pitch">
-                                            <div id="ismr-pos8" class="ism-pitch__unit ism-pitch__unit--3">
-                                                <div>
-                                                <s:sport position="1" playerType="Forward"/>
-                                                    <div class="ism-element" tabindex="0">
-
-                                                        <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
-
-                                                            <img src="/SportMgmt/redBlackTheme/images/Dream11/player.png" 
-                                                                alt="" title="Select a Defender from the player list" class="center-block img-responsive">
-                                                    			
-															
-                                                             <c:choose>
-                                                             <c:when test="${isPlayerAvail}">
-                                                             	<div class="ism-element__name ism-element__name--placeholder">
-                                                                ${playerName} <abbr title="Forward" class="ism-element__type"><span class="ism-element__type__short">${price}</span></abbr>
-                                                             </div>
-                                                             </c:when>
-                                                             <c:otherwise>
-                                                             <div class="ism-element__name ism-element__name--placeholder">
-                                                                 <abbr title="Forward" class="ism-element__type"><span class="ism-element__type__short">FWD</span></abbr>
-                                                             </div>
-                                                             </c:otherwise>
-                                                             </c:choose>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div id="ismr-pos9" class="ism-pitch__unit ism-pitch__unit--3">
-                                                <div>
-                                                <s:sport position="2" playerType="Forward"/>
-                                                    <div class="ism-element" tabindex="0">
-
-                                                        <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
-
-                                                            <img src="/SportMgmt/redBlackTheme/images/Dream11/player.png" 
-                                                                alt="" title="Select a Defender from the player list" class="center-block img-responsive">
-                                                    			
-                                                            
-                                                             <c:choose>
-                                                             <c:when test="${isPlayerAvail}">
-                                                             	<div class="ism-element__name ism-element__name--placeholder">
-                                                                ${playerName} <abbr title="Forward" class="ism-element__type"><span class="ism-element__type__short">${price}</span></abbr>
-                                                             </div>
-                                                             </c:when>
-                                                             <c:otherwise>
-                                                             <div class="ism-element__name ism-element__name--placeholder">
-                                                                <abbr title="Forward" class="ism-element__type"><span class="ism-element__type__short">FWD</span></abbr>
-                                                             </div>
-                                                             </c:otherwise>
-                                                             </c:choose>
-
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            
-                                        </div>
-                                        
-
-                                  
-                                </section>
-                               
-                                
+				<div class="col-lg-8 team_map_dream11">                              
+					<div class="ism-element-row ism-element-row--pitch">
+                    	<div id="ismr-pos1" class="ism-pitch__unit ism-pitch__unit--4"> 							
+                           	<s:sport position="1" playerType="Goalkeeper"/> 
+                           	<div class="ism-element" tabindex="0">                                               
+							<div 
+							<c:choose>
+							<c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when>
+							<c:otherwise>class="class="ismjs-select"</c:otherwise>
+							</c:choose>
+							>              
+								<img src="${context}/redBlackTheme/images/Dream11/goalkeeper_old.png"  alt="" title="Select a Goalkeeper from the player list" class="img-responsive gaolkeeper_hvr">								       
+								<c:choose>
+									<c:when test="${isPlayerAvail}">
+										<div class="ism-element__name ism-element__name--placeholder">
+										  ${playerName} <abbr title="Goalkeeper" class="ism-element__type"><span class="ism-element__type__short">${price}</span></abbr>
+										</div>
+									</c:when>
+									<c:otherwise>
+										<div class="ism-element__name ism-element__name--placeholder">
+										   <abbr title="Goalkeeper" class="ism-element__type"><span class="ism-element__type__short">GKP</span></abbr>
+										</div>
+									</c:otherwise>
+								</c:choose>                                                            
+				    		</div>	
+				    		</div>						
+						</div>
+					</div>
+					<div class="ism-element-row ism-element-row--pitch">
+	                    <div id="ismr-pos3" class="ism-pitch__unit ism-pitch__unit--5">
+	                        <s:sport position="1" playerType="Defender"/>
+                            <div class="ism-element" tabindex="0">
+                                <div 
+                                <c:choose>
+                                	<c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"                                   	
+                                	</c:when>
+                                	<c:otherwise>class="ismjs-select"</c:otherwise>
+                                </c:choose>
+                                >                                                                                                                
+                                    <img src="${context}/redBlackTheme/images/Dream11/player.png" 
+                                    alt="" title="Select a Defender from the player list" class="center-block img-responsive">
+                        															
+                                    <c:choose>
+	                                    <c:when test="${isPlayerAvail}">
+	                                       ${playerName} <abbr title="Defender">
+	                                       <span class="ism-element__type__short">${price}</span></abbr>
+	                                    </c:when>
+	                                    <c:otherwise>
+	                                         <abbr title="Defender" ><span >DEF</span></abbr>
+	                                    </c:otherwise>
+                                    </c:choose>                                                            
+                                 </div>
                             </div>
-                                               
-                   
-                               
-               
-               
-              
+						</div>
+                    <div id="ismr-pos4" class="ism-pitch__unit ism-pitch__unit--5">
+                         <s:sport position="2" playerType="Defender"/>
+                            <div class="ism-element" tabindex="0">
+                                <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
+                                    <img src="${context}/redBlackTheme/images/Dream11/player.png" 
+                                        alt="" title="Select a Defender from the player list" class="center-block img-responsive">
+                                     <c:choose>
+                                     <c:when test="${isPlayerAvail}">
+                                     	<div class="ism-element__name ism-element__name--placeholder">
+                                        ${playerName} <abbr title="Defender" class="ism-element__type"><span class="ism-element__type__short">${price}</span></abbr>
+                                     </div>
+                                     </c:when>
+                                     <c:otherwise>
+                                     <div class="ism-element__name ism-element__name--placeholder">
+                                         <abbr title="Defender" class="ism-element__type"><span class="ism-element__type__short">DEF</span></abbr>
+                                     </div>
+                                     </c:otherwise>
+                                     </c:choose>
+                                </div>
+                            </div>
+                    </div>
+                    <div id="ismr-pos5" class="ism-pitch__unit ism-pitch__unit--5">
+                        <div>
+                         <s:sport position="3" playerType="Defender"/>
+                            <div class="ism-element" tabindex="0">
+
+                                <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
+
+                                    <img src="${context}/redBlackTheme/images/Dream11/player.png" 
+                                        alt="" title="Select a Defender from the player list" class="center-block img-responsive">
+                            			
+
+                                   
+                                     <c:choose>
+                                     <c:when test="${isPlayerAvail}">
+                                     	<div class="ism-element__name ism-element__name--placeholder">
+                                        ${playerName} <abbr title="Defender" class="ism-element__type"><span class="ism-element__type__short">${price}</span></abbr>
+                                     </div>
+                                     </c:when>
+                                     <c:otherwise>
+                                     <div class="ism-element__name ism-element__name--placeholder">
+                                         <abbr title="Defender" class="ism-element__type"><span class="ism-element__type__short">DEF</span></abbr>
+                                     </div>
+                                     </c:otherwise>
+                                     </c:choose>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div id="ismr-pos6" class="ism-pitch__unit ism-pitch__unit--5">
+                        <div>
+                         <s:sport position="4" playerType="Defender"/>
+                            <div class="ism-element" tabindex="0">
+
+                                <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
+
+                                   <img src="${context}/redBlackTheme/images/Dream11/player.png" 
+                                   alt="" title="Select a Defender from the player list" class="center-block img-responsive">
+                            			
+
+                                   
+                                     <c:choose>
+                                     <c:when test="${isPlayerAvail}">
+                                     	<div class="ism-element__name ism-element__name--placeholder">
+                                        ${playerName} <abbr title="Defender" class="ism-element__type"><span class="ism-element__type__short">${price}</span></abbr>
+                                     </div>
+                                     </c:when>
+                                     <c:otherwise>
+                                     <div class="ism-element__name ism-element__name--placeholder">
+                                         <abbr title="Defender" class="ism-element__type"><span class="ism-element__type__short">DEF</span></abbr>
+                                     </div>
+                                     </c:otherwise>
+                                     </c:choose>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    
                 
-                
+                </div>
+
+                                       
+
+                                       <div class="ism-element-row ism-element-row--pitch">
+                                           <div id="ismr-pos11" class="ism-pitch__unit ism-pitch__unit--5">
+                                               <div>
+                                               <s:sport position="1" playerType="Midfielder"/>
+                                                   <div class="ism-element" tabindex="0">
+                                                       <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
+
+                                                           <img src="${context}/redBlackTheme/images/Dream11/player.png" 
+                                                               alt="" title="Select a Defender from the player list" class="center-block img-responsive">
+                                                   			
+														
+                                                            <c:choose>
+                                                            <c:when test="${isPlayerAvail}">
+                                                            	<div class="ism-element__name ism-element__name--placeholder">
+                                                               ${playerName} <abbr title="Midfielder" class="ism-element__type"><span class="ism-element__type__short">${price}</span></abbr>
+                                                            </div>
+                                                            </c:when>
+                                                            <c:otherwise>
+                                                            <div class="ism-element__name ism-element__name--placeholder">
+                                                               <abbr title="Midfielder" class="ism-element__type"><span class="ism-element__type__short">MID</span></abbr>
+                                                            </div>
+                                                            </c:otherwise>
+                                                            </c:choose>
+                                                           </div>
+                                                   </div>
+                                               </div>
+                                           </div>
+                                           <div id="ismr-pos12" class="ism-pitch__unit ism-pitch__unit--5">
+                                               <div>
+                                                <s:sport position="2" playerType="Midfielder"/>
+                                                   <div class="ism-element" tabindex="0">
+
+                                                       <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
+
+                                                          
+                                                               <img src="${context}/redBlackTheme/images/Dream11/player.png"  alt="" title="Select a Midfielder from the player list" class="ism-shirt ism-element__shirt">
+
+                                                          
+                                                            <c:choose>
+                                                            <c:when test="${isPlayerAvail}">
+                                                            	<div class="ism-element__name ism-element__name--placeholder">
+                                                               ${playerName} <abbr title="Midfielder" class="ism-element__type"><span class="ism-element__type__short">${price}</span></abbr>
+                                                            </div>
+                                                            </c:when>
+                                                            <c:otherwise>
+                                                            <div class="ism-element__name ism-element__name--placeholder">
+                                                               <abbr title="Midfielder" class="ism-element__type"><span class="ism-element__type__short">MID</span></abbr>
+                                                            </div>
+                                                            </c:otherwise>
+                                                            </c:choose>
+                                                       </div>
+
+                                                   </div>
+                                               </div>
+                                           </div>
+                                           <div id="ismr-pos13" class="ism-pitch__unit ism-pitch__unit--5">
+                                               <div>
+                                                <s:sport position="3" playerType="Midfielder"/>
+                                                   <div class="ism-element" tabindex="0">
+
+                                                       <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
+
+                                                           <img src="${context}/redBlackTheme/images/Dream11/player.png" 
+                                                               alt="" title="Select a Defender from the player list" class="center-block img-responsive">
+                                                   			
+                                                            <c:choose>
+                                                            <c:when test="${isPlayerAvail}">
+                                                            	<div class="ism-element__name ism-element__name--placeholder">
+                                                               ${playerName} <abbr title="Midfielder" class="ism-element__type"><span class="ism-element__type__short">${price}</span></abbr>
+                                                            </div>
+                                                            </c:when>
+                                                            <c:otherwise>
+                                                            <div class="ism-element__name ism-element__name--placeholder">
+                                                               <abbr title="Midfielder" class="ism-element__type"><span class="ism-element__type__short">MID</span></abbr>
+                                                            </div>
+                                                            </c:otherwise>
+                                                            </c:choose>
+                                                       </div>
+
+                                                   </div>
+                                               </div>
+                                           </div>
+                                           <div id="ismr-pos14" class="ism-pitch__unit ism-pitch__unit--5">
+                                               <div>
+                                               <s:sport position="4" playerType="Midfielder"/>
+                                                   <div class="ism-element" tabindex="0">
+                                                       <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
+
+                                                           <img src="${context}/redBlackTheme/images/Dream11/player.png" 
+                                                               alt="" title="Select a Defender from the player list" class="center-block img-responsive">
+                                                   			
+                                                   		<c:choose>
+                                                            <c:when test="${isPlayerAvail}">
+                                                            	<div class="ism-element__name ism-element__name--placeholder">
+                                                               ${playerName} <abbr title="Midfielder" class="ism-element__type"><span class="ism-element__type__short">${price}</span></abbr>
+                                                            </div>
+                                                            </c:when>
+                                                            <c:otherwise>
+                                                            <div class="ism-element__name ism-element__name--placeholder">
+                                                                <abbr title="Midfielder" class="ism-element__type"><span class="ism-element__type__short">MID</span></abbr>
+                                                            </div>
+                                                            </c:otherwise>
+                                                            </c:choose>
+                                                       </div>
+
+                                                   </div>
+                                               </div>
+                                           </div>
+                                          
+                                       </div>
+                                       <div class="ism-element-row ism-element-row--pitch">
+                                           <div id="ismr-pos8" class="ism-pitch__unit ism-pitch__unit--3">
+                                               <div>
+                                               <s:sport position="1" playerType="Forward"/>
+                                                   <div class="ism-element" tabindex="0">
+
+                                                       <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
+
+                                                           <img src="${context}/redBlackTheme/images/Dream11/player.png" 
+                                                               alt="" title="Select a Defender from the player list" class="center-block img-responsive">
+                                                   			
+														
+                                                            <c:choose>
+                                                            <c:when test="${isPlayerAvail}">
+                                                            	<div class="ism-element__name ism-element__name--placeholder">
+                                                               ${playerName} <abbr title="Forward" class="ism-element__type"><span class="ism-element__type__short">${price}</span></abbr>
+                                                            </div>
+                                                            </c:when>
+                                                            <c:otherwise>
+                                                            <div class="ism-element__name ism-element__name--placeholder">
+                                                                <abbr title="Forward" class="ism-element__type"><span class="ism-element__type__short">FWD</span></abbr>
+                                                            </div>
+                                                            </c:otherwise>
+                                                            </c:choose>
+                                                       </div>
+
+                                                   </div>
+                                               </div>
+                                           </div>
+                                           <div id="ismr-pos9" class="ism-pitch__unit ism-pitch__unit--3">
+                                               <div>
+                                               <s:sport position="2" playerType="Forward"/>
+                                                   <div class="ism-element" tabindex="0">
+
+                                                       <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
+
+                                                           <img src="${context}/redBlackTheme/images/Dream11/player.png" 
+                                                               alt="" title="Select a Defender from the player list" class="center-block img-responsive">
+                                                   			
+                                                           
+                                                            <c:choose>
+                                                            <c:when test="${isPlayerAvail}">
+                                                            	<div class="ism-element__name ism-element__name--placeholder">
+                                                               ${playerName} <abbr title="Forward" class="ism-element__type"><span class="ism-element__type__short">${price}</span></abbr>
+                                                            </div>
+                                                            </c:when>
+                                                            <c:otherwise>
+                                                            <div class="ism-element__name ism-element__name--placeholder">
+                                                               <abbr title="Forward" class="ism-element__type"><span class="ism-element__type__short">FWD</span></abbr>
+                                                            </div>
+                                                            </c:otherwise>
+                                                            </c:choose>
+
+                                                       </div>
+
+                                                   </div>
+                                               </div>
+                                           </div>                                           
+                                       </div>                               
+                           </div>
            
 
         <!-- Player list starts -->        
@@ -395,57 +357,57 @@
             <p>Total Players : ${fn:length(sessionScope.playerList)}</p>
 
 		    <div id="ismjs-elements-list-tables">
-		    	<div class="table" id="Goalkeepers" >
-		        	<table class="ism-table ism-table--el ism-table--el-list" style="margin-bottom: 0;">
-		            	<thead>
-			                <tr class="ism-table__divider ism-el-type ism-el-type--1">
-			                    <th class="ism-table--el-list__status"></th>
-			                    <th class="ism-table--el-list__name"><a href="#" class="ism-link--bold">Goalkeepers</a></th>
-			                    <th class="ism-table--el-list__price"><abbr title="Price in Million INR">&#8377</abbr></th>
-			                    <c:choose>
-			                    <c:when test="${sessionScope.playersOrderBy eq 'user_count'}"><th class="ism-table--el-list__stat"><abbr title="Total Score">UC</abbr></c:when>
-			                    <c:otherwise><th class="ism-table--el-list__stat"><abbr title="Total Score">TS</abbr></th></c:otherwise>
-			                    </c:choose>
-			                </tr>
-		            	</thead>
+		    	<!-- goalkeeper list starts -->
+		    	<!-- below class (table) is used to filter based on player category -->
+		    	<div class="table heading" id="Goalkeepers" >
+		        	<table>
+		                <tr>
+		                    <th></th>
+		                    <th>Goalkeepers</th>
+		                    <th><abbr title="Price in Million INR">&#8377</abbr></th>
+		                    <c:choose>
+		                    <c:when test="${sessionScope.playersOrderBy eq 'user_count'}">
+		                    	<th><abbr title="Total Score">TS</abbr>
+		                    </c:when>
+		                    <c:otherwise>
+		                    	<th><abbr title="Total Score">TS</abbr></th>
+		                    </c:otherwise>
+		                    </c:choose>
+		                </tr>		            	
 		            </table>
 	            </div>
 	            <div class="table scroll-tbl" id="Goalkeepers" >
-	            <table class="ism-table ism-table--el ism-table--el-list">
-		            <tbody>
-			            <c:forEach var="playerMap" items="${sessionScope.playerList}">
-				            <c:if test="${playerMap.type eq 'Goalkeeper'}">
-					            <tr class="ismjs-menu ism-row-select" id="${playerMap.gameClubPlayerId}">
-					    			<td><a href="javascript:void(0);" onclick="addPlayer('${sessionScope.userId}','${playerMap.gameClubPlayerId}');">+</a></td>
-								    <td class="ism-table--el__primary">
-								        <div class="ism-media ism-media--centred">
-								            <div class="ism-media__figure">
-												<c:if test="${not empty playerMap.clubId and playerMap.clubId ne ''}">
-													<c:set value="${clubImageMap[playerMap.clubId]}" var="imageSrc" />
-												</c:if>	
-								              <!--  player list image -->              
-								                    <img src="/SportMgmt/images/Goalkeeper_${imageSrc}" height="20" width="20" alt="Arsenal" title="${playerMap.name}" class="ism-shirt">
-								            </div>
-								            <div class="ism-media__body ism-table--el__primary-text">
-								                <a href="#" class="ism-table--el__name">${playerMap.name}</a>
-								                <span class="ism-table--el__strong"><a href="javascript:void(0);"   title="Add Player"></a></span>
-								            </div>
-								        </div>
-					    			</td>
-							    <td class="ism-table--el__strong playerPrice">${playerMap.price}</td>
-							    <c:choose>
-							        <c:when test="${sessionScope.playersOrderBy eq 'user_count'}"><td class="ism-table--el__strong">${playerMap.userCount}</td></c:when>
-							        <c:otherwise><td class="ism-table--el__strong">${playerMap.totalScore}</td></c:otherwise>
-							    </c:choose>
-							</tr>
-							</c:if>
-							 </c:forEach>
-							</tbody>
-				        </table>
+		            <table class="my_team_points add_players bxslider13">		           
+				            <c:forEach var="playerMap" items="${sessionScope.playerList}">
+					            <c:if test="${playerMap.type eq 'Goalkeeper'}">
+					            	<!-- below class(ismjs-menu ism-row-select) is used to filter goalkeeper list based on team -->
+						            <tr class="ismjs-menu ism-row-select" id="${playerMap.gameClubPlayerId}">
+						    			<td><a href="javascript:void(0);" class="glyphicon glyphicon-plus" onclick="addPlayer('${sessionScope.userId}','${playerMap.gameClubPlayerId}');"></a></td>
+									    <td>
+											<c:if test="${not empty playerMap.clubId and playerMap.clubId ne ''}">
+												<c:set value="${clubImageMap[playerMap.clubId]}" var="imageSrc" />
+											</c:if>							                           
+							                <img src="/SportMgmt/images/Goalkeeper_${imageSrc}" height="20" width="20" alt="Arsenal" title="${playerMap.name}" class="ism-shirt">
+							                ${playerMap.name}								        
+						    			</td>
+									    <td>${playerMap.price}</td>
+									    <c:choose>
+									        <c:when test="${sessionScope.playersOrderBy eq 'user_count'}">
+									        	<td>${playerMap.userCount}</td>
+									       	</c:when>
+									        <c:otherwise>
+									        	<td>${playerMap.totalScore}</td>
+									        </c:otherwise>
+									    </c:choose>
+									</tr>
+								</c:if>
+							</c:forEach>							
+					</table>
 				</div>
+				<!-- Goalkeeper List ends -->
 			
 				<!-- Defender List starts -->
-			    <div  class="heading" id="Defenders">
+			    <div  class="table heading" id="Defenders">
 			        <table>			            
 		                <tr>
 		                    <th></th>
@@ -466,15 +428,14 @@
 			        <table class="my_team_points add_players bxslider13">			           
 			            <c:forEach var="playerMap" items="${sessionScope.playerList}">
 				            <c:if test="${playerMap.type eq 'Defender'}">
-					            <tr id="${playerMap.gameClubPlayerId}">
+					            <tr class="ismjs-menu ism-row-select" id="${playerMap.gameClubPlayerId}">
 								    <td ><a href="javascript:void(0);"  class="glyphicon glyphicon-plus" onclick="addPlayer('${sessionScope.userId}','${playerMap.gameClubPlayerId}');"></a></td>
 								    <td>
 										<c:if test="${not empty playerMap.clubId and playerMap.clubId ne ''}">
 											<c:set value="${clubImageMap[playerMap.clubId]}" var="imageSrc" />
 										</c:if>
 										<img src="/SportMgmt/images/Defender_${imageSrc}" height="20" width="20" alt="" title="${playerMap.name}" class="ism-shirt">
-						                <a href="#">${playerMap.name}</a>
-						                <span><a href="javascript:void(0);"  title="Add Player"></a></span>
+						                ${playerMap.name}						                
 						            </td>
 								    <td>${playerMap.price}</td>
 								    <c:choose>
@@ -488,7 +449,7 @@
 				</div>
 				<!-- Defender List ends -->
 				<!-- Midfielders List starts -->
-			   <div class="heading" id="Midfielders">
+			   <div class=" table heading" id="Midfielders">
 			        <table>
 			            <tr>
 		                    <th></th>
@@ -514,12 +475,10 @@
 										<c:if test="${not empty playerMap.clubId and playerMap.clubId ne ''}">
 										<c:set value="${clubImageMap[playerMap.clubId]}" var="imageSrc" />
 										</c:if>
-						               <img src="/SportMgmt/images/Midfielder_${imageSrc}" height="20" width="20" alt="Arsenal" title="${playerMap.name}" class="ism-shirt">
-						               			          
-						                <a href="#" class="ism-table--el__name">${playerMap.name }</a>
-						                <span class="ism-table--el__strong"><a href="javascript:void(0);"  title="Add Player"></a></span>
+						               <img src="/SportMgmt/images/Midfielder_${imageSrc}" height="20" width="20" alt="" title="${playerMap.name}">
+						               ${playerMap.name }
 						     		</td>
-								    <td class="ism-table--el__strong playerPrice">${playerMap.price}</td>
+								    <td>${playerMap.price}</td>
 								    <c:choose>
 								        <c:when test="${sessionScope.playersOrderBy eq 'user_count'}">
 								        	<td>${playerMap.userCount}</td>
@@ -536,8 +495,8 @@
 			    <!-- Midfielders List ends -->
 			
 				<!-- Forwards List ends -->
-			    <div class="heading" id="Forwards" >
-			        <table class="ism-table ism-table--el ism-table--el-list" style="margin-bottom: 0">			           
+			    <div class="table heading" id="Forwards" >
+			        <table class="ism-table ism-table--el ism-table--el-list" >			           
 		                <tr>
 		                    <th></th>
 		                    <th><a href="#" class="ism-link--bold">Forward</a></th>
@@ -553,51 +512,42 @@
 		                </tr>			            
 		            </table>
 				</div>
-            <div class="table scroll-tbl" id="Forwards">
-        <table class="ism-table ism-table--el ism-table--el-list">
-            <tbody>
-            <c:forEach var="playerMap" items="${sessionScope.playerList}">
-            <c:if test="${playerMap.type eq 'Forward'}">
-            <tr class="ismjs-menu ism-row-select ism-element-list__info--0" id="${playerMap.gameClubPlayerId}">
-    <td class="ism-table--el__status text-center addPlayer">        
-            <a href="javascript:void(0);"  onclick="addPlayer('${sessionScope.userId}','${playerMap.gameClubPlayerId}');" >+</a>
-        
-    </td>
-    <td class="ism-table--el__primary">
-        <div class="ism-media ism-media--centred">
-            <div class="ism-media__figure">
-            
-               <c:if test="${not empty playerMap.clubId and playerMap.clubId ne ''}">
-				<c:set value="${clubImageMap[playerMap.clubId]}" var="imageSrc" />
-				</c:if>
-               <img src="/SportMgmt/images/Forward_${imageSrc}" height="20" width="20" alt="Arsenal" title="${playerMap.name}" class="ism-shirt">
-            </div>
-            <div class="ism-media__body ism-table--el__primary-text">
-                <a href="#" class="ism-table--el__name">${playerMap.name}</a>
-                <span class="ism-table--el__strong"><a href="javascript:void(0);"   title="Add Player"></a></span>
-            </div>
-        </div>
-
-    </td>
-    <td class="ism-table--el__strong playerPrice">${playerMap.price }</td>
-    <c:choose>
-        <c:when test="${sessionScope.playersOrderBy eq 'user_count'}"><td class="ism-table--el__strong">${playerMap.userCount}</td></c:when>
-        <c:otherwise><td class="ism-table--el__strong">${playerMap.totalScore}</td></c:otherwise>
-    </c:choose>
-</tr>
-</c:if>
-</c:forEach>
-</tbody>
-        </table>
-    </div>
+            	<div class="table scroll-tbl" id="Forwards">
+			        <table>
+			            <c:forEach var="playerMap" items="${sessionScope.playerList}">
+			            <c:if test="${playerMap.type eq 'Forward'}">
+				            <tr class="ismjs-menu ism-row-select ism-element-list__info--0" id="${playerMap.gameClubPlayerId}">
+							    <td>        
+							    	<a href="javascript:void(0);"  class="glyphicon glyphicon-plus" onclick="addPlayer('${sessionScope.userId}','${playerMap.gameClubPlayerId}');" ></a>
+							    </td>
+							    <td>
+									<c:if test="${not empty playerMap.clubId and playerMap.clubId ne ''}">
+										<c:set value="${clubImageMap[playerMap.clubId]}" var="imageSrc" />
+									</c:if>
+									<img src="/SportMgmt/images/Forward_${imageSrc}" height="20" width="20" alt="" title="${playerMap.name}">
+					                ${playerMap.name}
+				    			</td>
+							    <td>${playerMap.price }</td>
+							    <c:choose>
+							        <c:when test="${sessionScope.playersOrderBy eq 'user_count'}">
+							        	<td>${playerMap.userCount}</td>
+							        </c:when>
+							        <c:otherwise>
+							        	<td>${playerMap.totalScore}</td>
+							        </c:otherwise>
+							    </c:choose>
+							</tr>
+						</c:if>
+						</c:forEach>
+					</table>
+				</div>
+			</div>
+		</div> <!--  side div with player list ends -->
+	</div>
+	</div>
+	</div>
 </div>
-</div>
-</div></div>
-               
-
-            </div>
-       
-        </body>
+</body>
    
     
    <script type="text/javascript">
@@ -651,7 +601,7 @@
 	function aa(){
 		var elems2 = '<div class="ismjs-select">'+
 	     '<picture>'+
-	     '<img src="/SportMgmt/images/animated_wk.gif">'+
+	     '<img src="${context}/redBlackTheme/images/Dream11/player_old.png">'+
 	     '</picture>'+
 	     '<div class="ism-element__name ism-element__name--placeholder"> <abbr title="Goalkeeper" class="ism-element__type"><span class="ism-element__type__short">GKP</span></abbr></div>';
 	     
@@ -670,7 +620,7 @@
 	function defenderRemove(){
 		var def2 = '<div class="ismjs-select">'+
 	     '<picture>'+
-	    '<img src="/SportMgmt/images/animated_bat.gif"  alt="" title="Select a Defender from player list" class="ism-shirt ism-element__shirt">'+
+	    '<img src="${context}/redBlackTheme/images/Dream11/player.png"  alt="" title="Select a Defender from player list" class="ism-shirt ism-element__shirt">'+
 	     '</picture>'+
 	     '<div class="ism-element__name ism-element__name--placeholder"> <abbr title="Defender" class="ism-element__type"><span class="ism-element__type__short">DEF</span></abbr></div>';
 	     
@@ -693,7 +643,7 @@
 	function midfielderRemove(){
 		var midd2 = '<div class="ismjs-select">'+
 	     '<picture>'+
-	     '<img src="/SportMgmt/images/animated_bowl.gif" alt="" title="Select a Midfielder from player list" class="ism-shirt ism-element__shirt">'+
+	     '<img src="${context}/redBlackTheme/images/Dream11/player.png" alt="" title="Select a Midfielder from player list" class="ism-shirt ism-element__shirt">'+
 	     '</picture>'+
 	     '<div class="ism-element__name ism-element__name--placeholder"> <abbr title="Midfielder" class="ism-element__type"><span class="ism-element__type__short">MID</span></abbr></div>';
 	    
@@ -713,7 +663,7 @@
 	function forwardRemove(){
 		var for2 = '<div class="ismjs-select">'+
 	     '<picture>'+
-	    '<img src="/SportMgmt/images/animated_ar.gif" alt="" title="Select a Forward from player list" class="ism-shirt ism-element__shirt">'+
+	    '<img src="${context}/redBlackTheme/images/Dream11/player.png" alt="" title="Select a Forward from player list" class="ism-shirt ism-element__shirt">'+
 	     '</picture>'+
 	     '<div class="ism-element__name ism-element__name--placeholder"> <abbr title="Forward" class="ism-element__type"><span class="ism-element__type__short">FWD</span></abbr></div>';
 	    
@@ -971,7 +921,7 @@
      {   $(".added-player-count").text(""+(userGameJson.playerList.length+1)+"/11");
      	<c:choose>
      	<c:when test="${isUnderDeadline}">
-     	alert("Hey buddy ! You are under deadline. Player can be added after deadline");
+     		alert("Hey buddy ! You are under deadline. Player can be added after deadline");
      	</c:when>
      	<c:otherwise>
     	 var playerType = '';
@@ -999,24 +949,24 @@
 		{
 			ajaxCall = false;
 		}
-		else if(avialBalance < playerPrice)
+		/* else if(avialBalance < playerPrice)
 		{
 			alert("Bank Account is less than player price");
 			ajaxCall = false;
-		}
-		else if(!(userJson.hasActivePlan || userJson.totalTransferForGameWeek <=1 || userJson.gameWeekNumberForPlayerTransfer <=1 || userJson.totalPoint > 4))
+		} */
+		/* else if(!(userJson.hasActivePlan || userJson.totalTransferForGameWeek <=1 || userJson.gameWeekNumberForPlayerTransfer <=1 || userJson.totalPoint > 4))
 		{
 			ajaxCall = false;
 			if(userJson.totalPoint < 4)
 			{
 				alert("Please active wild card to add player");
 			}
-		}
+		} */
 		else if (playerType == 'Goalkeeper')
 		{
 			if(typeof userGameJson != null && typeof userGameJson!= 'undefined' && typeof userGameJson['total'] !='undefined')
 			{
-				if(userGameJsonDreamEleven['total']['Goalkeeper'] >=1)
+				if(userGameJson['total']['Goalkeeper'] >=1)
 				{
 					ajaxCall = false;
 					alert("You can add maximum 1 Goalkeeper. Please Remove any one first ");
