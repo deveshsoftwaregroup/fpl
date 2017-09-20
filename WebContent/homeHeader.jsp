@@ -29,7 +29,7 @@
    
    
 
-<div id="myModal" class="row" role="dialog">
+<%-- <div id="myModal" class="row" role="dialog">
 	
 	<div id="login-overlay" class="col-lg-4 col-lg-offset-8 register_login">
 	          
@@ -108,31 +108,25 @@
 	                  		</div>
 	                  	</div>
 	                  </div>
-	                  </div>
-	                  
+	                  </div>	                  
 	              </div>
 	          </div>
 	  </div>
-</div>
+</div> --%>
 
 <div id="myModal11" class="modal fade" role="dialog">
   
 	<div id="login-overlay" class="modal-dialog loginForm">
 	      <div class="modal-content">
 	          <div class="modal-header">
-	          	<img alt="" src="../images/ipl.jpg">
-	          	<span class="fan">Fantasy</span>
 	              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
 	              <h4 class="modal-title" id="myModalLabel">Login</h4>
 	          </div>
 	          <div class="modal-body">
 	              <div class="row">
-	                  <div class="col-xs-12">
-	                  
+	                  <div class="col-xs-12">	                  
 	                  <div class="col-xs-12">
 	                  	<div class="row">
-	                  	
-	                  	     
 	                          <form id="loginForm" name="LoginForme" action="" method="get" onsubmit="event.preventDefault();" autocomplete="off">
 	                              
 	                              <div class="col-xs-12">
@@ -144,8 +138,7 @@
 			                              	<label class="input__label input__label--hoshi input__label--hoshi-color-1" for="email">
 			                              		<span class="input__label-content input__label-content--hoshi">Email ID</span>
 			                              	</label>
-			                              </span>
-		                              	                              		
+			                              </span>		                              	                              		
 		                              </div>
 		                             </div>
 	                              </div>
@@ -168,24 +161,14 @@
 	                              <div class="col-xs-12">
 	                              	<div class="row">
 	                              		
-	                              			<div class="col-sm-6 hide">
-	                              				
-	                              				<div class="checkbox hide">
-				                                  <label>
-				                                      <input type="checkbox" name="remember" id="remember"> Remember login
-				                                  </label>
-				                                  <p class="help-block">(if this is a private computer)</p>
-				                              </div>
-	                              				
-	                              			</div>
+	                              			
 	                              			<div class="col-sm-12">
 		                              			<div class="row">
 			                              			<div class="form-group">
-			                              				<a href="javascript:void(0);" class="forgotBtn" data-toggle="modal" data-target="#myModal3">Forgot Password</a>
+			                              				<a href="javascript:void(0);" data-toggle="modal" data-target="#myModal3"><span class="input__label-content input__label-content--hoshi">Forgot Password</span></a>
 			                              			</div>
 		                              			</div>
-	                              			</div>
-	                              		
+	                              			</div>	                              		
 		                            </div>
 		                         </div>
 		                         
@@ -212,7 +195,7 @@
 	                  	<div class="col-xs-12">
 	                  		<div class="row">
 	                  			<div class="col-sm-6">
-	                  				
+	                  				<br>
 	                  					<div class="form-group">
 	                  					
 	                  				<a href="javascript:void(0);" data-toggle="modal" data-target="#myModal1" class="btn btn-block btn-social btn-info">
@@ -223,9 +206,9 @@
 	                  	
 	                  			</div>
 	                  			<div class="col-sm-6">
-	                  				
+	                  				<br>
 	                  					<div class="form-group">
-	                  				<a class="btn btn-block btn-social btn-facebook" href="javascript:void(0);" onclick="loginWithFB()">
+	                  				<a class="loginBtn center-block loginBtn--facebook" href="javascript:void(0);" onclick="loginWithFB()">
 	                  					<span class="fa fa-facebook"></span> Sign in with Facebook
 	                  				</a>
 	                  				
@@ -292,6 +275,7 @@
             </div> 
             
             <div align="center">
+            <br>
                 <button class="loginBtn center-block loginBtn--facebook" onclick="loginWithFB()";>
   				Login with Facebook
 				</button>
