@@ -81,7 +81,7 @@ text-decoration:none
 }
 
 .table a {
-color:#242424;
+color:#fff;
 text-decoration:none;
 vertical-align:middle
 }
@@ -140,7 +140,8 @@ vertical-align:middle
 }
 
 .table td {
-border-bottom:1px solid #E8E8E8
+border-bottom:1px solid #E8E8E8;
+text-align:left;
 }
 
 .table td.pos {
@@ -828,7 +829,7 @@ padding-right:0
 }
 
 .ism .ism-form__label {
-display:block;
+display:none;
 margin-bottom:0;
 cursor:pointer;
 font-size:12px;
@@ -841,9 +842,10 @@ font-size:12px;
         margin-bottom: 4px;
     position: relative;
     color: #fff;
-    background-color: cornflowerblue;
+    background-color: red;
     padding:10px;
-    border-radius:5px;
+    
+    text-align:center;
 }
 .ism .ism-form__label--bold {
 font-family:"PremierSans-Bold",Arial,"Helvetica Neue",Helvetica,sans-serif
@@ -891,11 +893,8 @@ cursor:not-allowed
 }
 
 .ism .ism-form__select-wrap {
-position:relative;
-border-bottom:1px solid #192357;
-background-color:#e8e8e8;
-z-index:5;
-padding:10px;
+
+
 }
 
 .ism .ism-form__select-wrap::after {
@@ -1808,7 +1807,7 @@ overflow:hidden;
 white-space:nowrap;
 text-overflow:ellipsis;
 padding:.1rem .2rem;
-background-color:rgb(19, 19, 19);
+background-color:cornflowerblue;
 color:#fff;
 font-size:1rem
 }
@@ -1834,10 +1833,11 @@ color:#242424
 }
 
 .ism .ism-element__name--placeholder {
-    background-color: #242424;
+    background-color:transparent;
 }
 .ism .ism-element__name--placeholder abbr{
-    color: #00ff87;
+    color: #fff;
+    font-size:14px;
 }
 
 .ism .ism-element__type {
@@ -1882,7 +1882,10 @@ right:0
 .ism .ism-element__link {
 display:block;
 font-size:1rem;
-line-height:1
+line-height:1;
+background-color: red;
+padding: 5px;
+border-radius:3px;
 }
 
 .ism .ism-transfer--proposed .ism-element {
@@ -1974,11 +1977,12 @@ padding-right:0px;
 padding-left:0px;
     width: 90% !important;
     margin: auto !important;
-    max-width: 70px !important;
+    max-width: 100px !important;
     max-height: 70px;
     position:relative;
     left:45%;
 }
+.ism .ism-element img {max-width: 70px !important; margin:auto; }
 
 .ism .ism-element__shirt {
 padding-bottom:0rem;
@@ -1989,6 +1993,8 @@ background-size:55px 10px
 padding-top:.4em;
 padding-bottom:.4em;
 font-size:10px;
+position:relative;
+
 }
 
 .ism .ism-element__type:after {
@@ -2028,6 +2034,7 @@ content:"";
 display:table;
 clear:both
 }
+
 
 .ism .ism-element-row--pitch {
 padding-bottom:.8rem
@@ -2726,8 +2733,10 @@ background-color:#e8e8e8
 
 .ism-shirt {
 display:inline-block;
-vertical-align:middle
+vertical-align:middle;
+
 }
+.ismjs-element-filter {color:#fff !important;}
 
 .ism .ism-sideboard {
 margin-bottom:1rem;
@@ -3788,11 +3797,11 @@ background-image:url(data:image/gif;base64,R0lGODlhFAAUAPcAAAAAAJmZmZ2dnZ6enqKio
 }
 }
 .ism-element .ismjs-select {
-    background: rgba(0,0,0,0.3);
+    
     padding: 5px;
-    border-radius: 50%;
-        max-width: 70px;
-    max-height: 70px;
+    border-radius: 20%;
+        max-width: 100px;
+    max-height: 86px;
     transition: all .6s ease;
   -moz-transition: all .6s ease;
   -ms-transition: all .6s ease;
@@ -3800,7 +3809,8 @@ background-image:url(data:image/gif;base64,R0lGODlhFAAUAPcAAAAAAJmZmZ2dnZ6enqKio
   -o-transition: all .6s ease;
 }
 .ism-element .ismjs-select:hover {
-    background: #19c9f1;
+    background: red;
+    
 }
 .scroll-tbl {overflow-y:auto; max-height: 177px;}
 .table .ism-table td, .table th {
@@ -3889,3 +3899,8 @@ img.rgt-logo {
     background: #fff;
 } */
 
+.heading { margin-bottom:0px !important;}
+.heading  th {color:#000 !important; }
+.heading  th a {color:#000 !important; }
+select option, optgroup { color:#000 !important;}
+select {background-color:#fff; width:100%; padding:10px;}

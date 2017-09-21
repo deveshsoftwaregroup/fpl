@@ -13,6 +13,7 @@
 <div class="container ">
 	<div class="row">
 		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 transfers_predict11_map">
+			<img src="${context}/redBlackTheme/images/banner12.png" class="img-responsive center-block">
 			<div>
 				<h3>Select Players from List</h3>
 				<p>Gameweek ${gameWeekNumber} Deadline: <time datetime="2016-08-27T10:30:00Z">${deadline}</time><p>
@@ -191,7 +192,7 @@
                                                        <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
 
                                                           
-                                                               <img src="${context}/redBlackTheme/images/Dream11/player.png"  alt="" title="Select a Midfielder from the player list" class="ism-shirt ism-element__shirt">
+                                                               <img src="${context}/redBlackTheme/images/Dream11/player.png"  alt="" title="Select a Midfielder from the player list" class="ism-shirt ism-element__shirt center-block">
 
                                                           
                                                             <c:choose>
@@ -330,7 +331,8 @@
 
         <!-- Player list starts -->        
         <div id="ismr-side" class="ism-sidebar">             
-			<h3 class="subHeader ism-sub-header ism-section-header__title" tabindex="0" id="ismjs-side-focus">Players</h3>
+			<h3 class="subHeader ism-sub-header ism-section-header__title" tabindex="0" id="ismjs-side-focus">PLAYERS</h3>
+			 <!--<div><img src="SportMgmt/redBlackTheme/images/Dream11/player_btn.png" class="img-responsive center-block"></div>-->
             <form class="ism-form">
           		<div class="ism-form__group">
             		<label for="ismjs-element-filter" class="ism-form__label">View</label>
@@ -513,7 +515,7 @@
 		            </table>
 				</div>
             	<div class="table scroll-tbl" id="Forwards">
-			        <table>
+			        <table class="my_team_points add_players bxslider13">
 			            <c:forEach var="playerMap" items="${sessionScope.playerList}">
 			            <c:if test="${playerMap.type eq 'Forward'}">
 				            <tr class="ismjs-menu ism-row-select ism-element-list__info--0" id="${playerMap.gameClubPlayerId}">

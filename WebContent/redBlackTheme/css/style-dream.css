@@ -550,6 +550,7 @@ td, th {
   background-image: linear-gradient(to bottom, #dfe5df, #839287);
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#f62b2b, endColorstr=#839287); }
 
+
 .my_points .bx-wrapper {
   margin-bottom: 40px; }
 
@@ -1000,4 +1001,6 @@ tbody tr {
   .coupon_card .claim_btn {
     margin-right: 50px; } }
 
+
+.heading { margin-bottom:0px;}
 /*# sourceMappingURL=style-dream.css.map */
