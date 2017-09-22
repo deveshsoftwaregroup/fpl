@@ -84,7 +84,7 @@
  
                 </div>
                 <div class="col-lg-4 col-sm-4 col-tn-12 col-xs-12 all_play">
-                    <a href="" data-toggle="modal" data-target="#myModal"><img src="${context}/redBlackTheme/images/play-fantasy-league.png" class="img-responsive center-block"></a>
+                    <a href="" data-toggle="modal" data-target="#myModal"><img src="${context}/redBlackTheme/images/play-fantasy-league_1.png" class="img-responsive center-block"></a>
                     <br>
                      <a href="#"><img src="${context}/redBlackTheme/images/google-adbanner.png" class="img-responsive center-block"></a>
                     <br>

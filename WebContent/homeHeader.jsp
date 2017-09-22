@@ -29,7 +29,7 @@
    
    
 
- <div id="myModal" class="row" role="dialog">
+ <%-- <div id="myModal" class="row" role="dialog">
 	
 	<div id="login-overlay" class="col-lg-4 col-lg-offset-8 register_login">
 	          
@@ -112,7 +112,7 @@
 	              </div>
 	          </div>
 	  </div>
-</div> --%>
+</div>  --%>
 
 <div id="myModal11" class="modal fade" role="dialog">
   
@@ -333,18 +333,6 @@
 		            </div> 
 		          </div>
 		       </form>
-		       
-		       <div class="successBox">
-		       		<div class="col-xs-12">
-		       			<div class="form-group">
-		       				<p>
-		       				hello ..
-		       				</p>
-		       			</div>
-		       		</div>
-		       </div>
-		    
-		    
 	       </div>
 	      </div>
 	  </div>
