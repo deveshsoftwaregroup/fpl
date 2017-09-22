@@ -5,6 +5,14 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib uri="sportmgmt.tld" prefix="s" %>  
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+
+
+
+
+
+<style>
+         .my_team_points li {padding: 5px !important;}
+      </style>
     
 <s:sportExt retrieve="priceList" />
 <s:sportExt retrieve="deadLine" />
@@ -18,8 +26,9 @@
 				<h3>Select Players from List</h3>
 				<p>Gameweek ${gameWeekNumber} Deadline: <time datetime="2016-08-27T10:30:00Z">${deadline}</time><p>
 	            <p>Player Count: <span class="added-player-count"> </span> </p>			
-				<div class="col-lg-8 team_map_dream11">                              
-					<div class="ism-element-row ism-element-row--pitch">
+				<div class="col-lg-8 team_map_dream11">
+				<div class="row" >                              
+					<!-- <div class="ism-element-row ism-element-row--pitch">-->
                     	<div id="ismr-pos1" class="ism-pitch__unit ism-pitch__unit--4"> 							
                            	<s:sport position="1" playerType="Goalkeeper"/> 
                            	<div class="ism-element" tabindex="0">                                               
@@ -29,7 +38,7 @@
 							<c:otherwise>class="class="ismjs-select"</c:otherwise>
 							</c:choose>
 							>              
-								<img src="${context}/redBlackTheme/images/Dream11/goalkeeper_old.png"  alt="" title="Select a Goalkeeper from the player list" class="img-responsive gaolkeeper_hvr">								       
+								<img src="${context}/redBlackTheme/images/Dream11/goalkeeper_old.png"  alt="" title="Select a Goalkeeper from the player list" class="img-responsive gaolkeeper_hvr"  onclick="openNav()">								       
 								<c:choose>
 									<c:when test="${isPlayerAvail}">
 										<div class="ism-element__name ism-element__name--placeholder">
@@ -113,7 +122,7 @@
                                      </c:when>
                                      <c:otherwise>
                                      <div class="ism-element__name ism-element__name--placeholder">
-                                         <abbr title="Defender" class="ism-element__type"><span class="ism-element__type__short">DEF</span></abbr>
+                                         <abbr title="Defender" class="ism-element__type"><span class="ism-element__type__short">Defender</span></abbr>
                                      </div>
                                      </c:otherwise>
                                      </c:choose>
@@ -329,7 +338,8 @@
                            </div>
            
 
-        <!-- Player list starts -->        
+        <!-- Player list starts --> 
+        <div   id="myNav" >   
         <div id="ismr-side" class="ism-sidebar">             
 			<h3 class="subHeader ism-sub-header ism-section-header__title" tabindex="0" id="ismjs-side-focus">PLAYERS</h3>
 			 <!--<div><img src="SportMgmt/redBlackTheme/images/Dream11/player_btn.png" class="img-responsive center-block"></div>-->
@@ -545,10 +555,12 @@
 				</div>
 			</div>
 		</div> <!--  side div with player list ends -->
+		</div>
 	</div>
 	</div>
 	</div>
 </div>
+
 </body>
    
     
@@ -947,8 +959,10 @@
 		console.info("Player Type "+playerType);
 		var ajaxCall = true;
 		var avialBalance = userJson.balanceCoins;
+		alert("playerType="+playerType);
 		if(playerType == '')
 		{
+			alert("undefied");
 			ajaxCall = false;
 		}
 		/* else if(avialBalance < playerPrice)
@@ -966,8 +980,9 @@
 		} */
 		else if (playerType == 'Goalkeeper')
 		{
+			alert("in goalkerr check playerType="+playerType);
 			if(typeof userGameJson != null && typeof userGameJson!= 'undefined' && typeof userGameJson['total'] !='undefined')
-			{
+			{alert("goal uundefined fals");
 				if(userGameJson['total']['Goalkeeper'] >=1)
 				{
 					ajaxCall = false;
@@ -977,8 +992,9 @@
 		}
 		else if (playerType == 'Midfielder')
 		{
+			alert("in midfielder check");
 			if(typeof userGameJson != null && typeof userGameJson != 'undefined' && typeof userGameJson['total'] !='undefined')
-			{
+			{alert("undefind false");
 				if(userGameJson['total']['Midfielder'] >=4)
 				{
 					ajaxCall = false;
@@ -1157,6 +1173,17 @@
 	     		});
    		}
      }
+     function openNav() {
+    	 alert("hi");
+    	    document.getElementById("myNav").style.height = "100%";
+    	}
+
+    	function closeNav() {
+    	    document.getElementById("myNav").style.height = "0%";
+    	}
      
 
   </script>
+
+
+

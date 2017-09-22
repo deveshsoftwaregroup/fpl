@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="${context}/redBlackTheme/css/jquery.bxslider.css" type="text/css">
     <link rel="stylesheet" href="${context}/redBlackTheme/css/theme.css" type="text/css">
     <link rel="stylesheet" href="${context}/redBlackTheme/css/tab-style.css" type="text/css">
+    <link rel="stylesheet" href="${context}/redBlackTheme/css/demo.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,400,600,700" rel="stylesheet">
 
 

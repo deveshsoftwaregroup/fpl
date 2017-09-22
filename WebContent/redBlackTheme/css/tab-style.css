@@ -44,4 +44,4 @@
     padding-bottom: 60px;
 }
 
-.panel-group .panel-heading + .panel-collapse > .panel-body, .panel-group .panel-heading + .panel-collapse > .list-group { border-top:0px ; border-bottom: 1px solid darkgreen}
+.panel-group .panel-heading + .panel-collapse > .panel-body, .panel-group .panel-heading + .panel-collapse > .list-group { border-top:0px ; border-bottom: 1px solid darkgreen;border-radius:5px; background-color: rgba(0,0,0,0.5);}

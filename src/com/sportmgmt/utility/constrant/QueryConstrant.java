@@ -19,6 +19,8 @@ public static final String SELECT_TOTAL_PLAYER_BY_POSITION = "select gcp.playing
 public static final String SELECT_TOTAL_PLAYING_PLAYER_BY_POSITION = "select gcp.playing_position, count(*) from GAME_CLUB_PLAYER gcp, USER_PLAYER up where gcp.game_club_player_id = up.game_club_player_id and up.user_id =:userId"
 		 +" and gcp.game_id =:gameId and up.is_playing=:isPlaying group by gcp.playing_position";
 
+public static final String SELECT_TOTAL_PLAYING_PLAYER_BY_POSITION_D_EL = "select gcp.playing_position, count(*) from GAME_CLUB_PLAYER gcp, D_EL_USER_PLAYER up where gcp.game_club_player_id = up.game_club_player_id and up.user_id =:userId"
+		 +" and gcp.game_id =:gameId and up.is_playing=:isPlaying group by gcp.playing_position";
 public static final String SELECT_USER_TOTAL_PLAYER = "select count(*) from GAME_CLUB_PLAYER gcp, USER_PLAYER up where gcp.game_club_player_id = up.game_club_player_id and up.user_id =:userId" 
 		+" and gcp.game_id =:gameId";
 
@@ -26,6 +28,8 @@ public static final String SELECT_USER_TOTAL_ACTIVE_PLAYER = "select count(*) fr
 		+" and gcp.game_id =:gameId and up.is_playing=:isPlaying";
 
 public static final String SELECT_USER_PLAYER_TOTAL_PRICE = "select sum(gcp.price) from GAME_CLUB_PLAYER gcp, USER_PLAYER up where gcp.game_club_player_id = up.game_club_player_id and up.user_id =:userId" 
+		+" and gcp.game_id =:gameId";
+public static final String SELECT_USER_PLAYER_TOTAL_PRICE_D_EL = "select sum(gcp.price) from GAME_CLUB_PLAYER gcp, D_EL_USER_PLAYERD_EL_USER_PLAYER up where gcp.game_club_player_id = up.game_club_player_id and up.user_id =:userId" 
 		+" and gcp.game_id =:gameId";
 
 public static final String INSERT_DEFAULT_USER_PLAN = "INSERT INTO USER_PLAN(USER_ID,PLAN_ID,USER_PLAN_DESC,IS_ACTIVE,BALANCE_AMOUNT,PLAN_CURRENCY) VALUES"+

@@ -29,7 +29,7 @@
    
    
 
-<%-- <div id="myModal" class="row" role="dialog">
+ <div id="myModal" class="row" role="dialog">
 	
 	<div id="login-overlay" class="col-lg-4 col-lg-offset-8 register_login">
 	          

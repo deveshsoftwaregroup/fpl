@@ -149,11 +149,11 @@ public class PlayerManager {
 					 criteria.add(Restrictions.eq("gameWeekId", new Integer(gameWeekId)));
 					 if(isDreamEleven())
 					 {
-						 criteria.add(Restrictions.eq("GROUP_TYPE",SportConstrant.DE_GAME_WEEK_HISTORY));
+						 criteria.add(Restrictions.eq("groupType",SportConstrant.DE_GAME_WEEK_HISTORY));
 					 }
 					 else
 					 {
-						 criteria.add(Restrictions.eq("GROUP_TYPE",SportConstrant.GAME_WEEK_HISTORY)); 
+						 criteria.add(Restrictions.eq("groupType",SportConstrant.GAME_WEEK_HISTORY)); 
 					 }
 					 PlayerGroup playerGroup =(PlayerGroup)criteria.uniqueResult();
 					//SQLQuery query = session.createSQLQuery(QueryConstrant.SELECT_GAME_WEEK_HISTORY_PLAYER_GROUP);

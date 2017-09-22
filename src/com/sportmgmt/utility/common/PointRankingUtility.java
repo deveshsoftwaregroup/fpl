@@ -123,7 +123,7 @@ public class PointRankingUtility {
 	public void setDreamEleven(boolean isDreamEleven) {
 		this.isDreamEleven = isDreamEleven;
 	}
-	private boolean createPlayerHistoryForGameWeek(String gameId,String gameWeekId,String userId) throws SportMgmtException
+	public boolean createPlayerHistoryForGameWeek(String gameId,String gameWeekId,String userId) throws SportMgmtException
 	{
 		logMessage = "";
 		boolean isSuccess = true;
