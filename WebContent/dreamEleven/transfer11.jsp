@@ -38,7 +38,7 @@
 							<c:otherwise>class="class="ismjs-select"</c:otherwise>
 							</c:choose>
 							>              
-								<img src="${context}/redBlackTheme/images/Dream11/goalkeeper_old.png"  alt="" title="Select a Goalkeeper from the player list" class="img-responsive gaolkeeper_hvr"  onclick="openNav()">								       
+								<img src=" ${context}/redBlackTheme/images/Dream11/goalkeeper_old.png"  alt="" title="Select a Goalkeeper from the player list" class="img-responsive gaolkeeper_hvr"  onclick="openNav()">								       
 								<c:choose>
 									<c:when test="${isPlayerAvail}">
 										<div class="ism-element__name ism-element__name--placeholder">
@@ -615,9 +615,9 @@
 	function aa(){
 		var elems2 = '<div class="ismjs-select">'+
 	     '<picture>'+
-	     '<img src="${context}/redBlackTheme/images/Dream11/player_old.png">'+
+	     '<img src="${context}/redBlackTheme/images/Dream11/player_old.png ">'+
 	     '</picture>'+
-	     '<div class="ism-element__name ism-element__name--placeholder"> <abbr title="Goalkeeper" class="ism-element__type"><span class="ism-element__type__short">GKP</span></abbr></div>';
+	     '<div class="ism-element__name ism-element__name--placeholder"> <abbr title="Goalkeeper" class="ism-element__type"><span class="ism-element__type__short">Goalkeeper</span></abbr></div>';
 	     
 	     $('.ism-element-row.ism-element-row--pitch:first-child .ismjs-remove').click(function () {
 	    	 var userId = userJson.userId;
@@ -737,7 +737,7 @@
 				var elems = '<div class="ismjs-menu" id="'+userId+'_'+gameClubPlayerId+'">'+
 		       
 		       '<picture>'+
-		        '<img src="/SportMgmt/images/Goalkeeper_'+clubImage+'" alt="" title="" class="ism-shirt ism-element__shirt">'+
+		        '<img src="/SportMgmt/images/Goalkeeper_'+clubImage+'" alt="'+playerName+'" title="" class="ism-shirt ism-element__shirt">'+
 		        '</picture>'+
 		        '<div class="ism-element__name">'+playerName+'</div>'+
 		        '<div class="ism-element__data">'+playerPrice+'</div>'+
@@ -959,7 +959,6 @@
 		console.info("Player Type "+playerType);
 		var ajaxCall = true;
 		var avialBalance = userJson.balanceCoins;
-		alert("playerType="+playerType);
 		if(playerType == '')
 		{
 			alert("undefied");
@@ -1054,7 +1053,7 @@
 	     					var elems = '<div class="ismjs-menu" id="'+userId+'_'+gameClubPlayerId+'">'+
 	     			        
 	     			       '<picture>'+
-	     			        '<img src="/SportMgmt/images/Goalkeeper_'+clubImage+'" alt="'+playerName+'" title="'+playerName+'" class="ism-shirt ism-element__shirt">'+
+	     			        '<img src="/SportMgmt/images/Goalkeeper'+clubImage+'" alt="'+playerName+'" title="'+playerName+'" class="ism-shirt ism-element__shirt">'+
 	     			        '</picture>'+
 	     			        '<div class="ism-element__name">'+playerName+'</div>'+
 	     			        '<div class="ism-element__data">'+playerPrice+'</div>'+
