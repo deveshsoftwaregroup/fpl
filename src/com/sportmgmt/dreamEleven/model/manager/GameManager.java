@@ -1292,7 +1292,7 @@ public class GameManager {
 					}
 					else
 					{
-						D_EL_USER_PLAYER userPlayer = (UserPlayer)results.get(0);
+						UserPlayer userPlayer = (UserPlayer)results.get(0);
 						if(isPlaying != null && !isPlaying.equals(""))
 						{
 							userPlayer.setIsPlaying(isPlaying.toUpperCase());
