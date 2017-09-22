@@ -362,63 +362,60 @@
 
 
 <div class="container">
-
 	<div class="row">
-               <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1  marg_top">
-                   <div class="row top_header">
-                       <div class="col-lg-12">
-                        <ul>
-                       <li class="flex-item"><img src="${context}/redBlackTheme/images/logo.png" class="img-responsive "></li>
-                        <li class="pwr_text flex-item">Powered By</li>
-                        <li class="flex-item" ><img src="${context}/redBlackTheme/images/poweredby-logo.png" class="img-responsive pwr_logo"></li>
-                        <li class="flex-item"><img src="${context}/redBlackTheme/images/simple-bannr.png" class="img-responsive pull-right"></li>
-                       </ul>
-                       </div>                        
-                   </div>
-               </div>
-        </div>
+		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1  marg_top">
+		    <div class="row top_header">
+		        <div class="col-lg-12">
+		         <ul>
+		        <li class="flex-item"><img src="${context}/redBlackTheme/images/logo.png" class="img-responsive "></li>
+		         <li class="pwr_text flex-item">Powered By</li>
+		         <li class="flex-item" ><img src="${context}/redBlackTheme/images/poweredby-logo.png" class="img-responsive pwr_logo"></li>
+		         <li class="flex-item"><img src="${context}/redBlackTheme/images/simple-bannr.png" class="img-responsive pull-right"></li>
+		        </ul>
+		        </div>                        
+		    </div>
+		</div>
+	</div>
 
-        <header>
-             <div class="row">
-                <div class="col-lg-1 col-sm-1">
-                	<div class="left_img">
-                		<img src="${context}/redBlackTheme/images/left_image.png">
-                	</div>
-             	</div>    
-               <div class="col-lg-10 col-md-10 col-sm-10  ">
-          <nav class="navbar ">
-              <div class="container-fluid">
-                <div class="navbar-header">
-                  <button type="button" class="navbar-toggle toggle-menu menu-left jPushMenuBtn menu-active" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>                        
-                  </button>
-
-                </div>
-                <div class="collapse navbar-collapse cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="bs-example-navbar-collapse-1">
-                  <ul class="nav navbar-nav">
-                    <li class="active"><a href="javascript:void(0);" onclick="openHomeHome();">HOME</a></li>
-
-                    <li><a href="javascript:void(0);" onclick="homeGuide();">GUIDE</a></li>
-                    <li><a href="http://the12thman.in/">BLOG</a></li>
-                      <li><a href="" data-toggle="modal" data-target="#myModal1">FANTASY LEAGUE</a></li>
-                      <li><a href="" data-toggle="modal" data-target="#myModal1">PREDICT 11</a></li>
-                  </ul>
-                  <ul class="nav navbar-nav navbar-right">
-                    <li class="get_in_touch"><a href="" data-toggle="modal" data-target="#myModal1"> REGISTER</a></li>
-                  </ul>
-                </div>
-              </div>
-              </div>
-                <div class="col-lg-1  col-sm-1">
-                	<div class="right_img">
-                		<img src="${context}/redBlackTheme/images/left_image.png">
-                	</div>
-               	</div> 
-              </div>
-            </nav>
-          </header> 
+	<header>
+	     <div class="row">
+	        <div class="col-lg-1 col-sm-1">
+	        	<div class="left_img">
+	        		<img src="${context}/redBlackTheme/images/left_image.png">
+	      		</div>
+	   		</div>    
+		    <div class="col-lg-10 col-md-10 col-sm-10  ">
+			<nav class="navbar ">
+			    <div class="container-fluid">
+					<div class="navbar-header">
+					  <button type="button" class="navbar-toggle toggle-menu menu-left jPushMenuBtn menu-active" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					    <span class="icon-bar"></span>
+					    <span class="icon-bar"></span>
+					    <span class="icon-bar"></span>                        
+					  </button>		
+					</div>
+					<div class="collapse navbar-collapse cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="bs-example-navbar-collapse-1">
+					  <ul class="nav navbar-nav">
+					    <li class="active"><a href="javascript:void(0);" onclick="openHomeHome();">HOME</a></li>		
+					    <li><a href="javascript:void(0);" onclick="homeGuide();">GUIDE</a></li>
+					    <li><a href="http://the12thman.in/">BLOG</a></li>
+					    <li><a href="" data-toggle="modal" data-target="#myModal1">FANTASY LEAGUE</a></li>
+					    <li><a href="" data-toggle="modal" data-target="#myModal1">PREDICT 11</a></li>
+					  </ul>
+					  <ul class="nav navbar-nav navbar-right">
+					    <li class="get_in_touch"><a href="" data-toggle="modal" data-target="#myModal1"> REGISTER</a></li>
+					  </ul>
+					</div>
+   				</div>
+			</div>
+			<div class="col-lg-1  col-sm-1">
+				<div class="right_img">
+					<img src="${context}/redBlackTheme/images/left_image.png">
+				</div>
+			</div> 
+ 		</nav>
+ 	</div>
+</header> 
           <!--Notification-->
          <div id="notification" style="display: none;">
             <span class="dismiss"><a title="dismiss this notification">X</a></span>
