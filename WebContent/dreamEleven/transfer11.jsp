@@ -980,9 +980,9 @@
 		} */
 		else if (playerType == 'Goalkeeper')
 		{
-			alert("in goalkerr check playerType="+playerType);
+			
 			if(typeof userGameJson != null && typeof userGameJson!= 'undefined' && typeof userGameJson['total'] !='undefined')
-			{alert("goal uundefined fals");
+			{
 				if(userGameJson['total']['Goalkeeper'] >=1)
 				{
 					ajaxCall = false;
@@ -992,9 +992,9 @@
 		}
 		else if (playerType == 'Midfielder')
 		{
-			alert("in midfielder check");
+			
 			if(typeof userGameJson != null && typeof userGameJson != 'undefined' && typeof userGameJson['total'] !='undefined')
-			{alert("undefind false");
+			{
 				if(userGameJson['total']['Midfielder'] >=4)
 				{
 					ajaxCall = false;

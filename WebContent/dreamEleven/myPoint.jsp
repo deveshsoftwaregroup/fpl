@@ -98,8 +98,8 @@
                       <div class="row">
                         <div class="col-lg-4 pull-right claim_your_prize">
                             <h4>Your points : ${sportMgmtRes.result.userPoint}</h4>
-                            <input type="button" class="btn claim_btn" value="Claim Your Prize" data-toggle="modal" data-target="#paymentModel" > 
-                         <!--    <a href="#"><button type="button" class="btn claim_btn" onclick="uploadCouponsView11('${sessionScope.userId}','${sessionScope.gameDetails.gameId}');">Claim Your Prize</button></a>-->
+                          
+                         <  <a href="#"><button type="button" class="btn claim_btn" onclick="uploadCouponsView11('${sessionScope.userId}','${sessionScope.gameDetails.gameId}');">Claim Your Prize</button></a>
                           </div>    
                       </div>
                        <div class="row pddn_both">

@@ -593,7 +593,7 @@ public class GameManager {
 				{
 					
 					//SQLQuery query = session.createSQLQuery("select gcp.game_club_player_id from game_club_player gcp, user_player up where gcp.game_club_player_id = up.game_club_player_id and up.user_id =20 and gcp.game_id =1");
-					SQLQuery query = session.createSQLQuery(QueryConstrant.SELECT_TOTAL_PLAYER_BY_POSITION);
+					SQLQuery query = session.createSQLQuery(QueryConstrant.SELECT_TOTAL_PLAYER_BY_POSITION_D_EL);
 					query.setParameter("userId", userId);
 					query.setParameter("gameId", gameId);
 					totalPlayerByPisitionList =query.list();
@@ -639,7 +639,7 @@ public class GameManager {
 				{
 					
 					//SQLQuery query = session.createSQLQuery("select gcp.game_club_player_id from game_club_player gcp, user_player up where gcp.game_club_player_id = up.game_club_player_id and up.user_id =20 and gcp.game_id =1");
-					SQLQuery query = session.createSQLQuery(QueryConstrant.SELECT_TOTAL_PLAYING_PLAYER_BY_POSITION);
+					SQLQuery query = session.createSQLQuery(QueryConstrant.SELECT_TOTAL_PLAYING_PLAYER_BY_POSITION_D_EL);
 					query.setParameter("userId", userId);
 					query.setParameter("gameId", gameId);
 					query.setParameter("isPlaying", SportConstrant.YES);
@@ -960,7 +960,7 @@ public class GameManager {
 				{
 					
 					//SQLQuery query = session.createSQLQuery("select gcp.game_club_player_id from game_club_player gcp, user_player up where gcp.game_club_player_id = up.game_club_player_id and up.user_id =20 and gcp.game_id =1");
-					SQLQuery query = session.createSQLQuery(QueryConstrant.SELECT_USER_PLAYER_TOTAL_PRICE);
+					SQLQuery query = session.createSQLQuery(QueryConstrant.SELECT_USER_PLAYER_TOTAL_PRICE_D_EL);
 					query.setParameter("userId", userId);
 					query.setParameter("gameId", gameId);
 					totalPlayerPriceFetchList =query.list();
@@ -1292,7 +1292,7 @@ public class GameManager {
 					}
 					else
 					{
-						UserPlayer userPlayer = (UserPlayer)results.get(0);
+						D_EL_USER_PLAYER userPlayer = (UserPlayer)results.get(0);
 						if(isPlaying != null && !isPlaying.equals(""))
 						{
 							userPlayer.setIsPlaying(isPlaying.toUpperCase());
