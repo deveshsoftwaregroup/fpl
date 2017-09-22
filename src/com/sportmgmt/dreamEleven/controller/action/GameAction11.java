@@ -193,7 +193,7 @@ public class GameAction11 {
 								{
 									logger.error("--------- Error in deducting point "+ex.getMessage());
 								}
-								*/
+							}*/
 							
 							ObjectMapper mapperObj = new ObjectMapper();
 							 try
