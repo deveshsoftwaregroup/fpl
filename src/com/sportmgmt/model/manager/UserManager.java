@@ -12,6 +12,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+import com.sportmgmt.model.entity.Club;
 import com.sportmgmt.model.entity.CountryStateCity;
 import com.sportmgmt.model.entity.User;
 import com.sportmgmt.utility.constrant.ErrorConstrant;
@@ -147,6 +148,10 @@ public class UserManager {
 						user.setCountry((String)userMap.get("country"));
 						address += ", " +userMap.get("country");
 						
+					}
+					if(userMap.get("club") != null && !userMap.get("club").equals(""))
+					{
+						user.setField_string((String)userMap.get("club"));
 					}
 					if(userMap.get("pinCode") != null && !userMap.get("pinCode").equals(""))
 					{
@@ -663,4 +668,77 @@ public class UserManager {
 		logger.info("---------------> Returning Country State City Map: "+countryCityStateMap);
 		return countryCityStateMap;
 	}
+	public static List fetchAllClub()
+	{
+		logger.info("----- Indie fetchAllCountryStateCity ----");
+		setErrorMessage(SportConstrant.NULL);
+		setErrorCode(SportConstrant.NULL);
+		List clubList = null;
+		SessionFactory factory = HibernateSessionFactory.getSessionFacotry();
+		if(factory == null)
+		{
+			setErrorCode(ErrorConstrant.SESS_FACT_NULL);
+			setErrorMessage("Technical Error");
+			logger.info("----- Factory Object is null----");
+		}
+		else
+		{
+			Session session = factory.openSession();
+			if(session != null)
+			{
+				try
+				{
+				
+					Query query	 = session.createQuery(QueryConstrant.FROM_CLUB);
+					logger.info("----------- Executing query to load county club map:");
+					clubList = query.list();
+					
+				}
+				catch(Exception ex)
+				{
+					logger.error("Exception in fetching country state city: "+ex);
+					setErrorMessage("Technical Error");
+					setErrorCode(ErrorConstrant.TRANSACTION_ERROR);
+				}
+				finally
+				{
+					session.close();
+				}
+			}
+			else
+			{
+				setErrorCode(ErrorConstrant.SESS_NULL);
+				setErrorMessage("Technical Error");
+				logger.info("----- Session Object is null----");
+			}
+		}
+		logger.info("----- Returning Club  List  ----"+clubList);
+		return clubList;
+	}
+	public static HashMap<String,HashMap<String,ArrayList<String>>> getClubMap()
+	{
+		HashMap<String,HashMap<String,ArrayList<String>>> clubMap = new HashMap<String,HashMap<String,ArrayList<String>>>();
+		List clubList = fetchAllClub();
+		if(clubList != null && clubList.size() >=0)
+		{
+			for(int i=0;i< clubList.size();i++)
+			{
+				Club club = (Club)clubList.get(i);
+				if(clubMap.containsKey(club.getClubName()))
+				{
+				}
+				else
+				{
+					HashMap<String,ArrayList<String>> stateMap = new <String,ArrayList<String>>HashMap();
+					//ArrayList<String> cityList = new ArrayList<String>();
+					//cityList.add(cntrySttCity.getCityName());
+					//stateMap.put(cntrySttCity.getStateName(), cityList);
+					clubMap.put(club.getClubName(), stateMap);
+				}
+			}
+		}
+		logger.info("---------------> Returning Country State City Map: "+clubMap);
+		return clubMap;
+	
+}
 }

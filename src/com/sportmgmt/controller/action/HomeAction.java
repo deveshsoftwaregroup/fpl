@@ -33,6 +33,8 @@ public class HomeAction {
 		HashMap<String,HashMap<String,ArrayList<String>>> countryMap = UserManager.getCountryStateCityMap();
 		logger.info("--------- League Home , countryMap: "+countryMap);
 		map.put("countryMap", countryMap);
+		HashMap<String,HashMap<String,ArrayList<String>>> clubMap = UserManager.getClubMap();
+		map.put("clubMap", clubMap);
 		return SportConstrant.LEAGE_HOME_PAGE;
 
 	}
@@ -43,6 +45,8 @@ public class HomeAction {
 		HashMap<String,HashMap<String,ArrayList<String>>> countryMap = UserManager.getCountryStateCityMap();
 		logger.info("--------- League Home , countryMap: "+countryMap);
 		map.put("countryMap", countryMap);
+		HashMap<String,HashMap<String,ArrayList<String>>> clubMap = UserManager.getClubMap();
+		map.put("clubMap", clubMap);
 		return SportConstrant.LEAGUE_LANDING_HOME_PAGE;
 
 	}

@@ -255,6 +255,14 @@
 		       </c:forEach>
 		       </select>
 		   </div>  
+		    <div class="form-group">
+		       <select name="club" placeholder="Favourite Club" required id="club" class="form-control">
+		       <option value="">Select Favourite Club</option>
+		       <c:forEach var="clubObj" items="${clubMap}">
+		       <option value="${clubObj.key}">${clubObj.key}</option>
+		       </c:forEach>
+		       </select>
+		   </div>  
         <div class="form-group">
             <input type="input" name="contactNumber" placeholder="Mobile Number" required  id="contactNumber" class="form-control" />
         </div>
