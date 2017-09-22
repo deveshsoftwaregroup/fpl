@@ -26,6 +26,8 @@ public static final String SELECT_TOTAL_PLAYING_PLAYER_BY_POSITION_D_EL = "selec
 		 +" and gcp.game_id =:gameId and up.is_playing=:isPlaying group by gcp.playing_position";
 public static final String SELECT_USER_TOTAL_PLAYER = "select count(*) from GAME_CLUB_PLAYER gcp, USER_PLAYER up where gcp.game_club_player_id = up.game_club_player_id and up.user_id =:userId" 
 		+" and gcp.game_id =:gameId";
+public static final String SELECT_USER_TOTAL_PLAYER_D_EL = "select count(*) from GAME_CLUB_PLAYER gcp, D_EL_USER_PLAYER up where gcp.game_club_player_id = up.game_club_player_id and up.user_id =:userId" 
+		+" and gcp.game_id =:gameId";
 
 public static final String SELECT_USER_TOTAL_ACTIVE_PLAYER = "select count(*) from GAME_CLUB_PLAYER gcp, USER_PLAYER up where gcp.game_club_player_id = up.game_club_player_id and up.user_id =:userId" 
 		+" and gcp.game_id =:gameId and up.is_playing=:isPlaying";

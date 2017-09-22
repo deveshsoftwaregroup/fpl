@@ -859,7 +859,7 @@ public class GameManager {
 				{
 					
 					//SQLQuery query = session.createSQLQuery("select gcp.game_club_player_id from game_club_player gcp, user_player up where gcp.game_club_player_id = up.game_club_player_id and up.user_id =20 and gcp.game_id =1");
-					SQLQuery query = session.createSQLQuery(QueryConstrant.SELECT_USER_TOTAL_PLAYER);
+					SQLQuery query = session.createSQLQuery(QueryConstrant.SELECT_USER_TOTAL_PLAYER_D_EL);
 					query.setParameter("userId", userId);
 					query.setParameter("gameId", gameId);
 					totalPlayerFetchList =query.list();
