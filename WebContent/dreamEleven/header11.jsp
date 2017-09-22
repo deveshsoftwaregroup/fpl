@@ -78,9 +78,9 @@
                   <ul class="nav navbar-nav">
                   
                     
-						<li>                            
+						<!-- <li>                            
                             <a href="javascript:void(0);" onclick="openHomeHome();">League Home</a>
-                        </li>
+                        </li> -->
                         <li>
                         	<a href="javascript:void(0);" onclick="uploadTransferView11();" data-nav-tab="squad">Transfers</a>
                         </li> 
@@ -97,11 +97,11 @@
                             <a href="javascript:void(0);" onclick="uploadCouponsView11('${sessionScope.userId}','${sessionScope.gameDetails.gameId}');">Coupons</a>
                         </li> 
                         <li>
-                            <a href="javascript:void(0)" onclick="uploadRulesView11();">Rules</a>
+                            <a href="javascript:void(0)" onclick="uploadRulesView11();">Help</a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="javascript:void(0);" onclick="uploadFAQView11();">FAQ</a>
-                        </li>                       
+                        </li> -->                       
                         <li>
                             <a href="/SportMgmt/mvc/user/Logout" class="ism-nav__tab ">Sign Out</a>
                         </li>
