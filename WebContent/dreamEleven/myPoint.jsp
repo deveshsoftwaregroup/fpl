@@ -95,6 +95,7 @@
                            </li>
                         </ul>
                               </div>
+                      </div>
                       <div class="row">
                         <div class="col-lg-4 pull-right claim_your_prize">
                             <h4>Your points : ${sportMgmtRes.result.userPoint}</h4>
