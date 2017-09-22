@@ -1,6 +1,7 @@
 package com.sportmgmt.model.manager;
 
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
@@ -110,13 +111,19 @@ public class UserManager {
 					{
 						user.setContactNumber((String)userMap.get("contactNumber"));
 					}
-					
-					if(userMap.get("dobDay") != null && !userMap.get("dobDay").equals("") && userMap.get("dobMonth") != null && !userMap.get("dobMonth").equals("") && userMap.get("dobYear") != null && !userMap.get("dobYear").equals(""))
+					if(userMap.get("dob") != null && !userMap.get("dob").equals(""))
+					{
+						SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
+						java.util.Date date = sdf1.parse(userMap.get("dob"));
+						java.sql.Date sqlDOB = new java.sql.Date(date.getTime());  
+						user.setDateOfBirth(sqlDOB);
+					}
+					/*if(userMap.get("dobDay") != null && !userMap.get("dobDay").equals("") && userMap.get("dobMonth") != null && !userMap.get("dobMonth").equals("") && userMap.get("dobYear") != null && !userMap.get("dobYear").equals(""))
 					{
 						//Date date = new Date(Integer.parseInt(userMap.get("dobDay")),Integer.parseInt(userMap.get("dobMonth")),Integer.parseInt(userMap.get("dobYear")));
 						Date date = new Date(new GregorianCalendar(Integer.parseInt(userMap.get("dobYear")),Integer.parseInt(userMap.get("dobMonth"))-1,Integer.parseInt(userMap.get("dobDay"))).getTimeInMillis());
 						user.setDateOfBirth(date);
-					}
+					}*/
 					if(userMap.get("gender") != null && !userMap.get("gender").equals(""))
 					{
 						user.setGender((String)userMap.get("gender"));
