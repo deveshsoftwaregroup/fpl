@@ -328,8 +328,12 @@
 
                                                    </div>
                                                </div>
-                                           </div>                                           
-                                       </div>                               
+                                           </div>  
+                                                                                    
+                                       </div> 
+                                       <div class="col-lg-4 pull-right claim_your_prize">
+                                           <  <a href="#"><button type="button" class="btn claim_btn" onclick="uploadhistory11();">Confirm Your Team</button></a>
+                                            </div>                              
                            </div>
            
 
@@ -863,6 +867,24 @@
 	  }
 	$("p.ism-elements-shown strong.ism-elements-shown__num").text($("tr.ismjs-menu.ism-row-select:visible").length);
   });
+	function uploadhistory11( gameId, gameWeekId, userId)
+	{
+		if(typeof userId != 'undefined' && userId != '' && typeof gameId != 'undefined' && gameId != '')
+		{
+			url ="/SportMgmt/mvc/player11/make-player-history/"+gameId+"/"+gameWeekId"/"+userId ;
+			$.ajax({
+	     		  url: url,
+	     		  dataType: 'html',
+	     		  success: function( resp ) {
+	     			 //console.log(resp); 
+	     			 $('.ism-container').html(resp);
+	     		  },
+	     		  error: function( req, status, err ) {
+	     		    console.log( 'something went wrong', status, err );
+	     		  }
+	     		});	
+		}
+	}
 
  function filterByView(selected)
  {
