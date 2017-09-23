@@ -59,7 +59,7 @@
 	   		</script>
 			<jsp:useBean id="clubImageMap" class="java.util.HashMap" scope="session" />
 			<c:forEach var="clubMap" items="${sessionScope.clubList}">
-				<spring:message code="club_${clubMap['clubId']}_image" var="imageSrc" />;
+				<spring:message code="club_${clubMap['clubId']}_image" var="imageSrc" />
 	   			<c:set target="${clubImageMap}" property="${clubMap['clubId']}"	value="${imageSrc}" />
 				<script type="text/javascript">
 	    			clubIdImageMap["${clubMap['clubId']}"] = "${imageSrc}";
