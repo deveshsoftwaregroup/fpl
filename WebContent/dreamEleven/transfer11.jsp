@@ -261,9 +261,13 @@
                                      </c:choose>
                                 </div>
                             </div>
-	                    </div>                                           
-	                </div>                               
+	                    </div>
+	                                                  
 				</div>
+				 <div class="col-lg-4 pull-right claim_your_prize">
+                                             <a href="#"><button type="button" class="btn claim_btn" onclick="createHistory11('${sessionScope.gameDetails.gameId}','1','${sessionScope.userId}');">Confirm Your Team</button></a>
+                                            </div>                                           
+	                </div>
 	           
 				<!-- Player list starts --> 
 				<div id="myNav" class="  my_points overlay">
@@ -1099,6 +1103,27 @@
 	     		});
    		}
      }
+     function createHistory11( gameId, gameWeekId, userId)
+	 	{
+ 	
+ 	alert("gameId"+gameId);
+ 	
+	 		
+	 			url ="/SportMgmt/mvc/player11/make-player-history/"+gameId+"/"+gameWeekId+"/"+userId ;
+	 			$.ajax({
+	 	     		  url: url,
+	 	     		 dataType: 'html',
+	 	     		  success: function( resp ) {
+	 	     			 console.log(resp); 
+	 	     			 $('.ism-container').html(resp);
+	 	     		  },
+	 	     		  error: function( req, status, err ) {
+	 	     		    console.log( 'something went wrong', status, err );
+	 	     		  }
+	 	     		});	
+		
+	 		}
+  
 </script>
 <script>
 	 function openNav() {

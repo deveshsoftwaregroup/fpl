@@ -184,6 +184,47 @@ public class PointRankingUtility {
 			throw new SportMgmtException("game week id is empty");
 		}
 	}
+	public List<String> createPlayerHistoryForUsers(String gameId,String gameWeekId,String userId) throws SportMgmtException
+	{
+		if(gameWeekId !=null && !gameWeekId.equals(""))
+		{
+			List<Integer> userListOfGame = PlayerManager.userListOfGame(gameId);
+			if(userListOfGame !=null && userListOfGame.size() !=0)
+			{
+				List<String> logList = new ArrayList<String>();
+				for(Integer userIdBigInt:userListOfGame)
+				{
+					
+					logger.info("Going to create player history of user: "+userId+" for gameWeekId: "+gameWeekId+" of gameId: "+gameId);
+					boolean isSuccess = createPlayerHistoryForGameWeek(gameId,gameWeekId,userId);
+					logger.info("player history creation went :"+isSuccess);
+					if(!isSuccess)
+					{
+						if(!logMessage.equals(""))
+						{
+							logList.add(logMessage);
+						}
+						else
+						{
+							logList.add("Failed userId="+userId+" gameWeekId="+gameWeekId);
+						}
+					}
+					
+				}
+				return logList;
+			}
+			else
+			{
+				logger.info("User List for game: "+gameId+" is empty");
+				throw new SportMgmtException("User List for game: "+gameId+" is empty");
+			}
+	    }
+		else
+		{
+			logger.info("skiping to create player history of users, becuase of game week id is empty:");
+			throw new SportMgmtException("game week id is empty");
+		}
+	}
 	public Map<String,String> getGameWeekForPointView(String gameId, String gameWeekIdParam,String direction)
 	{
 		Map<String,String> gameWeekForPoint = new HashMap<>();

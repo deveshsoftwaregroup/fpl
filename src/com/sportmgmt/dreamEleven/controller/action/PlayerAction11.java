@@ -86,7 +86,7 @@ public class PlayerAction11 {
 		return resultMap;
 	}
 	
-	@RequestMapping(value = "make-player-history/{gameId}", method = RequestMethod.GET)
+	//@RequestMapping(value = "make-player-history/{gameId}", method = RequestMethod.GET)
 	public @ResponseBody SportMgmtResponse createGameWeekHistoryForPlayers(@PathVariable String gameId, HttpServletRequest request)
 	{
 		SportMgmtResponse<Map> sportMgmtResponse = new SportMgmtResponse();
@@ -114,7 +114,8 @@ public class PlayerAction11 {
 		}
 		return sportMgmtResponse;
 	}
-	@RequestMapping(value = "make-player-history/{gameId}/{gameWeekId}", method = RequestMethod.GET)
+	
+	//@RequestMapping(value = "make-player-history/{gameId}/{gameWeekId}", method = RequestMethod.GET)
 	public @ResponseBody SportMgmtResponse createGameWeekHistoryForPlayers(@PathVariable String gameId, @PathVariable String gameWeekId)
 	{
 		SportMgmtResponse sportMgmtResponse = new SportMgmtResponse();
@@ -124,6 +125,37 @@ public class PlayerAction11 {
 			try
 			{
 				List<String> logList =pointRankingUtility.createPlayerHistoryForUsers(gameId,gameWeekId);
+				sportMgmtResponse.setSuccess(true);
+				sportMgmtResponse.setLogList(logList);
+			}
+			catch(SportMgmtException sme)
+			{
+				sportMgmtResponse.setSuccess(false);
+				sportMgmtResponse.setMessage(sme.getMessage());
+				logger.error("--------------- Error Occured: "+sme);
+			}
+			
+		}
+		else
+		{
+			sportMgmtResponse.setSuccess(false);
+			sportMgmtResponse.setMessage("Invalid game Id");
+		}
+		return sportMgmtResponse;
+	}
+	@RequestMapping(value = "make-player-history/{gameId}/{gameWeekId}/{userId}", method = RequestMethod.GET)
+	public @ResponseBody SportMgmtResponse createGameWeekHistoryForPlayers(@PathVariable String gameId, @PathVariable String gameWeekId,@PathVariable String userId)
+	{
+		System.out.println("gameId="+gameId);
+		System.out.println("gameWeekId="+gameWeekId);
+		System.out.println("userId="+userId);
+		SportMgmtResponse sportMgmtResponse = new SportMgmtResponse();
+		boolean isGameExist = GameManager.isGameExistAndActive(gameId);
+		if(isGameExist)
+		{
+			try
+			{
+				List<String> logList =pointRankingUtility.createPlayerHistoryForUsers(gameId,gameWeekId,userId);
 				sportMgmtResponse.setSuccess(true);
 				sportMgmtResponse.setLogList(logList);
 			}

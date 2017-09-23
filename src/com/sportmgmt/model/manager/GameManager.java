@@ -225,6 +225,7 @@ public class GameManager {
 	}
 	public static boolean isGameExistAndActive(String gameId)
 	{
+		
 		setErrorMessage("");
 		SessionFactory factory = HibernateSessionFactory.getSessionFacotry();
 		logger.info("--------------- isGameExist -------------gameId: "+gameId);
@@ -238,7 +239,9 @@ public class GameManager {
 			Session session = factory.openSession();
 			if(session != null)
 			{
+				
 				try
+				
 				{
 					
 					Game game = (Game)session.load(Game.class, new Integer(gameId));
