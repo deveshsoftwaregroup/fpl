@@ -162,6 +162,19 @@ header {
   color: #fff;
   opacity: 1; }
 
+.loginBtn {
+  width: 200px; }
+
+#panel, #flip {
+  padding: 10px;
+  cursor: pointer; }
+
+#panel {
+  display: none; }
+
+#register h4 {
+  padding: 8px; }
+
 /*---------------Login with Fb or Gmail------------------*/
 .modal-body h4 {
   text-align: center;
@@ -417,7 +430,7 @@ header {
   padding-left: 20px; }
 
 .ongoing_flex2 {
-  padding-left: 6%; }
+  padding-left: 3%; }
 
 .fixture_bar {
   background: url(../images/Dream11/fixture_bar.png) no-repeat center;
@@ -654,13 +667,62 @@ tbody tr {
   font-size: 18px;
   padding: 5px; }
 
+.btnNext, .btnPrevious {
+  margin-top: 15px;
+  margin-right: 20px;
+  border-radius: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: #fff !important;
+  background-color: #f62b2b;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f62b2b), to(#d20202));
+  background-image: -webkit-linear-gradient(top, #f62b2b, #d20202);
+  background-image: -moz-linear-gradient(top, #f62b2b, #d20202);
+  background-image: -ms-linear-gradient(top, #f62b2b, #d20202);
+  background-image: -o-linear-gradient(top, #f62b2b, #d20202);
+  background-image: linear-gradient(to bottom, #f62b2b, #d20202);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#f62b2b, endColorstr=#d20202); }
+
+.demo_fixtures .nav-tabs {
+  display: none; }
+
+#bottm_pd {
+  padding: 10px;
+  margin: 50px 5px;
+  text-align: center;
+  background-color: #f62b2b;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f62b2b), to(#a32b31));
+  background-image: -webkit-linear-gradient(top, #f62b2b, #a32b31);
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Abel', sans-serif; }
+
+.prev_next_btn {
+  padding-left: 39%; }
+
+.prev_next_btn a {
+  margin-left: 0;
+  margin-right: 0;
+  position: relative;
+  text-align: center; }
+
+#change_clr {
+  text-align: center;
+  color: #fff; }
+
 /*-------------------/ Dream 11 Fixtures -----------------------*/
-/*------------------- Coupon -----------------------*/
+/*------------------- Coupon --------------------*/
 .coupon_predict .image_ad .coupon_card:not(:first-child) {
   color: #fff;
   opacity: 0.5; }
 
-/*-------------------/ Coupon -----------------------*/
+/*-------------------/ Coupon --------------------*/
+/*------------------- Scout --------------------*/
+.home_scout_section img {
+  width: 95%; }
+
+/*-------------------/ Scout -------------------*/
 .close_btn {
   position: relative;
   right: -35px;
@@ -685,6 +747,9 @@ tbody tr {
   border-radius: 3px;
   padding: 15px;
   color: #ffffff; }
+
+.mid_text {
+  margin-top: 50px; }
 
 /* Shared */
 .loginBtn {
@@ -801,7 +866,29 @@ tbody tr {
     text-align: center; }
 
   .closebtn {
-    display: none; } }
+    display: none; }
+
+  .points {
+    padding-left: 25px; }
+
+  .next_team {
+    padding-left: 37%; }
+
+  .register_login .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    padding: 8px 15px;
+    font-size: 12px; }
+
+  .register_login input[type=email] {
+    height: 32px; }
+
+  .register_login .form-group {
+    height: 40px; }
+
+  .register_login .login_btn {
+    margin-top: 6px; }
+
+  #register h4 {
+    padding: 11px !important; } }
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   .left_img {
     left: -10px !important; }
@@ -856,7 +943,11 @@ tbody tr {
     text-align: center !important; }
 
   .claim_your_prize {
-    margin-right: 37%; } }
+    margin-right: 37%; }
+
+  .coupon_card {
+    padding-right: 50px !important;
+    padding-left: 50px !important; } }
 @media screen and (min-width: 700px) and (max-width: 768px) {
   .navbar-brand > img {
     margin-top: -48px; }
@@ -1005,7 +1096,7 @@ tbody tr {
     padding: 0px 50px; }
 
   .coupon_card .claim_btn {
-    margin-right: 50px; }
+    margin-right: 0px; }
 
   .details_adjust p {
     padding-left: 23%;
@@ -1033,6 +1124,9 @@ tbody tr {
 
   .transfers_predict11_map h3 {
     text-align: center !important; }
+
+  .coupon_card {
+    height: 100px !important; }
 
   /*----------------------------------*/
   .overlay {
@@ -1180,40 +1274,52 @@ tbody tr {
     padding: 20px 30px; }
 
   .details_adjust {
-    padding: 0px 50px; }
+    padding: 0px 10px 0px 10px !important; }
+
+  .details_adjust p {
+    padding-right: 0px;
+    font-size: 11px; }
+
+  .coupon_card {
+    height: 96px; }
+
+  .details_adjust img {
+    padding-right: 10%; }
 
   .coupon_card .claim_btn {
-    margin-right: 50px; }
+    margin-right: 0px; }
 
   .transfers_predict11 .transfers_predict11_map {
     margin-top: 20px; }
 
   .timing {
-    padding-bottom: 6px; }
+    padding-bottom: 3px;
+    padding-top: 5px;
+    font-size: 19px; }
 
   .points {
-    padding-left: 25px;
+    padding-left: 39px;
     letter-spacing: 3px;
-    font-size: 20px; }
+    font-size: 19px; }
 
   .ongoing_flex1 {
     padding-left: 5px; }
 
   .ongoing_flex2 {
-    padding-left: 4%; }
+    padding-left: 3%; }
 
   .ongoing_flex2, .ongoing_flex1, .team_points_flex {
     font-size: 16px; }
 
   .next_team {
-    padding-left: 34%; }
+    padding-left: 35%; }
 
   .panel-default .panel-body table {
     width: 50%;
     margin-left: 25%; }
 
   #accordion tbody tr td:first-child {
-    width: 10em; }
+    width: 8em; }
 
   .Dream_11_players {
     margin-top: 200px;
@@ -1235,6 +1341,12 @@ tbody tr {
 
   .rules_faq {
     margin-top: 10%; }
+
+  .prev_next_btn {
+    padding-left: 33%; }
+
+  .team_points_flex1 img, .team_points_flex img {
+    height: 20px !important; }
 
   /*----------------------------------*/
   .overlay {

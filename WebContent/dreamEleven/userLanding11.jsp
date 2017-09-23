@@ -14,11 +14,29 @@
 
 
 	
-    
-    <script type='text/javascript'src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <!--<script type='text/javascript'src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>-->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-    <script type='text/javascript' src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-    <script type='text/javascript' src='http://code.jquery.com/jquery-1.9.1.js'></script>
+    <!-- <script type='text/javascript' src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>-->
+    <!--<script type='text/javascript' src='http://code.jquery.com/jquery-1.9.1.js'></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/bootstrap.css">
+<!--  <link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/style.css">-->
+<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/jquery.bxslider.css">
+<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/style-dream.css">
+<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/theme.css">
+  <link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/tab-style.css">
+  <link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/demo.css">
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,400,600,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,600" rel="stylesheet">
+
+      <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,500,600" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600" rel="stylesheet">
+    
+    
+<script src="${context}/redBlackTheme/js/bootstrap.js"></script>
+<script src="${context}/redBlackTheme/js/jquery.bxslider.js"></script>
 <style>
 .addPlayer a {
 	color: #blue;

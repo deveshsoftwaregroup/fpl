@@ -3812,7 +3812,7 @@ background-image:url(data:image/gif;base64,R0lGODlhFAAUAPcAAAAAAJmZmZ2dnZ6enqKio
     background: red;
     
 }
-.scroll-tbl {overflow-y:auto; max-height: 177px;}
+.scroll-tbl {overflow-y:auto; max-height: 371px;}
 .table .ism-table td, .table th {
     padding: 0.1rem 1rem;
 }

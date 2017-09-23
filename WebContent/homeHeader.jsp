@@ -731,3 +731,12 @@ function loginWithFB()
            
 });
        </script>
+        <script src="js/jPushMenu.js" ></script>
+      <script type="text/javascript">
+         //<![CDATA[
+         $(document).ready(function(){
+           $('.toggle-menu').jPushMenu({closeOnClickLink: false, closeOnClickOutside: false});
+          
+         });
+         //]]>
+      </script>
