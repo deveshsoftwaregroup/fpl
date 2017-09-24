@@ -11,6 +11,7 @@
     
 <s:sportExt retrieve="priceList" />
 <s:sportExt retrieve="deadLine" />
+<%-- <s:sportExt retrieve="isGameWeekPlayerHistoryExist" /> --%>
 
 <body class="predict11-bg transfers_predict11 dream_11transfer">
 	<div class="container ">
@@ -652,6 +653,13 @@
 			forwardRemove();
 		})
 	</c:if>
+	/*
+			<c:if test="${!isGameWeekPlayerHistoryExist}">
+			$('.ism-element').mousemove(function(){
+			
+				createHistory11( gameId, gameWeekId, userId);
+		})
+	</c:if> */
 	
 	$(document).ready(function() {
 		$(".added-player-count").text(""+userGameJson.playerList.length+"/11");
@@ -1105,7 +1113,7 @@
  	alert("gameId"+gameId);
  	
 	 		
-	 			url ="/SportMgmt/mvc/player11/make-player-history/"+gameId+"/"+gameWeekId+"/"+userId ;
+	 			url ="/SportMgmt/mvc/player/make-player-history/"+gameId+"/"+gameWeekId+"/"+userId+"?gameType=dream_eleven" ;
 	 			$.ajax({
 	 	     		  url: url,
 	 	     		 dataType: 'html',

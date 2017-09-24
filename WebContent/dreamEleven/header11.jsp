@@ -276,7 +276,7 @@
 		     		  }
 		     		});	
 		}
-		
+		 
 		function orderPlayerList(orderBy)
 		{
 			
