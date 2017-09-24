@@ -115,7 +115,7 @@ public class PointRankingUtility {
 	{
 		return PointRankManager.getLastGameWeekId(gameId);
 	}
-	private boolean isDreamEleven=true;
+	private boolean isDreamEleven;
 	
 	public boolean isDreamEleven() {
 		return isDreamEleven;
@@ -127,6 +127,7 @@ public class PointRankingUtility {
 	{
 		logMessage = "";
 		boolean isSuccess = true;
+		
 		PlayerManager.setDreamEleven(isDreamEleven());
 		if(PlayerManager.isGameWeekPlayerHistoryExist(userId, gameWeekId))
 		{
@@ -220,13 +221,11 @@ public class PointRankingUtility {
 		if(gameWeekId !=null && !gameWeekId.equals(""))
 		{
 			PlayerManager.setDreamEleven(isDreamEleven());
-			List<Integer> userListOfGame = PlayerManager.userListOfGame(gameId);
-			if(userListOfGame !=null && userListOfGame.size() !=0)
+			if(userId !=null)
 			{
 				List<String> logList = new ArrayList<String>();
-				for(Integer userIdBigInt:userListOfGame)
-				{
-					//String userId = String.valueOf(userIdBigInt.intValue());
+				
+				
 					logger.info("Going to create player history of user: "+userId+" for gameWeekId: "+gameWeekId+" of gameId: "+gameId);
 					boolean isSuccess = createPlayerHistoryForGameWeek(gameId,gameWeekId,userId);
 					logger.info("player history creation went :"+isSuccess);
@@ -242,7 +241,7 @@ public class PointRankingUtility {
 						}
 					}
 					
-				}
+				
 				return logList;
 			}
 			else

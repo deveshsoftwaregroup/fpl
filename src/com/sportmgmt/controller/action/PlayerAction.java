@@ -146,6 +146,37 @@ public class PlayerAction {
 		}
 		return sportMgmtResponse;
 	}
+	@RequestMapping(value = "make-player-history/{gameId}/{gameWeekId}/{userId}", method = RequestMethod.GET)
+	public @ResponseBody SportMgmtResponse createGameWeekHistoryForPlayers(@PathVariable String gameId, @RequestParam("gameType") String gameType,@PathVariable String gameWeekId,@PathVariable String userId)
+	{System.out.println("gameId"+gameId);
+	System.out.println("");
+		SportMgmtResponse sportMgmtResponse = new SportMgmtResponse();
+		boolean isGameExist = GameManager.isGameExistAndActive(gameId);
+		if(isGameExist)
+		{
+			try
+			{
+				if(gameType !=null && gameType.equals("dream_eleven"));
+				pointRankingUtility.setDreamEleven(true);
+				List<String> logList =pointRankingUtility.createPlayerHistoryForUsers(gameId,gameWeekId,userId);
+				sportMgmtResponse.setSuccess(true);
+				sportMgmtResponse.setLogList(logList);
+			}
+			catch(SportMgmtException sme)
+			{
+				sportMgmtResponse.setSuccess(false);
+				sportMgmtResponse.setMessage(sme.getMessage());
+				logger.error("--------------- Error Occured: "+sme);
+			}
+			
+		}
+		else
+		{
+			sportMgmtResponse.setSuccess(false);
+			sportMgmtResponse.setMessage("Invalid game Id");
+		}
+		return sportMgmtResponse;
+	}
 	@RequestMapping(value = "game-week-history/{gameId}/{userId}", method = RequestMethod.GET)
 	public @ResponseBody SportMgmtResponse<Map> gameWeekHistory(@PathVariable String gameId,@PathVariable String userId,HttpServletRequest request)
 	{

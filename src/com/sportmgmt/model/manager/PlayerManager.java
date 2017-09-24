@@ -149,6 +149,7 @@ public class PlayerManager {
 					 criteria.add(Restrictions.eq("gameWeekId", new Integer(gameWeekId)));
 					 if(isDreamEleven())
 					 {
+						 System.out.println("inside isDreamEleven");
 						 criteria.add(Restrictions.eq("groupType",SportConstrant.DE_GAME_WEEK_HISTORY));
 					 }
 					 else
@@ -181,6 +182,7 @@ public class PlayerManager {
 		}
 		return false;
 	}
+	
 	
 	public static List<Integer> userListOfGame(String gameId)
 	{
