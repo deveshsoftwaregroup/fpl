@@ -189,6 +189,7 @@ public class PaymentAction {
 		else
 		return SportConstrant.MAKE_PAYMENT_ERROR_PAGE;
 	}
+	
 	@RequestMapping(value = "SuccessView", method = RequestMethod.POST)
 	public String suceess(ModelMap modelMap,@RequestParam Map<String,String> paymentMap,HttpServletRequest request)
 	{
