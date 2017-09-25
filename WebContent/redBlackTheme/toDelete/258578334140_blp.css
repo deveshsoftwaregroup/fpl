@@ -3904,3 +3904,8 @@ img.rgt-logo {
 .heading  th a {color:#000 !important; }
 select option, optgroup { color:#000 !important;}
 select {background-color:#fff; width:100%; padding:10px;}
+
+@media screen and (min-width: 300px) and ( max-width: 439px) {
+	.ism .ism-element {width: 7.5rem;}
+	.ism .ism-pitch__unit{     min-height: 50px;}
+}

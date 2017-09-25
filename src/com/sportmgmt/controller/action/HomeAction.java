@@ -62,6 +62,8 @@ public class HomeAction {
 		HashMap<String,HashMap<String,ArrayList<String>>> countryMap = UserManager.getCountryStateCityMap();
 		logger.info("--------- League Home , countryMap: "+countryMap);
 		map.put("countryMap", countryMap);
+		HashMap<String,HashMap<String,ArrayList<String>>> clubMap = UserManager.getClubMap();
+		map.put("clubMap", clubMap);
 		logger.info("---------- Forwardng to : "+SportConstrant.HOME_GUIDE);
 		 return SportConstrant.HOME_GUIDE;
 	}

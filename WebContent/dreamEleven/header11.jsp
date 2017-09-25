@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="${context}/redBlackTheme/css/demo.css" type="text/css"> -->
     
     <link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/bootstrap.css">
-<!--  <link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/style.css">-->
+  <link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/style.css">
 <link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/jquery.bxslider.css">
 <link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/style-dream.css">
 <link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/theme.css">

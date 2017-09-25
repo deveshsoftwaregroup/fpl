@@ -17,15 +17,18 @@
 	<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/style.css">
+
 <link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/jquery.bxslider.css">
 <link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/style-dream.css">
 <link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/theme.css">
-<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/tab-style.css">
+<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/demo.css">
+ <link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/tab-style.css">
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,400,600,700" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,600" rel="stylesheet">
 
       <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,500,600" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600" rel="stylesheet">
+       <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,400,600,700" rel="stylesheet">
   <style>
          .bx-wrapper .bx-controls-direction a {display: none;}
       </style>
@@ -660,6 +663,8 @@ function loginWithFB()
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="${context}/redBlackTheme/js/bootstrap.js"></script>
 <script src="${context}/redBlackTheme/js/jquery.bxslider.js"></script>
+<script src="${context}/redBlackTheme/js/jPushMenu.js" ></script>
+<script type="text/javascript">
    <script>
    function homeGuide()
 	{

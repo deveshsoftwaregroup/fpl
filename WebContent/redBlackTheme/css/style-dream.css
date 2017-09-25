@@ -163,7 +163,7 @@ header {
   opacity: 1; }
 
 .loginBtn {
-  width: 200px; }
+  width: 220px; }
 
 #panel, #flip {
   padding: 10px;
@@ -1128,7 +1128,18 @@ tbody tr {
   .coupon_card {
     height: 100px !important; }
 
+
+.ism .ism-element-row  { padding:0px;}
+ .ism .ism-pitch__unit--4 {left:37%;}
+ .ism .ism-pitch__unit--5{width: 24%;}
+ .ism .ism-pitch__unit{    min-height: 80px;}
+ .ism .ism-pitch__unit--3{width: 50%;}
+  .transfers_predict11_map p{padding-left:10px;}
+  .ism-element .ismjs-select{    max-width: 80px;}
+   .ism .ism-element-row{    max-width: 360px;}
+   .team_map, .team_map_dream11{padding-top:30px;}
   /*----------------------------------*/
+ 
   .overlay {
     height: 0%;
     width: 100%;
@@ -1235,10 +1246,10 @@ tbody tr {
 
   .team_map_dream11 ul li h4 {
     margin-top: -18px !important; }
-
+ .team_map, .team_map_dream11 {background: url(../images/Dream11/myteam_map_mobile.png) no-repeat center;}
   .transfers_predict11 .team_map_dream11 {
     margin-top: 0px !important;
-    height: 305px !important; }
+    height: 367px !important; }
 
   .my_transfers .team_map_dream11 {
     margin-top: 0px !important;
@@ -1347,7 +1358,14 @@ tbody tr {
 
   .team_points_flex1 img, .team_points_flex img {
     height: 20px !important; }
-
+ 
+ 
+ .ism .ism-element-row  { padding:0px;}
+ .ism .ism-pitch__unit--4 {left:37%;}
+ .ism .ism-pitch__unit--5{width: 24%;}
+ .ism .ism-pitch__unit{    min-height: 80px;}
+ .ism .ism-pitch__unit--3{width: 50%;}
+  .transfers_predict11_map p{padding-left:10px;}
   /*----------------------------------*/
   .overlay {
     height: 0%;

@@ -116,5 +116,26 @@
     
  <jsp:include page="homeFooter.jsp" /> 
 </div>
+
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+<script>
+	$(document).on('shown.bs.tab', 'a[data-toggle="tab"]', function (e) 
+	{
+	    var tab = $(e.target);
+	    var contentId = tab.attr("href");
+	
+	    //This check if the tab is active
+	    if (tab.parent().hasClass('active'))
+	    {
+	         console.log('the tab with the content id ' + contentId + ' is visible');
+	    } 
+	    else
+	    {
+	         console.log('the tab with the content id ' + contentId + ' is NOT visible');
+	    }
+	});
+</script>
 </body>
 </html>
