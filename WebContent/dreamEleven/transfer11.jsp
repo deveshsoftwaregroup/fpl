@@ -7,8 +7,11 @@
 
 <style>
 	.my_team_points li {padding: 5px !important;}
+
 	.modal td, th {color:#000 !important;}
-</style>
+@media screen and (min-width: 300px) and (max-width: 439px) {
+		.container { padding-right:0px ;padding-left:0px;}
+	}</style>
     
 <s:sportExt retrieve="priceList" />
 <s:sportExt retrieve="deadLine" />
