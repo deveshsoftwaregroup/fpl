@@ -27,6 +27,7 @@ import com.sportmgmt.utility.common.PointRankingUtility;
 import com.sportmgmt.utility.common.SortUtility;
 import com.sportmgmt.utility.constrant.SportConstrant;
 import com.sportmgmt.utility.exception.SportMgmtException;
+import com.sportmgmt.model.manager.PlayerManager;
 
 @Controller
 @RequestMapping("/player")
@@ -183,6 +184,31 @@ public class PlayerAction {
 		String gameWeekIdParam = request.getParameter("gameWeekId");
 		String direction = request.getParameter("game-week-for");
 		return getGameWeeKHistory(gameId, userId, gameWeekIdParam, direction,request);
+	}
+	
+	@RequestMapping(value = "check-player-history",method = RequestMethod.GET)
+	public @ResponseBody boolean checkGameWeekHistory(HttpServletRequest request,@RequestParam("gameType") String gameType)
+	{
+		HttpSession session = request.getSession();
+		String gameId = (String)((Map)session.getAttribute("gameDetails")).get("gameId");
+		String userId=(String)session.getAttribute("userId");
+		PointRankingUtility pointRankingUtility = new PointRankingUtility();
+		String gameWeekId = "1";//pointRankingUtility.gameWeekIdForTransferPlayer(gameId);
+		System.out.println("gameId="+gameId);
+		System.out.println("gameWeekId="+gameWeekId);
+		System.out.println("userIdddd="+userId);
+		 if(gameType !=null && gameType.equals("dream_eleven"));
+		 {
+			PlayerManager.setDreamEleven(true);
+		 }
+			
+		if(PlayerManager.isGameWeekPlayerHistoryExist(userId, gameWeekId))
+		{
+	     return true;
+		}
+		else{
+			return false;
+		}
 	}
 	
 	private SportMgmtResponse<Map> getGameWeeKHistory(String gameId,String userId,String gameWeekIdParam,String direction,HttpServletRequest request)

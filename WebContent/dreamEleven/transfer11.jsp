@@ -779,6 +779,25 @@
 		    }
 		});
 	});
+	  $(document).ready(function() {
+		 url ="/SportMgmt/mvc/player/check-player-history?gameType=dream_eleven" ; 
+		 
+			$.ajax({
+	     		  url: url,
+	     		 dataType: 'html',
+	     		  success: function( resp ) {
+	     			 console.log(resp); 
+	     			 
+	     			 alert("Your Team is already Confirmed");
+	     			isUnderDeadline=true;
+	     		  },
+	     		  error: function( req, status, err ) {
+	     		    console.log( 'something went wrong', status, err );
+	     		  }
+	     		});	
+	 });
+	 
+	
 	 $('#ismjs-element-filter').change(function(){
 	  var selected = $(':selected',this); 
 	  filterByView(selected);
@@ -872,12 +891,13 @@
 	  $("p.ism-elements-shown strong.ism-elements-shown__num").text(($("tr.ismjs-menu.ism-row-select:visible").length+1));
  }
      function addPlayer(userId, gameClubPlayerId)
-     {   
+     {   alert("isUnderDeadline"+isUnderDeadline);
      	<c:choose>
      	<c:when test="${isUnderDeadline}">
      		alert("Hey buddy ! You are under deadline. Player can be added after deadline");
      	</c:when>
      	<c:otherwise>
+     	alert("not dead");
     	 var playerType = '';
     	 var playerName = '';
     	 var playerPrice = '';
@@ -1108,9 +1128,8 @@
    		}
      }
      function createHistory11( gameId, gameWeekId, userId)
-	 	{
- 	
- 	alert("gameId"+gameId);
+	 	{ 	
+ 			alert("gameId"+gameId);
  	
 	 		
 	 			url ="/SportMgmt/mvc/player/make-player-history/"+gameId+"/"+gameWeekId+"/"+userId+"?gameType=dream_eleven" ;
@@ -1119,13 +1138,13 @@
 	 	     		 dataType: 'html',
 	 	     		  success: function( resp ) {
 	 	     			 console.log(resp); 
-	 	     			 $('.ism-container').html(resp);
+	 	     			 alert("Your Team has been Confirmed");
 	 	     		  },
 	 	     		  error: function( req, status, err ) {
 	 	     		    console.log( 'something went wrong', status, err );
 	 	     		  }
 	 	     		});	
-		
+    	 
 	 		}
   
 </script>

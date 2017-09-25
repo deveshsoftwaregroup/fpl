@@ -15,6 +15,7 @@ import org.hibernate.criterion.Restrictions;
 
 import com.sportmgmt.model.entity.PlayerGroup;
 import com.sportmgmt.model.entity.PlayerGroupPlayer;
+import com.sportmgmt.utility.common.PointRankingUtility;
 import com.sportmgmt.utility.constrant.ErrorConstrant;
 import com.sportmgmt.utility.constrant.QueryConstrant;
 import com.sportmgmt.utility.constrant.SportConstrant;
@@ -124,7 +125,7 @@ public class PlayerManager {
 		return false;
 	}
 	
-	public static boolean isGameWeekPlayerHistoryExist(String userId,String gameWeekId)
+	public static boolean isGameWeekPlayerHistoryExist(String userId,String gameWeekId )
 	{
 		logger.info("----- Inside isGameWeekPlayerHistoryExist ---- userId: "+userId+" ,:"+gameWeekId);
 		setErrorMessage(SportConstrant.NULL);
@@ -143,21 +144,18 @@ public class PlayerManager {
 			{
 				try
 				{
-				
 					 Criteria criteria = session.createCriteria(PlayerGroup.class);
 					 criteria.add(Restrictions.eq("userId", new Integer(userId)));
 					 criteria.add(Restrictions.eq("gameWeekId", new Integer(gameWeekId)));
 					 if(isDreamEleven())
 					 {
-						 System.out.println("inside isDreamEleven");
 						 criteria.add(Restrictions.eq("groupType",SportConstrant.DE_GAME_WEEK_HISTORY));
 					 }
 					 else
-					 {
+					 {    
 						 criteria.add(Restrictions.eq("groupType",SportConstrant.GAME_WEEK_HISTORY)); 
 					 }
 					 PlayerGroup playerGroup =(PlayerGroup)criteria.uniqueResult();
-					//SQLQuery query = session.createSQLQuery(QueryConstrant.SELECT_GAME_WEEK_HISTORY_PLAYER_GROUP);
 					
 					if(playerGroup !=null)
 					return true;

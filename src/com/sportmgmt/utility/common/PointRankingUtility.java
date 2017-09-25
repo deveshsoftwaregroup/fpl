@@ -129,9 +129,11 @@ public class PointRankingUtility {
 		boolean isSuccess = true;
 		
 		PlayerManager.setDreamEleven(isDreamEleven());
+		
 		if(PlayerManager.isGameWeekPlayerHistoryExist(userId, gameWeekId))
 		{
 			logger.info("Game Week Player Group history already found for user: "+userId+" and gameWeekId: "+gameWeekId);
+			isSuccess = false;
 		}
 		else
 		{
