@@ -12,6 +12,7 @@ import org.apache.log4j.Logger;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 
 import com.sportmgmt.model.entity.Club;
 import com.sportmgmt.model.entity.CountryStateCity;
@@ -46,6 +47,7 @@ public class UserManager {
 		else
 		{
 			Session session = factory.openSession();
+			Transaction trasaction = session.beginTransaction();
 			if(session != null)
 			{
 				try
@@ -171,13 +173,13 @@ public class UserManager {
 					}
 					session.save(user);
 					setUserId(String.valueOf(user.getUserId()));
-					session.beginTransaction().commit();
+					trasaction.commit();
 				
 				}
 				catch(Exception ex)
 				{
 					System.out.println("Exception in save user: "+ex);
-					session.beginTransaction().rollback();
+					trasaction.rollback();
 					setErrorMessage("Technical Error");
 					return false;
 				}
