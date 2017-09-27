@@ -645,13 +645,11 @@ tbody tr {
   margin-top: 138px; }
 
 .defenderr ul li:last-child {
-  background-color: red;
   border-radius: 20%;
   color: #ddd;
   padding-top: 5px; }
 
 .midfielderr ul li:first-child {
-  background-color: red;
   border-radius: 20%;
   color: #ddd;
   padding-top: 5px; }
@@ -989,7 +987,7 @@ tbody tr {
     left: 6px !important; }
 
   .prtnr li img {
-    height: 25px !important; }
+    height: 35px !important; }
 
   .our_partners h3 {
     font-size: 18px !important;
@@ -1077,7 +1075,7 @@ tbody tr {
     text-align: center !important; }
 
   .prtnr li img {
-    height: 20px !important; }
+    height: 35px !important; }
 
   #myModal .form-group {
     height: auto !important; }
@@ -1128,18 +1126,31 @@ tbody tr {
   .coupon_card {
     height: 100px !important; }
 
+  .ism .ism-element-row {
+    padding: 0px; }
 
-.ism .ism-element-row  { padding:0px;}
- .ism .ism-pitch__unit--4 {left:37%;}
- .ism .ism-pitch__unit--5{width: 24%;}
- .ism .ism-pitch__unit{    min-height: 80px;}
- .ism .ism-pitch__unit--3{width: 50%;}
-  .transfers_predict11_map p{padding-left:10px;}
-  .ism-element .ismjs-select{    max-width: 80px;}
-   .ism .ism-element-row{    max-width: 360px;}
-   .team_map, .team_map_dream11{padding-top:30px;}
+  .ism .ism-pitch__unit--4 {
+    left: 37%; }
+
+  .ism .ism-pitch__unit--5 {
+    width: 24%; }
+
+  .ism .ism-pitch__unit {
+    min-height: 80px; }
+
+  .ism .ism-pitch__unit--3 {
+    width: 50%; }
+
+  .ism-element .ismjs-select {
+    max-width: 80px; }
+
+  .ism .ism-element-row {
+    max-width: 360px; }
+
+  .team_map, .team_map_dream11 {
+    padding-top: 30px; }
+
   /*----------------------------------*/
- 
   .overlay {
     height: 0%;
     width: 100%;
@@ -1212,7 +1223,7 @@ tbody tr {
     text-align: center !important; }
 
   .prtnr li img {
-    height: 20px !important; }
+    height: 35px !important; }
 
   .our_partners ul li {
     display: block !important; }
@@ -1238,6 +1249,9 @@ tbody tr {
   .tect_left {
     display: none; }
 
+  .team_map, .team_map_dream11 {
+    background: url(../images/Dream11/myteam_map_mobile.png) no-repeat center; }
+
   .team_map_dream11 ul li a img {
     height: 45px !important; }
 
@@ -1246,7 +1260,7 @@ tbody tr {
 
   .team_map_dream11 ul li h4 {
     margin-top: -18px !important; }
- .team_map, .team_map_dream11 {background: url(../images/Dream11/myteam_map_mobile.png) no-repeat center;}
+
   .transfers_predict11 .team_map_dream11 {
     margin-top: 0px !important;
     height: 367px !important; }
@@ -1282,7 +1296,7 @@ tbody tr {
 
   .btm_ftr, .btm_ftr1, .btm_ftr2 {
     text-align: center;
-    padding: 20px 30px; }
+    padding: 8px 30px; }
 
   .details_adjust {
     padding: 0px 10px 0px 10px !important; }
@@ -1358,14 +1372,32 @@ tbody tr {
 
   .team_points_flex1 img, .team_points_flex img {
     height: 20px !important; }
- 
- 
- .ism .ism-element-row  { padding:0px;}
- .ism .ism-pitch__unit--4 {left:37%;}
- .ism .ism-pitch__unit--5{width: 24%;}
- .ism .ism-pitch__unit{    min-height: 80px;}
- .ism .ism-pitch__unit--3{width: 50%;}
-  .transfers_predict11_map p{padding-left:10px;}
+
+  .ism .ism-element-row {
+    padding: 0px; }
+
+  .ism .ism-pitch__unit--4 {
+    left: 37%; }
+
+  .ism .ism-pitch__unit--5 {
+    width: 24%; }
+
+  .ism .ism-pitch__unit {
+    min-height: 80px; }
+
+  .ism .ism-pitch__unit--3 {
+    width: 50%; }
+
+  .transfers_predict11_map p {
+    padding-left: 10px; }
+
+  .bottom_bit p {
+    text-align: center !important;
+    padding: 10px; }
+
+  .mid_text {
+    margin-top: 0px; }
+
   /*----------------------------------*/
   .overlay {
     height: 0%;

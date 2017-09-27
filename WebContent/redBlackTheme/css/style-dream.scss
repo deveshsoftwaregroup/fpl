@@ -298,14 +298,14 @@ tbody tr {border-bottom: 1px solid #fff !important;    border-left: 1px solid #f
 .banner_align { margin-bottom: 100px;}
 .transfers_predict11 .our_partners , .coupon_predict .our_partners {margin-top: 138px;}
 .defenderr ul li:last-child {
-    background-color: red;
+   
   border-radius: 20%;
     color: #ddd;
     padding-top: 5px;
 }
 
 .midfielderr ul li:first-child {
-    background-color: red;
+   
    border-radius: 20%;
     color: #ddd;
     padding-top: 5px;
@@ -518,7 +518,7 @@ tbody tr {border-bottom: 1px solid #fff !important;    border-left: 1px solid #f
     .navbar-nav > li > a { font-size: 15px !important}
         .left_img img, .right_img img { height:250px !important;}
     .left_img { left:6px !important;}
-    .prtnr li img {height:25px !important;}
+    .prtnr li img {height:35px !important;}
     .our_partners h3 {     font-size: 18px !important; padding-left: 35px !important;}
     .navbar-nav { float: none; }
     .navbar-nav  {padding: 10px; font-size: 12px;}
@@ -550,7 +550,7 @@ tbody tr {border-bottom: 1px solid #fff !important;    border-left: 1px solid #f
     .navbar-toggle .icon-bar { background-color: #fff !important;}
     
     .our_partners h3 {     font-size: 18px !important; text-align: center !important;}
-    .prtnr li img {height:20px !important;}
+    .prtnr li img {height:35px !important;}
      #myModal .form-group { height:auto !important;}
     
   
@@ -646,7 +646,7 @@ tbody tr {border-bottom: 1px solid #fff !important;    border-left: 1px solid #f
     .navbar-toggle .icon-bar { background-color: #fff !important;}
     
     .our_partners h3 {     font-size: 18px !important; text-align: center !important;}
-    .prtnr li img {height:20px !important;}
+    .prtnr li img {height:35px !important;}
     .our_partners ul li { display: block !important;}
     .top_header li:nth-last-child(4) img{height: 80px !important;}
     #myModal .form-group { height:auto !important;}
@@ -673,7 +673,7 @@ tbody tr {border-bottom: 1px solid #fff !important;    border-left: 1px solid #f
     .unlimited_transfer { width: 30% !important;}
     .navbar { height: 50px !important;}
     .navbar-brand > img { margin-top: -50px !important;}
-    .btm_ftr, .btm_ftr1, .btm_ftr2{ text-align: center; padding: 20px 30px;}
+    .btm_ftr, .btm_ftr1, .btm_ftr2{ text-align: center; padding: 8px 30px;}
     .details_adjust {padding: 0px 10px 0px 10px !important;}
     .details_adjust p {padding-right: 0px; font-size: 11px;}
     .coupon_card{height: 96px;}
@@ -702,6 +702,9 @@ tbody tr {border-bottom: 1px solid #fff !important;    border-left: 1px solid #f
      .ism .ism-pitch__unit{    min-height: 80px;}
      .ism .ism-pitch__unit--3{width: 50%;}
      .transfers_predict11_map p{padding-left:10px;}
+
+     .bottom_bit p{ text-align: center !important; padding: 10px;}
+     .mid_text { margin-top: 0px;}
       /*----------------------------------*/
     
 .overlay {
