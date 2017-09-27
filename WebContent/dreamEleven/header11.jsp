@@ -207,9 +207,9 @@
 		     		});	
 		}
 		function uploadMyPointView11(gameId,userId,gameWeekId,direction)
-		{alert("hi");
+		{
 			if(typeof gameId != 'undefined' && gameId != '')
-			{alert("callled url");
+			{
 				url ="/SportMgmt/mvc/game/dream-eleven-point/"+gameId+"/"+userId;
 				if(gameWeekId !='' && direction!='')
 				{
