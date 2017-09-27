@@ -22,7 +22,8 @@
 	<mvc:annotation-driven />
 	<task:annotation-driven />
 	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">  
-	  	<property name="host" value="smtp.gmail.com" />
+	  	<!-- <property name="host" value="smtp.gmail.com" /> -->
+	  	<property name="host" value="smtp.googlemail.com" />
 	  	<property name="port" value="587" />
 	    <property name="username" value="deveshsoftwaregroup@gmail.com" />  
 	    <property name="password" value="software@123" />
