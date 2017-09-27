@@ -138,7 +138,7 @@ header {padding-top: 10px;}
 .details_adjust:hover {cursor: pointer;}
 .details_adjust p {padding-left: 32%; padding-top: 20px;padding-right: 20px;}
 .add_adjust {padding: 10px 20px; margin-top: 50px;}
-.claim_btn { float: right; margin-top: 15px; margin-right: 20px;
+.claim_btn { float: right; margin-top: 0px; margin-right: 20px;
  border-radius: 5px; padding-top: 5px; padding-bottom: 5px;  color:#fff !important;
 background-color: #f62b2b; background-image: -webkit-gradient(linear, left top, left bottom, from(#f62b2b), to(#d20202));
  background-image: -webkit-linear-gradient(top, #f62b2b, #d20202);
@@ -705,6 +705,7 @@ tbody tr {border-bottom: 1px solid #fff !important;    border-left: 1px solid #f
 
      .bottom_bit p{ text-align: center !important; padding: 10px;}
      .mid_text { margin-top: 0px;}
+     .claim_btn {  margin-right: 20px;}
       /*----------------------------------*/
     
 .overlay {
@@ -714,7 +715,7 @@ tbody tr {border-bottom: 1px solid #fff !important;    border-left: 1px solid #f
   z-index: 1;
   min-height: 0px;
   top: 0;
-  left: 0;
+  left: 0px;
   background-color: #222c3a;
   overflow-y: scroll;
   transition: 0.5s;
@@ -723,7 +724,7 @@ tbody tr {border-bottom: 1px solid #fff !important;    border-left: 1px solid #f
 .overlay-content {
   position: absolute;
   width: 94%;
-  top:0;
+  top:0; left:10px;
 }
 
 .overlay a {
@@ -760,7 +761,7 @@ tbody tr {border-bottom: 1px solid #fff !important;    border-left: 1px solid #f
       
 }
 
-
+.claim_your_prize{ color:#fff; padding-top:20px;}
 
 
 

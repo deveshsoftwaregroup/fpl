@@ -3809,7 +3809,7 @@ background-image:url(data:image/gif;base64,R0lGODlhFAAUAPcAAAAAAJmZmZ2dnZ6enqKio
   -o-transition: all .6s ease;
 }
 .ism-element .ismjs-select:hover {
-    background: red;
+    
     
 }
 .scroll-tbl {overflow-y:auto; max-height: 371px;}

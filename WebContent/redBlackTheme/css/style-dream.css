@@ -263,7 +263,7 @@ header {
 
 .claim_btn {
   float: right;
-  margin-top: 15px;
+  margin-top: 0px;
   margin-right: 20px;
   border-radius: 5px;
   padding-top: 5px;
@@ -1397,7 +1397,8 @@ tbody tr {
 
   .mid_text {
     margin-top: 0px; }
-
+  
+   .claim_btn {  margin-right: 20px;}
   /*----------------------------------*/
   .overlay {
     height: 0%;
@@ -1406,7 +1407,7 @@ tbody tr {
     z-index: 1;
     min-height: 0px;
     top: 0;
-    left: 0;
+    left: 0px;
     background-color: #222c3a;
     overflow-y: scroll;
     transition: 0.5s; }
@@ -1414,7 +1415,7 @@ tbody tr {
   .overlay-content {
     position: absolute;
     width: 94%;
-    top: 0; }
+    top: 0; left:10px; }
 
   .overlay a {
     text-decoration: none;
@@ -1443,4 +1444,6 @@ tbody tr {
     top: 15px;
     right: 35px; } }
 
+
+.claim_your_prize { color:#fff; padding-top:20px;}
 /*# sourceMappingURL=style-dream.css.map */
