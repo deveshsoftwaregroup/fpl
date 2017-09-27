@@ -58,7 +58,7 @@
                 	</div>
                     <div style="float:right;">
                     	<li class="pwr_text flex-item" style="float: left;">Powered By</li>
-                        <li class="flex-item" style="float: left;"><img src="${context}/redBlackTheme/images/poweredby-logo.png" class="img-responsive pwr_logo"></li>
+                        <li class="flex-item" style="float: left;"><img src="${context}/redBlackTheme/images/poweredby-logo.pngggg" class="img-responsive pwr_logo"></li>
                     </div>
                   </ul>
                 </div>  
@@ -108,7 +108,7 @@
                             <a href="javascript:void(0);" onclick="uploadFAQView11();">FAQ</a>
                         </li> -->                       
                         <li>
-                            <a href="/SportMgmt/mvc/user/Logout" class="ism-nav__tab ">Sign Out</a>
+                            <a href="/SportMgmt/mvc/user/Logout">Sign Out</a>
                         </li>
                         <li></li> 
                      </div>

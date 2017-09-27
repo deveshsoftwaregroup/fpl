@@ -26,7 +26,7 @@
 					<p>Gameweek ${gameWeekNumber} Deadline: <time datetime="2016-08-27T10:30:00Z">${deadline}</time><p>
 		            <p>Player Count: <span class="added-player-count"> </span> </p>	
 		            <div class="col-lg-4 pull-right claim_your_prize">
-                                             <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#paymentModel">PAYMENT</button></a>
+                                             
                                             </div> 
 									 <div id="paymentModel" class="modal fade" role="dialog">
 									  <div class="modal-dialog modal-lg">
@@ -320,9 +320,11 @@
 	                    </div>
 	                                                  
 				</div>
-				 <div class="col-lg-4 pull-right claim_your_prize">
+				 <div class="col-lg-12 pull-right claim_your_prize">
                                              <a href="#"><button type="button" class="btn claim_btn" onclick="createHistory11('${sessionScope.gameDetails.gameId}','${gameWeekNumber}','${sessionScope.userId}');">Confirm Your Team</button></a>
-                                            </div>                                           
+                                          	Want to be eligible to win prizes : <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#paymentModel">Make Payment</button></a>
+                                            </div>  
+                                                                                     
 	                </div>
 	           
 				<!-- Player list starts --> 

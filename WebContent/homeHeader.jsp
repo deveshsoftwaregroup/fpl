@@ -372,7 +372,7 @@
 		         <ul>
 		        <li class="flex-item"><img src="${context}/redBlackTheme/images/logo.png" class="img-responsive "></li>
 		         <li class="pwr_text flex-item">Powered By</li>
-		         <li class="flex-item" ><img src="${context}/redBlackTheme/images/poweredby-logo.png" class="img-responsive pwr_logo"></li>
+		         <li class="flex-item" ><img src="${context}/redBlackTheme/images/poweredby-logo.pnggggg" class="img-responsive pwr_logo"></li>
 		         <li class="flex-item"><img src="${context}/redBlackTheme/images/simple-bannr.png" class="img-responsive pull-right"></li>
 		        </ul>
 		        </div>                        
