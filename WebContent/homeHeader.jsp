@@ -178,37 +178,32 @@
 				                              		                                  
 			                              </div>	                              
 		                              </div>
-	                              </div>
-	                              
+	                              </div>	                              
 	                              <div class="col-xs-12">
-	                              	<div class="row">
-	                              		
-	                              			
+	                              	<div class="row">	
 	                              			<div class="col-sm-12">
 		                              			<div class="row">
 			                              			<div class="form-group">
-			                              				<a href="javascript:void(0);" data-toggle="modal" data-target="#myModal3"><span class="input__label-content input__label-content--hoshi">Forgot Password</span></a>
+			                              			<span class="input input--hoshi">
+			                              			<label class="input__label input__label--hoshi input__label--hoshi-color-1" for="logonPassword">
+			                              				<a href="javascript:void(0);" data-toggle="modal" data-target="#myModal3"><span class="btn btn-block btn-social btn-info">Forgot Password</span></a>
+			                              			
+			                              			</label>
+			                              			</span>
 			                              			</div>
 		                              			</div>
 	                              			</div>	                              		
 		                            </div>
 		                         </div>
-		                         
 		                         <div class="col-xs-12">
-		                         <div class="row">
-		                         
-	                              
-	                              <div id="loginErrorMsg" class="alert alert-error hide">Wrong username or password</div>
-	                              
-	                              <a href="javascript:void(0);" class="" style="position: relative;">
-				             	
-	                              <button type="submit" class="btn btn-block btn-social btn-login" onclick="doLogin11();">Login</button>
+		                         <div class="row"> 
+	                              <div id="loginErrorMsg" class="alert alert-error hide">Wrong username or password</div>	                              
+	                              <a href="javascript:void(0);" class="" style="position: relative;">				             	
+	                              <button type="submit" class="btn btn-block btn-social btn-info" onclick="doLogin11();">Login</button>
 	                              </a>
 	                              </div>
-	                              </div>
-	                               
+	                              </div>	                               
 	                          </form>
-	                      
 	                  	</div>
 	                  </div>
 	                  
@@ -320,7 +315,7 @@
 	  </div>
 </div>
 
-<div id="myModal2" class="modal fade" role="dialog">
+<%-- <div id="myModal2" class="modal fade" role="dialog">
   
 	<div id="login-overlay" class="modal-dialog loginForm">
 	      <div class="modal-content">
@@ -337,7 +332,7 @@
 	          </div>
 	      </div>
 	  </div>
-</div>
+</div> --%>
 
 <div id="myModal3" class="modal fade" role="dialog">
   	<div id="login-overlay" class="modal-dialog loginForm">

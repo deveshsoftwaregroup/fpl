@@ -954,13 +954,12 @@
 	  $("p.ism-elements-shown strong.ism-elements-shown__num").text(($("tr.ismjs-menu.ism-row-select:visible").length+1));
  }
      function addPlayer(userId, gameClubPlayerId)
-     {   alert("isUnderDeadline"+isUnderDeadline);
+     {   
      	<c:choose>
      	<c:when test="${isUnderDeadline}">
      		alert("Hey buddy ! You are under deadline. Player can be added after deadline");
      	</c:when>
      	<c:otherwise>
-     	alert("not dead");
      	
     	 var playerType = '';
     	 var playerName = '';
@@ -1193,7 +1192,6 @@
      }
      function createHistory11( gameId, gameWeekId, userId)
 	 	{ 	url ="/SportMgmt/mvc/player/check-player-history?gameType=dream_eleven" ;
- 			alert("gameId"+gameId);
  			$.ajax({
 	     		  url: url,
 	     		 dataType: 'html',
