@@ -193,7 +193,7 @@ public class PlayerAction {
 		String gameId = (String)((Map)session.getAttribute("gameDetails")).get("gameId");
 		String userId=(String)session.getAttribute("userId");
 		PointRankingUtility pointRankingUtility = new PointRankingUtility();
-		String gameWeekId = "1";//pointRankingUtility.gameWeekIdForTransferPlayer(gameId);
+		String gameWeekId = "7";//pointRankingUtility.gameWeekIdForTransferPlayer(gameId);
 	     logger.info("inside check player history gameId="+gameId);
 	     logger.info("gameWeekId="+gameWeekId);
 	     logger.info("userIdddd="+userId);
