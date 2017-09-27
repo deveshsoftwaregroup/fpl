@@ -7,11 +7,11 @@
               <div class="col-lg-2 col-md-2 col-sm-12"><h3>Our Partners</h3></div>
                 <div class="col-lg-10 col-md-10 ">
                     <ul class="prtnr">              
-		                <li><img src="${context}/redBlackTheme/images/freecharge.png" class="center-block"></li>
-		                <li><img src="${context}/redBlackTheme/images/payU.png" class="center-block" ></li>		                
-		                <li><img src="${context}/redBlackTheme/images/ccd.png" class="center-block"></li>
-		                <li><img src="${context}/redBlackTheme/images/freecharge.png" class="center-block"></li>
-		                <li><img src="${context}/redBlackTheme/images/payU.png" class="center-block"></li>               
+		                <li><img src="${context}/redBlackTheme/images/02.png" class="center-block" ></li>		                
+		                <li><img src="${context}/redBlackTheme/images/03.png" class="center-block"></li>
+		                <li><img src="${context}/redBlackTheme/images/04.png" class="center-block"></li>
+		                <li><img src="${context}/redBlackTheme/images/05.png" class="center-block"></li>  
+		                <li><img src="${context}/redBlackTheme/images/01.png" class="center-block"></li>             
               		</ul>
                 </div>
               </div>
