@@ -10,7 +10,7 @@
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <c:set var="context" value="/SportMgmt" />
     <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-	<%@ taglib uri="sportmgmt.tld" prefix="s" %> 
+	<%@ taglib uri="..//WEB-INF/sportmgmt.tld" prefix="s" %>  
 <link rel="stylesheet" type="text/css" 	href="/SportMgmt/redBlackTheme/toDelete/258578334140_blp.css"> 
 	
 	<!-- <link rel="stylesheet" href="${context}/redBlackTheme/css/bootstrap.css" type="text/css">
