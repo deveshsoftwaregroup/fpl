@@ -78,6 +78,7 @@ public class SportMgmtExtTag extends TagSupport{
 	public void refreshDeadline()
 	{
 		 /* code start related deadline of game week */
+		logger.info("----------- entry in refresh deadline");
 		 pageContext.setAttribute("isUnderDeadline", false);
 		 HttpServletRequest request = (HttpServletRequest)pageContext.getRequest();
     	 HttpSession session = request.getSession();
@@ -99,11 +100,12 @@ public class SportMgmtExtTag extends TagSupport{
     			 Integer gameWeekId = (Integer)currentGameWeek.get(0)[0];
     			 logger.info("--------------- currentGameWeek: Game week ID: "+gameWeekId+"  , Date: "+currentGameWeek.get(0)[1]);
     			 List<Timestamp> firstMatchOfGameWeek = GameManager.fetchFirstMatchOfGameWeek(gameWeekId);
-    			 logger.info("First Match of  Game Week: "+firstMatchOfGameWeek);
+    			 logger.info("First Match of  Game Week1111: "+firstMatchOfGameWeek);
     			 int gameWeekNumber = GameManager.getGameWeekNumber(gameWeekId,new Integer(gameId));
     			 logger.info(" Game Week Number : "+gameWeekNumber);
     			 pageContext.setAttribute("gameWeekNumber", gameWeekNumber);
-    			 if(firstMatchOfGameWeek != null && firstMatchOfGameWeek.size() >=0)
+    			 pageContext.setAttribute("gameWeekId", gameWeekId);
+    			 if(firstMatchOfGameWeek != null && firstMatchOfGameWeek.size() >0)
     			 {
     				 logger.info("First Match of  Game Week:  "+firstMatchOfGameWeek.get(0));
     				 Timestamp startTimeOfFirstMatch = firstMatchOfGameWeek.get(0);
