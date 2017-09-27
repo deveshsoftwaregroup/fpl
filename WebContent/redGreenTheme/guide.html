@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+   <head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<title>The 12th Man Fantasy League</title>
+		
+		<link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+		<link rel="stylesheet" href="css/style.css" type="text/css">
+		<link rel="stylesheet" href="css/style-dream.css" type="text/css">
+		<link rel="stylesheet" href="css/tab-style.css" type="text/css">
+		<link rel="stylesheet" href="css/jquery.bxslider.css" type="text/css">
+		<link rel="stylesheet" href="css/theme.css" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,400,600,700" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600" rel="stylesheet">
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+		
+   </head>
+   <body class="full-bg">
+     
+      <div class="container">
+         
+         <!-----------Header---------------->
+         <div id="header"></div>   
+         
+   <!-----------/ Header---------------->
+       
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 top_banner1">
+            <ul class="bxslider">
+                  <li>
+                      <h3>CHOOSE YOUR CHALLENGE</h3>
+                      <img src="images/guide/Choose-Your-challenge.png" class="center-block"/>
+                        <p>Are you ready to play your favourite fantasy sports and win prizes at the same time? Go to the lobby, filter by sport and choose your challenge!</p>
+                </li>
+               <li>
+                      <h3>SELECT YOUR PLAYERS</h3>
+                      <img src="images/guide/Choose-Players.png" class="center-block"/>
+                        <p>Create your lineup of players while staying within the salary cap. Which players are in good form? Who is due for a big game? What's your selection strategy?</p>
+                </li>
+                <li>
+                      <h3>WATCH THE ACTION LIVE</h3>
+                      <img src="images/guide/Watch-Live.png" class="center-block"/>
+                        <p>This is where the excitement really starts! Your players accrue points based on their real life performance. Make sure you keep an eye on the live leaderboard as you climb to number one!</p>
+                </li>
+                <li>
+                      <h3>WIN AND COLLECT</h3>
+                      <img src="images/guide/win-prizes.png" class="center-block"/>
+                        <p>Win your share of the prize pool in each challenge. Using the prize money in your digital wallet, check out the variety of gift vouchers and products now available at the gift store. What will you buy?</p>
+                </li>
+                  
+                </ul>
+            </div>
+          </div>
+          
+         
+			 
+				
+				</div>
+        <!-----------Footer---------------->
+        <div id="footer"></div>
+        <!-----------/ Footer---------------->
+      
+
+            
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="js/bootstrap.js"></script>
+       <script src="js/jquery.bxslider.js"></script>
+       <script>
+        $(document).ready(function(){
+          $('.bxslider').bxSlider({
+               auto: false,
+              pager:true
+
+          });
+        }); 
+        </script>
+        <script> 
+						$(function(){
+						 
+								$("#header").load("header_fantasy.html"); 
+								$("#footer").load("footer.html"); 
+						});
+				 </script>       
+   </body>
+</html>

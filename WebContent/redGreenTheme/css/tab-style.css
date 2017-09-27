@@ -1,0 +1,102 @@
+
+
+/*******************************
+* Does not work properly if "in" is added after "collapse".
+* Get free snippets on bootpen.com
+*******************************/
+    .panel-group .panel {
+        border-radius: 0;
+        box-shadow: none;
+        border: none;
+    }
+
+    .panel-default > .panel-heading {
+        padding: 0;
+        border-radius: 0;
+        color: #212121;
+        background-color: transparent;
+    }
+
+    .panel-title {
+        font-size: 14px;
+    }
+
+    .panel-title > a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+    }
+
+    .more-less {
+        float: right;
+        color: #212121;
+    }
+
+    .panel-default > .panel-heading + .panel-collapse > .panel-body {
+        
+    }
+
+
+/*--------------------------------*/
+.modal-open .modal {z-index: 888888888888;}
+
+
+/* ----- v CAN BE DELETED v ----- */
+
+
+.demo {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.panel-group .panel-heading + .panel-collapse > .panel-body, .panel-group .panel-heading + .panel-collapse > .list-group { border-top:0px ; border-bottom: 1px solid darkgreen;border-radius:5px; background-color: rgba(0,0,0,0.5);}
+/*----------------------*/
+.noPadding {padding: 0px; margin-top: 50px;}
+.socialLinksCont {
+    position: relative
+}
+.socialBtn,
+.socialBtn:active,
+.socialBtn:focus,
+.socialBtn:hover {
+    color: #fff;
+    border: none;
+    border-radius: 0
+}
+.facebookBtn,
+.facebookBtn:active,
+.facebookBtn:focus,
+.facebookBtn:hover {
+    background: #3b5998
+}
+.twitterBtn,
+.twitterBtn:active,
+.twitterBtn:focus,
+.twitterBtn:hover {
+    background: #1da1f2
+}
+.socialBtnTxt {
+    padding: 15px 20px;
+    font-size: 20px;
+    font-weight: 700
+}
+.socialBtnIcon {
+    font-size: 24px;
+    padding: 15px 20px
+}
+.socialBtnTxt {
+    font-family: Montserrat, sans-serif;
+    letter-spacing: 1px
+}
+@media only screen and (max-width: 480px) {
+    .socialBtnIcon {
+        padding: 15px 0;
+        font-size: 20px
+    }
+    .socialBtnTxt {
+        padding: 15px;
+        font-size: 15px
+    }
+}
+
+

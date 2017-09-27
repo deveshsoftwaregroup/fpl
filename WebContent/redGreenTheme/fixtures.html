@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <title>The 12th Man Fantasy League</title>
+      
+      <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+      <link rel="stylesheet" href="css/style-dream.css" type="text/css">
+      <link rel="stylesheet" href="css/tab-style.css" type="text/css">
+      <link rel="stylesheet" href="css/jquery.bxslider.css" type="text/css">
+      <link rel="stylesheet" href="css/theme.css" type="text/css">
+      <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,400,600,700" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+      <script type='text/javascript'>//<![CDATA[ 
+        $(window).load(function(){<!-- w  w w. j av  a  2s.c om-->
+        $('a[data-toggle="tab"]').on('shown', function (e) {
+            $('.dropdown-menu li.active').removeClass('active');
+            $(this).parent('li').addClass('active');
+        })
+        });//]]>  
+     </script>
+     
+     
+   </head>
+   <body class=" fantasy-bg fixtures">
+      <div class="container ">
+          <!-----------Header---------------->
+          <div id="header"></div>
+          <!-----------/ Header---------------->
+
+       <div class="row">
+          <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1  fixture_img_ad">
+             <img src="images/dream11-img.png" class="img-responsive center-block">
+             <div>
+                <div class=" demo demo_fixtures">
+                   <div class="row">
+                      <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2">
+
+                              
+
+                                  
+
+                         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            <h3>Fixtures</h3>
+                            <br>
+                            
+                                
+                              <h4 id="change_clr">Choose Gameweek</h4>
+                              <div class="prev_next_btn">
+                                <a class="btn  btnPrevious" >Prev</a>
+                                <a class="btn  btnNext" >Next</a>
+                              </div>
+                                   <ul class="nav nav-tabs">
+                                          <li class="active"><a data-toggle="tab" href="#menu1">week 1</a></li>
+                                          <li><a data-toggle="tab" href="#menu2">week 2</a></li>
+                                          <li><a data-toggle="tab" href="#menu3">week 3</a></li>
+                                          
+                                        </ul>
+                                        <hr>
+                           <div class=" tab-content">
+                              
+                            <div id="menu1" class=" tab-pane fade in active">
+                              
+                              <h4 id="bottm_pd" >GAMEWEEK - 1</h4>
+                              <h3>Ongoing </h3>
+                              <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingOne">
+                                    <h4 class="panel-title">
+                                      <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="fixture_bar_ongoing">
+                                          <div class="timing">45:00</div>
+                                          <div class="team_points_flex1 ongoing_flex1"> <img src="images/Dream11/france-map.png"> FRANCE</div>
+                                          <div class="team_points_flex1 points"><span>00 &nbsp; &nbsp; &nbsp; 00</span> </div>
+                                          <div class="team_points_flex1 ongoing_flex2">  ENGLAND <img src="images/Dream11/england_map.png"></div>
+                                      </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                    <div class="panel-body">
+                                      <h3>Head to Head</h3>
+                                      <div class="row">
+                                          <div class="col-lg-5">
+                                            <h3>France</h3>
+                                            <table width="100%">
+                                                <tbody>
+                                                  <tr>
+                                                      <td>Total Wins</td>
+                                                      <td>3</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td>Home</td>
+                                                      <td>2</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td>Away</td>
+                                                      <td>1</td>
+                                                  </tr>
+                                                </tbody>
+                                            </table>
+                                          </div>
+                                          <div class="col-lg-2 head_to_head">
+                                            <h1>4</h1>
+                                          </div>
+                                          <div class="col-lg-5">
+                                            <h3>England</h3>
+                                            <table width="100%">
+                                                <tbody>
+                                                  <tr>
+                                                      <td>Total Wins</td>
+                                                      <td>0</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td>Home</td>
+                                                      <td>1</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td>Away</td>
+                                                      <td>2</td>
+                                                  </tr>
+                                                </tbody>
+                                            </table>
+                                          </div>
+                                      </div>
+                                    </div>
+                                </div>
+                              </div>
+                              
+                              <br>
+                              <br>
+                              <h3>Upcoming</h3>
+                              <br>
+                              <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingTwo">
+                                    <h4 class="panel-title">
+                                      <a class="collapsed fixture_bar" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                          <div class="team_points_flex"> <img src="images/Dream11/france-map.png"> FRANCE</div>
+                                          <div class="team_points_flex next_team">  ENGLAND <img src="images/Dream11/england_map.png"></div>
+                                      </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                    <div class="panel-body">
+                                      <h3>Head to Head</h3>
+                                      <div class="row">
+                                          <div class="col-lg-5">
+                                            <h3>France</h3>
+                                            <table width="100%">
+                                                <tbody>
+                                                  <tr>
+                                                      <td>Total Wins</td>
+                                                      <td>3</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td>Home</td>
+                                                      <td>2</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td>Away</td>
+                                                      <td>1</td>
+                                                  </tr>
+                                                </tbody>
+                                            </table>
+                                          </div>
+                                          <div class="col-lg-2 head_to_head">
+                                            <h1>4</h1>
+                                          </div>
+                                          <div class="col-lg-5">
+                                            <h3>England</h3>
+                                            <table width="100%">
+                                                <tbody>
+                                                  <tr>
+                                                      <td>Total Wins</td>
+                                                      <td>0</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td>Home</td>
+                                                      <td>1</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td>Away</td>
+                                                      <td>2</td>
+                                                  </tr>
+                                                </tbody>
+                                            </table>
+                                          </div>
+                                      </div>
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingThree">
+                                    <h4 class="panel-title">
+                                      <a class="collapsed fixture_bar" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                          <div class="team_points_flex"> <img src="images/Dream11/france-map.png"> FRANCE</div>
+                                          <div class="team_points_flex next_team">  ENGLAND <img src="images/Dream11/england_map.png"></div>
+                                      </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                    <div class="panel-body">
+                                      <h3>Head to Head</h3>
+                                      <div class="row">
+                                          <div class="col-lg-5">
+                                            <h3>France</h3>
+                                            <table width="100%">
+                                                <tbody>
+                                                  <tr>
+                                                      <td>Total Wins</td>
+                                                      <td>3</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td>Home</td>
+                                                      <td>2</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td>Away</td>
+                                                      <td>1</td>
+                                                  </tr>
+                                                </tbody>
+                                            </table>
+                                          </div>
+                                          <div class="col-lg-2 head_to_head">
+                                            <h1>4</h1>
+                                          </div>
+                                          <div class="col-lg-5">
+                                            <h3>England</h3>
+                                            <table width="100%">
+                                                <tbody>
+                                                  <tr>
+                                                      <td>Total Wins</td>
+                                                      <td>0</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td>Home</td>
+                                                      <td>1</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td>Away</td>
+                                                      <td>2</td>
+                                                  </tr>
+                                                </tbody>
+                                            </table>
+                                          </div>
+                                      </div>
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingThree">
+                                    <h4 class="panel-title">
+                                      <a class="collapsed fixture_bar" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                                          <div class="team_points_flex"> <img src="images/Dream11/france-map.png"> FRANCE</div>
+                                          <div class="team_points_flex next_team">  ENGLAND <img src="images/Dream11/england_map.png"></div>
+                                      </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                                    <div class="panel-body">
+                                      <h3>Head to Head</h3>
+                                      <div class="row">
+                                          <div class="col-lg-5">
+                                            <h3>France</h3>
+                                            <table width="100%">
+                                                <tbody>
+                                                  <tr>
+                                                      <td>Total Wins</td>
+                                                      <td>3</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td>Home</td>
+                                                      <td>2</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td>Away</td>
+                                                      <td>1</td>
+                                                  </tr>
+                                                </tbody>
+                                            </table>
+                                          </div>
+                                          <div class="col-lg-2 head_to_head">
+                                            <h1>4</h1>
+                                          </div>
+                                          <div class="col-lg-5">
+                                            <h3>England</h3>
+                                            <table width="100%">
+                                                <tbody>
+                                                  <tr>
+                                                      <td>Total Wins</td>
+                                                      <td>0</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td>Home</td>
+                                                      <td>1</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td>Away</td>
+                                                      <td>2</td>
+                                                  </tr>
+                                                </tbody>
+                                            </table>
+                                          </div>
+                                      </div>
+                                    </div>
+                                </div>
+                              </div>
+
+                              
+                              </div>
+
+
+                              <div id="menu2" class=" tab-pane fade">
+                                  
+                                  <h4 id="bottm_pd">GAMEWEEK - 2</h4>
+                                  <h3>Ongoing </h3>
+                                      <div class="panel panel-default">
+                                         <div class="panel-heading" role="tab" id="headingOneOne">
+                                            <h4 class="panel-title">
+                                               <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOneOne" aria-expanded="true" aria-controls="collapseOneOne" class="fixture_bar_ongoing">
+                                                  <div class="timing">45:00</div>
+                                                  <div class="team_points_flex1 ongoing_flex1"> <img src="images/Dream11/france-map.png"> FRANCE</div>
+                                                  <div class="team_points_flex1 points"><span>00 &nbsp; &nbsp; &nbsp; 00</span> </div>
+                                                  <div class="team_points_flex1 ongoing_flex2">  ENGLAND <img src="images/Dream11/england_map.png"></div>
+                                               </a>
+                                            </h4>
+                                         </div>
+                                         <div id="collapseOneOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOneOne">
+                                            <div class="panel-body">
+                                               <h3>Head to Head</h3>
+                                               <div class="row">
+                                                  <div class="col-lg-5">
+                                                     <h3>France</h3>
+                                                     <table width="100%">
+                                                        <tbody>
+                                                           <tr>
+                                                              <td>Total Wins</td>
+                                                              <td>3</td>
+                                                           </tr>
+                                                           <tr>
+                                                              <td>Home</td>
+                                                              <td>2</td>
+                                                           </tr>
+                                                           <tr>
+                                                              <td>Away</td>
+                                                              <td>1</td>
+                                                           </tr>
+                                                        </tbody>
+                                                     </table>
+                                                  </div>
+                                                  <div class="col-lg-2 head_to_head">
+                                                     <h1>4</h1>
+                                                  </div>
+                                                  <div class="col-lg-5">
+                                                     <h3>England</h3>
+                                                     <table width="100%">
+                                                        <tbody>
+                                                           <tr>
+                                                              <td>Total Wins</td>
+                                                              <td>0</td>
+                                                           </tr>
+                                                           <tr>
+                                                              <td>Home</td>
+                                                              <td>1</td>
+                                                           </tr>
+                                                           <tr>
+                                                              <td>Away</td>
+                                                              <td>2</td>
+                                                           </tr>
+                                                        </tbody>
+                                                     </table>
+                                                  </div>
+                                               </div>
+                                            </div>
+                                         </div>
+                                      </div>
+                                      <br>
+                                      <br>
+                                      <h3>Upcoming</h3>
+                                      <br>
+                                      <div class="panel panel-default">
+                                         <div class="panel-heading" role="tab" id="headingTwotwo">
+                                            <h4 class="panel-title">
+                                               <a class="collapsed fixture_bar" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwoTwo" aria-expanded="false" aria-controls="collapseTwoTwo">
+                                                  <div class="team_points_flex"> <img src="images/Dream11/france-map.png"> FRANCE</div>
+                                                  <div class="team_points_flex next_team">  ENGLAND <img src="images/Dream11/england_map.png"></div>
+                                               </a>
+                                            </h4>
+                                         </div>
+                                         <div id="collapseTwoTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwotwo">
+                                            <div class="panel-body">
+                                               <h3>Head to Head</h3>
+                                               <div class="row">
+                                                  <div class="col-lg-5">
+                                                     <h3>France</h3>
+                                                     <table width="100%">
+                                                        <tbody>
+                                                           <tr>
+                                                              <td>Total Wins</td>
+                                                              <td>3</td>
+                                                           </tr>
+                                                           <tr>
+                                                              <td>Home</td>
+                                                              <td>2</td>
+                                                           </tr>
+                                                           <tr>
+                                                              <td>Away</td>
+                                                              <td>1</td>
+                                                           </tr>
+                                                        </tbody>
+                                                     </table>
+                                                  </div>
+                                                  <div class="col-lg-2 head_to_head">
+                                                     <h1>4</h1>
+                                                  </div>
+                                                  <div class="col-lg-5">
+                                                     <h3>England</h3>
+                                                     <table width="100%">
+                                                        <tbody>
+                                                           <tr>
+                                                              <td>Total Wins</td>
+                                                              <td>0</td>
+                                                           </tr>
+                                                           <tr>
+                                                              <td>Home</td>
+                                                              <td>1</td>
+                                                           </tr>
+                                                           <tr>
+                                                              <td>Away</td>
+                                                              <td>2</td>
+                                                           </tr>
+                                                        </tbody>
+                                                     </table>
+                                                  </div>
+                                               </div>
+                                            </div>
+                                         </div>
+                                      </div>
+                                      <div class="panel panel-default">
+                                         <div class="panel-heading" role="tab" id="headingThreeThree">
+                                            <h4 class="panel-title">
+                                               <a class="collapsed fixture_bar" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThreeThree" aria-expanded="false" aria-controls="collapseThreeThree">
+                                                  <div class="team_points_flex"> <img src="images/Dream11/france-map.png"> FRANCE</div>
+                                                  <div class="team_points_flex next_team">  ENGLAND <img src="images/Dream11/england_map.png"></div>
+                                               </a>
+                                            </h4>
+                                         </div>
+                                         <div id="collapseThreeThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThreeThree">
+                                            <div class="panel-body">
+                                               <h3>Head to Head</h3>
+                                               <div class="row">
+                                                  <div class="col-lg-5">
+                                                     <h3>France</h3>
+                                                     <table width="100%">
+                                                        <tbody>
+                                                           <tr>
+                                                              <td>Total Wins</td>
+                                                              <td>3</td>
+                                                           </tr>
+                                                           <tr>
+                                                              <td>Home</td>
+                                                              <td>2</td>
+                                                           </tr>
+                                                           <tr>
+                                                              <td>Away</td>
+                                                              <td>1</td>
+                                                           </tr>
+                                                        </tbody>
+                                                     </table>
+                                                  </div>
+                                                  <div class="col-lg-2 head_to_head">
+                                                     <h1>4</h1>
+                                                  </div>
+                                                  <div class="col-lg-5">
+                                                     <h3>England</h3>
+                                                     <table width="100%">
+                                                        <tbody>
+                                                           <tr>
+                                                              <td>Total Wins</td>
+                                                              <td>0</td>
+                                                           </tr>
+                                                           <tr>
+                                                              <td>Home</td>
+                                                              <td>1</td>
+                                                           </tr>
+                                                           <tr>
+                                                              <td>Away</td>
+                                                              <td>2</td>
+                                                           </tr>
+                                                        </tbody>
+                                                     </table>
+                                                  </div>
+                                               </div>
+                                            </div>
+                                         </div>
+                                      </div>
+                                      <div class="panel panel-default">
+                                         <div class="panel-heading" role="tab" id="headingThreeFour">
+                                            <h4 class="panel-title">
+                                               <a class="collapsed fixture_bar" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFourFour" aria-expanded="false" aria-controls="collapseFourFour">
+                                                  <div class="team_points_flex"> <img src="images/Dream11/france-map.png"> FRANCE</div>
+                                                  <div class="team_points_flex next_team">  ENGLAND <img src="images/Dream11/england_map.png"></div>
+                                               </a>
+                                            </h4>
+                                         </div>
+                                         <div id="collapseFourFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThreeFour">
+                                            <div class="panel-body">
+                                               <h3>Head to Head</h3>
+                                               <div class="row">
+                                                  <div class="col-lg-5">
+                                                     <h3>France</h3>
+                                                     <table width="100%">
+                                                        <tbody>
+                                                           <tr>
+                                                              <td>Total Wins</td>
+                                                              <td>3</td>
+                                                           </tr>
+                                                           <tr>
+                                                              <td>Home</td>
+                                                              <td>2</td>
+                                                           </tr>
+                                                           <tr>
+                                                              <td>Away</td>
+                                                              <td>1</td>
+                                                           </tr>
+                                                        </tbody>
+                                                     </table>
+                                                  </div>
+                                                  <div class="col-lg-2 head_to_head">
+                                                     <h1>4</h1>
+                                                  </div>
+                                                  <div class="col-lg-5">
+                                                     <h3>England</h3>
+                                                     <table width="100%">
+                                                        <tbody>
+                                                           <tr>
+                                                              <td>Total Wins</td>
+                                                              <td>0</td>
+                                                           </tr>
+                                                           <tr>
+                                                              <td>Home</td>
+                                                              <td>1</td>
+                                                           </tr>
+                                                           <tr>
+                                                              <td>Away</td>
+                                                              <td>2</td>
+                                                           </tr>
+                                                        </tbody>
+                                                     </table>
+                                                  </div>
+                                               </div>
+                                            </div>
+                                         </div>
+                                      </div>
+                                      
+                                      
+                                </div>
+
+
+
+
+
+                              <div id="menu3" class=" tab-pane fade">
+                                  
+                                  <h4 id="bottm_pd">GAMEWEEK - 3</h4>
+                                  <h3>Ongoing </h3>
+                                              <div class="panel panel-default">
+                                                 <div class="panel-heading" role="tab" id="heading11">
+                                                    <h4 class="panel-title">
+                                                       <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse11" aria-expanded="true" aria-controls="collapse11" class="fixture_bar_ongoing">
+                                                          <div class="timing">45:00</div>
+                                                          <div class="team_points_flex1 ongoing_flex1"> <img src="images/Dream11/france-map.png"> FRANCE</div>
+                                                          <div class="team_points_flex1 points"><span>00 &nbsp; &nbsp; &nbsp; 00</span> </div>
+                                                          <div class="team_points_flex1 ongoing_flex2">  ENGLAND <img src="images/Dream11/england_map.png"></div>
+                                                       </a>
+                                                    </h4>
+                                                 </div>
+                                                 <div id="collapse11" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading11">
+                                                    <div class="panel-body">
+                                                       <h3>Head to Head</h3>
+                                                       <div class="row">
+                                                          <div class="col-lg-5">
+                                                             <h3>France</h3>
+                                                             <table width="100%">
+                                                                <tbody>
+                                                                   <tr>
+                                                                      <td>Total Wins</td>
+                                                                      <td>3</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                      <td>Home</td>
+                                                                      <td>2</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                      <td>Away</td>
+                                                                      <td>1</td>
+                                                                   </tr>
+                                                                </tbody>
+                                                             </table>
+                                                          </div>
+                                                          <div class="col-lg-2 head_to_head">
+                                                             <h1>4</h1>
+                                                          </div>
+                                                          <div class="col-lg-5">
+                                                             <h3>England</h3>
+                                                             <table width="100%">
+                                                                <tbody>
+                                                                   <tr>
+                                                                      <td>Total Wins</td>
+                                                                      <td>0</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                      <td>Home</td>
+                                                                      <td>1</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                      <td>Away</td>
+                                                                      <td>2</td>
+                                                                   </tr>
+                                                                </tbody>
+                                                             </table>
+                                                          </div>
+                                                       </div>
+                                                    </div>
+                                                 </div>
+                                              </div>
+                                              <br>
+                                              <br>
+                                              <h3>Upcoming</h3>
+                                              <br>
+                                              <div class="panel panel-default">
+                                                 <div class="panel-heading" role="tab" id="heading12">
+                                                    <h4 class="panel-title">
+                                                       <a class="collapsed fixture_bar" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse12" aria-expanded="false" aria-controls="collapse12">
+                                                          <div class="team_points_flex"> <img src="images/Dream11/france-map.png"> FRANCE</div>
+                                                          <div class="team_points_flex next_team">  ENGLAND <img src="images/Dream11/england_map.png"></div>
+                                                       </a>
+                                                    </h4>
+                                                 </div>
+                                                 <div id="collapse12" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading12">
+                                                    <div class="panel-body">
+                                                       <h3>Head to Head</h3>
+                                                       <div class="row">
+                                                          <div class="col-lg-5">
+                                                             <h3>France</h3>
+                                                             <table width="100%">
+                                                                <tbody>
+                                                                   <tr>
+                                                                      <td>Total Wins</td>
+                                                                      <td>3</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                      <td>Home</td>
+                                                                      <td>2</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                      <td>Away</td>
+                                                                      <td>1</td>
+                                                                   </tr>
+                                                                </tbody>
+                                                             </table>
+                                                          </div>
+                                                          <div class="col-lg-2 head_to_head">
+                                                             <h1>4</h1>
+                                                          </div>
+                                                          <div class="col-lg-5">
+                                                             <h3>England</h3>
+                                                             <table width="100%">
+                                                                <tbody>
+                                                                   <tr>
+                                                                      <td>Total Wins</td>
+                                                                      <td>0</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                      <td>Home</td>
+                                                                      <td>1</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                      <td>Away</td>
+                                                                      <td>2</td>
+                                                                   </tr>
+                                                                </tbody>
+                                                             </table>
+                                                          </div>
+                                                       </div>
+                                                    </div>
+                                                 </div>
+                                              </div>
+                                              <div class="panel panel-default">
+                                                 <div class="panel-heading" role="tab" id="heading13">
+                                                    <h4 class="panel-title">
+                                                       <a class="collapsed fixture_bar" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse13" aria-expanded="false" aria-controls="collapse13">
+                                                          <div class="team_points_flex"> <img src="images/Dream11/france-map.png"> FRANCE</div>
+                                                          <div class="team_points_flex next_team">  ENGLAND <img src="images/Dream11/england_map.png"></div>
+                                                       </a>
+                                                    </h4>
+                                                 </div>
+                                                 <div id="collapse13" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading13">
+                                                    <div class="panel-body">
+                                                       <h3>Head to Head</h3>
+                                                       <div class="row">
+                                                          <div class="col-lg-5">
+                                                             <h3>France</h3>
+                                                             <table width="100%">
+                                                                <tbody>
+                                                                   <tr>
+                                                                      <td>Total Wins</td>
+                                                                      <td>3</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                      <td>Home</td>
+                                                                      <td>2</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                      <td>Away</td>
+                                                                      <td>1</td>
+                                                                   </tr>
+                                                                </tbody>
+                                                             </table>
+                                                          </div>
+                                                          <div class="col-lg-2 head_to_head">
+                                                             <h1>4</h1>
+                                                          </div>
+                                                          <div class="col-lg-5">
+                                                             <h3>England</h3>
+                                                             <table width="100%">
+                                                                <tbody>
+                                                                   <tr>
+                                                                      <td>Total Wins</td>
+                                                                      <td>0</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                      <td>Home</td>
+                                                                      <td>1</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                      <td>Away</td>
+                                                                      <td>2</td>
+                                                                   </tr>
+                                                                </tbody>
+                                                             </table>
+                                                          </div>
+                                                       </div>
+                                                    </div>
+                                                 </div>
+                                              </div>
+                                              <div class="panel panel-default">
+                                                 <div class="panel-heading" role="tab" id="heading14">
+                                                    <h4 class="panel-title">
+                                                       <a class="collapsed fixture_bar" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse14" aria-expanded="false" aria-controls="collapse14">
+                                                          <div class="team_points_flex"> <img src="images/Dream11/france-map.png"> FRANCE</div>
+                                                          <div class="team_points_flex next_team">  ENGLAND <img src="images/Dream11/england_map.png"></div>
+                                                       </a>
+                                                    </h4>
+                                                 </div>
+                                                 <div id="collapse14" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading14">
+                                                    <div class="panel-body">
+                                                       <h3>Head to Head</h3>
+                                                       <div class="row">
+                                                          <div class="col-lg-5">
+                                                             <h3>France</h3>
+                                                             <table width="100%">
+                                                                <tbody>
+                                                                   <tr>
+                                                                      <td>Total Wins</td>
+                                                                      <td>3</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                      <td>Home</td>
+                                                                      <td>2</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                      <td>Away</td>
+                                                                      <td>1</td>
+                                                                   </tr>
+                                                                </tbody>
+                                                             </table>
+                                                          </div>
+                                                          <div class="col-lg-2 head_to_head">
+                                                             <h1>4</h1>
+                                                          </div>
+                                                          <div class="col-lg-5">
+                                                             <h3>England</h3>
+                                                             <table width="100%">
+                                                                <tbody>
+                                                                   <tr>
+                                                                      <td>Total Wins</td>
+                                                                      <td>0</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                      <td>Home</td>
+                                                                      <td>1</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                      <td>Away</td>
+                                                                      <td>2</td>
+                                                                   </tr>
+                                                                </tbody>
+                                                             </table>
+                                                          </div>
+                                                       </div>
+                                                    </div>
+                                                 </div>
+                                              </div>
+                                             
+                                              
+                               </div>
+
+
+
+                              <!--------------Gameweek 4------------------>
+                            </div>
+
+
+                             
+
+                         </div>
+                         <!-- panel-group -->
+                      </div>
+                   </div>
+                </div>
+                <!-- container -->
+             </div>
+          </div>
+       </div>
+      </div>
+       <!-----------Footer---------------->
+       <div id="footer"></div>
+       <!-----------/ Footer----------------> 
+       <!-----------Message------------> 
+      
+       <!-----------/ Message------------> 
+    <!-------------------Login Modal---------------->
+    <!-------------------/ Login Modal---------------->
+      
+      
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="js/front/jquery.accordion.js"></script>
+      <script src="js/jPushMenu.js" ></script>
+      <script type="text/javascript">
+         //<![CDATA[
+         $(document).ready(function(){
+           $('.toggle-menu').jPushMenu({closeOnClickLink: false});
+          
+         });
+         //]]>
+      </script>
+     
+      
+      <script> 
+         $(function(){
+          
+             $("#header").load("header_fantasy.html"); 
+             $("#footer").load("footer.html"); 
+         });
+      </script>
+       <script>
+          $('.btnNext').click(function(){
+           $('.nav-tabs > .active').next('li').find('a').trigger('click');
+         });
+         
+           $('.btnPrevious').click(function(){
+           $('.nav-tabs > .active').prev('li').find('a').trigger('click');
+         });
+         </script>
+   </body>
+</html>

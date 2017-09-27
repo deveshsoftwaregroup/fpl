@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <title>The 12th Man Fantasy League</title>
+      <script type='text/javascript'
+         src='http://code.jquery.com/jquery-1.9.1.js'></script>
+      <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+      <link rel="stylesheet" href="css/style-dream.css" type="text/css">
+    
+      <!--<link rel="stylesheet" href="css/tab-style.css" type="text/css">---->
+      <link rel="stylesheet" href="css/jquery.bxslider.css" type="text/css">
+      <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,400,600,700" rel="stylesheet">
+    
+        <link rel="stylesheet" href="css/theme.css" type="text/css">
+      <script type='text/javascript'
+         src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+      <script type='text/javascript'>//<![CDATA[ 
+         $(window).load(function(){<!-- w  w w. j av  a  2s.c om-->
+         $('a[data-toggle="tab"]').on('shown', function (e) {
+             $('.dropdown-menu li.active').removeClass('active');
+             $(this).parent('li').addClass('active');
+         })
+         });//]]>  
+      </script>
+      <style>
+         .my_team_points li {padding: 5px !important;}
+      </style>
+   
+   </head>
+   <body class="dream11-bg fantasy-bg transfers_predict11 dream_11transfer">
+      <div class="container ">
+      <!-----------Header---------------->
+        <div id="header"></div>   
+          
+    <!-----------/ Header---------------->
+      <div class="row">
+         <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 transfers_predict11_map">
+            <img src="images/Dream11/dream11_banner.png" class="img-responsive center-block">
+            <div>
+               <h3>Select Players from List</h3>
+               <p>Gameweek Deadline : </p>
+               <div class="flex-buttons">
+                  <div class="flex1 unlimited_transfer">Want unlimited free transfers?</div>
+                   
+                  <div class="flex1"><button type="button" class="btn claim_btn"> Use Wild Card</button></div>
+                  <div class="flex1"><button type="button" class="btn claim_btn">Buy Wild Card</button></div>
+               </div>
+                <br>
+               <p>Player Count: 0/15</p>
+               <div class="row">
+                  <div class="col-lg-8 team_map_dream11">
+                     <div class="row">
+                        <ul class="itemsContainer ">
+                           <li >
+                              <a href="#"> <img src="images/Dream11/goalkeeper_old.png" class=" img-responsive gaolkeeper_hvr" id="picture"></a>
+                              <h4>Player</h4>
+                           </li>
+                        </ul>
+                     </div>
+                     <div class="row">
+                        <ul >
+                           <li>
+                              <a href="#"> <img src="images/Dream11/player.png" class="center-block img-responsive" id="picture1"> </a>
+                              <h4>Player</h4>
+                           </li>
+                           <li>
+                              <a href="#"> <img src="images/Dream11/player.png" class="center-block img-responsive" id="picture2"></a>
+                              <h4>Player</h4>
+                           </li>
+                           <li>
+                              <a href="#"> <img src="images/Dream11/player.png" class="center-block img-responsive" id="picture3"></a>
+                              <h4>Player</h4>
+                           </li>
+                           <li>
+                              <a href="#"> <img src="images/Dream11/player.png" class="center-block img-responsive" id="picture4"></a> 
+                              <h4>Player</h4>
+                           </li>
+                        </ul>
+                     </div>
+                     <div class="row">
+                        <ul >
+                           <li>
+                              <a href="#"> <img src="images/Dream11/player.png" class="center-block img-responsive" id="picture_1"></a>
+                              <h4>Player</h4>
+                           </li>
+                           <li>
+                              <a href="#"> <img src="images/Dream11/player.png" class="center-block img-responsive" id="picture_2"></a>
+                              <h4>Player</h4>
+                           </li>
+                           <li>
+                              <a href="#"> <img src="images/Dream11/player.png" class="center-block img-responsive" id="picture_3"></a>
+                              <h4>Player</h4>
+                           </li>
+                        </ul>
+                     </div>
+                     <div class="row">
+                        <ul >
+                           <li>
+                              <a href="#"> <img src="images/Dream11/player.png" class="center-block img-responsive" id="picture_a"></a> 
+                              <h4>Player</h4>
+                           </li>
+                           <li>
+                              <a href="#"> <img src="images/Dream11/player.png" class="center-block img-responsive" id="picture_b"></a>
+                              <h4>Player</h4>
+                           </li>
+                           <li>
+                              <a href="#"> <img src="images/Dream11/player.png" class="center-block img-responsive" id="picture_c"></a>
+                              <h4>Player</h4>
+                           </li>
+                        </ul>
+                     </div>
+                     <div class="row pddn_top_100"><img src="images/simple-bannr.png" class="img-responsive center-block"></div>
+                  </div>
+                  <div class="col-lg-4 col-lg-offset-0 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2   my_points ">
+                     <div ><img src="images/Dream11/player_btn.png" class="center-block img-responsive " ></div>
+                     <div >
+                         
+                            <!------------------ Goalkeepers-------->
+                        <div>
+                            <div> <span>
+                                 <div class="nav nav-tabs nav-stacked dream11_grad" id="grad2" >
+                                    <div class="dropdown">
+                                       <a class="dropdown-toggle" data-toggle="dropdown" href="#">Sort By <span class="glyphicon glyphicon-menu-down "></span></a>
+                                       <ul class="dropdown-menu">
+                                          <li class="active"><a data-toggle="tab" href="#menu1">Club</a></li>
+                                          <li><a data-toggle="tab" href="#menu2">Club1</a></li>
+                                          <li><a data-toggle="tab" href="#menu3">Club2</a></li>
+                                       </ul>
+                                    </div>
+                                 </div>
+                              </span>
+                            </div>
+                                                     
+                           <div>
+                              <div class="row tab-content">
+                                 
+                                 <div id="menu1" class="col-lg-12 tab-pane fade in active">
+                                    <div class="heading"> <span >Goalkeepers</span> </div>   
+                                    <ul class="my_team_points add_players bxslider1">
+                                       <li>PLAYER NAME <a><span class="glyphicon glyphicon-plus"  id="mtl"></a></span></li>
+                                        <li>PLAYER NAME <a><span class="glyphicon glyphicon-plus" id="mtl1"></span></a></li>
+                                        <li>PLAYER NAME <a><span class="glyphicon glyphicon-plus" id="mtl2"></span></a></li>
+                                        <li>PLAYER NAME <a><span class="glyphicon glyphicon-plus" id="mtl3"></span></a></li>
+                                        <li>PLAYER NAME <a><span class="glyphicon glyphicon-plus" id="mtl4"></span></a></li>
+                                        <li>PLAYER NAME <a><span class="glyphicon glyphicon-plus" id="mtl5"></span></a></li>
+                                    </ul>
+                                     <div class="heading"> <span >Defenders</span> </div> 
+                                     <ul class="my_team_points add_players bxslider11">
+                                       <li>PLAYER NAME <a><span class="glyphicon glyphicon-plus" id="tl"></span></li>
+                                       <li>PLAYER NAME <a><span class="glyphicon glyphicon-plus" id="tl1"></span></li>
+                                       <li>PLAYER NAME <a><span class="glyphicon glyphicon-plus" id="tl2"></span></li>
+                                       <li>PLAYER NAME <a><span class="glyphicon glyphicon-plus" id="tl3"></span></li>
+                                       <li>PLAYER NAME <a><span class="glyphicon glyphicon-plus" id="tl4"></span></li>
+                                       <li>PLAYER NAME <a><span class="glyphicon glyphicon-plus" id="tl5"></span></li>
+                                    </ul>
+                                     <div class="heading"> <span >Midfielder</span> </div> 
+                                      <ul class="my_team_points add_players bxslider21">
+                                       <li>PLAYER NAME  <a ><span class="glyphicon glyphicon-plus" id="tln_1" ></span></a></li>
+                                          <li>PLAYER NAME <a><span class="glyphicon glyphicon-plus" id="tln_2"></span></a></li>
+                                          <li>PLAYER NAME <a><span class="glyphicon glyphicon-plus" id="tln_3"></span></a></li>
+                                          <li>PLAYER NAME <a><span class="glyphicon glyphicon-plus" id="tln_4"></span></a></li>
+                                          <li>PLAYER NAME <a><span class="glyphicon glyphicon-plus" id="tln_5"></span></a></li>
+                                          <li>PLAYER NAME <a><span class="glyphicon glyphicon-plus" id="tln_6"></span></a></li>
+                                    </ul>
+                                     <div class="heading"> <span >Attacker</span> </div> 
+                                     <ul class="my_team_points add_players bxslider31">
+                                         <li>PLAYER NAME <a><span class="glyphicon glyphicon-plus" id="tl_1"></span></a></li>
+                                         <li>PLAYER NAME <a><span class="glyphicon glyphicon-plus" id="tl_2"></span></a></li>
+                                         <li>PLAYER NAME <a><span class="glyphicon glyphicon-plus" id="tl_3"></span></a></li>
+                                         <li>PLAYER NAME <a><span class="glyphicon glyphicon-plus" id="tl_4"></span></a></li>
+                                         <li>PLAYER NAME <a><span class="glyphicon glyphicon-plus" id="tl_5"></span></a></li>
+                                         <li>PLAYER NAME <a><span class="glyphicon glyphicon-plus" id="tl_6"></span></a></li>
+                                    </ul>
+
+                                  
+                                  </div>
+                                  
+                                 <!---------------------> 
+                                 <div id="menu2" class="col-lg-12 tab-pane fade ">
+                                     
+                                    <div class="heading"> <span>Goalkeepers</span> </div>    
+                                    <ul class="my_team_points add_players bxslider2">
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus" ></span></a></li>
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus" ></span></a></li>
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus" ></span></a></li>
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus" ></span></a></li>
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus" ></span></a></li>
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus" ></span></a></li>
+                                    </ul>
+                                     <div class="heading"> <span>Defenders</span> </div>
+                                     <ul class="my_team_points add_players bxslider12">
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus"></span></a></li>
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus"></span></a></li>
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus"></span></a></li>
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus"></span></a></li>
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus"></span></a></li>
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus"></span></a></li>
+                                    </ul>
+                                     <div class="heading"> <span>Midfielder</span> </div> 
+                                      <ul class="my_team_points add_players bxslider22">
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus"></span></a></li>
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus"></span></a></li>
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus"></span></a></li>
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus"></span></a></li>
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus"></span></a></li>
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus"></span></a></li>
+                                    </ul>
+                                     <div class="heading"> <span>Attacker</span> </div>
+                                      <ul class="my_team_points add_players bxslider32">
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus"></span></a></li>
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus"></span></a></li>
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus"></span></a></li>
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus"></span></a></li>
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus"></span></a></li>
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus"></span></a></li>
+                                    </ul>
+                                 </div>
+                                 <!---------------------> 
+                                 <div id="menu3" class=" col-lg-12 tab-pane fade ">
+                                     <div class="heading"> <span>Goalkeepers</span> </div>    
+                                    <ul class="my_team_points add_players bxslider3">
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus"></span></a></li>
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus"></span></a></li>
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus"></span></a></li>
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus"></span></a></li>
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus"></span></a></li>
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus"></span></a></li>
+                                    </ul>
+                                     <div class="heading"> <span>Defenders</span> </div>
+                                     <ul class="my_team_points add_players bxslider13">
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus"></span></a></li>
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus"></span></a></li>
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus"></span></a></li>
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus"></span></a></li>
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus"></span></a></li>
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus"></span></a></li>
+                                    </ul>
+                                     <div class="heading"> <span>Midfielder</span> </div> 
+                                      <ul class="my_team_points add_players bxslider23">
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus"></span></a></li>
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus"></span></a></li>
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus"></span></a></li>
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus"></span></a></li>
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus"></span></a></li>
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus"></span></a></li>
+                                    </ul>
+                                     <div class="heading"> <span>Attacker</span> </div>
+                                      <ul class="my_team_points add_players bxslider33">
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus"></span></a></li>
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus"></span></a></li>
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus"></span></a></li>
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus"></span></a></li>
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus"></span></a></li>
+                                       <li>PLAYER NAME1 <a><span class="glyphicon glyphicon-plus"></span></a></li>
+                                    </ul>
+                                 </div>
+                               </div>
+                                 <!------------------/ Goalkeepers-------->
+                                 <!-------------Defender-----------------> 
+                              
+                                
+                                 </div>
+                                 <!---------------------> 
+                                 
+
+                                  </div>
+                                                       
+                              </div>
+                           </div>
+                        </div>
+                         
+                        
+                         
+                         
+                         
+                        
+                         
+                      </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-----------Footer---------------->
+         <div id="footer"></div>
+         <!-----------/ Footer---------------->  
+      </div>
+      <!-------------------Login Modal---------------->
+      <!-------------------/ Login Modal---------------->
+          
+       
+        
+          
+      <script src="js/jquery.bxslider.js"></script>     
+      <script>
+         $('.bxslider1').bxSlider({
+         mode: 'vertical',
+             minSlides: 3,
+         pager:false,
+         slideMargin: 5
+         });
+             
+             $('.bxslider2').bxSlider({
+         mode: 'vertical',
+             minSlides: 3,
+         pager:false,
+         slideMargin: 5
+         });
+              $('.bxslider3').bxSlider({
+         mode: 'vertical',
+             minSlides: 3,
+         pager:false,
+         slideMargin: 5
+         });
+              $('.bxslider11').bxSlider({
+         mode: 'vertical',
+             minSlides: 3,
+         pager:false,
+         slideMargin: 5
+         });
+          $('.bxslider12').bxSlider({
+         mode: 'vertical',
+             minSlides: 3,
+         pager:false,
+         slideMargin: 5
+         });
+          $('.bxslider13').bxSlider({
+         mode: 'vertical',
+             minSlides: 3,
+         pager:false,
+         slideMargin: 5
+         });
+          
+          $('.bxslider21').bxSlider({
+         mode: 'vertical',
+             minSlides: 3,
+         pager:false,
+         slideMargin: 5
+         });
+          $('.bxslider22').bxSlider({
+         mode: 'vertical',
+             minSlides: 3,
+         pager:false,
+         slideMargin: 5
+         });
+          $('.bxslider23').bxSlider({
+         mode: 'vertical',
+             minSlides: 3,
+         pager:false,
+         slideMargin: 5
+         });
+          
+           $('.bxslider31').bxSlider({
+         mode: 'vertical',
+             minSlides: 3,
+         pager:false,
+         slideMargin: 5
+         });
+          $('.bxslider32').bxSlider({
+         mode: 'vertical',
+             minSlides: 3,
+         pager:false,
+         slideMargin: 5
+         });
+          $('.bxslider33').bxSlider({
+         mode: 'vertical',
+             minSlides: 3,
+         pager:false,
+         slideMargin: 5
+         });
+          
+      </script>
+      <script> 
+         $(function(){
+          
+             $("#header").load("header_fantasy.html"); 
+             $("#footer").load("footer.html"); 
+         });
+        </script>
+          
+          <script src="js/jPushMenu.js" ></script>
+      <script type="text/javascript">
+         //<![CDATA[
+         $(document).ready(function(){
+           $('.toggle-menu').jPushMenu({closeOnClickLink: false});
+          
+         });
+         //]]>
+      </script>
+          
+          <script>
+            $(document).on('shown.bs.tab', 'a[data-toggle="tab"]', function (e) {
+    var tab = $(e.target);
+    var contentId = tab.attr("href");
+
+    //This check if the tab is active
+    if (tab.parent().hasClass('active')) {
+         console.log('the tab with the content id ' + contentId + ' is visible');
+    } else {
+         console.log('the tab with the content id ' + contentId + ' is NOT visible');
+    }
+
+});
+          </script>
+    
+    <script>
+       
+        
+        $('#mtl').click(function(){
+   $('#picture').attr('src', 'images/team/goalkeeper.png');
+            
+});
+         $('#mtl1').click(function(){
+   $('#picture').attr('src', 'images/team/player_1.png');
+});
+        $('#mtl2').click(function(){
+   $('#picture').attr('src', 'images/team/player_1.png');
+});
+        $('#mtl3').click(function(){
+   $('#picture').attr('src', 'images/team/player_1.png');
+});
+        $('#mtl4').click(function(){
+   $('#picture').attr('src', 'images/team/player_1.png');
+});
+        
+        
+        $('#tl').click(function(){
+   $('#picture1').attr('src', 'images/team/player_1.png');
+});
+        
+        $('#tln_2').click(function(){
+   $('#picture_1').attr('src', 'images/team/goalkeeper.png');
+});
+        
+         $('#tl_1').click(function(){
+   $('#picture_a').attr('src', 'images/team/goalkeeper.png');
+});
+        
+    </script>
+
+<script>
+    $('.team_map_dream11 ul li').prepend($('<img>',{id:'theImg',src:'images/Dream11/close_btn.png'}).addClass('close_btn'))
+</script>
+<script>
+     $('.close_btn').click(function(){
+    $('#picture').attr('src', 'images/team/goalkeeper_old.png');        
+});
+    
+    
+</script>
+   </body>
+</html>
