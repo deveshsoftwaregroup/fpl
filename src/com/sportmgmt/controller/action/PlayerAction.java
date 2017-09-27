@@ -147,7 +147,7 @@ public class PlayerAction {
 		}
 		return sportMgmtResponse;
 	}
-	@RequestMapping(value = "make-player-history/{gameId}/{gameWeekId}/{userId}", method = RequestMethod.GET)
+	@RequestMapping(value = "make-player-history-for-user/{gameId}/{gameWeekId}/{userId}", method = RequestMethod.GET)
 	public @ResponseBody SportMgmtResponse createGameWeekHistoryForPlayers(@PathVariable String gameId, @RequestParam("gameType") String gameType,@PathVariable String gameWeekId,@PathVariable String userId)
 	{System.out.println("gameId"+gameId);
 	System.out.println("");
@@ -194,9 +194,9 @@ public class PlayerAction {
 		String userId=(String)session.getAttribute("userId");
 		PointRankingUtility pointRankingUtility = new PointRankingUtility();
 		String gameWeekId = "1";//pointRankingUtility.gameWeekIdForTransferPlayer(gameId);
-		System.out.println("gameId="+gameId);
-		System.out.println("gameWeekId="+gameWeekId);
-		System.out.println("userIdddd="+userId);
+	     logger.info("inside check player history gameId="+gameId);
+	     logger.info("gameWeekId="+gameWeekId);
+	     logger.info("userIdddd="+userId);
 		 if(gameType !=null && gameType.equals("dream_eleven"));
 		 {
 			PlayerManager.setDreamEleven(true);

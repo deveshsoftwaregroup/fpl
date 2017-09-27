@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="context" value="/SportMgmt" />
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<%@ taglib uri="sportmgmt.tld" prefix="s" %>  
+<%@ taglib uri="..//WEB-INF/sportmgmt.tld" prefix="s" %>  
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 <style>
@@ -321,7 +321,7 @@
 	                                                  
 				</div>
 				 <div class="col-lg-4 pull-right claim_your_prize">
-                                             <a href="#"><button type="button" class="btn claim_btn" onclick="createHistory11('${sessionScope.gameDetails.gameId}','1','${sessionScope.userId}');">Confirm Your Team</button></a>
+                                             <a href="#"><button type="button" class="btn claim_btn" onclick="createHistory11('${sessionScope.gameDetails.gameId}','${gameWeekNumber}','${sessionScope.userId}');">Confirm Your Team</button></a>
                                             </div>                                           
 	                </div>
 	           
@@ -834,7 +834,7 @@
 		    }
 		});
 	});
-	  $(document).ready(function() {
+	 /*  $(document).ready(function() {
 		 url ="/SportMgmt/mvc/player/check-player-history?gameType=dream_eleven" ; 
 		 
 			$.ajax({
@@ -842,15 +842,21 @@
 	     		 dataType: 'html',
 	     		  success: function( resp ) {
 	     			 console.log(resp); 
-	     			 
-	     			 alert("Your Team is already Confirmed");
-	     			isUnderDeadline=true;
+	     			 if(resp=="true")
+	     			 {
+	     				 alert("Your Team is already Confirmed");
+	     				 }
+	     			 else
+	     				 {
+	     				alert("Please confirm your Team");
+	     				 }
+	     			
 	     		  },
 	     		  error: function( req, status, err ) {
 	     		    console.log( 'something went wrong', status, err );
 	     		  }
 	     		});	
-	 });
+	 }); */
 	 
 	
 	 $('#ismjs-element-filter').change(function(){
@@ -953,6 +959,7 @@
      	</c:when>
      	<c:otherwise>
      	alert("not dead");
+     	
     	 var playerType = '';
     	 var playerName = '';
     	 var playerPrice = '';
@@ -1183,22 +1190,51 @@
    		}
      }
      function createHistory11( gameId, gameWeekId, userId)
-	 	{ 	
+	 	{ 	url ="/SportMgmt/mvc/player/check-player-history?gameType=dream_eleven" ;
  			alert("gameId"+gameId);
- 	
+ 			$.ajax({
+	     		  url: url,
+	     		 dataType: 'html',
+	     		  success: function( resp ) {
+	     			 console.log(resp); 
+	     			 if(resp=="true")
+	     			 {
+	     				 alert("Your Team is already Confirmed");
+	     				 }
+	     			 else
+	     				 {
+ 		
+	     				url ="/SportMgmt/mvc/player/make-player-history-for-user/"+gameId+"/"+gameWeekId+"/"+userId+"?gameType=dream_eleven" ;
+	    	 			$.ajax({
+	    	 	     		  url: url,
+	    	 	     		 dataType: 'html',
+	    	 	     		  success: function( resp ) {
+	    	 	     			 console.log("resp"+resp);
+	    	 	     			
+	    	 	     				 alert("Your team has been confirmed");
+	    	 	     				 
+	    	 	     				 },
+	    	 	     			
+                                  
+	    	 	     		  
+	    	 	     		  
+	    	 	     		  error: function( req, status, err ) {
+	    	 	     		    console.log( 'something went wrong', status, err );
+	    	 	     		  }
+	    	 	     		    
+	    	 	     		  });
+	     				 }
+	    	 	     		
+	     				
+	     		  
+	     		 },
+	     		 
+	     		   error: function( req, status, err ) {
+	     		    console.log( 'something went wrong', status, err );
+	     		   }
+	     		}); 
+ 	 
 	 		
-	 			url ="/SportMgmt/mvc/player/make-player-history/"+gameId+"/"+gameWeekId+"/"+userId+"?gameType=dream_eleven" ;
-	 			$.ajax({
-	 	     		  url: url,
-	 	     		 dataType: 'html',
-	 	     		  success: function( resp ) {
-	 	     			 console.log(resp); 
-	 	     			 alert("Your Team has been Confirmed");
-	 	     		  },
-	 	     		  error: function( req, status, err ) {
-	 	     		    console.log( 'something went wrong', status, err );
-	 	     		  }
-	 	     		});	
     	 
 	 		}
   
