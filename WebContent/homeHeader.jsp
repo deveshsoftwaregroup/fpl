@@ -265,7 +265,7 @@
 		       <input type="password" name="logonPasswordConfirm" placeholder="Confirm Password" required id="password2" class="form-control" />
 		   </div>
 		    <div class="form-group">                          
-              <input type="date" class="form-control" id="dob"  name="dob" required>
+              <input type="date" class="form-control" id="dob"  name="dob" required id="dob">
             </div>
 		  <div class="form-group">
 		       <select name="country" placeholder="Mobile Number" required id="country" class="form-control">

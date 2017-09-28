@@ -39,10 +39,10 @@
 <div class="row">
      <div class="col-lg-10 col-lg-offset-1  col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1  footer_btn">
          <div class="row">
-    <div class="col-lg-4 col-md-4 col-sm-4 btm_ftr">
-        <h3>ABOUT</h3>
+ 	 <div class="col-lg-4 col-md-4 col-sm-4 btm_ftr">
+        <h3>JUST THINK SPORTS</h3>
         <p>We at justthinksports.com provide ONE STOP solution for sports lovers.</p>
-    </div>
+    </div> 
     <div class="col-lg-4 col-md-4 col-sm-4 btm_ftr1">
         <h3></h3>
         <ul class="mid_text">
@@ -53,7 +53,7 @@
         </ul>
     </div>
     <div class="col-lg-4 col-md-4 col-sm-4 btm_ftr2">
-        <h3>Contact</h3>
+        <!-- <h3>Contact</h3> -->
         <p>If you have any query or want to contact us, you are most welcome to write us at</p>
             
         <p>Just Think Sports</p> 

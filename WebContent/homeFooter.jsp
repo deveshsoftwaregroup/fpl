@@ -40,8 +40,8 @@
      <div class="col-lg-10 col-lg-offset-1  col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1  footer_btn">
          <div class="row">
     <div class="col-lg-4 col-md-4 col-sm-4 btm_ftr">
-        <h3>ABOUT</h3>
-        <p>We at justthinksports.com provide ONE STOP solution for sports lovers.</p>
+        <h3>JUST THINK SPORTS</h3>
+        <p></p>
     </div>
     <div class="col-lg-4 col-md-4 col-sm-4 btm_ftr1">
         <h3></h3>
