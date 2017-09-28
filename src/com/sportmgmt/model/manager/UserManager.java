@@ -7,6 +7,7 @@ import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 import org.apache.log4j.Logger;
 import org.hibernate.Query;
@@ -641,9 +642,9 @@ public class UserManager {
 	{
 		System.out.println(fetchAllCountryStateCity());
 	}
-	public static HashMap<String,HashMap<String,ArrayList<String>>> getCountryStateCityMap()
+	public static TreeMap<String,HashMap<String,ArrayList<String>>> getCountryStateCityMap()
 	{
-		HashMap<String,HashMap<String,ArrayList<String>>> countryCityStateMap = new HashMap<String,HashMap<String,ArrayList<String>>>();
+		TreeMap<String,HashMap<String,ArrayList<String>>> countryCityStateMap = new TreeMap<String,HashMap<String,ArrayList<String>>>();
 		List courntyCityStateList = fetchAllCountryStateCity();
 		if(courntyCityStateList != null && courntyCityStateList.size() >=0)
 		{
@@ -724,9 +725,9 @@ public class UserManager {
 		logger.info("----- Returning Club  List  ----"+clubList);
 		return clubList;
 	}
-	public static HashMap<String,HashMap<String,ArrayList<String>>> getClubMap()
+	public static TreeMap<String,HashMap<String,ArrayList<String>>> getClubMap()
 	{
-		HashMap<String,HashMap<String,ArrayList<String>>> clubMap = new HashMap<String,HashMap<String,ArrayList<String>>>();
+		TreeMap<String,HashMap<String,ArrayList<String>>> clubMap = new TreeMap<String,HashMap<String,ArrayList<String>>>();
 		List clubList = fetchAllClub();
 		if(clubList != null && clubList.size() >=0)
 		{
@@ -738,15 +739,12 @@ public class UserManager {
 				}
 				else
 				{
-					HashMap<String,ArrayList<String>> stateMap = new <String,ArrayList<String>>HashMap();
-					//ArrayList<String> cityList = new ArrayList<String>();
-					//cityList.add(cntrySttCity.getCityName());
-					//stateMap.put(cntrySttCity.getStateName(), cityList);
+					HashMap<String,ArrayList<String>> stateMap = new <String,ArrayList<String>>HashMap();					
 					clubMap.put(club.getClubName(), stateMap);
 				}
 			}
 		}
-		logger.info("---------------> Returning Country State City Map: "+clubMap);
+		logger.info("---------------> Returning clubMap "+clubMap);
 		return clubMap;
 	
 }
