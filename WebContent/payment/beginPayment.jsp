@@ -13,7 +13,7 @@ This is Begin Payment Page
 <input type="hidden" name="firstname" value="${firstname}" />
 <input type="hidden" name="lastname" value="${lastname}" />
 <input type="hidden" name="surl" value="${surl}" />
-<input type="hidden" name="phone" value="8860735095" />
+<input type="hidden" name="phone" value="${sessionScope.user.contactNumber}" />
 <input type="hidden" name="service_provider" value="payu_paisa" />
 <input type="hidden" name="key" value="${key}" />
 <input type="hidden" name="hash" value = "${hash}" />

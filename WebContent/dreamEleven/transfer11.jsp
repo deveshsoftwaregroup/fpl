@@ -1192,6 +1192,10 @@
      }
      function createHistory11( gameId, gameWeekId, userId)
 	 	{ 	
+    	 if(typeof userGameJson != 'undefined' && userGameJson.playerList.length >= 11)
+    			 {
+    		 
+    	 
     	 url ="/SportMgmt/mvc/player/check-player-history/"+gameId+"/"+gameWeekId+"/"+userId+"?gameType=dream_eleven" ;
  			$.ajax({
 	     		  url: url,
@@ -1228,6 +1232,10 @@
 	     		    console.log( 'something went wrong', status, err );
 	     		   }
 	     		}); 
+    	 }
+    	 else{
+    		 alert("Please complete 11 players");
+    	 }
  	 
 	 		
     	 
