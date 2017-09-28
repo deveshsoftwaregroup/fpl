@@ -134,8 +134,8 @@
 												<table class="table table-striped table-bordered table-hover">
 													<thead>
 													  <tr>
-														<th>Product Name</th>
-														<th>Product Price</th>
+														<th>Wild Card for</th>
+														<th>Price</th>
 														<th>Discount Code</th>
 														<th>Total Price</th>
 														<th>Purchase It</th>

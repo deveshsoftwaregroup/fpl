@@ -13,15 +13,7 @@
 	<%@ taglib uri="..//WEB-INF/sportmgmt.tld" prefix="s" %>  
 <link rel="stylesheet" type="text/css" 	href="/SportMgmt/redBlackTheme/toDelete/258578334140_blp.css"> 
 	
-	<!-- <link rel="stylesheet" href="${context}/redBlackTheme/css/bootstrap.css" type="text/css">
-    <link rel="stylesheet" href="${context}/redBlackTheme/css/style-dream.css" type="text/css">
-    
-    <link rel="stylesheet" href="${context}/redBlackTheme/css/style.css" type="text/css">
-    
-    <link rel="stylesheet" href="${context}/redBlackTheme/css/jquery.bxslider.css" type="text/css">
-    <link rel="stylesheet" href="${context}/redBlackTheme/css/theme.css" type="text/css">
-    <link rel="stylesheet" href="${context}/redBlackTheme/css/tab-style.css" type="text/css">
-    <link rel="stylesheet" href="${context}/redBlackTheme/css/demo.css" type="text/css"> -->
+	
     
     <link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/style.css">
@@ -29,7 +21,7 @@
 <link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/style-dream.css">
 <link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/theme.css">
 <link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/demo.css">
-<!--  <link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/tab-style.css">-->
+ <link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/tab-style.css">
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,400,600,700" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,600" rel="stylesheet">
 

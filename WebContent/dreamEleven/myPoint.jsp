@@ -22,7 +22,7 @@
                          <s:sport position="1" playerType="Goalkeeper" pageName="DE_MY_POINT"/>
                         <ul class="itemsContainer ">
                            <li >
-                              <a href="#"> <img src="${context}/redBlackTheme/images/Dream11/goalkeeper.png" class=" img-responsive gaolkeeper_hvr <c:if test='${isPlyaerInTopElevent}'>active</c:if>" ></a>
+                              <a href="#"> <img src="${context}/redBlackTheme/images/Dream11/goalkeeper_old.png" class=" img-responsive gaolkeeper_hvr <c:if test='${isPlyaerInTopElevent}'>active</c:if>" ></a>
                               <h4>${playerName}</h4>
                            </li>
                         </ul>
@@ -33,22 +33,22 @@
                         <ul >
                            <li>
                            	  <s:sport position="1" playerType="Defender" pageName="DE_MY_POINT"/>
-                              <a href="#"> <img src="${context}/redBlackTheme/images/Dream11/player_1.png" class="center-block img-responsive <c:if test='${isPlyaerInTopElevent}'>active</c:if>" > </a>
+                              <a href="#"> <img src="${context}/redBlackTheme/images/Dream11/player.png" class="center-block img-responsive <c:if test='${isPlyaerInTopElevent}'>active</c:if>" > </a>
                               <h4>${playerName}</h4>
                            </li>
                            <li>
                            <s:sport position="2" playerType="Defender" pageName="DE_MY_POINT"/>
-                              <a href="#"> <img src="${context}/redBlackTheme/images/Dream11/player_1.png" class="center-block img-responsive <c:if test='${isPlyaerInTopElevent}'>active</c:if>" ></a>
+                              <a href="#"> <img src="${context}/redBlackTheme/images/Dream11/player.png" class="center-block img-responsive <c:if test='${isPlyaerInTopElevent}'>active</c:if>" ></a>
                               <h4>${playerName}</h4>
                            </li>
                            <li>
                            <s:sport position="3" playerType="Defender" pageName="DE_MY_POINT"/>
-                              <a href="#"> <img src="${context}/redBlackTheme/images/Dream11/player_1.png" class="center-block img-responsive <c:if test='${isPlyaerInTopElevent}'>active</c:if>" ></a>
+                              <a href="#"> <img src="${context}/redBlackTheme/images/Dream11/player.png" class="center-block img-responsive <c:if test='${isPlyaerInTopElevent}'>active</c:if>" ></a>
                               <h4>${playerName}</h4>
                            </li>
                            <li>
                            <s:sport position="4" playerType="Defender" pageName="DE_MY_POINT"/>
-                              <a href="#"> <img src="${context}/redBlackTheme/images/Dream11/player_1.png" class="center-block img-responsive <c:if test='${isPlyaerInTopElevent}'>active</c:if>" ></a> 
+                              <a href="#"> <img src="${context}/redBlackTheme/images/Dream11/player.png" class="center-block img-responsive <c:if test='${isPlyaerInTopElevent}'>active</c:if>" ></a> 
                               <h4>${playerName}</h4>
                            </li>
                         </ul>
@@ -59,17 +59,17 @@
                         <ul >
                            <li>
                            <s:sport position="1" playerType="Midfielder" pageName="DE_MY_POINT"/>
-                              <a href="#"> <img src="${context}/redBlackTheme/images/Dream11/player_1.png" class="center-block img-responsive <c:if test='${isPlyaerInTopElevent}'>active</c:if>" ></a>
+                              <a href="#"> <img src="${context}/redBlackTheme/images/Dream11/player.png" class="center-block img-responsive <c:if test='${isPlyaerInTopElevent}'>active</c:if>" ></a>
                               <h4>${playerName}</h4>
                            </li>
                            <li>
                            <s:sport position="2" playerType="Midfielder" pageName="DE_MY_POINT"/>
-                              <a href="#"> <img src="${context}/redBlackTheme/images/Dream11/player_1.png" class="center-block img-responsive <c:if test='${isPlyaerInTopElevent}'>active</c:if>" ></a>
+                              <a href="#"> <img src="${context}/redBlackTheme/images/Dream11/player.png" class="center-block img-responsive <c:if test='${isPlyaerInTopElevent}'>active</c:if>" ></a>
                               <h4>${playerName}</h4>
                            </li>
                            <li>
                            <s:sport position="3" playerType="Midfielder" pageName="DE_MY_POINT"/>
-                              <a href="#"> <img src="${context}/redBlackTheme/images/Dream11/player_1.png" class="center-block img-responsive <c:if test='${isPlyaerInTopElevent}'>active</c:if>" ></a>
+                              <a href="#"> <img src="${context}/redBlackTheme/images/Dream11/player.png" class="center-block img-responsive <c:if test='${isPlyaerInTopElevent}'>active</c:if>" ></a>
                               <h4>${playerName}</h4>
                            </li>
                         </ul>
@@ -81,17 +81,17 @@
                             
                            <li>
                            <s:sport position="1" playerType="Forward" pageName="DE_MY_POINT"/>
-                              <a href="#"> <img src="${context}/redBlackTheme/images/Dream11/player_1.png" class="center-block img-responsive <c:if test='${isPlyaerInTopElevent}'>active</c:if>" ></a> 
+                              <a href="#"> <img src="${context}/redBlackTheme/images/Dream11/player.png" class="center-block img-responsive <c:if test='${isPlyaerInTopElevent}'>active</c:if>" ></a> 
                               <h4>${playerName}</h4>
                            </li>
                            <li>
                            <s:sport position="2" playerType="Forward" pageName="DE_MY_POINT"/>
-                              <a href="#"> <img src="${context}/redBlackTheme/images/Dream11/player_1.png" class="center-block img-responsive <c:if test='${isPlyaerInTopElevent}'>active</c:if>"  ></a>
+                              <a href="#"> <img src="${context}/redBlackTheme/images/Dream11/player.png" class="center-block img-responsive <c:if test='${isPlyaerInTopElevent}'>active</c:if>"  ></a>
                               <h4>${playerName}</h4>
                            </li>
                            <li>
                            <s:sport position="3" playerType="Forward" pageName="DE_MY_POINT"/>
-                              <a href="#"> <img src="${context}/redBlackTheme/images/Dream11/player_1.png" class="center-block img-responsive <c:if test='${isPlyaerInTopElevent}'>active</c:if>" ></a>
+                              <a href="#"> <img src="${context}/redBlackTheme/images/Dream11/player.png" class="center-block img-responsive <c:if test='${isPlyaerInTopElevent}'>active</c:if>" ></a>
                               <h4>${playerName}</h4>
                            </li>
                         </ul>
