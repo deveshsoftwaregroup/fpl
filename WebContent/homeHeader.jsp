@@ -435,6 +435,10 @@
 	{
 		window.location="HomeGameGuide";
 	}
+	function homeGuide()
+	{
+		window.location="HomeGuide";
+	}
 	function openHomeHome()
 	{
 		window.location="LeagueLandingHome";
@@ -660,12 +664,9 @@ function loginWithFB()
 <script src="${context}/redBlackTheme/js/jquery.bxslider.js"></script>
 <script src="${context}/redBlackTheme/js/jPushMenu.js" ></script>
 <script type="text/javascript">
-   <script>
-   function homeGuide()
-	{
-		window.location="HomeGuide";
-	}
-   </script>
+   
+   
+   
    <script>
 			(function() {
 				if (!String.prototype.trim) {
