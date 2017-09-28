@@ -23,7 +23,7 @@
 	         <div class="row">
 	    		<div class="col-lg-4 col-md-4 col-sm-4 btm_ftr">
 	        		<h3>ABOUT</h3>
-	        		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+	        		<p>We at justthinksports.com provide ONE STOP solution for sports lovers.</p>
 	    		</div>
 			    <div class="col-lg-4 col-md-4 col-sm-4 btm_ftr1">
 			        <h3>TAG</h3>
@@ -39,8 +39,8 @@
 			        <h3>Contact</h3>
 			        <p>If you have any query or want to contact us, you are most welcome to write us at</p>
 			            
-			        <p>The 12th Man</p> 
-					<p>contactus@the12thman.in</p>
+			        <p>Just Think Sports</p> 
+					<p>contactus@justthinksports.com</p>
 			    </div>
 	    	</div>
 	    </div>
