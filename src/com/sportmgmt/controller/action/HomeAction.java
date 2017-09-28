@@ -2,6 +2,7 @@ package com.sportmgmt.controller.action;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.TreeMap;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -30,10 +31,10 @@ public class HomeAction {
 	@RequestMapping("/LeagueHome")
 	public String leagueHome(ModelMap map)
 	{
-		HashMap<String,HashMap<String,ArrayList<String>>> countryMap = UserManager.getCountryStateCityMap();
+		TreeMap<String,HashMap<String,ArrayList<String>>> countryMap = UserManager.getCountryStateCityMap();
 		logger.info("--------- League Home , countryMap: "+countryMap);
 		map.put("countryMap", countryMap);
-		HashMap<String,HashMap<String,ArrayList<String>>> clubMap = UserManager.getClubMap();
+		TreeMap<String,HashMap<String,ArrayList<String>>> clubMap = UserManager.getClubMap();
 		map.put("clubMap", clubMap);
 		return SportConstrant.LEAGE_HOME_PAGE;
 
@@ -42,10 +43,10 @@ public class HomeAction {
 	public String userLandingHome(ModelMap map)
 	{
 		logger.info("--------- USER_LANDING_HOME_PAGE");
-		HashMap<String,HashMap<String,ArrayList<String>>> countryMap = UserManager.getCountryStateCityMap();
+		TreeMap<String,HashMap<String,ArrayList<String>>> countryMap = UserManager.getCountryStateCityMap();
 		logger.info("--------- League Home , countryMap: "+countryMap);
 		map.put("countryMap", countryMap);
-		HashMap<String,HashMap<String,ArrayList<String>>> clubMap = UserManager.getClubMap();
+		TreeMap<String,HashMap<String,ArrayList<String>>> clubMap = UserManager.getClubMap();
 		map.put("clubMap", clubMap);
 		return SportConstrant.LEAGUE_LANDING_HOME_PAGE;
 
@@ -59,10 +60,10 @@ public class HomeAction {
 	@RequestMapping(value = "HomeGuide", method = RequestMethod.GET)
 	public  String homeGuide(ModelMap map,HttpServletRequest request)
 	{
-		HashMap<String,HashMap<String,ArrayList<String>>> countryMap = UserManager.getCountryStateCityMap();
+		TreeMap<String,HashMap<String,ArrayList<String>>> countryMap = UserManager.getCountryStateCityMap();
 		logger.info("--------- League Home , countryMap: "+countryMap);
 		map.put("countryMap", countryMap);
-		HashMap<String,HashMap<String,ArrayList<String>>> clubMap = UserManager.getClubMap();
+		TreeMap<String,HashMap<String,ArrayList<String>>> clubMap = UserManager.getClubMap();
 		map.put("clubMap", clubMap);
 		logger.info("---------- Forwardng to : "+SportConstrant.HOME_GUIDE);
 		 return SportConstrant.HOME_GUIDE;
