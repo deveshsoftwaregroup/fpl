@@ -300,7 +300,7 @@
       <script type="text/javascript">
          //<![CDATA[
          $(document).ready(function(){
-           $('.toggle-menu').jPushMenu({closeOnClickLink: false, closeOnClickOutside: false});
+           $('.toggle-menu').jPushMenu({closeOnClickLink: true, closeOnClickOutside: false});
           
          });
          //]]>

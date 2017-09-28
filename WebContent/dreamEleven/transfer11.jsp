@@ -321,7 +321,7 @@
 	                                                  
 				</div>
 				 <div class="col-lg-12 pull-right claim_your_prize">
-                                             <a href="#"><button type="button" class="btn claim_btn" onclick="createHistory11('${sessionScope.gameDetails.gameId}','${gameWeekNumber}','${sessionScope.userId}');">Confirm Your Team</button></a>
+                                             <a href="#"><button type="button" class="btn claim_btn" onclick="createHistory11('${sessionScope.gameDetails.gameId}','${gameWeekId}','${sessionScope.userId}');">Confirm Your Team</button></a>
                                           	Want to be eligible to win prizes : <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#paymentModel">Make Payment</button></a>
                                             </div>  
                                                                                      
@@ -1191,16 +1191,17 @@
    		}
      }
      function createHistory11( gameId, gameWeekId, userId)
-	 	{ 	url ="/SportMgmt/mvc/player/check-player-history?gameType=dream_eleven" ;
+	 	{ 	
+    	 url ="/SportMgmt/mvc/player/check-player-history/"+gameId+"/"+gameWeekId+"/"+userId+"?gameType=dream_eleven" ;
  			$.ajax({
 	     		  url: url,
 	     		 dataType: 'html',
 	     		  success: function( resp ) {
-	     			 console.log(resp); 
+	     			 console.log(resp);
 	     			 if(resp=="true")
 	     			 {
-	     				 alert("Your Team is already Confirmed");
-	     				 }
+	     				 alert("Your Team is already Confirmed for current Gameweek");
+	     			}
 	     			 else
 	     				 {
  		
@@ -1214,19 +1215,13 @@
 	    	 	     				 alert("Your team has been confirmed");
 	    	 	     				 
 	    	 	     				 },
-	    	 	     			
-                                  
-	    	 	     		  
 	    	 	     		  
 	    	 	     		  error: function( req, status, err ) {
 	    	 	     		    console.log( 'something went wrong', status, err );
 	    	 	     		  }
 	    	 	     		    
 	    	 	     		  });
-	     				 }
-	    	 	     		
-	     				
-	     		  
+	     				 }	     		  
 	     		 },
 	     		 
 	     		   error: function( req, status, err ) {
