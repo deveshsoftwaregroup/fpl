@@ -186,14 +186,14 @@ public class PlayerAction {
 		return getGameWeeKHistory(gameId, userId, gameWeekIdParam, direction,request);
 	}
 	
-	@RequestMapping(value = "check-player-history",method = RequestMethod.GET)
-	public @ResponseBody boolean checkGameWeekHistory(HttpServletRequest request,@RequestParam("gameType") String gameType)
+	@RequestMapping(value = "check-player-history/{gameId}/{gameWeekId}/{userId}", method = RequestMethod.GET)
+	public @ResponseBody boolean checkGameWeekHistory(@PathVariable String gameId, @RequestParam("gameType") String gameType,@PathVariable String gameWeekId,@PathVariable String userId)
 	{
-		HttpSession session = request.getSession();
-		String gameId = (String)((Map)session.getAttribute("gameDetails")).get("gameId");
-		String userId=(String)session.getAttribute("userId");
-		PointRankingUtility pointRankingUtility = new PointRankingUtility();
-		String gameWeekId = "7";//pointRankingUtility.gameWeekIdForTransferPlayer(gameId);
+		//HttpSession session = request.getSession();
+		//String gameId = (String)((Map)session.getAttribute("gameDetails")).get("gameId");
+		//String userId=(String)session.getAttribute("userId");
+		//PointRankingUtility pointRankingUtility = new PointRankingUtility();
+		//String gameWeekId = "7";//pointRankingUtility.gameWeekIdForTransferPlayer(gameId);
 	     logger.info("inside check player history gameId="+gameId);
 	     logger.info("gameWeekId="+gameWeekId);
 	     logger.info("userIdddd="+userId);
