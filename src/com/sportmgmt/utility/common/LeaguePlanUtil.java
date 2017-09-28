@@ -90,9 +90,9 @@ public class LeaguePlanUtil {
 				wildCard.setPlanId(leaguePlan.getPlanId().toString());
 				wildCard.setPrice(leaguePlan.getPlanAmount().toString());
 				if(leaguePlan.getTotalNoOfDays() == 1)
-				wildCard.setName("Wild Card for "+leaguePlan.getTotalNoOfDays()+" gameweek");
+				wildCard.setName(leaguePlan.getTotalNoOfDays()+" gameweek");
 				else
-				wildCard.setName("Wild Card for "+leaguePlan.getTotalNoOfDays()+" gameweeks");	
+				wildCard.setName(leaguePlan.getTotalNoOfDays()+" gameweeks");	
 				purchableWildCardList.add(wildCard);
 			}
 		}
