@@ -8,7 +8,7 @@
  <script src="/SportMgmt/js/vendor/jquery.js"></script>
 </head>
 <body>
-This is Begin Payment Page
+You are being redirected to Payment gateway...
 <form name="PaymentForm" action="${paymentURL}" method='post'>
 <input type="hidden" name="firstname" value="${firstname}" />
 <input type="hidden" name="lastname" value="${lastname}" />
