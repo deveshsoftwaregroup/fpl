@@ -1,9 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:set var="context" value="/SportMgmt" />
+<c:set var="context" value="<%=request.getContextPath()%>" />
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib uri="..//WEB-INF/sportmgmt.tld" prefix="s" %>  
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+
 
 <style>
 	.my_team_points li {padding: 5px !important;}
@@ -397,7 +398,7 @@
 															<c:if test="${not empty playerMap.clubId and playerMap.clubId ne ''}">
 															<c:set value="${clubImageMap[playerMap.clubId]}" var="imageSrc" />
 															</c:if>							                           
-															       <img src="/SportMgmt/images/Goalkeeper_${imageSrc}" height="20" width="20" alt="Arsenal" title="${playerMap.name}" class="ism-shirt">
+															       <img src="${context}/images/Goalkeeper_${imageSrc}" height="20" width="20" alt="Arsenal" title="${playerMap.name}" class="ism-shirt">
 															       ${playerMap.name}								        
 															</td>
 															<td>${playerMap.price}</td>
@@ -445,7 +446,7 @@
 															<c:if test="${not empty playerMap.clubId and playerMap.clubId ne ''}">
 																<c:set value="${clubImageMap[playerMap.clubId]}" var="imageSrc" />
 															</c:if>
-															<img src="/SportMgmt/images/Defender_${imageSrc}" height="20" width="20" alt="" title="${playerMap.name}" class="ism-shirt">
+															<img src="${context}/images/Defender_${imageSrc}" height="20" width="20" alt="" title="${playerMap.name}" class="ism-shirt">
 											                ${playerMap.name}						                
 											            </td>
 													    <td>${playerMap.price}</td>
@@ -488,7 +489,7 @@
 																<c:if test="${not empty playerMap.clubId and playerMap.clubId ne ''}">
 																<c:set value="${clubImageMap[playerMap.clubId]}" var="imageSrc" />
 																</c:if>
-												               <img src="/SportMgmt/images/Midfielder_${imageSrc}" height="20" width="20" alt="" title="${playerMap.name}">
+												               <img src="${context}/images/Midfielder_${imageSrc}" height="20" width="20" alt="" title="${playerMap.name}">
 												               ${playerMap.name }
 												     		</td>
 														    <td>${playerMap.price}</td>
@@ -538,7 +539,7 @@
 															<c:if test="${not empty playerMap.clubId and playerMap.clubId ne ''}">
 																<c:set value="${clubImageMap[playerMap.clubId]}" var="imageSrc" />
 															</c:if>
-															<img src="/SportMgmt/images/Forward_${imageSrc}" height="20" width="20" alt="" title="${playerMap.name}">
+															<img src="${context}/images/Forward_${imageSrc}" height="20" width="20" alt="" title="${playerMap.name}">
 											                ${playerMap.name}
 										    			</td>
 													    <td>${playerMap.price }</td>
@@ -749,7 +750,7 @@
 				$("#Goalkeepers .addPlayer>a").closest('tr').attr('disabled', 'disabled');
 				var elems = '<div class="ismjs-menu" id="'+userId+'_'+gameClubPlayerId+'">'+
 		       '<picture>'+
-		        '<img src="/SportMgmt/images/Goalkeeper_'+clubImage+'" alt="'+playerName+'" title="" class="ism-shirt ism-element__shirt">'+
+		        '<img src="${context}/images/Goalkeeper_'+clubImage+'" alt="'+playerName+'" title="" class="ism-shirt ism-element__shirt">'+
 		        '</picture>'+
 		        '<div class="ism-element__name">'+playerName+'</div>'+
 		        '<div class="ism-element__data">'+playerPrice+'</div>'+
@@ -762,7 +763,7 @@
 				$('#Midfielders .addPlayer>a').closest('tr').attr('disabled', 'disabled');
 				var midfielder = '<div class="ismjs-menu" id="'+userId+'_'+gameClubPlayerId+'">'+
 		       '<picture>'+
-		        '<img src="/SportMgmt/images/Midfielder_'+clubImage+'" alt="'+playerName+'" title="'+playerName+'" class="ism-shirt ism-element__shirt">'+
+		        '<img src="${context}/images/Midfielder_'+clubImage+'" alt="'+playerName+'" title="'+playerName+'" class="ism-shirt ism-element__shirt">'+
 		        '</picture>'+
 		        '<div class="ism-element__name">'+playerName+'</div>'+
 		        '<div class="ism-element__data">'+playerPrice+'</div>'+
@@ -775,7 +776,7 @@
 				$('#Defenders .addPlayer>a').closest('tr').attr('disabled', 'disabled');
 				var defender = '<div class="ismjs-menu" id="'+userId+'_'+gameClubPlayerId+'">'+
 		       '<picture>'+
-		        '<img src="/SportMgmt/images/Defender_'+clubImage+'"  alt="'+playerName+'" title="'+playerName+'" class="ism-shirt ism-element__shirt">'+
+		        '<img src="${context}/images/Defender_'+clubImage+'"  alt="'+playerName+'" title="'+playerName+'" class="ism-shirt ism-element__shirt">'+
 		        '</picture>'+
 		        '<div class="ism-element__name">'+playerName+'</div>'+
 		        '<div class="ism-element__data">'+playerPrice+'</div>'+
@@ -788,7 +789,7 @@
 				$('#Forwards .addPlayer>a').closest('tr').attr('disabled', 'disabled');
 				var forward = '<div class="ismjs-menu" id="'+userId+'_'+gameClubPlayerId+'">'+
 		       '<picture>'+
-		        '<img src="/SportMgmt/images/Forward_'+clubImage+'" title="'+playerName+'" class="ism-shirt ism-element__shirt">'+
+		        '<img src="${context}/images/Forward_'+clubImage+'" title="'+playerName+'" class="ism-shirt ism-element__shirt">'+
 		        '</picture>'+
 		        '<div class="ism-element__name">'+playerName+'</div>'+
 		        '<div class="ism-element__data">'+playerPrice+'</div>'+
@@ -1075,7 +1076,7 @@
 	     					var elems = '<div class="ismjs-menu" id="'+userId+'_'+gameClubPlayerId+'">'+
 	     			        
 	     			       '<picture>'+
-	     			        '<img src="/SportMgmt/images/Goalkeeper_'+clubImage+'" alt="'+playerName+'" title="'+playerName+'" class="ism-shirt ism-element__shirt">'+
+	     			        '<img src="${context}/images/Goalkeeper_'+clubImage+'" alt="'+playerName+'" title="'+playerName+'" class="ism-shirt ism-element__shirt">'+
 	     			        '</picture>'+
 	     			        '<div class="ism-element__name">'+playerName+'</div>'+
 	     			        '<div class="ism-element__data">'+playerPrice+'</div>'+
@@ -1092,7 +1093,7 @@
 	     					var midfielder = '<div class="ismjs-menu" id="'+userId+'_'+gameClubPlayerId+'">'+
 	     			        
 	     			       '<picture>'+
-	     			        '<img src="/SportMgmt/images/Midfielder_'+clubImage+'" alt="'+playerName+'" title="'+playerName+'" class="ism-shirt ism-element__shirt">'+
+	     			        '<img src="${context}/images/Midfielder_'+clubImage+'" alt="'+playerName+'" title="'+playerName+'" class="ism-shirt ism-element__shirt">'+
 	     			        '</picture>'+
 	     			       
 	     			        '<div class="ism-element__name">'+playerName+'</div>'+
@@ -1109,7 +1110,7 @@
 	     					var defender = '<div class="ismjs-menu" id="'+userId+'_'+gameClubPlayerId+'">'+
 	     			        
 	     			       '<picture>'+
-	     			        '<img src="/SportMgmt/images/Defender_'+clubImage+'" alt="'+playerName+'" title="'+playerName+'" class="ism-shirt ism-element__shirt">'+
+	     			        '<img src="${context}/images/Defender_'+clubImage+'" alt="'+playerName+'" title="'+playerName+'" class="ism-shirt ism-element__shirt">'+
 	     			        '</picture>'+
 	     			        '<div class="ism-element__name">'+playerName+'</div>'+
 	     			        '<div class="ism-element__data">'+playerPrice+'</div>'+
@@ -1126,7 +1127,7 @@
 	     					var forward = '<div class="ismjs-menu" id="'+userId+'_'+gameClubPlayerId+'">'+
 	     			       
 	     			       '<picture>'+
-	     			        '<img src="/SportMgmt/images/Forward_'+clubImage+'" alt="'+playerName+'" title="'+playerName+'" class="ism-shirt ism-element__shirt">'+
+	     			        '<img src="${context}/images/Forward_'+clubImage+'" alt="'+playerName+'" title="'+playerName+'" class="ism-shirt ism-element__shirt">'+
 	     			        '</picture>'+
 	     			        '<div class="ism-element__name">'+playerName+'</div>'+
 	     			        '<div class="ism-element__data">'+playerPrice+'</div>'+
