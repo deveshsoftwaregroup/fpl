@@ -72,13 +72,18 @@
   right: 10px; }
 
 .home_scout_section {
-  background-color: #403641;
+  background-color: darkslategrey;
   padding: 10px; }
 
-.scout_slide h4, .scout-news h4 {
+.scout_slide .bx-wrapper h4 {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 700;
-  color: #fff; }
+  color: #ddd; }
+.scout_slide .scout_list h4 {
+	 font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 700;
+  color: green !important;
+}
 
 .scout_slide p, .scout-news p {
   font-family: 'Source Sans Pro', sans-serif;
@@ -99,7 +104,7 @@
   list-style: none; }
 
 .scout_slide .scout_list {
-  list-style: none; }
+  list-style: none; background-color: rgba(0,0,0,0.7); padding-top:10px; padding-bottom:10px; }
 
 .main_scout_list {
   list-style: none;
@@ -176,7 +181,22 @@
 
 #myModal_load {
   display: none; }
-
+  
+input[type="date"]::before {
+	color: #999999;
+	content: attr(placeholder);
+}
+input[type="date"] {
+	color: #ffffff;
+}
+input[type="date"]:focus,
+input[type="date"]:valid {
+	color: #666666;
+}
+input[type="date"]:focus::before,
+input[type="date"]:valid::before {
+	content: "" !important;
+}
 /*------------------------------------*/
 .get_in_touch a {
   color: #fff;
@@ -782,7 +802,9 @@
     height: 10px; }
 
   .scout_list {
-    margin-left: -30px; }
+    margin-left: 0px; 
+   }
+   .scout_list li{    margin-left: -16px;}
 
   .main_scout_list li {
     margin-left: -20px; }
@@ -799,7 +821,10 @@
     margin-left: 185px; }
 
   .google_mid_ad {
-    margin-top: 140px; } }
+    margin-top: 140px; } 
+    .footer_btn ul li a { font-size:16px;}
+    
+    }
 
 @media screen and (min-width: 400px) and ( max-width: 415px) {
 	.all_play {
@@ -810,7 +835,7 @@
 	}
 @media screen and (min-width: 370px) and ( max-width: 400px) {
 	.all_play {
-    margin-top: -500% !important; }
+    margin-top: -520% !important; }
 
   .scout_slide {
     margin-top: 800px; }
@@ -850,7 +875,7 @@
     .top_banner1 p{    padding: 20px 74px;  font-size: 15px;}
     .top_banner1 h3{font-size: 20px;}
     .top_banner1 .bx-wrapper .bx-pager.bx-default-pager a {width: 10px;height: 10px;}
-    .scout_list {margin-left: -30px;}
+    .scout_list {margin-left: 0px;}
     .main_scout_list li{margin-left: -20px;}
     .scout_latest_news {height: 400px;}
 

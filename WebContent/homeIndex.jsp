@@ -62,22 +62,25 @@
                        
 
                 </ul>
-                    <ul class="scout_list">
+                    <ul class="scout_list ">
                         <li>
                             <h4>pep Guardiola praises Manchester City players but insists that the title is far away </h4>
                               <p>MANCHESTER CITY BOSS PEP GUARDIOLA HAS INSISTED THAT HIS TEAM CANNOT CALL THEMSELVES AS GOOD AS CHELSEA AFTER LAST SEASON PERFORMANCE. </p>
                               <p><a target="_blank" href="http://the12thman.in/pep-guardiola-praises-manchester-city-players-insists-title-far-away/"><b>READ MORE</b></a>- the12thman.in</p>
                         </li>
+                        <hr>
                         <li>
                             <h4>Golden Boy 2017 Nominees: 7 players from Premier League Nominated </h4>
                               <p>Last season of football was surely the season of highly rated young talents all across the globe. Be it Kylian Mbapp rise from Monaco or Dembels performance for Dortmund which lead to the talented youngster sealing the dream move to FC Barcelona. </p>
                               <p><a target="_blank" href="http://the12thman.in/golden-boy-2017-nominees-7-players-premier-league-nominated/"><b>READ MORE</b></a>- the12thman.in</p>
                         </li>
+                        <hr>
                         <li>
                             <h4>Premier League Matchweek 5: Team of the Week </h4>
                               <p>ARSENAL AND MANCHESTER CITY LEAD THE WAY IN THE PREMIER LEAGUE TEAM OF THE WEEK AFTER MATCHWEEK 5 OF THE 2017/18 PREMIER LEAGUE SEASON. </p>
                                                             <p><a target="_blank" href="http://the12thman.in/english-premier-league-matchweek-5-team-week/"><b>READ MORE</b></a>- the12thman.in</p>
                         </li>
+                        <hr>
                         <li>
                             <h4>Aguero form a major boost for Manchester City </h4>
                               <p>SERGIO AGUERO DISPLAYED AN ABSOLUTE MASTERCLASS PERFORMANCE AGAINST WATFORD ON SATURDAY SCORING A BRILLIANT HAT-TRICK IN CITY 6-0 RIOT AT VICARAGE ROAD. </p>

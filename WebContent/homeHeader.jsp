@@ -51,7 +51,7 @@
 <body class="full-bg">
    
 
- <%-- <div id="myModal" class="row" role="dialog">
+ <div id="myModal" class="row" role="dialog">
 	
 	<div id="login-overlay" class="col-lg-4 col-lg-offset-8 register_login">
 	          
@@ -134,7 +134,7 @@
 	              </div>
 	          </div>
 	  </div>
-</div>  --%>
+</div>  
 
 <div id="myModal11" class="modal fade" role="dialog">
   
@@ -265,7 +265,7 @@
 		       <input type="password" name="logonPasswordConfirm" placeholder="Confirm Password" required id="password2" class="form-control" />
 		   </div>
 		    <div class="form-group">                          
-              <input type="date" class="form-control" id="dob"  name="dob" required id="dob">
+              <input type="date" class="form-control" id="dob"  name="dob" placeholder="Date of Birth" required id="dob">
             </div>
 		  <div class="form-group">
 		       <select name="country" placeholder="Mobile Number" required id="country" class="form-control">
