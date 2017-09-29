@@ -1193,10 +1193,7 @@
      }
      function createHistory11( gameId, gameWeekId, userId)
 	 	{ 
-    	 if( userGameJson.playerList.length<15)
-    		 {
-    		 alert("Please complete your 15 players");
-    		 }
+    	 
     	 if(typeof userGameJson != 'undefined' && userGameJson.playerList.length >= 11)
     			 {
     		 
