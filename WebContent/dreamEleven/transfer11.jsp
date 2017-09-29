@@ -26,9 +26,9 @@
 					<h3>Select Players from List</h3>
 					<p>Gameweek ${gameWeekNumber} Deadline: <time datetime="2016-08-27T10:30:00Z">${deadline}</time><p>
 		            <p>Player Count: <span class="added-player-count"> </span> </p>	
-		            <div class="col-lg-4 pull-right claim_your_prize">
+		           <!--  <div class="col-lg-4 pull-right claim_your_prize">
                                              
-                                            </div> 
+                                            </div>  -->
 									 <div id="paymentModel" class="modal fade" role="dialog">
 									  <div class="modal-dialog modal-lg">
 									
