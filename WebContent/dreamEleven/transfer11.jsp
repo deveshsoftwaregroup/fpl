@@ -568,10 +568,7 @@
 	</div>
 </body>
 
-<!--<script type='text/javascript'src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>-->
 <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-<!--<script type='text/javascript' src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>-->
-<!--<script type='text/javascript' src='http://code.jquery.com/jquery-1.9.1.js'></script>-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="${context}/redBlackTheme/js/bootstrap.js"></script>
 <script>
@@ -711,14 +708,7 @@
 			forwardRemove();
 		})
 	</c:if>
-	/*
-			<c:if test="${!isGameWeekPlayerHistoryExist}">
-			$('.ism-element').mousemove(function(){
 			
-				createHistory11( gameId, gameWeekId, userId);
-		})
-	</c:if> */
-	
 	$(document).ready(function() {
 		$(".added-player-count").text(""+userGameJson.playerList.length+"/11");
 		$("div.ismjs-select.added-player-css").each(function(){
