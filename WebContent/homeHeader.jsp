@@ -658,8 +658,14 @@ function loginWithFB()
 }
 </script>
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="${context}/redBlackTheme/js/bootstrap.js"></script>
+<script src="${context}/redBlackTheme/js/jquery.bxslider.js"></script>
+<script src="${context}/redBlackTheme/js/jPushMenu.js" ></script>
 <script type="text/javascript">
+   
+   
+   
    <script>
 			(function() {
 				if (!String.prototype.trim) {
@@ -725,7 +731,7 @@ function loginWithFB()
            
 });
        </script>
-        <%-- <script src="js/jPushMenu.js" ></script> --%>
+        <script src="js/jPushMenu.js" ></script>
       <script type="text/javascript">
          //<![CDATA[
          $(document).ready(function(){
@@ -734,8 +740,3 @@ function loginWithFB()
          });
          //]]>
       </script>
-      
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="${context}/redBlackTheme/js/bootstrap.js"></script>
-<script src="${context}/redBlackTheme/js/jquery.bxslider.js"></script>
-<script src="${context}/redBlackTheme/js/jPushMenu.js" ></script>

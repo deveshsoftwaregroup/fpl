@@ -1,7 +1,7 @@
 <jsp:include page="homeHeader.jsp" />
 
   <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-  <c:set var="context" value="/SportMgmt" />
+  <c:set var="context" value="<%=request.getContextPath()%>" />
   <!--Notification-->
          <div id="notification" style="display: none;">
             <span class="dismiss"><a title="dismiss this notification">X</a></span>
@@ -117,6 +117,30 @@
               </div>
             </div>
           </div>
+          
+          <!--  Wildcard Section  -->
+        <!--  Copy This Section -->
+        <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+                    <a href="#"><div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 unlimited_things unlimited_things_1">
+                        <img src="${context}/redBlackTheme/images/wildcard/wildcard.png" class="img-responsive center-block">
+                        <h4>Wildcards</h4>
+                        <p>Play and Get Unlimited Wildcards</p>
+                    </div></a>
+                    <a href="#"><div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 unlimited_things unlimited_things_2 ">
+                            <img src="${context}/redBlackTheme/images/wildcard/giftcard.png" class="img-responsive center-block">
+                            <h4>Gifts</h4>
+                            <p>Gift Card for Each and Every User</p>
+                    </div></a>
+                    <a href="#"><div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 unlimited_things">
+                            <img src="${context}/redBlackTheme/images/wildcard/win.png" class="img-responsive center-block">
+                            <h4>Win</h4>
+                            <p>Predict Dream 11 and Win</p>
+                    </div></a>
+                </div>
+        </div>
+
+        <!--  / Wildcard Section -->
        
        
     
@@ -124,7 +148,7 @@
 </div>
 
 
-<!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script> -->
+ <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
  <script>
          $("#notification").fadeIn("slow").append('your Notification');
          $(".dismiss").click(function(){

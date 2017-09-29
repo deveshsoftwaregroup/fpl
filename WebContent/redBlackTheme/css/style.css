@@ -79,11 +79,11 @@
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 700;
   color: #ddd; }
+
 .scout_slide .scout_list h4 {
-	 font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-weight: 700;
-  color: green !important;
-}
+  color: green !important; }
 
 .scout_slide p, .scout-news p {
   font-family: 'Source Sans Pro', sans-serif;
@@ -104,7 +104,10 @@
   list-style: none; }
 
 .scout_slide .scout_list {
-  list-style: none; background-color: rgba(0,0,0,0.7); padding-top:10px; padding-bottom:10px; }
+  list-style: none;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding-top: 10px;
+  padding-bottom: 10px; }
 
 .main_scout_list {
   list-style: none;
@@ -181,22 +184,43 @@
 
 #myModal_load {
   display: none; }
-  
+
 input[type="date"]::before {
-	color: #999999;
-	content: attr(placeholder);
-}
+  color: #999999;
+  content: attr(placeholder); }
+
 input[type="date"] {
-	color: #ffffff;
-}
+  color: #ffffff; }
+
 input[type="date"]:focus,
 input[type="date"]:valid {
-	color: #666666;
-}
+  color: #666666; }
+
 input[type="date"]:focus::before,
 input[type="date"]:valid::before {
-	content: "" !important;
-}
+  content: "" !important; }
+
+.unlimited_things {
+  background-color: #092945;
+  text-align: center;
+  color: #fff;
+  padding: 30px;
+  height: 250px; }
+
+.unlimited_things h4 {
+  text-align: center;
+  color: #fff;
+  font-weight: 700; }
+
+.unlimited_things p {
+  font-family: 'Source Sans Pro', sans-serif; }
+
+.unlimited_things img {
+  padding: 20px; }
+
+.unlimited_things_1, .unlimited_things_2 {
+  border-right: 1px solid #fff; }
+
 /*------------------------------------*/
 .get_in_touch a {
   color: #fff;
@@ -346,13 +370,27 @@ input[type="date"]:valid::before {
 
 /*---------------Footer------------------*/
 .footer_btn {
-  color: #fff; }
+  color: #fff;
+  padding-top: 20px;
+  margin-bottom: 20px; }
+
+.footer_btn h4 {
+  color: greenyellow; }
 
 .footer_btn ul {
   margin-left: -40px; }
 
 .footer_btn ul li {
   list-style: none; }
+
+.upper_text h3 {
+  text-align: center; }
+
+.bottom_bit {
+  padding: 10px 20px; }
+
+.bottom_bit p {
+  text-align: left; }
 
 /*---------------/ Footer------------------*/
 /*---------------Notification------------------*/
@@ -629,11 +667,90 @@ input[type="date"]:valid::before {
   .glyphicon-menu-right {
     padding-left: 48% !important; }
 
-  .all_play {
-    margin-top: -355% !important; }
+  .top_banner1 p {
+    font-size: 15px;
+    padding: 20px 50px; }
 
-  .scout_slide {
-    margin-top: 1055px; }
+  .top_banner1 .bx-wrapper .bx-pager.bx-default-pager a {
+    width: 10px;
+    height: 10px; }
+
+  .scout_latest_news {
+    height: 489px;
+    margin-left: 10px;
+    margin-right: 10px; }
+
+  .play_fantasy_league, .play_predict11_league {
+    width: 50%;
+    float: left; }
+
+  .play_predict11_league {
+    margin-top: -481px;
+    margin-left: 265px; }
+
+  .google_mid_ad {
+    margin-top: 200px; }
+
+  .navbar-nav .open .dropdown-menu > li > a {
+    text-align: center;
+    color: #ddd; }
+
+  .unlimited_things_1, .unlimited_things_2 {
+    border-bottom: 1px solid #fff;
+    border-right: 0px; } }
+@media screen and (min-width: 480px) and (max-width: 600px) {
+  .marg_top {
+    margin-top: 20px !important; }
+
+  .top_header li:nth-last-child(3) {
+    padding-top: 38px !important; }
+
+  .left_img, .right_img {
+    display: none !important; }
+
+  .pwr_logo {
+    height: 39px !important;
+    padding-top: 10px !important; }
+
+  .top_header li:nth-last-child(2) {
+    padding-top: 22px !important; }
+
+  .navbar-toggle .icon-bar {
+    background-color: #fff !important; }
+
+  .all_play {
+    padding-top: 30px !important; }
+
+  .our_partners h3 {
+    font-size: 18px !important;
+    text-align: center !important; }
+
+  .prtnr li img {
+    height: 20px !important; }
+
+  #myModal .form-group {
+    height: auto !important; }
+
+  .banner_slider {
+    margin-top: 20px; }
+
+  .top_header li:last-child {
+    display: none !important; }
+
+  .navbar-nav > li > a {
+    text-align: center !important; }
+
+  .my_team .my_points {
+    margin-top: 315px !important; }
+
+  .register_login {
+    display: none; }
+
+  .flex_items img {
+    padding-left: 200px !important; }
+
+  .glyphicon-menu-right {
+    padding-left: 48% !important; }
 
   .top_banner1 p {
     font-size: 15px;
@@ -661,50 +778,12 @@ input[type="date"]:valid::before {
 
   .navbar-nav .open .dropdown-menu > li > a {
     text-align: center;
-    color: #ddd; } }
-    
-    
-@media screen and (min-width: 480px) and ( max-width: 600px) {
-    .marg_top { margin-top: 20px !important;}
-    .top_header li:nth-last-child(3) {padding-top: 38px !important;}
-    .left_img , .right_img { display: none!important;}
-    .pwr_logo {height: 39px !important;    padding-top: 10px !important;}
-    .top_header li:nth-last-child(2) { padding-top:22px !important;}
-    .navbar-toggle { }
-    .navbar-toggle .icon-bar { background-color: #fff !important;}
-    .all_play { padding-top: 30px !important;}
-    .our_partners h3 {     font-size: 18px !important; text-align: center !important;}
-    .prtnr li img {height:20px !important;}
-     #myModal .form-group { height:auto !important;}
-     .banner_slider { margin-top: 20px;}
-    .top_header li:last-child { display: none !important;}
-    .navbar-nav > li > a { text-align: center !important;}
-    .my_team .my_points { margin-top: 315px !important;}
-    .register_login {display: none;}
-    .flex_items img {padding-left: 200px !important;}
-    .glyphicon-menu-right {padding-left: 48% !important;}
-    
-    .top_banner1 p {font-size: 15px;padding: 20px 50px;}
-    .top_banner1 .bx-wrapper .bx-pager.bx-default-pager a {width: 10px;height: 10px;}
-    .scout_latest_news {height: 489px; margin-left: 10px;  margin-right: 10px;}
-    .play_fantasy_league, .play_predict11_league {width: 50%; float: left;}
-    .play_predict11_league {margin-top: -481px; margin-left: 265px; }
-    .google_mid_ad { margin-top: 200px;}
-    .navbar-nav .open .dropdown-menu > li > a {text-align: center; color:#ddd;}
-} 
+    color: #ddd; }
 
-@media screen and (min-width: 601px) and ( max-width: 680px) {
-	.all_play { margin-top: -348% !important; }
-    .scout_slide {margin-top: 1060px;}
-	}
-@media screen and (min-width: 450px) and ( max-width: 580px) {
-	.all_play {
-    margin-top: -360% !important; }
-
-  .scout_slide {
-    margin-top: 1055px; }
-	}   
-@media screen and (min-width: 300px) and (max-width: 479px) {
+  .unlimited_things_1, .unlimited_things_2 {
+    border-bottom: 1px solid #fff;
+    border-right: 0px; } }
+@media screen and (min-width: 370px) and (max-width: 479px) {
   .marg_top {
     margin-top: 15px !important; }
 
@@ -765,7 +844,149 @@ input[type="date"]:valid::before {
   .fixtures .team_map ul li img {
     height: 50px; }
 
-  
+  .my_team .team_map {
+    margin-top: 0px !important;
+    height: 416px; }
+
+  .my_team .team_map ul li a img {
+    height: 50px !important; }
+
+  .my_team .team_map ul li h4 {
+    margin-top: -18px !important;
+    font-size: 16px !important; }
+
+  .flex_items img {
+    padding-left: 156px; }
+
+  .my_team .my_points {
+    margin-top: 200px !important; }
+
+  .my_team .claim_your_prize h4 {
+    text-align: center; }
+
+  .my_team .claim_btn {
+    margin-right: 111px; }
+
+  .top_banner1 p {
+    padding: 20px 74px;
+    font-size: 15px; }
+
+  .top_banner1 h3 {
+    font-size: 20px; }
+
+  .top_banner1 .bx-wrapper .bx-pager.bx-default-pager a {
+    width: 10px;
+    height: 10px; }
+
+  .scout_list {
+    margin-left: 0px; }
+
+  .scout_list li {
+    margin-left: -16px; }
+
+  .main_scout_list li {
+    margin-left: -20px; }
+
+  .scout_latest_news {
+    height: 400px; }
+
+  .play_predict11_league {
+    margin-top: -358px;
+    margin-left: 185px; }
+
+  .google_mid_ad {
+    margin-top: 140px; }
+
+  .footer_btn ul li a, .footer_btn p {
+    font-size: 13px; }
+
+  .unlimited_things_1, .unlimited_things_2 {
+    border-bottom: 1px solid #fff;
+    border-right: 0px; } }
+@media screen and (min-width: 601px) and (max-width: 680px) {
+  .all_play {
+    margin-top: -355% !important; }
+
+  .scout_slide {
+    margin-top: 1055px; } }
+@media screen and (min-width: 450px) and (max-width: 580px) {
+  .all_play {
+    margin-top: -360% !important; }
+
+  .scout_slide {
+    margin-top: 1055px; } }
+@media screen and (min-width: 400px) and (max-width: 415px) {
+  .all_play {
+    margin-top: -442% !important; }
+
+  .scout_slide {
+    margin-top: 820px; } }
+@media screen and (min-width: 370px) and (max-width: 400px) {
+  .all_play {
+    margin-top: -500% !important; }
+
+  .scout_slide {
+    margin-top: 800px; } }
+@media screen and (min-width: 300px) and (max-width: 369px) {
+  .marg_top {
+    margin-top: 15px !important; }
+
+  .top_header li:last-child {
+    display: none !important; }
+
+  .top_header li:nth-last-child(3) {
+    padding-top: 35px !important; }
+
+  .left_img, .right_img {
+    display: none !important; }
+
+  .pwr_logo {
+    height: 39px !important;
+    padding-top: 10px !important; }
+
+  .top_header li:nth-last-child(2) {
+    padding-top: 20px !important; }
+
+  .navbar-nav .open .dropdown-menu > li > a {
+    text-align: center;
+    color: #ddd; }
+
+  .our_partners h3 {
+    font-size: 18px !important;
+    text-align: center !important; }
+
+  .prtnr li img {
+    height: 20px !important; }
+
+  .our_partners ul li {
+    display: block !important; }
+
+  .top_header li:nth-last-child(4) img {
+    height: 80px !important; }
+
+  #myModal .form-group {
+    height: auto !important; }
+
+  .sbt_btn {
+    left: 30% !important; }
+
+  .loginBtn--google {
+    margin-top: 20px !important; }
+
+  .navbar {
+    background-color: transparent !important; }
+
+  .navbar-nav > li > a {
+    text-align: center !important; }
+
+  .register_login {
+    display: none; }
+
+  .banner_slider {
+    margin-top: 20px; }
+
+  .fixtures .team_map ul li img {
+    height: 50px; }
 
   .my_team .team_map {
     margin-top: 0px !important;
@@ -802,9 +1023,7 @@ input[type="date"]:valid::before {
     height: 10px; }
 
   .scout_list {
-    margin-left: 0px; 
-   }
-   .scout_list li{    margin-left: -16px;}
+    margin-left: 0px; }
 
   .main_scout_list li {
     margin-left: -20px; }
@@ -821,86 +1040,22 @@ input[type="date"]:valid::before {
     margin-left: 185px; }
 
   .google_mid_ad {
-    margin-top: 140px; } 
-    .footer_btn ul li a { font-size:16px;}
-    
-    }
+    margin-top: 140px; }
 
-@media screen and (min-width: 400px) and ( max-width: 415px) {
-	.all_play {
-    margin-top: -442% !important; }
-
-  .scout_slide {
-    margin-top: 820px; }
-	}
-@media screen and (min-width: 370px) and ( max-width: 400px) {
-	.all_play {
+  .unlimited_things_1, .unlimited_things_2 {
+    border-bottom: 1px solid #fff;
+    border-right: 0px; } }
+@media screen and (min-width: 326px) and (max-width: 369px) {
+  .all_play {
     margin-top: -520% !important; }
 
   .scout_slide {
-    margin-top: 800px; }
-	}
-
-@media screen and (min-width: 300px) and ( max-width: 369px) {
-	 .marg_top { margin-top: 15px !important;}
-    .top_header li:last-child {display: none !important;}
-    .top_header li:nth-last-child(3) {padding-top: 35px !important;}
-    .left_img , .right_img { display: none!important;}
-    .pwr_logo {height: 39px !important;    padding-top: 10px !important;}
-    .top_header li:nth-last-child(2) { padding-top: 20px !important;}
-    .navbar-nav .open .dropdown-menu > li > a {text-align: center; color:#ddd;}
-    
-    .our_partners h3 {     font-size: 18px !important; text-align: center !important;}
-    .prtnr li img {height:20px !important;}
-    .our_partners ul li { display: block !important;}
-    .top_header li:nth-last-child(4) img{height: 80px !important;}
-    #myModal .form-group { height:auto !important;}
-    .sbt_btn {left: 30% !important;}
-    .loginBtn--google {margin-top: 20px !important;}
-    .navbar {background-color: transparent !important;}
-    
-    .navbar-nav > li > a { text-align: center !important;}
-    .register_login {display: none;}
-    .banner_slider { margin-top: 20px;}
-    .fixtures .team_map ul li img {height: 50px;}
-    
-   
-    .my_team .team_map { margin-top: 0px !important;    height: 416px;}
-    .my_team .team_map ul li a img{ height: 50px !important;;}
-    .my_team .team_map ul li h4 {margin-top: -18px !important;;    font-size: 16px !important;}
-    .flex_items img {padding-left: 156px;}
-    .my_team .my_points { margin-top: 200px !important;}
-    .my_team .claim_your_prize h4{ text-align: center;}
-    .my_team .claim_btn {    margin-right: 111px;}
-    .top_banner1 p{    padding: 20px 74px;  font-size: 15px;}
-    .top_banner1 h3{font-size: 20px;}
-    .top_banner1 .bx-wrapper .bx-pager.bx-default-pager a {width: 10px;height: 10px;}
-    .scout_list {margin-left: 0px;}
-    .main_scout_list li{margin-left: -20px;}
-    .scout_latest_news {height: 400px;}
-
-    .play_fantasy_league, .play_predict11_league {width: 50%; float: left;}
-    .play_predict11_league {margin-top: -358px; margin-left: 185px; }
-    .google_mid_ad { margin-top: 140px;}
-}
-
-@media screen and (min-width: 326px) and ( max-width: 369px) {
-	.all_play { margin-top: -520% !important;}
-    .scout_slide {margin-top: 780px;}
-}
-@media screen and (min-width: 300px) and ( max-width: 325px) {
-	.all_play {
+    margin-top: 780px; } }
+@media screen and (min-width: 300px) and (max-width: 325px) {
+  .all_play {
     margin-top: -565% !important; }
 
   .scout_slide {
-    margin-top: 660px; }
-    .loginBtn  {
-    	width:200px !important;
-    	font-size:14px !important;	
-    }
-    
-	}
-	
-	
+    margin-top: 660px; } }
 
 /*# sourceMappingURL=style.css.map */
