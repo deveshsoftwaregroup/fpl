@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,50 +7,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-	<title>The 12th Man Fantasy League</title>
+	<title>Fantasy League</title>
 
  	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
  	<c:set var="context" value="<%=request.getContextPath()%>" />
+ 	
     <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 	<%@ taglib uri="WEB-INF/sportmgmt.tld" prefix="s" %>  
 	<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/bootstrap.css">
-<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/style.css">
-
-<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/jquery.bxslider.css">
-<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/style-dream.css">
-<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/theme.css">
-<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/demo.css">
- <link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/tab-style.css">
-<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,400,600,700" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,600" rel="stylesheet">
-
-      <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,500,600" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600" rel="stylesheet">
-       <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,400,600,700" rel="stylesheet">
-  <style>
+	
+	<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/style.css">	
+	<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/jquery.bxslider.css">
+	<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/style-dream.css">
+	<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/theme.css">
+	<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/demo.css">
+	<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/tab-style.css">
+	
+	<link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,500,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,400,600,700" rel="stylesheet">
+  	<style>
          .bx-wrapper .bx-controls-direction a {display: none;}
-      </style>
-      <style type="text/css">
-         .slide-out-div {
-         padding: 20px;
-         width: 250px;
-         background: #fff;
-         border-radius: 5px;
-         border: 1px solid #ddd;
-         z-index:500000 !important;
-         position: absolute;
-         right: 10px;
-         height: 331px;
-         }      
-         .slide-out-div textarea.form-control { border: 1px solid #ddd;}
-      </style>
+    </style>
+    <style type="text/css">
+       .slide-out-div {
+       padding: 20px;
+       width: 250px;
+       background: #fff;
+       border-radius: 5px;
+       border: 1px solid #ddd;
+       z-index:500000 !important;
+       position: absolute;
+       right: 10px;
+       height: 331px;
+       }      
+       .slide-out-div textarea.form-control { border: 1px solid #ddd;}
+    </style>
 </head>
 
-<body class="full-bg">
-   
+<body class="full-bg">   
 
- <div id="myModal" class="row" role="dialog">
+ <%-- <div id="myModal" class="row" role="dialog">
 	
 	<div id="login-overlay" class="col-lg-4 col-lg-offset-8 register_login">
 	          
@@ -134,7 +132,7 @@
 	              </div>
 	          </div>
 	  </div>
-</div>  
+</div>   --%>
 
 <div id="myModal11" class="modal fade" role="dialog">
   
@@ -359,21 +357,21 @@
 </div>
 
 
-<div class="container">
-	<div class="row">
-		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1  marg_top">
-		    <div class="row top_header">
-		        <div class="col-lg-12">
-		         <ul>
-		        <li class="flex-item"><img src="${context}/redBlackTheme/images/logo.png" class="img-responsive "></li>
-		         <li class="pwr_text flex-item">Powered By</li>
-		         <li class="flex-item" ><img src="${context}/redBlackTheme/images/poweredby-logo.pnggggg" class="img-responsive pwr_logo"></li>
-		         <li class="flex-item"><img src="${context}/redBlackTheme/images/simple-bannr.png" class="img-responsive pull-right"></li>
-		        </ul>
-		        </div>                        
-		    </div>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1  marg_top">
+			    <div class="row top_header">
+			        <div class="col-lg-12">
+			         <ul>
+			        <li class="flex-item"><img src="${context}/redBlackTheme/images/logo.png" class="img-responsive "></li>
+			         <li class="pwr_text flex-item">Powered By</li>
+			         <li class="flex-item" ><img src="${context}/redBlackTheme/images/poweredby-logo.pnggggg" class="img-responsive pwr_logo"></li>
+			         <li class="flex-item"><img src="${context}/redBlackTheme/images/simple-bannr.png" class="img-responsive pull-right"></li>
+			        </ul>
+			        </div>                        
+			    </div>
+			</div>
 		</div>
-	</div>
 
 	<header>
 	     <div class="row">
@@ -411,14 +409,15 @@
 					<img src="${context}/redBlackTheme/images/left_image.png">
 				</div>
 			</div> 
- 		</nav>
- 	</div>
-</header> 
-          <!--Notification-->
-         <div id="notification" style="display: none;">
-            <span class="dismiss"><a title="dismiss this notification">X</a></span>
-         </div>
-
+	 	</nav>
+ 		</div>
+	</header> 
+	
+    <!--Notification-->
+    <div id="notification" style="display: none;">
+       <span class="dismiss"><a title="dismiss this notification">X</a></span>
+    </div>
+	<!--Notification ends-->
 
 
   
@@ -659,14 +658,8 @@ function loginWithFB()
 }
 </script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="${context}/redBlackTheme/js/bootstrap.js"></script>
-<script src="${context}/redBlackTheme/js/jquery.bxslider.js"></script>
-<script src="${context}/redBlackTheme/js/jPushMenu.js" ></script>
+
 <script type="text/javascript">
-   
-   
-   
    <script>
 			(function() {
 				if (!String.prototype.trim) {
@@ -732,7 +725,7 @@ function loginWithFB()
            
 });
        </script>
-        <script src="js/jPushMenu.js" ></script>
+        <%-- <script src="js/jPushMenu.js" ></script> --%>
       <script type="text/javascript">
          //<![CDATA[
          $(document).ready(function(){
@@ -741,3 +734,8 @@ function loginWithFB()
          });
          //]]>
       </script>
+      
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="${context}/redBlackTheme/js/bootstrap.js"></script>
+<script src="${context}/redBlackTheme/js/jquery.bxslider.js"></script>
+<script src="${context}/redBlackTheme/js/jPushMenu.js" ></script>
