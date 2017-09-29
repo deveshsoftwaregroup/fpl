@@ -10,9 +10,9 @@
            <h4 style="color:#4dff4d;">${param.message}</h4>
            
             <ul class="bxslider">
-                  <li><img src="${context}/redBlackTheme/images/banner1.png" /></li>
-                <li><img src="${context}/redBlackTheme/images/banner1.png" /></li>
-                <li><img src="${context}/redBlackTheme/images/banner1.png" /></li>
+            	<li><a target="_blank" href="http://the12thman.in/"><img src="${context}/redBlackTheme/images/banner1.png" /></a></li>
+                <li><a target="_blank" href="http://the12thman.in/"><img src="${context}/redBlackTheme/images/banner1.png" /></a></li>
+                <li><a target="_blank" href="http://the12thman.in/"><img src="${context}/redBlackTheme/images/banner1.png" /></a></li>
                   
                 </ul>
             </div>
