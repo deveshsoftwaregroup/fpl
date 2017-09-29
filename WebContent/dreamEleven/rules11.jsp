@@ -2,7 +2,8 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:set var="context" value="/SportMgmt" />
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="context" value="<%=request.getContextPath()%>" />
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 <div class="predict11-bg dream_help">
@@ -158,7 +159,7 @@
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script src="${context}/redBlackTheme/js/bootstrap.js"></script>
-      <script type="text/javascript" src="/SportMgmt/redBlackTheme/js/accordion.js"></script>
+      <script type="text/javascript" src="${context}/redBlackTheme/js/accordion.js"></script>
        <script src="${context}/redBlackTheme/js/jquery.bxslider.js"></script>
       
       

@@ -11,7 +11,7 @@
     <c:set var="context" value="<%=request.getContextPath()%>" />
     <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 	<%@ taglib uri="..//WEB-INF/sportmgmt.tld" prefix="s" %>  
-<link rel="stylesheet" type="text/css" 	href="/SportMgmt/redBlackTheme/toDelete/258578334140_blp.css"> 
+<link rel="stylesheet" type="text/css" 	href="${context}/redBlackTheme/toDelete/258578334140_blp.css"> 
 	
 	
     

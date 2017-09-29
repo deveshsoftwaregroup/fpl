@@ -152,10 +152,10 @@
       </div>
         
           
-      <script src="js/jquery.bxslider.js"></script>     
+     <%--  <script src="${context}/redBlackTheme/js/jquery.bxslider.js"></script>     
            
           
-          <script src="js/jPushMenu.js" ></script>
+          <script src="${context}/redBlackTheme/js/jPushMenu.js" ></script> --%>
       <script type="text/javascript">
          //<![CDATA[
          $(document).ready(function(){
