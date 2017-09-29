@@ -7,7 +7,7 @@
 <title>Payment Success</title>
 </head>
 <body>
-Payment Success........ 
+Payment Status:  
 First Name: ${firstname}<br/>
 mihpayid: ${mihpayid}</br>
 status : ${status}
