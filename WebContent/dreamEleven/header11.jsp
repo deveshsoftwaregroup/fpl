@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The12thman | League</title>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-    <c:set var="context" value="/SportMgmt" />
+    <c:set var="context" value="<%=request.getContextPath()%>" />
     <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 	<%@ taglib uri="..//WEB-INF/sportmgmt.tld" prefix="s" %>  
 <link rel="stylesheet" type="text/css" 	href="/SportMgmt/redBlackTheme/toDelete/258578334140_blp.css"> 
