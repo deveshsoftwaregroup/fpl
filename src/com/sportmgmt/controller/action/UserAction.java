@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -656,7 +657,7 @@ public class UserAction {
 	public  String updateView(ModelMap modeMap,HttpServletRequest request)
 	{
 		 logger.info("---------- Entry in --- UpdateView");
-		 HashMap<String,HashMap<String,ArrayList<String>>> countryStateCityMap = UserManager.getCountryStateCityMap();
+		 TreeMap<String,HashMap<String,ArrayList<String>>> countryStateCityMap = UserManager.getCountryStateCityMap();
 		 logger.info("-------- UpdateView : countryStateCityMap: "+countryStateCityMap);
 		 modeMap.put("countryStateCityMap", countryStateCityMap);
 		 String countryStateCityJson = "{}";
