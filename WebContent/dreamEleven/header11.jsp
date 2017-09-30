@@ -57,6 +57,8 @@
              </div>
         </div>
     </div>
+    
+    				
     <header>
              <div class="row">
                 <div class="col-lg-1 col-sm-1"><div class="left_img"><img src="${context}/redBlackTheme/images/left_image.png"></div></div>    
