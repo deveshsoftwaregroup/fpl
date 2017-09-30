@@ -66,17 +66,9 @@
 		 }
 		</style>
 	</head>
-	<body class="predict11-bg transfers_predict11" onload="uploadTransferView11();">
-		<s:sportExt retrieve="priceList" />
-		<main id="mainContent" tabindex="0" class="ism"> 
-			<%@ include	file="header11.jsp"%>
-			<!-- <div id="preloader">
-	    		<div id="status">&nbsp;</div>
-	  		</div> -->
-			<div class="ism-container"></div> <!-- Main content of every pages gets loaded at class  -->	
-			
-			<!-- <div id="ismr-elements-menu"></div> -->
-			<c:if test="${not empty sessionScope.clubList}">
+	<!-- <body class="predict11-bg transfers_predict11" onload="uploadTransferView11();"> -->
+	<body class="predict11-bg transfers_predict11">
+		<c:if test="${not empty sessionScope.clubList}">
 				<script type="text/javascript">
 		   			var clubIdImageMap = {};
 		   		</script>
@@ -88,7 +80,20 @@
 		    			clubIdImageMap["${clubMap['clubId']}"] = "${imageSrc}";
 		    		</script>
 				</c:forEach>
-			</c:if> 		
+			</c:if> 
+		<s:sportExt retrieve="priceList" />
+		<main id="mainContent" tabindex="0" class="ism"> 
+		
+			<%@ include	file="header11.jsp"%>
+			<!-- <div id="preloader">
+	    		<div id="status">&nbsp;</div>
+	  		</div> -->
+			<div class="ism-container">
+				<%@ include	file="transfer11.jsp"%>			
+			</div> <!-- Main content of every pages gets loaded at class  -->	
+			
+			<!-- <div id="ismr-elements-menu"></div> -->
+					
 		
 			<%@ include file="footer.jsp"%>
 		</main>
