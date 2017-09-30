@@ -103,7 +103,6 @@
 		     		  url: url,
 		     		  dataType: 'html',
 		     		  success: function( resp ) {
-		     			 //console.log(resp); 
 		     			 $('.ism-container').html(resp);
 		     		  },
 		     		  error: function( req, status, err ) {
@@ -119,7 +118,6 @@
 		     		  url: url,
 		     		  dataType: 'html',
 		     		  success: function( resp ) {
-		     			 //console.log(resp); 
 		     			 $('.ism-container').html(resp);
 		     		  },
 		     		  error: function( req, status, err ) {
@@ -138,7 +136,6 @@
 			     		  url: url,
 			     		  dataType: 'html',
 			     		  success: function( resp ) {
-			     			 //console.log(resp); 
 			     			 $('.ism-container').html(resp);
 			     		  },
 			     		  error: function( req, status, err ) {
@@ -160,7 +157,6 @@
 		     		  url: url,
 		     		  dataType: 'html',
 		     		  success: function( resp ) {
-		     			 //console.log(resp); 
 		     			 $('.ism-container').html(resp);
 		     		  },
 		     		  error: function( req, status, err ) {
@@ -181,7 +177,6 @@
 		     		  url: url,
 		     		  dataType: 'html',
 		     		  success: function( resp ) {
-		     			 //console.log(resp); 
 		     			 $('.ism-container').html(resp);
 		     		  },
 		     		  error: function( req, status, err ) {
@@ -199,7 +194,6 @@
 		     		  url: url,
 		     		  dataType: 'html',
 		     		  success: function( resp ) {
-		     			 //console.log(resp); 
 		     			 $('.ism-container').html(resp);
 		     		  },
 		     		  error: function( req, status, err ) {
@@ -215,7 +209,6 @@
 		     		  url: "/SportMgmt/mvc/Home11/FAQView11",
 		     		  dataType: 'html',
 		     		  success: function( resp ) {
-		     			 //console.log(resp); 
 		     			 $('.ism-container').html(resp);
 		     		  },
 		     		  error: function( req, status, err ) {
@@ -230,7 +223,6 @@
 		     		  url: "/SportMgmt/mvc/Home11/RulesView11",
 		     		  dataType: 'html',
 		     		  success: function( resp ) {
-		     			 //console.log(resp); 
 		     			 $('.ism-container').html(resp);
 		     		  },
 		     		  error: function( req, status, err ) {
@@ -245,7 +237,6 @@
 	   		  url: "/SportMgmt/mvc/player/orderBy/"+orderBy,
 	   		  dataType: 'html',
 	   		  success: function( resp ) {
-	   			 //console.log(resp); 
 	   			if(typeof resp.playerList !='undefined')
 	   			 playerListJson = resp.playerList;
 	   			 uploadTransferView();
