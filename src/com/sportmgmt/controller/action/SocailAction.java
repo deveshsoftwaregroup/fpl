@@ -299,7 +299,8 @@ public class SocailAction {
 			logger.info("---------- userId: "+userId);
 			if(userId != null && !userId.equals(""))
 			{
-				return "redirect:/mvc/user/login/"+userId;
+				logger.info("Going to redirect to application first pagee");
+				return "redirect:/mvc/user11/login11/"+userId;
 			}
 		}
 		return null;
