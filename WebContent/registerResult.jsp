@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
     <%@ taglib prefix="c" 
            uri="http://java.sun.com/jsp/jstl/core" %>
+ 	<c:set var="context" value="<%=request.getContextPath()%>" />
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -10,10 +11,10 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The12thman | League</title>
-    <link rel="stylesheet" href="/SportMgmt/css/foundation.css">
-    <link rel="stylesheet" href="/SportMgmt/css/app1.css">
-    <link rel="stylesheet" href="/SportMgmt/css/superslides.css">
-    <link rel="stylesheet" href="/SportMgmt/css/customMedia.css">
+    <link rel="stylesheet" href="${context}/css/foundation.css">
+    <link rel="stylesheet" href="${context}/css/app1.css">
+    <link rel="stylesheet" href="${context}/css/superslides.css">
+    <link rel="stylesheet" href="${context}/css/customMedia.css">
     
     <style>
     #exampleModal2 .thanksMsg{ display:block; margin-bottom:20px; font-size:40px; color:#072d44;}
@@ -72,9 +73,9 @@
     	</header>
     <div id="slides">
         <div class="slides-container">
-        	<img src="/SportMgmt/images/img-2.jpg">
+        	<img src="${context}/images/img-2.jpg">
         	
-            <img src="/SportMgmt/images/img-1.jpg">
+            <img src="${context}/images/img-1.jpg">
                       
            
             </div>
@@ -103,7 +104,7 @@
                  </p>
             </div>
             <div class="banner-info">
-            <img alt="info" src="/SportMgmt/images/football-1.png">
+            <img alt="info" src="${context}/images/football-1.png">
              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
              <span class="s1">
              	Bad performance<br/>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;in previous game weeks ? 
@@ -203,13 +204,13 @@
   </button>
 </div>
     
-    <script src="/SportMgmt/js/vendor/jquery.js"></script>
-    <script src="/SportMgmt/js/vendor/what-input.js"></script>
-    <script src="/SportMgmt/js/vendor/foundation.js"></script>
-    <script src="/SportMgmt/js/app.js"></script>
-    <script src="/SportMgmt/js/jquery.easing.1.3.js"></script>
-    <script src="/SportMgmt/js/jquery.animate-enhanced.min.js"></script>
-    <script src="/SportMgmt/js/jquery.superslides.js" type="text/javascript" charset="utf-8"></script>
+    <script src="${context}/js/vendor/jquery.js"></script>
+    <script src="${context}/js/vendor/what-input.js"></script>
+    <script src="${context}/js/vendor/foundation.js"></script>
+    <script src="${context}/js/app.js"></script>
+    <script src="${context}/js/jquery.easing.1.3.js"></script>
+    <script src="${context}/js/jquery.animate-enhanced.min.js"></script>
+    <script src="${context}/js/jquery.superslides.js" type="text/javascript" charset="utf-8"></script>
     <script>
         $(function () {
         	$('#slides').superslides({

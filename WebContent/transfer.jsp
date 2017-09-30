@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	<c:set var="context" value="<%=request.getContextPath()%>" />
     <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 	<%@ taglib uri="WEB-INF/sportmgmt.tld" prefix="s" %>  
 	<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
@@ -208,7 +209,7 @@
                                                         >
                                                             <picture>
                                                             
-                                                                <img src="/SportMgmt/images/animated_wk.gif"  alt="" title="Select a Goalkeeper from the player list" class="ism-shirt ism-element__shirt">
+                                                                <img src="${context}/images/animated_wk.gif"  alt="" title="Select a Goalkeeper from the player list" class="ism-shirt ism-element__shirt">
                                                             </picture>
                                                              <c:choose>
                                                              <c:when test="${isPlayerAvail}">
@@ -233,7 +234,7 @@
                                                     	<div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
 
 											                <picture>											                    
-											                    <img src="/SportMgmt/images/animated_wk.gif"                    
+											                    <img src="${context}/images/animated_wk.gif"                    
 											                     title="Select a Goalkeeper" class="ism-shirt ism-element__shirt">
 											                </picture>
 
@@ -275,7 +276,7 @@
                                                         >
 
                                                             <picture>                                                                
-                                                                <img src="/SportMgmt/images/animated_bat.gif" 
+                                                                <img src="${context}/images/animated_bat.gif" 
                                                                 alt="" title="Select a Defender from the player list" class="ism-shirt ism-element__shirt">
                                                             </picture>
 															
@@ -306,7 +307,7 @@
 
                                                             <picture>
                                                                 
-                                                                <img src="/SportMgmt/images/animated_bat.gif"  alt="" title="Select a Defender from the player list" class="ism-shirt ism-element__shirt">
+                                                                <img src="${context}/images/animated_bat.gif"  alt="" title="Select a Defender from the player list" class="ism-shirt ism-element__shirt">
                                                             </picture>
 
                                                            
@@ -336,7 +337,7 @@
 
                                                             <picture>
                                                                
-                                                                <img src="/SportMgmt/images/animated_bat.gif" alt="" title="Select a Defender from the player list" class="ism-shirt ism-element__shirt">
+                                                                <img src="${context}/images/animated_bat.gif" alt="" title="Select a Defender from the player list" class="ism-shirt ism-element__shirt">
                                                             </picture>
 
                                                            
@@ -365,7 +366,7 @@
                                                         <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
 
                                                             <picture>
-                                                               <img src="/SportMgmt/images/animated_bat.gif" alt="" title="Select a Defender from the player list" class="ism-shirt ism-element__shirt">
+                                                               <img src="${context}/images/animated_bat.gif" alt="" title="Select a Defender from the player list" class="ism-shirt ism-element__shirt">
                                                             </picture>
 
                                                            
@@ -394,7 +395,7 @@
                                                         <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
 
                                                             <picture>
-                                                                 <img src="/SportMgmt/images/animated_bat.gif" alt="" title="Select a Defender from the player list" class="ism-shirt ism-element__shirt">
+                                                                 <img src="${context}/images/animated_bat.gif" alt="" title="Select a Defender from the player list" class="ism-shirt ism-element__shirt">
                                                             </picture>                                                             <c:choose>
                                                              <c:when test="${isPlayerAvail}">
                                                              	<div class="ism-element__name ism-element__name--placeholder">
@@ -424,7 +425,7 @@
                                                         <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
 
                                                             <picture>
-                                                                <img src="/SportMgmt/images/animated_bowl.gif" alt="" title="Select a Midfielder from the player list" class="ism-shirt ism-element__shirt">
+                                                                <img src="${context}/images/animated_bowl.gif" alt="" title="Select a Midfielder from the player list" class="ism-shirt ism-element__shirt">
                                                             </picture>
 															
                                                              <c:choose>
@@ -451,7 +452,7 @@
                                                         <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
 
                                                             <picture>
-                                                                <img src="/SportMgmt/images/animated_bowl.gif"  alt="" title="Select a Midfielder from the player list" class="ism-shirt ism-element__shirt">
+                                                                <img src="${context}/images/animated_bowl.gif"  alt="" title="Select a Midfielder from the player list" class="ism-shirt ism-element__shirt">
                                                             </picture>
 
                                                            
@@ -480,7 +481,7 @@
                                                         <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
 
                                                             <picture>
-                                                                 <img src="/SportMgmt/images/animated_bowl.gif"  alt="" title="Select a Midfielder from the player list" class="ism-shirt ism-element__shirt">
+                                                                 <img src="${context}/images/animated_bowl.gif"  alt="" title="Select a Midfielder from the player list" class="ism-shirt ism-element__shirt">
                                                             </picture>
 
                                                            
@@ -508,7 +509,7 @@
                                                         <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
 
                                                             <picture>
-                                                                     <img src="/SportMgmt/images/animated_bowl.gif" alt="" title="Select a Midfielder from the player list" class="ism-shirt ism-element__shirt">
+                                                                     <img src="${context}/images/animated_bowl.gif" alt="" title="Select a Midfielder from the player list" class="ism-shirt ism-element__shirt">
                                                             </picture>                                                             <c:choose>
                                                              <c:when test="${isPlayerAvail}">
                                                              	<div class="ism-element__name ism-element__name--placeholder">
@@ -534,7 +535,7 @@
                                                         <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
 
                                                             <picture>
-                                                                <img src="/SportMgmt/images/animated_bowl.gif" alt="" title="Select a Midfielder from the player list" class="ism-shirt ism-element__shirt">
+                                                                <img src="${context}/images/animated_bowl.gif" alt="" title="Select a Midfielder from the player list" class="ism-shirt ism-element__shirt">
                                                             </picture>                                                             <c:choose>
                                                              <c:when test="${isPlayerAvail}">
                                                              	<div class="ism-element__name ism-element__name--placeholder">
@@ -562,7 +563,7 @@
                                                         <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
 
                                                             <picture>
-                                                                   <img src="/SportMgmt/images/animated_ar.gif" alt="" title="Select a Forward from the player list" class="ism-shirt ism-element__shirt">
+                                                                   <img src="${context}/images/animated_ar.gif" alt="" title="Select a Forward from the player list" class="ism-shirt ism-element__shirt">
                                                             </picture>
 															
                                                              <c:choose>
@@ -590,7 +591,7 @@
                                                         <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
 
                                                             <picture>
-                                                               <img src="/SportMgmt/images/animated_ar.gif"  alt="" title="Select a Forward from the player list" class="ism-shirt ism-element__shirt">
+                                                               <img src="${context}/images/animated_ar.gif"  alt="" title="Select a Forward from the player list" class="ism-shirt ism-element__shirt">
                                                             </picture>
 
                                                             
@@ -620,7 +621,7 @@
                                                         <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
 
                                                             <picture>
-                                                                  <img src="/SportMgmt/images/animated_ar.gif" alt="" title="Select a Forward from the player list" class="ism-shirt ism-element__shirt">
+                                                                  <img src="${context}/images/animated_ar.gif" alt="" title="Select a Forward from the player list" class="ism-shirt ism-element__shirt">
                                                             </picture>                                                             <c:choose>
                                                              <c:when test="${isPlayerAvail}">
                                                              	<div class="ism-element__name ism-element__name--placeholder">
@@ -845,11 +846,11 @@
                 <div id="ismr-help"></div>
                 <div id="ismr-confirm"></div>
                 <!-- <div class="transfer-banner">
-                <img src="/SportMgmt/images/addbanner_728x90_V1.jpg" alt="" class="img-responsive">
+                <img src="${context}/images/addbanner_728x90_V1.jpg" alt="" class="img-responsive">
                 </div> -->
                 <BR>
                 <div class="transfer-banner">
-                <img src="/SportMgmt/images/ads-bottom.jpg" alt="" class="img-responsive">
+                <img src="${context}/images/ads-bottom.jpg" alt="" class="img-responsive">
                 </div>
                 
             </div>
@@ -981,7 +982,7 @@
 					<c:set value="${clubImageMap[playerMap.clubId]}" var="imageSrc" />
 				</c:if>	
               <!--  player list image -->              
-                    <img src="/SportMgmt/images/Goalkeeper_${imageSrc}" height="20" width="20" alt="Arsenal" title="${playerMap.name}" class="ism-shirt">
+                    <img src="${context}/images/Goalkeeper_${imageSrc}" height="20" width="20" alt="Arsenal" title="${playerMap.name}" class="ism-shirt">
             </div>
             <div class="ism-media__body ism-table--el__primary-text">
                 <a href="#" class="ism-table--el__name">${playerMap.name}</a>
@@ -1035,7 +1036,7 @@
 				<c:if test="${not empty playerMap.clubId and playerMap.clubId ne ''}">
 				<c:set value="${clubImageMap[playerMap.clubId]}" var="imageSrc" />
 				</c:if>
-               <img src="/SportMgmt/images/Defender_${imageSrc}" height="20" width="20" alt="Arsenal" title="${playerMap.name}" class="ism-shirt">
+               <img src="${context}/images/Defender_${imageSrc}" height="20" width="20" alt="Arsenal" title="${playerMap.name}" class="ism-shirt">
                 
             </div>
 
@@ -1093,7 +1094,7 @@
 				<c:if test="${not empty playerMap.clubId and playerMap.clubId ne ''}">
 				<c:set value="${clubImageMap[playerMap.clubId]}" var="imageSrc" />
 				</c:if>
-               <img src="/SportMgmt/images/Midfielder_${imageSrc}" height="20" width="20" alt="Arsenal" title="${playerMap.name}" class="ism-shirt">
+               <img src="${context}/images/Midfielder_${imageSrc}" height="20" width="20" alt="Arsenal" title="${playerMap.name}" class="ism-shirt">
                 
             </div>
 
@@ -1149,7 +1150,7 @@
                <c:if test="${not empty playerMap.clubId and playerMap.clubId ne ''}">
 				<c:set value="${clubImageMap[playerMap.clubId]}" var="imageSrc" />
 				</c:if>
-               <img src="/SportMgmt/images/Forward_${imageSrc}" height="20" width="20" alt="Arsenal" title="${playerMap.name}" class="ism-shirt">
+               <img src="${context}/images/Forward_${imageSrc}" height="20" width="20" alt="Arsenal" title="${playerMap.name}" class="ism-shirt">
             </div>
             <div class="ism-media__body ism-table--el__primary-text">
                 <a href="#" class="ism-table--el__name">${playerMap.name}</a>
@@ -1222,7 +1223,7 @@
 	function aa(){
 		var elems2 = '<div class="ismjs-select">'+
 	     '<picture>'+
-	     '<img src="/SportMgmt/images/animated_wk.gif">'+
+	     '<img src="${context}/images/animated_wk.gif">'+
 	     '</picture>'+
 	     '<div class="ism-element__name ism-element__name--placeholder"> <abbr title="Goalkeeper" class="ism-element__type"><span class="ism-element__type__short">GKP</span></abbr></div>';
 	     
@@ -1241,7 +1242,7 @@
 	function defenderRemove(){
 		var def2 = '<div class="ismjs-select">'+
 	     '<picture>'+
-	    '<img src="/SportMgmt/images/animated_bat.gif"  alt="" title="Select a Defender from player list" class="ism-shirt ism-element__shirt">'+
+	    '<img src="${context}/images/animated_bat.gif"  alt="" title="Select a Defender from player list" class="ism-shirt ism-element__shirt">'+
 	     '</picture>'+
 	     '<div class="ism-element__name ism-element__name--placeholder"> <abbr title="Defender" class="ism-element__type"><span class="ism-element__type__short">DEF</span></abbr></div>';
 	     
@@ -1264,7 +1265,7 @@
 	function midfielderRemove(){
 		var midd2 = '<div class="ismjs-select">'+
 	     '<picture>'+
-	     '<img src="/SportMgmt/images/animated_bowl.gif" alt="" title="Select a Midfielder from player list" class="ism-shirt ism-element__shirt">'+
+	     '<img src="${context}/images/animated_bowl.gif" alt="" title="Select a Midfielder from player list" class="ism-shirt ism-element__shirt">'+
 	     '</picture>'+
 	     '<div class="ism-element__name ism-element__name--placeholder"> <abbr title="Midfielder" class="ism-element__type"><span class="ism-element__type__short">MID</span></abbr></div>';
 	    
@@ -1284,7 +1285,7 @@
 	function forwardRemove(){
 		var for2 = '<div class="ismjs-select">'+
 	     '<picture>'+
-	    '<img src="/SportMgmt/images/animated_ar.gif" alt="" title="Select a Forward from player list" class="ism-shirt ism-element__shirt">'+
+	    '<img src="${context}/images/animated_ar.gif" alt="" title="Select a Forward from player list" class="ism-shirt ism-element__shirt">'+
 	     '</picture>'+
 	     '<div class="ism-element__name ism-element__name--placeholder"> <abbr title="Forward" class="ism-element__type"><span class="ism-element__type__short">FWD</span></abbr></div>';
 	    
@@ -1344,7 +1345,7 @@
 				var elems = '<div class="ismjs-menu" id="'+userId+'_'+gameClubPlayerId+'">'+
 		       
 		       '<picture>'+
-		        '<img src="/SportMgmt/images/Goalkeeper_'+clubImage+'" alt="" title="" class="ism-shirt ism-element__shirt">'+
+		        '<img src="${context}/images/Goalkeeper_'+clubImage+'" alt="" title="" class="ism-shirt ism-element__shirt">'+
 		        '</picture>'+
 		        '<div class="ism-element__name">'+playerName+'</div>'+
 		        '<div class="ism-element__data">'+playerPrice+'</div>'+
@@ -1361,7 +1362,7 @@
 				var midfielder = '<div class="ismjs-menu" id="'+userId+'_'+gameClubPlayerId+'">'+
 		       
 		       '<picture>'+
-		        '<img src="/SportMgmt/images/Midfielder_'+clubImage+'" alt="'+playerName+'" title="'+playerName+'" class="ism-shirt ism-element__shirt">'+
+		        '<img src="${context}/images/Midfielder_'+clubImage+'" alt="'+playerName+'" title="'+playerName+'" class="ism-shirt ism-element__shirt">'+
 		        '</picture>'+
 		       
 		        '<div class="ism-element__name">'+playerName+'</div>'+
@@ -1378,7 +1379,7 @@
 				var defender = '<div class="ismjs-menu" id="'+userId+'_'+gameClubPlayerId+'">'+
 		       
 		       '<picture>'+
-		        '<img src="/SportMgmt/images/Defender_'+clubImage+'"  alt="'+playerName+'" title="'+playerName+'" class="ism-shirt ism-element__shirt">'+
+		        '<img src="${context}/images/Defender_'+clubImage+'"  alt="'+playerName+'" title="'+playerName+'" class="ism-shirt ism-element__shirt">'+
 		        '</picture>'+
 		        '<div class="ism-element__name">'+playerName+'</div>'+
 		        '<div class="ism-element__data">'+playerPrice+'</div>'+
@@ -1395,7 +1396,7 @@
 				var forward = '<div class="ismjs-menu" id="'+userId+'_'+gameClubPlayerId+'">'+
 		      
 		       '<picture>'+
-		        '<img src="/SportMgmt/images/Forward_'+clubImage+'" title="'+playerName+'" class="ism-shirt ism-element__shirt">'+
+		        '<img src="${context}/images/Forward_'+clubImage+'" title="'+playerName+'" class="ism-shirt ism-element__shirt">'+
 		        '</picture>'+
 		        '<div class="ism-element__name">'+playerName+'</div>'+
 		        '<div class="ism-element__data">'+playerPrice+'</div>'+
@@ -1657,7 +1658,7 @@
 	     					var elems = '<div class="ismjs-menu" id="'+userId+'_'+gameClubPlayerId+'">'+
 	     			        
 	     			       '<picture>'+
-	     			        '<img src="/SportMgmt/images/Goalkeeper_'+clubImage+'" alt="'+playerName+'" title="'+playerName+'" class="ism-shirt ism-element__shirt">'+
+	     			        '<img src="${context}/images/Goalkeeper_'+clubImage+'" alt="'+playerName+'" title="'+playerName+'" class="ism-shirt ism-element__shirt">'+
 	     			        '</picture>'+
 	     			        '<div class="ism-element__name">'+playerName+'</div>'+
 	     			        '<div class="ism-element__data">'+playerPrice+'</div>'+
@@ -1674,7 +1675,7 @@
 	     					var midfielder = '<div class="ismjs-menu" id="'+userId+'_'+gameClubPlayerId+'">'+
 	     			        
 	     			       '<picture>'+
-	     			        '<img src="/SportMgmt/images/Midfielder_'+clubImage+'" alt="'+playerName+'" title="'+playerName+'" class="ism-shirt ism-element__shirt">'+
+	     			        '<img src="${context}/images/Midfielder_'+clubImage+'" alt="'+playerName+'" title="'+playerName+'" class="ism-shirt ism-element__shirt">'+
 	     			        '</picture>'+
 	     			       
 	     			        '<div class="ism-element__name">'+playerName+'</div>'+
@@ -1691,7 +1692,7 @@
 	     					var defender = '<div class="ismjs-menu" id="'+userId+'_'+gameClubPlayerId+'">'+
 	     			        
 	     			       '<picture>'+
-	     			        '<img src="/SportMgmt/images/Defender_'+clubImage+'" alt="'+playerName+'" title="'+playerName+'" class="ism-shirt ism-element__shirt">'+
+	     			        '<img src="${context}/images/Defender_'+clubImage+'" alt="'+playerName+'" title="'+playerName+'" class="ism-shirt ism-element__shirt">'+
 	     			        '</picture>'+
 	     			        '<div class="ism-element__name">'+playerName+'</div>'+
 	     			        '<div class="ism-element__data">'+playerPrice+'</div>'+
@@ -1708,7 +1709,7 @@
 	     					var forward = '<div class="ismjs-menu" id="'+userId+'_'+gameClubPlayerId+'">'+
 	     			       
 	     			       '<picture>'+
-	     			        '<img src="/SportMgmt/images/Forward_'+clubImage+'" alt="'+playerName+'" title="'+playerName+'" class="ism-shirt ism-element__shirt">'+
+	     			        '<img src="${context}/images/Forward_'+clubImage+'" alt="'+playerName+'" title="'+playerName+'" class="ism-shirt ism-element__shirt">'+
 	     			        '</picture>'+
 	     			        '<div class="ism-element__name">'+playerName+'</div>'+
 	     			        '<div class="ism-element__data">'+playerPrice+'</div>'+

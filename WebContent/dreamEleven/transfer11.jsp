@@ -25,6 +25,25 @@
 					<h3>Select Players from List</h3>
 					<p>Gameweek ${gameWeekNumber} Deadline: <time datetime="2016-08-27T10:30:00Z">${deadline}</time><p>
 		            <p>Player Count: <span class="added-player-count"> </span> </p>	
+		            <div id="paymentModel11" class="modal fade" role="dialog">
+		  <div class="modal-dialog modal-lg">		
+		    <!-- Modal content-->
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <a type="button" class="close" data-dismiss="modal">&times;</a>
+		        <h4 class="modal-title">Play</h4>
+		      </div>
+		      <div class="modal-body">
+		        <div class="table-responsive prod-tbl">
+		         <a href="#"><button type="button" class="btn claim_btn" onclick="createHistory11('${sessionScope.gameDetails.gameId}','${gameWeekId}','${sessionScope.userId}');">Play Free </button></a>
+                                          	Want to be eligible to win prizes : <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#paymentModel">Play to Win prizes</button></a>
+                                            </div>
+					
+				</div>
+		      </div>
+		    </div>		
+		  </div>
+		</div>	
 		          
 								
 					<div class="col-lg-8 team_map_dream11">				                              
@@ -272,7 +291,7 @@
 	                                                  
 				</div>
 				 <div class="col-lg-12 pull-right claim_your_prize">
-                                             <a href="#"><button type="button" class="btn claim_btn" onclick="createHistory11('${sessionScope.gameDetails.gameId}','${gameWeekId}','${sessionScope.userId}');">Confirm Your Team</button></a>
+                                             <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#paymentModel11">Confirm Your Team</button></a>
                                           	Want to be eligible to win prizes : <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#paymentModel">Make Payment</button></a>
                                             </div>  
                                                                                      

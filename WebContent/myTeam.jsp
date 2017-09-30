@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
     
 	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    <c:set var="context" value="<%=request.getContextPath()%>" />
     <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 	<%@ taglib uri="WEB-INF/sportmgmt.tld" prefix="s" %> 
 	<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
@@ -83,7 +84,7 @@
 																<spring:message code="club_${clubId}_image" var="imageSrc" />
 															</c:if>
 																<picture>
-																	<img src="/SportMgmt/images/Goalkeeper_${imageSrc}"  alt="Burnley" title="Burnleyyy" class="league-shirt league-element__shirt">
+																	<img src="${context}/images/Goalkeeper_${imageSrc}"  alt="Burnley" title="Burnleyyy" class="league-shirt league-element__shirt">
 																</picture>
 																<div class="league-element__name">${playerName}</div>
 																<div class="league-element__data">${price}</div>
@@ -122,7 +123,7 @@
 															<c:if test="${not empty clubId and clubId ne ''}">
 																<spring:message code="club_${clubId}_image" var="imageSrc" />
 															</c:if>																<picture>
-																	<img src="/SportMgmt/images/Goalkeeper_${imageSrc}"  alt="West Brom" title="West Brom" class="league-shirt league-element__shirt">
+																	<img src="${context}/images/Goalkeeper_${imageSrc}"  alt="West Brom" title="West Brom" class="league-shirt league-element__shirt">
 																</picture>
 																<div class="league-element__name">${playerName}</div>
 																<div class="league-element__data">${price}</div>
@@ -154,7 +155,7 @@
 															</c:if>		
 															<div class="leaguejs-menu check_3">
 																<picture>
-																	<img src="/SportMgmt/images/Defender_${imageSrc}"  alt="West Brom" title="West Brom" class="league-shirt league-element__shirt">
+																	<img src="${context}/images/Defender_${imageSrc}"  alt="West Brom" title="West Brom" class="league-shirt league-element__shirt">
 																</picture>
 																<div class="league-element__name">${playerName}</div>
 																<div class="league-element__data">${price}</div>
@@ -181,7 +182,7 @@
 															</c:if>		
 															<div class="leaguejs-menu check_4">
 																<picture>
-																	<img src="/SportMgmt/images/Defender_${imageSrc}" alt="West Ham" title="West Ham" class="league-shirt league-element__shirt">
+																	<img src="${context}/images/Defender_${imageSrc}" alt="West Ham" title="West Ham" class="league-shirt league-element__shirt">
 																</picture>
 																<div class="league-element__name">${playerName}</div>
 																<div class="league-element__data">${price}</div>
@@ -207,7 +208,7 @@
 															</c:if>		
 															<div class="leaguejs-menu check_5">
 																<picture>
-																	<img src="/SportMgmt/images/Defender_${imageSrc}"  alt="Man Utd" title="Man Utd" class="league-shirt league-element__shirt">
+																	<img src="${context}/images/Defender_${imageSrc}"  alt="Man Utd" title="Man Utd" class="league-shirt league-element__shirt">
 																</picture>
 																<div class="league-element__name">${playerName}</div>
 																<div class="league-element__data">${price}</div>
@@ -233,7 +234,7 @@
 																<spring:message code="club_${clubId}_image" var="imageSrc" />
 															</c:if>		
 																<picture>
-																	<img src="/SportMgmt/images/Defender_${imageSrc}"  alt="Spurs" title="Spurs" class="league-shirt league-element__shirt">
+																	<img src="${context}/images/Defender_${imageSrc}"  alt="Spurs" title="Spurs" class="league-shirt league-element__shirt">
 																</picture>
 																<div class="league-element__name">${playerName}</div>
 																<div class="league-element__data">${price}</div>
@@ -259,7 +260,7 @@
 																<spring:message code="club_${clubId}_image" var="imageSrc" />
 															</c:if>		
 																<picture>
-																	<img src="/SportMgmt/images/Defender_${imageSrc}"  alt="Hull" title="Hull" class="league-shirt league-element__shirt">
+																	<img src="${context}/images/Defender_${imageSrc}"  alt="Hull" title="Hull" class="league-shirt league-element__shirt">
 																</picture>
 																<div class="league-element__name">${playerName}</div>
 																<div class="league-element__data">${price}</div>
@@ -287,7 +288,7 @@
 																<spring:message code="club_${clubId}_image" var="imageSrc" />
 															</c:if>		
 																<picture>
-																	<img src="/SportMgmt/images/Midfielder_${imageSrc}"  alt="Liverpool" title="Liverpool" class="league-shirt league-element__shirt">
+																	<img src="${context}/images/Midfielder_${imageSrc}"  alt="Liverpool" title="Liverpool" class="league-shirt league-element__shirt">
 																</picture>
 																<div class="league-element__name">${playerName}</div>
 																<div class="league-element__data">${price}</div>
@@ -313,7 +314,7 @@
 																<spring:message code="club_${clubId}_image" var="imageSrc" />
 															</c:if>		
 																<picture>
-																	<img src="/SportMgmt/images/Midfielder_${imageSrc}"  alt="Everton" title="Everton" class="league-shirt league-element__shirt">
+																	<img src="${context}/images/Midfielder_${imageSrc}"  alt="Everton" title="Everton" class="league-shirt league-element__shirt">
 																</picture>
 																<div class="league-element__name">${playerName}</div>
 																<div class="league-element__data">${price}</div>
@@ -340,7 +341,7 @@
 																<spring:message code="club_${clubId}_image" var="imageSrc" />
 															</c:if>		
 																<picture>
-																	<img src="/SportMgmt/images/Midfielder_${imageSrc}"  alt="Chelsea" title="Chelsea" class="league-shirt league-element__shirt">
+																	<img src="${context}/images/Midfielder_${imageSrc}"  alt="Chelsea" title="Chelsea" class="league-shirt league-element__shirt">
 																</picture>
 																<div class="league-element__name">${playerName}</div>
 																<div class="league-element__data">${price}</div>
@@ -367,7 +368,7 @@
 																<spring:message code="club_${clubId}_image" var="imageSrc" />
 															</c:if>		
 																<picture>
-																	<img src="/SportMgmt/images/Midfielder_${imageSrc}"  alt="Swanca" title="Swanca" class="league-shirt league-element__shirt">
+																	<img src="${context}/images/Midfielder_${imageSrc}"  alt="Swanca" title="Swanca" class="league-shirt league-element__shirt">
 																</picture>
 																<div class="league-element__name">${playerName}</div>
 																<div class="league-element__data">${price}</div>
@@ -393,7 +394,7 @@
 																<spring:message code="club_${clubId}_image" var="imageSrc" />
 															</c:if>		
 																<picture>
-																	<img src="/SportMgmt/images/Midfielder_${imageSrc}"  alt="Man Utd" title="Man Utd" class="league-shirt league-element__shirt">
+																	<img src="${context}/images/Midfielder_${imageSrc}"  alt="Man Utd" title="Man Utd" class="league-shirt league-element__shirt">
 																</picture>
 																<div class="league-element__name">${playerName}</div>
 																<div class="league-element__data">${price}</div>
@@ -421,7 +422,7 @@
 															</c:if>		
 															<div class="leaguejs-menu check_13">
 																<picture>
-																	<img src="/SportMgmt/images/Forward_${imageSrc}"  alt="Middlesbrough" title="Middlesbrough" class="league-shirt league-element__shirt">
+																	<img src="${context}/images/Forward_${imageSrc}"  alt="Middlesbrough" title="Middlesbrough" class="league-shirt league-element__shirt">
 																</picture>
 																<div class="league-element__name">${playerName}</div>
 																<div class="league-element__data">${price}</div>
@@ -447,7 +448,7 @@
 																<spring:message code="club_${clubId}_image" var="imageSrc" />
 															</c:if>		
 																<picture>
-																	<img src="/SportMgmt/images/Forward_${imageSrc}"  alt="Middlesbrough" title="Middlesbrough" class="league-shirt league-element__shirt">
+																	<img src="${context}/images/Forward_${imageSrc}"  alt="Middlesbrough" title="Middlesbrough" class="league-shirt league-element__shirt">
 																</picture>
 																<div class="league-element__name">${playerName}</div>
 																<div class="league-element__data">${price}</div>
@@ -473,7 +474,7 @@
 															</c:if>		
 															<div class="leaguejs-menu check_15">
 																<picture>
-																	<img src="/SportMgmt/images/Forward_${imageSrc}"  alt="Man City" title="Man City" class="league-shirt league-element__shirt">
+																	<img src="${context}/images/Forward_${imageSrc}"  alt="Man City" title="Man City" class="league-shirt league-element__shirt">
 																</picture>
 																<div class="league-element__name">${playerName}</div>
 																<div class="league-element__data">${price}</div>

@@ -113,7 +113,7 @@ public class GameAction11 {
 							List<Map<String,String>> userPlayersList = (List<Map<String,String>>)userGameMap.get("playerList");
 							Map<String,String> playerDetails = new HashMap<String,String>();
 							playerDetails.put("gameClubPlayerId", gameClubPlayerId);
-							playerDetails.put("isPlaying", SportConstrant.NO);
+							playerDetails.put("isPlaying", SportConstrant.YES);
 							playerDetails.put("playerType", SportConstrant.NULL);
 							playerDetails.put("playerCategory", SportConstrant.PLAYER_TYPE_NORMAL);
 							playerDetails.put("playerSeqNum", "0");

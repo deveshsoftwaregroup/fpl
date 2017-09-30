@@ -3,6 +3,7 @@
    
 	<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	<c:set var="context" value="<%=request.getContextPath()%>" />
     <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
             <div class="league-pusher leaguejs-page-transition">
                 <!-- Primary content -->
@@ -18,7 +19,7 @@
 									
 									<div class="fixtures-pegination">
 										<a class="peg-lnk" onclick="updateMatchDetails(false);" href="javascript:void(0);">Previous <i class="fa fa-angle-left"></i></a>
-										<img src ="/SportMgmt/images/fixture banner1 small.jpg" >   
+										<img src ="${context}/images/fixture banner1 small.jpg" >   
 										<a class="peg-lnk" onclick="updateMatchDetails(true);" href="javascript:void(0);">Next <i class="fa fa-angle-right"></i></a>
 									</div>
 								</div>
@@ -38,7 +39,7 @@
 </div>
                 <!-- Secondary content -->
                 
- <script src="/SportMgmt/js/jquery.js"></script> 
+ <script src="${context}/js/jquery.js"></script> 
 
 <script type="text/javascript">
 	$(window).load(function(){

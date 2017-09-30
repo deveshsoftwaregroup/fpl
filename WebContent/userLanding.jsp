@@ -11,11 +11,11 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib uri="WEB-INF/sportmgmt.tld" prefix="s"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<link rel="stylesheet" href="/SportMgmt/css/foundation.css">
-<link rel="stylesheet" href="/SportMgmt/css/app.css">
-<link rel="stylesheet" href="/SportMgmt/css/superslides.css">
-<link rel="stylesheet" type="text/css" 	href="/SportMgmt/css/customMedia.css">
-<link rel="stylesheet" type="text/css" 	href="/SportMgmt/css/258578334140.css">
+<link rel="stylesheet" href="${context}/css/foundation.css">
+<link rel="stylesheet" href="${context}/css/app.css">
+<link rel="stylesheet" href="${context}/css/superslides.css">
+<link rel="stylesheet" type="text/css" 	href="${context}/css/customMedia.css">
+<link rel="stylesheet" type="text/css" 	href="${context}/css/258578334140.css">
 
 <style>
 .addPlayer a {
@@ -69,7 +69,7 @@ rotate
 	<div class="ism-container"></div>	
 	<div id="ismr-elements-menu"></div>
 	<script type="text/javascript">
-        $(document).ajaxStart(function(){
+          $(document).ajaxStart(function(){
  		$("#ajaxloader").css("display", "none");
  		$('.mask').hide();
  	});
@@ -77,7 +77,7 @@ rotate
  	$(document).ajaxComplete(function(){
  	    $("#ajaxloader").css("display", "block");
  	    $('.mask').show();
- 	});
+ 	});  
 
    </script> <c:if test="${not empty sessionScope.clubList}">
 		<script type="text/javascript">
@@ -96,22 +96,22 @@ rotate
 	</c:if> 
 	<%@ include file="footer.jsp"%>
 	<div class="mask" style="display: none;"></div>
-	<div id="ajaxloader"></div>
+	<div id="ajaxloader"></div> 
 
 	</main>
 </body>
-<script src="/SportMgmt/js/vendor/what-input.js"></script>
-<script src="/SportMgmt/js/vendor/foundation.js"></script>
-<script src="/SportMgmt/js/app.js"></script>
-<script src="/SportMgmt/js/jquery.easing.1.3.js"></script>
-<script src="/SportMgmt/js/jquery.animate-enhanced.min.js"></script>
-<script src="/SportMgmt/js/jquery.superslides.js" type="text/javascript" charset="utf-8"></script>
-<script src="/SportMgmt/js/bootstrap.min.js"></script>
-<script src="/SportMgmt/js/jquery.js"></script>
+<script src="${context}/js/vendor/what-input.js"></script>
+<script src="${context}/js/vendor/foundation.js"></script>
+<script src="${context}/js/app.js"></script>
+<script src="${context}/js/jquery.easing.1.3.js"></script>
+<script src="${context}/js/jquery.animate-enhanced.min.js"></script>
+<script src="${context}/js/jquery.superslides.js" type="text/javascript" charset="utf-8"></script>
+<script src="${context}/js/bootstrap.min.js"></script>
+<script src="${context}/js/jquery.js"></script>
 <%-- <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script> --%>
-<script src="/SportMgmt/js/jquery.js"></script> 
-<script src="/SportMgmt/js/bootstrap.min.js"></script> 
-<script type="text/javascript" src="/SportMgmt/js/69e9bb26ef46.js"></script>
+<script src="${context}/js/jquery.js"></script> 
+<script src="${context}/js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="${context}/js/69e9bb26ef46.js"></script>
  
  
 </html>

@@ -1,5 +1,6 @@
 <jsp:include page="homeHeader.jsp" />
  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+ <c:set var="context" value="<%=request.getContextPath()%>" />
   
   <section id="contentSection">
     <div class="row">
@@ -15,7 +16,7 @@
                 </ul>
                 <div class="tab-content">
                   <div role="tabpanel" class="tab-pane active" id="introduction">
-                    <img src="/SportMgmt/images/inner-img.jpg" align="left" class="img-inner">
+                    <img src="${context}/images/inner-img.jpg" align="left" class="img-inner">
                     <p>Welcome to Fantasy IPL 2017. Fantasy IPL returns this summer with the start of another Fantasy League season on 5th April!</p>
 
 <p>Compete against players from far and wide and win big with over INR 50,000 in prizes across a wide range of competitions.</p>
@@ -29,7 +30,7 @@
 <p>Login and visit the Transfer page to get started.</p>
                   </div>
                   <div role="tabpanel" class="tab-pane" id="manage">
-                    <img src="/SportMgmt/images/inner-img-2.jpg" align="left" class="img-inner">
+                    <img src="${context}/images/inner-img-2.jpg" align="left" class="img-inner">
                     <p><strong>You're in charge!</strong></p>
 
 <p>As a Fantasy League manager, you'll pick your squad of 15 players from a budget of INR 100 Million.</p>
@@ -43,7 +44,7 @@
 <p>Register/Login for more information.</p>
                   </div>
                   <div role="tabpanel" class="tab-pane" id="scoring">
-                    <img src="/SportMgmt/images/inner-img-3.jpg" align="left" class="img-inner">
+                    <img src="${context}/images/inner-img-3.jpg" align="left" class="img-inner">
                     <p>Your team will score points based upon how your chosen players perform in IPL matches during the 2017 season.</p>
 
 <p>Score points for making runs, taking wickets etc. Use wildcard to make unlimited free transfers!</p>
@@ -51,7 +52,7 @@
 <p>Login and visit the Points Table page for more information.</p>
                   </div>
                   <div role="tabpanel" class="tab-pane" id="competitions">
-                    <img src="/SportMgmt/images/inner-img-3a.jpg" align="left" class="img-inner">
+                    <img src="${context}/images/inner-img-3a.jpg" align="left" class="img-inner">
                     <p>Fantasy IPL offers the widest array of competitions, with weekly and monthly leaderboards in addition to the season-long competition. Even if your initial signings fail to deliver, there is always the opportunity to turn your team around and win great prizes!</p>
 
 <p>Embark on a quest for personal glory in our Fantasy IPL competition..</p>
@@ -61,7 +62,7 @@
 <p>Login to Leagues page for more information.</p>
                   </div>
                   <div role="tabpanel" class="tab-pane" id="prizes">
-                    <img src="/SportMgmt/images/inner-img-4.jpg" align="left" class="img-inner">
+                    <img src="${context}/images/inner-img-4.jpg" align="left" class="img-inner">
                     <p>Fantasy League offers you the chance to win over INR 50,000 worth of prizes!</p>
 
 <p>Not only is there a fabulous first prize of INR 10,000 in cash, but there's also plenty more to be won with over 120 different cash prizes.</p>
@@ -71,11 +72,11 @@
                 </div>
           </div>
         </div>
-        <div ><a href="#"><img src="/SportMgmt/images/addbanner_728x90_V1.jpg" class="img-responsive" alt=""></a></div>
+        <div ><a href="#"><img src="${context}/images/addbanner_728x90_V1.jpg" class="img-responsive" alt=""></a></div>
         <br>
       </div>
       <div class="col-lg-4 col-md-4 col-sm-4 select-team">
-        <div class="choose-team"><img src="/SportMgmt/images/ball-1.jpg" class="img-responsive"> 
+        <div class="choose-team"><img src="${context}/images/ball-1.jpg" class="img-responsive"> 
         	<span class="overlay-img">Select your Team <br/> & Play <br/>        	 
 	        	<c:if test="${empty sessionScope.user.displayName}">
 	        		<a class="btn btn-black" href="javascript:void(0);" data-toggle="modal" data-target="#myModal">Select Team</a>    
@@ -92,10 +93,10 @@
 
   <jsp:include page="homeFooter.jsp" />  
   </div>
-<script src="/SportMgmt/assets/js/jquery.min.js"></script> 
-<script src="/SportMgmt/assets/js/wow.min.js"></script> 
-<script src="/SportMgmt/assets/js/bootstrap.min.js"></script> 
-<script src="/SportMgmt/assets/js/slick.min.js"></script> 
-<script src="/SportMgmt/assets/js/custom.js"></script>
+<script src="${context}/assets/js/jquery.min.js"></script> 
+<script src="${context}/assets/js/wow.min.js"></script> 
+<script src="${context}/assets/js/bootstrap.min.js"></script> 
+<script src="${context}/assets/js/slick.min.js"></script> 
+<script src="${context}/assets/js/custom.js"></script>
 </body>
 </html>

@@ -1170,7 +1170,7 @@ public class GameManager {
 						UserPlayer userPlayer = new UserPlayer();
 						userPlayer.setGameClubPlayerId(new Integer(gameClubPlayerId)); 
 						userPlayer.setUserId(new Integer(userId));
-						userPlayer.setIsPlaying(SportConstrant.NO);
+						userPlayer.setIsPlaying(SportConstrant.YES);
 						userPlayer.setPlayerCategory(SportConstrant.PLAYER_TYPE_NORMAL);
 						userPlayer.setSegNum(0);
 						session.save(userPlayer);

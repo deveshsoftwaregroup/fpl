@@ -4,16 +4,17 @@
 <html>
 <head>
 	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	<c:set var="context" value="<%=request.getContextPath()%>" />
     <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The12thman | League</title>
-    <link rel="stylesheet" href="/SportMgmt/css/foundation.css">
-    <link rel="stylesheet" href="/SportMgmt/css/app1.css">
-    <link rel="stylesheet" href="/SportMgmt/css/superslides.css">
-    <link rel="stylesheet" href="/SportMgmt/css/customMedia.css">
+    <link rel="stylesheet" href="${context}/css/foundation.css">
+    <link rel="stylesheet" href="${context}/css/app1.css">
+    <link rel="stylesheet" href="${context}/css/superslides.css">
+    <link rel="stylesheet" href="${context}/css/customMedia.css">
      <style>
 #name{background-image:url(images/user-silhouette.png)}
 #email{background-image:url(images/email-filled-closed-envelope.png)}
@@ -103,7 +104,7 @@
 
     <header class="menuOverlay">
             <div id="logo" class="large-4 columns">
-            	<img src="/SportMgmt/images/logo.png" alt="logo"> 
+            	<img src="${context}/images/logo.png" alt="logo"> 
             </div>
             <nav class="large-8 columns">
                 <ul class="d-menu" >
@@ -140,9 +141,9 @@
    	<!-- to make slides active...do id as slides... remove -old -->
     <div id="slides-old">
         <div class="slides-container">
-            <div><img src="/SportMgmt/images/home-banner-current.jpg"><div class="overlay"></div></div>
+            <div><img src="${context}/images/home-banner-current.jpg"><div class="overlay"></div></div>
             
-           <div><img src="/SportMgmt/images/home-banner-current-2.jpg"><div class="overlay"></div></div>
+           <div><img src="${context}/images/home-banner-current-2.jpg"><div class="overlay"></div></div>
         </div>
         
         <!-- <div class="shade"></div> -->
@@ -156,7 +157,7 @@
                  </p>
             </div>
             <div class="banner-info">
-            <img alt="info" src="/SportMgmt/images/football-1.png">
+            <img alt="info" src="${context}/images/football-1.png">
              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
              <span class="s1">
              	Fantasy IPL <br/>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;A Sports Zone for
@@ -272,13 +273,13 @@
     <span aria-hidden="true">&times;</span>
   </button>
 </div>    
-    <script src="/SportMgmt/js/vendor/jquery.js"></script>
-    <script src="/SportMgmt/js/vendor/what-input.js"></script>
-    <script src="/SportMgmt/js/vendor/foundation.js"></script>
-    <script src="/SportMgmt/js/app.js"></script>
-    <script src="/SportMgmt/js/jquery.easing.1.3.js"></script>
-    <script src="/SportMgmt/js/jquery.animate-enhanced.min.js"></script>
-    <script src="/SportMgmt/js/jquery.superslides.js" type="text/javascript" charset="utf-8"></script>
+    <script src="${context}/js/vendor/jquery.js"></script>
+    <script src="${context}/js/vendor/what-input.js"></script>
+    <script src="${context}/js/vendor/foundation.js"></script>
+    <script src="${context}/js/app.js"></script>
+    <script src="${context}/js/jquery.easing.1.3.js"></script>
+    <script src="${context}/js/jquery.animate-enhanced.min.js"></script>
+    <script src="${context}/js/jquery.superslides.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">	
 	
 	

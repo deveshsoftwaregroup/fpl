@@ -8,15 +8,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The12thman | League</title>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    <c:set var="context" value="<%=request.getContextPath()%>" />
     <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 	<%@ taglib uri="WEB-INF/sportmgmt.tld" prefix="s" %>  
-    <link rel="stylesheet" href="/SportMgmt/css/foundation.css">
-    <link rel="stylesheet" href="/SportMgmt/css/app.css">
-    <link rel="stylesheet" href="/SportMgmt/css/superslides.css">
-    <link rel="stylesheet" type="text/css" href="/SportMgmt/css/customMedia.css">
-    <link rel="stylesheet" type="text/css" href="/SportMgmt/css/258578334140.css">
-    <link rel="stylesheet" type="text/css" href="/SportMgmt/css/font-awesome.css">
-	<link rel="stylesheet" href="/SportMgmt/css/team.css" type="text/css">
+    <link rel="stylesheet" href="${context}/css/foundation.css">
+    <link rel="stylesheet" href="${context}/css/app.css">
+    <link rel="stylesheet" href="${context}/css/superslides.css">
+    <link rel="stylesheet" type="text/css" href="${context}/css/customMedia.css">
+    <link rel="stylesheet" type="text/css" href="${context}/css/258578334140.css">
+    <link rel="stylesheet" type="text/css" href="${context}/css/font-awesome.css">
+	<link rel="stylesheet" href="${context}/css/team.css" type="text/css">
 	
 	
 	
@@ -210,8 +211,8 @@
         </div>
         <div class="menu-bar">
         <div class="wrapper">
-       		 <img src ="/SportMgmt/images/menu-logo.png" class="lft-logo">   
-             <img src ="/SportMgmt/images/menu-logo1.png" class="rgt-logo"> 
+       		 <img src ="${context}/images/menu-logo.png" class="lft-logo">   
+             <img src ="${context}/images/menu-logo1.png" class="rgt-logo"> 
         <nav role="navigation" class="ism-nav ismjs-priority-nav ismjs-nav priority-nav" instance="0">
                     
                     <ul class="ism-nav__list ismjs-main-nav">   
@@ -243,7 +244,7 @@
                             <a href="javascript:void(0);" class="ism-nav__tab" onclick="uploadFAQView();">FAQ</a>
                         </li>                       
                         <li class="ism-nav__list__item">
-                            <a href="/SportMgmt/mvc/user/Logout" class="ism-nav__tab ">Sign Out</a>
+                            <a href="${context}/mvc/user/Logout" class="ism-nav__tab ">Sign Out</a>
                         </li>
                         <li class="ism-nav__list__item"></li> 
                     </ul>
