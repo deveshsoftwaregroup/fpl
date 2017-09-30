@@ -414,9 +414,9 @@
 	</header> 
 	
     <!--Notification-->
-    <div id="notification" style="display: none;">
+    <%-- <div id="notification" style="display: none;">
        <span class="dismiss"><a title="dismiss this notification">X</a></span>
-    </div>
+    </div> --%>
 	<!--Notification ends-->
 
 

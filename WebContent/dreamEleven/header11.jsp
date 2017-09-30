@@ -86,8 +86,7 @@
 				</nav>  
 			</div>  
 		</div>         
-	</header>
-</div>         
+	</header>         
    
 	<script type="text/javascript">
 		function openHomeHome()

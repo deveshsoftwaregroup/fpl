@@ -3,9 +3,9 @@
   <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
   <c:set var="context" value="<%=request.getContextPath()%>" />
   <!--Notification-->
-         <div id="notification" style="display: none;">
+         <!-- <div id="notification" style="display: none;">
             <span class="dismiss"><a title="dismiss this notification">X</a></span>
-         </div>
+         </div> -->
   <div class="row">
   
   
