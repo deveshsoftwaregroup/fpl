@@ -16,7 +16,6 @@
     
 <s:sportExt retrieve="priceList" />
 <s:sportExt retrieve="deadLine" />
-<%-- <s:sportExt retrieve="isGameWeekPlayerHistoryExist" /> --%>
 
 <body class="predict11-bg transfers_predict11 dream_11transfer">
 	<div class="container-fluid ">
@@ -1180,16 +1179,13 @@
     	 }
     	 else{
     		 alert("Please complete 11 players");
-    	 }
- 	 
-	 		
+    	 }		
     	 
 	 		}
   
 </script>
 <script>
 	 function openNav() {
-		 //alert("hi");
 	 	    document.getElementById("myNav").style.height = "100%";
 	 	}	
 	 	function closeNav() {
