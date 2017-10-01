@@ -156,14 +156,14 @@
            
           
           <script src="${context}/redBlackTheme/js/jPushMenu.js" ></script> --%>
-      <script type="text/javascript">
+     <%--  <script type="text/javascript">
          //<![CDATA[
          $(document).ready(function(){
            $('.toggle-menu').jPushMenu({closeOnClickLink: false});
           
          });
          //]]>
-      </script>
+      </script> --%>
           
           <script>
             $(document).on('shown.bs.tab', 'a[data-toggle="tab"]', function (e) {

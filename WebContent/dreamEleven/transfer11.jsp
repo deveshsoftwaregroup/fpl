@@ -522,9 +522,6 @@
 	
 </body>
 
-<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="${context}/redBlackTheme/js/bootstrap.js"></script>
 <script>
 	$(document).on('shown.bs.tab', 'a[data-toggle="tab"]', function (e) 
 	{

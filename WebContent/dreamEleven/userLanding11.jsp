@@ -26,10 +26,17 @@
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,400,600,700" rel="stylesheet">
 		    
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<%-- <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> --%>
 		<%-- <script src="${context}/redBlackTheme/js/bootstrap.js"></script>
 		<script src="${context}/redBlackTheme/js/jquery.bxslider.js"></script> --%>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="${context}/redBlackTheme/js/bootstrap.js"></script>
+<script src="${context}/redBlackTheme/js/jquery.bxslider.js"></script>
+<script src="${context}/redBlackTheme/js/jPushMenu.js" ></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
 		
 		<style>
 		.addPlayer a {
@@ -90,16 +97,14 @@
 			<!-- <div id="preloader">
 	    		<div id="status">&nbsp;</div>
 	  		</div> -->
-			<div class="ism-container">
+			<div class="ism-container"> <!-- Main content of every pages gets loaded at class ism-container  -->	
 				<%@ include	file="transfer11.jsp"%>			
-			</div> <!-- Main content of every pages gets loaded at class  -->	
+			</div> 
 			
 			<!-- <div id="ismr-elements-menu"></div> -->			
 		
 			<%@ include file="footer.jsp"%>
 		</main>
-			
-		
 			
 	</body>    
 </html>

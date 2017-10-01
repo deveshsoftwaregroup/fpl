@@ -82,10 +82,14 @@
 							</ul>
 						</div>
 				     </div>
-				     <div class="col-lg-1  col-sm-1"><div class="right_img"><img src="${context}/redBlackTheme/images/left_image.png"></div></div> 
+				    
 				</nav>  
 			</div>  
-		</div>         
+			<div class="col-lg-1  col-sm-1">
+				     	<div class="right_img"><img src="${context}/redBlackTheme/images/left_image.png"></div>
+				     </div>
+		</div> 
+		         
 	</header>         
    
 	<script type="text/javascript">
@@ -247,11 +251,10 @@
 		}
 		
 </script>
-<script src="${context}/redBlackTheme/js/jPushMenu.js" ></script>
 <script type="text/javascript">
 	$(document).ready(function(){
-	$('.toggle-menu').jPushMenu({closeOnClickLink: true, closeOnClickOutside: false});
+		$('.toggle-menu').jPushMenu({closeOnClickLink: true, closeOnClickOutside: false});
     });
 </script>
-</body>
+
 </html>
