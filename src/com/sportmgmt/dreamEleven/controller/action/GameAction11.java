@@ -25,8 +25,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sportmgmt.dreamEleven.controller.bean.GameWeek;
-import com.sportmgmt.dreamEleven.controller.bean.MatchDetails;
+import com.sportmgmt.controller.bean.GameWeek;
+import com.sportmgmt.controller.bean.MatchDetails;
 import com.sportmgmt.controller.bean.User;
 import com.sportmgmt.model.entity.Match;
 import com.sportmgmt.dreamEleven.model.manager.GameManager;
@@ -37,7 +37,7 @@ import com.sportmgmt.utility.common.MailUtility;
 import com.sportmgmt.utility.common.PointRankingUtility;
 import com.sportmgmt.utility.common.PropertyFileUtility;
 import com.sportmgmt.utility.constrant.ErrorConstrant;
-import com.sportmgmt.dreamEleven.utility.constrant.SportConstrant;
+import com.sportmgmt.utility.constrant.SportConstrant;
 
 @Controller
 @RequestMapping("/game11")

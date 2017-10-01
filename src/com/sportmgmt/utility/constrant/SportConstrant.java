@@ -29,8 +29,10 @@ public class SportConstrant {
 	public final static String FORGOT_PASSWORD_EMAIL_SUB = "forgotPasswordEmailSubject";
 	public final static String USER_VER_URL = "userVerifyURL";
 	public final static String USER_LANDING_PAGE = "userLanding";
+	public final static String USER_LANDING_PAGE11 = "dreamEleven/userLanding11";
 	
 	public final static String USER_LANDING_REDIRECT_PAGE = "redirect:/mvc/user/UserLanding";
+	public final static	 String USER_LANDING_REDIRECT_PAGE11 = "redirect:/mvc/user11/UserLanding11";
 	public final static String USER_UPDATE_PAGE = "userUpdate";
 	public final static String CHANGE_PASSWORD_PAGE = "changePassword";
 	public final static String MY_TEAM_PAGE = "myTeam";
@@ -38,7 +40,9 @@ public class SportConstrant {
 	public final static String MY_POINT_PAGE = "myPoint";
 	public final static String DE_MY_POINT_PAGE = "dreamEleven/myPoint";
 	public final static String FAQ_PAGE = "FAQ";
+	public final static String FAQ_PAGE11 = "dramEleven/FAQ11";
 	public final static String RULES_PAGE = "rules";
+	public final static String RULES_PAGE11 = "dreamEleven/rules11";
 	public final static String POINT_TABLE_PAGE = "pointTable";
 	//public final static String LEAGE_HOME_PAGE = "leagueHome";
 	public final static String LEAGE_HOME_PAGE = "homeIndex";

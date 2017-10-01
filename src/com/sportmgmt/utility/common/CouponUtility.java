@@ -9,7 +9,7 @@ import java.util.TreeSet;
 import org.apache.log4j.Logger;
 
 import com.sportmgmt.controller.bean.Coupon;
-import com.sportmgmt.dreamEleven.utility.exception.SportMgmtException;
+import com.sportmgmt.utility.exception.SportMgmtException;
 import com.sportmgmt.model.entity.CouponCategory;
 import com.sportmgmt.model.manager.CouponManager;
 import com.sportmgmt.model.manager.GameWeeKManager;

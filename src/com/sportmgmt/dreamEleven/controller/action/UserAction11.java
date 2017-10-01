@@ -36,7 +36,7 @@ import com.sportmgmt.utility.common.PointRankingUtility;
 import com.sportmgmt.utility.common.PropertyFileUtility;
 import com.sportmgmt.utility.common.SortUtility;
 import com.sportmgmt.utility.constrant.ErrorConstrant;
-import com.sportmgmt.dreamEleven.utility.constrant.SportConstrant;
+import com.sportmgmt.utility.constrant.SportConstrant;
 
 @Controller
 @RequestMapping("/user11")
@@ -427,7 +427,7 @@ public class UserAction11 {
 	}
 	 
 	 logger.info("---------- Redircting to : "+SportConstrant.USER_LANDING_REDIRECT_PAGE);
-	 return SportConstrant.USER_LANDING_REDIRECT_PAGE;
+	 return SportConstrant.USER_LANDING_REDIRECT_PAGE11;
 	}
 	@RequestMapping(value = "forgotPassword", method = RequestMethod.GET)
 	public  String forgorPassword(ModelMap modeMap,@RequestParam String emailId)
@@ -693,8 +693,9 @@ public class UserAction11 {
 	public  String userLanding(ModelMap modeMap,HttpServletRequest request)
 	{
 		logger.info("---------- Forwardng to : "+SportConstrant.USER_LANDING_PAGE);
-		 return SportConstrant.USER_LANDING_PAGE;
+		 return SportConstrant.USER_LANDING_PAGE11;
 	}
+	
 	
 	
 	

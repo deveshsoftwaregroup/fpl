@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sportmgmt.controller.bean.Coupon;
 import com.sportmgmt.controller.bean.Player;
-import com.sportmgmt.dreamEleven.utility.exception.SportMgmtException;
+import com.sportmgmt.utility.exception.SportMgmtException;
 import com.sportmgmt.model.manager.CouponManager;
 import com.sportmgmt.model.manager.GameWeeKManager;
 import com.sportmgmt.model.manager.PlayerManager;

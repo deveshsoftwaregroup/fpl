@@ -108,7 +108,7 @@
 		        <h4 class="modal-title">Make payment</h4>
 		      </div>
 		      <div class="modal-body">
-		        <div class="table-responsive prod-tbl">
+		        <div class="table-responsive prod-tbl">+
 					<table class="table table-striped table-bordered table-hover">
 						<thead>
 						  <tr>
