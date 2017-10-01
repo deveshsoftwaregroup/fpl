@@ -25,6 +25,7 @@ import com.sportmgmt.model.entity.Game;
 import com.sportmgmt.model.entity.GameClubPlayer;
 import com.sportmgmt.model.entity.Player;
 import com.sportmgmt.model.entity.UserGame;
+import com.sportmgmt.model.manager.HibernateSessionFactory;
 import com.sportmgmt.dreamEleven.model.entity.UserPlayer;
 import com.sportmgmt.utility.constrant.ErrorConstrant;
 import com.sportmgmt.utility.constrant.QueryConstrant;
