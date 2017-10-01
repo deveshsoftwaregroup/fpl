@@ -81,9 +81,11 @@
 		    		</script>
 				</c:forEach>
 			</c:if> 
+			
 		<s:sportExt retrieve="priceList" />
-		<main id="mainContent" tabindex="0" class="ism"> 
 		
+		<main id="mainContent" tabindex="0" class="ism"> 
+			<%@ include	file="popup.jsp"%>
 			<%@ include	file="header11.jsp"%>
 			<!-- <div id="preloader">
 	    		<div id="status">&nbsp;</div>
@@ -92,60 +94,12 @@
 				<%@ include	file="transfer11.jsp"%>			
 			</div> <!-- Main content of every pages gets loaded at class  -->	
 			
-			<!-- <div id="ismr-elements-menu"></div> -->
-					
+			<!-- <div id="ismr-elements-menu"></div> -->			
 		
 			<%@ include file="footer.jsp"%>
 		</main>
 			
-		<!-- Common payment popup starts -->
-	 	<div id="paymentModel" class="modal fade" role="dialog">
-		  <div class="modal-dialog modal-lg">		
-		    <!-- Modal content-->
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <a type="button" class="close" data-dismiss="modal">&times;</a>
-		        <h4 class="modal-title">Make payment</h4>
-		      </div>
-		      <div class="modal-body">
-		        <div class="table-responsive prod-tbl">+
-					<table class="table table-striped table-bordered table-hover">
-						<thead>
-						  <tr>
-							<th>Eligible for</th>
-							<th>Product Price</th>
-							<th>Discount Code</th>
-							<th>Total Price</th>
-							<th>Purchase It</th>
-						  </tr>
-						</thead>
-						<tbody>
-						<c:forEach var="wildCard" items="${sessionScope.purchableWildCardList}" >
-						  <form  id="paymentForm_${wildCard.planId}" action="/SportMgmt/mvc/payment/MakePayment" method="post">
-						  <input type="hidden" name="leaguePlanId" value="${wildCard.planId}"></input>
-						  <input type="hidden" name="planDiscountId" value="${sessionScope.planDiscountId}"></input>
-						  <input type="hidden" name="amount" value="${wildCard.price}"></input>
-						  </form>
-						  <tr>
-							<td>${wildCard.name}</td>
-							<td>${wildCard.price}</td>
-							<td>
-							<input id="paymentDiscountCode_${wildCard.planId}" type="text" name="discount" value=""></input>
-							</td>
-							<td>${wildCard.price}</td>
-							<td>
-		        			<button id="paymentButton_${wildCard.planId}" type="button" class="button" >Buy Now</button>
-		     				</td>
-						  </tr>
-						  </c:forEach>													
-						</tbody>
-					  </table>
-				</div>
-		      </div>
-		    </div>		
-		  </div>
-		</div>	
-		<!-- Common Payment Popup ends -->
+		
 			
 	</body>    
 </html>
