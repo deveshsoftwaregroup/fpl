@@ -101,27 +101,25 @@
 			window.location="/SportMgmt/mvc/LeagueLandingHome";			
 		}
 		function uploadMatchView(gameId)
-		{alert("gi");
+		{
 			if(typeof gameId != 'undefined' && gameId != '')
-			{alert("not null");
+			{
 				url ="/SportMgmt/mvc/game/MatchView/"+gameId;
 				$.ajax({
 		     		  url: url,
 		     		  dataType: 'html',
 		     		  success: function( resp ) {
-		     			 console.log(resp);
-		     			 alert("succ");
+		     			 /* console.log(resp); */
 		     			 $('.ism-container').html(resp);
 		     		  },
 		     		  error: function( req, status, err ) {
-		     			  alert("wrong");
 		     		    console.log( 'something went wrong', status, err );
 		     		  }
 		     		});	
 			}
 		}
 		function uploadTransferView()
-		{alert("hihi");
+		{
 			url ="/SportMgmt/transfer.jsp";
 				$.ajax({
 		     		  url: url,
@@ -136,7 +134,7 @@
 		     		});	
 		}
 		function uploadTeamView(userId,gameId)
-		{alert("hi");
+		{
 			if(typeof userGameJson != 'undefined' && userGameJson.playerList.length >= 15)
 			{
 				if(typeof userId != 'undefined' && userId != '' && typeof gameId != 'undefined' && gameId != '')
