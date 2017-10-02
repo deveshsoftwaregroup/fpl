@@ -6,56 +6,24 @@
 	<%@ taglib uri="WEB-INF/sportmgmt.tld" prefix="s" %>  
 	<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
     
-    
     <style>
-    .addPlayer a{ color:#ed3a28; font-size: 18px;padding: 5px 4px;}
-    .removePlayerIcon{     
-    background: #fff;
-    color: #e03333 !important;
-    padding: 3px 5px;
-    font-size: 12px;
-    font-weight: bold;
-    border-radius: 50%;
-    transition:all .3s;
-    }
-    .removePlayerIcon:hover{     
-    background: #e03333;
-    color: #fff !important;
-    }
-    .ism-table--el__status.text-center.addPlayer {
-    padding-left: .2rem;
-    padding-right: .2rem;
-    text-align: center;
-}
-    /*  home  page */
-.ism-game-header h1 a{ color:#fff;}
+	.my_team_points li {padding: 5px !important;}
 
-.mask{ background: #000; opacity: 0.5; position:fixed; top: 0; left: 0; width: 100%; height:100%; z-index: 9;}
-
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-.transfer-Col-6{ width:50%; float: left;}
-
-.tabBtn{    
-	width: 100%;
-        padding: 5px 10px;
-    box-sizing: border-box;
-    font-size: 14px;
-    line-height: 20px;
-    }
-</style>
+	.modal td, th {color:#000 !important;}
+@media screen and (min-width: 300px) and (max-width: 439px) {
+.transfers_predict11_map { padding-left:0px; padding-right:0px;}
+	}</style>
+	
 <s:sportExt retrieve="priceList" />
 <s:sportExt retrieve="deadLine" />
-<div class="addsbanner-lft"></div>
-<div class="addsbanner-rgt"></div>
-<div class="ism-pusher ismjs-page-transition">
-            <!-- Primary content -->
+
+<body dream11-bg fantasy-bg transfers_predict11 dream_11transfer>
+<div class="container-fluid ">
+<div class="row">
+<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 transfers_predict11_map">
+<img src="${context}/redBlackTheme/images/Dream11/dream11_banner.png" class="img-responsive center-block">
+					
             <div id="ismr-main" class="ism-main">
-                <div>
 
                     <div id="ismr-scoreboard">
                         <div>
@@ -1178,7 +1146,7 @@
             </div>
         </div>
    
-    
+   </body> 
    <script type="text/javascript">
    var gameDetailsJson = null;
    var playerListJson = null;
@@ -1777,7 +1745,7 @@
 	     		});
    		}
      }
-     $(document).ajaxStart(function(){
+     /* $(document).ajaxStart(function(){
   		$("#ajaxloader").css("display", "block");
   		$('.mask').show();
   	});
@@ -1785,6 +1753,6 @@
   	$(document).ajaxComplete(function(){
   	    $("#ajaxloader").css("display", "none");
   	    $('.mask').hide();
-  	});
+  	}); */
 
   </script>

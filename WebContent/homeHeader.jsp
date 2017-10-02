@@ -28,6 +28,13 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,500,600" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,400,600,700" rel="stylesheet">
+  	
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="${context}/redBlackTheme/js/bootstrap.js"></script>
+<script src="${context}/redBlackTheme/js/jquery.bxslider.js"></script>
+<script src="${context}/redBlackTheme/js/jPushMenu.js" ></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  	
   	<style>
          .bx-wrapper .bx-controls-direction a {display: none;}
     </style>
@@ -49,19 +56,15 @@
 
 <body class="full-bg">   
 
- <%-- <div id="myModal" class="row" role="dialog">
-	
+ <div id="myModal" class="row" role="dialog">
 	<div id="login-overlay" class="col-lg-4 col-lg-offset-8 register_login">
-	          
 	          <ul class="nav nav-tabs">
                         <li class="active"><a data-toggle="tab" href="#home">Login</a></li>
                         <li><a data-toggle="tab" href="#menu1">Register</a></li>
-                     </ul>
+               </ul>
 	          <div class="tab-content">
 	              <div id="home" class="tab-pane fade in active">
 	                  <div class="col-xs-12">
-	                  
-	                      
 	                          <form id="loginForm" name="LoginForm" action="" method="get" onsubmit="event.preventDefault();" autocomplete="off">
 		                              <div class="form-group">		                              
 			                              <div class="col-sm-12">
@@ -86,42 +89,26 @@
 			                              				<a href="javascript:void(0);" class="forgotBtn" data-toggle="modal" data-target="#myModal3">Forgot Password</a>
 			                             	</div>
 	                              			</div>	                              		
-		                           	                         
-		                        
-		                        
 	                              <div id="loginErrorMsg" class="alert alert-error hide">Wrong username or password</div>
-	                              
 	                              <a href="javascript:void(0);" class="" style="position: relative;">
-				             	
 	                              <button type="submit" class="btn btn-block btn-social btn-login" onclick="doLogin();">Login</button>
-	                              </a>
-	                             
-	                              	                               
-	                          </form>	                      
-	                  	
-	                  
+	                              </a>	                              	                               
+	                          </form>	                  
 	                  <div class="row">
-	                  
 	                  	<div class="col-xs-12">
 	                  		<div class="row">
 	                  			<div class="col-sm-6">
-	                  				
 	                  					<div class="form-group">
-	                  					
 	                  				<a href="javascript:void(0);" data-toggle="modal" data-target="#myModal1" class="btn btn-block btn-social btn-info">
 	                  					<span class="fa fa-envelope-o"></span>Register with Email ID!
 	                  				</a>
-	                  				
 	                  				</div>
-	                  	
 	                  			</div>
 	                  			<div class="col-sm-6">
-	                  				
 	                  					<div class="form-group">
 	                  				<a class="btn btn-block btn-social btn-facebook" href="javascript:void(0);" onclick="loginWithFB()">
 	                  					<span class="fa fa-facebook"></span> Sign in with Facebook
 	                  				</a>
-	                  				
 	                  				</div>
 	                  			</div>
 	                  		
@@ -132,7 +119,7 @@
 	              </div>
 	          </div>
 	  </div>
-</div>   --%>
+</div>
 
 <div id="myModal11" class="modal fade" role="dialog">
   
@@ -658,10 +645,7 @@ function loginWithFB()
 }
 </script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="${context}/redBlackTheme/js/bootstrap.js"></script>
-<script src="${context}/redBlackTheme/js/jquery.bxslider.js"></script>
-<script src="${context}/redBlackTheme/js/jPushMenu.js" ></script>
+
 <script type="text/javascript">
    
    
@@ -731,12 +715,8 @@ function loginWithFB()
            
 });
        </script>
-        <script src="js/jPushMenu.js" ></script>
       <script type="text/javascript">
-         //<![CDATA[
          $(document).ready(function(){
            $('.toggle-menu').jPushMenu({closeOnClickLink: true, closeOnClickOutside: false});
-          
          });
-         //]]>
       </script>
