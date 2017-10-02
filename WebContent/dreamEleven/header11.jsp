@@ -56,7 +56,7 @@
 						                      <a href="javascript:void(0);" onclick="openHomeHome();">League Home</a>
 						                  </li> -->
 						               <li>
-						               	<a href="javascript:void(0);" onclick="uploadTransferView11();" data-nav-tab="squad">Transfers</a>
+						               	<a href="javascript:void(0);" onclick="uploadTransferView11();">Transfers</a>
 						               </li> 
 						               <%-- <li>
 						               <a href="javascript:void(0);" onclick="uploadTeamView11('${sessionScope.userId}','${sessionScope.gameDetails.gameId}');" data-nav-tab="squad">My Team</a>		

@@ -69,7 +69,6 @@
 		 }
 		</style>
 	</head>
-	<!-- <body class="predict11-bg transfers_predict11" onload="uploadTransferView11();"> -->
 	<body class="predict11-bg transfers_predict11">
 		<c:if test="${not empty sessionScope.clubList}">
 				<script type="text/javascript">

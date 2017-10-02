@@ -54,34 +54,34 @@
 						        <ul class="nav navbar-nav">
 	
 							<li>                            
-	                            <a href="javascript:void(0);" class="ism-nav__tab" onclick="openHomeHome();">League Home</a>
+	                            <a href="javascript:void(0);" onclick="openHomeHome();">League Home</a>
 	                        </li>
 	                        <li>
-	                        	<a href="javascript:void(0);" class="ism-nav__tab" onclick="uploadTransferView();" data-nav-tab="squad">Transfers</a>
+	                        	<a href="javascript:void(0);" onclick="uploadTransferView();">Transfers</a>
 	                        </li> 
 	                        <li>
-	                        <a href="javascript:void(0);" class="ism-nav__tab" onclick="uploadTeamView('${sessionScope.userId}','${sessionScope.gameDetails.gameId}');" data-nav-tab="squad">My Team</a>		
+	                        <a href="javascript:void(0);" onclick="uploadTeamView('${sessionScope.userId}','${sessionScope.gameDetails.gameId}');">My Team</a>		
 	                        </li> 
 	                        <li>
-	                            <a href="javascript:void(0);" class="ism-nav__tab" onclick="uploadMatchView('${sessionScope.gameDetails.gameId}');" data-nav-tab="squad">Fixtures</a>
+	                            <a href="javascript:void(0);" onclick="uploadMatchView('${sessionScope.gameDetails.gameId}');">Fixtures</a>
 	                        </li>                      
 	                        <li>
-	                            <a href="javascript:void(0);" class="ism-nav__tab" onclick="uploadMyPointView('${sessionScope.gameDetails.gameId}','${sessionScope.userId}','','');">My Points</a>
+	                            <a href="javascript:void(0);" onclick="uploadMyPointView('${sessionScope.gameDetails.gameId}','${sessionScope.userId}','','');">My Points</a>
 	                        </li>   
 	                        <li class="ism-nav__list__item">
-	                            <a href="javascript:void(0);" class="ism-nav__tab" onclick="uploadPointTableView('${sessionScope.gameDetails.gameId}');">Point Table</a>
+	                            <a href="javascript:void(0);" onclick="uploadPointTableView('${sessionScope.gameDetails.gameId}');">Point Table</a>
 	                        </li>  
 	                                     
 	                            
 	                        <li>
-	                            <a href="javascript:void(0)" class="ism-nav__tab " onclick="uploadRulesView();">Rules</a>
+	                            <a href="javascript:void(0)" onclick="uploadRulesView();">Rules</a>
 	                        </li>
 	                        <li>
 	                            <!-- <a href="/SportMgmt/FAQ.jsp" class="ism-nav__tab ">FAQ</a> -->
-	                            <a href="javascript:void(0);" class="ism-nav__tab" onclick="uploadFAQView();">FAQ</a>
+	                            <a href="javascript:void(0);"  onclick="uploadFAQView();">FAQ</a>
 	                        </li>                       
 	                        <li>
-	                            <a href="${context}/mvc/user/Logout" class="ism-nav__tab ">Sign Out</a>
+	                            <a href="${context}/mvc/user/Logout">Sign Out</a>
 	                        </li>
 	                   </ul>
 							</div>
@@ -92,7 +92,8 @@
 					<div class="right_img"><img src="${context}/redBlackTheme/images/left_image.png"></div>
 				</div>
 			</div> 
-		</header>         
+		</header>    
+		     
    
 	<script type="text/javascript">
 		function openHomeHome()
@@ -100,25 +101,27 @@
 			window.location="/SportMgmt/mvc/LeagueLandingHome";			
 		}
 		function uploadMatchView(gameId)
-		{
+		{alert("gi");
 			if(typeof gameId != 'undefined' && gameId != '')
-			{
+			{alert("not null");
 				url ="/SportMgmt/mvc/game/MatchView/"+gameId;
 				$.ajax({
 		     		  url: url,
 		     		  dataType: 'html',
 		     		  success: function( resp ) {
-		     			 //console.log(resp); 
+		     			 console.log(resp);
+		     			 alert("succ");
 		     			 $('.ism-container').html(resp);
 		     		  },
 		     		  error: function( req, status, err ) {
+		     			  alert("wrong");
 		     		    console.log( 'something went wrong', status, err );
 		     		  }
 		     		});	
 			}
 		}
 		function uploadTransferView()
-		{
+		{alert("hihi");
 			url ="/SportMgmt/transfer.jsp";
 				$.ajax({
 		     		  url: url,
@@ -133,7 +136,7 @@
 		     		});	
 		}
 		function uploadTeamView(userId,gameId)
-		{
+		{alert("hi");
 			if(typeof userGameJson != 'undefined' && userGameJson.playerList.length >= 15)
 			{
 				if(typeof userId != 'undefined' && userId != '' && typeof gameId != 'undefined' && gameId != '')
