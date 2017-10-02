@@ -148,7 +148,7 @@
 </div>
 
 
- <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+ 
  <script>
          $("#notification").fadeIn("slow").append('your Notification');
          $(".dismiss").click(function(){
