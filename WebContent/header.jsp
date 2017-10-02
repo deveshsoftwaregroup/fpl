@@ -157,7 +157,6 @@
 			{
 				alert ("Please complete the team of 15 players");
 			}
-			
 		}
 		function uploadRankingView()
 		{

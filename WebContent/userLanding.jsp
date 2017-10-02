@@ -32,13 +32,6 @@
 		<script src="${context}/redBlackTheme/js/jPushMenu.js" ></script>
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>  
 
-				<style>
-		.addPlayer a {
-			color: #blue;
-			font-size: 28px;
-			padding: 5px;
-		}
-		</style>
 		<style>
 		#preloader {
 		  position: fixed;
