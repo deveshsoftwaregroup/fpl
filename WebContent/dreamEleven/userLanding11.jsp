@@ -33,6 +33,7 @@
 		<script src="${context}/redBlackTheme/js/jPushMenu.js" ></script>
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 		
+		<!-- css code for preloader starts -->
 		<style>
 		#preloader {
 		  position: fixed;
@@ -60,6 +61,7 @@
 		  #status { left:65%;}
 		 }
 		</style>
+		<!-- css code for preloader ends -->
 	</head>
 	
 	<!-- code for preloader starts -->
@@ -76,18 +78,18 @@
 	
 	<body class="predict11-bg transfers_predict11">
 		<c:if test="${not empty sessionScope.clubList}">
+			<script type="text/javascript">
+	   			var clubIdImageMap = {};
+	   		</script>
+			<jsp:useBean id="clubImageMap" class="java.util.HashMap" scope="session" />
+			<c:forEach var="clubMap" items="${sessionScope.clubList}">
+				<spring:message code="club_${clubMap['clubId']}_image" var="imageSrc" />
+	   			<c:set target="${clubImageMap}" property="${clubMap['clubId']}"	value="${imageSrc}" />
 				<script type="text/javascript">
-		   			var clubIdImageMap = {};
-		   		</script>
-				<jsp:useBean id="clubImageMap" class="java.util.HashMap" scope="session" />
-				<c:forEach var="clubMap" items="${sessionScope.clubList}">
-					<spring:message code="club_${clubMap['clubId']}_image" var="imageSrc" />
-		   			<c:set target="${clubImageMap}" property="${clubMap['clubId']}"	value="${imageSrc}" />
-					<script type="text/javascript">
-		    			clubIdImageMap["${clubMap['clubId']}"] = "${imageSrc}";
-		    		</script>
-				</c:forEach>
-			</c:if> 
+	    			clubIdImageMap["${clubMap['clubId']}"] = "${imageSrc}";
+	    		</script>
+			</c:forEach>
+		</c:if> 
 			
 		<s:sportExt retrieve="priceList" />
 		
@@ -101,6 +103,4 @@
 			<%@ include file="footer.jsp"%>
 		</main>
 	</body>
-	
 </html>
-
