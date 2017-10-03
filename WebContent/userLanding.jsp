@@ -16,6 +16,7 @@
 		<link rel="stylesheet" type="text/css" 	href="${context}/redGreenTheme/toDelete/258578334140_blp.css"> 
 		<link rel="stylesheet" type="text/css" href="${context}/redGreenTheme/css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="${context}/redGreenTheme/css/style.css">
+		<link rel="stylesheet" type="text/css" href="${context}/redGreenTheme/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="${context}/redGreenTheme/css/jquery.bxslider.css">
 		<link rel="stylesheet" type="text/css" href="${context}/redGreenTheme/css/style-dream.css">
 		<link rel="stylesheet" type="text/css" href="${context}/redGreenTheme/css/theme.css">
