@@ -31,7 +31,7 @@
 .bx-wrapper .bx-controls-auto { right:10px;}
 .home_scout_section { background-color: darkslategrey; padding: 10px; }
 
-.scout_slide .bx-wrapper h4 {  font-family: 'Source Sans Pro', sans-serif;  font-weight: 700;  color: #ddd; }
+.scout_slide .bx-wrapper h4 {  font-family: 'Source Sans Pro', sans-serif;  font-weight: 700;  color: greenyellow;}
 .scout_slide .scout_list h4 {	 font-family: 'Source Sans Pro', sans-serif;  font-weight: 700;  color: green !important;}
 .scout_slide p, .scout-news p{font-family: 'Source Sans Pro', sans-serif; font-weight: 400; color:#fff; padding-right: 10px;}
 .scout_slide p b, .scout-news p b {color:#86e112 !important;}
@@ -72,6 +72,8 @@ input[type="date"]:focus::before,
 input[type="date"]:valid::before {
 	content: "" !important;
 }
+
+
 /*------------------------------------*/
 
 .get_in_touch a{color: #fff;font-family: 'AvantGarde-bold';}
@@ -422,7 +424,7 @@ input[type="date"]:valid::before {
 	}
 @media screen and (min-width: 370px) and ( max-width: 400px) {
 	.all_play {
-    margin-top: -500% !important; }
+    margin-top: -535% !important; }
 
   .scout_slide {
     margin-top: 800px; }

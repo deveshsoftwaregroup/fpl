@@ -35,7 +35,7 @@ header {padding-top: 10px;}
 .navbar { background-color: #d84d49; border-radius: 0px;}
 .navbar-nav > li > a { color:#fff;}
 
-.our_partners { background-color: #010800; margin-top: 50px; margin-bottom: 50px; }
+.our_partners { background-color: #010800; margin-top: 10px; margin-bottom: 30px; }
 .our_partners ul li { display: inline-flex; list-style: none;     padding: 10px 27px;font-family: 'Source Sans Pro', sans-serif; font-weight: 400;color:#fff; font-size: 20px;}
 .prtnr{ padding: 20px 30px 10px 30px;}
 .our_partners h3 { color:#fff; padding-top: 20px;}
@@ -45,7 +45,7 @@ header {padding-top: 10px;}
 .get_in_touch a{color: #fff;font-family: 'AvantGarde-bold';}
 .get_in_touch a:hover { color:#000; background-color: transparent; text-decoration: none;}
 .modal-content { border-radius: 0px; border: 0px;}
-.modal-header {background-color: #d84d49;}
+.modal-header {background-color: #f62b2b; background-image: -webkit-gradient(linear, left top, left bottom, from(#f62b2b), to(#d20202));}
 .modal-body {padding: 50px;}
 .modal-dialog {  
     margin-top: 50px;}
@@ -161,7 +161,7 @@ background-color: #f62b2b; background-image: -webkit-gradient(linear, left top, 
 .team_map , .team_map_dream11 { background: url(../images/Dream11/myteam_map.png) no-repeat center;
      height: 437px; 
     background-size: contain;
-    margin-top: 70px; }
+    margin-top: 70px; margin-bottom:100px; }
 .team_map ul,  .team_map_dream11 ul  {width:100%; text-align:center;}
 .team_map ul li, .team_map_dream11 ul li { list-style: none; display: inline-block ;}
 .team_map ul li h4, .team_map_dream11 ul li h4 {    margin-top: -22px;color:#fff; font-family: 'Source Sans Pro', sans-serif; font-weight: 600;}
@@ -296,7 +296,7 @@ tbody tr {border-bottom: 1px solid #fff !important;    border-left: 1px solid #f
 .claim_your_prize { margin-top: 50px;}
 .claim_your_prize h4 {text-align: right; padding-right: 20px; color:#fff;}
 .banner_align { margin-bottom: 100px;}
-.transfers_predict11 .our_partners , .coupon_predict .our_partners {margin-top: 138px;}
+
 .defenderr ul li:last-child {
    
   border-radius: 20%;

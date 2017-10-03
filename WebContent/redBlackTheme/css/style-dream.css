@@ -93,7 +93,7 @@ header {
 
 .our_partners {
   background-color: #010800;
-  margin-top: 30px;
+  margin-top: 10px;
   margin-bottom: 30px; }
 
 .our_partners ul li {
@@ -127,7 +127,7 @@ header {
   border: 0px; }
 
 .modal-header {
-  background-color: #d84d49; }
+ background-color: #f62b2b; background-image: -webkit-gradient(linear, left top, left bottom, from(#f62b2b), to(#d20202)); }
 
 .modal-body {
   padding: 50px; }
@@ -309,7 +309,8 @@ header {
   background: url(../images/Dream11/myteam_map.png) no-repeat center;
   height: 437px;
   background-size: contain;
-  margin-top: 70px; }
+  margin-top: 70px;
+  margin-bottom:100px; }
 
 .team_map ul, .team_map_dream11 ul {
   width: 100%;
@@ -641,8 +642,7 @@ tbody tr {
 .banner_align {
   margin-bottom: 100px; }
 
-.transfers_predict11 .our_partners, .coupon_predict .our_partners {
-  margin-top: 138px; }
+
 
 .defenderr ul li:last-child {
   border-radius: 20%;

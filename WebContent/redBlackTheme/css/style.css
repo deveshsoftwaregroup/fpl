@@ -78,7 +78,7 @@
 .scout_slide .bx-wrapper h4 {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 700;
-  color: #ddd; }
+  color: greenyellow; }
 
 .scout_slide .scout_list h4 {
   font-family: 'Source Sans Pro', sans-serif;
@@ -220,6 +220,13 @@ input[type="date"]:valid::before {
 
 .unlimited_things_1, .unlimited_things_2 {
   border-right: 1px solid #fff; }
+
+
+#paymentButton_3, #paymentButton_4
+{background-color: #f62b2b; background-image: -webkit-gradient(linear, left top, left bottom, from(#f62b2b), to(#d20202));
+    border: 0px;
+    color: #fff;
+    padding: 5px 20px;}
 
 /*------------------------------------*/
 .get_in_touch a {
@@ -923,7 +930,7 @@ input[type="date"]:valid::before {
     margin-top: 820px; } }
 @media screen and (min-width: 370px) and (max-width: 400px) {
   .all_play {
-    margin-top: -500% !important; }
+    margin-top: -535% !important; }
 
   .scout_slide {
     margin-top: 800px; } }
