@@ -30,10 +30,10 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,400,600,700" rel="stylesheet">
   	
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="${context}/redBlackTheme/js/bootstrap.js"></script>
-<script src="${context}/redBlackTheme/js/jquery.bxslider.js"></script>
-<script src="${context}/redBlackTheme/js/jPushMenu.js" ></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+	<script src="${context}/redBlackTheme/js/bootstrap.js"></script>
+	<script src="${context}/redBlackTheme/js/jquery.bxslider.js"></script>
+	<script src="${context}/redBlackTheme/js/jPushMenu.js" ></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
   	
   	<style>
          .bx-wrapper .bx-controls-direction a {display: none;}
@@ -56,7 +56,7 @@
 
 <body class="full-bg">   
 
- <div id="myModal" class="row" role="dialog">
+<%--  <div id="myModal" class="row" role="dialog">
 	<div id="login-overlay" class="col-lg-4 col-lg-offset-8 register_login">
 	          <ul class="nav nav-tabs">
                         <li class="active"><a data-toggle="tab" href="#home">Login</a></li>
@@ -119,7 +119,7 @@
 	              </div>
 	          </div>
 	  </div>
-</div>
+</div> --%>
 
 <div id="myModal11" class="modal fade" role="dialog">
   
