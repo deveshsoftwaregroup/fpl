@@ -70,8 +70,8 @@
  <br/> 
  <form name="paypalForm" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
 <input type="hidden" name="cmd" value="_xclick" />
-<input type="hidden" name="business" value="deveshsoftwaregroup@gmail.com" />
-<input type="hidden" name="password" value="Software@123" />
+<input type="hidden" name="business" value="justthinksports@gmail.com" />
+<input type="hidden" name="password" value="justthinksports@647" />
 <input type="hidden" name="custom" value="1123" />
 <input type="text" name="item_name" value="Tshirt " />
 <input type="text" name="amount" value="1.00"/>
