@@ -10,11 +10,13 @@
 		<c:set var="context" value="<%=request.getContextPath()%>" />
 		<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 		<%@ taglib uri="..//WEB-INF/sportmgmt.tld" prefix="s" %> 
-		<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>		
+		<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>	
+		<s:sportExt retrieve="priceList" />
+        <s:sportExt retrieve="deadLine" />	
 	</head>
 	
 	<body>
-		<!-- Play Option payment model starts -->
+		 <!-- Play Option payment model starts -->
 		 <div id="paymentModel11" class="modal fade" role="dialog">
 		  <div class="modal-dialog modal-lg">		
 		    <!-- Modal content-->
@@ -33,8 +35,8 @@
 		      </div>
 		    </div>		
 		  </div>
-		  <!-- Play Option payment model ends -->
-		  
+		  <!-- Play Option payment model ends --> 
+		 
 		<!-- payment popup starts -->
 	 	<div id="paymentModel" class="modal fade" role="dialog">
 		  <div class="modal-dialog modal-lg">		
