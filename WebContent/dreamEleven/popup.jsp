@@ -11,7 +11,6 @@
 		<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 		<%@ taglib uri="..//WEB-INF/sportmgmt.tld" prefix="s" %> 
 		<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>	
-		<s:sportExt retrieve="priceList" />
         <s:sportExt retrieve="deadLine" />	
 	</head>
 	
