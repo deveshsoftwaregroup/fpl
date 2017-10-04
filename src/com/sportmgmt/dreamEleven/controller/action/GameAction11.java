@@ -307,11 +307,11 @@ public class GameAction11 {
 						}
 					}
 					logger.info("------ Started adding point---: "+price);
-					double balance= PlanManager.addPointToUserPlan(user.getPlanIdForCoins(), price.doubleValue());
+					//double balance= PlanManager.addPointToUserPlan(user.getPlanIdForCoins(), price.doubleValue());
 					//resultMap.put("activePlanBalance", balance);
 					//user.getActivePlan().setBalance(balance);
-					user.setBalanceCoins(balance);
-					logger.info("------ Current balance is ---: "+balance);
+					//user.setBalanceCoins(balance);
+					//logger.info("------ Current balance is ---: "+balance);
 					ObjectMapper mapperObj = new ObjectMapper();
 					 try
 					 {

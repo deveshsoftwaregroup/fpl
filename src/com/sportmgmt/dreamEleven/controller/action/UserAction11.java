@@ -295,8 +295,8 @@ public class UserAction11 {
 				 user.setActivePlan(activePlan);
 				 logger.info(activePlan);
 			 }
-			 user.setBalanceCoins(1000);//PlanManager.getUserCoins(userId));
-			 user.setPlanIdForCoins(PlanManager.getUserPlanIdForUserCoins(userId));
+			// user.setBalanceCoins(1000);//PlanManager.getUserCoins(userId));
+			 //user.setPlanIdForCoins(PlanManager.getUserPlanIdForUserCoins(userId));
 			 logger.info("---------- Getting HTTP Session: "+user);
 			 HttpSession session = request.getSession();
 			 logger.info("---------- Setting User to Sesison: "+user);
