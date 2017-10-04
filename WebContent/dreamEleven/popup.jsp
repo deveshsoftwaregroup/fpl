@@ -15,6 +15,12 @@
 	</head>
 	
 	<body>
+<!--Notification-->
+          <div id="notification" style="display: none;">
+            <span class="dismiss"><a title="dismiss this notification">X</a></span>
+            <div id="notificationChild"></div>
+         </div> 
+         
 		 <!-- Play Option payment model starts -->
 		 <div id="paymentModel11" class="modal fade" role="dialog">
 		  <div class="modal-dialog modal-lg">		

@@ -16,7 +16,7 @@
     
 <s:sportExt retrieve="priceList" />
 <s:sportExt retrieve="deadLine" />
-
+ 
 <body class="predict11-bg transfers_predict11 dream_11transfer">
    
 	<div class="container-fluid ">
@@ -1149,7 +1149,15 @@
 	     			 console.log(resp);
 	     			 if(resp=="true")
 	     			 {
-	     				 alert("Your Team is already Confirmed for current Gameweek");
+	     				$("#notification").fadeIn("slow");
+	     				$("#notificationChild").empty();
+	     	    		 $("#notificationChild").append('your team is already confirmed for current Gameweek');
+	     	    		 
+	     	             $(".dismiss").click(function(){
+	     	                      
+	     	                    $("#notification").fadeOut("slow");
+	     	             });
+	     	             
 	     			}
 	     			 else
 	     				 {
@@ -1161,7 +1169,15 @@
 	    	 	     		  success: function( resp ) {
 	    	 	     			 console.log("resp"+resp);
 	    	 	     			
-	    	 	     				 alert("Your team has been confirmed");
+	    	 	     			$("#notification").fadeIn("slow");
+	    	 	     			 $("#notificationChild").empty();
+	    	 	      		 $("#notificationChild").append('your team has been confirmed');
+	    	 	      		 
+	    	 	               $(".dismiss").click(function(){
+	    	 	                       
+	    	 	                      $("#notification").fadeOut("slow");
+	    	 	               });
+	    	 	               
 	    	 	     				 
 	    	 	     				 },
 	    	 	     		  
@@ -1179,7 +1195,16 @@
 	     		}); 
     	 }
     	 else{
-    		 alert("Please complete 11 players");
+    		 
+    		 $("#notification").fadeIn("slow");
+    		 $("#notificationChild").empty();
+    		 $("#notificationChild").append('Please select 11 players');
+    		 
+             $(".dismiss").click(function(){
+                     
+                    $("#notification").fadeOut("slow");
+             });
+             
     	 }		
     	 
 	 		}

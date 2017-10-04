@@ -2,10 +2,7 @@
 
   <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
   <c:set var="context" value="<%=request.getContextPath()%>" />
-  <!--Notification-->
-         <!-- <div id="notification" style="display: none;">
-            <span class="dismiss"><a title="dismiss this notification">X</a></span>
-         </div> -->
+
   <div class="row">
   
   
@@ -149,14 +146,14 @@
 
 
  
- <script>
+<!--  <script>
          $("#notification").fadeIn("slow").append('your Notification');
          $(".dismiss").click(function(){
                 $("#notification").fadeOut("slow");
          });
          
                  
-      </script>
+      </script> -->
 <script>
 	$(document).on('shown.bs.tab', 'a[data-toggle="tab"]', function (e) 
 	{

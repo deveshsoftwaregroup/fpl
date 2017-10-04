@@ -400,11 +400,7 @@
  		</div>
 	</header> 
 	
-    <!--Notification-->
-    <%-- <div id="notification" style="display: none;">
-       <span class="dismiss"><a title="dismiss this notification">X</a></span>
-    </div> --%>
-	<!--Notification ends-->
+  
 
 
   
