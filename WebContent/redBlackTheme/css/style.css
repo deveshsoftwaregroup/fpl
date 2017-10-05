@@ -83,7 +83,7 @@
 .scout_slide .scout_list h4 {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 700;
-  color: green !important; }
+  color: cyan !important; }
 
 .scout_slide p, .scout-news p {
   font-family: 'Source Sans Pro', sans-serif;
@@ -889,7 +889,7 @@ input[type="date"]:valid::before {
     margin-left: 0px;     padding-left: inherit;}
 
   .scout_list li {
-    margin-left: -16px; }
+    margin-left: -5px; }
 
   .main_scout_list li {
     margin-left: -20px; }
@@ -924,13 +924,13 @@ input[type="date"]:valid::before {
     margin-top: 1055px; } }
 @media screen and (min-width: 400px) and (max-width: 415px) {
   .all_play {
-    margin-top: -484% !important; }
+    margin-top: -474% !important; }
 
   .scout_slide {
     margin-top: 820px; } }
 @media screen and (min-width: 370px) and (max-width: 400px) {
   .all_play {
-    margin-top: -535% !important; }
+    margin-top: -530% !important; }
 
   .scout_slide {
     margin-top: 800px; } }
@@ -1060,7 +1060,7 @@ input[type="date"]:valid::before {
     margin-top: 780px; } }
 @media screen and (min-width: 300px) and (max-width: 325px) {
   .all_play {
-    margin-top: -626% !important; }
+    margin-top: -606% !important; }
 
   .scout_slide {
     margin-top: 660px; } }
