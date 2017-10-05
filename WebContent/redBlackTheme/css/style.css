@@ -886,7 +886,7 @@ input[type="date"]:valid::before {
     height: 10px; }
 
   .scout_list {
-    margin-left: 0px; }
+    margin-left: 0px;     padding-left: inherit;}
 
   .scout_list li {
     margin-left: -16px; }
@@ -924,7 +924,7 @@ input[type="date"]:valid::before {
     margin-top: 1055px; } }
 @media screen and (min-width: 400px) and (max-width: 415px) {
   .all_play {
-    margin-top: -442% !important; }
+    margin-top: -484% !important; }
 
   .scout_slide {
     margin-top: 820px; } }
@@ -1030,7 +1030,7 @@ input[type="date"]:valid::before {
     height: 10px; }
 
   .scout_list {
-    margin-left: 0px; }
+    margin-left: 0px;    padding-left: inherit; }
 
   .main_scout_list li {
     margin-left: -20px; }
@@ -1054,13 +1054,13 @@ input[type="date"]:valid::before {
     border-right: 0px; } }
 @media screen and (min-width: 326px) and (max-width: 369px) {
   .all_play {
-    margin-top: -520% !important; }
+    margin-top: -554% !important; }
 
   .scout_slide {
     margin-top: 780px; } }
 @media screen and (min-width: 300px) and (max-width: 325px) {
   .all_play {
-    margin-top: -565% !important; }
+    margin-top: -626% !important; }
 
   .scout_slide {
     margin-top: 660px; } }

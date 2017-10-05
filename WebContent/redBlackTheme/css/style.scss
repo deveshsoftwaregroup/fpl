@@ -389,7 +389,7 @@ input[type="date"]:valid::before {
     .top_banner1 p{    padding: 20px 74px;  font-size: 15px;}
     .top_banner1 h3{font-size: 20px;}
     .top_banner1 .bx-wrapper .bx-pager.bx-default-pager a {width: 10px;height: 10px;}
-    .scout_list {margin-left: 0px;}
+    .scout_list {margin-left: 0px;    padding-left: inherit;}
     .scout_list li{    margin-left: -16px;}
     .main_scout_list li{margin-left: -20px;}
     .scout_latest_news {height: 400px;}
@@ -417,7 +417,7 @@ input[type="date"]:valid::before {
 
 @media screen and (min-width: 400px) and ( max-width: 415px) {
 	.all_play {
-    margin-top: -442% !important; }
+    margin-top: -484% !important; }
 
   .scout_slide {
     margin-top: 820px; }
@@ -459,11 +459,11 @@ input[type="date"]:valid::before {
     .flex_items img {padding-left: 156px;}
     .my_team .my_points { margin-top: 200px !important;}
     .my_team .claim_your_prize h4{ text-align: center;}
-    .my_team .claim_btn {    margin-right: 111px;}
+    .my_team .claim_btn {margin-right: 111px;}
     .top_banner1 p{    padding: 20px 74px;  font-size: 15px;}
     .top_banner1 h3{font-size: 20px;}
     .top_banner1 .bx-wrapper .bx-pager.bx-default-pager a {width: 10px;height: 10px;}
-    .scout_list {margin-left: 0px;}
+    .scout_list {margin-left: 0px;    padding-left: inherit;}
     .main_scout_list li{margin-left: -20px;}
     .scout_latest_news {height: 400px;}
 
@@ -473,12 +473,12 @@ input[type="date"]:valid::before {
 }
 
 @media screen and (min-width: 326px) and ( max-width: 369px) {
-	.all_play { margin-top: -520% !important;}
+	.all_play { margin-top: -554% !important;}
     .scout_slide {margin-top: 780px;}
 }
 @media screen and (min-width: 300px) and ( max-width: 325px) {
 	.all_play {
-    margin-top: -565% !important; }
+    margin-top: -626% !important; }
 
   .scout_slide {
     margin-top: 660px; }
