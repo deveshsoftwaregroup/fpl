@@ -7,6 +7,7 @@ private double price;
 private int point;
 private int totalPoint;
 private String type;
+private int clubId;
 public Integer getGameClubPlayerId() {
 	return gameClubPlayerId;
 }
@@ -43,8 +44,14 @@ public String getType() {
 public void setType(String type) {
 	this.type = type;
 }
+public int getClubId() {
+	return clubId;
+}
+public void setClubId(int clubId) {
+	 this.clubId = clubId;
+}
 public String toString()
 {
-	return "playerId: "+this.gameClubPlayerId+", playerName= "+this.name+", point = "+this.point;
+	return "playerId: "+this.gameClubPlayerId+", playerName= "+this.name+", point = "+this.point+", price:"+price+", clubId:"+clubId;
 }
 }

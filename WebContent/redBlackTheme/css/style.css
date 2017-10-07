@@ -71,6 +71,8 @@
 .bx-wrapper .bx-controls-auto {
   right: 10px; }
 
+.highlited_plr {     background-color: darkgreen;    border-radius: 20px;}
+
 .home_scout_section {
   background-color: darkslategrey;
   padding: 10px; }

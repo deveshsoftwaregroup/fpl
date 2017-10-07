@@ -19,6 +19,7 @@ import com.sportmgmt.model.entity.GameWeekPlayerReport;
 import com.sportmgmt.model.entity.GameWeekReport;
 import com.sportmgmt.model.entity.Point;
 import com.sportmgmt.model.entity.UserGame;
+import com.sportmgmt.model.entity.Club;
 import com.sportmgmt.model.manager.GameManager;
 import com.sportmgmt.model.manager.GameWeeKManager;
 import com.sportmgmt.model.manager.PlayerManager;
@@ -494,6 +495,8 @@ public class PointRankingUtility {
 				 player.setPoint(gameWeekPlayerReport.getPoint());
 				 player.setTotalPoint(gameWeekPlayerReport.getTotalPoint());
 				 player.setPrice(gameWeekPlayerReport.getGameClubPlayer().getPrice());
+				 player.setClubId(gameWeekPlayerReport.getGameClubPlayer().getClub().getClubID() );
+				 logger.info("------- Going to fetch user list who has been addded player: "+gameWeekPlayerReport.getGameClubPlayer().getClub().getClubID()+" in his team");
 				 players.add(player);
 				 
 			 }
