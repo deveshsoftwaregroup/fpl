@@ -52,9 +52,9 @@
 					       	</div>
 					       	<div class="collapse navbar-collapse cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="bs-example-navbar-collapse-1">
 						        <ul class="nav navbar-nav">
-									<!-- <li>                            
+									<li>                            
 						                      <a href="javascript:void(0);" onclick="openHomeHome();">League Home</a>
-						                  </li> -->
+						                  </li> 
 						               <li>
 						               	<a href="javascript:void(0);" onclick="uploadTransferView11();">Transfers</a>
 						               </li> 
