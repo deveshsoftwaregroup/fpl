@@ -28,6 +28,7 @@ public class HomeAction {
 		return new ModelAndView("redirect:/mvc/LeagueHome");
 
 	}
+	
 	@RequestMapping("/LeagueHome")
 	public String leagueHome(ModelMap map)
 	{

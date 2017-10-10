@@ -56,7 +56,7 @@
 
 <body class="full-bg">   
 
-<%--  <div id="myModal" class="row" role="dialog">
+ <div id="myModal" class="row" role="dialog">
 	<div id="login-overlay" class="col-lg-4 col-lg-offset-8 register_login">
 	          <ul class="nav nav-tabs">
                         <li class="active"><a data-toggle="tab" href="#home">Login</a></li>
@@ -119,7 +119,7 @@
 	              </div>
 	          </div>
 	  </div>
-</div> --%>
+</div>
 
 <div id="myModal11" class="modal fade" role="dialog">
   
@@ -384,6 +384,10 @@
 					    <li><a href="http://the12thman.in/">BLOG</a></li>
 					    <li><a href="" data-toggle="modal" data-target="#myModal1">FANTASY LEAGUE</a></li>
 					    <li><a href="" data-toggle="modal" data-target="#myModal1">PREDICT 11</a></li>
+					      <c:if test="${not empty sessionScope.user.displayName}">
+					      <li><a href="${context}/mvc/user/Logout">Sign Out</a></li>
+					      </c:if>
+					        
 					  </ul>
 					  <ul class="nav navbar-nav navbar-right">
 					    <li class="get_in_touch"><a href="" data-toggle="modal" data-target="#myModal1"> REGISTER</a></li>

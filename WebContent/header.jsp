@@ -81,7 +81,7 @@
 	                            <a href="javascript:void(0);"  onclick="uploadFAQView();">FAQ</a>
 	                        </li>                       
 	                        <li>
-	                            <a href="${context}/mvc/user/Logout">Sign Out</a>
+	                            <a href="/SportMgmt/mvc/user/Logout">Sign Out</a>
 	                        </li>
 	                   </ul>
 							</div>
