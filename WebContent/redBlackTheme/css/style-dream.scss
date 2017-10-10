@@ -35,7 +35,7 @@ header {padding-top: 10px;}
 .navbar { background-color: #d84d49; border-radius: 0px;}
 .navbar-nav > li > a { color:#fff;}
 
-.our_partners { background-color: #010800; margin-top: 10px; margin-bottom: 30px; }
+.our_partners { background-color: #010800; margin-top: 50px; margin-bottom: 50px; }
 .our_partners ul li { display: inline-flex; list-style: none;     padding: 10px 27px;font-family: 'Source Sans Pro', sans-serif; font-weight: 400;color:#fff; font-size: 20px;}
 .prtnr{ padding: 20px 30px 10px 30px;}
 .our_partners h3 { color:#fff; padding-top: 20px;}
@@ -45,7 +45,7 @@ header {padding-top: 10px;}
 .get_in_touch a{color: #fff;font-family: 'AvantGarde-bold';}
 .get_in_touch a:hover { color:#000; background-color: transparent; text-decoration: none;}
 .modal-content { border-radius: 0px; border: 0px;}
-.modal-header {background-color: #f62b2b; background-image: -webkit-gradient(linear, left top, left bottom, from(#f62b2b), to(#d20202));}
+.modal-header {background-color: #d84d49;}
 .modal-body {padding: 50px;}
 .modal-dialog {  
     margin-top: 50px;}
@@ -67,18 +67,7 @@ header {padding-top: 10px;}
     color: #fff;
     opacity: 1; }
 
-.loginBtn {width: 220px;}
-
-#panel, #flip {
-  padding: 10px;
-  cursor: pointer;
-}
-
-#panel {
   
-  display: none;
-}
-#register h4 {padding: 8px;}
 /*---------------Login with Fb or Gmail------------------*/
 .modal-body h4 { text-align: center;font-family: 'Source Sans Pro', sans-serif; font-weight: 400; padding-top: 20px; padding-bottom: 20px;}
 
@@ -138,7 +127,7 @@ header {padding-top: 10px;}
 .details_adjust:hover {cursor: pointer;}
 .details_adjust p {padding-left: 32%; padding-top: 20px;padding-right: 20px;}
 .add_adjust {padding: 10px 20px; margin-top: 50px;}
-.claim_btn { float: right; margin-top: 0px; margin-right: 20px;
+.claim_btn { float: right; margin-top: 15px; margin-right: 20px;
  border-radius: 5px; padding-top: 5px; padding-bottom: 5px;  color:#fff !important;
 background-color: #f62b2b; background-image: -webkit-gradient(linear, left top, left bottom, from(#f62b2b), to(#d20202));
  background-image: -webkit-linear-gradient(top, #f62b2b, #d20202);
@@ -161,7 +150,7 @@ background-color: #f62b2b; background-image: -webkit-gradient(linear, left top, 
 .team_map , .team_map_dream11 { background: url(../images/Dream11/myteam_map.png) no-repeat center;
      height: 437px; 
     background-size: contain;
-    margin-top: 70px; margin-bottom:100px; }
+    margin-top: 70px; }
 .team_map ul,  .team_map_dream11 ul  {width:100%; text-align:center;}
 .team_map ul li, .team_map_dream11 ul li { list-style: none; display: inline-block ;}
 .team_map ul li h4, .team_map_dream11 ul li h4 {    margin-top: -22px;color:#fff; font-family: 'Source Sans Pro', sans-serif; font-weight: 600;}
@@ -204,7 +193,7 @@ text-align: center;padding-top: 10px; color:#000 !important;}
     }
 .team_points_flex1 { display: -webkit-inline-box; }
 .ongoing_flex1 { padding-left: 20px;}
-.ongoing_flex2 {padding-left:3%;}
+.ongoing_flex2 {padding-left:6%;}
 .fixture_bar { background: url(../images/Dream11/fixture_bar.png) no-repeat center;
      height:45px; 
     background-size: contain;
@@ -296,16 +285,16 @@ tbody tr {border-bottom: 1px solid #fff !important;    border-left: 1px solid #f
 .claim_your_prize { margin-top: 50px;}
 .claim_your_prize h4 {text-align: right; padding-right: 20px; color:#fff;}
 .banner_align { margin-bottom: 100px;}
-
+.transfers_predict11 .our_partners , .coupon_predict .our_partners {margin-top: 138px;}
 .defenderr ul li:last-child {
-   
+    background-color: red;
   border-radius: 20%;
     color: #ddd;
     padding-top: 5px;
 }
 
 .midfielderr ul li:first-child {
-   
+    background-color: red;
    border-radius: 20%;
     color: #ddd;
     padding-top: 5px;
@@ -315,50 +304,21 @@ tbody tr {border-bottom: 1px solid #fff !important;    border-left: 1px solid #f
 /*------------------- Dream 11 Fixtures -------------------*/
 .dream11_fixture_grad{background-color: #f62b2b; border-radius: 5px; }
 .dream11_fixture_grad .dropdown {text-align: center; font-size: 18px;    padding: 5px;}
-
-.btnNext, .btnPrevious{ margin-top: 15px; margin-right: 20px;
-  border-radius: 5px; padding-top: 5px; padding-bottom: 5px;  color:#fff !important;
- background-color: #f62b2b; background-image: -webkit-gradient(linear, left top, left bottom, from(#f62b2b), to(#d20202));
-  background-image: -webkit-linear-gradient(top, #f62b2b, #d20202);
-  background-image: -moz-linear-gradient(top, #f62b2b, #d20202);
-  background-image: -ms-linear-gradient(top, #f62b2b, #d20202);
-  background-image: -o-linear-gradient(top, #f62b2b, #d20202);
-  background-image: linear-gradient(to bottom, #f62b2b, #d20202);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#f62b2b, endColorstr=#d20202);}
- .demo_fixtures .nav-tabs {display: none;}
- #bottm_pd {  padding: 10px; margin: 50px 5px; text-align: center;
-  background-color: #f62b2b; background-image: -webkit-gradient(linear, left top, left bottom, from(#f62b2b), to(#a32b31));
-  background-image: -webkit-linear-gradient(top, #f62b2b, #a32b31);
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;font-family: 'Abel', sans-serif; }
- .prev_next_btn {padding-left: 39%;}
- .prev_next_btn a{margin-left: 0; margin-right: 0; position: relative; text-align: center; }
- #change_clr { text-align: center; color: #fff;}
 /*-------------------/ Dream 11 Fixtures -----------------------*/
-
-/*------------------- Coupon --------------------*/
+/*------------------- Coupon -----------------------*/
 .coupon_predict .image_ad .coupon_card:not(:first-child) {
    color: #fff; opacity: 0.5
     }
 
-/*-------------------/ Coupon --------------------*/
-/*------------------- Scout --------------------*/
-.home_scout_section img{width: 95%;}
+/*-------------------/ Coupon -----------------------*/
 
-/*-------------------/ Scout -------------------*/
 .close_btn {position: relative; right:-35px; top:10px;}
 
-/*-----------------FAQ----------------*/
-.rules_faq {  margin-top: 5%;margin-bottom: 10%;}
-.rules_faq .nav-tabs > li {left: 40%;}
-.rules_faq .nav-tabs {   margin-bottom: 20px;}
-.accordion-section {margin-bottom: 3px;}
-
-.terms_and_condition {background-color: rgba(0,0,0,0.7); border-radius:3px; padding: 15px;
-	color:#ffffff;}
 
 
-.mid_text {margin-top: 50px;}
+
+
+
 
 
 
@@ -451,13 +411,11 @@ tbody tr {border-bottom: 1px solid #fff !important;    border-left: 1px solid #f
 @media screen and (min-width: 1400px) and ( max-width: 1499px) {
     .left_img { left: -60px !important;}
     .right_img { right: -60px !important;}
-    .closebtn{display:none;}
 }
 @media screen and (min-width: 1320px) and ( max-width: 1399px) {
     .left_img { left: -30px !important;}
     .right_img { right: -30px !important;}
-    .closebtn{display:none;}
-  
+    
 }
 @media screen and (min-width: 1200px) and ( max-width: 1300px) {
     .top_header li:nth-last-child(2){padding-left: 25px !important;}
@@ -468,14 +426,7 @@ tbody tr {border-bottom: 1px solid #fff !important;    border-left: 1px solid #f
     .right_img { right: -25px !important;}
     .our_partners ul li {padding: 10px 22px !important;}
     .our_partners h3 { font-size: 22px; text-align: center;}
-    .closebtn{display:none;}
-    .points {    padding-left: 25px;}
-    .next_team {padding-left: 37%;}
-    .register_login .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {    padding: 8px 15px; font-size: 12px;}
-    .register_login input[type=email] { height: 32px;}
-    .register_login .form-group {height: 40px;}
-    .register_login .login_btn {margin-top: 6px ;}
-    #register h4{ padding: 11px !important;}
+    
 }
 
 @media screen and (min-width: 769px) and ( max-width: 1024px) {
@@ -494,14 +445,13 @@ tbody tr {border-bottom: 1px solid #fff !important;    border-left: 1px solid #f
     padding-bottom: 10px !important;
 	padding-left:10px !important;
 	padding-right:10px !important;
-	.closebtn{display:none;}
+	
 	font-size:16px !important;  }
     .my_points { margin-top: 200px;}
     .navbar {  height: 53px; }
     .transfers_predict11_map .Dream_11_players {margin-top: 300px;} 
     .transfers_predict11_map h3 {text-align: center !important;}
     .claim_your_prize{    margin-right: 37%;}
-    .coupon_card {padding-right: 50px !important; padding-left: 50px !important;}
 }
 
 @media screen and (min-width: 700px) and ( max-width: 768px) {
@@ -518,7 +468,7 @@ tbody tr {border-bottom: 1px solid #fff !important;    border-left: 1px solid #f
     .navbar-nav > li > a { font-size: 15px !important}
         .left_img img, .right_img img { height:250px !important;}
     .left_img { left:6px !important;}
-    .prtnr li img {height:35px !important;}
+    .prtnr li img {height:25px !important;}
     .our_partners h3 {     font-size: 18px !important; padding-left: 35px !important;}
     .navbar-nav { float: none; }
     .navbar-nav  {padding: 10px; font-size: 12px;}
@@ -550,16 +500,16 @@ tbody tr {border-bottom: 1px solid #fff !important;    border-left: 1px solid #f
     .navbar-toggle .icon-bar { background-color: #fff !important;}
     
     .our_partners h3 {     font-size: 18px !important; text-align: center !important;}
-    .prtnr li img {height:35px !important;}
+    .prtnr li img {height:20px !important;}
      #myModal .form-group { height:auto !important;}
     
   
     .top_header li:last-child { display: none !important;}
     .navbar-nav > li > a { text-align: center !important;}
-    
+    .my_points {margin-top: 200px !important; margin-left: 70px;  margin-right: 70px;}
     .btm_ftr, .btm_ftr1, .btm_ftr2{ text-align: center; padding: 20px 30px;}
     .details_adjust {padding: 0px 50px;}
-     .coupon_card .claim_btn { margin-right: 0px;}
+     .coupon_card .claim_btn { margin-right: 50px;}
     .details_adjust p{    padding-left: 23%;
     padding-top: 10px; font-size: 12px;
     padding-right: 0px;}
@@ -570,67 +520,6 @@ tbody tr {border-bottom: 1px solid #fff !important;    border-left: 1px solid #f
     .Dream_11_players { margin-top: 300px;margin-left: 50px; margin-right: 50px;}
     .our_partners ul li {display: -webkit-box !important;}
     .transfers_predict11_map h3 {text-align: center !important;}
-    .coupon_card {height: 100px !important;}
-    .ism .ism-element-row  { padding:0px;}
-     .ism .ism-pitch__unit--4 {left:37%;}
-     .ism .ism-pitch__unit--5{width: 24%;}
-     .ism .ism-pitch__unit{    min-height: 80px;}
-     .ism .ism-pitch__unit--3{width: 50%;}
-      .ism-element .ismjs-select{    max-width: 80px;}
-      .ism .ism-element-row{    max-width: 360px;}
-    .team_map, .team_map_dream11{padding-top:30px;}
-        /*----------------------------------*/
-    
-.overlay {
-  height: 0%;
-  width: 100%;
-  min-height: 0px;
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0, 0.9);
-  overflow-y: scroll;
-  transition: 0.5s;
-}
-
-.overlay-content {
-  position: absolute;
-  width: 94%;
-  top:0;
-}
-
-.overlay a {
-  text-decoration: none;
- 
-  transition: 0.3s;
-}
-
-.overlay a:hover, .overlay a:focus {
-  color: #f1f1f1;
-}
-
-.overlay .closebtn {
-  position: absolute;
-  top: 3px;
-  right: 17px;
-  z-index: 34;
-  font-size:25px;
-}
-
-.overlay::-webkit-scrollbar { 
-  display: none; 
-}
-
-@media screen and (max-height: 450px) {
-.overlay {overflow-y: auto;}
-.overlay a {font-size: 20px}
-.overlay .closebtn {
-  top: 5px;
-  right: 35px;
-}
-}
     
    
 }
@@ -646,7 +535,7 @@ tbody tr {border-bottom: 1px solid #fff !important;    border-left: 1px solid #f
     .navbar-toggle .icon-bar { background-color: #fff !important;}
     
     .our_partners h3 {     font-size: 18px !important; text-align: center !important;}
-    .prtnr li img {height:35px !important;}
+    .prtnr li img {height:20px !important;}
     .our_partners ul li { display: block !important;}
     .top_header li:nth-last-child(4) img{height: 80px !important;}
     #myModal .form-group { height:auto !important;}
@@ -658,110 +547,40 @@ tbody tr {border-bottom: 1px solid #fff !important;    border-left: 1px solid #f
     
     .tect_left{display: none;}
 
- 	.team_map, .team_map_dream11 {background: url(../images/Dream11/myteam_map_mobile.png) no-repeat center;}
     .team_map_dream11 ul li a img{height: 45px !important;}
     .itemsContainer  {margin-top: 50px;}
     .team_map_dream11 ul li h4 {    margin-top: -18px !important;}
-    .transfers_predict11 .team_map_dream11 {margin-top: 0px !important;     height: 367px !important;}
+    .transfers_predict11 .team_map_dream11 {margin-top: 0px !important;     height: 305px !important;}
     .my_transfers .team_map_dream11 {margin-top: 0px !important;     height: 400px !important;}
     .flex-buttons .flex{width: 40%;}
     .flex-buttons {flex: none !important;}
     .flex1 {flex: none !important;}
     .flex-buttons .claim_btn {margin-top: 0px !important; margin-left: 5px; }
-    
+    .my_points {margin-top: 50px !important;   }
     .pddn_top_100 { padding-top: 20px !important;}
     .unlimited_transfer { width: 30% !important;}
     .navbar { height: 50px !important;}
     .navbar-brand > img { margin-top: -50px !important;}
-    .btm_ftr, .btm_ftr1, .btm_ftr2{ text-align: center; padding: 8px 30px;}
-    .details_adjust {padding: 0px 10px 0px 10px !important;}
-    .details_adjust p {padding-right: 0px; font-size: 11px;}
-    .coupon_card{height: 96px;}
-    .details_adjust img { padding-right: 10%;}
-    .coupon_card .claim_btn { margin-right: 0px;}
+    .btm_ftr, .btm_ftr1, .btm_ftr2{ text-align: center; padding: 20px 30px;}
+    .details_adjust {padding: 0px 50px;}
+    .coupon_card .claim_btn { margin-right: 50px;}
     .transfers_predict11 .transfers_predict11_map {margin-top: 20px;}
-    .timing { padding-bottom: 3px;padding-top: 5px; font-size: 19px; }
-    .points {padding-left: 39px;letter-spacing: 3px;  font-size: 19px;}
+    .timing {    padding-bottom: 6px;}
+    .points {    padding-left: 25px;letter-spacing: 3px;
+      font-size: 20px;}
       .ongoing_flex1 {padding-left: 5px;}
-      .ongoing_flex2{ padding-left: 3%;}
+      .ongoing_flex2{ padding-left: 4%;}
       .ongoing_flex2,.ongoing_flex1, .team_points_flex {   font-size: 16px;}
-      .next_team {    padding-left: 35%;}  
+      .next_team {    padding-left: 34%;}  
       .panel-default .panel-body table {width: 50%; margin-left: 25%;}
-      #accordion tbody tr td:first-child {    width: 8em;  }
+      #accordion tbody tr td:first-child {    width: 10em;  }
       .Dream_11_players { margin-top: 200px; margin-left: 20px; margin-right: 20px;}  
       .transfers_predict11_map h3 {text-align: center;}
       .close_btn {height: 15px !important;     right: -25px !important;}
       .tect_left li {padding-left: 70px !important;}
-      .rules_faq .nav-tabs > li {left: 30%;}
-      .rules_faq {margin-top: 10%;}
-    .prev_next_btn {    padding-left: 33%;}
-    .team_points_flex1 img , .team_points_flex img {height: 20px !important;} 
-     .ism .ism-element-row  { padding:0px;}
-     .ism .ism-pitch__unit--4 {left:37%;}
-     .ism .ism-pitch__unit--5{width: 24%;}
-     .ism .ism-pitch__unit{    min-height: 80px;}
-     .ism .ism-pitch__unit--3{width: 50%;}
-     .transfers_predict11_map p{padding-left:10px;}
-
-     .bottom_bit p{ text-align: center !important; padding: 10px;}
-     .mid_text { margin-top: 0px;}
-     .claim_btn {  margin-right: 20px;}
-      /*----------------------------------*/
-    
-.overlay {
-  height: 0%;
-  width: 100%;
-  position: absolute;
-  z-index: 1;
-  min-height: 0px;
-  top: 0;
-  left: 0px;
-  background-color: #222c3a;
-  overflow-y: scroll;
-  transition: 0.5s;
 }
 
-.overlay-content {
-  position: absolute;
-  width: 94%;
-  top:0; left:10px;
-}
 
-.overlay a {
-  text-decoration: none;
- 
-  transition: 0.3s;
-}
-
-.overlay a:hover, .overlay a:focus {
-  color: #f1f1f1;
-}
-
-.overlay .closebtn {
-  position: absolute;
-  top: 3px;
-  right: 17px;
-  z-index: 34;
-  font-size:25px;
-}
-
-.overlay::-webkit-scrollbar { 
-  display: none; 
-}
-
-@media screen and (max-height: 450px) {
-.overlay {overflow-y: auto;}
-.overlay a {font-size: 20px}
-.overlay .closebtn {
-  top: 15px;
-  right: 35px;
-}
-}
-    
-      
-}
-
-.claim_your_prize{ color:#fff; padding-top:20px;}
 
 
 
