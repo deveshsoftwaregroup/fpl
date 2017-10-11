@@ -152,8 +152,7 @@
   margin-bottom: 10px; }
 
 .our_partners {
-  background-color: #010800;
-  margin-top: 50px; }
+  background-color: #010800; }
 
 .our_partners ul li {
   display: inline-flex;
@@ -337,10 +336,6 @@ input[type="date"]:valid::before {
   text-align: center; }
 
 /*---------------------MyTeam--------------------*/
-.my_team .our_partners {
-  margin-top: 27%;
-  margin-bottom: 3%; }
-
 /*---------------------/ MyTeam--------------------*/
 /*---------------Scout---------------*/
 .main_scout_section {

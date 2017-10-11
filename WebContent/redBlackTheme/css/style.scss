@@ -31,10 +31,10 @@
 .bx-wrapper .bx-controls-auto { right:10px;}
 .home_scout_section { background-color: darkslategrey; padding: 10px; }
 .highlited_plr {     background-color: darkgreen;  border-radius: 20px;}
-.scout_slide .bx-wrapper h4 {  font-family: 'Source Sans Pro', sans-serif;  font-weight: 700;  color: greenyellow;}
-.scout_slide .scout_list h4 {	 font-family: 'Source Sans Pro', sans-serif;  font-weight: 700;  color: cyan !important;}
+.scout_slide .bx-wrapper h4 {  font-family: 'Source Sans Pro', sans-serif;  font-weight: 700;  color: #26C85C;}
+.scout_slide .scout_list h4 {	 font-family: 'Source Sans Pro', sans-serif;  font-weight: 700;  color: #26C85C !important;}
 .scout_slide p, .scout-news p{font-family: 'Source Sans Pro', sans-serif; font-weight: 400; color:#fff; padding-right: 10px;}
-.scout_slide p b, .scout-news p b {color:#86e112 !important;}
+.scout_slide p b, .scout-news p b {color:#A3D300 !important;}
 .scout_slide .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {    text-align: right;padding-right: 20px;  width: 100%; }
 .scout-news ul {margin-left: -35px; list-style: none;}
 .scout_slide .scout_list { list-style: none; background-color: rgba(0,0,0,0.7); padding-top:10px; padding-bottom:10px;}
@@ -46,10 +46,10 @@
 .link_news { padding: 10px;}
 .scout_latest_news { background-color: #fff; padding: 0px 0px 20px 0px; height: 341px; }
 .fixture_img_ad_1 {margin-bottom: 10px;}
-.our_partners { background-color: #010800; margin-top: 50px; margin-bottom: 50px; }
-.our_partners ul li { display: inline-flex; list-style: none;     padding: 10px 27px;font-family: 'Source Sans Pro', sans-serif; font-weight: 400;color:#fff; font-size: 20px;}
+.our_partners { background-color: #010800;}
+.our_partners ul li { display: inline-flex; list-style: none; padding: 10px 27px;font-family: 'Source Sans Pro', sans-serif; font-weight: 400;color:#fff; font-size: 20px;}
 .prtnr{ padding: 20px 30px 10px 30px;}
-.our_partners h3 { color:#fff; padding-top: 20px;}
+.our_partners h3 { color:#fff; padding-top: 20px; text-align: center;}
 
 .my_team .team_map ul{ margin-left: -20px ;}
 .text_right {position: absolute; right: 50px;}
@@ -73,7 +73,11 @@ input[type="date"]:valid::before {
 	content: "" !important;
 }
 
-
+.unlimited_things{background-color: #092945;text-align: center; color:#fff; padding: 30px; height: 250px; }
+.unlimited_things h4 {text-align: center; color:#fff; font-weight: 700;}
+.unlimited_things p{ font-family: 'Source Sans Pro', sans-serif;} 
+.unlimited_things img {padding: 20px;}
+.unlimited_things_1, .unlimited_things_2 {    border-right: 1px solid #fff;}
 /*------------------------------------*/
 
 .get_in_touch a{color: #fff;font-family: 'AvantGarde-bold';}
@@ -101,6 +105,7 @@ input[type="date"]:valid::before {
     color: #fff;
     opacity: 1; }
 
+.highlited_plr {     background-color: darkgreen;    border-radius: 20px;}
 /*---------------Login with Fb or Gmail------------------*/
 .modal-body h4 { text-align: center;font-family: 'Source Sans Pro', sans-serif; font-weight: 400; padding-top: 20px; padding-bottom: 20px;}
 .register_login .nav-tabs > li > a, .register_login_1 .nav-tabs > li > a  {padding: 8px 20px;}
@@ -118,7 +123,7 @@ input[type="date"]:valid::before {
 .register_login_1 .nav-tabs > li > a, .register_login_1 ,.register_login_1 a, .register_login_1 h4{color:#000; text-align: center;}
 
 /*---------------------MyTeam--------------------*/
-.my_team .our_partners {    margin-top: 27%; margin-bottom: 3%;}
+
 
 
 /*---------------------/ MyTeam--------------------*/
@@ -134,10 +139,16 @@ input[type="date"]:valid::before {
 .top_banner1 .bx-wrapper .bx-pager { padding-bottom: 20px;}
 
 /*---------------Footer------------------*/
-.footer_btn {color: #fff;}
-.footer_btn ul{ margin-left: -40px;}
-.footer_btn ul li {list-style: none;}
 
+.footer_btn {color:#fff; background-color: rgba(200,26,47,0.8);font-family: 'Open Sans', sans-serif; padding-top: 20px; }
+.footer_btn ul {margin-left: -30px;}
+.footer_btn ul li { list-style: none;}
+
+.footer_btn h4{color: greenyellow;}
+.bottom_copyright{background-color: #000; color:#fff;}
+.bottom_copyright p {padding: 10px 10px 5px 10px;}
+.bottom_bit {padding: 10px 20px;}
+.bottom_bit h4, .bottom_bit p {text-align: center !important;} 
 /*---------------/ Footer------------------*/
 /*---------------Notification------------------*/
 #notification {
@@ -240,13 +251,16 @@ input[type="date"]:valid::before {
 
 @media screen and (min-width: 1500px) and ( max-width: 1920px) {
   #notification {width:65% !important;}
+  .prtnr{padding-left: 125px !important;}
 }
 
 @media screen and (min-width: 1401px) and ( max-width: 1499px) {
   #notification {width:90% !important;}
+  .prtnr{padding-left: 125px !important;}
 }
 @media screen and (min-width: 1301px) and ( max-width: 1400px) {
   #notification {width:90% !important;}
+  .prtnr{padding-left: 125px !important;}
   
 }
 
@@ -255,6 +269,7 @@ input[type="date"]:valid::before {
     .top_header li:nth-last-child(3){padding-left: 20px !important;}
     .top_header li:last-child { padding-left: 62px !important;}
     .scout_slide .bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto {bottom: 23px !important;}
+    .prtnr{padding-left: 125px !important;}
 }
 
 @media screen and (min-width: 769px) and ( max-width: 1024px) {
@@ -264,7 +279,7 @@ input[type="date"]:valid::before {
     .scout_slide p, .scout-news p { font-size: 13px !important;}
     .scout_slide h4, .scout-news h4 {font-size: 15px !important; }
     .our_partners ul li {padding: 20px 9px !important;}
-    .our_partners h3 {     font-size: 18px !important;}
+    .our_partners h3 {font-size: 18px !important;}
     .register_login input[type=text], .register_login input[type=email] { height: 35px !important;}
     .register_login li {left: 10% !important;}
     .register_login .login_btn {padding: 5px 30px;}
@@ -284,7 +299,6 @@ input[type="date"]:valid::before {
    
         .left_img img, .right_img img { height:250px !important;}
     .left_img { left:6px !important;}
-    .prtnr li img {height:25px !important;}
     .our_partners h3 {     font-size: 18px !important; padding-left: 35px !important;}
     .register_login input[type=text], .register_login input[type=email] { height: 28px !important; padding: 10px; font-size: 13px;}
     .register_login .form-group{height: 35px !important;}
@@ -296,7 +310,10 @@ input[type="date"]:valid::before {
     .glyphicon-menu-right {padding-left: 57% !important;}
     .my_team .my_points { margin-top: 315px !important;}
     .scout_latest_news {height: 489px; margin-left: 10px;  margin-right: 10px;}
-}
+    .our_partners ul li { display: block !important;width: 50%;  float: left; box-sizing: border-box; text-align: center; }
+    .footer_btn h4, .footer_btn ul li{text-align: left;}
+    .btm_ftr2, .bottom_bit {text-align: left;}
+  }
 
 @media screen and (min-width: 601px) and ( max-width: 699px) {
     .marg_top { margin-top: 20px !important;}
@@ -307,8 +324,7 @@ input[type="date"]:valid::before {
     .navbar-toggle { }
     .navbar-toggle .icon-bar { background-color: #fff !important;}
     .all_play { padding-top: 30px !important;}
-    .our_partners h3 {     font-size: 18px !important; text-align: center !important;}
-    .prtnr li img {height:20px !important;}
+    .our_partners h3 {     font-size: 18px !important; }
      #myModal .form-group { height:auto !important;}
      .banner_slider { margin-top: 20px;}
     .top_header li:last-child { display: none !important;}
@@ -325,7 +341,11 @@ input[type="date"]:valid::before {
     .play_predict11_league {margin-top: -481px; margin-left: 265px; }
     .google_mid_ad { margin-top: 200px;}
     .navbar-nav .open .dropdown-menu > li > a {text-align: center; color:#ddd;}
-}
+    .our_partners ul li { display: block !important;width: 50%;  float: left; box-sizing: border-box; text-align: center; }
+    .footer_btn h4, .footer_btn ul li{text-align: left;}
+    .unlimited_things_1, .unlimited_things_2{    border-bottom: 1px solid #fff; border-right: 0px;}
+    
+  }
 
 @media screen and (min-width: 480px) and ( max-width: 600px) {
     .marg_top { margin-top: 20px !important;}
@@ -337,7 +357,6 @@ input[type="date"]:valid::before {
     .navbar-toggle .icon-bar { background-color: #fff !important;}
     .all_play { padding-top: 30px !important;}
     .our_partners h3 {     font-size: 18px !important; text-align: center !important;}
-    .prtnr li img {height:20px !important;}
      #myModal .form-group { height:auto !important;}
      .banner_slider { margin-top: 20px;}
     .top_header li:last-child { display: none !important;}
@@ -347,6 +366,7 @@ input[type="date"]:valid::before {
     .flex_items img {padding-left: 200px !important;}
     .glyphicon-menu-right {padding-left: 48% !important;}
     
+    .unlimited_things_1, .unlimited_things_2{    border-bottom: 1px solid #fff; border-right: 0px;}
     .top_banner1 p {font-size: 15px;padding: 20px 50px;}
     .top_banner1 .bx-wrapper .bx-pager.bx-default-pager a {width: 10px;height: 10px;}
     .scout_latest_news {height: 489px; margin-left: 10px;  margin-right: 10px;}
@@ -354,7 +374,9 @@ input[type="date"]:valid::before {
     .play_predict11_league {margin-top: -481px; margin-left: 265px; }
     .google_mid_ad { margin-top: 200px;}
     .navbar-nav .open .dropdown-menu > li > a {text-align: center; color:#ddd;}
-}
+    .our_partners ul li { display: block !important;width: 50%;  float: left; box-sizing: border-box; text-align: center; }
+    .footer_btn h4, .footer_btn ul li{text-align: left;}
+  }
 
 @media screen and (min-width: 370px) and ( max-width: 479px) {
     .marg_top { margin-top: 15px !important;}
@@ -365,8 +387,7 @@ input[type="date"]:valid::before {
     .top_header li:nth-last-child(2) { padding-top: 20px !important;}
     .navbar-nav .open .dropdown-menu > li > a {text-align: center; color:#ddd;}
     
-    .our_partners h3 {     font-size: 18px !important; text-align: center !important;}
-    .prtnr li img {height:20px !important;}
+    .our_partners h3 { font-size: 18px !important; text-align: center !important;}
     .our_partners ul li { display: block !important;}
     .top_header li:nth-last-child(4) img{height: 80px !important;}
     #myModal .form-group { height:auto !important;}
@@ -399,7 +420,11 @@ input[type="date"]:valid::before {
     .google_mid_ad { margin-top: 140px;}
     .bottom_bit p{ text-align: center;}
     .footer_btn ul li a { font-size:16px;}
-   
+    .our_partners ul li { display: block !important;width: 50%;  float: left; box-sizing: border-box; text-align: center; }
+    
+    .unlimited_things_1, .unlimited_things_2{    border-bottom: 1px solid #fff; border-right: 0px;}
+    .prtnr{padding: 15px 0px 0px 0px !important;}
+    .bottom_copyright p{font-size: 11px;}
 }
 
 
@@ -440,7 +465,6 @@ input[type="date"]:valid::before {
     .navbar-nav .open .dropdown-menu > li > a {text-align: center; color:#ddd;}
     
     .our_partners h3 {     font-size: 18px !important; text-align: center !important;}
-    .prtnr li img {height:20px !important;}
     .our_partners ul li { display: block !important;}
     .top_header li:nth-last-child(4) img{height: 80px !important;}
     #myModal .form-group { height:auto !important;}
@@ -470,6 +494,8 @@ input[type="date"]:valid::before {
     .play_fantasy_league, .play_predict11_league {width: 50%; float: left;}
     .play_predict11_league {margin-top: -358px; margin-left: 185px; }
     .google_mid_ad { margin-top: 140px;}
+    .prtnr{padding: 15px 0px 0px 0px !important;}
+    
 }
 
 @media screen and (min-width: 326px) and ( max-width: 369px) {
