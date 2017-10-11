@@ -13,13 +13,13 @@
               
             <div class="row">
               
-                <div class="col-lg-12 upper_text">
+                <div class="col-lg-2 col-md-2 col-sm-12">
                     <h3>Our Partners</h3>
                    
                 </div>
               </div>  
             <div class="row">
-              <div class="col-lg-1 col-md-1 col-sm-12"><h3></h3></div>
+              <div class="col-lg-10 col-md-10 "><h3></h3></div>
                 
                     <ul class="prtnr">
 		            <li><img src="${context}/redBlackTheme/images/02.png" class="center-block" ></li>		                
