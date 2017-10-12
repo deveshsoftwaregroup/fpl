@@ -94,7 +94,7 @@ header {
 .our_partners {
   background-color: #010800;
   margin-top: 10px;
-  margin-bottom: 30px; }
+  margin-bottom: 10px; }
 
 .our_partners ul li {
   display: inline-flex;
@@ -548,19 +548,13 @@ td, th {
 
 .heading {
   width: 100%;
-  border-radius: 5px;
+  border-radius:0px 0px 5px 5px;
   padding-top: 5px;
   padding-bottom: 5px;
   color: #000;
   text-align: center;
-  background-color: #dfe5df;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#dfe5df), to(#839287));
-  background-image: -webkit-linear-gradient(top, #dfe5df, #839287);
-  background-image: -moz-linear-gradient(top, #dfe5df, #839287);
-  background-image: -ms-linear-gradient(top, #dfe5df, #839287);
-  background-image: -o-linear-gradient(top, #dfe5df, #839287);
-  background-image: linear-gradient(to bottom, #dfe5df, #839287);
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#f62b2b, endColorstr=#839287); }
+  background-color: #fff;
+  }
 
 .my_points .bx-wrapper {
   margin-bottom: 40px; }
@@ -1050,7 +1044,7 @@ tbody tr {
 @media screen and (min-width: 480px) and (max-width: 699px) {
   .marg_top {
     margin-top: 20px !important; }
-
+  
   .top_header li:nth-last-child(3) {
     padding-top: 38px !important; }
 
@@ -1194,7 +1188,7 @@ tbody tr {
 @media screen and (min-width: 300px) and (max-width: 439px) {
   .marg_top {
     margin-top: 15px !important; }
-
+  
   .top_header li:last-child {
     display: none !important; }
 

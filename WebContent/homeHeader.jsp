@@ -56,7 +56,7 @@
 
 <body class="full-bg">   
 
- <div id="myModal" class="row" role="dialog">
+ <%-- <div id="myModal" class="row" role="dialog">
 	<div id="login-overlay" class="col-lg-4 col-lg-offset-8 register_login">
 	          <ul class="nav nav-tabs">
                         <li class="active"><a data-toggle="tab" href="#home">Login</a></li>
@@ -119,7 +119,7 @@
 	              </div>
 	          </div>
 	  </div>
-</div>
+</div> --%>
 
 <div id="myModal11" class="modal fade" role="dialog">
   
@@ -346,12 +346,15 @@
 
 	<div class="container">
 		<div class="row">
+		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 top-bnr-mobile">
+  		  	<img src="${context}/redBlackTheme/images/simple-bannr.png" class="img-responsive">
+  		  </div>
 			<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1  marg_top">
 			    <div class="row top_header">
 			        <div class="col-lg-12">
 			         <ul>
 			        <li class="flex-item"><img src="${context}/redBlackTheme/images/logo.png" class="img-responsive "></li>
-			         <li class="pwr_text flex-item">Powered By</li>
+			         <li class="pwr_text flex-item"></li>
 			         <li class="flex-item" ><img src="${context}/redBlackTheme/images/poweredby-logo.pnggggg" class="img-responsive pwr_logo"></li>
 			         <li class="flex-item"><img src="${context}/redBlackTheme/images/simple-bannr.png" class="img-responsive pull-right"></li>
 			        </ul>

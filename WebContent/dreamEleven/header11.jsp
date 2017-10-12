@@ -16,6 +16,12 @@
 	<s:sportExt retrieve="priceList" />
 	<div class="container"> 
 	    <div class="row">
+	    <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 top-bnr-mobile">
+  		  	<img src="${context}/redBlackTheme/images/simple-bannr.png" class="img-responsive">
+  		  </div>
+	    	<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 top-bnr-mobile">
+  		  	<img src="${context}/redBlackTheme/images/simple-bannr.png" class="img-responsive">
+  		  </div>
 	        <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
 	            <div class="row dream11-top_header">
 	                <div class="col-lg-12">
@@ -26,7 +32,7 @@
 		                	</li>
 	                	</div>
 	                    <div style="float:right;">
-	                    	<li class="pwr_text flex-item" style="float: left;">Powered By</li>
+	                    	<li class="pwr_text flex-item" style="float: left;"></li>
 	                        <li class="flex-item" style="float: left;"><img src="${context}/redBlackTheme/images/poweredby-logo.pngggg" class="img-responsive pwr_logo"></li>
 	                    </div>
 	                  </ul>

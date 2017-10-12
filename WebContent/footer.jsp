@@ -19,14 +19,14 @@
                 </div>
               </div>  
             <div class="row">
-              <div class="col-lg-1 col-md-1 col-sm-12"><h3></h3></div>
+              <div class="col-lg-1 col-md-1 col-sm-12"></div>
                 
                     <ul class="prtnr">
-		            <li><img src="${context}/redBlackTheme/images/02.png" class="center-block" ></li>		                
-	                <li><img src="${context}/redBlackTheme/images/03.png" class="center-block"></li>
-	                <li><img src="${context}/redBlackTheme/images/04.png" class="center-block"></li>
-	                <li><img src="${context}/redBlackTheme/images/05.png" class="center-block"></li>  
-	                <li><img src="${context}/redBlackTheme/images/01.png" class="center-block"></li>  
+                        <li><img src="${context}/redBlackTheme/images/logos/01.png" class="center-block"></li>
+                        <li><img src="${context}/redBlackTheme/images/logos/02.png" class="center-block"></li>
+                        <li><img src="${context}/redBlackTheme/images/logos/03.png" class="center-block"></li>
+                        <li><img src="${context}/redBlackTheme/images/logos/04.png" class="center-block"></li>
+                        <li><img src="${context}/redBlackTheme/images/logos/05.png" class="center-block"></li>
                
                
               </ul>
@@ -39,7 +39,7 @@
 <div class="row">
      <div class="col-lg-10 col-lg-offset-1  col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1  footer_btn">
          <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 btm_ftr">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 btm_ftr">
                 
                
                 <div class="col-lg-6  col-xs-6 ">
@@ -69,12 +69,13 @@
                             <li><a href="gifts.html">Coupon</a></li>
                             
                             
-                        </ul>
-                    </div>
+                    </ul>
+                </div>
             </div>
         <!--<p>We at justthinksports.com provide ONE STOP solution for sports lovers.</p>-->
     
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 btm_ftr1">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+             <div class="col-lg-6 col-sm-12 col-xs-12 btm_ftr1">
                 <h4>More</h4>
                 <ul class="mid_text">
                     <li><a href="#">About</a></li>
@@ -85,20 +86,27 @@
                     <li><a href="help.html">Help</a></li>
                     
                 </ul>
+                </div>
+                <div class="col-lg-6 col-sm-12 col-xs-12 btm_ftr2">
+                        <h4>Contact</h4>
+                        <p>If you have any query or want to contact us, you are most welcome to write us at</p>
+                            
+                        <p>Just Think Sports</p> 
+                        <p>contactus@justthinksports.com</p>
+                    </div>
             </div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 btm_ftr2">
-                <h4>Contact</h4>
-                <p>If you have any query or want to contact us, you are most welcome to write us at</p>
-                    
-                <p>Just Think Sports</p> 
-                <p>contactus@justthinksports.com</p>
-            </div>
+           
     </div>
     <hr>
     <div class="bottom_bit">
         <h4>Disclaimer</h4>
-        <p>Lorem ipsum dolor sit amet Molestiae dolores voluptatem non modi unde dolorem ipsa perspiciatis reiciendis, expedita perferendis atque quis ipsum ea nemo enim ab repudiandae magnam! Necessitatibus asperiores architecto eum maxime quia praesentium neque sequi qui fugiat molestias quaerat aperiam harum, quod dolorum natus est reprehenderit odio quos rerum repudiandae ipsum eveniet sunt modi voluptate! Ratione praesentium placeat amet nam doloribus laborum saepe.    
+        <p>Lorem ipsum dolor sit amet Molestiae dolores voluptatem non modi unde dolorem ipsa perspiciatis reiciendis, expedita perferendis atque quis ipsum ea nemo enim ab repudiandae magnam! Necessitatibus asperiores architecto eum maxime quia praesentium neque sequi qui fugiat molestias quaerat aperiam harum, quod dolorum natus est reprehenderit odio quos rerum repudiandae ipsum eveniet sunt modi voluptate! Ratione praesentium placeat amet nam doloribus laborum 
+           manish 
     </p></div>
-         </div>
+
+    
+    </div>
+    
+    <div class="col-lg-10 col-lg-offset-1  col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1  bottom_copyright"><p>@ Copyright the12thman.in 2017. All rights reserved.</p></div>
 </div>
 </div>
