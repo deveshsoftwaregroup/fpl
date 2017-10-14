@@ -223,27 +223,7 @@ public class SocailAction {
 		return new ModelAndView(redirectView);
 	}
 	
-	@RequestMapping(value = "/facebook/email", method = RequestMethod.GET)
-	public String email(HttpServletRequest request,
-			HttpServletResponse response) throws Exception {
-
-	URL	url = new URL("https://graph.facebook.com/me?email");
-	HttpURLConnection conn = (HttpURLConnection) url
-            .openConnection();
-	 conn.setRequestMethod("GET");
-     
-     
-     String line, outputString = "";
-     BufferedReader reader = new BufferedReader(
-             new InputStreamReader(conn.getInputStream()));
-     while ((line = reader.readLine()) != null) {
-         outputString += line;
-     }
-     System.out.println(outputString);
-     
-		
-		return null;
-	}
+	
 
 	@RequestMapping(value = "facebook/recall", method = RequestMethod.GET)
 	public String callBack(@RequestParam("code") String code,

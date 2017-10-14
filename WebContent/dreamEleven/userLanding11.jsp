@@ -94,8 +94,14 @@
 		<s:sportExt retrieve="priceList" />
 		
 		<main id="mainContent" tabindex="0" class="ism"> 
+		 	<%@ include	file="facebookPost.jsp"%>
+		
+			
+		
 			<%@ include	file="popup.jsp"%>
 			<%@ include	file="header11.jsp"%>
+		   
+			
 			
 			<div class="ism-container"> <!-- Main content of every pages gets loaded at class ism-container  -->	
 				<%@ include	file="transfer11.jsp"%>			

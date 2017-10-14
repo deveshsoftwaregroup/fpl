@@ -18,8 +18,18 @@
 <s:sportExt retrieve="deadLine" />
  
 <body class="predict11-bg transfers_predict11 dream_11transfer">
-   
-	<div class="container-fluid ">
+
+
+
+<!-- twitter button starts -->
+ <%-- <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+ <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script> --%>
+<!--  twitter button ends -->	
+ 
+ 
+ 
+ 
+ <div class="container-fluid ">
 		<div class="row">
 			<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 transfers_predict11_map">
 				<img src="${context}/redBlackTheme/images/banner12.png" class="img-responsive center-block">
@@ -49,8 +59,10 @@
 												  <span class="ism-element__type__short">${price}</span></abbr>
 											</c:when>
 											<c:otherwise>
-												   <abbr title="Goalkeeper"><span>GKP</span></abbr>
-											</c:otherwise>
+		                                        <div class="ism-element__name ism-element__name--placeholder">
+	                                         <abbr title="Goalkeeper" class="ism-element__type"><span class="ism-element__type__short">GKP</span></abbr>
+	                                     </div>
+		                                    </c:otherwise>
 										</c:choose>                                                            
 						    		</div>	
 					    		</div>						
@@ -74,7 +86,9 @@
 		                                       <span class="ism-element__type__short">${price}</span></abbr>
 		                                    </c:when>
 		                                    <c:otherwise>
-		                                         <abbr title="Defender" ><span >DEF</span></abbr>
+		                                        <div class="ism-element__name ism-element__name--placeholder">
+	                                         <abbr title="Defender" class="ism-element__type"><span class="ism-element__type__short">DEF</span></abbr>
+	                                     </div>
 		                                    </c:otherwise>
 	                                    </c:choose>                                                            
 	                                 </div>
@@ -115,7 +129,7 @@
                                      </c:when>
                                      <c:otherwise>
                                      <div class="ism-element__name ism-element__name--placeholder">
-                                         <abbr title="Defender" class="ism-element__type"><span class="ism-element__type__short">Defender</span></abbr>
+                                         <abbr title="Defender" class="ism-element__type"><span class="ism-element__type__short">DEF</span></abbr>
                                      </div>
                                      </c:otherwise>
                                      </c:choose>
@@ -277,7 +291,7 @@
 				 <div class="col-lg-12 pull-right claim_your_prize">
                                              <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#paymentModel11">Confirm Your Team</button></a>
                                           	<a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#paymentModel">Make Payment</button></a>
-                                            </div>  
+                                                                                   </div>  
 		   
                                                                                      
 	                </div>
@@ -780,29 +794,7 @@
 		    }
 		});
 	});
-	 /*  $(document).ready(function() {
-		 url ="/SportMgmt/mvc/player/check-player-history?gameType=dream_eleven" ; 
-		 
-			$.ajax({
-	     		  url: url,
-	     		 dataType: 'html',
-	     		  success: function( resp ) {
-	     			 console.log(resp); 
-	     			 if(resp=="true")
-	     			 {
-	     				 alert("Your Team is already Confirmed");
-	     				 }
-	     			 else
-	     				 {
-	     				alert("Please confirm your Team");
-	     				 }
-	     			
-	     		  },
-	     		  error: function( req, status, err ) {
-	     		    console.log( 'something went wrong', status, err );
-	     		  }
-	     		});	
-	 }); */
+	 
 	 
 	
 	 $('#ismjs-element-filter').change(function(){
@@ -951,7 +943,14 @@
 				if(userGameJson['total']['Goalkeeper'] >=1)
 				{
 					ajaxCall = false;
-					alert("You can add maximum 1 Goalkeeper. Please Remove any one first ");
+					$("#notification").fadeIn("slow");
+     				$("#notificationChild").empty();
+     	    		 $("#notificationChild").append('You can add maximum 1 Goalkeeper. Please Remove any one first');
+     	    		 
+     	             $(".dismiss").click(function(){
+     	                      
+     	                    $("#notification").fadeOut("slow");
+     	             });
 				}
 			}
 		}
@@ -963,7 +962,14 @@
 				if(userGameJson['total']['Midfielder'] >=4)
 				{
 					ajaxCall = false;
-					alert("You can add maximum 4 Midfielder. Please Remove any one first ");
+					$("#notification").fadeIn("slow");
+     				$("#notificationChild").empty();
+     	    		 $("#notificationChild").append('You can add maximum 4 All MidFielder. Please Remove any one first');
+     	    		 
+     	             $(".dismiss").click(function(){
+     	                      
+     	                    $("#notification").fadeOut("slow");
+     	             });
 				}
 			}
 		}
@@ -974,7 +980,14 @@
 				if(userGameJson['total']['Forward'] >=2)
 				{
 					ajaxCall = false;
-					alert("You can add maximum 2 All Rounders. Please Remove any one first ");
+					$("#notification").fadeIn("slow");
+     				$("#notificationChild").empty();
+     	    		 $("#notificationChild").append('You can add maximum 2 All Rounders. Please Remove any one first');
+     	    		 
+     	             $(".dismiss").click(function(){
+     	                      
+     	                    $("#notification").fadeOut("slow");
+     	             });
 				}
 			}
 		}
@@ -985,7 +998,15 @@
 				if(userGameJson['total']['Defender'] >=4)
 				{
 					ajaxCall = false;
-					alert("You can add maximum 4 Defender. Please Remove any one first ");
+					$("#notification").fadeIn("slow");
+     				$("#notificationChild").empty();
+     	    		 $("#notificationChild").append('You can add maximum 4 Defender. Please Remove any one first');
+     	    		 
+     	             $(".dismiss").click(function(){
+     	                      
+     	                    $("#notification").fadeOut("slow");
+     	             });
+					
 				}
 			}
 		}
@@ -1208,6 +1229,23 @@
     	 }		
     	 
 	 		}
+     function share()
+		{
+			
+			
+				url ="../mvc/social/facebook/Post";
+				$.ajax({
+		     		  url: url,
+		     		  dataType: 'html',
+		     		  success: function( resp ) {
+		     			 $('.ism-container').html(resp);
+		     		  },
+		     		  error: function( req, status, err ) {
+		     		    console.log( 'something went wrong', status, err );
+		     		  }
+		     		});	
+			
+		}
   
 </script>
 <script>

@@ -16,9 +16,9 @@
 	<s:sportExt retrieve="priceList" />
 	<div class="container"> 
 	    <div class="row">
-	    <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 top-bnr-mobile">
+	    	<%-- <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 top-bnr-mobile">
   		  	<img src="${context}/redBlackTheme/images/simple-bannr.png" class="img-responsive">
-  		  </div>
+  		  </div> --%>
 	    	<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 top-bnr-mobile">
   		  	<img src="${context}/redBlackTheme/images/simple-bannr.png" class="img-responsive">
   		  </div>
