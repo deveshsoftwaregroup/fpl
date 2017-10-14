@@ -276,7 +276,7 @@
 				</div>
 				 <div class="col-lg-12 pull-right claim_your_prize">
                                              <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#paymentModel11">Confirm Your Team</button></a>
-                                          	Want to be eligible to win prizes : <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#paymentModel">Make Payment</button></a>
+                                          	<a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#paymentModel">Make Payment</button></a>
                                             </div>  
 		   
                                                                                      
