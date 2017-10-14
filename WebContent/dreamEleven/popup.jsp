@@ -130,5 +130,16 @@
 	//]]>
 </script> --%>
 		
-	</body>    
+	</body> 
+	<script type="text/javascript">  
+		function showNotification(message)
+		{
+	    	$("#notification").fadeIn("slow");
+			$("#notificationChild").empty();
+	 		$("#notificationChild").append(message);
+	        $(".dismiss").click(function(){
+	         	$("#notification").fadeOut("slow");
+	       	});
+	     } 
+	</script>
 </html>

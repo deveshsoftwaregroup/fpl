@@ -290,7 +290,7 @@
 				</div>
 				 <div class="col-lg-12 pull-right claim_your_prize">
                                              <!-- <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#modelPlayOption">Confirm Your Team</button></a> -->
-                                             <a href="#"><button type="button" class="btn claim_btn" onclick="checkPlayerCount()">Confirm Your Team</button></a>
+                                             <a href="#"><button type="button" class="btn claim_btn" onclick="checkPlayerCountAndOpenPlayOption()">Confirm Your Team</button></a>
                                           	<a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#paymentModel">Make Payment</button></a>
                                                                                    </div>  
 		   
@@ -889,7 +889,7 @@
      {   
      	<c:choose>
 	     	<c:when test="${isUnderDeadline}">
-	     		alert("Hey buddy ! You are under deadline. Player can be added after deadline");
+	     		showNotification("Hey ! You are under deadline. Player can be added after deadline");
 	     	</c:when>
      	<c:otherwise>     	
     	 var playerType = '';
@@ -935,12 +935,7 @@
 			{
 				if(userGameJson['total']['Goalkeeper'] >=1)
 				{
-					$("#notification").fadeIn("slow");
-     				$("#notificationChild").empty();
-     	    		$("#notificationChild").append('You can add maximum 1 Goalkeeper. Please Remove any one first');
-     	            $(".dismiss").click(function(){
-     	            	$("#notification").fadeOut("slow");
-     	             });
+					showNotification('You can add maximum 1 Goalkeeper. Please Remove any one first');
      	          	ajaxCall = false;
 				}
 			}
@@ -951,13 +946,8 @@
 			{
 				if(userGameJson['total']['Midfielder'] >=4)
 				{
+					showNotification('You can add maximum 4 All MidFielder. Please Remove any one first');
 					ajaxCall = false;
-					$("#notification").fadeIn("slow");
-     				$("#notificationChild").empty();
-     	    		$("#notificationChild").append('You can add maximum 4 All MidFielder. Please Remove any one first');
-     	            $(".dismiss").click(function(){
-     	            	$("#notification").fadeOut("slow");
-     	            });
 				}
 			}
 		}
@@ -966,14 +956,9 @@
 			if(typeof userGameJson != null && typeof userGameJson != 'undefined' && typeof userGameJson['total'] !='undefined')
 			{
 				if(userGameJson['total']['Forward'] >=2)
-				{
+				{	
+					showNotification('You can add maximum 2 All Rounders. Please Remove any one first');
 					ajaxCall = false;
-					$("#notification").fadeIn("slow");
-     				$("#notificationChild").empty();
-     	    		$("#notificationChild").append('You can add maximum 2 All Rounders. Please Remove any one first');
-     	            $(".dismiss").click(function(){
-	                    $("#notification").fadeOut("slow");
-     	            });
 				}
 			}
 		}
@@ -983,13 +968,8 @@
 			{
 				if(userGameJson['total']['Defender'] >=4)
 				{
-					ajaxCall = false;
-					$("#notification").fadeIn("slow");
-     				$("#notificationChild").empty();
-     	    		$("#notificationChild").append('You can add maximum 4 Defender. Please Remove any one first');
-     	            $(".dismiss").click(function(){
-     	            	$("#notification").fadeOut("slow");
-     	            });
+					showNotification('You can add maximum 4 Defender. Please Remove any one first')
+					ajaxCall = false;					
 				}
 			}
 		}
@@ -1085,7 +1065,7 @@
 	     			  }
 	     			  else
 	    			  {
-	    				  	alert(resp.errorMessage);
+	     				 showNotification(resp.errorMessage);
 	    			  }
 	     		  },
 	     		  error: function( req, status, err ) {
@@ -1125,7 +1105,7 @@
 	     			  }
 	     			  else
 	    			  {
-	    				  	alert(resp.errorMessage);
+	     				 showNotification(resp.errorMessage);
 	    			  }
 	     		  },
 	     		  error: function( req, status, err ) {
@@ -1134,16 +1114,11 @@
 	     		});
    		}
      }
-	function checkPlayerCount()
+	function checkPlayerCountAndOpenPlayOption()
 	{ 
 		if(typeof userGameJson == 'undefined' || userGameJson.playerList.length < 11)
 		{
-			$("#notification").fadeIn("slow");
-			$("#notificationChild").empty();
-    		$("#notificationChild").append('Plaese select 11 players');
-            $(".dismiss").click(function(){
-            	$("#notification").fadeOut("slow");
-          	});
+			showNotification('Plaese select 11 players');			
 		}
 		else
 		{	 
@@ -1166,15 +1141,7 @@
 	     			 console.log(resp);
 	     			 if(resp=="true")
 	     			 {
-	     				$("#notification").fadeIn("slow");
-	     				$("#notificationChild").empty();
-	     	    		 $("#notificationChild").append('your team is already confirmed for current Gameweek');
-	     	    		 
-	     	             $(".dismiss").click(function(){
-	     	                      
-	     	                    $("#notification").fadeOut("slow");
-	     	             });
-	     	             
+	     				showNotification('your team is already confirmed for current Gameweek');
 	     			}
 	     			 else
 	     				 {
@@ -1184,19 +1151,9 @@
 	    	 	     		  url: url,
 	    	 	     		 dataType: 'html',
 	    	 	     		  success: function( resp ) {
-	    	 	     			 console.log("resp"+resp);
-	    	 	     			
-	    	 	     			$("#notification").fadeIn("slow");
-	    	 	     			 $("#notificationChild").empty();
-	    	 	      		 $("#notificationChild").append('your team has been confirmed');
-	    	 	      		 
-	    	 	               $(".dismiss").click(function(){
-	    	 	                       
-	    	 	                      $("#notification").fadeOut("slow");
-	    	 	               });
-	    	 	               
-	    	 	     				 
-	    	 	     				 },
+	    	 	     			console.log("resp"+resp);
+	    	 	     			showNotification('your team has been confirmed');	    	 	     				 
+	    	 	     		},
 	    	 	     		  
 	    	 	     		  error: function( req, status, err ) {
 	    	 	     		    console.log( 'something went wrong', status, err );
@@ -1211,38 +1168,25 @@
 	     		   }
 	     		}); 
     	 }
-    	 else{
-    		 
-    		 $("#notification").fadeIn("slow");
-    		 $("#notificationChild").empty();
-    		 $("#notificationChild").append('Please select 11 players');
-    		 
-             $(".dismiss").click(function(){
-                     
-                    $("#notification").fadeOut("slow");
-             });
-             
+    	 else
+    	 {
+    		 showNotification('Please select 11 players');
     	 }		
-    	 
-	 		}
-     function share()
-		{
-			
-			
-				url ="../mvc/social/facebook/Post";
-				$.ajax({
-		     		  url: url,
-		     		  dataType: 'html',
-		     		  success: function( resp ) {
-		     			 $('.ism-container').html(resp);
-		     		  },
-		     		  error: function( req, status, err ) {
-		     		    console.log( 'something went wrong', status, err );
-		     		  }
-		     		});	
-			
-		}
-  
+	}
+	function share()
+	{			
+		url ="../mvc/social/facebook/Post";
+		$.ajax({
+		   		  url: url,
+		   		  dataType: 'html',
+		   		  success: function( resp ) {
+		   			 $('.ism-container').html(resp);
+		   		  },
+		   		  error: function( req, status, err ) {
+		   		    console.log( 'something went wrong', status, err );
+		   		  }
+		   		});	
+	}
 </script>
 <script>
 	 function openNav() {
@@ -1252,11 +1196,11 @@
 	 	    document.getElementById("myNav").style.height = "0%";
 	 	}	  
 </script>
-<script>
+<%-- <script>
 	$('.team_map_dream11 ul li').prepend($('<img>',{id:'theImg',src:'images/Dream11/close_btn.png'}).addClass('close_btn'))
 </script>
 <script>
 	$('.close_btn').click(function(){
 	$('#picture').attr('src', 'images/team/goalkeeper_old.png');        
 	});
-</script>
+</script> --%>

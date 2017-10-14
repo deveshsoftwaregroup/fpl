@@ -390,12 +390,12 @@
 					      <c:when test="${not empty sessionScope.user.displayName}">
 					      	<li><a href="" data-toggle="modal" data-target="#myModal1">FANTASY LEAGUE</a></li>
 					    	<li><a href="${context}/mvc/user11/UserLanding11">PREDICT 11</a></li>
-					     	<li><a href="${context}/mvc/user/Logout">Sign Out</a></li>
+					     	<li><a href="${context}/mvc/user/Logout">SIGN OUT</a></li>
 					      </c:when>
 					      <c:otherwise>
 					      	<li><a href="" data-toggle="modal" data-target="#myModal1">FANTASY LEAGUE</a></li>
 					    	<li><a href="" data-toggle="modal" data-target="#myModal11">PREDICT 11</a></li>
-					      	<li><a href="" data-toggle="modal" data-target="#myModal11">Sign In</a></li>
+					      	<li><a href="" data-toggle="modal" data-target="#myModal11">SIGN IN</a></li>
 					      </c:otherwise>
 					    </c:choose>
 					        

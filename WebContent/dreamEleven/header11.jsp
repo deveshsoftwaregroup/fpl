@@ -154,7 +154,7 @@
 			}
 			else
 			{
-				alert ("Please complete the team of 15 players");
+				showNotification ("Please complete the team of 11 players");
 			}
 			
 		}

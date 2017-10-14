@@ -111,7 +111,7 @@
 	                <c:when test="${empty sessionScope.user.displayName}">
 	                	<a href="" data-toggle="modal" data-target="#myModal11"><img src="${context}/redBlackTheme/images/predict_11_section.png" class="img-responsive center-block"></a>
 	             	</c:when>
-		             <c:otherwise>
+		            <c:otherwise>
 		              	<a href="${context}/mvc/user11/UserLanding11"><img src="${context}/redBlackTheme/images/predict_11_section.png" class="img-responsive center-block"></a>
 		             </c:otherwise>
                 </c:choose>
