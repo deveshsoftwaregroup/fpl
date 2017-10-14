@@ -385,11 +385,19 @@
 					    <li class="active"><a href="javascript:void(0);" onclick="openHomeHome();">HOME</a></li>		
 					    <li><a href="javascript:void(0);" onclick="homeGuide();">GUIDE</a></li>
 					    <li><a href="http://the12thman.in/">BLOG</a></li>
-					    <li><a href="" data-toggle="modal" data-target="#myModal1">FANTASY LEAGUE</a></li>
-					    <li><a href="" data-toggle="modal" data-target="#myModal1">PREDICT 11</a></li>
-					      <c:if test="${not empty sessionScope.user.displayName}">
-					      <li><a href="${context}/mvc/user/Logout">Sign Out</a></li>
-					      </c:if>
+					    
+					    <c:choose>
+					      <c:when test="${not empty sessionScope.user.displayName}">
+					      	<li><a href="" data-toggle="modal" data-target="#myModal1">FANTASY LEAGUE</a></li>
+					    	<li><a href="${context}/mvc/user11/UserLanding11">PREDICT 11</a></li>
+					     	<li><a href="${context}/mvc/user/Logout">Sign Out</a></li>
+					      </c:when>
+					      <c:otherwise>
+					      	<li><a href="" data-toggle="modal" data-target="#myModal1">FANTASY LEAGUE</a></li>
+					    	<li><a href="" data-toggle="modal" data-target="#myModal11">PREDICT 11</a></li>
+					      	<li><a href="" data-toggle="modal" data-target="#myModal11">Sign In</a></li>
+					      </c:otherwise>
+					    </c:choose>
 					        
 					  </ul>
 					  <ul class="nav navbar-nav navbar-right">
