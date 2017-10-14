@@ -222,8 +222,7 @@ public class SocailAction {
 
 		return new ModelAndView(redirectView);
 	}
-	
-	
+		
 
 	@RequestMapping(value = "facebook/recall", method = RequestMethod.GET)
 	public String callBack(@RequestParam("code") String code,
