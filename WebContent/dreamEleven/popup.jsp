@@ -42,37 +42,35 @@
           
             </div>
           </div>  -->
-
+          
     
     <!-------------------/ Notification Popup------------------->
 	
- <!--Notification-->
-          <div id="notification" style="display: none;">
-            <span class="dismiss"><a title="dismiss this notification">X</a></span>
-            <div id="notificationChild"></div>
-         </div>  
+ 		<!--Notification-->
+			<div id="notification" style="display: none;">
+				<span class="dismiss"><a title="dismiss this notification">X</a></span>
+				<div id="notificationChild"></div>
+			</div> 
+        <!--Notification ends--> 
          
-		 <!-- Play Option payment model starts -->
-		 <div id="paymentModel11" style="display: none;  role="dialog">
+	<!-- Play Option payment model starts -->
+		 <div id="modelPlayOption" style="display: none;  role="dialog">
 		  <div class="modal-dialog modal-lg">		
 		    <!-- Modal content-->
 		    <div class="modal-content">
-		      <div class="modal-header">
-		        
-		        <h4 class="modal-title">Play Option &nbsp;&nbsp;&nbsp;&nbsp; <span class="dismiss"><a title="dismiss this notification">Close</a></span></h4>
-		       
+		      <div class="modal-header">		        
+		        <h4 class="modal-title">Play Option <span class="close"><a title="dismiss this notification">X</a></span></h4>
 		      </div>
 		      <div class="modal-body">
 		        <div class="table-responsive prod-tbl">
 		         <a href="#"><button type="button" class="btn claim_btn" onclick="createHistory11('${sessionScope.gameDetails.gameId}','${gameWeekId}','${sessionScope.userId}');">Play Free </button></a>
                   <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#paymentModel">Pay and Earn</button></a>
                  </div>
-					
 				</div>
 		      </div>
 		    </div>		
 		  </div>
-		  <!-- Play Option payment model ends --> -		 
+	<!-- Play Option payment model ends -->	 
 		<!-- payment popup starts -->
 	 	<div id="paymentModel" class="modal fade" role="dialog">
 		  <div class="modal-dialog modal-lg">		

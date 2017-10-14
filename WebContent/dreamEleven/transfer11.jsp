@@ -289,7 +289,7 @@
 	                                                  
 				</div>
 				 <div class="col-lg-12 pull-right claim_your_prize">
-                                             <!-- <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#paymentModel11">Confirm Your Team</button></a> -->
+                                             <!-- <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#modelPlayOption">Confirm Your Team</button></a> -->
                                              <a href="#"><button type="button" class="btn claim_btn" onclick="checkPlayerCount()">Confirm Your Team</button></a>
                                           	<a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#paymentModel">Make Payment</button></a>
                                                                                    </div>  
@@ -669,7 +669,6 @@
 	
 	<c:if test="${!isUnderDeadline}">
 			$('.ism-element').mousemove(function(){
-			
 			aa();		
 			defenderRemove();
 			midfielderRemove();
@@ -796,7 +795,6 @@
 		});
 	});
 	 
-	 
 	
 	 $('#ismjs-element-filter').change(function(){
 	  var selected = $(':selected',this); 
@@ -813,91 +811,87 @@
 	  if(seletedPrice != null && seletedPrice != 'undefined' && seletedPrice !='0')
 	  {
 		  $("tr.ismjs-menu.ism-row-select:visible").each(function()
-					{
-						var gameClubPlayerId = $(this).attr('id');
-						var playerPrice = 0;
-						if(typeof playerListJson != 'undefined')
-						{
-							for(var playerListIndex = 0; playerListIndex < playerListJson.length; playerListIndex++)
-							{
-							  if(playerListJson[playerListIndex].gameClubPlayerId == gameClubPlayerId)
-								{
-								  playerPrice =   playerListJson[playerListIndex].price;
-								}
-								  
-							}
-						}
-						if(parseInt(seletedPrice) !=playerPrice)
-						{
-							 $(this).hide();
-						}
-						
-					});
-	  }
-	$("p.ism-elements-shown strong.ism-elements-shown__num").text($("tr.ismjs-menu.ism-row-select:visible").length);
-  });
-
- function filterByView(selected)
- {
-	 console.info("---- filter by View");	
-	 console.info(selected.closest('optgroup').attr('label'));
-	  $("tr.ismjs-menu.ism-row-select").each(function()
-		{
-			$(this).show();
-		});
-	  $("div#ismjs-elements-list-tables").find("div.table").each(function(){
-			 // console.info(" table Id: "+$(this).attr('id'));
-			 $(this).show();
-		})
-	  if(typeof selected.closest('optgroup').attr('label') != 'undefined' && selected.closest('optgroup').attr('label') == 'By Position')
-		{
-		  var playerGroup = selected.attr("value");
-		  console.info("--- Selected Position: "+playerGroup);
-		  $("div#ismjs-elements-list-tables").find("div.table").each(function(){
-			  console.info(" table Id: "+$(this).attr('id'));
-			  if(typeof $(this).attr('id') != 'undefined' && $(this).attr('id')!== playerGroup)
-			  {
-				  $(this).hide();
-			  }
-		 })
-		}
-	  else if(typeof selected.closest('optgroup').attr('label') != 'undefined' && selected.closest('optgroup').attr('label') == 'By Team')
-		{
-		  var selectedClub = selected.attr("value");
-		  console.info("--- Selected Club: "+selectedClub);
-		  $("tr.ismjs-menu.ism-row-select").each(function()
 			{
 				var gameClubPlayerId = $(this).attr('id');
-				var selectedClub = selected.attr("value");
-				var playerClubId = "";
+				var playerPrice = 0;
 				if(typeof playerListJson != 'undefined')
 				{
 					for(var playerListIndex = 0; playerListIndex < playerListJson.length; playerListIndex++)
 					{
 					  if(playerListJson[playerListIndex].gameClubPlayerId == gameClubPlayerId)
 						{
-						  playerClubId =   playerListJson[playerListIndex].clubId;
+						  playerPrice =   playerListJson[playerListIndex].price;
 						}
-						  
 					}
 				}
-				if(selectedClub.split('_')[1] !=playerClubId)
+				if(parseInt(seletedPrice) !=playerPrice)
 				{
 					 $(this).hide();
 				}
 				
 			});
-		}
+	  }
+	$("p.ism-elements-shown strong.ism-elements-shown__num").text($("tr.ismjs-menu.ism-row-select:visible").length);
+  });
+
+ function filterByView(selected)
+ {
+	console.info("---- filter by View");	
+	console.info(selected.closest('optgroup').attr('label'));
+	$("tr.ismjs-menu.ism-row-select").each(function()
+	{
+		$(this).show();
+	});
+	$("div#ismjs-elements-list-tables").find("div.table").each(function(){
+		 // console.info(" table Id: "+$(this).attr('id'));
+		 $(this).show();
+	})
+	if(typeof selected.closest('optgroup').attr('label') != 'undefined' && selected.closest('optgroup').attr('label') == 'By Position')
+	{
+	  var playerGroup = selected.attr("value");
+	  console.info("--- Selected Position: "+playerGroup);
+	  $("div#ismjs-elements-list-tables").find("div.table").each(function(){
+		  console.info(" table Id: "+$(this).attr('id'));
+		  if(typeof $(this).attr('id') != 'undefined' && $(this).attr('id')!== playerGroup)
+		  {
+			  $(this).hide();
+		  }
+	 })
+	}
+	else if(typeof selected.closest('optgroup').attr('label') != 'undefined' && selected.closest('optgroup').attr('label') == 'By Team')
+	{
+	  var selectedClub = selected.attr("value");
+	  console.info("--- Selected Club: "+selectedClub);
+	  $("tr.ismjs-menu.ism-row-select").each(function()
+		{
+			var gameClubPlayerId = $(this).attr('id');
+			var selectedClub = selected.attr("value");
+			var playerClubId = "";
+			if(typeof playerListJson != 'undefined')
+			{
+				for(var playerListIndex = 0; playerListIndex < playerListJson.length; playerListIndex++)
+				{
+				  if(playerListJson[playerListIndex].gameClubPlayerId == gameClubPlayerId)
+					{
+					  playerClubId =   playerListJson[playerListIndex].clubId;
+					}
+				}
+			}
+			if(selectedClub.split('_')[1] !=playerClubId)
+			{
+				 $(this).hide();
+			}
+		});
+	}
 	  $("p.ism-elements-shown strong.ism-elements-shown__num").text(($("tr.ismjs-menu.ism-row-select:visible").length+1));
- }
+}
      function addPlayer(userId, gameClubPlayerId)
      {   
      	<c:choose>
-     	<c:when test="${isUnderDeadline}">
-     		alert("Hey buddy ! You are under deadline. Player can be added after deadline");
-     	</c:when>
-     	<c:otherwise>
-     	
+	     	<c:when test="${isUnderDeadline}">
+	     		alert("Hey buddy ! You are under deadline. Player can be added after deadline");
+	     	</c:when>
+     	<c:otherwise>     	
     	 var playerType = '';
     	 var playerName = '';
     	 var playerPrice = '';
@@ -913,7 +907,6 @@
 					  playerPrice = playerListJson[playerListIndex].price;
 					  clubId = playerListJson[playerListIndex].clubId;
 					}
-					  
 				}
 			}
 		console.info("Player Type "+playerType);
@@ -938,26 +931,22 @@
 		} */
 		else if (playerType == 'Goalkeeper')
 		{
-			
 			if(typeof userGameJson != null && typeof userGameJson!= 'undefined' && typeof userGameJson['total'] !='undefined')
 			{
 				if(userGameJson['total']['Goalkeeper'] >=1)
 				{
-					ajaxCall = false;
 					$("#notification").fadeIn("slow");
      				$("#notificationChild").empty();
-     	    		 $("#notificationChild").append('You can add maximum 1 Goalkeeper. Please Remove any one first');
-     	    		 
-     	             $(".dismiss").click(function(){
-     	                      
-     	                    $("#notification").fadeOut("slow");
+     	    		$("#notificationChild").append('You can add maximum 1 Goalkeeper. Please Remove any one first');
+     	            $(".dismiss").click(function(){
+     	            	$("#notification").fadeOut("slow");
      	             });
+     	          	ajaxCall = false;
 				}
 			}
 		}
 		else if (playerType == 'Midfielder')
 		{
-			
 			if(typeof userGameJson != null && typeof userGameJson != 'undefined' && typeof userGameJson['total'] !='undefined')
 			{
 				if(userGameJson['total']['Midfielder'] >=4)
@@ -965,12 +954,10 @@
 					ajaxCall = false;
 					$("#notification").fadeIn("slow");
      				$("#notificationChild").empty();
-     	    		 $("#notificationChild").append('You can add maximum 4 All MidFielder. Please Remove any one first');
-     	    		 
-     	             $(".dismiss").click(function(){
-     	                      
-     	                    $("#notification").fadeOut("slow");
-     	             });
+     	    		$("#notificationChild").append('You can add maximum 4 All MidFielder. Please Remove any one first');
+     	            $(".dismiss").click(function(){
+     	            	$("#notification").fadeOut("slow");
+     	            });
 				}
 			}
 		}
@@ -983,12 +970,10 @@
 					ajaxCall = false;
 					$("#notification").fadeIn("slow");
      				$("#notificationChild").empty();
-     	    		 $("#notificationChild").append('You can add maximum 2 All Rounders. Please Remove any one first');
-     	    		 
-     	             $(".dismiss").click(function(){
-     	                      
-     	                    $("#notification").fadeOut("slow");
-     	             });
+     	    		$("#notificationChild").append('You can add maximum 2 All Rounders. Please Remove any one first');
+     	            $(".dismiss").click(function(){
+	                    $("#notification").fadeOut("slow");
+     	            });
 				}
 			}
 		}
@@ -1001,13 +986,10 @@
 					ajaxCall = false;
 					$("#notification").fadeIn("slow");
      				$("#notificationChild").empty();
-     	    		 $("#notificationChild").append('You can add maximum 4 Defender. Please Remove any one first');
-     	    		 
-     	             $(".dismiss").click(function(){
-     	                      
-     	                    $("#notification").fadeOut("slow");
-     	             });
-					
+     	    		$("#notificationChild").append('You can add maximum 4 Defender. Please Remove any one first');
+     	            $(".dismiss").click(function(){
+     	            	$("#notification").fadeOut("slow");
+     	            });
 				}
 			}
 		}
@@ -1037,7 +1019,6 @@
 	     				 if(playerType == 'Goalkeeper')
 	     				 {
 	     					$("#Goalkeepers .addPlayer>a").closest('tr').attr('disabled', 'disabled');
-
 	     					var elems = '<div class="ismjs-menu" id="'+userId+'_'+gameClubPlayerId+'">'+
 	     			        
 	     			       '<picture>'+
@@ -1048,7 +1029,6 @@
 	     			        '<div class="ism-element__controls">'+
 	     			        '<div  class="ismjs-remove ism-element__control ism-element__control--primary"><a href="#" title="Remove player" class="ism-element__link removePlayerIcon rr">X</a></div></div>';
 	     			        
-	     			       
 	     			        $('.ism-element-row.ism-element-row--pitch:first-child').find('.ismjs-select').first().replaceWith( elems ); 
 	     				 }
 	     				 if(playerType == 'Midfielder')
@@ -1112,7 +1092,6 @@
 	     		    console.log( 'something went wrong', status, err );
 	     		  }
 	     		});
-
 		}
 		
 		</c:otherwise>
@@ -1120,7 +1099,6 @@
      }
      function removePlayer(userId, gameClubPlayerId,elems1,elems2)
      {
-    	//$(".added-player-count").text(""+(userGameJson.playerList.length-1)+"/11");
 		var isPlayerPlaying = false;
 		for(var i=0;i<userGameJson.playerList.length ;i++)
 		{
@@ -1140,8 +1118,8 @@
 	     		  success: function( resp ) {
 	     			  if(resp.isSuccess)
 	     			  {
-	     				 userGameJson = resp.userGameJson;
-	     				 userJson = resp.userJson;
+	     				userGameJson = resp.userGameJson;
+	     				userJson = resp.userJson;
 	     				$(".added-player-count").text(""+userGameJson.playerList.length+"/11");	     				
 	     				$(elems1).parents('.ism-element').find('.ismjs-menu').replaceWith( elems2 );
 	     			  }
@@ -1156,32 +1134,30 @@
 	     		});
    		}
      }
-     function checkPlayerCount()
-	 	{ 
-	    	 if(typeof userGameJson == 'undefined' || userGameJson.playerList.length < 11)
-			 {
-			 	alert("Plaese select 11 players.");
-			 }
-	    	 else
-	    		 {
-	    		 
-	    		 $("#paymentModel11").fadeIn("slow");
-	    		 $(".dismiss").click(function(){
-                      
-	                    $("#paymentModel11").fadeOut("slow");
-	             });
-	    		 	//document.getElementById('paymentModel11');
-	    		 }
-	 	}
-     
+	function checkPlayerCount()
+	{ 
+		if(typeof userGameJson == 'undefined' || userGameJson.playerList.length < 11)
+		{
+			$("#notification").fadeIn("slow");
+			$("#notificationChild").empty();
+    		$("#notificationChild").append('Plaese select 11 players');
+            $(".dismiss").click(function(){
+            	$("#notification").fadeOut("slow");
+          	});
+		}
+		else
+		{	 
+			$("#modelPlayOption").fadeIn("slow");
+			$(".close").click(function(){			              
+				$("#modelPlayOption").fadeOut("slow");
+			});
+		}
+	}     
 	 	
      function createHistory11( gameId, gameWeekId, userId)
 	 	{ 
-    	 
     	 if(typeof userGameJson != 'undefined' && userGameJson.playerList.length >= 11)
     			 {
-    		 
-    	 
     	 url ="/SportMgmt/mvc/player/check-player-history/"+gameId+"/"+gameWeekId+"/"+userId+"?gameType=dream_eleven" ;
  			$.ajax({
 	     		  url: url,
