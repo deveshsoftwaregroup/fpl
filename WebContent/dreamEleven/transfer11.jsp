@@ -289,7 +289,8 @@
 	                                                  
 				</div>
 				 <div class="col-lg-12 pull-right claim_your_prize">
-                                             <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#paymentModel11">Confirm Your Team</button></a>
+                                             <!-- <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#paymentModel11">Confirm Your Team</button></a> -->
+                                             <a href="#"><button type="button" class="btn claim_btn" onclick="checkPlayerCount()">Confirm Your Team</button></a>
                                           	<a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#paymentModel">Make Payment</button></a>
                                                                                    </div>  
 		   
@@ -1155,6 +1156,25 @@
 	     		});
    		}
      }
+     function checkPlayerCount()
+	 	{ 
+	    	 if(typeof userGameJson == 'undefined' || userGameJson.playerList.length < 11)
+			 {
+			 	alert("Plaese select 11 players.");
+			 }
+	    	 else
+	    		 {
+	    		 
+	    		 $("#paymentModel11").fadeIn("slow");
+	    		 $(".dismiss").click(function(){
+                      
+	                    $("#paymentModel11").fadeOut("slow");
+	             });
+	    		 	//document.getElementById('paymentModel11');
+	    		 }
+	 	}
+     
+	 	
      function createHistory11( gameId, gameWeekId, userId)
 	 	{ 
     	 
