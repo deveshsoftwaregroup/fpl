@@ -268,23 +268,20 @@ public class SocailAction {
    			   accessToken = facebookMap.get("access_token");
            }
         	
-        }
-				
+        }				
 		
 		url = new URL("https://graph.facebook.com/me?fields=id,name,email&access_token="
                 + accessToken);
-		
+		//get gender,birthday(MM/DD/YYYY),cover(cover photo),picture(profile pic),password
 		
         System.out.println(url);
-        URLConnection conn1 = url.openConnection();
-       
-
+        URLConnection conn1 = url.openConnection();        
         
-        
-        outputString = ""; line="";
+        outputString = ""; 
+        line="";
         reader = new BufferedReader(new InputStreamReader(
                 conn1.getInputStream()));
-        System.out.println("hjhhhhhhhh"+conn1.getInputStream());
+        //System.out.println("hjhhhhhhhh"+conn1.getInputStream());
         while ((line = reader.readLine()) != null) {
             outputString += line;
         }
