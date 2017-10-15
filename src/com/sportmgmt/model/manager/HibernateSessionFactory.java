@@ -8,6 +8,7 @@ import org.apache.log4j.Logger;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
+import com.sportmgmt.utility.constrant.SportConstrant;
 
 import com.sportmgmt.utility.common.PropertyFileUtility;
 
@@ -27,9 +28,9 @@ public class HibernateSessionFactory {
 				configuration = new Configuration().configure();
 				Properties properties = configuration.getProperties();
 				
-				properties.setProperty("hibernate.connection.url", resouceBundle.getString("connection.url"));
-				properties.setProperty("hibernate.connection.username", resouceBundle.getString("connection.username"));
-				properties.setProperty("hibernate.connection.password", resouceBundle.getString("connection.password"));
+				properties.setProperty(SportConstrant.HIBERNATE_CONNECTION_URL, resouceBundle.getString("connection.url"));
+				properties.setProperty(SportConstrant.HIBERNATE_CONNECTION_USERNAME, resouceBundle.getString("connection.username"));
+				properties.setProperty(SportConstrant.HIBERNATE_CONNECTION_PASSWORD, resouceBundle.getString("connection.password"));
 				
 				builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
 				factory = configuration.buildSessionFactory(builder.build());
