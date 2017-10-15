@@ -20,14 +20,10 @@
 <body class="predict11-bg transfers_predict11 dream_11transfer">
 
 
-
 <!-- twitter button starts -->
  <%-- <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
  <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script> --%>
 <!--  twitter button ends -->	
- 
- 
- 
  
  <div class="container-fluid ">
 		<div class="row">
@@ -36,9 +32,6 @@
 					<h3>Select Players from List</h3>
 					<p>Gameweek ${gameWeekNumber} Deadline: <time datetime="2016-08-27T10:30:00Z">${deadline}</time><p>
 		            <p>Player Count: <span class="added-player-count"> </span> </p>	
-		           
-			
-		          
 								
 					<div class="col-lg-8 team_map_dream11">				                              
 						<div class="ism-element-row ism-element-row--pitch">
@@ -60,8 +53,8 @@
 											</c:when>
 											<c:otherwise>
 		                                        <div class="ism-element__name ism-element__name--placeholder">
-	                                         <abbr title="Goalkeeper" class="ism-element__type"><span class="ism-element__type__short">GKP</span></abbr>
-	                                     </div>
+	                                         		<abbr title="Goalkeeper" class="ism-element__type"><span class="ism-element__type__short">GKP</span></abbr>
+	                                     		</div>
 		                                    </c:otherwise>
 										</c:choose>                                                            
 						    		</div>	

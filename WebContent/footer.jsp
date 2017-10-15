@@ -22,11 +22,11 @@
               <div class="col-lg-1 col-md-1 col-sm-12"></div>
                 
                     <ul class="prtnr">
-                        <li><img src="${context}/redBlackTheme/images/logos/01.png" class="center-block"></li>
-                        <li><img src="${context}/redBlackTheme/images/logos/02.png" class="center-block"></li>
-                        <li><img src="${context}/redBlackTheme/images/logos/03.png" class="center-block"></li>
-                        <li><img src="${context}/redBlackTheme/images/logos/04.png" class="center-block"></li>
-                        <li><img src="${context}/redBlackTheme/images/logos/05.png" class="center-block"></li>
+		            <li><img src="${context}/redBlackTheme/images/02.png" class="center-block" ></li>		                
+	                <li><img src="${context}/redBlackTheme/images/03.png" class="center-block"></li>
+	                <li><img src="${context}/redBlackTheme/images/04.png" class="center-block"></li>
+	                <li><img src="${context}/redBlackTheme/images/05.png" class="center-block"></li>  
+	                <li><img src="${context}/redBlackTheme/images/01.png" class="center-block"></li>  
                
                
               </ul>
@@ -100,13 +100,12 @@
     <hr>
     <div class="bottom_bit">
         <h4>Disclaimer</h4>
-        <p>Lorem ipsum dolor sit amet Molestiae dolores voluptatem non modi unde dolorem ipsa perspiciatis reiciendis, expedita perferendis atque quis ipsum ea nemo enim ab repudiandae magnam! Necessitatibus asperiores architecto eum maxime quia praesentium neque sequi qui fugiat molestias quaerat aperiam harum, quod dolorum natus est reprehenderit odio quos rerum repudiandae ipsum eveniet sunt modi voluptate! Ratione praesentium placeat amet nam doloribus laborum 
-           manish 
+        <p>Lorem ipsum dolor sit amet Molestiae dolores voluptatem non modi unde dolorem ipsa perspiciatis reiciendis, expedita perferendis atque quis ipsum ea nemo enim ab repudiandae magnam! Necessitatibus asperiores architecto eum maxime quia praesentium neque sequi qui fugiat molestias quaerat aperiam harum, quod dolorum natus est reprehenderit odio quos rerum repudiandae ipsum eveniet sunt modi voluptate! Ratione praesentium placeat amet nam doloribus laborum .    
     </p></div>
 
     
     </div>
     
-    <div class="col-lg-10 col-lg-offset-1  col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1  bottom_copyright"><p>@ Copyright JustThinkSports.com 2017. All rights reserved.</p></div>
+    <div class="col-lg-10 col-lg-offset-1  col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1  bottom_copyright"><p>Ⓒ Copyright JustThinkSports.com 2017. All rights reserved.</p></div>
 </div>
 </div>

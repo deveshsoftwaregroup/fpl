@@ -31,7 +31,13 @@
 		<script src="${context}/redBlackTheme/js/bootstrap.js"></script>
 		<script src="${context}/redBlackTheme/js/jquery.bxslider.js"></script>
 		<script src="${context}/redBlackTheme/js/jPushMenu.js" ></script>
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>  
+		
+		<%-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="${context}/redBlackTheme/js/bootstrap.js"></script>
+		<script src="${context}/redBlackTheme/js/jquery.bxslider.js"></script>
+		<script src="${context}/redBlackTheme/js/jPushMenu.js" ></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script> --%>
 		
 		<!-- css code for preloader starts -->
 		<style>
@@ -94,14 +100,9 @@
 		<s:sportExt retrieve="priceList" />
 		
 		<main id="mainContent" tabindex="0" class="ism"> 
-		 	<%@ include	file="facebookPost.jsp"%>
-		
-			
-		
-			<%@ include	file="popup.jsp"%>
-			<%@ include	file="header11.jsp"%>
-		   
-			
+		 	<%@ include	file="facebookPost.jsp"%>		
+			<%@ include	file="../popup.jsp"%>
+			<%@ include	file="header11.jsp"%>			
 			
 			<div class="ism-container"> <!-- Main content of every pages gets loaded at class ism-container  -->	
 				<%@ include	file="transfer11.jsp"%>			

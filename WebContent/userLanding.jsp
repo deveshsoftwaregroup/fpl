@@ -13,7 +13,7 @@
 		<%@ taglib uri="WEB-INF/sportmgmt.tld" prefix="s"%>
 		<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 		
-		<link rel="stylesheet" type="text/css" 	href="${context}/redGreenTheme/toDelete/258578334140_blp.css"> 
+		<%-- <link rel="stylesheet" type="text/css" 	href="${context}/redGreenTheme/toDelete/258578334140_blp.css"> 
 		<link rel="stylesheet" type="text/css" href="${context}/redGreenTheme/css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="${context}/redGreenTheme/css/style.css">
 		<link rel="stylesheet" type="text/css" href="${context}/redGreenTheme/css/font-awesome.min.css">
@@ -21,7 +21,16 @@
 		<link rel="stylesheet" type="text/css" href="${context}/redGreenTheme/css/style-dream.css">
 		<link rel="stylesheet" type="text/css" href="${context}/redGreenTheme/css/theme.css">
 		<link rel="stylesheet" type="text/css" href="${context}/redGreenTheme/css/demo.css">
-		<link rel="stylesheet" type="text/css" href="${context}/redGreensTheme/css/tab-style.css">
+		<link rel="stylesheet" type="text/css" href="${context}/redGreensTheme/css/tab-style.css"> --%>
+		
+		<link rel="stylesheet" type="text/css" 	href="${context}/redBlackTheme/toDelete/258578334140_blp.css"> 
+		<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/style.css">
+		<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/jquery.bxslider.css">
+		<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/style-dream.css">
+		<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/theme.css">
+		<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/demo.css">
+		<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/tab-style.css">
 		<link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,600" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,500,600" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600" rel="stylesheet">
@@ -61,6 +70,17 @@
 		 }
 		</style>
 	</head>
+	<!-- code for preloader starts -->
+	<div id="preloader">
+		<div id="status">&nbsp;</div>
+	</div>
+	<script type="text/javascript">
+		$(window).on("load", function() { // makes sure the whole site is loaded
+			$('#status').fadeOut(1000); // will first fade out the loading animation
+			$('#preloader').delay(500).fadeOut(2000); // will fade out the white DIV that covers the website.
+		})
+	</script>
+	<!-- Code for preloader ends --> 
 	<body class="dream11-bg fantasy-bg transfers_predict11 dream_11transfer">
 		<c:if test="${not empty sessionScope.clubList}">
 			<script type="text/javascript">
@@ -77,8 +97,9 @@
 		</c:if>
 		<s:sportExt retrieve="priceList" />
 		
-		<main id="mainContent" tabindex="0" class="ism"> 
-		<%-- <%@ include	file="popup.jsp"%> --%>
+		<main id="mainContent" tabindex="0" class="ism">
+		<%@ include	file="facebookPost.jsp"%>		
+		<%@ include	file="popup.jsp"%> 
 		<%@ include	file="header.jsp"%>
 		<div class="ism-container">
 			<%@ include	file="transfer.jsp"%>
