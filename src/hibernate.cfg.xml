@@ -9,13 +9,12 @@
         <!-- FOR Local connection 
         <property name="connection.url">jdbc:mysql://localhost:3306/fpl</property>
         <property name="connection.username">admin</property>
-        <property name="connection.password">admin</property>-->
+        <property name="connection.password">admin</property>-->        
         
-        
-        <!-- FOR Stage connection-->
+        <!-- FOR Stage connection
         <property name="connection.url">jdbc:mysql://198.50.136.172:3306/justthin_stage</property>
         <property name="connection.username">justthin_stage</property>
-        <property name="connection.password">justthin_stage</property>
+        <property name="connection.password">justthin_stage</property>-->
         
         <!-- FOR Live connection
         <property name="connection.url">jdbc:mysql://198.50.136.172:3306/justthin_live</property>
