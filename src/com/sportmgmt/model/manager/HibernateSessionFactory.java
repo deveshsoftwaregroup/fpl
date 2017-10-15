@@ -23,14 +23,15 @@ public class HibernateSessionFactory {
 		{
 			try
 			{
-				ResourceBundle resouceBundle= PropertyFileUtility.getEnvProperty();
+				//ResourceBundle resourceBundleCommon = ResourceBundle.getBundle(SportConstrant.ENV_FILE_NAME_COMMON);
+				ResourceBundle resourceBundle = PropertyFileUtility.getEnvProperty();
 				
 				configuration = new Configuration().configure();
 				Properties properties = configuration.getProperties();
-				
-				properties.setProperty(SportConstrant.HIBERNATE_CONNECTION_URL, resouceBundle.getString("connection.url"));
-				properties.setProperty(SportConstrant.HIBERNATE_CONNECTION_USERNAME, resouceBundle.getString("connection.username"));
-				properties.setProperty(SportConstrant.HIBERNATE_CONNECTION_PASSWORD, resouceBundle.getString("connection.password"));
+
+				properties.setProperty(SportConstrant.HIBERNATE_CONNECTION_URL, resourceBundle.getString("connection.url"));
+				properties.setProperty(SportConstrant.HIBERNATE_CONNECTION_USERNAME, resourceBundle.getString("connection.username"));
+				properties.setProperty(SportConstrant.HIBERNATE_CONNECTION_PASSWORD, resourceBundle.getString("connection.password"));
 				
 				builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
 				factory = configuration.buildSessionFactory(builder.build());

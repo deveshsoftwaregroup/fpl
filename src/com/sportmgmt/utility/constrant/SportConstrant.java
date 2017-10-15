@@ -11,6 +11,7 @@ public class SportConstrant {
 	public final static String PLAYER_TYPE_NORMAL = "P";
 	public final static String PLAYER_TYPE_CAPTAIN = "C";
 	public final static String PLAYER_TYPE_VICE_CAPTAIN = "V";
+	public final static String ENV_FILE_NAME_COMMON = "environmentCommon";
 	public final static String ENV_FILE_NAME_LOCAL = "environmentLocal";
 	public final static String ENV_FILE_NAME_STAGE = "environmentStage";
 	public final static String ENV_FILE_NAME_LIVE = "environmentLive";

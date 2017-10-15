@@ -56,7 +56,7 @@
 
 <body class="full-bg">   
 
- <%-- <div id="myModal" class="row" role="dialog">
+<div id="myModal" class="modal fade" role="dialog">
 	<div id="login-overlay" class="col-lg-4 col-lg-offset-8 register_login">
 	          <ul class="nav nav-tabs">
                         <li class="active"><a data-toggle="tab" href="#home">Login</a></li>
@@ -119,7 +119,7 @@
 	              </div>
 	          </div>
 	  </div>
-</div> --%>
+</div>
 
 <div id="myModal11" class="modal fade" role="dialog">
   
