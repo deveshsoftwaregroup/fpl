@@ -589,10 +589,9 @@
                               </div>
                               
 
-                          </div>
-                      </section>
+				</div>
                      
-                      <section id="ismr-detail" class="ism-detail" role="tabpanel" aria-hidden="true">
+                      <%-- <section id="ismr-detail" class="ism-detail" role="tabpanel" aria-hidden="true">
                           <div tabindex="-1">
                               <div>
                                   <div class="table">
@@ -784,23 +783,10 @@
                                   </div>
                               </div>                                       
                           </div>
-                      </section>
-                  </div>
-              </div>                        
-	                </div>                
-	                <div id="ismr-squad-menu"></div>
-	                <div id="ismr-help"></div>
-	                <div id="ismr-confirm"></div>
-	                <!-- <div class="transfer-banner">
-	                <img src="${context}/images/addbanner_728x90_V1.jpg" alt="" class="img-responsive">
-	                </div> -->
-	                <BR>
-	                <div class="transfer-banner">
-	                <img src="${context}/images/ads-bottom.jpg" alt="" class="img-responsive">
-	                </div>
-	                
-		</div>
-	</div>
+                      </section> --%>
+                              
+	               
+	              
 
         <!-- Secondary content -->
         
