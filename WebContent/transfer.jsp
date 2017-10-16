@@ -586,10 +586,18 @@
                                           </div>
                                       </div>
                                   </div>
-                              </div>
+                              
                               
 
-				</div>
+			
+								<div class="col-lg-12 pull-right claim_your_prize">
+                                             <!-- <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#modelPlayOption">Confirm Your Team</button></a> -->
+                                             <a href="#"><button type="button" class="btn claim_btn" onclick="checkPlayerCountAndOpenPlayOption()">Confirm Your Team</button></a>
+                                          	<a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#paymentModel">Make Payment</button></a>
+                                 </div>  
+		   
+                        </div>                                                             
+	                </div>
                      
                       <%-- <section id="ismr-detail" class="ism-detail" role="tabpanel" aria-hidden="true">
                           <div tabindex="-1">
@@ -788,56 +796,30 @@
 	               
 	              
 
-        <!-- Secondary content -->
-        
-        <div id="ismr-side" class="ism-sidebar">
-            <div>
-       
-                <section class="ism-bordered ism-bordered--primary">
+        <!-- Player list starts -->
+        <div id="myNav" class="  my_points overlay">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> 
+			<div class="overlay-content">
+        		<div id="ismr-side" class="ism-sidebar">
+       				<h3 class="subHeader ism-sub-header ism-section-header__title" tabindex="0" id="ismjs-side-focus">PLAYERS</h3>
+							 <!--<div><img src="SportMgmt/redBlackTheme/images/Dream11/player_btn.png" class="img-responsive center-block"></div>-->
+				            <form class="ism-form">
+				          		<div class="ism-form__group">
+				            		<label for="ismjs-element-filter" class="ism-form__label">View</label>
+				                	<div class="ism-form__select-wrap">
+				                        <select id="ismjs-element-filter" class="ism-form__select" data-global="Global" data-position="By Position" data-team="By Team">
+				                            <optgroup label="Global">
+				                                <option value="all">All players</option>
+				                            </optgroup>
+               
 
-                    <div class="ism-section-header">
-                        <h3 class="subHeader ism-sub-header ism-section-header__title" tabindex="0" id="ismjs-side-focus">Player Selection</h3>
-                       
-                    </div>
-
-                    <div id="ismr-sideboard">
-                        <div>
-
-                            <div class="ism-deadline-bar ism-deadline-bar--side">                               
-									<h4 class="league-deadline-bar__heading">Gameweek ${gameWeekNumber} Deadline: <time datetime="2016-08-27T10:30:00Z" class="league-deadline-bar__deadline">${deadline}</time></h4>
-					         </div>
-                        </div>
-
-                            <div class="ism-sideboard">
-                                <div class="ism-scoreboard__panel">                                   
-                                	 
-                                	 <div class="remain_coin">Players Selected : 
-                                	 	<span id="planBalanceDiv" class="added-player-count"></span>
-                                	 	</div>
-       
-                                </div>
-                               <c:if test="${sessionScope.user.hasActivePlan}">
-        <div class="remain_coin">Remaining &#8377 : <span id="planBalanceDiv">${sessionScope.user.activePlan.balance} Million &#8377</span></div>
-        </c:if>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <form class="ism-form">
-                        <div class="ism-form__group">
-                            <label for="ismjs-element-filter" class="ism-form__label">View</label>
-                            <div class="ism-form__select-wrap">
-                                <select id="ismjs-element-filter" class="ism-form__select" data-global="Global" data-position="By Position" data-team="By Team">
-                                    <optgroup label="Global">
-                                        <option value="all">All players</option>
-                                    </optgroup>
-                                    <optgroup label="By Position">
+                   
+                                    <!-- <optgroup label="By Position">
                                         <option value="Goalkeepers">Goalkeepers</option>
                                         <option value="Defenders">Defenders</option>
                                         <option value="Midfielders">Midfielders</option> 
                                         <option value="Forwards">Forwards</option>                                                                               
-                                    </optgroup>
+                                    </optgroup> -->
                                     <optgroup label="By Team">
                                     <c:forEach var="clubMap" items="${sessionScope.clubList}">
                                     	<option value="club_${clubMap['clubId']}">${clubMap['name']}</option>
@@ -870,71 +852,78 @@
                                     </select>
                                 </div>
                             </div>
-                        </div>                    
-
+                        </div>                   
                     </form>
 
-                    <div id="ismr-sideboard"></div>
+                    <!-- <div id="ismr-sideboard"></div>
                     
-                    <div id="ismr-elements-list"><div>
+                    <div id="ismr-elements-list"><div> -->
 
-    <p class="ism-elements-shown"><strong class="ism-elements-shown__num">${fn:length(sessionScope.playerList)}</strong> players shown</p>
+    <%-- <p>Total Players : ${fn:length(sessionScope.playerList)}</p> --%>	
 
-    <div id="ismjs-elements-list-tables"><div>
-    <div class="table" id="Goalkeepers" >
-        <table class="ism-table ism-table--el ism-table--el-list" style="margin-bottom: 0;">
-            <thead>
-                <tr class="ism-table__divider ism-el-type ism-el-type--1">
-                    <th class="ism-table--el-list__status"></th>
-                    <th class="ism-table--el-list__name"><a href="#" class="ism-link--bold">Goalkeepers</a></th>
-                    <th class="ism-table--el-list__price"><abbr title="Price in Million INR">&#8377</abbr></th>
-                    <c:choose>
-                    <c:when test="${sessionScope.playersOrderBy eq 'user_count'}"><th class="ism-table--el-list__stat"><abbr title="Total Score">UC</abbr></c:when>
-                    <c:otherwise><th class="ism-table--el-list__stat"><abbr title="Total Score">TS</abbr></th></c:otherwise>
-                    </c:choose>
-                </tr>
-            </thead>
-            </table>
-            </div>
-            <div class="table scroll-tbl" id="Goalkeepers" >
-            <table class="ism-table ism-table--el ism-table--el-list">
-            <tbody>
-            <c:forEach var="playerMap" items="${sessionScope.playerList}">
-            <c:if test="${playerMap.type eq 'Goalkeeper'}">
-            <tr class="ismjs-menu ism-row-select" id="${playerMap.gameClubPlayerId}">
-    <td class="ism-table--el__status text-center addPlayer">
-        
-            <a href="javascript:void(0);" onclick="addPlayer('${sessionScope.userId}','${playerMap.gameClubPlayerId}');"><i class="fa fa-plus" aria-hidden="true"></i></a>
-        
-    </td>
-    <td class="ism-table--el__primary">
-        <div class="ism-media ism-media--centred">
-            <div class="ism-media__figure">
-				<c:if test="${not empty playerMap.clubId and playerMap.clubId ne ''}">
-					<c:set value="${clubImageMap[playerMap.clubId]}" var="imageSrc" />
-				</c:if>	
-              <!--  player list image -->              
-                    <img src="${context}/images/Goalkeeper_${imageSrc}" height="20" width="20" alt="Arsenal" title="${playerMap.name}" class="ism-shirt">
-            </div>
-            <div class="ism-media__body ism-table--el__primary-text">
-                <a href="#" class="ism-table--el__name">${playerMap.name}</a>
-                <span class="ism-table--el__strong"><a href="javascript:void(0);"   title="Add Player"></a></span>
-            </div>
-        </div>
+    <div id="ismjs-elements-list-tables">
+    	<ul class="nav nav-tabs">
+			<li class="active"><a data-toggle="tab" href="#home">GK</a></li>
+			<li ><a data-toggle="tab" href="#menu1">DEF</a></li>
+			<li><a data-toggle="tab" href="#menu2">MID</a></li>
+			<li><a data-toggle="tab" href="#menu3">FWD</a></li>
+		</ul>
+   		<div class="tab-content">
+	   		<!-- goalkeeper list starts -->
+		    <div id="home" class="tab-pane fade in active">
+		    <!-- below class (table) is used to filter based on player category -->
+				<div class="table heading" id="Goalkeepers" >
+		        	<table>
+		                <tr>
+		                    <th></th>
+		                    <th>Goalkeepers</th>
+		                    <th><abbr title="Price in Million INR">&#8377</abbr></th>
+		                    <c:choose>
+		                    <c:when test="${sessionScope.playersOrderBy eq 'user_count'}">
+		                    	<th><abbr title="Total Score">TS</abbr>
+		                    </c:when>
+		                    <c:otherwise>
+		                    	<th><abbr title="Total Score">TS</abbr></th>
+		                    </c:otherwise>
+		                    </c:choose>
+		                </tr>		            	
+		            </table>
+	          		</div>
+	          		<div class="table scroll-tbl" id="Goalkeepers" >
+								            <table class="my_team_points add_players bxslider13">		           
+												<c:forEach var="playerMap" items="${sessionScope.playerList}">
+													<c:if test="${playerMap.type eq 'Goalkeeper'}">
+													<!-- below class(ismjs-menu ism-row-select) is used to filter goalkeeper list based on team -->
+														<tr class="ismjs-menu ism-row-select" id="${playerMap.gameClubPlayerId}">
+															<td><a href="javascript:void(0);" class="glyphicon glyphicon-plus" onclick="addPlayer('${sessionScope.userId}','${playerMap.gameClubPlayerId}');"></a></td>
+															<td>
+															<c:if test="${not empty playerMap.clubId and playerMap.clubId ne ''}">
+															<c:set value="${clubImageMap[playerMap.clubId]}" var="imageSrc" />
+															</c:if>							                           
+															       <img src="${context}/images/Goalkeeper_${imageSrc}" height="20" width="20" alt="Arsenal" title="${playerMap.name}" class="ism-shirt">
+															       ${playerMap.name}								        
+															</td>
+															<td>${playerMap.price}</td>
+															<c:choose>
+																<c:when test="${sessionScope.playersOrderBy eq 'user_count'}">
+																 	<td>${playerMap.userCount}</td>
+																</c:when>
+															 <c:otherwise>
+															 	<td>${playerMap.totalScore}</td>
+															 </c:otherwise>
+															</c:choose>
+														</tr>
+													</c:if>
+												</c:forEach>							
+											</table>
+										</div>
+									</div>
+									<!-- Goalkeeper List ends -->
+									<!-- Defender List starts -->	
+            
+    
+           
 
-    </td>
-    <td class="ism-table--el__strong playerPrice">${playerMap.price}</td>
-    <c:choose>
-        <c:when test="${sessionScope.playersOrderBy eq 'user_count'}"><td class="ism-table--el__strong">${playerMap.userCount}</td></c:when>
-        <c:otherwise><td class="ism-table--el__strong">${playerMap.totalScore}</td></c:otherwise>
-    </c:choose>
-</tr>
-</c:if>
- </c:forEach>
-</tbody>
-        </table>
-    </div>
-	</div>
 <div>
     <div class="table" id="Defenders">
         <table class="ism-table ism-table--el ism-table--el-list" style="margin-bottom: 0;">
