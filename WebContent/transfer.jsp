@@ -1506,4 +1506,26 @@
   	    $('.mask').hide();
   	}); */
 
-  </script>
+  	function share()
+	{			
+		url ="../mvc/social/facebook/Post";
+		$.ajax({
+		   		  url: url,
+		   		  dataType: 'html',
+		   		  success: function( resp ) {
+		   			 $('.ism-container').html(resp);
+		   		  },
+		   		  error: function( req, status, err ) {
+		   		    console.log( 'something went wrong', status, err );
+		   		  }
+		   		});	
+	}
+ </script>
+<script>
+	 function openNav() {
+	 	    document.getElementById("myNav").style.height = "100%";
+	 	}	
+	 	function closeNav() {
+	 	    document.getElementById("myNav").style.height = "0%";
+	 	}	  
+</script>
