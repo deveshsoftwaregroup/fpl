@@ -1067,6 +1067,8 @@
 	     		    console.log( 'something went wrong', status, err );
 	     		  }
 	     		});
+	     	//alert("going to close after player has been added");
+	     	closeNav();
 		}
 		
 		</c:otherwise>
