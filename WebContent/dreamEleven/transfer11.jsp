@@ -281,10 +281,12 @@
 	                    </div>
 	                                                  
 				</div>
+				<br>
+				<br>
 				 <div class="col-lg-12 pull-right claim_your_prize">
                                              <!-- <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#modelPlayOption">Confirm Your Team</button></a> -->
                                              <a href="#"><button type="button" class="btn claim_btn" onclick="checkPlayerCountAndOpenPlayOption()">Confirm Your Team</button></a>
-                                          	<a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#paymentModel">Make Payment</button></a>
+                                          	<!-- <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#paymentModel">Make Payment</button></a> -->
                   </div>  
 		   
                                                                                      
@@ -939,7 +941,7 @@
 			{
 				if(userGameJson['total']['Midfielder'] >=4)
 				{
-					showNotification('You can add maximum 4 All MidFielder. Please Remove any one first');
+					showNotification('You can add maximum 4 MidFielder. Please Remove any one first');
 					ajaxCall = false;
 				}
 			}
@@ -950,7 +952,7 @@
 			{
 				if(userGameJson['total']['Forward'] >=2)
 				{	
-					showNotification('You can add maximum 2 All Rounders. Please Remove any one first');
+					showNotification('You can add maximum 2 Forward. Please Remove any one first');
 					ajaxCall = false;
 				}
 			}

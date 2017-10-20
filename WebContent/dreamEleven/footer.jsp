@@ -106,6 +106,6 @@
     
     </div>
     
-    <div class="col-lg-10 col-lg-offset-1  col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1  bottom_copyright"><p>Ⓒ Copyright JustThinkSports.com 2017. All rights reserved.</p></div>
+    <div class="col-lg-10 col-lg-offset-1  col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1  bottom_copyright"><p>@ Copyright JustThinkSports.com 2017. All rights reserved.</p></div>
 </div>
 </div>

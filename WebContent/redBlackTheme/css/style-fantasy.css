@@ -222,8 +222,7 @@ header {
 .image_ad h3 {
   color: #fff;
   font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 400;
-  padding-left: 30px; }
+  font-weight: 400; }
 
 .details_adjust img {
   padding-left: 34%;
@@ -286,11 +285,10 @@ header {
   padding-left: 30px; }
 
 .team_map, .team_map_dream11 {
-  background: url(../images/Dream11/myteam_map.png) no-repeat center;
-  height: 485px;
+  background: url(../images/Dream11/myteam_map-fantasy.png) no-repeat center;
+  height: 510px;
   background-size: contain;
-  margin-top: 70px;
-  margin-bottom: 100px; }
+  margin-top: 70px; }
 
 .team_map ul, .team_map_dream11 ul {
   width: 100%;
@@ -301,7 +299,7 @@ header {
   display: inline-block; }
 
 .team_map ul li h4, .team_map_dream11 ul li h4 {
-  margin-top: -22px;
+  margin-top: 0px;
   color: #fff;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 600; }
@@ -342,6 +340,33 @@ header {
 
 .check_points li {
   list-style: none; }
+
+.extra_player {
+  background-color: rgba(6, 144, 68, 0.8);
+  margin-top: 20px;
+  border-radius: 5px; }
+
+.extra_player ul {
+  padding-top: 10px; }
+
+.extra_player ul li {
+  display: inline-block;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px; }
+
+.extra_player ul li h4 {
+  color: #fff;
+  margin-top: -10px; }
+
+.extra_player ul li h5 {
+  background-color: #000;
+  padding: 5px;
+  border-radius: 5px;
+  color: #fff; }
+
+#right_bdr {
+  border-right: 1px solid #055127; }
 
 /*--------------/ My Team----------------------*/
 /*--------------Fixtures----------------------*/
@@ -542,19 +567,12 @@ td, th {
 
 .heading {
   width: 100%;
-  border-radius: 5px;
+  border-radius: 0px 0px 5px 5px;
   padding-top: 5px;
   padding-bottom: 5px;
   color: #000;
   text-align: center;
-  background-color: #dfe5df;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#dfe5df), to(#839287));
-  background-image: -webkit-linear-gradient(top, #dfe5df, #839287);
-  background-image: -moz-linear-gradient(top, #dfe5df, #839287);
-  background-image: -ms-linear-gradient(top, #dfe5df, #839287);
-  background-image: -o-linear-gradient(top, #dfe5df, #839287);
-  background-image: linear-gradient(to bottom, #dfe5df, #839287);
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#f62b2b, endColorstr=#839287); }
+  background-color: #fff; }
 
 .my_points .bx-wrapper {
   margin-bottom: 40px; }
@@ -614,9 +632,6 @@ td, th {
 
 .leaderboard_players tbody tr td:last-child {
   width: 10%; }
-
-.claim_your_prize {
-  margin-top: 50px; }
 
 .claim_your_prize h4 {
   text-align: right;
@@ -712,6 +727,9 @@ td, th {
 .home_scout_section img {
   width: 95%; }
 
+.main_scout_list p b, .home_scout_section p b {
+  color: #A3D300 !important; }
+
 /*-------------------/ Scout -------------------*/
 .close_btn {
   position: relative;
@@ -742,6 +760,66 @@ td, th {
 .leader-board tbody {
   background-color: #222b39 !important; }
 
+/*-------------------/ Leadership board --------------------*/
+/*------------------- Statistics --------------------*/
+.stats {
+  margin-top: 50px; }
+
+.stats table {
+  background-color: #222c3a !important; }
+
+.statistics-plr h3 {
+  color: #fff; }
+
+.select_dropdown {
+  padding-top: 50px; }
+
+.select_list_1 label, .select_list_2 label {
+  color: #fff; }
+
+/*-------------------/ Statistics --------------------*/
+/*-------------------Payment --------------------*/
+.my_logo {
+  padding-top: 20px; }
+
+.Payment_detail {
+  margin-top: 10%;
+  background-color: #385674;
+  padding: 10px;
+  border-radius: 5px; }
+
+.Payment_detail table {
+  background-color: #34495E;
+  margin-bottom: 0px; }
+
+.Payment_detail tr {
+  border-top: 0px;
+  border-bottom: 0px; }
+
+.Payment_detail > .table > tbody > tr > td {
+  border-bottom: 1px solid #243c53;
+  border-top: 0px;
+  border-right: 1px solid #243c53;
+  font-family: "Roboto", Roboto, arial, sans-serif;
+  font-weight: 500; }
+
+.bck_of_btn {
+  text-align: center;
+  margin-top: 10px; }
+
+.bck_btn {
+  background-color: #f62b2b;
+  border: 0px;
+  padding: 10px 30px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f62b2b), to(#d20202)); }
+
+.bnr_img {
+  float: right; }
+
+.logo_img {
+  float: left; }
+
+/*-------------------/ Payment --------------------*/
 /* Shared */
 .loginBtn {
   box-sizing: border-box;
@@ -1045,7 +1123,10 @@ td, th {
     margin-right: 30%; }
 
   .prtnr {
-    padding: 20px 30px 10px 30px !important; } }
+    padding: 20px 30px 10px 30px !important; }
+
+  .bnr_img, .logo_img {
+    height: 63px; } }
 @media screen and (min-width: 480px) and (max-width: 699px) {
   .marg_top {
     margin-top: 20px !important; }
@@ -1149,6 +1230,12 @@ td, th {
   .team_map, .team_map_dream11 {
     padding-top: 30px; }
 
+  .bnr_img, .logo_img {
+    height: 50px; }
+
+  .Payment_detail {
+    margin-top: 28%; }
+
   /*----------------------------------*/
   .overlay {
     height: 0%;
@@ -1217,7 +1304,7 @@ td, th {
     display: none; }
 
   .team_map, .team_map_dream11 {
-    background: url(../images/Dream11/myteam_map_mobile.png) no-repeat center; }
+    background: url(../images/Dream11/mobile-map.png) no-repeat center; }
 
   .team_map_dream11 ul li a img {
     height: 58px !important;
@@ -1263,7 +1350,7 @@ td, th {
     padding: 8px 10px; }
 
   .btm_ftr1, .btm_ftr2 {
-    padding: 8px 30px; }
+    padding: 8px 10px; }
 
   .details_adjust {
     padding: 0px 10px 0px 10px !important; }
@@ -1358,9 +1445,6 @@ td, th {
   .transfers_predict11_map p {
     padding-left: 10px; }
 
-  .bottom_bit p {
-    text-align: left !important; }
-
   .mid_text {
     margin-top: 0px; }
 
@@ -1369,6 +1453,21 @@ td, th {
 
   .date_time {
     margin-bottom: -5px; }
+
+  .my_team .extra_player ul li a img {
+    height: 44px !important; }
+
+  .navbar-toggle .icon-bar {
+    background-color: #fff !important; }
+
+  .my_team .team_map ul li h4 {
+    margin-top: 0px !important; }
+
+  .bnr_img, .logo_img {
+    height: 42px; }
+
+  .Payment_detail {
+    margin-top: 28%; }
 
   /*----------------------------------*/
   .overlay {
@@ -1417,7 +1516,66 @@ td, th {
     top: 15px;
     right: 35px; } }
 .claim_your_prize {
-  color: #fff;
-  padding-top: 20px; }
+  color: #fff; }
+
+@media screen and (max-width: 479px) and (min-width: 370px) {
+  .my_team .team_map {
+    height: 67vh !important; }
+
+  .extra_player ul li {
+    padding: 0px;
+    padding-right: 10px; }
+
+  .extra_player ul li h4 {
+    font-size: 13px !important; } }
+@media screen and (min-width: 300px) and (max-width: 369px) {
+  .my_team .team_map {
+    margin-top: 0px !important;
+    height: 75vh;
+    background-size: 125%; }
+
+  .my_team .team_map ul li a img {
+    height: 40px !important; }
+
+  .my_team .team_map ul li h4 {
+    margin-top: 0px !important; }
+
+  .my_team .extra_player ul li a img {
+    height: 36px !important; }
+
+  .my_team .claim_btn {
+    margin-right: 80px !important; }
+
+  .claim_your_prize h4 {
+    padding-right: unset !important; }
+
+  .extra_player ul li {
+    padding: 0px;
+    padding-right: 5px; }
+
+  .extra_player ul li h4 {
+    font-size: 12px !important; } }
+/*----------------------*/
+#paymentModel1 td, #paymentModel1 th {
+  color: #000 !important; }
+
+#paymentModel1 thead {
+  float: left; }
+
+#paymentModel1 thead th {
+  display: block;
+  height: 40px; }
+
+#paymentModel1 tbody {
+  float: left;
+  padding-top: 0px; }
+
+#paymentModel1 tbody td {
+  display: block;
+  height: 40px; }
+
+.a1a {
+  float: left;
+  display: block; }
 
 /*# sourceMappingURL=style-fantasy.css.map */

@@ -12,7 +12,7 @@
 		<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 		<%@ taglib uri="..//WEB-INF/sportmgmt.tld" prefix="s" %> 
 		<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-		
+				
 		<link rel="stylesheet" type="text/css" 	href="${context}/redBlackTheme/toDelete/258578334140_blp.css"> 
 		<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/style.css">
@@ -21,6 +21,7 @@
 		<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/theme.css">
 		<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/demo.css">
 		<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/tab-style.css">
+<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/style-fantasy.css">
 		
 		<link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,600" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,500,600" rel="stylesheet">
@@ -101,7 +102,7 @@
 		
 		<main id="mainContent" tabindex="0" class="ism"> 
 		 	<%@ include	file="facebookPost.jsp"%>		
-			<%@ include	file="../popup.jsp"%>
+			<%@ include	file="popup.jsp"%>
 			<%@ include	file="header11.jsp"%>			
 			
 			<div class="ism-container"> <!-- Main content of every pages gets loaded at class ism-container  -->	
