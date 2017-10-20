@@ -22,27 +22,15 @@
 	<div class="row">
 		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 transfers_predict11_map">
 			<img src="${context}/redBlackTheme/images/Dream11/dream11_banner.png" class="img-responsive center-block">
-						
 	            <div id="ismr-main" class="ism-main">	
 	                    <div id="ismr-scoreboard">
-	                        <div>
-	                        <!-- <div class="ism-copy">
-	                            <h3 style="color: #193782;"><i class="fa fa-angle-double-right" style="color: #f00;"></i> Select Players from the list</h3>
-	                        	
-	                         </div>  -->
-								
-	                            <!-- Scoreboard -->
-	                            <div class="ism-scoreboard">
+                            <!-- Scoreboard -->
+                            <div class="ism-scoreboard">
 								<div class="league-deadline-bar">
-										<h4 class="league-deadline-bar__heading">Gameweek ${gameWeekNumber} Deadline: <time datetime="2016-08-27T10:30:00Z" class="league-deadline-bar__deadline">${deadline}</time></h4>
-									</div>
-									
-	                            </div>
-	                        </div>
-	                        
-	                        <div>
+									<h4 class="league-deadline-bar__heading">Gameweek ${gameWeekNumber} Deadline: <time datetime="2016-08-27T10:30:00Z" class="league-deadline-bar__deadline">${deadline}</time></h4>
+								</div>
+                            </div>
 	                        	<div class="plain_text" style="padding-left:0px;">
-	                        	
 	                        	<div class="row">
 	                        		<div class="transfer-Col-6">
 	                        			<div class="tabBtn">
@@ -68,7 +56,6 @@
 											</div>	
 											</c:if>
 	                                		<input type="button" class="link" value="Buy Wildcard" data-toggle="modal" data-target="#paymentModel" > 
-	                               			 
 										</div>
 	                        		</div>
 	                        		
@@ -76,20 +63,9 @@
 	                        			<div class="tabBtn" id="freeTransUsedDiv">Free Transfer : <c:choose><c:when test="${sessionScope.user.totalTransferForGameWeek > 1}">Used</c:when><c:otherwise>Available</c:otherwise></c:choose></div>
 	                        		</div>
 	                        	</div>
-	                        	
-	                        		<%-- <div class="transfer-Col-6">
-	                        			<div class="tabBtn">
-											Player Count :     <span class="added-player-count"> </span>                            		
-	                                	</div>
-	                        		</div> --%>
 	                        		<p>Player Count: <span class="added-player-count"> </span> </p>	
 	                        		<p>Remaining &#8377 :</p> <span id="planBalanceDiv">${sessionScope.user.balanceCoins} </span><span> million</span>
-	                        		<%-- <div class="transfer-Col-6">
-	        						<div class="tabBtn"><span>Remaining &#8377 :</span> <span id="planBalanceDiv">${sessionScope.user.balanceCoins} </span><span> million</span></div>
-	          						</div>  --%>                       		
-	                        	  
-	                        	                              
-	                                <div id="paymentModel" class="modal fade" role="dialog">
+	                               <%--  <div id="paymentModel" class="modal fade" role="dialog">
 										  <div class="modal-dialog modal-lg">
 										
 										    <!-- Modal content-->
@@ -136,14 +112,10 @@
 										    </div>
 										
 										  </div>
-										</div>
-	                                                              
+									</div> --%>
 	                        	 </div> 
-	                     
-									
 	                        </div>
 	                    </div>
-              
               
               <div class="col-lg-8 team_map_dream11">
                   <div class="ism-element-row ism-element-row--pitch">
@@ -592,8 +564,8 @@
 			
 								<div class="col-lg-12 pull-right claim_your_prize">
                                              <!-- <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#modelPlayOption">Confirm Your Team</button></a> -->
-                                             <a href="#"><button type="button" class="btn claim_btn" onclick="checkPlayerCountAndOpenPlayOption()">Confirm Your Team</button></a>
-                                          	<a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#paymentModel">Make Payment</button></a>
+                                             <a href="#"><button type="button" class="btn claim_btn" onclick="checkPlayerCountAndConfirmTeam()">Confirm Your Team</button></a>
+                                          	<!-- <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#paymentModel">Make Payment</button></a> -->
                                  </div>  
 		   
                         </div>
