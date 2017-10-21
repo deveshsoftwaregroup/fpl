@@ -51,7 +51,7 @@
 						        	<span class="icon-bar"></span>
 						        	<span class="icon-bar"></span>                        
 					        	</button>
-					         	<a class="navbar-brand" href="#"><img src="${context}/redBlackTheme/images/logo.png" class="img-responsive"></a>   
+					         	<a class="navbar-brand" href="javascript:void(0);" onclick="openHomeHome();"><img src="${context}/redBlackTheme/images/logo.png" class="img-responsive"></a>   
 					       	</div>
 					       	<div class="collapse navbar-collapse cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="bs-example-navbar-collapse-1">
 						        <ul class="nav navbar-nav">
