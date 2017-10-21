@@ -109,8 +109,8 @@
 	                            </div>
 	                    	</div>
 	                    <div id="ismr-pos5" class="ism-pitch__unit ism-pitch__unit--5">
-	                         <s:sport position="3" playerType="Defender"/>
-                            <div class="ism-element" tabindex="0">
+	                        <s:sport position="3" playerType="Defender"/>
+                       		<div class="ism-element" tabindex="0">
                                 <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
                                     <img src="${context}/redBlackTheme/images/Dream11/player.png" 
                                         alt="" title="Select a Defender from the player list" class="center-block img-responsive" onclick="openNav('Defender')">
@@ -217,7 +217,7 @@
 	                    </div>
 					</div>
 	                <div class="ism-element-row ism-element-row--pitch">
-	                    <div id="ismr-pos8" class="ism-pitch__unit ism-pitch__unit--3">
+	                    <div id="ismr-pos8" class="ism-pitch__unit ism-pitch__unit--5">
 	                        <s:sport position="1" playerType="Forward"/>
                             <div class="ism-element" tabindex="0">
                                 <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
@@ -238,7 +238,7 @@
                                 </div>
                             </div>
 	                    </div>
-	                    <div id="ismr-pos9" class="ism-pitch__unit ism-pitch__unit--3">
+	                    <div id="ismr-pos9" class="ism-pitch__unit ism-pitch__unit--5">
 	                        <s:sport position="2" playerType="Forward"/>
                             <div class="ism-element" tabindex="0">
                                 <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
@@ -259,7 +259,7 @@
                                 </div>
                             </div>
 	                    </div>
-	                    <div id="ismr-pos10" class="ism-pitch__unit ism-pitch__unit--3">
+	                    <div id="ismr-pos10" class="ism-pitch__unit ism-pitch__unit--5">
 	                        <s:sport position="3" playerType="Forward"/>
                             <div class="ism-element" tabindex="0">
                                 <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
@@ -477,8 +477,8 @@
 									        <table class="ism-table ism-table--el ism-table--el-list" >			           
 								                <tr>
 								                    <th></th>
-								                   <!--  <th><a href="#" class="ism-link--bold">Forward</a></th> -->
-								                    <th><abbr title="Price in Million INR">&#8377</abbr></th>
+								                    <th><a href="#" class="ism-link--bold">Forward</a></th> 
+								                   <!-- <th><abbr title="Price in Million INR">&#8377</abbr></th>-->
 								                    <c:choose>
 								                    	<c:when test="${sessionScope.playersOrderBy eq 'user_count'}">
 								                    		<th><abbr title="Total Score">UC</abbr>
