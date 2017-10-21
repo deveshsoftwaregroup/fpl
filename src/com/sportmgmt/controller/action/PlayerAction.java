@@ -157,8 +157,11 @@ public class PlayerAction {
 		{
 			try
 			{
-				if(gameType !=null && gameType.equals("dream_eleven"));
+				if(gameType !=null && gameType.equals("dream_eleven"))
 				pointRankingUtility.setDreamEleven(true);
+				else{
+					pointRankingUtility.setDreamEleven(false);
+				}
 				List<String> logList =pointRankingUtility.createPlayerHistoryForUsers(gameId,gameWeekId,userId);
 				sportMgmtResponse.setSuccess(true);
 				sportMgmtResponse.setLogList(logList);
@@ -197,9 +200,14 @@ public class PlayerAction {
 	     logger.info("inside check player history gameId="+gameId);
 	     logger.info("gameWeekId="+gameWeekId);
 	     logger.info("userIdddd="+userId);
-		 if(gameType !=null && gameType.equals("dream_eleven"));
+	     logger.info("gameeeee="+gameType);
+	     
+		 if(gameType !=null && gameType.equals("dream_eleven"))
 		 {
 			PlayerManager.setDreamEleven(true);
+		 }
+		 else{
+			 PlayerManager.setDreamEleven(false);
 		 }
 			
 		if(PlayerManager.isGameWeekPlayerHistoryExist(userId, gameWeekId))

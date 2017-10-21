@@ -1263,19 +1263,19 @@
 		{
 			ajaxCall = false;
 		}
-		else if(avialBalance < playerPrice)
+		 else if(avialBalance < playerPrice)
 		{
 			alert("Bank Account is less than player price");
 			ajaxCall = false;
-		}
-		else if(!(userJson.hasActivePlan || userJson.totalTransferForGameWeek <=1 || userJson.gameWeekNumberForPlayerTransfer <=1 || userJson.totalPoint > 4))
+		} 
+		 else if(!(userJson.hasActivePlan || userJson.totalTransferForGameWeek <=1 || userJson.gameWeekNumberForPlayerTransfer <=1 || userJson.totalPoint > 4))
 		{
 			ajaxCall = false;
 			if(userJson.totalPoint < 4)
 			{
 				alert("Please active wild card to add player");
 			}
-		}
+		} 
 		else if (playerType == 'Goalkeeper')
 		{
 			if(typeof userGameJson != null && typeof userGameJson != 'undefined' && typeof userGameJson['total'] !='undefined')
@@ -1469,6 +1469,21 @@
 	     		});
    		}
      }
+     
+     function checkPlayerCountAndConfirmTeam()
+ 	{ 
+ 		if(typeof userGameJson == 'undefined' || userGameJson.playerList.length < 15)
+ 		{
+ 			showNotification('Please select 15 players');			
+ 		}
+ 		else
+ 		{	 
+ 			$("#modelPlayOption").fadeIn("slow");
+ 			$(".close").click(function(){			              
+ 				$("#modelPlayOption").fadeOut("slow");
+ 			});
+ 		}
+ 	} 
      /* $(document).ajaxStart(function(){
   		$("#ajaxloader").css("display", "block");
   		$('.mask').show();
@@ -1478,7 +1493,51 @@
   	    $("#ajaxloader").css("display", "none");
   	    $('.mask').hide();
   	}); */
-
+  	 function createHistory11( gameId, gameWeekId, userId)
+ 	{ 
+	 if(typeof userGameJson != 'undefined' && userGameJson.playerList.length >= 15)
+			 {
+	 url ="/SportMgmt/mvc/player/check-player-history/"+gameId+"/"+gameWeekId+"/"+userId+"?gameType=" ;
+			$.ajax({
+     		  url: url,
+     		 dataType: 'html',
+     		  success: function( resp ) {
+     			 console.log(resp);
+     			 if(resp=="true")
+     			 {
+     				showNotification('your team is already confirmed for current Gameweek');
+     			}
+     			 else
+     				 {
+		
+     				url ="/SportMgmt/mvc/player/make-player-history-for-user/"+gameId+"/"+gameWeekId+"/"+userId+"?gameType=" ;
+    	 			$.ajax({
+    	 	     		  url: url,
+    	 	     		 dataType: 'html',
+    	 	     		  success: function( resp ) {
+    	 	     			console.log("resp"+resp);
+    	 	     			showNotification('your team has been confirmed');	    	 	     				 
+    	 	     		},
+    	 	     		  
+    	 	     		  error: function( req, status, err ) {
+    	 	     		    console.log( 'something went wrong', status, err );
+    	 	     		  }
+    	 	     		    
+    	 	     		  });
+     				 }	     		  
+     		 },
+     		 
+     		   error: function( req, status, err ) {
+     		    console.log( 'something went wrong', status, err );
+     		   }
+     		}); 
+	 }
+	 else
+	 {
+		 showNotification('Please select 11 players');
+	 }		
+}
+ 
   	function share()
 	{			
 		url ="../mvc/social/facebook/Post";
