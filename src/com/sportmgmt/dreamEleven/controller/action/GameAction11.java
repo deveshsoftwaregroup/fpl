@@ -237,7 +237,7 @@ public class GameAction11 {
 			}
 			else
 			{
-				errorMessage = "Invalid Sesison";
+				errorMessage = "Invalid Sesison. Please Logout and Re-Login";
 				errorCode = "ERROR_INVALID_SESSION";
 			}
 		}
