@@ -77,12 +77,12 @@
 	                                     
 	                            
 	                        <li>
-	                            <a href="javascript:void(0)" onclick="uploadRulesView();">Rules</a>
+	                             <a href="javascript:void(0)" onclick="uploadRulesView();">Help</a>
 	                        </li>
-	                        <li>
-	                            <!-- <a href="/SportMgmt/FAQ.jsp" class="ism-nav__tab ">FAQ</a> -->
+	                        <!-- <li>
+	                            <a href="/SportMgmt/FAQ.jsp" class="ism-nav__tab ">FAQ</a>
 	                            <a href="javascript:void(0);"  onclick="uploadFAQView();">FAQ</a>
-	                        </li>                       
+	                        </li> -->                       
 	                        <li>
 	                            <a href="/SportMgmt/mvc/user/Logout">Sign Out</a>
 	                        </li>
