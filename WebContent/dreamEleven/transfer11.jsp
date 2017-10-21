@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+	<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="context" value="<%=request.getContextPath()%>" />
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
@@ -215,27 +215,6 @@
                                 </div>
                             </div>
 	                    </div>
-	                    <div id="ismr-pos14" class="ism-pitch__unit ism-pitch__unit--5">
-	                        <s:sport position="4" playerType="Midfielder"/>
-                            <div class="ism-element" tabindex="0">
-                                <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
-                                    <img src="${context}/redBlackTheme/images/Dream11/player.png" 
-                                        alt="" title="Select a Midfielder from the player list" class="center-block img-responsive" onclick="openNav('Midfielder')">
-                            		<c:choose>
-                                     <c:when test="${isPlayerAvail}">
-                                     	<div class="ism-element__name ism-element__name--placeholder">
-                                        ${playerName} <abbr title="Midfielder" class="ism-element__type"></abbr>
-                                     </div>
-                                     </c:when>
-                                     <c:otherwise>
-                                     <div class="ism-element__name ism-element__name--placeholder">
-                                         <abbr title="Midfielder" class="ism-element__type"><span class="ism-element__type__short">MID</span></abbr>
-                                     </div>
-                                     </c:otherwise>
-                                     </c:choose>
-                                </div>
-                            </div>
-	                    </div>
 					</div>
 	                <div class="ism-element-row ism-element-row--pitch">
 	                    <div id="ismr-pos8" class="ism-pitch__unit ism-pitch__unit--3">
@@ -261,6 +240,27 @@
 	                    </div>
 	                    <div id="ismr-pos9" class="ism-pitch__unit ism-pitch__unit--3">
 	                        <s:sport position="2" playerType="Forward"/>
+                            <div class="ism-element" tabindex="0">
+                                <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
+                                    <img src="${context}/redBlackTheme/images/Dream11/player.png" 
+                                        alt="" title="Select a Forward from the player list" class="center-block img-responsive" onclick="openNav('Forward')">
+                                     <c:choose>
+                                     <c:when test="${isPlayerAvail}">
+                                     	<div class="ism-element__name ism-element__name--placeholder">
+                                        ${playerName} <abbr title="Forward" class="ism-element__type"></abbr>
+                                     </div>
+                                     </c:when>
+                                     <c:otherwise>
+                                     <div class="ism-element__name ism-element__name--placeholder">
+                                        <abbr title="Forward" class="ism-element__type"><span class="ism-element__type__short">FWD</span></abbr>
+                                     </div>
+                                     </c:otherwise>
+                                     </c:choose>
+                                </div>
+                            </div>
+	                    </div>
+	                    <div id="ismr-pos10" class="ism-pitch__unit ism-pitch__unit--3">
+	                        <s:sport position="3" playerType="Forward"/>
                             <div class="ism-element" tabindex="0">
                                 <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
                                     <img src="${context}/redBlackTheme/images/Dream11/player.png" 
@@ -935,9 +935,9 @@
 		{
 			if(typeof userGameJson != null && typeof userGameJson != 'undefined' && typeof userGameJson['total'] !='undefined')
 			{
-				if(userGameJson['total']['Midfielder'] >=4)
+				if(userGameJson['total']['Midfielder'] >=3)
 				{
-					showNotification('You can add maximum 4 MidFielder. Please Remove any one first');
+					showNotification('You can add maximum 3 MidFielder. Please Remove any one first');
 					ajaxCall = false;
 				}
 			}
@@ -946,9 +946,9 @@
 		{
 			if(typeof userGameJson != null && typeof userGameJson != 'undefined' && typeof userGameJson['total'] !='undefined')
 			{
-				if(userGameJson['total']['Forward'] >=2)
+				if(userGameJson['total']['Forward'] >=3)
 				{	
-					showNotification('You can add maximum 2 Forward. Please Remove any one first');
+					showNotification('You can add maximum 3 Forward. Please Remove any one first');
 					ajaxCall = false;
 				}
 			}

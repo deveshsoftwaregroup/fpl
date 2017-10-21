@@ -223,31 +223,7 @@
                              
                      </div>
                        </div>
-                           <div id="ismr-pos14" class="ism-pitch__unit ism-pitch__unit--5">
-                           <s:sport position="4" playerType="Midfielder" pageName="DE_MY_POINT"/>
-                               <div class="ism-element" tabindex="0">
-                       	      
-							<c:choose>
-                               
-                               <c:when test="${isPlyaerInTopElevent}">
-							<picture>
-							 <a href="#"> <img src="${context}/images/${imageSrc}" alt="" title="" class=" highlited_plr" ></a>
-							</picture>
-							</c:when>
-                               
-                               
-                               <c:when test="${not empty clubId and clubId ne ''}">
-                               <spring:message code="club_${clubId}_image" var="imageSrc" />
-							<picture>
-							<img src="${context}/images/${imageSrc}" alt="'+playerName+'" title="" class="ism-shirt ism-element__shirt" >
-							</picture>
-                                  </c:when>  
-                               
-                               </c:choose> 
-                              <h4>${playerName}</h4>
-                            
-                     </div>
-                       </div>   
+                              
                               </div>
                     
                     <div class="ism-element-row ism-element-row--pitch">
@@ -278,6 +254,29 @@
                         </div>
                         <div id="ismr-pos9" class="ism-pitch__unit ism-pitch__unit--3"> 
                            <s:sport position="2" playerType="Forward" pageName="DE_MY_POINT"/>
+                               <div class="ism-element" tabindex="0">
+							<c:choose>
+                               
+                               <c:when test="${isPlyaerInTopElevent}">
+							<picture>
+							 <a href="#"> <img src="${context}/images/${imageSrc}" alt="" title="" class=" highlited_plr" ></a>
+							</picture>
+							</c:when>
+                               
+                               
+                               <c:when test="${not empty clubId and clubId ne ''}">
+                               <spring:message code="club_${clubId}_image" var="imageSrc" />
+							<picture>
+							<img src="${context}/images/${imageSrc}" alt="'+playerName+'" title="" class="ism-shirt ism-element__shirt" >
+							</picture>
+                                  </c:when>  
+                               
+                               </c:choose> 
+                              <h4>${playerName}</h4>
+                     </div>
+                            </div>
+                            <div id="ismr-pos10" class="ism-pitch__unit ism-pitch__unit--3"> 
+                           <s:sport position="3" playerType="Forward" pageName="DE_MY_POINT"/>
                                <div class="ism-element" tabindex="0">
 							<c:choose>
                                
