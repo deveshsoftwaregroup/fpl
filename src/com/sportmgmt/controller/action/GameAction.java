@@ -82,12 +82,12 @@ public class GameAction {
 		boolean isSuccess = false;
 		String errorMessage = "";
 		String errorCode = "";
-		logger.info("------------ addPlayer ");
+		logger.info("addPlayer ");
 		if(userId == null || userId.equals("") || gameClubPlayerId == null || gameClubPlayerId.equals(""))
 		{
 			errorMessage = "Parameter missing";
 			errorCode = ErrorConstrant.INVALID_PARAMETER;
-			logger.info("------------ Parameter is invalid/missing ");
+			logger.info("Parameter is invalid/missing ");
 		}
 		else
 		{
@@ -238,7 +238,7 @@ public class GameAction {
 			}
 			else
 			{
-				errorMessage = "Invalid Sesison";
+				errorMessage = "Invalid Sesison. Please logout and Re-Login";
 				errorCode = "ERROR_INVALID_SESSION";
 			}
 		}
