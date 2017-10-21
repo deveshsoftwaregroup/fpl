@@ -338,7 +338,7 @@
 								                <tr>
 								                    <th></th>
 								                    <th>Goalkeepers</th>
-								                    <th><abbr title="Price in Million INR">&#8377</abbr></th>
+								                    <!-- <th><abbr title="Price in Million INR">&#8377</abbr></th> -->
 								                    <c:choose>
 								                    <c:when test="${sessionScope.playersOrderBy eq 'user_count'}">
 								                    	<th><abbr title="Total Score">TS</abbr>
@@ -364,7 +364,7 @@
 															       <img src="${context}/images/Goalkeeper_${imageSrc}" height="20" width="20" alt="Arsenal" title="${playerMap.name}" class="ism-shirt">
 															       ${playerMap.name}								        
 															</td>
-															<td>${playerMap.price}</td>
+															<%-- <td>${playerMap.price}</td> --%>
 															<c:choose>
 																<c:when test="${sessionScope.playersOrderBy eq 'user_count'}">
 																 	<td>${playerMap.userCount}</td>
@@ -387,7 +387,7 @@
 								                <tr>
 								                    <th></th>
 								                    <th><a href="#">Defender</a></th>
-								                    <th><abbr title="Price in Million INR">&#8377</abbr></th>
+								                   <!--  <th><abbr title="Price in Million INR">&#8377</abbr></th> -->
 								                    <c:choose>
 								                    	<c:when test="${sessionScope.playersOrderBy eq 'user_count'}">
 								                    		<th><abbr title="Total Score">UC</abbr>
@@ -412,7 +412,7 @@
 															<img src="${context}/images/Defender_${imageSrc}" height="20" width="20" alt="" title="${playerMap.name}" class="ism-shirt">
 											                ${playerMap.name}						                
 											            </td>
-													    <td>${playerMap.price}</td>
+													    <%-- <td>${playerMap.price}</td> --%>
 													    <c:choose>
 													        <c:when test="${sessionScope.playersOrderBy eq 'user_count'}"><td>${playerMap.userCount}</td></c:when>
 													        <c:otherwise><td>${playerMap.totalScore}</td></c:otherwise>
@@ -431,7 +431,7 @@
 									            <tr>
 								                    <th></th>
 								                    <th><a href="#">Midfielder</a></th>
-								                    <th><abbr title="Price in Million INR">&#8377</abbr></th>
+								                    <!-- <th><abbr title="Price in Million INR">&#8377</abbr></th> -->
 								                    <c:choose>
 								                    	<c:when test="${sessionScope.playersOrderBy eq 'user_count'}">
 								                    		<th><abbr title="Total Score">UC</abbr></c:when>
@@ -455,7 +455,7 @@
 												               <img src="${context}/images/Midfielder_${imageSrc}" height="20" width="20" alt="" title="${playerMap.name}">
 												               ${playerMap.name }
 												     		</td>
-														    <td>${playerMap.price}</td>
+														    <%-- <td>${playerMap.price}</td> --%>
 														    <c:choose>
 														        <c:when test="${sessionScope.playersOrderBy eq 'user_count'}">
 														        	<td>${playerMap.userCount}</td>
@@ -477,7 +477,7 @@
 									        <table class="ism-table ism-table--el ism-table--el-list" >			           
 								                <tr>
 								                    <th></th>
-								                    <th><a href="#" class="ism-link--bold">Forward</a></th>
+								                   <!--  <th><a href="#" class="ism-link--bold">Forward</a></th> -->
 								                    <th><abbr title="Price in Million INR">&#8377</abbr></th>
 								                    <c:choose>
 								                    	<c:when test="${sessionScope.playersOrderBy eq 'user_count'}">
@@ -505,7 +505,7 @@
 															<img src="${context}/images/Forward_${imageSrc}" height="20" width="20" alt="" title="${playerMap.name}">
 											                ${playerMap.name}
 										    			</td>
-													    <td>${playerMap.price }</td>
+													   <%--  <td>${playerMap.price }</td> --%>
 													    <c:choose>
 													        <c:when test="${sessionScope.playersOrderBy eq 'user_count'}">
 													        	<td>${playerMap.userCount}</td>
