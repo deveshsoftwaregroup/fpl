@@ -71,9 +71,9 @@
 	                        <li>
 	                            <a href="javascript:void(0);" onclick="uploadMyPointView('${sessionScope.gameDetails.gameId}','${sessionScope.userId}','','');">My Points</a>
 	                        </li>   
-	                        <li class="ism-nav__list__item">
+	                       <%--  <li class="ism-nav__list__item">
 	                            <a href="javascript:void(0);" onclick="uploadPointTableView('${sessionScope.gameDetails.gameId}');">Point Table</a>
-	                        </li>  
+	                        </li>  --%> 
 	                                     
 	                            
 	                        <li>
