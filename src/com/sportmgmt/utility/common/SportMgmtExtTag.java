@@ -17,6 +17,7 @@ import javax.servlet.jsp.tagext.TagSupport;
 import org.apache.log4j.Logger;
 
 import com.sportmgmt.model.manager.GameManager;
+import com.sportmgmt.model.manager.GameWeeKManager;
 import com.sportmgmt.utility.constrant.SportConstrant;
 
 public class SportMgmtExtTag extends TagSupport{
@@ -142,7 +143,8 @@ public class SportMgmtExtTag extends TagSupport{
     				 {
     					 Timestamp endTimeOfLastMatch =  lastMatchOfGameWeek.get(0);
     					 long startDeadlineMils = startTimeOfFirstMatch.getTime() - TimeUnit.HOURS.toMillis(deadLineHrsBeforeStart);
-    					 long endDeadlineMils = endTimeOfLastMatch.getTime() + TimeUnit.HOURS.toMillis(deadLineHrsAfterEnd);
+    					// long endDeadlineMils = endTimeOfLastMatch.getTime() + TimeUnit.HOURS.toMillis(deadLineHrsAfterEnd);
+    					 long endDeadlineMils = startTimeOfFirstMatch.getTime();
     					 long currentTimeMils = System.currentTimeMillis();
     					 logger.info("----------- startDeadlineMils: "+startDeadlineMils);
     					 logger.info("----------- endDeadlineMils: "+endDeadlineMils);
@@ -151,6 +153,13 @@ public class SportMgmtExtTag extends TagSupport{
     					 {
     						 pageContext.setAttribute("isUnderDeadline", true);
     						 logger.info("----------- isUderDeadline: is true ");
+    					 }
+    					 else if(currentTimeMils >endDeadlineMils)
+    					 {
+    						 List<Integer> sortedGameWeekIds = GameWeeKManager.sortedGameWeekIds(gameId);
+    						 gameWeekId =sortedGameWeekIds.get(gameWeekNumber);
+    						 pageContext.setAttribute("gameWeekNumber", gameWeekNumber+1);
+    		    			 pageContext.setAttribute("gameWeekId", gameWeekId);
     					 }
     				 }
     			 }
