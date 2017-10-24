@@ -157,9 +157,17 @@ public class SportMgmtExtTag extends TagSupport{
     					 else if(currentTimeMils >endDeadlineMils)
     					 {
     						 List<Integer> sortedGameWeekIds = GameWeeKManager.sortedGameWeekIds(gameId);
-    						 gameWeekId =sortedGameWeekIds.get(gameWeekNumber);
-    						 pageContext.setAttribute("gameWeekNumber", gameWeekNumber+1);
-    		    			 pageContext.setAttribute("gameWeekId", gameWeekId);
+    						 if(sortedGameWeekIds.size() > gameWeekNumber)
+    						 {
+    							 gameWeekId =sortedGameWeekIds.get(gameWeekNumber);
+        						 pageContext.setAttribute("gameWeekNumber", gameWeekNumber+1);
+        		    			 pageContext.setAttribute("gameWeekId", gameWeekId);
+    						 }
+    						 else
+    						 {
+    							 pageContext.setAttribute("isUnderDeadline", true);
+    							 pageContext.setAttribute("isLastGameWeek", true);
+    						 }
     					 }
     				 }
     			 }
