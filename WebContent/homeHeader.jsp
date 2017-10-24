@@ -16,6 +16,7 @@
 	<%@ taglib uri="WEB-INF/sportmgmt.tld" prefix="s" %>  
 	<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 	
+	
 	<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/style.css">	
 	<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/jquery.bxslider.css">
@@ -34,6 +35,8 @@
 	<script src="${context}/redBlackTheme/js/jquery.bxslider.js"></script>
 	<script src="${context}/redBlackTheme/js/jPushMenu.js" ></script>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+	<script src="${context}/redBlackTheme/js/jquery-3.2.1.js" ></script>
+	
   	
   	<style>
          .bx-wrapper .bx-controls-direction a {display: none;}
@@ -384,7 +387,7 @@
 					  <ul class="nav navbar-nav">
 					    <li class="active"><a href="javascript:void(0);" onclick="openHomeHome();">HOME</a></li>		
 					    <li><a href="javascript:void(0);" onclick="homeGuide();">GUIDE</a></li>
-					    <li><a href="http://the12thman.in/">BLOG</a></li>
+					    <li><a target="_blank" href="http://the12thman.in/">BLOG</a></li>
 					    
 					    <c:choose>
 					      <c:when test="${not empty sessionScope.user.displayName}">
