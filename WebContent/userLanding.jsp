@@ -14,16 +14,7 @@
 		<%@ taglib uri="WEB-INF/sportmgmt.tld" prefix="s"%>
 		<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 		
-		<%-- <link rel="stylesheet" type="text/css" 	href="${context}/redGreenTheme/toDelete/258578334140_blp.css"> 
-		<link rel="stylesheet" type="text/css" href="${context}/redGreenTheme/css/bootstrap.css">
-		<link rel="stylesheet" type="text/css" href="${context}/redGreenTheme/css/style.css">
-		<link rel="stylesheet" type="text/css" href="${context}/redGreenTheme/css/font-awesome.min.css">
-		<link rel="stylesheet" type="text/css" href="${context}/redGreenTheme/css/jquery.bxslider.css">
-		<link rel="stylesheet" type="text/css" href="${context}/redGreenTheme/css/style-dream.css">
-		<link rel="stylesheet" type="text/css" href="${context}/redGreenTheme/css/theme.css">
-		<link rel="stylesheet" type="text/css" href="${context}/redGreenTheme/css/demo.css">
-		<link rel="stylesheet" type="text/css" href="${context}/redGreensTheme/css/tab-style.css"> --%>
-		
+				
 		<link rel="stylesheet" type="text/css" 	href="${context}/redBlackTheme/toDelete/258578334140_blp.css"> 
 		<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/style.css">
@@ -41,7 +32,8 @@
 		<script src="${context}/redBlackTheme/js/bootstrap.js"></script>
 		<script src="${context}/redBlackTheme/js/jquery.bxslider.js"></script>
 		<script src="${context}/redBlackTheme/js/jPushMenu.js" ></script>
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>  
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script> 
+		<script src="${context}/redBlackTheme/js/jquery-3.2.1.js" ></script> 
 
 		<style>
 		#preloader {
