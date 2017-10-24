@@ -28,51 +28,20 @@
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,400,600,700" rel="stylesheet">
 		
+		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="${context}/redBlackTheme/js/bootstrap.js"></script>
 		<script src="${context}/redBlackTheme/js/jquery.bxslider.js"></script>
 		<script src="${context}/redBlackTheme/js/jPushMenu.js" ></script>
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>  
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+		<script src="${context}/redBlackTheme/js/jquery-3.2.1.js" ></script>  	
 		
-		<%-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="${context}/redBlackTheme/js/bootstrap.js"></script>
-		<script src="${context}/redBlackTheme/js/jquery.bxslider.js"></script>
-		<script src="${context}/redBlackTheme/js/jPushMenu.js" ></script>
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script> --%>
 		
-		<!-- css code for preloader starts -->
-		<style>
-		#preloader {
-		  position: fixed;
-		  top:0;
-		  left:0;
-		  right:0;
-		  bottom:0;
-		  background-color:#fff; /* change if the mask should have another color then white */
-		  z-index:10000; /* makes sure it stays on top */
-		}
 		
-		#status {
-		  
-		  width:300px;
-		  height:300px;
-		  position:absolute;
-		  left:53%; /* centers the loading animation horizontally one the screen */
-		  top:50%; /* centers the loading animation vertically one the screen */
-		  background-image:url("/SportMgmt/redBlackTheme/images/load.gif"); /* path to your loading animation */
-		  background-repeat:no-repeat;
-		  background-position:center;
-		  margin:-200px 0 0 -200px; /* is width and height divided by two */
-		}
-		@media screen and (min-width : 360px) and (max-width : 479px) {
-		  #status { left:65%;}
-		 }
-		</style>
-		<!-- css code for preloader ends -->
 	</head>
 	
 	<!-- code for preloader starts -->
-	<div id="preloader">
+	<%-- <div id="preloader">
 		<div id="status">&nbsp;</div>
 	</div>
 	<script type="text/javascript">
@@ -80,7 +49,7 @@
 			$('#status').fadeOut(1000); // will first fade out the loading animation
 			$('#preloader').delay(500).fadeOut(2000); // will fade out the white DIV that covers the website.
 		})
-	</script>
+	</script> --%>
 	<!-- Code for preloader ends --> 
 	
 	<body class="predict11-bg transfers_predict11">
