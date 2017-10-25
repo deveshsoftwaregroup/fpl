@@ -80,6 +80,10 @@ public class PlayerAction {
 		{
 			playerList = sortUtility.sortPlayerListByUserCount(playerList);
 		}
+		else if(orderBy.equals("name"))
+		{
+			playerList = sortUtility.sortPlayerListByPlayerName(playerList);
+		}
 		resultMap.put("success", true);
 		resultMap.put("playerList", playerList);
 		session.setAttribute("playerList", playerList);
