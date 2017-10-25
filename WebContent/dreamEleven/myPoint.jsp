@@ -13,6 +13,42 @@
          <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 transfers_predict11_map">
             <img src="${context}/redBlackTheme/images/banner12.png" class="img-responsive center-block">
             <div>
+            <h3 class="subHeader pager-heading">Gameweek ${requestScope.sportMgmtRes.result.gameWeek.gameWeekNumber}</h3>
+            <div class="league-pager">
+								<div class="pager pager-left">
+									<c:choose>
+									<c:when test="${sportMgmtRes.result.gameWeek.gameWeekNumber eq '1'}">
+									<a href="javascript:void(0);" title="View previous" class="pager-btn btn-prev">
+										<span class="fa fa-angle-left"></span>
+										<span>Previous</span>
+									</a>
+									</c:when>
+									<c:otherwise>
+									<a href="javascript:void(0);" onclick="uploadMyPointView11('${sessionScope.gameDetails.gameId}','${sessionScope.userId}','${sportMgmtRes.result.gameWeek.gameWeekId}','prev');" title="View previous" class="pager-btn btn-prev">
+										<span class="fa fa-angle-left"></span>
+										<span>Previous</span>
+									</a>
+									</c:otherwise>
+									</c:choose>
+								</div>
+								<div class="pager pager-right">
+									<c:choose>
+									<c:when test="${sportMgmtRes.result.gameWeek.isLatestGameWeek eq 'Y'}">
+<%-- 									<a href="javascript:void(0);" onclick="uploadTeamView11('${sessionScope.userId}','${sessionScope.gameDetails.gameId}');" title="View next" class="pager-btn btn-next"> --%>
+										<a href="javascript:void(0);"  title="View next" class="pager-btn btn-next">
+									<span>Next</span>
+										<span class="fa fa-angle-right"></span>
+									</a>
+									</c:when>
+									<c:otherwise>
+									<a href="javascript:void(0)" onclick="uploadMyPointView11('${sessionScope.gameDetails.gameId}','${sessionScope.userId}','${sportMgmtRes.result.gameWeek.gameWeekId}','next');" title="View next" class="pager-btn btn-next">
+									<span>Next</span>
+										<span class="fa fa-angle-right"></span>
+									</a>
+									</c:otherwise>
+									</c:choose>
+								</div>
+							</div>
                <h3>My Team</h3>
               
                   <div class="col-lg-8 team_map_dream11">
