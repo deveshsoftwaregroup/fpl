@@ -28,10 +28,10 @@
 		                		</i></b> &nbsp;  &nbsp; <a></a>
 		                	</li>
 	                	</div>
-	                    <div style="float:right;">
+	                    <%-- <div style="float:right;">
 	                    	<li class="pwr_text flex-item" style="float: left;"></li>
 	                        <li class="flex-item" style="float: left;"><img src="${context}/redBlackTheme/images/poweredby-logo.pngggg" class="img-responsive pwr_logo"></li>
-	                    </div>
+	                    </div> --%>
 	                  </ul>
 	                </div>  
 	          </div>
