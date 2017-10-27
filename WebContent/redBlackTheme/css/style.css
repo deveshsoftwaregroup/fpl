@@ -227,6 +227,13 @@ input[type="date"]:valid::before {
 .unlimited_things_1, .unlimited_things_2 {
   border-right: 1px solid #fff; }
 
+.fb_iframe_widget iframe {
+  position: fixed !important;
+  text-align: right;
+  left: 30px;
+  top: 16%;
+  z-index: 4; }
+
 /*------------------------------------*/
 .get_in_touch a {
   color: #fff;
@@ -1044,19 +1051,25 @@ input[type="date"]:valid::before {
     margin-top: -386% !important; }
 
   .scout_slide {
-    margin-top: 1055px; } }
+    margin-top: 1055px; }
+  .fb_iframe_widget iframe {top:1%; left:0%;}    
+     }
 @media screen and (min-width: 400px) and (max-width: 415px) {
   .all_play {
     margin-top: -480% !important; }
 
   .scout_slide {
-    margin-top: 830px; } }
+    margin-top: 830px; }
+  .fb_iframe_widget iframe {top:1%; left:0%;}    
+     }
 @media screen and (min-width: 370px) and (max-width: 400px) {
   .all_play {
     margin-top: -535% !important; }
 
   .scout_slide {
-    margin-top: 800px; } }
+    margin-top: 800px; }
+  .fb_iframe_widget iframe {top:1%; left:0%;}  
+     }
 @media screen and (min-width: 300px) and (max-width: 369px) {
   .marg_top {
     margin-top: 15px !important; }
@@ -1181,7 +1194,9 @@ input[type="date"]:valid::before {
 
   .full-bg .top_header li:nth-last-child(4) img, .full-bg .top_header li:nth-last-child(3) {
     z-index: 1;
-    position: relative; } }
+    position: relative; }
+  .fb_iframe_widget iframe {top:1%; left:0%;}    
+     }
 @media screen and (min-width: 326px) and (max-width: 369px) {
   .all_play {
     margin-top: -554% !important; }

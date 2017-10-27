@@ -1304,7 +1304,7 @@ td, th {
     display: none; }
 
   .team_map, .team_map_dream11 {
-    background: url(../images/Dream11/mobile-map.png) no-repeat center; }
+    background: url(../images/Dream11/myteam_map_mobile.png) no-repeat center; }
 
   .team_map_dream11 ul li a img {
     height: 58px !important;

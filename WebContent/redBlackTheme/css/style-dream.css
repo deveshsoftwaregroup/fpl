@@ -127,7 +127,8 @@ header {
   border: 0px; }
 
 .modal-header {
- background-color: #f62b2b; background-image: -webkit-gradient(linear, left top, left bottom, from(#f62b2b), to(#d20202)); }
+  background-color: #f62b2b;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f62b2b), to(#d20202)); }
 
 .modal-body {
   padding: 50px; }
@@ -310,7 +311,7 @@ header {
   height: 437px;
   background-size: contain;
   margin-top: 70px;
-  margin-bottom:100px; }
+  margin-bottom: 100px; }
 
 .team_map ul, .team_map_dream11 ul {
   width: 100%;
@@ -363,6 +364,12 @@ header {
 .check_points li {
   list-style: none; }
 
+.transfers_predict11_map .team_map_dream11 .nav-tabs {
+  display: none; }
+
+.prev_next_btn_myteam {
+  padding-left: 44%; }
+
 /*--------------/ My Team----------------------*/
 /*--------------Fixtures----------------------*/
 .fixture_img_ad {
@@ -373,6 +380,9 @@ header {
   color: #fff; }
 
 #bottm_pd {
+  padding-bottom: 30px; }
+
+#bottm_pd_myteam {
   padding-bottom: 30px; }
 
 .flex-buttons {
@@ -548,20 +558,22 @@ td, th {
 
 .heading {
   width: 100%;
-  border-radius:0px 0px 5px 5px;
+  border-radius: 0px 0px 5px 5px;
   padding-top: 5px;
   padding-bottom: 5px;
   color: #000;
   text-align: center;
-  background-color: #fff;
-  }
+  background-color: #fff; }
 
 .my_points .bx-wrapper {
   margin-bottom: 40px; }
 
 .dream_11transfer .team_map_dream11 ul {
   margin-top: -20px; }
-
+#countDown {    
+	/* position:absolute; */ 
+	right:30%;
+    float: left !important; padding:10px;    padding-top: 7px;}
 /*-------------------/ Dream 11 Transfer -----------------------*/
 /*-------------------Footer -----------------------*/
 .footer_btn {
@@ -636,8 +648,6 @@ tbody tr {
 .banner_align {
   margin-bottom: 100px; }
 
-
-
 .defenderr ul li:last-child {
   border-radius: 20%;
   color: #ddd;
@@ -647,6 +657,10 @@ tbody tr {
   border-radius: 20%;
   color: #ddd;
   padding-top: 5px; }
+
+.transfers_predict11 .team_map_dream11 li .checkbox {
+  position: absolute;
+  top: -20px; }
 
 /*-------------------/ Dream 11 Predict My Team -----------------------*/
 /*------------------- Dream 11 Fixtures -------------------*/
@@ -686,6 +700,18 @@ tbody tr {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#f62b2b), to(#a32b31));
   background-image: -webkit-linear-gradient(top, #f62b2b, #a32b31);
   width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Abel', sans-serif; }
+
+#bottm_pd_myteam {
+  padding: 10px;
+  margin: 50px 5px;
+  text-align: center;
+  background-color: #f62b2b;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f62b2b), to(#a32b31));
+  background-image: -webkit-linear-gradient(top, #f62b2b, #a32b31);
+  width: 25%;
   margin-left: auto;
   margin-right: auto;
   font-family: 'Abel', sans-serif; }
@@ -916,8 +942,9 @@ tbody tr {
     padding-left: 10px !important;
     padding-right: 10px !important;
     font-size: 16px !important; }
-    .navbar-nav > li > a .closebtn {
-      display: none; }
+
+  .navbar-nav > li > a .closebtn {
+    display: none; }
 
   .my_points {
     margin-top: 200px; }
@@ -1044,7 +1071,7 @@ tbody tr {
 @media screen and (min-width: 480px) and (max-width: 699px) {
   .marg_top {
     margin-top: 20px !important; }
-  
+
   .top_header li:nth-last-child(3) {
     padding-top: 38px !important; }
 
@@ -1140,6 +1167,12 @@ tbody tr {
   .team_map, .team_map_dream11 {
     padding-top: 30px; }
 
+  .prev_next_btn_myteam {
+    padding-left: 31%; }
+
+  #bottm_pd_myteam {
+    width: 50%; }
+
   /*----------------------------------*/
   .overlay {
     height: 0%;
@@ -1188,7 +1221,7 @@ tbody tr {
 @media screen and (min-width: 300px) and (max-width: 439px) {
   .marg_top {
     margin-top: 15px !important; }
-  
+
   .top_header li:last-child {
     display: none !important; }
 
@@ -1389,6 +1422,12 @@ tbody tr {
   .claim_btn {
     margin-right: 20px; }
 
+  .prev_next_btn_myteam {
+    padding-left: 31%; }
+
+  #bottm_pd_myteam {
+    width: 50%; }
+
   /*----------------------------------*/
   .overlay {
     height: 0%;
@@ -1436,6 +1475,10 @@ tbody tr {
     right: 35px; } }
 .claim_your_prize {
   color: #fff;
-  padding-top: 20px; }
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: rgba(0,0,0,0.7); }
+
+/*# sourceMappingURL=style-dream.css.map */
 
 /*# sourceMappingURL=style-dream.css.map */
