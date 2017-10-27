@@ -11,7 +11,7 @@
 <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The12thman | League</title>
+    <title>Justthinksports</title>
     <link rel="stylesheet" href="${context}/css/foundation.css">
     <link rel="stylesheet" href="${context}/css/app1.css">
     <link rel="stylesheet" href="${context}/css/superslides.css">

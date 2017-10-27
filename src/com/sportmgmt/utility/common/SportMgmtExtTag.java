@@ -112,7 +112,7 @@ public class SportMgmtExtTag extends TagSupport{
     				 Timestamp startTimeOfFirstMatch = firstMatchOfGameWeek.get(0);
     				 int startHour = startTimeOfFirstMatch.getHours();
     				 int startMin = startTimeOfFirstMatch.getMinutes();
-    				 SimpleDateFormat sdfStart = new SimpleDateFormat("dd MMM");
+    				 SimpleDateFormat sdfStart = new SimpleDateFormat("dd MMM YYYY");
     				 String formatedStartTime = sdfStart.format(startTimeOfFirstMatch);
     				 int deadLineHrsBeforeStart = 0;
     				 int deadLineHrsAfterEnd = 0;

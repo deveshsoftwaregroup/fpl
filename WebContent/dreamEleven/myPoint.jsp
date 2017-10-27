@@ -17,61 +17,56 @@
             <div class="league-pager">
 								<div class="pager pager-left">
 									<c:choose>
-									<c:when test="${sportMgmtRes.result.gameWeek.gameWeekNumber eq '1'}">
-									<a href="javascript:void(0);" title="View previous" class="pager-btn btn-prev">
-										<span class="fa fa-angle-left"></span>
-										<span>Previous</span>
-									</a>
-									</c:when>
-									<c:otherwise>
-									<a href="javascript:void(0);" onclick="uploadMyPointView11('${sessionScope.gameDetails.gameId}','${sessionScope.userId}','${sportMgmtRes.result.gameWeek.gameWeekId}','prev');" title="View previous" class="pager-btn btn-prev">
-										<span class="fa fa-angle-left"></span>
-										<span>Previous</span>
-									</a>
-									</c:otherwise>
+										<c:when test="${sportMgmtRes.result.gameWeek.gameWeekNumber eq '1'}">
+											<a href="javascript:void(0);" title="View previous" class="pager-btn btn-prev">
+												<span class="fa fa-angle-left"></span>
+												<span>Previous</span>
+											</a>
+										</c:when>
+										<c:otherwise>
+											<a href="javascript:void(0);" onclick="uploadMyPointView11('${sessionScope.gameDetails.gameId}','${sessionScope.userId}','${sportMgmtRes.result.gameWeek.gameWeekId}','prev');" title="View previous" class="pager-btn btn-prev">
+												<span class="fa fa-angle-left"></span>
+												<span>Previous</span>
+											</a>
+										</c:otherwise>
 									</c:choose>
 								</div>
 								<div class="pager pager-right">
 									<c:choose>
-									<c:when test="${sportMgmtRes.result.gameWeek.isLatestGameWeek eq 'Y'}">
-<%-- 									<a href="javascript:void(0);" onclick="uploadTeamView11('${sessionScope.userId}','${sessionScope.gameDetails.gameId}');" title="View next" class="pager-btn btn-next"> --%>
-										<a href="javascript:void(0);"  title="View next" class="pager-btn btn-next">
-									<span>Next</span>
-										<span class="fa fa-angle-right"></span>
-									</a>
-									</c:when>
-									<c:otherwise>
-									<a href="javascript:void(0)" onclick="uploadMyPointView11('${sessionScope.gameDetails.gameId}','${sessionScope.userId}','${sportMgmtRes.result.gameWeek.gameWeekId}','next');" title="View next" class="pager-btn btn-next">
-									<span>Next</span>
-										<span class="fa fa-angle-right"></span>
-									</a>
-									</c:otherwise>
+										<c:when test="${sportMgmtRes.result.gameWeek.isLatestGameWeek eq 'Y'}">
+											<%-- <a href="javascript:void(0);" onclick="uploadTeamView11('${sessionScope.userId}','${sessionScope.gameDetails.gameId}');" title="View next" class="pager-btn btn-next"> --%>
+											<a href="javascript:void(0);"  title="View next" class="pager-btn btn-next">
+												<span>Next</span>
+												<span class="fa fa-angle-right"></span>
+											</a>
+										</c:when>
+										<c:otherwise>
+											<a href="javascript:void(0)" onclick="uploadMyPointView11('${sessionScope.gameDetails.gameId}','${sessionScope.userId}','${sportMgmtRes.result.gameWeek.gameWeekId}','next');" title="View next" class="pager-btn btn-next">
+												<span>Next</span>
+												<span class="fa fa-angle-right"></span>
+											</a>
+											</c:otherwise>
 									</c:choose>
 								</div>
 							</div>
-               <h3>My Team</h3>
-              
+               <h3>My Dream Team</h3>
+              	<h4><c:if test="${empty clubId}">No team was confirmed for this week</c:if></h4>
                   <div class="col-lg-8 team_map_dream11">
                      <div class="ism-element-row ism-element-row--pitch">
 	                    	<div id="ismr-pos1" class="ism-pitch__unit ism-pitch__unit--4">
                          <s:sport position="1" playerType="Goalkeeper" pageName="DE_MY_POINT"/>
                        <div class="ism-element" tabindex="0">
                        	
-							<c:choose>
-                               
-                               <c:when test="${isPlyaerInTopElevent}">
-							<picture>
-							 <a href="#"> <img src="${context}/images/${imageSrc}" alt="" title="" class=" highlited_plr" ></a>
-							</picture>
-							</c:when>
+							<c:choose>                               
+                            	<c:when test="${isPlyaerInTopElevent}">
+							 		<a href="#"> <img src="${context}/images/${imageSrc}" alt="" title="" class=" highlited_plr" ></a>
+								</c:when>
                                
                                
                                <c:when test="${not empty clubId and clubId ne ''}">
-                               <spring:message code="club_${clubId}_image" var="imageSrc" />
-							<picture>
-							<img src="${context}/images/${imageSrc}" alt="'+playerName+'" title="" class="ism-shirt ism-element__shirt" >
-							</picture>
-                                  </c:when>  
+                               	<spring:message code="club_${clubId}_image" var="imageSrc" />
+								<img src="${context}/images/${imageSrc}" alt="'+playerName+'" title="" class="ism-shirt ism-element__shirt" >
+                               </c:when>  
                                
                                </c:choose> 
                               <h4>${playerName}</h4>
@@ -260,7 +255,7 @@
                      </div>
                        </div>
                               
-                              </div>
+                   </div>
                     
                     <div class="ism-element-row ism-element-row--pitch">
 	                    <div id="ismr-pos8" class="ism-pitch__unit ism-pitch__unit--3">
@@ -363,25 +358,41 @@
 
       <td>Point</td>
     </tr>
-    <c:forEach var="player" items="${sportMgmtRes.result.topElevenPlayer}" varStatus="loop">
-    <tr id="1a">
-      <td>${loop.index+1}</td>
-
-      <td> <c:out value="${player.clubId}"></c:out>
-			<c:if test="${not empty player.clubId and player.clubId ne ''}">
-							<spring:message code="club_${player.clubId}_image" var="imageSrc" />
-							</c:if>
-							<picture>				
-          
-       
-          <div class="player_name_list"><img src="${context}/images/${imageSrc}"> <p>${player.name}<br><b>MCI</b></p></div></td>
-          
-      <td>$${player.price} </td>
-
-      <td>${player.point} </td>
-        
-    </tr>
-	</c:forEach>
+    
+    <c:choose>
+    	<c:when test="${empty sportMgmtRes.result.topElevenPlayer}">
+    		<c:forEach begin="0" end="11" varStatus="loop">
+    			<tr>
+				    <td>${loop.index}</td>
+				    <td> </td>
+				    <td> </td>
+				    <td> </td>
+    			</tr>
+			</c:forEach>    		
+    	</c:when>
+    
+    	<c:otherwise>
+		    <c:forEach var="player" items="${sportMgmtRes.result.topElevenPlayer}" varStatus="loop">
+		    <tr id="1a">
+		      <td>${loop.index+1}</td>
+		
+		      <td> <c:out value="${player.clubId}"></c:out>
+					<c:if test="${not empty player.clubId and player.clubId ne ''}">
+									<spring:message code="club_${player.clubId}_image" var="imageSrc" />
+									</c:if>
+									<picture>				
+		          
+		       
+		          <div class="player_name_list"><img src="${context}/images/${imageSrc}"> <p>${player.name}<br><b>MCI</b></p></div></td>
+		          
+		      <td>$${player.price} </td>
+		
+		      <td>${player.point} </td>
+		        
+		    </tr>
+			</c:forEach>
+		</c:otherwise>
+	</c:choose>
  </tbody>
 </table>
                             
@@ -396,18 +407,7 @@
         
         
           
-     <%--  <script src="${context}/redBlackTheme/js/jquery.bxslider.js"></script>     
-           
-          
-          <script src="${context}/redBlackTheme/js/jPushMenu.js" ></script> --%>
-     <%--  <script type="text/javascript">
-         //<![CDATA[
-         $(document).ready(function(){
-           $('.toggle-menu').jPushMenu({closeOnClickLink: false});
-          
-         });
-         //]]>
-      </script> --%>
+    
           
           <script>
             $(document).on('shown.bs.tab', 'a[data-toggle="tab"]', function (e) {
@@ -415,11 +415,11 @@
     var contentId = tab.attr("href");
 
     //This check if the tab is active
-    if (tab.parent().hasClass('active')) {
+    /* if (tab.parent().hasClass('active')) {
          console.log('the tab with the content id ' + contentId + ' is visible');
     } else {
          console.log('the tab with the content id ' + contentId + ' is NOT visible');
-    }
+    } */
 
 });
           </script>

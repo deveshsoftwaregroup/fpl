@@ -30,12 +30,12 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,400,600,700" rel="stylesheet">
   	
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="${context}/redBlackTheme/js/bootstrap.js"></script>
 	<script src="${context}/redBlackTheme/js/jquery.bxslider.js"></script>
 	<script src="${context}/redBlackTheme/js/jPushMenu.js" ></script>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-	<script src="${context}/redBlackTheme/js/jquery-3.2.1.js" ></script>
+	<%-- <script src="${context}/redBlackTheme/js/jquery-3.2.1.js" ></script> --%>
 	
   	
   	<style>
@@ -358,7 +358,7 @@
 			         <ul>
 			        <li class="flex-item"><img src="${context}/redBlackTheme/images/logo.png" class="img-responsive "></li>
 			         <li class="pwr_text flex-item"></li>
-			         <li class="flex-item" ><img src="${context}/redBlackTheme/images/poweredby-logo.pnggggg" class="img-responsive pwr_logo"></li>
+			        <%--  <li class="flex-item" ><img src="${context}/redBlackTheme/images/poweredby-logo.pnggggg" class="img-responsive pwr_logo"></li> --%>
 			         <li class="flex-item"><img src="${context}/redBlackTheme/images/simple-bannr.png" class="img-responsive pull-right"></li>
 			        </ul>
 			        </div>                        

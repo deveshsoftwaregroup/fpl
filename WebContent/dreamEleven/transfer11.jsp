@@ -152,7 +152,7 @@
 	                    </div>
 	                </div>
 	                <div class="ism-element-row ism-element-row--pitch">
-	                    <div id="ismr-pos11" class="ism-pitch__unit ism-pitch__unit--5">
+	                    <div id="ismr-pos11" class="ism-pitch__unit ism-pitch__unit--3">
 	                        <s:sport position="1" playerType="Midfielder"/>
                             <div class="ism-element" tabindex="0">
                                 <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
@@ -217,7 +217,7 @@
 	                    </div>
 					</div>
 	                <div class="ism-element-row ism-element-row--pitch">
-	                    <div id="ismr-pos8" class="ism-pitch__unit ism-pitch__unit--5">
+	                    <div id="ismr-pos8" class="ism-pitch__unit ism-pitch__unit--3">
 	                        <s:sport position="1" playerType="Forward"/>
                             <div class="ism-element" tabindex="0">
                                 <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
@@ -284,10 +284,11 @@
 				</div>
 				
 				 <div class="col-lg-12 pull-right claim_your_prize">
-                                             <!-- <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#modelPlayOption">Confirm Your Team</button></a> -->
-                                             <a href="#"><button type="button" class="btn claim_btn" onclick="checkPlayerCountAndOpenPlayOption()">Confirm Your Team</button></a>
-                                          	<!-- <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#paymentModel">Make Payment</button></a> -->
-                  </div>  
+				 	<p id="countDown"></p>
+	                  <!-- <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#modelPlayOption">Confirm Your Team</button></a> -->
+	                  <a href="#"><button id="confirmTeam" type="button" class="btn claim_btn" onclick="checkPlayerCountAndOpenPlayOption()">Confirm Your Team</button></a>
+	               	<!-- <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#paymentModel">Make Payment</button></a> -->
+        		</div>  
 	            </div>
 	           
 				<!-- Player list starts --> 
@@ -1204,6 +1205,39 @@
 	 	function closeNav() {
 	 	    document.getElementById("myNav").style.height = "0%";
 	 	}	  
+</script>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("${deadline}").getTime();
+//var countDownDate = new Date("27 Oct 2017 01:01:01").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+    // Get todays date and time
+    var now = new Date().getTime();
+    
+    // Find the distance between now an the count down date
+    var distance = countDownDate - now;
+    
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    // Output the result in an element with id="demo"
+    document.getElementById("countDown").innerHTML = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s " +"left until you can ";
+    
+    // If the count down is over, write some text 
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countDown").innerHTML = "Team Confirmation is closed for current Gameweek";
+        document.getElementById("confirmTeam").className += " disabled";
+    }
+}, 1000);
 </script>
 <%-- <script>
 	$('.team_map_dream11 ul li').prepend($('<img>',{id:'theImg',src:'images/Dream11/close_btn.png'}).addClass('close_btn'))

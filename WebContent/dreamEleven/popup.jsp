@@ -54,8 +54,8 @@
         <!--Notification ends--> 
          
 	<!-- Play Option payment model starts -->
-		 <div id="modelPlayOption" style="display: none;  role="dialog">
-		  <div class="modal-dialog modal-lg">		
+		 <div id="modelPlayOption" style="display: none;"  role="dialog">
+		  <div class="modal-dialog modal-md">		
 		    <!-- Modal content-->
 		    <div class="modal-content">
 		      <div class="modal-header">		        
@@ -71,7 +71,8 @@
 		    </div>		
 		  </div>
 	<!-- Play Option payment model ends -->	 
-		<!-- payment popup starts -->
+	
+	<!-- payment popup starts -->
 	 	<div id="paymentModel" class="modal fade" role="dialog">
 		  <div class="modal-dialog modal-lg">		
 		    <!-- Modal content-->

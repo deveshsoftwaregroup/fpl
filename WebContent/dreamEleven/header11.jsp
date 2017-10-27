@@ -28,10 +28,10 @@
 		                		</i></b> &nbsp;  &nbsp; <a></a>
 		                	</li>
 	                	</div>
-	                    <div style="float:right;">
+	                    <%-- <div style="float:right;">
 	                    	<li class="pwr_text flex-item" style="float: left;"></li>
 	                        <li class="flex-item" style="float: left;"><img src="${context}/redBlackTheme/images/poweredby-logo.pngggg" class="img-responsive pwr_logo"></li>
-	                    </div>
+	                    </div> --%>
 	                  </ul>
 	                </div>  
 	             </div>
@@ -68,7 +68,7 @@
 						                   <a href="javascript:void(0);" onclick="uploadMatchView11('${sessionScope.gameDetails.gameId}');" data-nav-tab="squad">Fixtures</a>
 						               </li>       --%>                
 						               <li>
-						                   <a href="javascript:void(0);" onclick="uploadMyPointView11('${sessionScope.gameDetails.gameId}','${sessionScope.userId}','','');">My Points</a>
+						                   <a href="javascript:void(0);" onclick="uploadMyPointView11('${sessionScope.gameDetails.gameId}','${sessionScope.userId}','','');">My Team</a>
 						               </li>   
 						               <li>
 						                   <a href="javascript:void(0);" onclick="uploadCouponsView11('${sessionScope.userId}','${sessionScope.gameDetails.gameId}');">Coupons</a>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%-- <jsp:include page="${context}/dreamEleven/facebookPost.jsp" /> --%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
@@ -21,20 +22,15 @@
 		<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/theme.css">
 		<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/demo.css">
 		<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/tab-style.css">
-<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/style-fantasy.css">
+<%-- <link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/style-fantasy.css"> --%>
 		
 		<link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,600" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,500,600" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,400,600,700" rel="stylesheet">
 		
-		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="${context}/redBlackTheme/js/bootstrap.js"></script>
-		<script src="${context}/redBlackTheme/js/jquery.bxslider.js"></script>
-		<script src="${context}/redBlackTheme/js/jPushMenu.js" ></script>
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-		<script src="${context}/redBlackTheme/js/jquery-3.2.1.js" ></script>  	
+		 	
 		
 		
 		
@@ -70,7 +66,8 @@
 		<s:sportExt retrieve="priceList" />
 		
 		<main id="mainContent" tabindex="0" class="ism"> 
-		 	<%@ include	file="facebookPost.jsp"%>		
+		
+		 	<%@ include	file="facebookPost.jsp"%>	
 			<%@ include	file="popup.jsp"%>
 			<%@ include	file="header11.jsp"%>			
 			
@@ -80,4 +77,10 @@
 			<%@ include file="footer.jsp"%>
 		</main>
 	</body>
+	
+		<script src="${context}/redBlackTheme/js/bootstrap.js"></script>
+		<script src="${context}/redBlackTheme/js/jquery.bxslider.js"></script>
+		<script src="${context}/redBlackTheme/js/jPushMenu.js" ></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+		<%-- <script src="${context}/redBlackTheme/js/jquery-3.2.1.js" ></script>  --%>
 </html>
