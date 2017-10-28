@@ -1235,7 +1235,8 @@ var x = setInterval(function() {
     if (distance < 0) {
         clearInterval(x);
         document.getElementById("countDown").innerHTML = "Team Confirmation is closed for current Gameweek";
-        document.getElementById("confirmTeam").className += " disabled";
+        //document.getElementById("confirmTeam").className += " disabled";
+        document.getElementById("confirmTeam").setAttribute('disabled','disabled');
     }
 }, 1000);
 </script>
