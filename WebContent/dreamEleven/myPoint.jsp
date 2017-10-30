@@ -50,7 +50,7 @@
 								</div>
 							</div>
                <h3>My Dream Team</h3>
-              	<h4><c:if test="${empty playerName}">No team was confirmed for this week</c:if></h4>
+              	<h4><c:if test="${empty sportMgmtRes.result.hisotryPlayerList}">No team was confirmed for this week</c:if></h4>
                   <div class="col-lg-8 team_map_dream11">
                      <div class="ism-element-row ism-element-row--pitch">
 	                    	<div id="ismr-pos1" class="ism-pitch__unit ism-pitch__unit--4">
