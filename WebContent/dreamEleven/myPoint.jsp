@@ -50,7 +50,7 @@
 								</div>
 							</div>
                <h3>My Dream Team</h3>
-              	<h4><c:if test="${empty clubId}">No team was confirmed for this week</c:if></h4>
+              	<h4><c:if test="${empty playerName}">No team was confirmed for this week</c:if></h4>
                   <div class="col-lg-8 team_map_dream11">
                      <div class="ism-element-row ism-element-row--pitch">
 	                    	<div id="ismr-pos1" class="ism-pitch__unit ism-pitch__unit--4">
@@ -354,19 +354,19 @@
 
       <td>Player  </td>
 
-      <td>Price</td>
+      <!-- <td>Price</td>
 
-      <td>Point</td>
+      <td>Point</td> -->
     </tr>
     
     <c:choose>
     	<c:when test="${empty sportMgmtRes.result.topElevenPlayer}">
-    		<c:forEach begin="0" end="11" varStatus="loop">
+    		<c:forEach begin="1" end="11" varStatus="loop">
     			<tr>
 				    <td>${loop.index}</td>
 				    <td> </td>
-				    <td> </td>
-				    <td> </td>
+				    <!-- <td> </td>
+				    <td> </td> -->
     			</tr>
 			</c:forEach>    		
     	</c:when>
@@ -385,9 +385,9 @@
 		       
 		          <div class="player_name_list"><img src="${context}/images/${imageSrc}"> <p>${player.name}<br><b>MCI</b></p></div></td>
 		          
-		      <td>$${player.price} </td>
+		     <%--  <td>$${player.price} </td>
 		
-		      <td>${player.point} </td>
+		      <td>${player.point} </td> --%>
 		        
 		    </tr>
 			</c:forEach>

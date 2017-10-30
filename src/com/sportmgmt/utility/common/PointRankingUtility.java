@@ -29,6 +29,7 @@ import com.sportmgmt.utility.exception.SportMgmtException;
 
 public class PointRankingUtility {
 	private Logger logger = Logger.getLogger(PointRankingUtility.class);
+	PropertyFileUtility  propFileUtility = new PropertyFileUtility();
 	private ApplicationDataUtility applicationDataUtility;
 	
 	public ApplicationDataUtility getApplicationDataUtility() {
@@ -72,7 +73,6 @@ public class PointRankingUtility {
 			 int deadLineHrsBeforeStart = 0;
 			 try
 			 {
-				 PropertyFileUtility  propFileUtility = new PropertyFileUtility();
 				 deadLineHrsBeforeStart = Integer.parseInt(propFileUtility.getEnvProperty().getString(SportConstrant.DEADLINE_START_HRS));
 			 }
 			 catch(Exception ex)
@@ -593,13 +593,33 @@ public class PointRankingUtility {
 	
 	public int calculateUserPoint(int totalUserPlayerMatchInTopPlayer)
 	{
-		return totalUserPlayerMatchInTopPlayer*150;
+		int pointMultiplyer=0;
+		try
+		{
+			pointMultiplyer = Integer.parseInt(propFileUtility.getEnvProperty().getString(SportConstrant.POINT_MULTIPLYER));
+			logger.info("pointMultiplyer="+pointMultiplyer);
+		}
+		catch(Exception ex)
+		 {
+			 logger.error("Exception from reading and parsing : "+ex.getMessage());
+		 }
+		return totalUserPlayerMatchInTopPlayer * pointMultiplyer;
 	}
 	
 	public int calculateUserPoint(List<Map<String,String>> gameWeekPlayerList,List<Integer> topPlayesIdsByRank)
 	{
+		int pointMultiplyer=0;
+		try
+		{
+			pointMultiplyer = Integer.parseInt(propFileUtility.getEnvProperty().getString(SportConstrant.POINT_MULTIPLYER));
+			logger.info("pointMultiplyer="+pointMultiplyer);
+		}
+		catch(Exception ex)
+		 {
+			 logger.error("Exception from reading and parsing : "+ex.getMessage());
+		 }
 		int totalTopPlayerInUserAccount =getTotalUserPlayerMatchInTopPlayer(gameWeekPlayerList, topPlayesIdsByRank);
-		return totalTopPlayerInUserAccount*150;
+		return totalTopPlayerInUserAccount * pointMultiplyer;
 	}
 	
 }

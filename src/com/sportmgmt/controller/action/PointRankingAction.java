@@ -223,7 +223,8 @@ public class PointRankingAction {
 			}
 			String gameIdStr = gameId.toString();
 			sortUtility.getApplicationDataUtility().loadPlayers(gameIdStr, matchId, playersList, clubList);
-			playersList = sortUtility.sortPlayerListByPlayerName(playersList,sortUtility.getApplicationDataUtility().getGameClubPlayerIdsInMatch());
+			//playersList = sortUtility.sortPlayerListByPlayerName(playersList,sortUtility.getApplicationDataUtility().getGameClubPlayerIdsInMatch());
+			playersList = sortUtility.sortPlayerListByPlayerName(playersList);
 			logger.info("----------- sorted by name playersList: "+playersList);
 			modeMap.put("playerList", playersList);
 			List<Map<String,String>>pointList = pointRankingUtility.getPointList(gameIdStr);

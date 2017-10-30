@@ -160,7 +160,7 @@ public class SportMgmtExtTag extends TagSupport{
     					 Timestamp endTimeOfLastMatch =  lastMatchOfGameWeek.get(0);
     					 long startDeadlineMils = startTimeOfFirstMatch.getTime() - TimeUnit.HOURS.toMillis(deadLineHrsBeforeStart);
     					// long endDeadlineMils = endTimeOfLastMatch.getTime() + TimeUnit.HOURS.toMillis(deadLineHrsAfterEnd);
-    					 long endDeadlineMils = startTimeOfFirstMatch.getTime();
+    					 long endDeadlineMils = startTimeOfFirstMatch.getTime() + TimeUnit.HOURS.toMillis(deadLineHrsAfterEnd);
     					 long currentTimeMils = System.currentTimeMillis();
     					 logger.info("startDeadlineMils: "+startDeadlineMils);
     					 logger.info("endDeadlineMils: "+endDeadlineMils);
