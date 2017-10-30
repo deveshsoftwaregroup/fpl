@@ -1782,7 +1782,8 @@ public class GameManager {
 		List<Object[]> currentGameWeek = null;
 		setErrorMessage("");
 		SessionFactory factory = HibernateSessionFactory.getSessionFacotry();
-		logger.info("--------------- fetchCurrenGametWeek ------------> gameId: "+gameId);
+		logger.info("inside fetchCurrenGametWeek");
+		logger.info(" gameId: "+gameId);
 		if(factory == null)
 		{
 			setErrorCode(ErrorConstrant.SESS_FACT_NULL);

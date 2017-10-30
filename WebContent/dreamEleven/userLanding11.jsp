@@ -74,6 +74,7 @@
 			<div class="ism-container"> <!-- Main content of every pages gets loaded at class ism-container  -->	
 				<%@ include	file="transfer11.jsp"%>			
 			</div> 
+			
 			<%@ include file="footer.jsp"%>
 		</main>
 	</body>

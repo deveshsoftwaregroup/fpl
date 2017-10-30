@@ -426,7 +426,7 @@ public class UserAction11 {
 		
 	}
 	 
-	 logger.info("---------- Redircting to : "+SportConstrant.USER_LANDING_REDIRECT_PAGE);
+	 logger.info("---------- Redircting to : "+SportConstrant.USER_LANDING_REDIRECT_PAGE11);
 	 return SportConstrant.USER_LANDING_REDIRECT_PAGE11;
 	}
 	@RequestMapping(value = "forgotPassword", method = RequestMethod.GET)
@@ -692,7 +692,7 @@ public class UserAction11 {
 	@RequestMapping(value = "UserLanding11", method = RequestMethod.GET)
 	public  String userLanding(ModelMap modeMap,HttpServletRequest request)
 	{
-		logger.info("---------- Forwardng to : "+SportConstrant.USER_LANDING_PAGE);
+		logger.info("---------- Forwardng to : "+SportConstrant.USER_LANDING_PAGE11);
 		 return SportConstrant.USER_LANDING_PAGE11;
 	}
 	
