@@ -427,10 +427,11 @@ input[type="date"]:valid::before {
 /*---------------/ Footer------------------*/
 /*---------------Notification------------------*/
 #notification {
-  position: absolute;
-  top: 20px;
+  position: fixed;
+  
   /* Set to 0 or wherever */
-  width: 90%;
+  width: 80%;
+  left:10%;
   /* set to 100% if space is available */
   z-index: 105;
   box-shadow: 5px 5px 5px #555;
@@ -516,19 +517,19 @@ input[type="date"]:valid::before {
 
 @media screen and (min-width: 1500px) and (max-width: 1920px) {
   #notification {
-    width: 65% !important; }
+    width: 80% !important; }
 
   .prtnr {
     padding-left: 125px !important; } }
 @media screen and (min-width: 1401px) and (max-width: 1499px) {
   #notification {
-    width: 90% !important; }
+    width: 80% !important; }
 
   .prtnr {
     padding-left: 125px !important; } }
 @media screen and (min-width: 1301px) and (max-width: 1400px) {
   #notification {
-    width: 90% !important; }
+    width: 80% !important; }
 
   .prtnr {
     padding-left: 125px !important; } }

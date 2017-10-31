@@ -305,7 +305,9 @@ header {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400;
   padding-left: 30px; }
-
+.Dream_11_players .tbody tr td:first-child {
+   width: 6em !important;
+ }
 .team_map, .team_map_dream11 {
   background: url(../images/Dream11/myteam_map.png) no-repeat center;
   height: 437px;
@@ -571,7 +573,7 @@ td, th {
 .dream_11transfer .team_map_dream11 ul {
   margin-top: -20px; }
 #countDown {    
-	/* position:absolute; */ 
+	 position:absolute;
 	right:30%;
     float: left !important; padding:10px;    padding-top: 7px;}
 /*-------------------/ Dream 11 Transfer -----------------------*/
@@ -630,6 +632,8 @@ tbody tr td:first-child {
   width: 6em;
   height: 2em;
   text-align: center; }
+  
+
 
 tbody tr {
   border-bottom: 1px solid #fff !important;
@@ -1427,7 +1431,7 @@ tbody tr {
 
   #bottm_pd_myteam {
     width: 50%; }
-
+  #paymentModel .modal-body {    padding: 20px !important;} 
   /*----------------------------------*/
   .overlay {
     height: 0%;
@@ -1463,7 +1467,7 @@ tbody tr {
 
   .overlay::-webkit-scrollbar {
     display: none; } }
-@media screen and (min-width: 300px) and (max-width: 439px) and (max-height: 450px) {
+@media screen and (min-width: 300px) and (max-height: 450px) {
   .overlay {
     overflow-y: auto; }
 
@@ -1472,8 +1476,11 @@ tbody tr {
 
   .overlay .closebtn {
     top: 15px;
-    right: 35px; } }
-.claim_your_prize {
+    right: 35px; }
+  #paymentModel .modal-body {    padding: 20px !important;} 
+  #countDown {    position: unset !important;}
+     }
+.claim_prize_align {
   color: #fff;
   padding-top: 10px;
   padding-bottom: 10px;

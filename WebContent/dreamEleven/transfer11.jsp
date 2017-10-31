@@ -19,12 +19,13 @@
  
 <body class="predict11-bg transfers_predict11 dream_11transfer">
 
+ 
 
 <!-- twitter button starts -->
  <%-- <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
  <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script> --%>
 <!--  twitter button ends -->	
- 
+
  <div class="container-fluid ">
 		<div class="row">
 			<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 transfers_predict11_map">
@@ -283,13 +284,17 @@
 	                                                  
 				</div>
 				
-				 <div class="col-lg-12 pull-right claim_your_prize">
+				 <div class="col-lg-12 pull-right claim_your_prize claim_prize_align">
 				 	<p id="countDown"></p>
 	                  <!-- <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#modelPlayOption">Confirm Your Team</button></a> -->
+	                  <!--  <a href="#"><button id="confirmTeam" type="button" class="btn claim_btn" data-toggle="modal" data-target="#modelPlayOption">Confirm Your Team</button></a> -->
 	                  <a href="#"><button id="confirmTeam" type="button" class="btn claim_btn" onclick="checkPlayerCountAndOpenPlayOption()">Confirm Your Team</button></a>
 	               	<!-- <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#paymentModel">Make Payment</button></a> -->
         		</div>  
+	            
+	            
 	            </div>
+	           
 	           
 				<!-- Player list starts --> 
 				<div id="myNav" class="  my_points overlay">
@@ -529,6 +534,9 @@
 			</div>
 		</div>
 	</div>
+	
+	
+	
 	
 	
 </body>
@@ -1115,7 +1123,7 @@
 		}
 		else
 		{	 
-			$("#modelPlayOption").fadeIn("slow");
+			$("#modelPlayOption").modal('show');
 			$(".close").click(function(){			              
 				$("#modelPlayOption").fadeOut("slow");
 			});

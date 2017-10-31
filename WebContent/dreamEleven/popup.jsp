@@ -46,20 +46,20 @@
     
     <!-------------------/ Notification Popup------------------->
 	
- 		<!--Notification-->
+ 	 	<!--Notification-->
 			<div id="notification" style="display: none;">
 				<span class="dismiss"><a title="dismiss this notification">X</a></span>
 				<div id="notificationChild"></div>
 			</div> 
         <!--Notification ends--> 
          
-	<!-- Play Option payment model starts -->
-		 <div id="modelPlayOption" style="display: none;"  role="dialog">
+	 <!-- Play Option payment model starts -->
+		 <div id="modelPlayOption" class="modal fade"   role="dialog">
 		  <div class="modal-dialog modal-md">		
 		    <!-- Modal content-->
 		    <div class="modal-content">
 		      <div class="modal-header">		        
-		        <h4 class="modal-title">Play Option <span class="close"><a title="dismiss this notification">X</a></span></h4>
+		        <h4 class="modal-title">Play Option <span class="close" data-dismiss="modal"><a title="dismiss this notification">X</a></span></h4>
 		      </div>
 		      <div class="modal-body">
 		        <div class="table-responsive prod-tbl">
@@ -72,54 +72,67 @@
 		  </div>
 	<!-- Play Option payment model ends -->	 
 	
-	<!-- payment popup starts -->
-	 	<div id="paymentModel" class="modal fade" role="dialog">
-		  <div class="modal-dialog modal-lg">		
-		    <!-- Modal content-->
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <a type="button" class="close" data-dismiss="modal">&times;</a>
-		        <h4 class="modal-title">Make Payment</h4>
-		      </div>
-		      <div class="modal-body">
-		        <div class="table-responsive prod-tbl">
-					<table class="table table-striped table-bordered table-hover">
-						<thead>
-						  <tr>
-							<th>Eligible for</th>
-							<th>Product Price</th>
-							<th>Discount Code</th>
-							<th>Total Price</th>
-							<th>Purchase It</th>
-						  </tr>
-						</thead>
-						<tbody>
-						<c:forEach var="wildCard" items="${sessionScope.purchableWildCardList}" >
-						  <form  id="paymentForm_${wildCard.planId}" action="/SportMgmt/mvc/payment/MakePayment" method="post">
-						  <input type="hidden" name="leaguePlanId" value="${wildCard.planId}"></input>
-						  <input type="hidden" name="planDiscountId" value="${sessionScope.planDiscountId}"></input>
-						  <input type="hidden" name="amount" value="${wildCard.price}"></input>
-						  </form>
-						  <tr>
-							<td>${wildCard.name}</td>
-							<td>${wildCard.price}</td>
-							<td>
-							<input id="paymentDiscountCode_${wildCard.planId}" type="text" name="discount" value=""></input>
-							</td>
-							<td>${wildCard.price}</td>
-							<td>
-		        			<button id="paymentButton_${wildCard.planId}" type="button" class="button" >Buy Now</button>
-		     				</td>
-						  </tr>
-						  </c:forEach>													
-						</tbody>
-					  </table>
-				</div>
-		      </div>
-		    </div>		
-		  </div>
-		</div>	
-		<!--Payment Popup ends -->
+	
+		
+		<!-- payment popup starts -->
+     
+        <div id="paymentModel" class="modal fade" role="dialog">
+          <div class="modal-dialog modal-lg">       
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <a type="button" class="close" data-dismiss="modal">&times;</a>
+                <h4 class="modal-title">Make payment1</h4>
+              </div>
+              <div class="modal-body">
+                <div class="table-responsive prod-tbl">
+                <table class="table table-striped table-bordered table-hover" width="100%">
+                    <tbody>
+            
+                      <c:forEach var="wildCard" items="${sessionScope.purchableWildCardList}" >
+                            <form  id="paymentForm_${wildCard.planId}" action="/SportMgmt/mvc/payment/MakePayment" method="post">
+                            <input type="hidden" name="leaguePlanId" value="${wildCard.planId}"></input>
+                            <input type="hidden" name="planDiscountId" value="${sessionScope.planDiscountId}"></input>
+                            <input type="hidden" name="amount" value="${wildCard.price}"></input>
+                            </form>
+                      <tr>
+                        <td>Eligible for</td>
+                  
+                        <td>${wildCard.name}</td>
+                      </tr>
+                  
+                      <tr>
+                        <td>Price</td>
+                  
+                        <td>${wildCard.price}</td>
+                      </tr>
+                  
+                      <tr>
+                        <td>Discount</td>
+                  
+                        <td><input id="paymentDiscountCode_${wildCard.planId}" type="text" name="discount" value=""></input></td>
+                      </tr>
+                  
+                      <tr>
+                        <td>Total Price</td>
+                  
+                        <td>${wildCard.price}</td>
+                      </tr>
+                  
+                      <tr>
+                        <td>Purchase</td>
+                  
+                        <td><button id="paymentButton_${wildCard.planId}" type="button" class="button" >Buy Now</button></td>
+                      </tr>
+                     </c:forEach>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>      
+          </div>
+        </div>  
+    <!--Payment Popup ends -->
 		
 <%-- <script type="text/javascript">
 	//<![CDATA[

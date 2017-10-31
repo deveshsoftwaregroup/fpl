@@ -5,6 +5,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="context" value="<%=request.getContextPath()%>" />
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
+
 <body class="predict11-bg coupon_predict">
       <div class="container my-container">
 <div class="row">

@@ -10,9 +10,21 @@
 	    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 	    <c:set var="context" value="<%=request.getContextPath()%>" />
 	    <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-		<%@ taglib uri="..//WEB-INF/sportmgmt.tld" prefix="s" %>  	
+		<%@ taglib uri="..//WEB-INF/sportmgmt.tld" prefix="s" %> 
+		
+		 	
 	</head> 
-
+  <!-- code for preloader starts -->
+	  <div id="preloader">
+		<div id="status">&nbsp;</div>
+	</div>
+	<script type="text/javascript">
+		$(window).on("load", function() { // makes sure the whole site is loaded
+			$('#status').fadeOut(1000); // will first fade out the loading animation
+			$('#preloader').delay(500).fadeOut(2000); // will fade out the white DIV that covers the website.
+		})
+	</script>
+	<!-- Code for preloader ends --> 
 	<s:sportExt retrieve="priceList" />
 	<div class="container"> 
 	    <div class="row">

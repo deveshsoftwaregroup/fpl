@@ -28,7 +28,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,500,600" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,400,600,700" rel="stylesheet">
-		
+		<link rel="shortcut icon" type="images/x-icon" href="${context}/redBlackTheme/images/favicon.ico">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		 	
 		
@@ -37,15 +37,15 @@
 	</head>
 	
 	<!-- code for preloader starts -->
-	<%-- <div id="preloader">
+	 <!--  <div id="preloader">
 		<div id="status">&nbsp;</div>
-	</div>
+	</div>  
 	<script type="text/javascript">
 		$(window).on("load", function() { // makes sure the whole site is loaded
 			$('#status').fadeOut(1000); // will first fade out the loading animation
 			$('#preloader').delay(500).fadeOut(2000); // will fade out the white DIV that covers the website.
 		})
-	</script> --%>
+	</script> -->
 	<!-- Code for preloader ends --> 
 	
 	<body class="predict11-bg transfers_predict11">
@@ -68,7 +68,7 @@
 		<main id="mainContent" tabindex="0" class="ism"> 
 		
 		 	<%@ include	file="facebookPost.jsp"%>	
-			<%@ include	file="popup.jsp"%>
+			 <%@ include	file="popup.jsp"%>  
 			<%@ include	file="header11.jsp"%>			
 			
 			<div class="ism-container"> <!-- Main content of every pages gets loaded at class ism-container  -->	

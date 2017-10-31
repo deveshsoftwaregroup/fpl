@@ -6,7 +6,10 @@
 	<%@ taglib uri="..//WEB-INF/sportmgmt.tld" prefix="s" %> 
 	<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
+
+
    <body class="predict11-bg transfers_predict11 dream_11transfer">
+   
       <div class="container-fluid ">
     
       <div class="row">
@@ -18,13 +21,13 @@
 								<div class="pager pager-left">
 									<c:choose>
 										<c:when test="${sportMgmtRes.result.gameWeek.gameWeekNumber eq '1'}">
-											<a href="javascript:void(0);" title="View previous" class="pager-btn btn-prev">
+											<a href="javascript:void(0);" title="View previous" class=" btnPrevious">
 												<span class="fa fa-angle-left"></span>
 												<span>Previous</span>
 											</a>
 										</c:when>
 										<c:otherwise>
-											<a href="javascript:void(0);" onclick="uploadMyPointView11('${sessionScope.gameDetails.gameId}','${sessionScope.userId}','${sportMgmtRes.result.gameWeek.gameWeekId}','prev');" title="View previous" class="pager-btn btn-prev">
+											<a href="javascript:void(0);" onclick="uploadMyPointView11('${sessionScope.gameDetails.gameId}','${sessionScope.userId}','${sportMgmtRes.result.gameWeek.gameWeekId}','prev');" title="View previous" class=" btnPrevious">
 												<span class="fa fa-angle-left"></span>
 												<span>Previous</span>
 											</a>
@@ -35,13 +38,13 @@
 									<c:choose>
 										<c:when test="${sportMgmtRes.result.gameWeek.isLatestGameWeek eq 'Y'}">
 											<%-- <a href="javascript:void(0);" onclick="uploadTeamView11('${sessionScope.userId}','${sessionScope.gameDetails.gameId}');" title="View next" class="pager-btn btn-next"> --%>
-											<a href="javascript:void(0);"  title="View next" class="pager-btn btn-next">
+											<a href="javascript:void(0);"  title="View next" class="pager-btn btn-next btnNext">
 												<span>Next</span>
 												<span class="fa fa-angle-right"></span>
 											</a>
 										</c:when>
 										<c:otherwise>
-											<a href="javascript:void(0)" onclick="uploadMyPointView11('${sessionScope.gameDetails.gameId}','${sessionScope.userId}','${sportMgmtRes.result.gameWeek.gameWeekId}','next');" title="View next" class="pager-btn btn-next">
+											<a href="javascript:void(0)" onclick="uploadMyPointView11('${sessionScope.gameDetails.gameId}','${sessionScope.userId}','${sportMgmtRes.result.gameWeek.gameWeekId}','next');" title="View next" class="pager-btn btn-next btnNext">
 												<span>Next</span>
 												<span class="fa fa-angle-right"></span>
 											</a>
