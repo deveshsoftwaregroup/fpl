@@ -162,7 +162,7 @@ public class GameManager {
 				}
 				catch(Exception ex)
 				{
-					logger.error("Exception fetch gameClubPlayer: "+ex.getMessage());
+					logger.error("Exception fetch gameClubPlayer=: "+ex.getMessage());
 					setErrorMessage("Technical Error");
 					setErrorCode(ErrorConstrant.TRANSACTION_ERROR);
 				}
@@ -207,7 +207,7 @@ public class GameManager {
 				}
 				catch(Exception ex)
 				{
-					logger.error("Exception fetch gameClubPlayer: "+ex.getMessage());
+					logger.error("Exception fetch gameClubPlayer is : "+ex.getMessage());
 					setErrorMessage("Technical Error");
 					setErrorCode(ErrorConstrant.TRANSACTION_ERROR);
 				}

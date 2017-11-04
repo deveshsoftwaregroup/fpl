@@ -151,8 +151,7 @@ public class GameManager {
 			if(session != null)
 			{
 				try
-				{
-					
+				{					
 					SQLQuery query = session.createSQLQuery(QueryConstrant.SELECT_PLAYERS_CLUBD_OF_EVENT);
 					query.addEntity(GameClubPlayer.class);
 					query.setParameter("gameId", gameId);
