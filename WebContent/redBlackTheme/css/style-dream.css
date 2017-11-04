@@ -575,7 +575,7 @@ td, th {
 #countDown {    
 	 position:absolute;
 	right:30%;
-    float: left !important; padding:10px;    padding-top: 7px;}
+    float: left ; padding:10px;    padding-top: 7px;}
 /*-------------------/ Dream 11 Transfer -----------------------*/
 /*-------------------Footer -----------------------*/
 .footer_btn {
@@ -1160,7 +1160,7 @@ tbody tr {
     min-height: 80px; }
 
   .ism .ism-pitch__unit--3 {
-    width: 50%; }
+    width: 25%; } 
 
   .ism-element .ismjs-select {
     max-width: 80px; }
@@ -1415,7 +1415,7 @@ tbody tr {
     min-height: 80px; }
 
   .ism .ism-pitch__unit--3 {
-    width: 50%; }
+    width: 33%; } 
 
   .transfers_predict11_map p {
     padding-left: 10px; }
@@ -1423,8 +1423,8 @@ tbody tr {
   .mid_text {
     margin-top: 0px; }
 
-  .claim_btn {
-    margin-right: 20px; }
+  .confirm_team_btn{
+    margin-right: 90px; }
 
   .prev_next_btn_myteam {
     padding-left: 31%; }
@@ -1432,6 +1432,10 @@ tbody tr {
   #bottm_pd_myteam {
     width: 50%; }
   #paymentModel .modal-body {    padding: 20px !important;} 
+  #countDown {  position: unset !important; text-align:center;float:none !important;}
+  .claim_prize_align{padding-left:0px;padding-right:0px; margin-left:-15px;margin-right:-15px;float:none !important;
+    height:100px; }
+  .header {padding-top:30px;}
   /*----------------------------------*/
   .overlay {
     height: 0%;
@@ -1478,7 +1482,7 @@ tbody tr {
     top: 15px;
     right: 35px; }
   #paymentModel .modal-body {    padding: 20px !important;} 
-  #countDown {    position: unset !important;}
+  
      }
 .claim_prize_align {
   color: #fff;

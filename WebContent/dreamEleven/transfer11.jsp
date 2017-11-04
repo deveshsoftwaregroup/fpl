@@ -174,7 +174,7 @@
                                  </div>
                             </div>
 	                    </div>
-	                    <div id="ismr-pos12" class="ism-pitch__unit ism-pitch__unit--5">
+	                    <div id="ismr-pos12" class="ism-pitch__unit ism-pitch__unit--3">
 	                        <s:sport position="2" playerType="Midfielder"/>
                             <div class="ism-element" tabindex="0">
                                 <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
@@ -195,7 +195,7 @@
                                 </div>
                             </div>
 	                    </div>
-	                    <div id="ismr-pos13" class="ism-pitch__unit ism-pitch__unit--5">
+	                    <div id="ismr-pos13" class="ism-pitch__unit ism-pitch__unit--3">
 	                        <s:sport position="3" playerType="Midfielder"/>
                             <div class="ism-element" tabindex="0">
                                 <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
@@ -239,7 +239,7 @@
                                 </div>
                             </div>
 	                    </div>
-	                    <div id="ismr-pos9" class="ism-pitch__unit ism-pitch__unit--5">
+	                    <div id="ismr-pos9" class="ism-pitch__unit ism-pitch__unit--3">
 	                        <s:sport position="2" playerType="Forward"/>
                             <div class="ism-element" tabindex="0">
                                 <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
@@ -260,7 +260,7 @@
                                 </div>
                             </div>
 	                    </div>
-	                    <div id="ismr-pos10" class="ism-pitch__unit ism-pitch__unit--5">
+	                    <div id="ismr-pos10" class="ism-pitch__unit ism-pitch__unit--3">
 	                        <s:sport position="3" playerType="Forward"/>
                             <div class="ism-element" tabindex="0">
                                 <div <c:choose><c:when test='${isPlayerAvail}'>class="ismjs-select added-player-css" id="${gameClubPlayerId}"</c:when><c:otherwise>class="ismjs-select"</c:otherwise></c:choose>>
@@ -288,7 +288,7 @@
 				 	<p id="countDown"></p>
 	                  <!-- <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#modelPlayOption">Confirm Your Team</button></a> -->
 	                  <!--  <a href="#"><button id="confirmTeam" type="button" class="btn claim_btn" data-toggle="modal" data-target="#modelPlayOption">Confirm Your Team</button></a> -->
-	                  <a href="#"><button id="confirmTeam" type="button" class="btn claim_btn" onclick="checkPlayerCountAndOpenPlayOption()">Confirm Your Team</button></a>
+	                  <a href="#"><button id="confirmTeam" type="button" class="btn claim_btn confirm_team_btn" onclick="checkPlayerCountAndOpenPlayOption()">Confirm Your Team</button></a>
 	               	<!-- <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#paymentModel">Make Payment</button></a> -->
         		</div>  
 	            

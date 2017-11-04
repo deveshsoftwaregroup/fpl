@@ -10,7 +10,9 @@
   <meta property="og:image"         content="http://localhost:8282/SportMgmt/redGreenTheme/guide.html" />
 </head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>FACEBOOK POST</title>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+		<c:set var="context" value="<%=request.getContextPath()%>" />
+<link rel="shortcut icon" type="images/x-icon" href="${context}/redBlackTheme/images/favicon.ico">
 </head>
 <body>
 <!-- Load Facebook SDK for JavaScript -->

@@ -433,7 +433,7 @@ input[type="date"]:valid::before {
   width: 80%;
   left:10%;
   /* set to 100% if space is available */
-  z-index: 105;
+  z-index: 99999;
   box-shadow: 5px 5px 5px #555;
   text-align: center;
   font-weight: normal;

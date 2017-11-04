@@ -16,6 +16,7 @@
 	<%@ taglib uri="WEB-INF/sportmgmt.tld" prefix="s" %>  
 	<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 	
+	<link rel="shortcut icon" type="images/x-icon" href="${context}/redBlackTheme/images/favicon.ico">
 	
 	<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/style.css">	
@@ -358,7 +359,7 @@
 			         <ul>
 			        <li class="flex-item"><img src="${context}/redBlackTheme/images/logo.png" class="img-responsive "></li>
 			         <li class="pwr_text flex-item"></li>
-			        <%--  <li class="flex-item" ><img src="${context}/redBlackTheme/images/poweredby-logo.pnggggg" class="img-responsive pwr_logo"></li> --%>
+			         <li class="flex-item" ><img src="" class="img-responsive pwr_logo"></li>
 			         <li class="flex-item"><img src="${context}/redBlackTheme/images/simple-bannr.png" class="img-responsive pull-right"></li>
 			        </ul>
 			        </div>                        
