@@ -53,9 +53,9 @@ public static final String FETCH_SORTED_GAME_WEEK = "select game_week_id from GA
 
 public static final String FETCH_START_AND_END_DATE_OF_GAME_WEEK = "select start_date, end_date from GAME_WEEK where game_week_id=:gameWeekId";
 
-public static final String FETCH_END_DATE_LIST_OF_GAME_WEEK_FROM_TODAY = "select end_date from game_week where (end_date > :date  and start_date < :date ) or (start_date > :date) order by start_date";
+public static final String FETCH_END_DATE_LIST_OF_GAME_WEEK_FROM_TODAY = "select end_date from GAME_WEEK where (end_date > :date  and start_date < :date ) or (start_date > :date) order by start_date";
 
-public static final String MAKE_USER_PLAN_INACTIVE = "update user_plan set is_active = 'N' where user_id = :userId";
+public static final String MAKE_USER_PLAN_INACTIVE = "update USER_PLAN set is_active = 'N' where user_id = :userId";
 
 public static final String SELECT_COUNT_OF_PLAYER_BY_USER = "select game_club_player_id,count(*) as user_count from USER_PLAYER where game_club_player_id in (:gameClubPlayerIdList) group by game_club_player_id order by user_count";
 
@@ -77,27 +77,27 @@ public static final String SELECT_USERS_OF_GAME_FOR_DE = "select distinct(up.USE
 
 public static final String SELECT_PLAYER_GROUP = "FROM PlayerGroup PLG WHERE PLG.userId =:userId AND PLG.gameWeekId=:gameWeekId AND PLG.groupType=:groupType";
 
-public static final String SELECT_HIEGHEST_RANK_OF_GAME_WEEK = "select max(week_rank) from game_week_report where game_week_id =:gameWeekId";
+public static final String SELECT_HIEGHEST_RANK_OF_GAME_WEEK = "select max(week_rank) from GAME_WEEK_REPORT where game_week_id =:gameWeekId";
 
-public static final String SELECT_AVERAGE_RANK_OF_GAME_WEEK = "select avg(week_rank) from game_week_report where game_week_id =:gameWeekId";
+public static final String SELECT_AVERAGE_RANK_OF_GAME_WEEK = "select avg(week_rank) from GAME_WEEK_REPORT where game_week_id =:gameWeekId";
 
-public static final String SELECT_HIEGHEST_POINT_OF_GAME_WEEK = "select max(week_point) from game_week_report where game_week_id =:gameWeekId";
+public static final String SELECT_HIEGHEST_POINT_OF_GAME_WEEK = "select max(week_point) from GAME_WEEK_REPORT where game_week_id =:gameWeekId";
 
-public static final String SELECT_AVERAGE_POINT_OF_GAME_WEEK = "select avg(week_point) from game_week_report where game_week_id =:gameWeekId";
+public static final String SELECT_AVERAGE_POINT_OF_GAME_WEEK = "select avg(week_point) from GAME_WEEK_REPORT where game_week_id =:gameWeekId";
 
-public static final String SELECT_TOTAL_LIMIT_OF_OFFER ="select limit_total from offer where user_id =:userId and game_id =:gameId and game_week_id =:gameWeekId and offer_type =:offerType and is_active = 'Y'";
+public static final String SELECT_TOTAL_LIMIT_OF_OFFER ="select limit_total from OFFER where user_id =:userId and game_id =:gameId and game_week_id =:gameWeekId and offer_type =:offerType and is_active = 'Y'";
 
-public static final String SELECT_TOTAL_USED_OF_COUPON_LIST ="select coupon_id,count(*) from coupon_used where coupon_id in (:couponList) and game_week_id =:gameWeekId group by coupon_id";
+public static final String SELECT_TOTAL_USED_OF_COUPON_LIST ="select coupon_id,count(*) from COUPON_USED where coupon_id in (:couponList) and game_week_id =:gameWeekId group by coupon_id";
 
-public static final String SELECT_TOTAL_USED_OF_COUPON_FOR_GAME_WEEK ="select count(*) from coupon_used where coupon_id=:couponId and game_week_id =:gameWeekId";
+public static final String SELECT_TOTAL_USED_OF_COUPON_FOR_GAME_WEEK ="select count(*) from COUPON_USED where coupon_id=:couponId and game_week_id =:gameWeekId";
 
-public static final String SELECT_TOTAL_USED_COUPON_BY_USER_FOR_GAME_WEEK ="select count(*) from coupon_used where user_id=:userId and game_week_id =:gameWeekId";
+public static final String SELECT_TOTAL_USED_COUPON_BY_USER_FOR_GAME_WEEK ="select count(*) from COUPON_USED where user_id=:userId and game_week_id =:gameWeekId";
 
-public static final String SELECT_TOTAL_USED_COUPON_BY_USER_FOR_GAME_WEEK_BY_CATEGORY ="select count(*) from coupon_used where user_id=:userId and game_week_id =:gameWeekId and coupon_category_id=:couponCategoryId";
+public static final String SELECT_TOTAL_USED_COUPON_BY_USER_FOR_GAME_WEEK_BY_CATEGORY ="select count(*) from COUPON_USED where user_id=:userId and game_week_id =:gameWeekId and coupon_category_id=:couponCategoryId";
 
-public static final String SELECT_PLAYERS_CLUBD_OF_GAME_FOR_MATCH = "select gcp.* from game_club_player gcp,match_detail md where gcp.game_id =:gameId and md.match_id =:matchId and (gcp.club_id=md.club_one or gcp.club_id=md.club_two)";
+public static final String SELECT_PLAYERS_CLUBD_OF_GAME_FOR_MATCH = "select gcp.* from GAME_CLUB_PLAYER gcp,MATCH_DETAIL md where gcp.game_id =:gameId and md.match_id =:matchId and (gcp.club_id=md.club_one or gcp.club_id=md.club_two)";
 
-public static final String SELECT_PLAYERS_IN_ORDER_BY_NAME = "select gcp.game_club_player_id from game_club_player gcp,player pl where gcp.player_id = pl.player_id and gcp.game_club_player_id in (:gameClubPlayerIdList) order by pl.player_name";
+public static final String SELECT_PLAYERS_IN_ORDER_BY_NAME = "select gcp.game_club_player_id from GAME_CLUB_PLAYER gcp,PLAYER pl where gcp.player_id = pl.player_id and gcp.game_club_player_id in (:gameClubPlayerIdList) order by pl.player_name";
 
-public static final String SELECT_USER_LIST_OF_PLAYER = "select user_Id from user_player where game_club_player_id =:gameClubPlayerId";
+public static final String SELECT_USER_LIST_OF_PLAYER = "select user_Id from USER_PLAYER where game_club_player_id =:gameClubPlayerId";
 }
