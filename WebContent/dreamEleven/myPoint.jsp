@@ -54,7 +54,7 @@
               		
 	              	<c:when test="${empty sportMgmtRes.result.hisotryPlayerList}">
 	              		<div class="col-lg-8">
-	              		<h4>No team was confirmed for this Game Week</h4>
+	              		<h4 id="confirm_team_msg">No team was confirmed for this Game Week</h4>
 	              		</div>
 	              	</c:when>
 	              	
