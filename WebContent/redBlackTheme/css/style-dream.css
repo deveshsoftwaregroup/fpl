@@ -487,10 +487,11 @@ td, th {
   -o-background-size: cover;
   background-size: cover;
   height: 130vh; }
-
+#confirm_team_msg {padding-top:50px; text-align:center;}
 .transfers_predict11_map h3, .transfers_predict11_map h4, .transfers_predict11_map p {
   color: #fff; }
 
+.subHeader  {text-align:center;}
 .top_main_dream11 {
   width: 100%;
   border-radius: 5px;
@@ -576,6 +577,7 @@ td, th {
 	 position:absolute;
 	right:30%;
     float: left ; padding:10px;    padding-top: 7px;}
+ 
 /*-------------------/ Dream 11 Transfer -----------------------*/
 /*-------------------Footer -----------------------*/
 .footer_btn {
@@ -608,7 +610,7 @@ td, th {
 .Dream_11_players .head_table td {
   padding-left: 5px !important;
   font-size: 16px; }
-
+.Dream_11_players .head_table td:last-child {padding-left:30% !important;}
 .player_name_list {
   display: inline-block;
   padding-top: 5px; }
@@ -681,8 +683,8 @@ tbody tr {
   margin-top: 15px;
   margin-right: 20px;
   border-radius: 5px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  
+  padding:10px 20px;
   color: #fff !important;
   background-color: #f62b2b;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#f62b2b), to(#d20202));
