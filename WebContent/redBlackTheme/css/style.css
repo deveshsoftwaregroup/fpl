@@ -290,8 +290,15 @@ input[type="date"]:valid::before {
 .ism-container .nav-tabs {
   background-color: #403641; }
 
-#ismjs-elements-list-tables .nav-tabs a {
-  color: #da4b50; }
+
+
+#ismjs-elements-list-tables .nav-tabs > li.active > a, #ismjs-elements-list-tables .nav-tabs > li.active > a:hover,#ismjs-elements-list-tables .nav-tabs > li.active > a:focus{
+    color: #da4b50;	
+}
+
+  
+#ismjs-elements-list-tables .nav-tabs a{
+  color: #fff; }
 
 .top-bnr-mobile {
   display: none; }
