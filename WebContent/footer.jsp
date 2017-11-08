@@ -100,7 +100,14 @@
     <hr>
     <div class="bottom_bit">
         <h4>Disclaimer</h4>
-        <p>Lorem ipsum dolor sit amet Molestiae dolores voluptatem non modi unde dolorem ipsa perspiciatis reiciendis, expedita perferendis atque quis ipsum ea nemo enim ab repudiandae magnam! Necessitatibus asperiores architecto eum maxime quia praesentium neque sequi qui fugiat molestias quaerat aperiam harum, quod dolorum natus est reprehenderit odio quos rerum repudiandae ipsum eveniet sunt modi voluptate! Ratione praesentium placeat amet nam doloribus laborum .    
+        <p>We hereby state and confirm that the services rendered by us is not at all 
+        affiliated in any manner whatsoever and claims no association, in any capacity whatsoever,
+         with the (I) Fédération Internationale de Football Association (FIFA), Union of European 
+         Football Associations (UEFA), or any national football board or team (II)
+          Liga Nacional de Fútbol Profesional (LFP), Lega Nazionale Professionisti Serie A (Lega Serie A), 
+          The Football Association (The FA), Deutscher Fußball-Bund (DFB), or any associated clubs, or (III) 
+          any other domestic, international association football tournament/ league/cup, or tournament
+           franchise/team/club.    
     </p></div>
 
     
