@@ -490,7 +490,9 @@ td, th {
 #confirm_team_msg {padding-top:50px; text-align:center;}
 .transfers_predict11_map h3, .transfers_predict11_map h4, .transfers_predict11_map p {
   color: #fff; }
-
+.pager-left{margin-left:25%;}
+.pager-left,.pager-right, .league-pager h3 {width:18%; float:left;}
+.league-pager {padding-top: 30px;   padding-bottom: 30px;  margin-bottom: 72px;}
 .subHeader  {text-align:center;}
 .top_main_dream11 {
   width: 100%;
@@ -610,7 +612,11 @@ td, th {
 .Dream_11_players .head_table td {
   padding-left: 5px !important;
   font-size: 16px; }
-.Dream_11_players .head_table td:last-child {padding-left:30% !important;}
+.Dream_11_players .head_table td:last-child {padding-left:25% !important;}
+
+.player_name_list  {  padding-left: 28%;}
+.player_name_list img {height:30px;}
+
 .player_name_list {
   display: inline-block;
   padding-top: 5px; }

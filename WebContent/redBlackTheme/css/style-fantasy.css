@@ -243,7 +243,7 @@ header {
 .claim_btn {
   float: right;
   margin-top: 0px;
-  margin-right: 20px;
+  margin-right: -20px;
   border-radius: 5px;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -260,6 +260,10 @@ header {
 .dream11-bg .our_partners {
   background-color: rgba(0, 0, 0, 0.7) !important; }
 
+.ism .ism-element-row {
+	    padding: 0 15%;
+}
+.ism-pitch__unit--3{width:33% !important;}
 .personal .our_partners {
   margin-top: 20%;
   margin-bottom: 15%; }
@@ -367,7 +371,7 @@ header {
 
 #right_bdr {
   border-right: 1px solid #055127; }
-
+.transfers_predict11_map {padding-bottom:80px;}
 /*--------------/ My Team----------------------*/
 /*--------------Fixtures----------------------*/
 .fixture_img_ad {
@@ -390,7 +394,7 @@ header {
 
 .flex-buttons .claim_btn {
   margin-top: -10px;
-  margin-left: 20px; }
+  margin-left: 24px; }
 
 .plr_btn {
   margin-left: -25px; }
@@ -582,6 +586,7 @@ td, th {
 
 /*-------------------/ Dream 11 Transfer -----------------------*/
 /*-------------------Footer -----------------------*/
+.socialLinksCont {margin-top:65px;}
 /*-------------------/ Footer -----------------------*/
 /*-------------------Leadership Board -----------------------*/
 .leader-board h3 {
@@ -910,7 +915,12 @@ td, th {
     right: -30px !important; }
 
   .closebtn {
-    display: none; } }
+    display: none; } 
+  .team_map, .team_map_dream11{
+  	 height:450px !important;
+  }
+  
+}
 @media screen and (min-width: 1200px) and (max-width: 1300px) {
   .top_header li:nth-last-child(2) {
     padding-left: 25px !important; }
@@ -960,7 +970,12 @@ td, th {
     margin-top: 6px; }
 
   #register h4 {
-    padding: 11px !important; } }
+    padding: 11px !important; }
+  .team_map, .team_map_dream11{
+  	 height:450px !important;
+  }
+  
+  }
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   .left_img {
     left: -10px !important; }
@@ -1516,7 +1531,8 @@ td, th {
     top: 15px;
     right: 35px; } }
 .claim_your_prize {
-  color: #fff; }
+  color: #fff;
+  margin-top:80px; }
 
 @media screen and (max-width: 479px) and (min-width: 370px) {
   .my_team .team_map {
@@ -1577,5 +1593,9 @@ td, th {
 .a1a {
   float: left;
   display: block; }
+
+@media (min-width: 64em){
+	.ism .ism-element{left:0px !important;}
+}
 
 /*# sourceMappingURL=style-fantasy.css.map */
