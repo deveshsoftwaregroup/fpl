@@ -65,10 +65,10 @@
 			
 		<s:sportExt retrieve="priceList" />
 		
-		<main id="mainContent" tabindex="0" class="ism"> 
+		<div id="mainContent" class="ism"> 
 		
 		 	<%@ include	file="facebookPost.jsp"%>	
-			 <%@ include	file="popup.jsp"%>  
+			 <%@ include file="popup.jsp"%>  
 			<%@ include	file="header11.jsp"%>			
 			
 			<div class="ism-container"> <!-- Main content of every pages gets loaded at class ism-container  -->	
@@ -76,12 +76,13 @@
 			</div> 
 			
 			<%@ include file="footer.jsp"%>
-		</main>
-	</body>
-	
+		</div>
 		<script src="${context}/redBlackTheme/js/bootstrap.js"></script>
 		<script src="${context}/redBlackTheme/js/jquery.bxslider.js"></script>
 		<script src="${context}/redBlackTheme/js/jPushMenu.js" ></script>
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 		<%-- <script src="${context}/redBlackTheme/js/jquery-3.2.1.js" ></script>  --%>
+	</body>
+	
+		
 </html>
