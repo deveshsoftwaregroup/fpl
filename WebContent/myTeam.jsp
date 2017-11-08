@@ -6,33 +6,7 @@
     <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 	<%@ taglib uri="WEB-INF/sportmgmt.tld" prefix="s" %> 
 	<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-	<style>
-    #ajaxloader {
-    border: 16px solid #f3f3f3; /* Light grey */
-    border-top: 16px solid blue;
- 	border-right: 16px solid green;
- 	border-bottom: 16px solid red;
- 	border-left: 16px solid pink;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 1s linear infinite;
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    margin-left: -32px; 
-    margin-top: -32px;
-    z-index: 999;
-    display:none;
-}
-.mask{ background: #000; opacity: 0.5; position:fixed; top: 0; left: 0; width: 100%; height:100%;}
-
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-</style>
+	
 <s:sportExt retrieve="deadLine" />
 <main id="mainContent" tabindex="0" class="ism league">		
             <div class="addsbanner-lft"></div>
@@ -537,12 +511,7 @@
 												<h3 class="ism-data-list__item__heading">Total Players:</h3>
 												<div class="ism-data-list__item__value">${fn:length(sessionScope.playerList)}</div>
 											</li>
-											<li class="ism-data-list__item">
-												<h3 class="ism-data-list__item__heading">Gameweek Points:</h3>
-												<div class="ism-data-list__item__value">
-													
-												</div>
-											</li>
+											
 										</ul>
 									</div>
 									
@@ -555,24 +524,14 @@
 										<form action="#">
 											<div class="form_row">
 											     <input list="choose_cap" name="choose_captain" placeholder="Choose Captain" class="inp-control">
-											   <!--  <datalist id="choose_cap">
-												    <option value="Ospina">
-												    <option value="Chambers">
-												    <option value="Jenkinson">
-												    <option value="Coquelin">
-											    </datalist>   -->
+											  
 											    <select id="captain-select">
 											    </select>
 										    </div>
 										    
 										    <div class="form_row">
 											      <input list="choose_wisecap" name="choose_wisecaptain" placeholder="Choose Vice Captain" class="inp-control">
-											   <!-- <datalist id="choose_wisecap">
-												    <option value="Ospina">
-												    <option value="Chambers">
-												    <option value="Jenkinson">
-												    <option value="Coquelin">
-											    </datalist>  --> 
+											   
 											    <select id="vice-captain-select"></select>
 										    </div>
 										    <input type="button" class="button btnSubmit" value="Save" onclick="updateCaptain('${sessionScope.user.userId}');">
@@ -581,20 +540,8 @@
 								</div>
 							</div> 
 						</div>
-				<div class="league-panel__footer league-panel__footer--guttered">
-					<a href="#" class="leaguejs-link btn btn-secondary league-button league-button--full">Create and join leagues<span class="fa fa-caret-right"></span></a>
-				</div>
-				<div class="league-panel league-panel--dark">
-                    <h3 class="league-panel__heading league-panel__heading--guttered">Cup</h3>
-                    
-                        <div class="league-panel__body league-panel--dark__body">
-                            <p>The cup will start in Gameweek 18.</p>
-                        </div>
-                    
-                    <div class="league-panel__footer league-panel__footer--guttered">
-                        <a href="#" class="leaguejs-link league-link league-link--more">View cup history<span class="fa fa-angle-double-right"></span></a>
-                    </div>
-                </div> 
+				
+				
 							</div>
 						</section>
 						<div id="ismr-elements-menu"></div>

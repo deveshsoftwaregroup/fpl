@@ -36,33 +36,7 @@
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script> 
 		<script src="${context}/redBlackTheme/js/jquery-3.2.1.js" ></script> 
 
-		<style>
-		#preloader {
-		  position: fixed;
-		  top:0;
-		  left:0;
-		  right:0;
-		  bottom:0;
-		  background-color:#fff; /* change if the mask should have another color then white */
-		  z-index:10000; /* makes sure it stays on top */
-		}
 		
-		#status {
-		  
-		  width:300px;
-		  height:300px;
-		  position:absolute;
-		  left:53%; /* centers the loading animation horizontally one the screen */
-		  top:50%; /* centers the loading animation vertically one the screen */
-		  background-image:url("/SportMgmt/redBlackTheme/images/load.gif"); /* path to your loading animation */
-		  background-repeat:no-repeat;
-		  background-position:center;
-		  margin:-200px 0 0 -200px; /* is width and height divided by two */
-		}
-		@media screen and (min-width : 360px) and (max-width : 479px) {
-		  #status { left:65%;}
-		 }
-		</style>
 	</head>
 	<!-- code for preloader starts -->
 	<div id="preloader">

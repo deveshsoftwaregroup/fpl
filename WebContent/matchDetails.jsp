@@ -18,8 +18,8 @@
 								<div class="head-main">
 									
 									<div class="fixtures-pegination">
-										<a class="peg-lnk" onclick="updateMatchDetails(false);" href="javascript:void(0);">Previous <i class="fa fa-angle-left"></i></a>
-										<img src ="${context}/images/fixture banner1 small.jpg" >   
+										<a class="peg-lnk" onclick="updateMatchDetails(false);" href="javascript:void(0);">Previousssssssssss <i class="fa fa-angle-left"></i></a>
+										  
 										<a class="peg-lnk" onclick="updateMatchDetails(true);" href="javascript:void(0);">Next <i class="fa fa-angle-right"></i></a>
 									</div>
 								</div>
