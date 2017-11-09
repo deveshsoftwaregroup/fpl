@@ -500,7 +500,8 @@ td, th {
   height: 130vh; }
 
 .transfers_predict11_map h3, .transfers_predict11_map h4, .transfers_predict11_map p {
-  color: #fff; }
+  color: #fff;font-weight: 600;
+    }
 
 .top_main_dream11 {
   width: 100%;
@@ -583,7 +584,7 @@ td, th {
 
 .dream_11transfer .team_map_dream11 ul {
   margin-top: -20px; }
-
+#freeTransUsedDiv{color:#fff; padding-bottom:15px; padding-top:10px;}
 /*-------------------/ Dream 11 Transfer -----------------------*/
 /*-------------------Footer -----------------------*/
 .socialLinksCont {margin-top:65px;}
@@ -919,7 +920,8 @@ td, th {
   .team_map, .team_map_dream11{
   	 height:450px !important;
   }
-  
+   .transfers_predict11_map p {font-size:19px;}
+   .flex-buttons .flex1 {font-size:18px;}
 }
 @media screen and (min-width: 1200px) and (max-width: 1300px) {
   .top_header li:nth-last-child(2) {
@@ -974,6 +976,8 @@ td, th {
   .team_map, .team_map_dream11{
   	 height:450px !important;
   }
+   .transfers_predict11_map p {font-size:19px;}
+  .flex-buttons .flex1 {font-size:18px;}
   
   }
 @media screen and (min-width: 769px) and (max-width: 1024px) {
@@ -1034,7 +1038,10 @@ td, th {
 
   .coupon_card {
     padding-right: 50px !important;
-    padding-left: 50px !important; } }
+    padding-left: 50px !important; }
+   .transfers_predict11_map p {font-size:19px;} 
+.flex-buttons .flex1 {font-size:18px;}
+ }
 @media screen and (min-width: 700px) and (max-width: 768px) {
   .navbar-brand > img {
     margin-top: -48px; }
@@ -1353,7 +1360,7 @@ td, th {
     margin-left: 5px; }
 
   .unlimited_transfer {
-    width: 30% !important; }
+    width: 90% !important; }
 
   .navbar {
     height: 50px !important; }
@@ -1446,10 +1453,10 @@ td, th {
     padding: 0px; }
 
   .ism .ism-pitch__unit--4 {
-    left: 37%; }
+    left: 25%; }
 
   .ism .ism-pitch__unit--5 {
-    width: 24%; }
+    width: 20%; }
 
   .ism .ism-pitch__unit {
     min-height: 80px; }

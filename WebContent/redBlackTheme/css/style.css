@@ -231,7 +231,7 @@ input[type="date"]:valid::before {
   position: fixed !important;
   text-align: right;
   left: 30px;
-  top: 16%;
+  top: 2%;
   z-index: 4; }
 
 /*------------------------------------*/
