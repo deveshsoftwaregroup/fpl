@@ -54,7 +54,7 @@
               		
 	              	<c:when test="${empty sportMgmtRes.result.hisotryPlayerList}">
 	              		<div class="col-lg-8">
-	              		<h4 id="confirm_team_msg">No team was confirmed for this Game Week</h4>
+	              		<h4>No team was confirmed for this Game Week</h4>
 	              		</div>
 	              	</c:when>
 	              	
@@ -62,241 +62,128 @@
 	                	<div class="col-lg-8 team_map_dream11">
 	                     <div class="ism-element-row ism-element-row--pitch">
 		                    	<div id="ismr-pos1" class="ism-pitch__unit ism-pitch__unit--4">
-	                         <s:sport position="1" playerType="Goalkeeper" pageName="DE_MY_POINT"/>
-	                       <div class="ism-element" tabindex="0">
-	                       	
-								<c:choose>                               
-	                            	<c:when test="${isPlyaerInTopElevent}">
-								 		<a href="#"> <img src="${context}/images/${imageSrc}" alt="" title="" class=" highlited_plr" ></a>
-									</c:when>
-	                               
-	                               
-	                               <c:when test="${not empty clubId and clubId ne ''}">
-	                               	<spring:message code="club_${clubId}_image" var="imageSrc" />
-									<img src="${context}/images/${imageSrc}" alt="'+playerName+'" title="" class="ism-shirt ism-element__shirt" >
-	                               </c:when>  
-	                               
-	                               </c:choose> 
+	                              <s:sport position="1" playerType="Goalkeeper" pageName="DE_MY_POINT"/>
+	                               <div class="ism-element" tabindex="0">
+	                       	        <c:if test="${not empty clubId and clubId ne ''}">
+	                                  <spring:message code="club_${clubId}_image" var="imageSrc" />
+								       <img src="${context}/images/${imageSrc}" alt="'+playerName+'" title="" class="<c:if test='${isPlyaerInTopElevent}'>highlited_plr</c:if>" >
+								</c:if> 
 	                              <h4 class="ism-element__name">${playerName}</h4>
-	                             
-	                     </div>
-	                     </div>
-	                     </div>
+	                              </div>
+	                        </div>
+	                   </div>
 	                     <div class="ism-element-row ism-element-row--pitch">
-			                    <div id="ismr-pos3" class="ism-pitch__unit ism-pitch__unit--5">
+			                <div id="ismr-pos3" class="ism-pitch__unit ism-pitch__unit--5">
 	                           	  <s:sport position="1" playerType="Defender" pageName="DE_MY_POINT"/>
 	                             <div class="ism-element" tabindex="0">
-	                       	      
-								<c:choose>
-	                               
-	                               <c:when test="${isPlyaerInTopElevent}">
-								 <a href="#"> <img src="${context}/images/${imageSrc}" alt="" title="" class=" highlited_plr" ></a>
-								</c:when>
-	                               
-	                               
-	                               <c:when test="${not empty clubId and clubId ne ''}">
+	                       	       <c:if test="${not empty clubId and clubId ne ''}">
 	                               <spring:message code="club_${clubId}_image" var="imageSrc" />
-								<img src="${context}/images/${imageSrc}" alt="'+playerName+'" title="" class="ism-shirt ism-element__shirt" >
-	                                  </c:when>  
-	                               
-	                               </c:choose> 
+							    	<img src="${context}/images/${imageSrc}" alt="'+playerName+'" title="" class="<c:if test='${isPlyaerInTopElevent}'>highlited_plr</c:if>" >
+								     </c:if> 
 	                              <h4 class="ism-element__name">${playerName}</h4>
-	                            
-	                     </div>
+	                            </div>
 	                     </div>
 	                           
-	                           <div id="ismr-pos4" class="ism-pitch__unit ism-pitch__unit--5">
+	                       <div id="ismr-pos4" class="ism-pitch__unit ism-pitch__unit--5">
 	                           <s:sport position="2" playerType="Defender" pageName="DE_MY_POINT"/>
 	                               <div class="ism-element" tabindex="0">
-	                       	     
-								<c:choose>
-	                               
-	                               <c:when test="${isPlyaerInTopElevent}">
-								 <a href="#"> <img src="${context}/images/${imageSrc}" alt="" title="" class=" highlited_plr" ></a>
-								</c:when>
-	                               
-	                               
-	                               <c:when test="${not empty clubId and clubId ne ''}">
-	                               <spring:message code="club_${clubId}_image" var="imageSrc" />
-								<img src="${context}/images/${imageSrc}" alt="'+playerName+'" title="" class="ism-shirt ism-element__shirt" >
-	                                  </c:when>  
-	                               
-	                               </c:choose> 
+	                       	        <c:if test="${not empty clubId and clubId ne ''}">
+	                                 <spring:message code="club_${clubId}_image" var="imageSrc" />
+								      <img src="${context}/images/${imageSrc}" alt="'+playerName+'" title="" class="<c:if test='${isPlyaerInTopElevent}'>highlited_plr</c:if>" >
+								</c:if> 
 	                              <h4 class="ism-element__name">${playerName}</h4>
-	                           
+	                            </div>
 	                     </div>
-	                     </div>
-	                          <div id="ismr-pos5" class="ism-pitch__unit ism-pitch__unit--5">
+	                       <div id="ismr-pos5" class="ism-pitch__unit ism-pitch__unit--5">
 	                           <s:sport position="3" playerType="Defender" pageName="DE_MY_POINT"/>
 	                               <div class="ism-element" tabindex="0">
-	                       	     
-								<c:choose>
-	                               
-	                               <c:when test="${isPlyaerInTopElevent}">
-								 <a href="#"> <img src="${context}/images/${imageSrc}" alt="" title="" class=" highlited_plr" ></a>
-								</c:when>
-	                               
-	                               
-	                               <c:when test="${not empty clubId and clubId ne ''}">
-	                               <spring:message code="club_${clubId}_image" var="imageSrc" />
-								<img src="${context}/images/${imageSrc}" alt="'+playerName+'" title="" class="ism-shirt ism-element__shirt" >
-	                                  </c:when>  
-	                               
-	                               </c:choose> 
+	                       	        <c:if test="${not empty clubId and clubId ne ''}">
+	                                 <spring:message code="club_${clubId}_image" var="imageSrc" />
+								      <img src="${context}/images/${imageSrc}" alt="'+playerName+'" title="" class="<c:if test='${isPlyaerInTopElevent}'>highlited_plr</c:if>" >
+								</c:if> 
 	                              <h4 class="ism-element__name">${playerName}</h4>
-	                             
+	                             </div>
 	                     </div>
-	                     </div>
-	                           <div id="ismr-pos6" class="ism-pitch__unit ism-pitch__unit--5">
+	                       <div id="ismr-pos6" class="ism-pitch__unit ism-pitch__unit--5">
 	                           <s:sport position="4" playerType="Defender" pageName="DE_MY_POINT"/>
 	                               <div class="ism-element" tabindex="0">
-	                               <c:choose>
-	                               
-	                               <c:when test="${isPlyaerInTopElevent}">
-								 <a href="#"> <img src="${context}/images/${imageSrc}" alt="" title="" class=" highlited_plr" ></a>
-								</c:when>
-	                               
-	                               
-	                               <c:when test="${not empty clubId and clubId ne ''}">
-	                               <spring:message code="club_${clubId}_image" var="imageSrc" />
-								<img src="${context}/images/${imageSrc}" alt="'+playerName+'" title="" class="ism-shirt ism-element__shirt" >
-	                                  </c:when>  
-	                               
-	                               </c:choose> 
+	                                <c:if test="${not empty clubId and clubId ne ''}">
+	                                 <spring:message code="club_${clubId}_image" var="imageSrc" />
+								      <img src="${context}/images/${imageSrc}" alt="'+playerName+'" title="" class="<c:if test='${isPlyaerInTopElevent}'>highlited_plr</c:if>" >
+								</c:if>  
 	                              <h4 class="ism-element__name">${playerName}</h4>
-	                             
+	                              </div>
 	                     </div>
-	                     </div>
-	                           </div>
+	             </div>
 	                                 
 	                     
 	                     <div class="ism-element-row ism-element-row--pitch">
 		                    <div id="ismr-pos11" class="ism-pitch__unit ism-pitch__unit--3">
 	                           <s:sport position="1" playerType="Midfielder" pageName="DE_MY_POINT"/>
 	                               <div class="ism-element" tabindex="0">
-	                       	      
-								<c:choose>
-	                               
-	                               <c:when test="${isPlyaerInTopElevent}">
-								 <a href="#"> <img src="${context}/images/${imageSrc}" alt="" title="" class=" highlited_plr" ></a>
-								</c:when>
-	                               
-	                               
-	                               <c:when test="${not empty clubId and clubId ne ''}">
-	                               <spring:message code="club_${clubId}_image" var="imageSrc" />
-								<img src="${context}/images/${imageSrc}" alt="'+playerName+'" title="" class="ism-shirt ism-element__shirt" >
-	                                  </c:when>  
-	                               
-	                               </c:choose> 
+	                       	        <c:if test="${not empty clubId and clubId ne ''}">
+	                                 <spring:message code="club_${clubId}_image" var="imageSrc" />
+								      <img src="${context}/images/${imageSrc}" alt="'+playerName+'" title="" class="<c:if test='${isPlyaerInTopElevent}'>highlited_plr</c:if>" >
+								</c:if> 
 	                              <h4 class="ism-element__name">${playerName}</h4>
-	                            
-	                     </div>
+	                             </div>
 	                       </div>
 	                         <div id="ismr-pos12" class="ism-pitch__unit ism-pitch__unit--3">   
 	                           <s:sport position="2" playerType="Midfielder" pageName="DE_MY_POINT"/>
 	                               <div class="ism-element" tabindex="0">
-	                       	      
-								<c:choose>
-	                               
-	                               <c:when test="${isPlyaerInTopElevent}">
-								 <a href="#"> <img src="${context}/images/${imageSrc}" alt="" title="" class=" highlited_plr" ></a>
-								</c:when>
-	                               
-	                               
-	                               <c:when test="${not empty clubId and clubId ne ''}">
-	                               <spring:message code="club_${clubId}_image" var="imageSrc" />
-								<img src="${context}/images/${imageSrc}" alt="'+playerName+'" title="" class="ism-shirt ism-element__shirt" >
-	                                  </c:when>  
-	                               
-	                               </c:choose> 
+	                       	        <c:if test="${not empty clubId and clubId ne ''}">
+	                                 <spring:message code="club_${clubId}_image" var="imageSrc" />
+								      <img src="${context}/images/${imageSrc}" alt="'+playerName+'" title="" class="<c:if test='${isPlyaerInTopElevent}'>highlited_plr</c:if>" >
+								</c:if> 
 	                              <h4 class="ism-element__name">${playerName}</h4>
 	                             
-	                     </div>
+	                           </div>
 	                       </div>
 	                       <div id="ismr-pos13" class="ism-pitch__unit ism-pitch__unit--3">     
 	                           <s:sport position="3" playerType="Midfielder" pageName="DE_MY_POINT"/>
 	                               <div class="ism-element" tabindex="0">
-	                       	      
-								<c:choose>
-	                               
-	                               <c:when test="${isPlyaerInTopElevent}">
-								 <a href="#"> <img src="${context}/images/${imageSrc}" alt="" title="" class=" highlited_plr" ></a>
-								</c:when>
-	                               
-	                               
-	                               <c:when test="${not empty clubId and clubId ne ''}">
-	                               <spring:message code="club_${clubId}_image" var="imageSrc" />
-								<img src="${context}/images/${imageSrc}" alt="'+playerName+'" title="" class="ism-shirt ism-element__shirt" >
-	                                  </c:when>  
-	                               
-	                               </c:choose> 
+	                       	        <c:if test="${not empty clubId and clubId ne ''}">
+	                                 <spring:message code="club_${clubId}_image" var="imageSrc" />
+							        	<img src="${context}/images/${imageSrc}" alt="'+playerName+'" title="" class="<c:if test='${isPlyaerInTopElevent}'>highlited_plr</c:if>" >
+								</c:if> 
 	                              <h4 class="ism-element__name">${playerName}</h4>
 	                             
-	                     </div>
+	                            </div>
 	                       </div>
-	                              
-	                   </div>
+	                </div>
 	                    
 	                    <div class="ism-element-row ism-element-row--pitch">
 		                    <div id="ismr-pos8" class="ism-pitch__unit ism-pitch__unit--3">
 	                           <s:sport position="1" playerType="Forward" pageName="DE_MY_POINT"/>
 	                               <div class="ism-element" tabindex="0">
-	                       	     
-								<c:choose>
-	                               
-	                               <c:when test="${isPlyaerInTopElevent}">
-								 <a href="#"> <img src="${context}/images/${imageSrc}" alt="" title="" class=" highlited_plr" ></a>
-								</c:when>
-	                               
-	                               
-	                               <c:when test="${not empty clubId and clubId ne ''}">
-	                               <spring:message code="club_${clubId}_image" var="imageSrc" />
-								<img src="${context}/images/${imageSrc}" alt="'+playerName+'" title="" class="ism-shirt ism-element__shirt" >
-	                                  </c:when>  
-	                               
-	                               </c:choose> 
+	                       	        <c:if test="${not empty clubId and clubId ne ''}">
+	                                  <spring:message code="club_${clubId}_image" var="imageSrc" />
+								       <img src="${context}/images/${imageSrc}" alt="'+playerName+'" title="" class="<c:if test='${isPlyaerInTopElevent}'>highlited_plr</c:if>" >
+								</c:if>
 	                              <h4 class="ism-element__name">${playerName}</h4>
 	                             
-	                     </div>
+	                            </div>
 	                        </div>
 	                        <div id="ismr-pos9" class="ism-pitch__unit ism-pitch__unit--3"> 
 	                           <s:sport position="2" playerType="Forward" pageName="DE_MY_POINT"/>
 	                               <div class="ism-element" tabindex="0">
-								<c:choose>
-	                               
-	                               <c:when test="${isPlyaerInTopElevent}">
-								 <a href="#"> <img src="${context}/images/${imageSrc}" alt="" title="" class=" highlited_plr" ></a>
-								</c:when>
-	                               
-	                               
-	                               <c:when test="${not empty clubId and clubId ne ''}">
-	                               <spring:message code="club_${clubId}_image" var="imageSrc" />
-								<img src="${context}/images/${imageSrc}" alt="'+playerName+'" title="" class="ism-shirt ism-element__shirt" >
-	                                  </c:when>  
-	                               
-	                               </c:choose> 
+								    <c:if test="${not empty clubId and clubId ne ''}">
+	                                  <spring:message code="club_${clubId}_image" var="imageSrc" />
+								       <img src="${context}/images/${imageSrc}" alt="'+playerName+'" title="" class="<c:if test='${isPlyaerInTopElevent}'>highlited_plr</c:if>" >
+								</c:if>
 	                              <h4 class="ism-element__name">${playerName}</h4>
-	                     </div>
 	                            </div>
-	                            <div id="ismr-pos10" class="ism-pitch__unit ism-pitch__unit--3"> 
+	                     </div>
+	                          <div id="ismr-pos10" class="ism-pitch__unit ism-pitch__unit--3"> 
 	                           <s:sport position="3" playerType="Forward" pageName="DE_MY_POINT"/>
 	                               <div class="ism-element" tabindex="0">
-								<c:choose>
-	                               
-	                               <c:when test="${isPlyaerInTopElevent}">
-								 <a href="#"> <img src="${context}/images/${imageSrc}" alt="" title="" class=" highlited_plr" ></a>
-								</c:when>
-	                               
-	                               
-	                               <c:when test="${not empty clubId and clubId ne ''}">
-	                               <spring:message code="club_${clubId}_image" var="imageSrc" />
-								<img src="${context}/images/${imageSrc}" alt="'+playerName+'" title="" class="ism-shirt ism-element__shirt" >
-	                                  </c:when>  
-	                               
-	                               </c:choose> 
+								     <c:if test="${not empty clubId and clubId ne ''}">
+	                                  <spring:message code="club_${clubId}_image" var="imageSrc" />
+								       <img src="${context}/images/${imageSrc}" alt="'+playerName+'" title="" class="<c:if test='${isPlyaerInTopElevent}'>highlited_plr</c:if>" >
+								</c:if> 
 	                              <h4 class="ism-element__name">${playerName}</h4>
-	                     </div>
-	                            </div>
+	                             </div>
+	                       </div>
 	                              </div>
 	                      
 	                          
