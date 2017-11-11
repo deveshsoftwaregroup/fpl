@@ -5,134 +5,7 @@
     <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 	<%@ taglib uri="WEB-INF/sportmgmt.tld" prefix="s" %> 
 	<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-	<style>
-    #ajaxloader {
-    border: 16px solid #f3f3f3; /* Light grey */
-    border-top: 16px solid blue;
- 	border-right: 16px solid green;
- 	border-bottom: 16px solid red;
- 	border-left: 16px solid pink;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 1s linear infinite;
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    margin-left: -32px; 
-    margin-top: -32px;
-    z-index: 999;
-    display:none;
-}
-.mask{ background: #000; opacity: 0.5; position:fixed; top: 0; left: 0; width: 100%; height:100%;}
-
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-.league-pager {margin: 2rem 0;}
-.pager{
-	width: 50%;
-    padding-right: 1rem;
-    padding-left: 1rem;
-}
-.pager.pager-left {
-    float: left;
-}
-.pager.pager-right {
-    float: right;
-}
-.league-pager:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-.pager-header .pager-heading {
-    color: #e90052;
-}
-.pager .fa-angle-right {
-    position: absolute;
-    top: 50%;
-    z-index: 1;
-    margin-top: -9px;
-    margin-left: -4.5px;
-    left: auto;
-    right: 1rem;
-    font-size: 16px;
-}
-.pager .fa-angle-left {
-    position: absolute;
-    top: 50%;
-    z-index: 1;
-    margin-top: -9px;
-    margin-right: -4.5px;
-    right: auto;
-    left: 1rem;
-    font-size: 16px;
-}
-@media (min-width: 25em){
-	.pager-heading {
-		margin-left: 25%;
-		margin-right: 25%;
-		margin-bottom: 0;
-		padding: 1rem;
-		text-align: center;
-	}
-	.league-pager {
-		margin-top: -4rem;
-	}
-	.league-pager .pager{
-		width: 25%;
-	}
-}
-@media (min-width: 56.25em){
-	.league-pager .pager {
-		width: 22.22222%;
-		padding: 0;
-	}
-}
-.final-points {
-    background: #000;
-    float: left;
-    width: 160px;
-    text-align: center;
-    color: #ddd;
-    font-size: 20px;
-    position: absolute;
-    z-index: 1;
-    height: 132px;
-    padding: 36px 0;
-}
-.final-points span {
-    display: block;
-    font-size: 32px;
-    color: #00ff87;
-    font-family: Opensans-semibold, "Helvetica Neue",Helvetica,Arial,sans-serif;
-}
-.point-row:after {
-    clear: both;
-    display: table;
-    content: "";
-}
-.point-row .pt-col {
-    float: left;
-    padding: 7px 10px;
-}
-.point-row .pt-txt {
-    width: 50%;
-	text-align:left;
-}
-.point-row .pt-no {
-    width: 50%;
-	text-align:right;
-	font-family: Opensans-semibold, "Helvetica Neue",Helvetica,Arial,sans-serif;
-}
-.highest {
-    color: #00ff87;
-}
-</style>
+	
 <s:sportExt retrieve="deadLine" />
 <main id="mainContent" tabindex="0" class="ism league">
 		
@@ -748,8 +621,8 @@
  
   <c:if test="${empty sportMgmtRes.result}">
   <script type="text/javascript">
-   alert("Hey ! This page can be viewed after your 1st game week ends. Now you will be redirected to My Team page ");
-  uploadTeamView('${sessionScope.userId}','${sessionScope.gameDetails.gameId}');
+   //alert("Hey ! This page can be viewed after your 1st game week ends. Now you will be redirected to My Team page ");
+ // uploadTeamView('${sessionScope.userId}','${sessionScope.gameDetails.gameId}');
   </script>
   </c:if>
 <script type="text/javascript">
