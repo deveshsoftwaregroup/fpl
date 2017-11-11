@@ -243,8 +243,7 @@
 		       
 		          <div class="player_name_list"><img src="${context}/images/${imageSrc}"> <p>${player.name}</p></div></td>
 		          
-		     <%--  <td>$${player.price} </td>
-		
+		     <%--  <td>$${player.price} </td>		
 		      <td>${player.point} </td> --%>
 		        
 		    </tr>
