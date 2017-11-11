@@ -6,7 +6,7 @@
     <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 	<%@ taglib uri="WEB-INF/sportmgmt.tld" prefix="s" %> 
 	<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-	
+	<script src="${context}/redBlackTheme/js/jquery.js"></script>
 <s:sportExt retrieve="deadLine" />
 <main id="mainContent" tabindex="0" class="ism league">		
             <div class="addsbanner-lft"></div>
@@ -612,19 +612,16 @@
 	function activatePlayer(userId,gameClubPlayerId,checkBox)
 	
 	{
-		alert("inside activatePlayer");
 		if(typeof userId !='undefined' && typeof gameClubPlayerId !='undefined' &&  typeof checkBox != 'undefined')
 		{    
 			var url="";
 			var playerType = "";
 			if(checkBox.checked)
 			{
-				alert("userId="+userId);
 				for(var i=0;i<playerListJson.length;i++)
-				{alert("1");
+				{
 					if(playerListJson[i].gameClubPlayerId == gameClubPlayerId)
 					{
-						alert("2");
 						playerType = playerListJson[i].type;
 						//document.getElementById("leaguer-pos" +i).className ="enable";
 					}
@@ -674,10 +671,7 @@
 
 					}	
 				}
-				alert("3");
 				url ="/SportMgmt/mvc/game/ActivatePlayer?userId="+userId+"&gameClubPlayerId="+gameClubPlayerId;
-				alert("userId="+userId);
-				alert("gameClubPlayerId="+gameClubPlayerId);
 				$.ajax({
 					
 					
@@ -691,7 +685,6 @@
 		     				 if(typeof resp.totalPlayingJson != 'undefined')
 		     					totalPlayingJson = resp.totalPlayingJson;
 		     				updatePlayerList();
-		     				alert("player list updated");
 		     			  }
 		     			  else
 		    			  {
@@ -742,9 +735,8 @@
  	});
  	function updatePlayerList()
  	{
- 		alert("inside updatePlayerList");
  		if(typeof userGameJson !='undefined')
- 		{alert("inside updatePlayerList  userGameJson is not null");
+ 		{
  			var activePlayerHtml = '<option value="0">Select Captain</option>';
  			var activePlayerHtml1 = '<option value="0">Select Vice Captain</option>';
  			var selectedCaptain = $('#captain-select option:selected').val();
