@@ -539,7 +539,7 @@
                               			
 								<div class="col-lg-12 pull-right claim_your_prize">
                                              <!-- <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#modelPlayOption">Confirm Your Team</button></a> -->
-                                             <a href="#"><button type="button" class="btn claim_btn" onclick="checkPlayerCountAndConfirmTeam()">Confirm Your Team</button></a>
+                                             <a href="#"><button type="button" class="btn claim_btn" onclick="uploadTeamView('${sessionScope.userId}','${sessionScope.gameDetails.gameId}');"> confirm </button></a>
                                           	<!-- <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#paymentModel">Make Payment</button></a> -->
                                  </div>  
 		   
@@ -1442,20 +1442,32 @@
    		}
      }
      
-     function checkPlayerCountAndConfirmTeam()
- 	{ 
- 		if(typeof userGameJson == 'undefined' || userGameJson.playerList.length < 15)
- 		{
- 			showNotification('Please select 15 players');			
- 		}
- 		else
- 		{	 
- 			$("#modelPlayOption").fadeIn("slow");
- 			$(".close").click(function(){			              
- 				$("#modelPlayOption").fadeOut("slow");
- 			});
- 		}
- 	} 
+     function uploadTeamView(userId,gameId)
+		{
+			if(typeof userGameJson != 'undefined' && userGameJson.playerList.length >= 15)
+			{
+				if(typeof userId != 'undefined' && userId != '' && typeof gameId != 'undefined' && gameId != '')
+				{
+					showNotification('Choose your playing 11 and then confirm your team');
+					url ="/SportMgmt/mvc/game/MyTeamView/"+userId+"/"+gameId;
+					$.ajax({
+			     		  url: url,
+			     		  dataType: 'html',
+			     		  success: function( resp ) {
+			     			 //console.log(resp); 
+			     			 $('.ism-container').html(resp);
+			     		  },
+			     		  error: function( req, status, err ) {
+			     		    console.log( 'something went wrong', status, err );
+			     		  }
+			     		});	
+				}
+			}
+			else
+			{
+				showNotification ("Please complete the team of 15 players");
+			}
+		}
      /* $(document).ajaxStart(function(){
   		$("#ajaxloader").css("display", "block");
   		$('.mask').show();

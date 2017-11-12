@@ -458,6 +458,11 @@
 
 														</div>
 												</div>
+												<div class="col-lg-12 pull-right claim_your_prize">
+                                             <!-- <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#modelPlayOption">Confirm Your Team</button></a> -->
+                                             <a href="#"><button type="button" class="btn claim_btn" onclick="checkPlayerCountAndConfirmTeam()">Confirm Your Team</button></a>
+                                          	<!-- <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#paymentModel">Make Payment</button></a> -->
+                                 </div> 
 
 											</div>									
 										
@@ -724,6 +729,20 @@
 			}
 		}
 	}
+	  function checkPlayerCountAndConfirmTeam()
+	 	{ 
+	 		if(typeof userGameJson == 'undefined' || userGameJson.playerList.length < 15)
+	 		{
+	 			showNotification('Please select 11 players');			
+	 		}
+	 		else
+	 		{	 
+	 			$("#modelPlayOption").fadeIn("slow");
+	 			$(".close").click(function(){			              
+	 				$("#modelPlayOption").fadeOut("slow");
+	 			});
+	 		}
+	 	} 
 	$(document).ajaxStart(function(){
  		$("#ajaxloader").css("display", "block");
  		$('.mask').show();
