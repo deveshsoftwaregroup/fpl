@@ -21,7 +21,7 @@
 		<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/jquery.bxslider.css">
 		<!--  <link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/style-dream.css">-->
 		<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/style-fantasy.css">
-		<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/style-dream.css">
+		 <link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/style-dream.css">
 		<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/theme.css">
 		<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/demo.css">
 		<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/tab-style.css">
@@ -36,6 +36,7 @@
 		<script src="${context}/redBlackTheme/js/jPushMenu.js" ></script>
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script> 
 		<script src="${context}/redBlackTheme/js/jquery-3.2.1.js" ></script> 
+		<!-- <script src="${context}/redBlackTheme/js/modernizr.min.js" ></script> -->
 
 		
 	</head>
