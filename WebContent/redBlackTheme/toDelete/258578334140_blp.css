@@ -111,7 +111,7 @@ background:#f8f8f8
 }
 
 .table td,.table th {
-padding:.7rem 1rem
+padding:.7rem 0rem
 }
 
 .table td.points,.table th.points {
@@ -142,6 +142,7 @@ vertical-align:middle
 .table td {
 border-bottom:1px solid #E8E8E8;
 text-align:left;
+
 }
 
 .table td.pos {

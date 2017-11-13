@@ -230,7 +230,7 @@ input[type="date"]:valid::before {
 .fb_iframe_widget iframe {
   position: fixed !important;
   text-align: right;
-  left: 30px;
+  left: 0px;
   top: 2%;
   z-index: 4; }
 

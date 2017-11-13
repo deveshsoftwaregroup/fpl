@@ -372,6 +372,11 @@ header {
 #right_bdr {
   border-right: 1px solid #055127; }
 .transfers_predict11_map {padding-bottom:80px;}
+.ism-shirt {height:38px;}
+.my_team_points tr td:nth-child(2) { width:50% ;}
+.my_team_points td img {height:38px;}
+.glyphicon-plus {
+  padding-left: 15%; }
 /*--------------/ My Team----------------------*/
 /*--------------Fixtures----------------------*/
 .fixture_img_ad {
@@ -1353,20 +1358,21 @@ td, th {
     flex: none !important; }
 
   .flex1 {
-    flex: none !important; }
+    flex: none !important;    padding-left: 15px;  }
 
   .flex-buttons .claim_btn {
     margin-top: 0px !important;
     margin-left: 5px; }
 
   .unlimited_transfer {
-    width: 90% !important; }
+    width: 80% !important; }
 
   .navbar {
     height: 50px !important; }
 
   .navbar-brand > img {
-    margin-top: -50px !important; }
+       margin-top: -35px !important;
+    height: 80px; }
 
   .btm_ftr {
     padding: 8px 10px; }
