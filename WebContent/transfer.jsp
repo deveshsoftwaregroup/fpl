@@ -600,6 +600,7 @@
                                         <option <c:if test="${sessionScope.playersOrderBy eq 'price'}">selected</c:if>  value="price">Price</option>
                                         <option <c:if test="${sessionScope.playersOrderBy eq 'total_score'}">selected</c:if> value="total_score">Total Score</option>
                                         <option <c:if test="${sessionScope.playersOrderBy eq 'user_count'}">selected</c:if> value="user_count">Selected By %</option>
+                                         <option <c:if test="${sessionScope.playersOrderBy eq 'name'}">selected</c:if> value="name">Selected By name</option>
                                     </select>
                                 </div>
                             </div>
@@ -651,7 +652,7 @@
 															<c:if test="${not empty playerMap.clubId and playerMap.clubId ne ''}">
 															<c:set value="${clubImageMap[playerMap.clubId]}" var="imageSrc" />
 															</c:if>							                           
-															       <img src="${context}/images/Goalkeeper_${imageSrc}" height="20" width="20" alt="Arsenal" title="${playerMap.name}" class="ism-shirt">
+															       <img src="${context}/images/Goalkeeper_${imageSrc}" alt="" title="${playerMap.name}" class="ism-shirt">
 															       ${playerMap.name}								        
 															</td>
 															<td>${playerMap.price}</td>
@@ -677,7 +678,7 @@
 							        		<table>			            
 								                <tr>
 								                    <th></th>
-								                    <th><a href="#">Defender</a></th>
+								                    <th>Defenders</th>
 								                    <th><abbr title="Price in Million INR">&#8377</abbr></th>
 								                    <c:choose>
 								                    	<c:when test="${sessionScope.playersOrderBy eq 'user_count'}">
@@ -700,7 +701,7 @@
 															<c:if test="${not empty playerMap.clubId and playerMap.clubId ne ''}">
 																<c:set value="${clubImageMap[playerMap.clubId]}" var="imageSrc" />
 															</c:if>
-															<img src="${context}/images/Defender_${imageSrc}" height="20" width="20" alt="" title="${playerMap.name}" class="ism-shirt">
+															<img src="${context}/images/Defender_${imageSrc}"  alt="" title="${playerMap.name}" class="ism-shirt">
 											                ${playerMap.name}						                
 											            </td>
 													    <td>${playerMap.price}</td>
@@ -721,7 +722,7 @@
 									        <table>
 									            <tr>
 								                    <th></th>
-								                    <th><a href="#">Midfielder</a></th>
+								                    <th>Midfielders</th>
 								                    <th><abbr title="Price in Million INR">&#8377</abbr></th>
 								                    <c:choose>
 								                    	<c:when test="${sessionScope.playersOrderBy eq 'user_count'}">
@@ -743,7 +744,7 @@
 																<c:if test="${not empty playerMap.clubId and playerMap.clubId ne ''}">
 																<c:set value="${clubImageMap[playerMap.clubId]}" var="imageSrc" />
 																</c:if>
-												               <img src="${context}/images/Midfielder_${imageSrc}" height="20" width="20" alt="" title="${playerMap.name}">
+												               <img src="${context}/images/Midfielder_${imageSrc}" alt="" title="${playerMap.name}">
 												               ${playerMap.name }
 												     		</td>
 														    <td>${playerMap.price}</td>
@@ -765,10 +766,11 @@
 								    <!-- Forwards List starts -->
 								    <div id="menu3" class="tab-pane fade">
 									    <div class="table heading" id="Forwards" >
-									        <table class="ism-table ism-table--el ism-table--el-list" >			           
+									        <!--  <table class="ism-table ism-table--el ism-table--el-list" >	-->
+									        <table>		           
 								                <tr>
 								                    <th></th>
-								                    <th><a href="#" class="ism-link--bold">Forward</a></th>
+								                    <th>Forwards</th>
 								                    <th><abbr title="Price in Million INR">&#8377</abbr></th>
 								                    <c:choose>
 								                    	<c:when test="${sessionScope.playersOrderBy eq 'user_count'}">
@@ -793,7 +795,7 @@
 															<c:if test="${not empty playerMap.clubId and playerMap.clubId ne ''}">
 																<c:set value="${clubImageMap[playerMap.clubId]}" var="imageSrc" />
 															</c:if>
-															<img src="${context}/images/Forward_${imageSrc}" height="20" width="20" alt="" title="${playerMap.name}">
+															<img src="${context}/images/Forward_${imageSrc}" alt="" title="${playerMap.name}">
 											                ${playerMap.name}
 										    			</td>
 													    <td>${playerMap.price }</td>
@@ -1240,7 +1242,7 @@
 			alert("Bank Account is less than player price");
 			ajaxCall = false;
 		} 
-		 else if(!(userJson.hasActivePlan || userJson.totalTransferForGameWeek <=1 || userJson.gameWeekNumberForPlayerTransfer <=1 || userJson.totalPoint > 4))
+		 else if(!(userJson.hasActivePlan || userJson.totalTransferForGameWeek <=1 || userJson.gameWeekNumberForPlayerTransfer <=1 || userJson.totalPoint < 4))
 		{
 			ajaxCall = false;
 			if(userJson.totalPoint < 4)
