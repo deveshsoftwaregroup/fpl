@@ -559,11 +559,11 @@
 						</section>
 						<div id="ismr-elements-menu"></div>
 					
+				</div>
+			</div>
+		</div>
 	</div>
-	</div>
-	</div>
-	</div>
-	</body>
+</body>
 			
 			
 	
