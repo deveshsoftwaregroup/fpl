@@ -13,12 +13,12 @@
 						<div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2">
 							<div id="fixtures-head" class="panel-group">
 								<h3>Fixtures </h3>
-								<h5></h5>
+								
 								<div  class="panel-heading">
 									
 									<div class="prev_next_btn">
 										<a class="btn  btnPrevious" onclick="updateMatchDetails(false);" href="javascript:void(0);">Previous</a>
-										  
+										 <h5></h5>
 										<a class="btn  btnNext" onclick="updateMatchDetails(true);" href="javascript:void(0);">Next</a>
 									</div>
 									

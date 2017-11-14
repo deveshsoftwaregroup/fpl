@@ -442,10 +442,10 @@ header {
   display: -webkit-inline-box; }
 
 .ongoing_flex1 {
-  padding-left: 20px; }
+  padding-left: 20px; font-size:20px;width:150px;}
 
 .ongoing_flex2 {
-  padding-left: 3%; }
+  padding-left: 10%;font-size:20px; width:150px;}
 
 .fixture_bar {
   background: url(../images/Dream11/fixture_bar.png) no-repeat center;
@@ -715,14 +715,16 @@ td, th {
   font-family: 'Abel', sans-serif; }
 
 .prev_next_btn {
-  padding-left: 39%; }
+  padding-left: 10%; float:left; }
 
 .prev_next_btn a {
   margin-left: 0;
   margin-right: 0;
   position: relative;
-  text-align: center; }
-
+  text-align: center;
+  float:left; }
+.prev_next_btn h5 {float:left; padding:15px; color:#fff;}
+.panel-group .panel-heading{padding-bottom:70px;}
 #change_clr {
   text-align: center;
   color: #fff; }
@@ -1410,11 +1412,11 @@ td, th {
     font-size: 19px; }
 
   .ongoing_flex1 {
-    padding-left: 5px; }
+    padding-left: 15px;width:115px; }
 
   .ongoing_flex2 {
-    padding-left: 3%; }
-
+    padding-left:5%;width:115px; }
+ .points {    padding-left:20px;}
   .ongoing_flex2, .ongoing_flex1, .team_points_flex {
     font-size: 16px; }
 
@@ -1450,7 +1452,7 @@ td, th {
     margin-top: 10%; }
 
   .prev_next_btn {
-    padding-left: 33%; }
+    padding-left: 0%; }
 
   .team_points_flex1 img, .team_points_flex img {
     height: 20px !important; }
@@ -1480,7 +1482,8 @@ td, th {
     margin-right: 20px; }
 
   .date_time {
-    margin-bottom: -5px; }
+    margin-bottom: -5px;padding-top: 10px;
+    padding-bottom: 10px; }
 
   .my_team .extra_player ul li a img {
     height: 44px !important; }
@@ -1496,7 +1499,7 @@ td, th {
 
   .Payment_detail {
     margin-top: 28%; }
-
+ .fixture_bar_ongoing {height:68px;}
   /*----------------------------------*/
   .overlay {
     height: 0%;
