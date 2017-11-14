@@ -25,6 +25,7 @@
 								</div> -->
 
 								<!-- Deadline Bar -->
+								
 								<div class="league-deadline-bar">
 									<h4 class="league-deadline-bar__heading">Gameweek ${gameWeekNumber} Deadline:</h4>
 									<time datetime="2016-08-27T10:30:00Z" class="league-deadline-bar__deadline">${deadline}</time>
@@ -160,7 +161,7 @@
 																<picture>
 																	<img src="${context}/images/Defender_${imageSrc}" alt="West Ham" title="West Ham" class="ism-shirt ism-element__shirt">
 																</picture>
-																<div class="ism__name">${playerName}</div>
+																<div class="ism-element__name">${playerName}</div>
 																<div class="ism-element__data">${price}</div>
 																<div class="ism-element__controls">
 																	<div class="ismjs-remove ism-element__control ism-element__control--primary">
@@ -185,7 +186,7 @@
 																<picture>
 																	<img src="${context}/images/Defender_${imageSrc}" alt="West Ham" title="West Ham" class="ism-shirt ism-element__shirt">
 																</picture>
-																<div class="ism__name">${playerName}</div>
+																<div class="ism-element__name">${playerName}</div>
 																<div class="ism-element__data">${price}</div>
 																<div class="ism-element__controls">
 																	<div class="ismjs-remove ism-element__control ism-element__control--primary">
@@ -235,7 +236,7 @@
 																<picture>
 																	<img src="${context}/images/Defender_${imageSrc}" alt="West Ham" title="West Ham" class="ism-shirt ism-element__shirt">
 																</picture>
-																<div class="ism__name">${playerName}</div>
+																<div class="ism-element__name">${playerName}</div>
 																<div class="ism-element__data">${price}</div>
 																<div class="ism-element__controls">
 																	<div class="ismjs-remove ism-element__control ism-element__control--primary">
@@ -263,7 +264,7 @@
 																<picture>
 																	<img src="${context}/images/Defender_${imageSrc}" alt="West Ham" title="West Ham" class="ism-shirt ism-element__shirt">
 																</picture>
-																<div class="ism__name">${playerName}</div>
+																<div class="ism-element__name">${playerName}</div>
 																<div class="ism-element__data">${price}</div>
 																<div class="ism-element__controls">
 																	<div class="ismjs-remove ism-element__control ism-element__control--primary">
@@ -288,7 +289,7 @@
 																<picture>
 																	<img src="${context}/images/Defender_${imageSrc}" alt="West Ham" title="West Ham" class="ism-shirt ism-element__shirt">
 																</picture>
-																<div class="ism__name">${playerName}</div>
+																<div class="ism-element__name">${playerName}</div>
 																<div class="ism-element__data">${price}</div>
 																<div class="ism-element__controls">
 																	<div class="ismjs-remove ism-element__control ism-element__control--primary">
@@ -313,7 +314,7 @@
 																<picture>
 																	<img src="${context}/images/Defender_${imageSrc}" alt="West Ham" title="West Ham" class="ism-shirt ism-element__shirt">
 																</picture>
-																<div class="ism__name">${playerName}</div>
+																<div class="ism-element__name">${playerName}</div>
 																<div class="ism-element__data">${price}</div>
 																<div class="ism-element__controls">
 																	<div class="ismjs-remove ism-element__control ism-element__control--primary">
@@ -338,7 +339,7 @@
 																<picture>
 																	<img src="${context}/images/Defender_${imageSrc}" alt="West Ham" title="West Ham" class="ism-shirt ism-element__shirt">
 																</picture>
-																<div class="ism__name">${playerName}</div>
+																<div class="ism-element__name">${playerName}</div>
 																<div class="ism-element__data">${price}</div>
 																<div class="ism-element__controls">
 																	<div class="ismjs-remove ism-element__control ism-element__control--primary">
@@ -364,7 +365,7 @@
 																<picture>
 																	<img src="${context}/images/Defender_${imageSrc}" alt="West Ham" title="West Ham" class="ism-shirt ism-element__shirt">
 																</picture>
-																<div class="ism__name">${playerName}</div>
+																<div class="ism-element__name">${playerName}</div>
 																<div class="ism-element__data">${price}</div>
 																<div class="ism-element__controls">
 																	<div class="ismjs-remove ism-element__control ism-element__control--primary">
@@ -392,7 +393,7 @@
 																<picture>
 																	<img src="${context}/images/Defender_${imageSrc}" alt="West Ham" title="West Ham" class="ism-shirt ism-element__shirt">
 																</picture>
-																<div class="ism__name">${playerName}</div>
+																<div class="ism-element__name">${playerName}</div>
 																<div class="ism-element__data">${price}</div>
 																<div class="ism-element__controls">
 																	<div class="ismjs-remove ism-element__control ism-element__control--primary">
@@ -418,7 +419,7 @@
 																<picture>
 																	<img src="${context}/images/Defender_${imageSrc}" alt="West Ham" title="West Ham" class="ism-shirt ism-element__shirt">
 																</picture>
-																<div class="ism__name">${playerName}</div>
+																<div class="ism-element__name">${playerName}</div>
 																<div class="ism-element__data">${price}</div>
 																<div class="ism-element__controls">
 																	<div class="ismjs-remove ism-element__control ism-element__control--primary">
@@ -444,7 +445,7 @@
 																<picture>
 																	<img src="${context}/images/Defender_${imageSrc}" alt="West Ham" title="West Ham" class="ism-shirt ism-element__shirt">
 																</picture>
-																<div class="ism__name">${playerName}</div>
+																<div class="ism-element__name">${playerName}</div>
 																<div class="ism-element__data">${price}</div>
 																<div class="ism-element__controls">
 																<div class="ismjs-remove ism-element__control ism-element__control--primary">
@@ -500,23 +501,25 @@
 
 								<!-- POINTS / RANKINGS -->
 								<div class="ism-panel ism-panel--guttered">
-									<h3 class="ism-panel__heading">Points/Rankings</h3>
+									<h3 class="top_main">Points/Rankings</h3>
 									<div class="ism-panel__body">
 
-										<ul class="ism-data-list ism-data-list--bordered">
-											<li class="ism-data-list__item">
-												<h3 class="ism-data-list__item__heading">Overall Points:</h3>
+										<ul class="my_team_points check_points">
+												<li>Overall Points : 
+												<span class="text_right">
 												<div class="ism-data-list__item__value">${sessionScope.user.userGameMap.point}</div>
-											</li>
-											<li class="ism-data-list__item">
-												<h3 class="ism-data-list__item__heading">Overall Rank:</h3>
-												<div class="ism-data-list__item__value">${sessionScope.user.userGameMap.rank}</div>
-											</li>
-											<li class="ism-data-list__item">
-												<h3 class="ism-data-list__item__heading">Total Players:</h3>
-												<div class="ism-data-list__item__value">${fn:length(sessionScope.playerList)}</div>
-											</li>
-											
+												</span>
+												</li>
+												  <li>Overall Rank : 
+												  <span class="text_right">
+												  ${sessionScope.user.userGameMap.rank}
+												  </span>
+												  </li>
+											      <li>Total Players : 
+											      <span class="text_right">
+											      ${fn:length(sessionScope.playerList)}
+											      </span>
+											       </li>
 										</ul>
 									</div>
 									
