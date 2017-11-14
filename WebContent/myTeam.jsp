@@ -8,17 +8,29 @@
 	<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 	<script src="${context}/redBlackTheme/js/jquery.js"></script>
 <s:sportExt retrieve="deadLine" />
-<main id="mainContent" tabindex="0" class="ism league">		
-            <div class="addsbanner-lft"></div>
-			<div class="addsbanner-rgt"></div>
-            <div class="league-pusher leaguejs-page-transition">
-                <!-- Primary content -->
-                <div id="leaguer-main" class="league-main">
-					<div>
-						<div id="team-header">
+	  <body class="body predict11-bg transfers_predict11 dream_11transfer ">
+      <div class="container-fluid ">
+         <!-----------Header---------------->
+         <div id="header"></div> 
+            <div class="row">
+            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-sx-12 image_ad">
+               <img src="images/dream11-img.png" class="img-responsive center-block">
+               <div>
+                  <h3>Select playing 11</h3>
+                  <h3>My Team</h3>
+                  <h3><p>Gameweek ${gameWeekNumber} Deadline : <time datetime="2016-08-27T10:30:00Z" class="league-deadline-bar__deadline">${deadline}</p></h3>
+                  
+                  <div class="row">
+                  
+			
+            
+                
+               
+					
+						<%-- <div id="team-header">
 							<div>
 								<div class="ism-copy">
-                                	<h3 style="color: #193782;"><i class="fa fa-angle-double-right" style="color: #f00;"></i> Select playing 11</h3>
+                                	<h3 style="color: #193782;"><i class="freeTransUsedDiv" style="color: #f00;"></i> Select playing 11</h3>
                         			
                         		 </div>
 								<!-- <div class="league-copy">									
@@ -32,17 +44,9 @@
 								</div>
 
 							</div>
-						</div>
+						</div> --%>
 
-						<section>
-							<div id="leaguer-errors" class="league-alert-wrap">
-								<div></div>
-							</div>
-							<div id="leaguer-info" class="league-alert-wrap">
-								<div>
-									<div id="leaguejs-squad-info" tabindex="0"></div>
-								</div>
-							</div>
+						
 							
 							<div class="league-squad-wrapper">
 								<div class="leaguejs-a11y-tabs league-tabs">
@@ -211,7 +215,7 @@
 																<picture>
 																	<img src="${context}/images/Defender_${imageSrc}" alt="West Ham" title="West Ham" class="ism-shirt ism-element__shirt">
 																</picture>
-																<div class="ism__name">${playerName}</div>
+																<div class="ism-element__name">${playerName}</div>
 																<div class="ism-element__data">${price}</div>
 																<div class="ism-element__controls">
 																	<div class="ismjs-remove ism-element__control ism-element__control--primary">
@@ -475,8 +479,8 @@
 									</section>
 							   </div>
 							</div>
-						</section>   
-					</div> 
+						  
+					
 
                 <!-- Secondary content -->
                 <div id="ismr-side" class="ism-sidebar">
@@ -507,7 +511,7 @@
 										<ul class="my_team_points check_points">
 												<li>Overall Points : 
 												<span class="text_right">
-												<div class="ism-data-list__item__value">${sessionScope.user.userGameMap.point}</div>
+												${sessionScope.user.userGameMap.point}
 												</span>
 												</li>
 												  <li>Overall Rank : 
@@ -526,8 +530,8 @@
 								</div>
 
 								 <!-- LEAGUES -->
-								<div class="ism-panel choose_capt">
-								<h3 class="ism-panel__heading">Choose Captain/Vice-Captain</h3>
+								<div class="ism-panel ism-panel--guttered">
+								<h3 class="subHeader ism-sub-header">Choose Captain/Vice-Captain</h3>
 									<div class="ism-panel__body">
 										<form action="#">
 											<div class="form_row">
@@ -542,7 +546,7 @@
 											   
 											    <select id="vice-captain-select"></select>
 										    </div>
-										    <input type="button" class="button btnSubmit" value="Save" onclick="updateCaptain('${sessionScope.user.userId}');">
+										    <input type="button" class="btn claim_btn" value="Save" onclick="updateCaptain('${sessionScope.user.userId}');">
 										</form>
 									</div>
 								</div>
@@ -553,11 +557,15 @@
 							</div>
 						</section>
 						<div id="ismr-elements-menu"></div>
-					</div>
-				</div>
-			</div>
-		</div>		
-	</main>
+					
+	</div>
+	</div>
+	</div>
+	</div>
+	</body>
+			
+			
+	
 
  
 <script type="text/javascript">
