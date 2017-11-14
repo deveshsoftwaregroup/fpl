@@ -325,7 +325,23 @@
 				                        </select>
 				                    </div>
 				                </div> 
-				            </form>
+				                
+                        <div id="ismr-price" class="ism-form__group">
+                            <div>
+                                <label for="ismjs-element-price" class="ism-form__label">Sorted By</label>
+                                <div class="ism-form__select-wrap">
+                                    <select id="ismjs-element-price" class="ism-form__select" onchange="orderPlayerList(this.value);">
+                                        
+                                        <option <c:if test="${sessionScope.playersOrderBy eq 'total_score'}">selected</c:if> value="total_score">Total Score</option>
+                                     
+                                         <option <c:if test="${sessionScope.playersOrderBy eq 'name'}">selected</c:if> value="name">Selected By name</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>                   
+                    </form>
+				            
+				            
 				            <%-- <p>Total Players : ${fn:length(sessionScope.playerList)}</p> --%>				
 						    <div id="ismjs-elements-list-tables">
 								<ul class="nav nav-tabs">

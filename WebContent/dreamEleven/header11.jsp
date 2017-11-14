@@ -248,9 +248,10 @@
 	   		  url: "/SportMgmt/mvc/player/orderBy/"+orderBy,
 	   		  dataType: 'html',
 	   		  success: function( resp ) {
+	   			  
 	   			if(typeof resp.playerList !='undefined')
 	   			 playerListJson = resp.playerList;
-	   			 uploadTransferView();
+	   			 uploadTransferView11();
 	   		  },
 	   		  error: function( req, status, err ) {
 	   		    console.log( 'something went wrong', status, err );
