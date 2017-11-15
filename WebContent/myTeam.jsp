@@ -484,7 +484,7 @@
 					
 
                 <!-- Secondary content -->
-                <div id="ismr-side" class="ism-sidebar">
+                <%-- <div id="ismr-side" class="ism-sidebar">
 					<div>
 						<section>
 							<h2 class="subHeader ism-sub-header">${sessionScope.user.displayName}</h2>
@@ -501,7 +501,7 @@
 											<div class="ism-entry-bar__name"></div>
 										</div>
 									</div>
-								</div>
+								</div> --%>
 
 
 								<!-- POINTS / RANKINGS -->
