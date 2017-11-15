@@ -243,7 +243,7 @@ header {
 .claim_btn {
   float: right;
   margin-top: 0px;
-  margin-right: -20px;
+  margin-right: 20px;
   border-radius: 5px;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -257,8 +257,27 @@ header {
   background-image: linear-gradient(to bottom, #f62b2b, #d20202);
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#f62b2b, endColorstr=#d20202); }
 
+.choose_captain{
+	float: right;
+  margin-top: 10px;
+  border-radius: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: #fff !important;
+  background-color: #f62b2b;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f62b2b), to(#d20202));
+  background-image: -webkit-linear-gradient(top, #f62b2b, #d20202);
+  background-image: -moz-linear-gradient(top, #f62b2b, #d20202);
+  background-image: -ms-linear-gradient(top, #f62b2b, #d20202);
+  background-image: -o-linear-gradient(top, #f62b2b, #d20202);
+  background-image: linear-gradient(to bottom, #f62b2b, #d20202);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#f62b2b, endColorstr=#d20202);
+}
 .dream11-bg .our_partners {
   background-color: rgba(0, 0, 0, 0.7) !important; }
+.fantasy_transfer_gameweek_align {
+	padding-top:30px;
+}
 
 .ism .ism-element-row {
 	    padding: 0 15%;
@@ -328,8 +347,10 @@ header {
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#f62b2b, endColorstr=#839287);
   text-align: center;
   padding-top: 10px;
-  color: #000 !important; }
-
+  color: #000 !important;
+  margin-top:5px; margin-bottom:0px; }
+ 
+.form_row {margin-bottom:10px;}
 .my_team_points {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 600;
@@ -374,9 +395,13 @@ header {
 .transfers_predict11_map {padding-bottom:80px;}
 .ism-shirt {height:38px;}
 .my_team_points tr td:nth-child(2) { width:50% ;}
-.my_team_points td img {height:38px;}
+.my_team_points td img {height:25px;}
 .glyphicon-plus {
   padding-left: 15%; }
+#countDown {    
+	 position:absolute;
+	right:30%;
+    float: left ; padding:10px;    padding-top: 7px;}
 /*--------------/ My Team----------------------*/
 /*--------------Fixtures----------------------*/
 .fixture_img_ad {
@@ -398,7 +423,7 @@ header {
   font-weight: 600; }
 
 .flex-buttons .claim_btn {
-  margin-top: -10px;
+  margin-top: 0px;
   margin-left: 24px; }
 
 .plr_btn {
@@ -926,6 +951,7 @@ td, th {
     display: none; } 
   .team_map, .team_map_dream11{
   	 height:450px !important;
+  	 margin-bottom:100px;
   }
    .transfers_predict11_map p {font-size:19px;}
    .flex-buttons .flex1 {font-size:18px;}
@@ -982,6 +1008,7 @@ td, th {
     padding: 11px !important; }
   .team_map, .team_map_dream11{
   	 height:450px !important;
+  	 margin-bottom:100px;
   }
    .transfers_predict11_map p {font-size:19px;}
   .flex-buttons .flex1 {font-size:18px;}
@@ -1257,7 +1284,8 @@ td, th {
     max-width: 360px; }
 
   .team_map, .team_map_dream11 {
-    padding-top: 30px; }
+    padding-top: 30px;
+    margin-bottom:50px; }
 
   .bnr_img, .logo_img {
     height: 50px; }
@@ -1481,6 +1509,8 @@ td, th {
   .claim_btn {
     margin-right: 20px; }
 
+  .claim_prize_align{padding-left:0px;padding-right:0px; margin-left:-15px;margin-right:-15px;float:none !important;
+    height:100px; }
   .date_time {
     margin-bottom: -5px;padding-top: 10px;
     padding-bottom: 10px; }
@@ -1500,6 +1530,7 @@ td, th {
   .Payment_detail {
     margin-top: 28%; }
  .fixture_bar_ongoing {height:68px;}
+  #countDown {  position: unset !important; text-align:center;float:none !important;}
   /*----------------------------------*/
   .overlay {
     height: 0%;
@@ -1613,5 +1644,11 @@ td, th {
 @media (min-width: 64em){
 	.ism .ism-element{left:0px !important;}
 }
+
+.claim_prize_align {
+  color: #fff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: rgba(0,0,0,0.7); }
 
 /*# sourceMappingURL=style-fantasy.css.map */

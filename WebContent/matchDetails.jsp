@@ -130,7 +130,8 @@
 				html += '<div class="fixture_bar_ongoing">'+
 				'<div class="timing">'+startTime+'</div>'+
 				'<div class="team_points_flex1 ongoing_flex1">'+firstClubName +'<span class="badge-25 '+firstClubCss+'"></span></div>'+
-				'<div class="team_points_flex1 points"><span> &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; </span> </div>'+
+				'<div class="team_points_flex1 points"><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> </div>'+
+				
 				'<div class="team_points_flex1 ongoing_flex2">'+secondClubName +'<span class="badge-25 '+secondClubCss+'"></span></div>'+
 				'</div>';	
 			}

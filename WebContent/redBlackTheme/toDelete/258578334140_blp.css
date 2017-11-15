@@ -898,6 +898,7 @@ cursor:not-allowed
 
 }
 
+/*
 .ism .ism-form__select-wrap::after {
     content: "\f105";
     font: normal normal normal 14px/1 FontAwesome;
@@ -910,6 +911,7 @@ margin-top:-6px;
 -webkit-transition:.3s;
 transition:.3s
 }
+*/
 
 .ism-form__select-wrap .form-control, select {background-color:transparent;border-bottom:0px;}
 .ism .ism-form__radio:hover+.ism-form__radio-text::before {
@@ -2107,8 +2109,7 @@ color:#267788
 display:-webkit-box;
 display:-ms-flexbox;
 display:flex;
-margin-top:-1.5rem;
-margin-bottom:1rem;
+
 padding:.8rem 1rem;
 background-color:#ebebe4;
 -webkit-box-pack:center;
