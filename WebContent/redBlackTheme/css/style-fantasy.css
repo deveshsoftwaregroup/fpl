@@ -163,7 +163,7 @@ header {
   padding-top: 20px;
   padding-bottom: 20px; }
 
-/*---------------Dream 11 Fixtures------------------*/
+/*---------------Fantasy Fixtures------------------*/
 .tect_left li {
   padding-top: 30px;
   padding-left: 90px;
@@ -461,16 +461,17 @@ header {
   font-family: 'Reckoner_Bold';
   font-weight: 600;
   letter-spacing: 2px;
-  font-size: 24px; }
+  font-size: 24px; 
+  padding-top:45px; }
 
 .team_points_flex1 {
   display: -webkit-inline-box; }
 
 .ongoing_flex1 {
-  padding-left: 20px; font-size:20px;width:150px;}
+  padding-left: 20px; font-size:20px;width:150px; float:left;}
 
 .ongoing_flex2 {
-  padding-left: 10%;font-size:20px; width:150px;}
+  padding-left: 7%;font-size:20px; width:150px; float:left;}
 
 .fixture_bar {
   background: url(../images/Dream11/fixture_bar.png) no-repeat center;
@@ -518,7 +519,12 @@ td, th {
   padding: 8px;
   font-weight: 500;
   font-family: 'roboto'; }
-
+.ongoing_mid_flex1{      padding-left: 44px;
+    font-size: 20px;
+    width: 150px;
+    float: left;
+    letter-spacing: 12px;
+    color:#fff;}
 /*--------------/ Fixtures----------------------*/
 /*-------------------Dream 11 Transfer -----------------------*/
 .predict11-bg {
@@ -1375,7 +1381,8 @@ td, th {
 
   .transfers_predict11 .team_map_dream11 {
     margin-top: 25px !important;
-    height: 375px !important; }
+    height: 375px !important; 
+    margin-bottom:65px;}
 
   .my_transfers .team_map_dream11 {
     margin-top: 0px !important;
@@ -1446,7 +1453,7 @@ td, th {
     padding-left:5%;width:115px; }
  .points {    padding-left:20px;}
   .ongoing_flex2, .ongoing_flex1, .team_points_flex {
-    font-size: 16px; }
+    font-size: 13px; }
 
   .next_team {
     padding-left: 35%; }
@@ -1508,7 +1515,7 @@ td, th {
 
   .claim_btn {
     margin-right: 20px; }
-
+  .confirm_team_btn {margin-right:30%;}
   .claim_prize_align{padding-left:0px;padding-right:0px; margin-left:-15px;margin-right:-15px;float:none !important;
     height:100px; }
   .date_time {
@@ -1529,8 +1536,10 @@ td, th {
 
   .Payment_detail {
     margin-top: 28%; }
- .fixture_bar_ongoing {height:68px;}
+ .fixture_bar_ongoing {height:68px; padding-top:38px;}
+ .ongoing_mid_flex1{padding-left: 10px;    font-size: 16px; width:90px;}
   #countDown {  position: unset !important; text-align:center;float:none !important;}
+  .ism .ism-panel--guttered-mobile{padding-top: 44%; overflow: initial;}
   /*----------------------------------*/
   .overlay {
     height: 0%;

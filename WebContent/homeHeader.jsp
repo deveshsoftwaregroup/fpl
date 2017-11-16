@@ -61,56 +61,67 @@
 <body class="full-bg">   
 
 <div id="myModal" class="modal fade" role="dialog">
-	<div id="login-overlay" class="col-lg-4 col-lg-offset-8 register_login">
-	          <ul class="nav nav-tabs">
+  
+	<div id="login-overlay" class="modal-dialog loginForm">
+	      <div class="modal-content">
+	          <div class="modal-header">
+	              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+	              <h4 class="modal-title" id="myModalLabel">Login/Register</h4>
+	          </div>
+	          <div class="modal-body">
+	              <div class="row">
+	                  <div class="col-xs-12">	                  
+                         <ul class="nav nav-tabs">
                         <li class="active"><a data-toggle="tab" href="#home">Login</a></li>
                         <li><a data-toggle="tab" href="#menu1">Register</a></li>
-               </ul>
-	          <div class="tab-content">
+                        </ul>
+	                   <div class="tab-content">
 	              <div id="home" class="tab-pane fade in active">
 	                  <div class="col-xs-12">
 	                          <form id="loginForm" name="LoginForm" action="" method="get" onsubmit="event.preventDefault();" autocomplete="off">
 		                              <div class="form-group">		                              
 			                              <div class="col-sm-12">
-			                              	<input class="input__field input__field--hoshi" type="email" name="emailId" autocomplete="off" />
 			                              	<label class="input__label input__label--hoshi input__label--hoshi-color-1" for="email">
 			                              		<span class="input__label-content input__label-content--hoshi">Email ID</span>
 			                              	</label>
+			                              	<input class="input__field input__field--hoshi" type="email" name="emailId" autocomplete="off" />
+			                              	
 			                              </div>		                              	                              		
 		                              </div>                     
 			                              <div class="form-group">
 			                              	<div class="col-sm-12">
 			                              	<span class="input input--hoshi">
-				                              	<input class="input__field input__field--hoshi" type="password" name="logonPassword"  autocomplete="off" />
-				                              	<label class="input__label input__label--hoshi input__label--hoshi-color-1" for="logonPassword">
+			                              		<label class="input__label input__label--hoshi input__label--hoshi-color-1" for="logonPassword">
 				                              		<span class="input__label-content input__label-content--hoshi">Password</span>
 				                              	</label>
+				                              	<input class="input__field input__field--hoshi" type="password" name="logonPassword"  autocomplete="off" />
+				                              	
 				                              </span>
 				                              </div>				                              		                                  
 			                              </div>
 	                             			<div class="form-group">
 	                              			<div class="col-sm-12">
-			                              				<a href="javascript:void(0);" class="forgotBtn" data-toggle="modal" data-target="#myModal3">Forgot Password</a>
+			                              				<a href="javascript:void(0);" class="btn forgotBtn btn-info" data-toggle="modal" data-target="#myModal3">Forgot Password</a>
 			                             	</div>
 	                              			</div>	                              		
 	                              <div id="loginErrorMsg" class="alert alert-error hide">Wrong username or password</div>
 	                              <a href="javascript:void(0);" class="" style="position: relative;">
-	                              <button type="submit" class="btn btn-block btn-social btn-login" onclick="doLogin();">Login</button>
+	                              <button type="submit" class="btn btn-block btn-social btn-info btn-login" onclick="doLogin();">Login</button>
 	                              </a>	                              	                               
 	                          </form>	                  
 	                  <div class="row">
 	                  	<div class="col-xs-12">
-	                  		<div class="row">
+	                  		<div class="row align_pd_top">
 	                  			<div class="col-sm-6">
 	                  					<div class="form-group">
-	                  				<a href="javascript:void(0);" data-toggle="modal" data-target="#myModal1" class="btn btn-block btn-social btn-info">
-	                  					<span class="fa fa-envelope-o"></span>Register with Email ID!
+	                  				<a href="javascript:void(0);" data-toggle="modal" data-target="#myModal1" class=" loginBtn loginBtn--google center-block">
+	                  					<span class="fa fa-envelope-o "></span>Register with Email ID!
 	                  				</a>
 	                  				</div>
 	                  			</div>
 	                  			<div class="col-sm-6">
 	                  					<div class="form-group">
-	                  				<a class="btn btn-block btn-social btn-facebook" href="javascript:void(0);" onclick="loginWithFB()">
+	                  				<a class="loginBtn center-block loginBtn--facebook" href="javascript:void(0);" onclick="loginWithFB()">
 	                  					<span class="fa fa-facebook"></span> Sign in with Facebook
 	                  				</a>
 	                  				</div>
@@ -122,8 +133,15 @@
 	                  </div>	                  
 	              </div>
 	          </div>
+	                  
+	                  </div>
+	                  
+	              </div>
+	          </div>
+	      </div>
 	  </div>
 </div>
+
 
 <div id="myModal11" class="modal fade" role="dialog">
   

@@ -463,15 +463,15 @@
 
 														</div>
 												</div>
-												<div class="col-lg-12 pull-right claim_your_prize">
-												<p id="countDown"></p>
-                                             <!-- <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#modelPlayOption">Confirm Your Team</button></a> -->
-                                              <a href="#"><button id="confirmTeam" type="button" class="btn claim_btn" onclick="checkPlayerCountAndConfirmTeam()">Confirm Your Team</button></a>
-                                          	<!-- <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#paymentModel">Make Payment</button></a> -->
-                                 </div> 
+												
 
 											</div>									
-										
+										<div class="col-lg-12 pull-right claim_your_prize claim_prize_align">
+												<p id="countDown"></p>
+                                             <!-- <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#modelPlayOption">Confirm Your Team</button></a> -->
+                                              <a href="#"><button id="confirmTeam" type="button" class="btn claim_btn confirm_team_btn" onclick="checkPlayerCountAndConfirmTeam()">Confirm Your Team</button></a>
+                                          	<!-- <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#paymentModel">Make Payment</button></a> -->
+                                 </div> 
 											</div>
 
 											
@@ -505,7 +505,7 @@
 
 
 								<!-- POINTS / RANKINGS -->
-								<div class="ism-panel ism-panel--guttered">
+								<div class="ism-panel ism-panel--guttered ism-panel--guttered-mobile">
 									<h3 class="top_main">Points/Rankings</h3>
 									<div class="ism-panel__body">
 
@@ -531,7 +531,7 @@
 								</div>
 
 								 <!-- LEAGUES -->
-								<div class="ism-panel ism-panel--guttered">
+								<div class="ism-panel ism-panel--guttered  ">
 								<h3 class="subHeader ism-sub-header">Choose Captain/Vice-Captain</h3>
 									<div class="ism-panel__body">
 										<form action="#">

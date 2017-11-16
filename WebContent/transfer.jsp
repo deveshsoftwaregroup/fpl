@@ -543,14 +543,15 @@
                                       </div>
                                   </div>
                               			
-								<div class="col-lg-12 pull-right claim_your_prize">
-								<p id="countDown"></p>
-                                             <!-- <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#modelPlayOption">Confirm Your Team</button></a> -->
-                                             <a href="#"><button id="confirmTeam" type="button" class="btn claim_btn" onclick="uploadTeamView('${sessionScope.userId}','${sessionScope.gameDetails.gameId}');"> confirm </button></a>
-                                          	<!-- <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#paymentModel">Make Payment</button></a> -->
-                                 </div>  
+								
 		   
                         </div>
+                        <div class="col-lg-12 pull-right claim_your_prize claim_prize_align">
+								<p id="countDown"></p>
+                                             <!-- <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#modelPlayOption">Confirm Your Team</button></a> -->
+                                             <a href="#"><button id="confirmTeam" type="button" class="btn claim_btn confirm_team_btn" onclick="uploadTeamView('${sessionScope.userId}','${sessionScope.gameDetails.gameId}');"> confirm your team </button></a>
+                                          	<!-- <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#paymentModel">Make Payment</button></a> -->
+                                 </div>  
                         </div>                                                             
                             
 

@@ -70,7 +70,11 @@
 
 .bx-wrapper .bx-controls-auto {
   right: 10px; }
-
+.loginForm .tab-content {margin-top:10px;}
+.loginForm .nav-tabs > li > a {color:#000;}
+.loginForm label, .forgotBtn {color:#555;}
+.btn-social {margin-top:10px;}
+.align_pd_top {padding-top:10px;}
 .home_scout_section {
   background-color: darkslategrey;
   padding: 10px; }
