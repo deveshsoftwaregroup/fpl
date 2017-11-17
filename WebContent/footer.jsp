@@ -2,14 +2,14 @@
 <c:set var="context" value="<%=request.getContextPath()%>" />
 <div class="container">
     <div class="row">
-            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1  ">
+            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 margn_left ">
             <div class="row clearfix socialLinksCont">
-                    <div class="col-xs-6 noPadding"><a href="https://www.facebook.com/the12thman.in/" target="_blank" class="text-uppercase socialBtn facebookBtn btn btn-default btn-block"><span class="fa fa-facebook socialBtnIcon"></span><span class="socialBtnTxt">Facebook</span></a></div>
+                    <div class="col-xs-6 noPadding "><a href="https://www.facebook.com/the12thman.in/" target="_blank" class="text-uppercase socialBtn facebookBtn btn btn-default btn-block"><span class="fa fa-facebook socialBtnIcon"></span><span class="socialBtnTxt">Facebook</span></a></div>
                     <div class="col-xs-6 noPadding">
                         <a href="https://twitter.com/the12thmantimes" target="_blank" class="text-uppercase socialBtn twitterBtn btn btn-default btn-block"><span class="fa fa-twitter socialBtnIcon"></span><span class="socialBtnTxt">Twitter</span></a></div>
                 </div>
                 </div>
-          <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 our_partners ">
+          <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 our_partners margn_left">
               
             <div class="row">
               
@@ -37,7 +37,7 @@
           </div>
 
 <div class="row">
-     <div class="col-lg-10 col-lg-offset-1  col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1  footer_btn">
+     <div class="col-lg-10 col-lg-offset-1  col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1  footer_btn margn_left">
          <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 btm_ftr">
                 
@@ -113,6 +113,6 @@
     
     </div>
     
-    <div class="col-lg-10 col-lg-offset-1  col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1  bottom_copyright"><p>@ Copyright JustThinkSports.com 2017. All rights reserved.</p></div>
+    <div class="col-lg-10 col-lg-offset-1  col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1  bottom_copyright margn_left"><p>@ Copyright JustThinkSports.com 2017. All rights reserved.</p></div>
 </div>
 </div>
