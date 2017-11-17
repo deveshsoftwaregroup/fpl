@@ -6,53 +6,51 @@
 	<%@ taglib uri="WEB-INF/sportmgmt.tld" prefix="s" %> 
 	<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 	
-<s:sportExt retrieve="deadLine" />
-<main id="mainContent" tabindex="0" class="ism league">
-		
-            <div class="addsbanner-lft"></div>
-			<div class="addsbanner-rgt"></div>
-            <div class="league-pusher leaguejs-page-transition">
-                <!-- Primary content -->
-                <div id="leaguer-main" class="league-main">
-					<div>
-						<div class="pager-header">
-							<h3 class="subHeader pager-heading">Gameweek ${requestScope.sportMgmtRes.result.gameWeek.gameWeekNumber}</h3>
+<%-- <s:sportExt retrieve="deadLine" /> --%>
+<body class="predict11-bg transfers_predict11 dream_11transfer">
+   
+      <div class="container-fluid ">
+    
+      <div class="row">
+      <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 transfers_predict11_map"> 
+         <div>
+
 							<div class="league-pager">
 								<div class="pager pager-left">
 									<c:choose>
 									<c:when test="${sportMgmtRes.result.gameWeek.gameWeekNumber eq '1'}">
-									<a href="javascript:void(0);" title="View previous" class="pager-btn btn-prev">
-										<span class="fa fa-angle-left"></span>
+									<a href="javascript:void(0);" title="View previous" class="btnPrevious">
 										<span>Previous</span>
 									</a>
 									</c:when>
 									<c:otherwise>
-									<a href="javascript:void(0);" onclick="uploadMyPointView('${sessionScope.gameDetails.gameId}','${sessionScope.userId}','${sportMgmtRes.result.gameWeek.gameWeekId}','prev');" title="View previous" class="pager-btn btn-prev">
-										<span class="fa fa-angle-left"></span>
+									<a href="javascript:void(0);" onclick="uploadMyPointView('${sessionScope.gameDetails.gameId}','${sessionScope.userId}','${sportMgmtRes.result.gameWeek.gameWeekId}','prev');" title="View previous" class="btnPrevious">
 										<span>Previous</span>
 									</a>
 									</c:otherwise>
 									</c:choose>
 								</div>
+								<h3 class="subHeader pager-heading">Gameweek ${requestScope.sportMgmtRes.result.gameWeek.gameWeekNumber}</h3>
+								
 								<div class="pager pager-right">
 									<c:choose>
 									<c:when test="${sportMgmtRes.result.gameWeek.isLatestGameWeek eq 'Y'}">
-									<a href="javascript:void(0);" onclick="uploadTeamView('${sessionScope.userId}','${sessionScope.gameDetails.gameId}');" title="View next" class="pager-btn btn-next">
+									<a href="javascript:void(0);"  title="View next" class="pager-btn btn-next btnNext">
 									<span>Next</span>
-										<span class="fa fa-angle-right"></span>
+										
 									</a>
 									</c:when>
 									<c:otherwise>
-									<a href="javascript:void(0)" onclick="uploadMyPointView('${sessionScope.gameDetails.gameId}','${sessionScope.userId}','${sportMgmtRes.result.gameWeek.gameWeekId}','next');" title="View next" class="pager-btn btn-next">
+									<a href="javascript:void(0)" onclick="uploadMyPointView('${sessionScope.gameDetails.gameId}','${sessionScope.userId}','${sportMgmtRes.result.gameWeek.gameWeekId}','next');" title="View next" class="pager-btn btn-next btnNext">
 									<span>Next</span>
-										<span class="fa fa-angle-right"></span>
+										
 									</a>
 									</c:otherwise>
 									</c:choose>
 								</div>
 							</div>
-						</div>
-						<div class="points-area">
+						
+						<%-- <div class="points-area">
 							<div class="final-points">
 								Final Points
 								<span>${sportMgmtRes.result.gameWeek.finalPoint}</span>
@@ -91,29 +89,40 @@
 							<div class="league-squad-wrapper">
 								<div class="leaguejs-a11y-tabs league-tabs">
 									<section id="leaguer-summary" class="league-pitch" role="tabpanel">
-										<div tabindex="0">
-											<div class="league-element-row league-element-row--pitch">
-												<div class="league-pitch__unit league-pitch__unit--4"></div>
-												<div id="leaguer-pos1" class="league-pitch__unit league-pitch__unit--4">
+										<div tabindex="0"> --%>
+										
+              	
+              	<c:choose>
+              		
+	              	<c:when test="${empty sportMgmtRes.result.hisotryPlayerList}">
+	              		<div class="col-lg-8">
+	              		<h4>No team was confirmed for this Game Week</h4>
+	              		</div>
+	              	</c:when>
+	              	
+	                <c:otherwise>
+											<div class="col-lg-8 team_map_dream11">
+												<div class="ism-element-row ism-element-row--pitch">
+												<div id="ismr-pos1" class="ism-pitch__unit ism-pitch__unit--4">
 													<div class="league-transfer--original">
-													<s:sport position="1" playerType="Goalkeeper" pageName="MY_POINT"/>
-														<div class="league-element" tabindex="0">
-															<div class="leaguejs-menu check_1">
+													<s:sport position="1" playerType="Goalkeeper"/>
+														<div class="ism-element" tabindex="0">
+															
 															<c:if test="${not empty clubId and clubId ne ''}">
 																<spring:message code="club_${clubId}_image" var="imageSrc" />
 															</c:if>
 																<picture>
-																	<img src="${context}/images/${imageSrc}"  alt="Burnley" title="Burnley" class="league-shirt league-element__shirt">
+																	<img src="${context}/images/Goalkeeper_${imageSrc}"  alt="Burnley" title="Burnleyyy" class="ism-shirt ism-element__shirt">
 																</picture>
-																<div class="league-element__name">${playerName}</div>
-																<div class="league-element__data">${price}</div>
-																<div class="league-element__controls">
-																	<div class="leaguejs-remove league-element__control league-element__control--primary">
+																<div class="ism-element__name">${playerName}</div>
+																<div class="ism-element__data">${price}</div>
+																<div class="ism-element__controls">
+																	<div class="ismjs-remove ism-element__control ism-element__control--primary">
 																		<input class="1-box" type="checkbox" name="boxes" value="check_1" title="Make Substitude" <c:if test="${isPlaying eq 'Y'}">checked</c:if> onclick="activatePlayer('${sessionScope.userId}','${gameClubPlayerId}',this);">
 																	</div>
-																	<div class="leaguejs-info league-element__control league-element__control--info">
+																	  <div class="leaguejs-info league-element__control league-element__control--info">
 																		<a href="#" data-toggle="modal" data-target="#myModal-1" title="View player information" class="fa fa-info" onclick="showPlayerDetails('${gameClubPlayerId}');"></a>
-																	</div>
+																	</div>  
 																	<div id="myModal-1" class="modal fade" role="dialog">
 																	  <div class="modal-dialog">
 																		<div class="modal-content">
@@ -129,459 +138,456 @@
 																	  </div>
 																	</div>
 																</div>
-															</div>
+															
 														</div>
 													</div>
 												</div>
-												<div id="leaguer-pos2" class="league-pitch__unit league-pitch__unit--4">
-													<div class="league-transfer--original">
-													<s:sport position="2" playerType="Goalkeeper" pageName="MY_POINT"/>
-														<div class="league-element" tabindex="0">
-															<div class="leaguejs-menu check_2">
+												<div id="ismr-pos2" class="ism-pitch__unit ism-pitch__unit--4">
+													
+													<s:sport position="2" playerType="Goalkeeper"/>
+														<div class="ism-element" tabindex="0">
+															<div class="ismjs-menu check_2">
 															<c:set var="imageSrc" value="" />
 															<c:if test="${not empty clubId and clubId ne ''}">
 																<spring:message code="club_${clubId}_image" var="imageSrc" />
-															</c:if>																<picture>
-																	<img src="${context}/images/${imageSrc}"  alt="West Brom" title="West Brom" class="league-shirt league-element__shirt">
+															</c:if>		
+																<picture>
+																	<img src="${context}/images/Goalkeeper_${imageSrc}"  alt="West Brom" title="West Brom" class="ism-shirt ism-element__shirt">
 																</picture>
-																<div class="league-element__name">${playerName}</div>
-																<div class="league-element__data">${price}</div>
-																<div class="league-element__controls">
-																	<div class="leaguejs-remove league-element__control league-element__control--primary">
+																<div class="ism-element__name">${playerName}</div>
+																<div class="ism-element__data">${price}</div>
+																<div class="ism-element__controls">
+																	<div class="ismjs-remove ism-element__control ism-element__control--primary">
 																		<input class="2-box" type="checkbox" name="boxes" value="check_2" <c:if test="${isPlaying eq 'Y'}">checked</c:if> onclick="activatePlayer('${sessionScope.userId}','${gameClubPlayerId}',this);">
 																	</div>
-																	<div class="leaguejs-info league-element__control league-element__control--info">
+																	 <div class="leaguejs-info league-element__control league-element__control--info">
 																		<a href="javascript:void(0);" title="View player information" class="fa fa-info" onclick="showPlayerDetails('${gameClubPlayerId}');"></a>
-																	</div>
+																	</div> 
 																</div>
 															</div>
 
 														</div>
-													</div>
+													
 												</div>
+																								
+										</div>
 												
-												<div class="league-pitch__unit league-pitch__unit--4"></div>
-											</div>
+												
+												
+											
 
-											<div class="league-element-row league-element-row--pitch">
-												<div id="leaguer-pos3" class="league-pitch__unit league-pitch__unit--5">
-													<div class="league-transfer--original">
-													<s:sport position="1" playerType="Defender" pageName="MY_POINT"/>
-														<div class="league-element" tabindex="0">
+											<div class="ism-element-row ism-element-row--pitch">
+                                            <div id="ismr-pos3" class="ism-pitch__unit ism-pitch__unit--5">													
+													<s:sport position="1" playerType="Defender"/>
+														<div class="ism-element" tabindex="0">
 														<c:set var="imageSrc" value="" />
 														<c:if test="${not empty clubId and clubId ne ''}">
 																<spring:message code="club_${clubId}_image" var="imageSrc" />
 															</c:if>		
-															<div class="leaguejs-menu check_3">
+															<div class="ismjs-menu check_3">
 																<picture>
-																	<img src="${context}/images/${imageSrc}"  alt="West Brom" title="West Brom" class="league-shirt league-element__shirt">
+																	<img src="${context}/images/Defender_${imageSrc}"  alt="West Brom" title="West Brom" class="ism-shirt ism-element__shirt">
 																</picture>
-																<div class="league-element__name">${playerName}</div>
-																<div class="league-element__data">${price}</div>
-																<div class="league-element__controls">
-																	<div class="leaguejs-remove league-element__control league-element__control--primary">
+																<div class="ism-element__name">${playerName}</div>
+																<div class="ism-element__data">${price}</div>
+																<div class="ism-element__controls">
+																	<div class="ismjs-remove ism-element__control ism-element__control--primary">
 																		<input class="3-box" type="checkbox" name="boxes" value="check_3" <c:if test="${isPlaying eq 'Y'}">checked</c:if> onclick="activatePlayer('${sessionScope.userId}','${gameClubPlayerId}',this);">
 																	</div>
-																	<div class="leaguejs-info league-element__control league-element__control--info">
+																	 <div class="leaguejs-info league-element__control league-element__control--info">
 																		<a href="javascript:void(0);" title="View player information" class="fa fa-info" onclick="showPlayerDetails('${gameClubPlayerId}');"></a>
-																	</div>
+																	</div> 
 																</div>
 															</div>
 
 														</div>
-													</div>
+													
 												</div>
-												<div id="leaguer-pos4" class="league-pitch__unit league-pitch__unit--5">
-													<div class="league-transfer--original">
-													<s:sport position="2" playerType="Defender" pageName="MY_POINT"/>
-														<div class="league-element" tabindex="0">
+												<div id="ismr-pos4" class="ism-pitch__unit ism-pitch__unit--5">
+													<s:sport position="2" playerType="Defender"/>
+														<div class="ism-element" tabindex="0">
 														<c:set var="imageSrc" value="" />
 														<c:if test="${not empty clubId and clubId ne ''}">
 																<spring:message code="club_${clubId}_image" var="imageSrc" />
 															</c:if>		
-															<div class="leaguejs-menu check_4">
+															<div class="ismjs-menu check_4">
 																<picture>
-																	<img src="${context}/images/${imageSrc}" alt="West Ham" title="West Ham" class="league-shirt league-element__shirt">
+																	<img src="${context}/images/Defender_${imageSrc}" alt="West Ham" title="West Ham" class="ism-shirt ism-element__shirt">
 																</picture>
-																<div class="league-element__name">${playerName}</div>
-																<div class="league-element__data">${price}</div>
-																<div class="league-element__controls">
-																	<div class="leaguejs-remove league-element__control league-element__control--primary">
+																<div class="ism-element__name">${playerName}</div>
+																<div class="ism-element__data">${price}</div>
+																<div class="ism-element__controls">
+																	<div class="ismjs-remove ism-element__control ism-element__control--primary">
 																		<input class="4-box" type="checkbox" name="boxes" value="check_4" <c:if test="${isPlaying eq 'Y'}">checked</c:if> onclick="activatePlayer('${sessionScope.userId}','${gameClubPlayerId}',this);"/>
 																	</div>
-																	<div class="leaguejs-info league-element__control league-element__control--info">
+																	 <div class="leaguejs-info league-element__control league-element__control--info">
 																		<a href="javascript:void(0);" title="View player information" class="fa fa-info" onclick="showPlayerDetails('${gameClubPlayerId}');"></a>
-																	</div>
+																	</div> 
 																</div>
 															</div>
 
 														</div>
-													</div>
 												</div>
-												<div id="leaguer-pos5" class="league-pitch__unit league-pitch__unit--5">
-													<div class="league-transfer--original">
-													<s:sport position="3" playerType="Defender" pageName="MY_POINT"/>
-														<div class="league-element" tabindex="0">
+												<div id="ismr-pos5" class="ism-pitch__unit ism-pitch__unit--5">
+													<s:sport position="3" playerType="Defender"/>
+														<div class="ism-element" tabindex="0">
+														<c:set var="imageSrc" value="" />
 														<c:if test="${not empty clubId and clubId ne ''}">
 																<spring:message code="club_${clubId}_image" var="imageSrc" />
 															</c:if>		
-															<div class="leaguejs-menu check_5">
+															<div class="ismjs-menu check_5">
 																<picture>
-																	<img src="${context}/images/${imageSrc}"  alt="Man Utd" title="Man Utd" class="league-shirt league-element__shirt">
+																	<img src="${context}/images/Defender_${imageSrc}" alt="West Ham" title="West Ham" class="ism-shirt ism-element__shirt">
 																</picture>
-																<div class="league-element__name">${playerName}</div>
-																<div class="league-element__data">${price}</div>
-																<div class="league-element__controls">
-																	<div class="leaguejs-remove league-element__control league-element__control--primary">
+																<div class="ism-element__name">${playerName}</div>
+																<div class="ism-element__data">${price}</div>
+																<div class="ism-element__controls">
+																	<div class="ismjs-remove ism-element__control ism-element__control--primary">
 																		<input class="5-box" type="checkbox" name="boxes" value="check_5" <c:if test="${isPlaying eq 'Y'}">checked</c:if> onclick="activatePlayer('${sessionScope.userId}','${gameClubPlayerId}',this);"/>
 																	</div>
-																	<div class="leaguejs-info league-element__control league-element__control--info">
+																	< <div class="leaguejs-info league-element__control league-element__control--info">
 																		<a href="javascript:void(0);" title="View player information" class="fa fa-info" onclick="showPlayerDetails('${gameClubPlayerId}');"></a>
-																	</div>
+																	</div> 
 																</div>
 															</div>
 
 														</div>
-													</div>
 												</div>
-												<div id="leaguer-pos6" class="league-pitch__unit league-pitch__unit--5">
-													<div class="league-transfer--original">
-														<s:sport position="4" playerType="Defender" pageName="MY_POINT"/>
-														<div class="league-element" tabindex="0">
-															<div class="leaguejs-menu check_6">
-															<c:if test="${not empty clubId and clubId ne ''}">
+												<div id="ismr-pos6" class="ism-pitch__unit ism-pitch__unit--5">
+													<s:sport position="4" playerType="Defender"/>
+														<div class="ism-element" tabindex="0">
+														<c:set var="imageSrc" value="" />
+														<c:if test="${not empty clubId and clubId ne ''}">
 																<spring:message code="club_${clubId}_image" var="imageSrc" />
 															</c:if>		
+															<div class="ismjs-menu check_6">
 																<picture>
-																	<img src="${context}/images/${imageSrc}"  alt="Spurs" title="Spurs" class="league-shirt league-element__shirt">
+																	<img src="${context}/images/Defender_${imageSrc}" alt="West Ham" title="West Ham" class="ism-shirt ism-element__shirt">
 																</picture>
-																<div class="league-element__name">${playerName}</div>
-																<div class="league-element__data">${price}</div>
-																<div class="league-element__controls">
-																	<div class="leaguejs-remove league-element__control league-element__control--primary">
+																<div class="ism-element__name">${playerName}</div>
+																<div class="ism-element__data">${price}</div>
+																<div class="ism-element__controls">
+																	<div class="ismjs-remove ism-element__control ism-element__control--primary">
 																		<input class="6-box" type="checkbox" name="boxes" value="check_6" <c:if test="${isPlaying eq 'Y'}">checked</c:if> onclick="activatePlayer('${sessionScope.userId}','${gameClubPlayerId}',this);"/>
 																	</div>
-																	<div class="leaguejs-info league-element__control league-element__control--info">
+																	 <div class="leaguejs-info league-element__control league-element__control--info">
 																		<a href="javascript:void(0);" title="View player information" class="fa fa-info" onclick="showPlayerDetails('${gameClubPlayerId}');"></a>
-																	</div>
+																	</div> 
 																</div>
 															</div>
 
 														</div>
-													</div>
 												</div>
-												<div id="leaguer-pos7" class="league-pitch__unit league-pitch__unit--5">
-													<div class="league-transfer--original">
-													<s:sport position="5" playerType="Defender" pageName="MY_POINT"/>
-														<div class="league-element" tabindex="0">
-															<div class="leaguejs-menu check_7">
-															<c:if test="${not empty clubId and clubId ne ''}">
+												<div id="ismr-pos7" class="ism-pitch__unit ism-pitch__unit--5">
+													<s:sport position="5" playerType="Defender"/>
+														<div class="ism-element" tabindex="0">
+														<c:set var="imageSrc" value="" />
+														<c:if test="${not empty clubId and clubId ne ''}">
 																<spring:message code="club_${clubId}_image" var="imageSrc" />
 															</c:if>		
+															<div class="ismjs-menu check_7">
 																<picture>
-																	<img src="${context}/images/${imageSrc}"  alt="Hull" title="Hull" class="league-shirt league-element__shirt">
+																	<img src="${context}/images/Defender_${imageSrc}" alt="West Ham" title="West Ham" class="ism-shirt ism-element__shirt">
 																</picture>
-																<div class="league-element__name">${playerName}</div>
-																<div class="league-element__data">${price}</div>
-																<div class="league-element__controls">
-																	<div class="leaguejs-remove league-element__control league-element__control--primary">
+																<div class="ism-element__name">${playerName}</div>
+																<div class="ism-element__data">${price}</div>
+																<div class="ism-element__controls">
+																	<div class="ismjs-remove ism-element__control ism-element__control--primary">
 																		<input class="7-box" type="checkbox" name="boxes" value="check_7" <c:if test="${isPlaying eq 'Y'}">checked</c:if> onclick="activatePlayer('${sessionScope.userId}','${gameClubPlayerId}',this);"/>
 																	</div>
-																	<div class="leaguejs-info league-element__control league-element__control--info">
+																	 <div class="leaguejs-info league-element__control league-element__control--info">
 																		<a href="javascript:void(0);" title="View player information" class="fa fa-info" onclick="showPlayerDetails('${gameClubPlayerId}');"></a>
-																	</div>
+																	</div> 
 																</div>
 															</div>
 
 														</div>
-													</div>
 												</div>
-											</div>
-
-											<div class="league-element-row league-element-row--pitch">
-												<div id="leaguer-pos8" class="league-pitch__unit league-pitch__unit--5">
-													<div class="league-transfer--original">
-													<s:sport position="1" playerType="Midfielder" pageName="MY_POINT"/>
-														<div class="league-element" tabindex="0">
-															<div class="leaguejs-menu check_8">
-															<c:if test="${not empty clubId and clubId ne ''}">
+												</div>
+												
+												<div class="ism-element-row ism-element-row--pitch">
+												<div id="ismr-pos8" class="ism-pitch__unit ism-pitch__unit--5">
+													<s:sport position="1" playerType="Midfielder"/>
+														<div class="ism-element" tabindex="0">
+														<c:set var="imageSrc" value="" />
+														<c:if test="${not empty clubId and clubId ne ''}">
 																<spring:message code="club_${clubId}_image" var="imageSrc" />
 															</c:if>		
+															<div class="ismjs-menu check_8">
 																<picture>
-																	<img src="${context}/images/${imageSrc}"  alt="Liverpool" title="Liverpool" class="league-shirt league-element__shirt">
+																	<img src="${context}/images/Defender_${imageSrc}" alt="West Ham" title="West Ham" class="ism-shirt ism-element__shirt">
 																</picture>
-																<div class="league-element__name">${playerName}</div>
-																<div class="league-element__data">${price}</div>
-																<div class="league-element__controls">
-																	<div class="leaguejs-remove league-element__control league-element__control--primary">
-																		<input class="8-box" type="checkbox" name="boxes" value="check_8" /<c:if test="${isPlaying eq 'Y'}">checked</c:if> onclick="activatePlayer('${sessionScope.userId}','${gameClubPlayerId}',this);">
+																<div class="ism-element__name">${playerName}</div>
+																<div class="ism-element__data">${price}</div>
+																<div class="ism-element__controls">
+																	<div class="ismjs-remove ism-element__control ism-element__control--primary">
+																		<input class="8-box" type="checkbox" name="boxes" value="check_8" <c:if test="${isPlaying eq 'Y'}">checked</c:if> onclick="activatePlayer('${sessionScope.userId}','${gameClubPlayerId}',this);"/>
 																	</div>
 																	<div class="leaguejs-info league-element__control league-element__control--info">
 																		<a href="javascript:void(0);" title="View player information" class="fa fa-info" onclick="showPlayerDetails('${gameClubPlayerId}');"></a>
-																	</div>
+																	</div> 
 																</div>
 															</div>
 
 														</div>
-													</div>
 												</div>
-												<div id="leaguer-pos9" class="league-pitch__unit league-pitch__unit--5">
-													<div class="league-transfer--original">
-													<s:sport position="2" playerType="Midfielder" pageName="MY_POINT"/>
-														<div class="league-element" tabindex="0">
-															<div class="leaguejs-menu check_9">
-															<c:if test="${not empty clubId and clubId ne ''}">
+												<div id="ismr-pos9" class="ism-pitch__unit ism-pitch__unit--5">
+													<s:sport position="2" playerType="Midfielder"/>
+														<div class="ism-element" tabindex="0">
+														<c:set var="imageSrc" value="" />
+														<c:if test="${not empty clubId and clubId ne ''}">
 																<spring:message code="club_${clubId}_image" var="imageSrc" />
 															</c:if>		
+															<div class="ismjs-menu check_9">
 																<picture>
-																	<img src="${context}/images/${imageSrc}"  alt="Everton" title="Everton" class="league-shirt league-element__shirt">
+																	<img src="${context}/images/Defender_${imageSrc}" alt="West Ham" title="West Ham" class="ism-shirt ism-element__shirt">
 																</picture>
-																<div class="league-element__name">${playerName}</div>
-																<div class="league-element__data">${price}</div>
-																<div class="league-element__controls">
-																	<div class="leaguejs-remove league-element__control league-element__control--primary">
+																<div class="ism-element__name">${playerName}</div>
+																<div class="ism-element__data">${price}</div>
+																<div class="ism-element__controls">
+																	<div class="ismjs-remove ism-element__control ism-element__control--primary">
 																		<input class="9-box" type="checkbox" name="boxes" value="check_9" <c:if test="${isPlaying eq 'Y'}">checked</c:if> onclick="activatePlayer('${sessionScope.userId}','${gameClubPlayerId}',this);"/>
 																	</div>
-																	<div class="leaguejs-info league-element__control league-element__control--info">
-																		<a href="#" title="View player information" class="fa fa-info" onclick="showPlayerDetails('${gameClubPlayerId}');"
-																		></a>
-																	</div>
+																	 <div class="leaguejs-info league-element__control league-element__control--info">
+																		<a href="javascript:void(0);" title="View player information" class="fa fa-info" onclick="showPlayerDetails('${gameClubPlayerId}');"></a>
+																	</div> 
 																</div>
 															</div>
 
 														</div>
-													</div>
 												</div>
-												<div id="leaguer-pos10" class="league-pitch__unit league-pitch__unit--5">
-													<div class="league-transfer--original">
-													<s:sport position="3" playerType="Midfielder" pageName="MY_POINT"/>
-														<div class="league-element" tabindex="0">
-															<div class="leaguejs-menu check_10">
-															<c:if test="${not empty clubId and clubId ne ''}">
+												<div id="ismr-pos10" class="ism-pitch__unit ism-pitch__unit--5">
+													<s:sport position="3" playerType="Midfielder"/>
+														<div class="ism-element" tabindex="0">
+														<c:set var="imageSrc" value="" />
+														<c:if test="${not empty clubId and clubId ne ''}">
 																<spring:message code="club_${clubId}_image" var="imageSrc" />
 															</c:if>		
+															<div class="ismjs-menu check_10">
 																<picture>
-																	<img src="${context}/images/${imageSrc}"  alt="Chelsea" title="Chelsea" class="league-shirt league-element__shirt">
+																	<img src="${context}/images/Defender_${imageSrc}" alt="West Ham" title="West Ham" class="ism-shirt ism-element__shirt">
 																</picture>
-																<div class="league-element__name">${playerName}</div>
-																<div class="league-element__data">${price}</div>
-																<div class="league-element__controls">
-																	<div class="leaguejs-remove league-element__control league-element__control--primary">
+																<div class="ism-element__name">${playerName}</div>
+																<div class="ism-element__data">${price}</div>
+																<div class="ism-element__controls">
+																	<div class="ismjs-remove ism-element__control ism-element__control--primary">
 																		<input class="10-box" type="checkbox" name="boxes" value="check_10" <c:if test="${isPlaying eq 'Y'}">checked</c:if> onclick="activatePlayer('${sessionScope.userId}','${gameClubPlayerId}',this);"/>
 																	</div>
-																	<div class="leaguejs-info league-element__control league-element__control--info">
-																		<a href="javascript:void(0);" title="View player information" class="fa fa-info" onclick="showPlayerDetails('${gameClubPlayerId}');"
-																		></a>
-																	</div>
+																	 <div class="leaguejs-info league-element__control league-element__control--info">
+																		<a href="javascript:void(0);" title="View player information" class="fa fa-info" onclick="showPlayerDetails('${gameClubPlayerId}');"></a>
+																	</div> 
 																</div>
 															</div>
 
 														</div>
-													</div>
 												</div>
-												<div id="leaguer-pos11" class="league-pitch__unit league-pitch__unit--5">
-													<div class="league-transfer--original">
-													<s:sport position="4" playerType="Midfielder" pageName="MY_POINT"/>
-														<div class="league-element" tabindex="0">
-															<div class="leaguejs-menu check_11">
-															<c:if test="${not empty clubId and clubId ne ''}">
+												<div id="ismr-pos11" class="ism-pitch__unit ism-pitch__unit--5">
+													<s:sport position="4" playerType="Midfielder"/>
+														<div class="ism-element" tabindex="0">
+														<c:set var="imageSrc" value="" />
+														<c:if test="${not empty clubId and clubId ne ''}">
 																<spring:message code="club_${clubId}_image" var="imageSrc" />
 															</c:if>		
+															<div class="ismjs-menu check_11">
 																<picture>
-																	<img src="${context}/images/${imageSrc}"  alt="Swanca" title="Swanca" class="league-shirt league-element__shirt">
+																	<img src="${context}/images/Defender_${imageSrc}" alt="West Ham" title="West Ham" class="ism-shirt ism-element__shirt">
 																</picture>
-																<div class="league-element__name">${playerName}</div>
-																<div class="league-element__data">${price}</div>
-																<div class="league-element__controls">
-																	<div class="leaguejs-remove league-element__control league-element__control--primary">
+																<div class="ism-element__name">${playerName}</div>
+																<div class="ism-element__data">${price}</div>
+																<div class="ism-element__controls">
+																	<div class="ismjs-remove ism-element__control ism-element__control--primary">
 																		<input class="11-box" type="checkbox" name="boxes" value="check_11" <c:if test="${isPlaying eq 'Y'}">checked</c:if> onclick="activatePlayer('${sessionScope.userId}','${gameClubPlayerId}',this);"/>
 																	</div>
 																	<div class="leaguejs-info league-element__control league-element__control--info">
 																		<a href="javascript:void(0);" title="View player information" class="fa fa-info" onclick="showPlayerDetails('${gameClubPlayerId}');"></a>
-																	</div>
+																	</div> 
 																</div>
 															</div>
 
 														</div>
-													</div>
 												</div>
-												<div id="leaguer-pos12" class="league-pitch__unit league-pitch__unit--5">
-													<div class="league-transfer--original">
-														<div class="league-element" tabindex="0">
-														<s:sport position="5" playerType="Midfielder" pageName="MY_POINT"/>
-															<div class="leaguejs-menu check_12">
-															<c:if test="${not empty clubId and clubId ne ''}">
-																<spring:message code="club_${clubId}_image" var="imageSrc" />
-															</c:if>		
-																<picture>
-																	<img src="${context}/images/${imageSrc}"  alt="Man Utd" title="Man Utd" class="league-shirt league-element__shirt">
-																</picture>
-																<div class="league-element__name">${playerName}</div>
-																<div class="league-element__data">${price}</div>
-																<div class="league-element__controls">
-																	<div class="leaguejs-remove league-element__control league-element__control--primary">
-																		<input class="12-box" type="checkbox" name="boxes" value="check_12" <c:if test="${isPlaying eq 'Y'}">checked</c:if> onclick="activatePlayer('${sessionScope.userId}','${gameClubPlayerId}',this);">
-																	</div>
-																	<div class="leaguejs-info league-element__control league-element__control--info" <c:if test="${isPlaying eq 'Y'}">checked</c:if> onclick="activatePlayer('${sessionScope.userId}','${gameClubPlayerId}',this);"/>
-																		<a href="javascript:void(0);" title="View player information" class="fa fa-info" onclick="showPlayerDetails('${gameClubPlayerId}');"></a>
-																	</div>
-																</div>
-															</div>
 
-														</div>
-													</div>
-												</div>
-											</div>
-
-											<div class="league-element-row league-element-row--pitch">
-												<div id="leaguer-pos13" class="league-pitch__unit league-pitch__unit--3">
-													<div class="league-transfer--original">
-													<s:sport position="1" playerType="Forward" pageName="MY_POINT"/>
-														<div class="league-element" tabindex="0">
+												<div id="ismr-pos12" class="ism-pitch__unit ism-pitch__unit--5">
+													<s:sport position="5" playerType="Midfielder"/>
+														<div class="ism-element" tabindex="0">
+														<c:set var="imageSrc" value="" />
 														<c:if test="${not empty clubId and clubId ne ''}">
 																<spring:message code="club_${clubId}_image" var="imageSrc" />
 															</c:if>		
-															<div class="leaguejs-menu check_13">
+															<div class="ismjs-menu check_12">
 																<picture>
-																	<img src="${context}/images/${imageSrc}"  alt="Middlesbrough" title="Middlesbrough" class="league-shirt league-element__shirt">
+																	<img src="${context}/images/Defender_${imageSrc}" alt="West Ham" title="West Ham" class="ism-shirt ism-element__shirt">
 																</picture>
-																<div class="league-element__name">${playerName}</div>
-																<div class="league-element__data">${price}</div>
-																<div class="league-element__controls">
-																	<div class="leaguejs-remove league-element__control league-element__control--primary">
-																		<input class="13-box" type="checkbox" name="boxes" value="check_13" <c:if test="${isPlaying eq 'Y'}">checked</c:if> onclick="activatePlayer('${sessionScope.userId}','${gameClubPlayerId}',this);" />
+																<div class="ism-element__name">${playerName}</div>
+																<div class="ism-element__data">${price}</div>
+																<div class="ism-element__controls">
+																	<div class="ismjs-remove ism-element__control ism-element__control--primary">
+																		<input class="12-box" type="checkbox" name="boxes" value="check_12" <c:if test="${isPlaying eq 'Y'}">checked</c:if> onclick="activatePlayer('${sessionScope.userId}','${gameClubPlayerId}',this);"/>
 																	</div>
-																	<div class="leaguejs-info league-element__control league-element__control--info">
+																	 <div class="leaguejs-info league-element__control league-element__control--info">
 																		<a href="javascript:void(0);" title="View player information" class="fa fa-info" onclick="showPlayerDetails('${gameClubPlayerId}');"></a>
-																	</div>
+																	</div> 
 																</div>
 															</div>
 
 														</div>
-													</div>
 												</div>
-												<div id="leaguer-pos14" class="league-pitch__unit league-pitch__unit--3">
-													<div class="league-transfer--original">
-													<s:sport position="2" playerType="Forward" pageName="MY_POINT"/>
-														<div class="league-element" tabindex="0">
-															<div class="leaguejs-menu check_14">
-															<c:if test="${not empty clubId and clubId ne ''}">
-																<spring:message code="club_${clubId}_image" var="imageSrc" />
-															</c:if>		
-																<picture>
-																	<img src="${context}/images/${imageSrc}"  alt="Middlesbrough" title="Middlesbrough" class="league-shirt league-element__shirt">
-																</picture>
-																<div class="league-element__name">${playerName}</div>
-																<div class="league-element__data">${price}</div>
-																<div class="league-element__controls">
-																	<div class="leaguejs-remove league-element__control league-element__control--primary">
-																		<input class="14-box" type="checkbox" name="boxes" value="check_14" <c:if test="${isPlaying eq 'Y'}">checked</c:if> onclick="activatePlayer('${sessionScope.userId}','${gameClubPlayerId}',this);" />
-																	</div>
-																	<div class="leaguejs-info league-element__control league-element__control--info">
-																		<a href="javascript:void(0);" title="View player information" class="fa fa-info" onclick="showPlayerDetails('${gameClubPlayerId}');"></a>
-																	</div>
-																</div>
-															</div>
 
-														</div>
-													</div>
 												</div>
-												<div id="leaguer-pos15" class="league-pitch__unit league-pitch__unit--3">
-													<div class="league-transfer--original">
-													<s:sport position="3" playerType="Forward" pageName="MY_POINT"/>
-														<div class="league-element" tabindex="0">
+											<div class="ism-element-row ism-element-row--pitch">
+												<div id="ismr-pos13" class="ism-pitch__unit ism-pitch__unit--3">
+													<s:sport position="1" playerType="Forward"/>
+														<div class="ism-element" tabindex="0">
+														<c:set var="imageSrc" value="" />
 														<c:if test="${not empty clubId and clubId ne ''}">
 																<spring:message code="club_${clubId}_image" var="imageSrc" />
 															</c:if>		
-															<div class="leaguejs-menu check_15">
+															<div class="ismjs-menu check_13">
 																<picture>
-																	<img src="${context}/images/${imageSrc}"  alt="Man City" title="Man City" class="league-shirt league-element__shirt">
+																	<img src="${context}/images/Defender_${imageSrc}" alt="West Ham" title="West Ham" class="ism-shirt ism-element__shirt">
 																</picture>
-																<div class="league-element__name">${playerName}</div>
-																<div class="league-element__data">${price}</div>
-																<div class="league-element__controls">
-																	<div class="leaguejs-remove league-element__control league-element__control--primary">
+																<div class="ism-element__name">${playerName}</div>
+																<div class="ism-element__data">${price}</div>
+																<div class="ism-element__controls">
+																	<div class="ismjs-remove ism-element__control ism-element__control--primary">
+																		<input class="13-box" type="checkbox" name="boxes" value="check_13" <c:if test="${isPlaying eq 'Y'}">checked</c:if> onclick="activatePlayer('${sessionScope.userId}','${gameClubPlayerId}',this);"/>
+																	</div>
+																	 <div class="leaguejs-info league-element__control league-element__control--info">
+																		<a href="javascript:void(0);" title="View player information" class="fa fa-info" onclick="showPlayerDetails('${gameClubPlayerId}');"></a>
+																	</div> 
+																</div>
+															</div>
+
+														</div>
+												</div>
+
+												<div id="ismr-pos14" class="ism-pitch__unit ism-pitch__unit--3">
+													<s:sport position="2" playerType="Forward"/>
+														<div class="ism-element" tabindex="0">
+														<c:set var="imageSrc" value="" />
+														<c:if test="${not empty clubId and clubId ne ''}">
+																<spring:message code="club_${clubId}_image" var="imageSrc" />
+															</c:if>		
+															<div class="ismjs-menu check_14">
+																<picture>
+																	<img src="${context}/images/Defender_${imageSrc}" alt="West Ham" title="West Ham" class="ism-shirt ism-element__shirt">
+																</picture>
+																<div class="ism-element__name">${playerName}</div>
+																<div class="ism-element__data">${price}</div>
+																<div class="ism-element__controls">
+																	<div class="ismjs-remove ism-element__control ism-element__control--primary">
+																		<input class="14-box" type="checkbox" name="boxes" value="check_14" <c:if test="${isPlaying eq 'Y'}">checked</c:if> onclick="activatePlayer('${sessionScope.userId}','${gameClubPlayerId}',this);"/>
+																	</div>
+																	 <div class="leaguejs-info league-element__control league-element__control--info">
+																		<a href="javascript:void(0);" title="View player information" class="fa fa-info" onclick="showPlayerDetails('${gameClubPlayerId}');"></a>
+																	</div> 
+																</div>
+															</div>
+
+														</div>
+												</div>
+
+												<div id="ismr-pos15" class="ism-pitch__unit ism-pitch__unit--3">
+													<s:sport position="3" playerType="Forward"/>
+														<div class="ism-element" tabindex="0">
+														<c:set var="imageSrc" value="" />
+														<c:if test="${not empty clubId and clubId ne ''}">
+																<spring:message code="club_${clubId}_image" var="imageSrc" />
+															</c:if>		
+															<div class="ismjs-menu check_15">
+																<picture>
+																	<img src="${context}/images/Defender_${imageSrc}" alt="West Ham" title="West Ham" class="ism-shirt ism-element__shirt">
+																</picture>
+																<div class="ism-element__name">${playerName}</div>
+																<div class="ism-element__data">${price}</div>
+																<div class="ism-element__controls">
+																<div class="ismjs-remove ism-element__control ism-element__control--primary">
 																		<input class="15-box" type="checkbox" name="boxes" value="check_15" <c:if test="${isPlaying eq 'Y'}">checked</c:if> onclick="activatePlayer('${sessionScope.userId}','${gameClubPlayerId}',this);"/>
 																	</div>
-																	<div class="leaguejs-info league-element__control league-element__control--info">
+																	 <div class="leaguejs-info league-element__control league-element__control--info">
 																		<a href="javascript:void(0);" title="View player information" class="fa fa-info" onclick="showPlayerDetails('${gameClubPlayerId}');"></a>
-																	</div>
+																	</div> 
 																</div>
 															</div>
 
 														</div>
-													</div>
 												</div>
+												
+
+												</div>									
+												 
 											</div>
 
 										</div>
 									</section>
 							   </div>
 							</div>
+								</c:otherwise>
+               	</c:choose>
 						</section>   
-					</div>
+					
 
                 <!-- Secondary content -->
-                <div id="leaguer-side" class="league-sidebar">
+                <div id="ismr-side" class="ism-sidebar">
 					<div>
 						<section>
-							<h2 class="subHeader league-sub-header">${sessionScope.user.displayName}</h2>
+							<h2 class="subHeader ism-sub-header">${sessionScope.user.displayName}</h2>
 
-							<div class="league-bordered league-bordered--primary">
+							<div class="ism-bordered ism-bordered--primary">
 
 								<!-- ENTRY BAR -->
-								<div class="league-entry-bar">
-									<div class="league-media league-media--centred league-media--reversed">
-										<div class="league-media__figure">
+								<div class="ism-entry-bar">
+									<div class="ism-media ism-media--centred ism-media--reversed">
+										<div class="ism-media__figure">
 											${sessionScope.user.country}
 										</div>
-										<div class="league-media__body">
-											<div class="league-entry-bar__name"></div>
+										<div class="ism-media__body">
+											<div class="ism-entry-bar__name"></div>
 										</div>
 									</div>
-								</div>
+								</div> 
 
 
 								<!-- POINTS / RANKINGS -->
-								<div class="league-panel league-panel--guttered">
-									<h3 class="league-panel__heading">Points/Rankings</h3>
-									<div class="league-panel__body">
+								<div class="">
+									<h3 class="top_main">Points/Rankings</h3>
+									<div class="ism-panel__body">
 
-										<ul class="league-data-list league-data-list--bordered">
-											<li class="league-data-list__item">
-												<h3 class="league-data-list__item__heading">Overall Points:</h3>
-												<div class="league-data-list__item__value">${sessionScope.user.userGameMap.point}</div>
-											</li>
-											<li class="league-data-list__item">
-												<h3 class="league-data-list__item__heading">Overall Rank:</h3>
-												<div class="league-data-list__item__value">${sessionScope.user.userGameMap.rank}</div>
-											</li>
-											<li class="league-data-list__item">
-												<h3 class="league-data-list__item__heading">Total Players:</h3>
-												<div class="league-data-list__item__value">${fn:length(sessionScope.playerList)}</div>
-											</li>
-											<li class="league-data-list__item">
-												<h3 class="league-data-list__item__heading">Gameweek Points:</h3>
-												<div class="league-data-list__item__value">
-												${sportMgmtRes.result.gameWeek.point}	
-												</div>
-											</li>
+										<ul class="my_team_points check_points">
+												<li>Overall Points : 
+												<span class="text_right">
+												${sessionScope.user.userGameMap.point}
+												</span>
+												</li>
+												  <li>Overall Rank : 
+												  <span class="text_right">
+												  ${sessionScope.user.userGameMap.rank}
+												  </span>
+												  </li>
+											      <li>Total Players : 
+											      <span class="text_right">
+											      ${fn:length(sessionScope.playerList)}
+											      </span>
+											       </li>
 										</ul>
 									</div>
 									
 								</div>
+									</div>
+									</div>
+									
 
 								<!-- LEAGUES -->
-							<div class="league-panel">
-									<div class="league-panel__body">
-										<div id="leaguer-fan-league"><div>
+							<div class="ism-panel">
+									<div class="ism-panel__body">
+										<div id="ismr-fan-league"><div>
 
-										<div class="league-panel league-panel--dark league-panel--guttered">
-											<h3 class="league-panel__heading">Fan League</h3>
-											<div class="league-panel__body league-panel--dark__body">
-												<div class="league-panel__centre league-panel__badge">
-													<a href="#" class="league-panel__badge__link">
-														 <img src="${context}/images/logo.png" title="Arsenal" alt="Arsenal" class="league-panel__badge__img">													 </a>												</div>
+										<div class="ism-panel ism-panel--dark ism-panel--guttered">
+											<h3 class="ism-panel__heading">Fan League</h3>
+											<div class="ism-panel__body ism-panel--dark__body">
+												<div class="ism-panel__centre league-panel__badge">
+													<a href="#" class="ism-panel__badge__link">
+														 <img src="${context}/images/logo.png" title="Arsenal" alt="Arsenal" class="ism-panel__badge__img">													 </a>												</div>
 											</div>
 											</div>
 
@@ -592,9 +598,9 @@
 							
 							
 							
-							
 							</div>
-						</div>
+							</div>
+						
 				<%-- <div class="league-panel__footer league-panel__footer--guttered">
 					<a href="#" class="leaguejs-link btn btn-secondary league-button league-button--full">Create and join leagues<span class="fa fa-caret-right"></span></a>
 				</div>
@@ -610,15 +616,15 @@
                     </div>
                 </div> --%>
 							</div>
-						</section>
-						<div id="leaguer-elements-menu"></div>
-					</div>
-				</div>
-			</div>
-		</div>		
-	</main>
+						
+						<div id="ismr-elements-menu"></div>
+					
+						
+						</div>
+				</div>	
+	
 
- 
+ </body>
   <c:if test="${empty sportMgmtRes.result}">
   <script type="text/javascript">
    //alert("Hey ! This page can be viewed after your 1st game week ends. Now you will be redirected to My Team page ");
@@ -939,6 +945,7 @@
 		});
 	}
 	});
+	
 </script> 
 
 
