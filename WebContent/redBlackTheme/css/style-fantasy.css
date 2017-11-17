@@ -401,7 +401,7 @@ header {
 #countDown {    
 	 position:absolute;
 	right:30%;
-    float: left ; padding:10px;    padding-top: 7px;}
+    float: left ; padding:10px;    padding-top: 7px; font-size:14px; font-weight:100;}
 /*--------------/ My Team----------------------*/
 /*--------------Fixtures----------------------*/
 .fixture_img_ad {
@@ -455,23 +455,24 @@ header {
   font-size: 24px; }
 
 .fixture_bar_ongoing {
-  background: url(../images/Dream11/ongoing_fixture.png) no-repeat center;
-  height: 80px;
+  background: url(../images/Dream11/fixture_bar.png) no-repeat center;
+  height: 50px;
   background-size: contain;
   font-family: 'Reckoner_Bold';
   font-weight: 600;
   letter-spacing: 2px;
-  font-size: 24px; 
-  padding-top:45px; }
+  font-size: 20px; 
+  padding-top:15px; }
 
 .team_points_flex1 {
   display: -webkit-inline-box; }
+#myModal-1, .buywildcard a{color:#000;}
 
 .ongoing_flex1 {
-  padding-left: 20px; font-size:20px;width:150px; float:left;}
+  padding-left: 20px; font-size:17px;width:150px; float:left;}
 
 .ongoing_flex2 {
-  padding-left: 7%;font-size:20px; width:150px; float:left;}
+  padding-left: 7%;font-size:17px; width:150px; float:left;}
 
 .fixture_bar {
   background: url(../images/Dream11/fixture_bar.png) no-repeat center;
@@ -520,7 +521,7 @@ td, th {
   font-weight: 500;
   font-family: 'roboto'; }
 .ongoing_mid_flex1{      padding-left: 44px;
-    font-size: 20px;
+    font-size: 16px;
     width: 150px;
     float: left;
     letter-spacing: 12px;
@@ -1487,8 +1488,14 @@ td, th {
     margin-top: 10%; }
 
   .prev_next_btn {
-    padding-left: 0%; }
-
+    padding-left: 0%;
+    margin:auto;
+    text-align:center; }
+  
+  .prev_next_btn h5 {
+  	font-size:20px;
+  }
+ .ongoing_mid_flex1 {    letter-spacing: 8px;}
   .team_points_flex1 img, .team_points_flex img {
     height: 20px !important; }
 
@@ -1536,10 +1543,12 @@ td, th {
 
   .Payment_detail {
     margin-top: 28%; }
- .fixture_bar_ongoing {height:68px; padding-top:38px;}
+ .fixture_bar_ongoing {height:40px; padding-top:10px;}
  .ongoing_mid_flex1{padding-left: 10px;    font-size: 16px; width:90px;}
   #countDown {  position: unset !important; text-align:center;float:none !important;}
   .ism .ism-panel--guttered-mobile{padding-top: 44%; overflow: initial;}
+  .prev_next_btn a, .prev_next_btn h5 { float:none !important; margin:auto;}
+  .panel-group .panel-heading {height:170px;}
   /*----------------------------------*/
   .overlay {
     height: 0%;

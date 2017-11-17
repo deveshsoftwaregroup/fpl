@@ -1222,4 +1222,10 @@ input[type="date"]:valid::before {
   .scout_slide {
     margin-top: 660px; } }
 
+
+@media screen and (min-width: 1024px) and (max-width: 1920px) {
+	.margn_left{    margin-left: 7.333333%;}
+}
+
+.modal input{color:#000;}
 /*# sourceMappingURL=style.css.map */
