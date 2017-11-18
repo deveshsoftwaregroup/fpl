@@ -6,7 +6,7 @@
 	<%@ taglib uri="WEB-INF/sportmgmt.tld" prefix="s" %> 
 	<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 	
-<%-- <s:sportExt retrieve="deadLine" /> --%>
+<s:sportExt retrieve="deadLine" />
 <body class="predict11-bg transfers_predict11 dream_11transfer">
    
       <div class="container-fluid ">
@@ -94,7 +94,7 @@
               	
               	<c:choose>
               		
-	              	<c:when test="${empty sportMgmtRes.result.hisotryPlayerList}">
+	              	<c:when test="${empty sportMgmtRes.result}">
 	              		<div class="col-lg-8">
 	              		<h4>No team was confirmed for this Game Week</h4>
 	              		</div>
@@ -517,20 +517,18 @@
 												</div>									
 												 
 											</div>
+						</c:otherwise>
+					</c:choose>
 
 										</div>
-									</section>
-							   </div>
-							</div>
-								</c:otherwise>
-               	</c:choose>
-						</section>   
+							   
+						
+								
 					
 
                 <!-- Secondary content -->
                 <div id="ismr-side" class="ism-sidebar">
 					<div>
-						<section>
 							<h2 class="subHeader ism-sub-header">${sessionScope.user.displayName}</h2>
 
 							<div class="ism-bordered ism-bordered--primary">
@@ -578,7 +576,7 @@
 									
 
 								<!-- LEAGUES -->
-							<div class="ism-panel">
+							<%-- <div class="ism-panel">
 									<div class="ism-panel__body">
 										<div id="ismr-fan-league"><div>
 
@@ -594,7 +592,7 @@
 									</div>
 								</div>
 								</div>
-								</div>
+								</div> --%>
 							
 							
 							
@@ -621,7 +619,7 @@
 					
 						
 						</div>
-				</div>	
+					
 	
 
  </body>
