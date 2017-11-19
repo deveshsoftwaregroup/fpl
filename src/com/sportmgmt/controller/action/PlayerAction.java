@@ -130,7 +130,7 @@ public class PlayerAction {
 		{
 			try
 			{
-				if(gameType !=null && gameType.equals("dream_eleven"));
+				if(gameType !=null && gameType.equals("dream_eleven"))
 				pointRankingUtility.setDreamEleven(true);
 				List<String> logList =pointRankingUtility.createPlayerHistoryForUsers(gameId,gameWeekId);
 				sportMgmtResponse.setSuccess(true);

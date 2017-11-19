@@ -148,7 +148,10 @@ public class PointRankingAction {
 				logger.info("-- History player list: "+historyPlayerList);
 				Map<String,String> gameWeekReport = GameWeeKManager.getGameWeekReport(userId, gameWeekId);
 				logger.info("--- Game Week Report: "+gameWeekReport);
-				gameWeek.putAll(gameWeekReport);
+				if(gameWeekReport !=null)
+				{
+					gameWeek.putAll(gameWeekReport);
+				}
 				result.put("hisotryPlayerList", historyPlayerList);
 				result.put("gameWeek", gameWeek);
 				sportMgmtResponse.setSuccess(true);
