@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+m<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     
 	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -469,7 +469,7 @@
 										<div class="col-lg-12 pull-right claim_your_prize claim_prize_align">
 												<p id="countDown"></p>
                                              <!-- <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#modelPlayOption">Confirm Your Team</button></a> -->
-                                              <a href="#"><button id="confirmTeam" type="button" class="btn claim_btn confirm_team_btn" onclick="checkPlayerCountAndConfirmTeam()">Confirm Your Team</button></a>
+                                              <a href="#"><button id="confirmTeam" type="button" class="btn claim_btn confirm_team_btn" onclick="createHistory11('${sessionScope.gameDetails.gameId}','${gameWeekId}','${sessionScope.userId}')">Confirm Your Team</button></a>
                                           	<!-- <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#paymentModel">Make Payment</button></a> -->
                                  </div> 
 											</div>
