@@ -73,7 +73,7 @@
 	                  <div class="col-xs-12">	                  
                          <ul class="nav nav-tabs">
                         <li class="active"><a data-toggle="tab" href="#home">Login</a></li>
-                        <li><a data-toggle="tab" href="#menu1">Register</a></li>
+                        <li><a data-toggle="modal" href="#myModal1">Register</a></li>
                         </ul>
 	                   <div class="tab-content">
 	              <div id="home" class="tab-pane fade in active">
@@ -85,7 +85,7 @@
 			                              		<span class="input__label-content input__label-content--hoshi">Email ID</span>
 			                              	</label>
 			                              	<input class="input__field input__field--hoshi" type="email" name="emailId" autocomplete="off" />
-			                              	  
+			                              	
 			                              </div>		                              	                              		
 		                              </div>                     
 			                              <div class="form-group">

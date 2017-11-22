@@ -536,14 +536,14 @@
 									<div class="ism-panel__body">
 										<form action="#">
 											<div class="form_row">
-											     <input list="choose_cap" name="choose_captain" placeholder="Choose Captain" class="inp-control form-control">
+											   <!--   <input list="choose_cap" name="choose_captain" placeholder="Choose Captain" class="inp-control form-control"> -->
 											  
 											    <select id="captain-select">
 											    </select>
 										    </div>
 										    
 										    <div class="form_row">
-											      <input list="choose_wisecap" name="choose_wisecaptain" placeholder="Choose Vice Captain" class="inp-control form-control">
+										<!-- 	      <input list="choose_wisecap" name="choose_wisecaptain" placeholder="Choose Vice Captain" class="inp-control form-control"> -->
 											   
 											    <select id="vice-captain-select"></select>
 										    </div>
