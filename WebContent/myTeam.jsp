@@ -625,7 +625,7 @@ m<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 		});
 	}
 	});
-	var playerLimits =  {"minCheckLegth":7,"min":{'Goalkeeper':1,"Defender":3,"Midfielder":3,"Forward":1},"max":{'Goalkeeper':1,"Defender":5,"Midfielder":5,"Forward":3},"total":11}
+	var playerLimits =  {"minCheckLegth":7,"min":{'Goalkeeper':1,"Defender":3,"Midfielder":3,"Forward":1},"max":{'Goalkeeper':1,"Defender":4,"Midfielder":4,"Forward":2},"total":11}
 	function activatePlayer(userId,gameClubPlayerId,checkBox)
 	
 	{
@@ -743,7 +743,7 @@ m<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	}
 	  function checkPlayerCountAndConfirmTeam()
 	 	{ 
-	 		if(typeof userGameJson == 'undefined' || userGameJson.playerList.length < 15)
+	 		if(totalPlayingJson["player"] < playerLimits["total"])
 	 		{
 	 			showNotification('Please select 11 players');			
 	 		}
@@ -755,6 +755,50 @@ m<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	 			});
 	 		}
 	 	} 
+		 function createHistory11( gameId, gameWeekId, userId)
+		 	{ 
+			 if(totalPlayingJson["player"] >= playerLimits["total"])
+					 {
+			 url ="/SportMgmt/mvc/player/check-player-history/"+gameId+"/"+gameWeekId+"/"+userId+"?gameType=" ;
+					$.ajax({
+		     		  url: url,
+		     		 dataType: 'html',
+		     		  success: function( resp ) {
+		     			 console.log(resp);
+		     			 if(resp=="true")
+		     			 {
+		     				showNotification('your team is already confirmed for current Gameweek');
+		     			}
+		     			 else
+		     				 {
+				
+		     				url ="/SportMgmt/mvc/player/make-player-history-for-user/"+gameId+"/"+gameWeekId+"/"+userId+"?gameType=" ;
+		    	 			$.ajax({
+		    	 	     		  url: url,
+		    	 	     		 dataType: 'html',
+		    	 	     		  success: function( resp ) {
+		    	 	     			console.log("resp"+resp);
+		    	 	     			showNotification('your team has been confirmed');	    	 	     				 
+		    	 	     		},
+		    	 	     		  
+		    	 	     		  error: function( req, status, err ) {
+		    	 	     		    console.log( 'something went wrong', status, err );
+		    	 	     		  }
+		    	 	     		    
+		    	 	     		  });
+		     				 }	     		  
+		     		 },
+		     		 
+		     		   error: function( req, status, err ) {
+		     		    console.log( 'something went wrong', status, err );
+		     		   }
+		     		}); 
+			 }
+			 else
+			 {
+				 showNotification('Please select 11 players');
+			 }		
+		}
 	$(document).ajaxStart(function(){
  		$("#ajaxloader").css("display", "block");
  		$('.mask').show();
