@@ -98,8 +98,8 @@
                     <a href="" data-toggle="modal" data-target="#myModal"><img src="${context}/redBlackTheme/images/play-fantasy-league_1.png" class="img-responsive center-block"></a>
                    </c:when>
                    <c:otherwise>
-                   <%-- <a href="${context}/mvc/user/UserLanding"><img src="${context}/redBlackTheme/images/play-fantasy-league_1.png" class="img-responsive center-block"></a> --%>
-                   <a href="" data-toggle="modal" data-target="#myModal"><img src="${context}/redBlackTheme/images/play-fantasy-league_1.png" class="img-responsive center-block"></a>
+                    <a href="${context}/mvc/user/UserLanding"><img src="${context}/redBlackTheme/images/play-fantasy-league_1.png" class="img-responsive center-block"></a> 
+                  <%--  <a href="" data-toggle="modal" data-target="#myModal"><img src="${context}/redBlackTheme/images/play-fantasy-league_1.png" class="img-responsive center-block"></a> --%>
                    </c:otherwise>
                 </c:choose>
                    
