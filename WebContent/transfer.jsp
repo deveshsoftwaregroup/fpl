@@ -18,7 +18,7 @@
 <s:sportExt retrieve="priceList" />
 <s:sportExt retrieve="deadLine" />
 <!-- code for preloader starts -->
- <div id="preloader">
+ <%-- <div id="preloader">
 		<div id="status">&nbsp;</div>
 	</div>
 	<script type="text/javascript">
@@ -26,7 +26,7 @@
 			$('#status').fadeOut(1000); // will first fade out the loading animation
 			$('#preloader').delay(500).fadeOut(2000); // will fade out the white DIV that covers the website.
 		})
-	</script>
+	</script> --%>
 	<!-- Code for preloader ends --> 
 <body predict11-bg transfers_predict11 dream_11transfer>
 <div class="container-fluid ">
@@ -44,7 +44,8 @@
 	                        	<div class="flex-buttons">
 	                        			<div class="flex1 unlimited_transfer">
 											Want unlimited free transfer? : 
-											<c:if test="${sessionScope.hasFreeWildCard}">
+											<c:choose>
+											<c:when test="${sessionScope.hasFreeWildCard}">
 			                                  <input type="button" class="btn claim_btn" value="Use Wild Card" data-toggle="modal" data-target="#myModal-1">		                               
 			                                  <div id="myModal-1" class="modal fade" role="dialog">
 											  <div class="modal-dialog">
@@ -60,11 +61,15 @@
 														<a class="button no-btn" data-dismiss="modal">No</a>
 													</p>
 											      </div> 
-											    </div>
+ 											    </div>
 											  </div>
 											</div>	
-											</c:if>
+											</c:when>
+											 <c:otherwise>
+											
 	                                		<input type="button" class="btn claim_btn" value="Buy Wildcard" data-toggle="modal" data-target="#paymentModel" > 
+	                                		</c:otherwise>
+	                                		</c:choose>
 										</div>
 									</div>
 	                        	</div>
@@ -622,7 +627,17 @@
                                     </select>
                                 </div>
                             </div>
-                        </div>                   
+                        </div> 
+                        <div class="ism-search">
+                <label for="ismjs-element-search" class="ism-form__label">Search Player List</label>
+                <div class="searchInputContainer ism-search">
+                    <input id="ismjs-element-search" class="searchInput ism-search__input" type="search" placeholder="Player name">
+                     
+                                        
+                                        
+                    <div class="searchCommit"><div class="icn search-sm"></div></div>
+                </div>
+            </div>                  
                     </form>
 
                     <!-- <div id="ismr-sideboard"></div>
