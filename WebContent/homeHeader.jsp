@@ -119,13 +119,13 @@
 	                  				</a>
 	                  				</div>
 	                  			</div>
-	                  			<%-- <div class="col-sm-6">
+	                  			 <div class="col-sm-6">
 	                  					<div class="form-group">
 	                  				<a class="loginBtn center-block loginBtn--facebook" href="javascript:void(0);" onclick="loginWithFB()">
 	                  					<span class="fa fa-facebook"></span> Sign in with Facebook
 	                  				</a>
 	                  				</div>
-	                  			</div> --%>
+	                  			</div> 
 	                  		
 	                  		</div>
 	                  	</div>
@@ -232,7 +232,7 @@
 	                  			<div class="col-sm-6">
 	                  				<br>
 	                  					<div class="form-group">
-	                  				<a class="loginBtn center-block loginBtn--facebook" href="javascript:void(0);" onclick="loginWithFB()">
+	                  				<a class="loginBtn center-block loginBtn--facebook" href="javascript:void(0);" onclick="loginWithFB11()">
 	                  					<span class="fa fa-facebook"></span> Sign in with Facebook
 	                  				</a>
 	                  				
@@ -671,11 +671,18 @@ $('#exampleModal3').data('revealInit').close_on_esc = false
             $('#fbox2').animate({ right: '-301px' }, 2000);
      });
         
-function loginWithFB()
-{
-	window.location="../mvc/social/facebook/signin";
-	
-}
+        function loginWithFB()
+        {
+        	
+        	window.location="../mvc/social/facebook/signin";
+        	
+        }
+        function loginWithFB11()
+        {
+        	
+        	window.location="../mvc/social/facebook/dream_eleven_signin";
+        	
+        }
 </script>
 
 

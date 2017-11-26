@@ -18,6 +18,7 @@
 <s:sportExt retrieve="priceList" />
 <s:sportExt retrieve="deadLine" />
 <!-- code for preloader starts -->
+ <div id="preloader">
  <%-- <div id="preloader">
 		<div id="status">&nbsp;</div>
 	</div>
@@ -26,6 +27,7 @@
 			$('#status').fadeOut(1000); // will first fade out the loading animation
 			$('#preloader').delay(500).fadeOut(2000); // will fade out the white DIV that covers the website.
 		})
+	</script>
 	</script> --%>
 	<!-- Code for preloader ends --> 
 <body predict11-bg transfers_predict11 dream_11transfer>
@@ -44,6 +46,7 @@
 	                        	<div class="flex-buttons">
 	                        			<div class="flex1 unlimited_transfer">
 											Want unlimited free transfer? : 
+											<c:if test="${sessionScope.hasFreeWildCard}">
 											<c:choose>
 											<c:when test="${sessionScope.hasFreeWildCard}">
 			                                  <input type="button" class="btn claim_btn" value="Use Wild Card" data-toggle="modal" data-target="#myModal-1">		                               
@@ -61,9 +64,11 @@
 														<a class="button no-btn" data-dismiss="modal">No</a>
 													</p>
 											      </div> 
+											    </div>
  											    </div>
 											  </div>
 											</div>	
+											</c:if>
 											</c:when>
 											 <c:otherwise>
 											
@@ -627,6 +632,15 @@
                                     </select>
                                 </div>
                             </div>
+                        </div>                   
+
+
+
+
+
+
+
+
                         </div> 
                         <div class="ism-search">
                 <label for="ismjs-element-search" class="ism-form__label">Search Player List</label>
@@ -1242,6 +1256,7 @@
      {
      	<c:choose>
      	<c:when test="${isUnderDeadline}">
+     	alert("Hey buddy ! You are under deadline. Player can be added after deadline");
      	showNotification("Hey buddy ! You are under deadline. Player can be added after deadline");
      	</c:when>
      	<c:otherwise>
@@ -1272,6 +1287,7 @@
 		}
 		 else if(avialBalance < playerPrice)
 		{
+			alert("Bank Account is less than player price");
 			 showNotification("Bank Account is less than player price");
 			ajaxCall = false;
 		} 
@@ -1280,6 +1296,7 @@
 			ajaxCall = false;
 			if(userJson.totalPoint < 4)
 			{
+				alert("Please active wild card to add player");
 				showNotification("Please active wild card to add player");
 			}
 		} 
@@ -1290,6 +1307,7 @@
 				if(userGameJson['total']['Goalkeeper'] >=2)
 				{
 					ajaxCall = false;
+					alert("You can add maximum 2 Goalkeeper. Please Remove any one first ");
 					showNotification("You can add maximum 2 Goalkeeper. Please Remove any one first ");
 				}
 			}
@@ -1301,6 +1319,7 @@
 				if(userGameJson['total']['Midfielder'] >=5)
 				{
 					ajaxCall = false;
+					alert("You can add maximum 5 Midfielder. Please Remove any one first ");
 					showNotification("You can add maximum 5 Midfielder. Please Remove any one first ");
 				}
 			}
@@ -1312,6 +1331,7 @@
 				if(userGameJson['total']['Forward'] >=3)
 				{
 					ajaxCall = false;
+					alert("You can add maximum 3 All Rounders. Please Remove any one first ");
 					showNotification("You can add maximum 3 All Rounders. Please Remove any one first ");
 				}
 			}
@@ -1323,6 +1343,7 @@
 				if(userGameJson['total']['Defender'] >=5)
 				{
 					ajaxCall = false;
+					alert("You can add maximum 5 Defender. Please Remove any one first ");
 					showNotification("You can add maximum 5 Defender. Please Remove any one first ");
 				}
 			}
@@ -1421,6 +1442,7 @@
 	     			  }
 	     			  else
 	    			  {
+	    				  	alert(resp.errorMessage);
 	     				 showNotification(resp.errorMessage);
 	    			  }
 	     		  },
@@ -1467,6 +1489,7 @@
 	     			  }
 	     			  else
 	    			  {
+	    				  	alert(resp.errorMessage);
 	     				 showNotification(resp.errorMessage);
 	    			  }
 	     		  },

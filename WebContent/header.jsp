@@ -63,7 +63,7 @@
 	                        	<a href="javascript:void(0);" onclick="uploadTransferView();">Transfers</a>
 	                        </li> 
 	                        <li>
-	                        <a href="javascript:void(0);" onclick="uploadTeamViewWithoutMessage('${sessionScope.userId}','${sessionScope.gameDetails.gameId}');">My Team</a>		
+	                        <a href="javascript:void(0);" onclick="uploadTeamView('${sessionScope.userId}','${sessionScope.gameDetails.gameId}');">My Team</a>		
 	                        </li> 
 	                        <li>
 	                            <a href="javascript:void(0);" onclick="uploadMatchView('${sessionScope.gameDetails.gameId}');">Fixtures</a>
@@ -136,7 +136,7 @@
 		     		  }
 		     		});	
 		}
-		function uploadTeamViewWithoutMessage(userId,gameId)
+		function uploadTeamView(userId,gameId)
 		{
 			if(typeof userGameJson != 'undefined' && userGameJson.playerList.length >= 15)
 			{
