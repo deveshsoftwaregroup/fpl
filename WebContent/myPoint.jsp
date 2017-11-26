@@ -707,14 +707,14 @@
 				console.log("total Player: "+totalPlayingJson["player"]+" , player total limit: "+playerLimits["total"]);
 				if(totalPlayingJson["player"] >= playerLimits["total"])
 				{
-					alert("You can't select more than 11 Players");
+					showNotification("You can't select more than 11 Players");
 					checkBox.checked = false;
 					return;
 				}
 				console.log("total Player of your type:  "+totalPlayingJson[playerType]+" , maximum limit of your type: "+playerLimits["max"][playerType]);
 				if(totalPlayingJson[playerType] >= playerLimits["max"][playerType])
 				{
-					alert(playerType+" Maximum limit is " +playerLimits['max'][playerType]);
+					showNotification(playerType+" Maximum limit is " +playerLimits['max'][playerType]);
 					checkBox.checked = false;
 					return;
 				}
@@ -741,7 +741,7 @@
 				{
 					if(totalPlayingJson[playerType] >= playerLimits["min"][playerType])
 					{
-						alert("Select minimum "+playerLimits["min"]["Goalkeeper"]+" Goalkeeper, "+playerLimits["min"]["Midfielder"]+" Midfielder, "+playerLimits["min"]["Defender"]+" Defender, "+playerLimits["min"]["Forward"]+" Forward");
+						showNotification("Select minimum "+playerLimits["min"]["Goalkeeper"]+" Goalkeeper, "+playerLimits["min"]["Midfielder"]+" Midfielder, "+playerLimits["min"]["Defender"]+" Defender, "+playerLimits["min"]["Forward"]+" Forward");
 						checkBox.checked = false;
 						return;
 
@@ -762,7 +762,7 @@
 		     			  }
 		     			  else
 		    			  {
-		    				  	alert(resp.errorMessage);
+		     				 showNotification(resp.errorMessage);
 		    			  }
 		     		  },
 		     		  error: function( req, status, err ) {
@@ -787,7 +787,7 @@
 		     			  }
 		     			  else
 		    			  {
-		    				  	alert(resp.errorMessage);
+		     				 showNotification(resp.errorMessage);
 		    			  }
 		     		  },
 		     		  error: function( req, status, err ) {
@@ -879,7 +879,7 @@
  	     			  }
  	     			  else
  	    			  {
- 	    				  	alert(resp.errorMessage);
+ 	     				showNotification(resp.errorMessage);
  	    			  }
  	     		  },
  	     		  error: function( req, status, err ) {
@@ -905,7 +905,7 @@
  	     			  }
  	     			  else
  	    			  {
- 	    				  	alert(resp.errorMessage);
+ 	     				showNotification(resp.errorMessage);
  	    			  }
  	     		  },
  	     		  error: function( req, status, err ) {

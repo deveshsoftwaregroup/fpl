@@ -1242,7 +1242,7 @@
      {
      	<c:choose>
      	<c:when test="${isUnderDeadline}">
-     	alert("Hey buddy ! You are under deadline. Player can be added after deadline");
+     	showNotification("Hey buddy ! You are under deadline. Player can be added after deadline");
      	</c:when>
      	<c:otherwise>
     	 var playerType = '';
@@ -1272,7 +1272,7 @@
 		}
 		 else if(avialBalance < playerPrice)
 		{
-			alert("Bank Account is less than player price");
+			 showNotification("Bank Account is less than player price");
 			ajaxCall = false;
 		} 
 		 else if(!(userJson.hasActivePlan || userJson.totalTransferForGameWeek <=1 || userJson.gameWeekNumberForPlayerTransfer <=1 || userJson.totalPoint < 4))
@@ -1280,7 +1280,7 @@
 			ajaxCall = false;
 			if(userJson.totalPoint < 4)
 			{
-				alert("Please active wild card to add player");
+				showNotification("Please active wild card to add player");
 			}
 		} 
 		else if (playerType == 'Goalkeeper')
@@ -1290,7 +1290,7 @@
 				if(userGameJson['total']['Goalkeeper'] >=2)
 				{
 					ajaxCall = false;
-					alert("You can add maximum 2 Goalkeeper. Please Remove any one first ");
+					showNotification("You can add maximum 2 Goalkeeper. Please Remove any one first ");
 				}
 			}
 		}
@@ -1301,7 +1301,7 @@
 				if(userGameJson['total']['Midfielder'] >=5)
 				{
 					ajaxCall = false;
-					alert("You can add maximum 5 Midfielder. Please Remove any one first ");
+					showNotification("You can add maximum 5 Midfielder. Please Remove any one first ");
 				}
 			}
 		}
@@ -1312,7 +1312,7 @@
 				if(userGameJson['total']['Forward'] >=3)
 				{
 					ajaxCall = false;
-					alert("You can add maximum 3 All Rounders. Please Remove any one first ");
+					showNotification("You can add maximum 3 All Rounders. Please Remove any one first ");
 				}
 			}
 		}
@@ -1323,7 +1323,7 @@
 				if(userGameJson['total']['Defender'] >=5)
 				{
 					ajaxCall = false;
-					alert("You can add maximum 5 Defender. Please Remove any one first ");
+					showNotification("You can add maximum 5 Defender. Please Remove any one first ");
 				}
 			}
 		}
@@ -1421,7 +1421,7 @@
 	     			  }
 	     			  else
 	    			  {
-	    				  	alert(resp.errorMessage);
+	     				 showNotification(resp.errorMessage);
 	    			  }
 	     		  },
 	     		  error: function( req, status, err ) {
@@ -1467,7 +1467,7 @@
 	     			  }
 	     			  else
 	    			  {
-	    				  	alert(resp.errorMessage);
+	     				 showNotification(resp.errorMessage);
 	    			  }
 	     		  },
 	     		  error: function( req, status, err ) {

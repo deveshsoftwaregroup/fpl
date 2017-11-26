@@ -933,7 +933,7 @@
 		}
 		/* else if(avialBalance < playerPrice)
 		{
-			alert("Bank Account is less than player price");
+			showNotification("Bank Account is less than player price");
 			ajaxCall = false;
 		} */
 		/* else if(!(userJson.hasActivePlan || userJson.totalTransferForGameWeek <=1 || userJson.gameWeekNumberForPlayerTransfer <=1 || userJson.totalPoint > 4))

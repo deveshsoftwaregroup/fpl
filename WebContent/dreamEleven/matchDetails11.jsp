@@ -109,7 +109,7 @@
 				if(parseInt(startHour) < 10)
 				{
 					startHourStr = '0'+startHour;
-					alert(startHourStr);
+					showNotification(startHourStr);
 				}
 				var startMinuteStr = ''+startMinute;
 				if(parseInt(startMinute) < 10)

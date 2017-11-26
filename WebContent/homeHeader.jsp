@@ -467,28 +467,28 @@
     	var regForm = document.forms['RegisterForm'];
     	if(typeof regForm['displayName'] == 'undefined' || regForm['displayName'].value=='')
     	{
-    		alert("Please enter your Name");
+    		showNotification("Please enter your Name");
     		return false;
     	}
     	if(typeof regForm['emailId'] == 'undefined' || regForm['emailId'].value=='')
     	{
-    		alert("Please enter Email ID");
+    		showNotification("Please enter Email ID");
     		return false;
     	}
     	var isEmailValid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(regForm['emailId'].value);
     	if(!isEmailValid)
    		{
-    		alert("Email ID is not valid");
+    		showNotification("Email ID is not valid");
     		return false;
    		}
     	if(typeof regForm['logonPassword'] == 'undefined' || regForm['logonPassword'].value =='')
     	{
-    		alert("Please enter password");
+    		showNotification("Please enter password");
     		return false;
     	}
     	if(typeof regForm['logonPasswordConfirm'] == 'undefined' || regForm['logonPasswordConfirm'].value !=regForm['logonPassword'].value)
     	{
-    		alert("Password and Confirm Password is not same");
+    		showNotification("Password and Confirm Password is not same");
     		return false;
     	}
     	
@@ -497,7 +497,7 @@
     		var mobNumVal = regForm['contactNumber'].value;
     		if(!(mobNumVal.length ==10 &&  /^\d+$/.test(mobNumVal)))
    			{
-    			alert('Please enter valid mobile number');
+    			showNotification('Please enter valid mobile number');
     			return false;
    			}
     	}
@@ -508,13 +508,13 @@
     	var resetPassForm = document.forms['ResetPassForm'];
     	if(typeof resetPassForm['emailId'] == 'undefined' || resetPassForm['emailId'].value=='')
     	{
-    		alert("Please enter Email ID");
+    		showNotification("Please enter Email ID");
     		return false;
     	}
     	var isEmailValid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(resetPassForm['emailId'].value);
     	if(!isEmailValid)
    		{
-    		alert("Email ID is not valid");
+    		showNotification("Email ID is not valid");
     		return false;
    		}
     	resetPassForm.submit();
@@ -524,20 +524,20 @@
     	var resetPassForm = document.forms['ResetPassForm'];
     	if(typeof resetPassForm['emailId'] == 'undefined' || resetPassForm['emailId'].value=='')
     	{
-    		alert("Please enter Email ID");
+    		showNotification("Please enter Email ID");
     		return false;
     	}
     	var isEmailValid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(resetPassForm['emailId'].value);
     	if(!isEmailValid)
    		{
-    		alert("Email ID is not valid");
+    		showNotification("Email ID is not valid");
     		return false;
    		}   	var url = "user/resetPassword?emailId="+resetPassForm['emailId'].value;
     	$.ajax({
     		  url: url,
     		  dataType: 'text',
     		  success: function( resp ) {
-    			  alert(resp);
+    			  showNotification(resp);
     		  },
     		  error: function( req, status, err ) {
     		    console.log( 'something went wrong', status, err );
@@ -573,7 +573,7 @@ function doLogin()
 			  }
 			  else
 			  {
-			  	alert(resp.errorMessage);
+				  showNotification(resp.errorMessage);
 			  }
 		  },
 		  error: function( req, status, err ) {
@@ -610,7 +610,7 @@ function doLogin11()
 			  }
 			  else
 			  {
-			  	alert(resp.errorMessage);
+				  showNotification(resp.errorMessage);
 			  }
 		  },
 		  error: function( req, status, err ) {
