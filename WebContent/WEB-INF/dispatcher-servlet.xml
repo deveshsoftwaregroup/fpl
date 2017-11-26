@@ -16,6 +16,7 @@
         http://www.springframework.org/schema/task/spring-task-4.0.xsd">
 	<context:component-scan base-package="com.sportmgmt.controller.action" />
 	<context:component-scan base-package="com.sportmgmt.dreamEleven.controller.action" />
+	<context:component-scan base-package="com.sportmgmt.vendor.controller.action" />
 	<!-- <context:property-placeholder location="${catalina.home}/conf/resources/sportmgmt.properties" /> -->
 	<!-- <context:property-placeholder location="classpath:sportmgmt.properties" /> -->
 	

@@ -19,6 +19,7 @@ import org.scribe.builder.api.FacebookApi;
 import org.scribe.model.Verifier;
 import org.scribe.oauth.OAuthService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -66,9 +67,18 @@ public class SocailAction {
     @Value("${app.config.oauth.facebook.apisecret}")
     private   String clientSecret ;
     @Value("${app.config.oauth.facebook.callback}")
-    private   String redirectURI; 
-
+    private   String redirectURI;    
+    @Value("${app.config.oauth.facebook.dreamElevenCallback}")
+    private   String dreamElevenRedirectURI;
     
+	public String getDreamElevenRedirectURI() {
+		return dreamElevenRedirectURI;
+	}
+
+	public void setDreamElevenRedirectURI(String dreamElevenRedirectURI) {
+		this.dreamElevenRedirectURI = dreamElevenRedirectURI;
+	}
+
 	public  String getClientid() {
 		return clientID;
 	}
@@ -110,6 +120,18 @@ public class SocailAction {
 
 	@Autowired
 	private OAuth2Parameters oAuth2Parameters;
+	
+	@Autowired
+	private OAuth2Parameters oAuth3Parameters;
+
+
+	public OAuth2Parameters getoAuth3Parameters() {
+		return oAuth3Parameters;
+	}
+
+	public void setoAuth3Parameters(OAuth2Parameters oAuth3Parameters) {
+		this.oAuth3Parameters = oAuth3Parameters;
+	}
 
 	@Autowired
 	FacebookUtil facebookUtil;
@@ -121,7 +143,7 @@ public class SocailAction {
 	@RequestMapping(value = "/facebook/signin", method = RequestMethod.GET)
 	public ModelAndView signin(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
-
+		System.out.println("Fantasy");
 		FacebookConnectionFactory facebookConnectionFactory = (FacebookConnectionFactory) connectionFactoryRegistry
 				.getConnectionFactory(FACEBOOK);
 		
@@ -133,14 +155,38 @@ public class SocailAction {
 				GrantType.AUTHORIZATION_CODE, oAuth2Parameters);
 		oAuth2Parameters.setScope("public_profile,email");
 		logger.info("Authorization URL: "+authorizeUrl);
-		System.out.println("authorizeUrl: "+authorizeUrl);
+		System.out.println("authorizeUrlFantasy: "+authorizeUrl);
 	    
-		
 		RedirectView redirectView = new RedirectView(authorizeUrl, true, true,
 				true);
 
 		return new ModelAndView(redirectView);
 	}
+	
+	@RequestMapping(value = "/facebook/dream_eleven_signin", method = RequestMethod.GET)
+	public ModelAndView dreamElevenSignin(HttpServletRequest request,
+			HttpServletResponse response) throws Exception {
+		System.out.println("Fantasy");
+		FacebookConnectionFactory facebookConnectionFactory = (FacebookConnectionFactory) connectionFactoryRegistry
+				.getConnectionFactory(FACEBOOK);
+		
+		OAuth2Operations oauthOperations = facebookConnectionFactory
+				.getOAuthOperations();
+		
+		
+		String authorizeUrl = oauthOperations.buildAuthorizeUrl(
+				GrantType.AUTHORIZATION_CODE, oAuth3Parameters);
+		oAuth2Parameters.setScope("public_profile,email");
+		logger.info("Authorization URL: "+authorizeUrl);
+		System.out.println("dream_eleven_signin authorizeUrlFantasy: "+authorizeUrl);
+	    
+		RedirectView redirectView = new RedirectView(authorizeUrl, true, true,
+				true);
+
+		return new ModelAndView(redirectView);
+	}
+	
+
 
 	@RequestMapping(value = "facebook/callback", method = RequestMethod.GET)
 	public String postOnWall(@RequestParam("code") String code,
@@ -294,7 +340,114 @@ public class SocailAction {
 		redirectAction = PUBLISH_SUCCESS;
 		return redirectAction;
 	}
+	@RequestMapping(value = "facebook/dreamElevenRecall", method = RequestMethod.GET)
+	public String dreamElevenCallBack(@RequestParam("code") String code,
+			HttpServletRequest request,
+			HttpServletResponse response,ModelMap modelMap) throws Exception {
+		System.out.println("code=" + code);
+		URL url = new URL(
+                "https://graph.facebook.com/oauth/access_token?client_id="
+                        + clientID + "&redirect_uri=" + dreamElevenRedirectURI
+                        + "&client_secret=" + clientSecret
+                        + "&code=" + code);
+        System.out.println("url===="+url);
+        // request for Access Token
+        HttpURLConnection conn = (HttpURLConnection) url
+                .openConnection();
+        
+        
+        conn.setRequestMethod("GET");
+       
+      
+        String line, outputString = "";
+        BufferedReader reader = new BufferedReader(
+                new InputStreamReader(conn.getInputStream()));
+        while ((line = reader.readLine()) != null) {
+            outputString += line;
+        }
+        System.out.println(outputString);
+        
+        // extract access token from response
+        String accessToken = null;
+        
+        if(outputString.indexOf("access_token")!=-1) {
+        	
+           try
+           {
+        	   accessToken = outputString.substring(13,outputString.indexOf("&"));
+           }
+           catch(Exception ex)
+           {
+        	   ObjectMapper mapperObj = new ObjectMapper();
+   			   Map<String, String> facebookMap = new HashMap<String, String>();
+   			   facebookMap = mapperObj.readValue(outputString, new TypeReference<Map<String, String>>(){});
+   			   accessToken = facebookMap.get("access_token");
+           }
+        	
+        }				
+		
+		url = new URL("https://graph.facebook.com/me?fields=id,name,email&access_token="
+                + accessToken);
+		//get gender,birthday(MM/DD/YYYY),cover(cover photo),picture(profile pic),password
+		
+        System.out.println(url);
+        URLConnection conn1 = url.openConnection();        
+        
+        outputString = ""; 
+        line="";
+        reader = new BufferedReader(new InputStreamReader(
+                conn1.getInputStream()));
+        //System.out.println("hjhhhhhhhh"+conn1.getInputStream());
+        while ((line = reader.readLine()) != null) {
+            outputString += line;
+        }
+        reader.close();
+        System.out.println("logged in user: "+outputString);
+		logger.info("logged in user: "+outputString);
+		modelMap.put("userId", outputString);
+		String redirectAction = getDreamElevenRedirectURL(outputString);
+		if(redirectAction == null)
+		redirectAction = PUBLISH_SUCCESS;
+		return redirectAction;
+	}
+	
 	private String getRedirectURL(String facebookJson)
+	{
+		String facebookUserId = "";
+		String facebookName = "";
+		String facebookEmail ="";
+		try
+		{
+			ObjectMapper mapperObj = new ObjectMapper();
+			Map<String, String> facebookMap = new HashMap<String, String>();
+
+			facebookMap = mapperObj.readValue(facebookJson, new TypeReference<Map<String, String>>(){});
+			facebookUserId = facebookMap.get("id");
+			facebookName = facebookMap.get("name");
+			facebookEmail = facebookMap.get("email");
+			
+					  
+		}
+		catch(Exception ex)
+		{
+			logger.error("Error occure during parsing facebook response",ex);
+		}
+		
+		logger.info("------- facebookUserId: "+facebookUserId+" , facebookName: "+facebookName+",facebookEmailId:"+facebookEmail);
+		if(facebookUserId != null && !facebookUserId.equals(""))
+		{
+			String userId = getUserId(facebookUserId,facebookName,facebookEmail);
+			logger.info("---------- userId: "+userId);
+			if(userId != null && !userId.equals(""))
+			{
+				logger.info("Going to redirect to application first pagee");
+				return "redirect:/mvc/user/login/"+userId;
+			}
+		}
+		return null;
+
+	}
+	private String getDreamElevenRedirectURL(String facebookJson)
 	{
 		String facebookUserId = "";
 		String facebookName = "";
@@ -330,6 +483,8 @@ public class SocailAction {
 		return null;
 
 	}
+
+
 	private String getUserId(String facebookUserId,String facebookName, String facebookEmail )
 	
 	{

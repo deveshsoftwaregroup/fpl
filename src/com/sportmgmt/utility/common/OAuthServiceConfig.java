@@ -5,17 +5,19 @@ public class OAuthServiceConfig<T> {
 	private String apiKey;
 	private String apiSecret;
 	private String callback;
+	private String Dreamelevencallback;
 	private Class<T> apiClass;
 
 	public OAuthServiceConfig() {
 	}
 
-	public OAuthServiceConfig(String apiKey, String apiSecret, String callback,
+	public OAuthServiceConfig(String apiKey, String apiSecret, String callback,String Dreamelevencallback,
 			Class<T> apiClass) {
 		super();
 		this.apiKey = apiKey;
 		this.apiSecret = apiSecret;
 		this.callback = callback;
+		this.Dreamelevencallback = Dreamelevencallback;
 		this.apiClass = apiClass;
 	}
 
@@ -35,6 +37,13 @@ public class OAuthServiceConfig<T> {
 		this.apiSecret = apiSecret;
 	}
 
+	public String getDreamelevencallback() {
+		return Dreamelevencallback;
+	}
+
+	public void setDreamelevencallback(String Dreamelevencallback) {
+		this.Dreamelevencallback = Dreamelevencallback;
+	}
 	public String getCallback() {
 		return callback;
 	}

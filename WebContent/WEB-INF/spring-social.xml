@@ -36,6 +36,7 @@
 		<constructor-arg value="${app.config.oauth.facebook.apikey}" />
 		<constructor-arg value="${app.config.oauth.facebook.apisecret}" />
 		<constructor-arg value="${app.config.oauth.facebook.callback}" />
+		<constructor-arg value="${app.config.oauth.facebook.dreamElevenCallback}" />
 		<constructor-arg value="org.scribe.builder.api.FacebookApi" />
 	</bean>
 
@@ -47,8 +48,17 @@
 			</map>
 		</constructor-arg>
 	</bean>
+	<bean id="oAuth3Parameters" class="org.springframework.social.oauth2.OAuth2Parameters">
+		<constructor-arg>
+			<map>
+				<entry key="redirect_uri" value="${app.config.oauth.facebook.dreamElevenCallback}"></entry>
+				<entry key="scope" value="${app.config.oauth.facebook.scope}"></entry>
+			</map>
+		</constructor-arg>
+	</bean>
+	
 
-	<bean id="oAuth1Parameters" class="org.springframework.social.oauth1.OAuth1Parameters">
+	  <bean id="oAuth1Parameters" class="org.springframework.social.oauth1.OAuth1Parameters">
 		<constructor-arg>
 			<map>
 				<entry key="consumerKey" value="${app.config.oauth.twitter.apikey}"></entry>
@@ -57,7 +67,7 @@
 				<entry key="accessTokenSecret" value="${app.config.oauth.twitter.accessTokenSecret}"></entry>
 			</map>
 		</constructor-arg>
-	</bean>
+	</bean>  
 	
 	<bean id="facebookUtil" class="com.sportmgmt.utility.common.FacebookUtil">
 		
