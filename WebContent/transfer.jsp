@@ -34,9 +34,9 @@
 		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 transfers_predict11_map">
 			<img src="${context}/redBlackTheme/images/Dream11/dream11_banner.png" class="img-responsive center-block">
 	            <div id="ismr-main" class=" fantasy_transfer_gameweek_align">	
-	                    <div id="ismr-scoreboard">
+	                    <div id="ismr-scoreboard" class="bg_colr">
 	                     <div class="row">
-                                <div class="col-lg-8">
+                                <div class="col-lg-8 bg_colr_pd">
                             <!-- Scoreboard -->
 								<div>
 									<p>Gameweek ${gameWeekNumber} Deadline: <time datetime="2016-08-27T10:30:00Z" class="league-deadline-bar__deadline">${deadline}</time></p>

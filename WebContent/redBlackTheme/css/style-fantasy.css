@@ -223,7 +223,11 @@ header {
   color: #fff;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400; }
-
+.myteam_fantasy_league h3{
+	 color: #fff;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+}
 .details_adjust img {
   padding-left: 34%;
   padding-top: 10px; }
@@ -402,6 +406,10 @@ header {
 	 position:absolute;
 	right:30%;
     float: left ; padding:10px;    padding-top: 7px; font-size:14px; font-weight:100;}
+ 
+ .bg_colr{background-color:#019e56 ;margin-bottom:50px;}
+ .bg_colr_pd {padding-left:30px; padding-top:10px;}
+ .transfers_predict11_map .bg_colr p{font-weight: 100;}
 /*--------------/ My Team----------------------*/
 /*--------------Fixtures----------------------*/
 .fixture_img_ad {
@@ -957,11 +965,15 @@ td, th {
   .closebtn {
     display: none; } 
   .team_map, .team_map_dream11{
-  	 height:450px !important;
+  	 height:507px !important;
   	 margin-bottom:100px;
+  	 margin-top:20px;
+  	 
   }
+  .ism .ism-sidebar{  padding-top: 0rem;}
    .transfers_predict11_map p {font-size:19px;}
    .flex-buttons .flex1 {font-size:18px;}
+   .ism .ism-element-row--pitch{margin-top:15px;}
 }
 @media screen and (min-width: 1200px) and (max-width: 1300px) {
   .top_header li:nth-last-child(2) {
@@ -1495,6 +1507,8 @@ td, th {
   .prev_next_btn h5 {
   	font-size:20px;
   }
+  .choose_captain_mobile_align{margin-top:150px; margin-bottom:200px;}
+  .points_ranking_align_mobile{position:absolute; top:90%;  }
  .ongoing_mid_flex1 {    letter-spacing: 8px;}
   .team_points_flex1 img, .team_points_flex img {
     height: 20px !important; }
@@ -1524,7 +1538,7 @@ td, th {
     margin-right: 20px; }
   .confirm_team_btn {margin-right:30%;}
   .claim_prize_align{padding-left:0px;padding-right:0px; margin-left:-15px;margin-right:-15px;float:none !important;
-    height:100px; }
+    height:115px; }
   .date_time {
     margin-bottom: -5px;padding-top: 10px;
     padding-bottom: 10px; }
@@ -1546,7 +1560,7 @@ td, th {
  .fixture_bar_ongoing {height:40px; padding-top:10px;}
  .ongoing_mid_flex1{padding-left: 10px;    font-size: 16px; width:90px;}
   #countDown {  position: unset !important; text-align:center;float:none !important;}
-  .ism .ism-panel--guttered-mobile{padding-top: 44%; overflow: initial;}
+  .ism .ism-panel--guttered-mobile{ overflow: initial;}
   .prev_next_btn a, .prev_next_btn h5 { float:none !important; margin:auto;}
   .panel-group .panel-heading {height:170px;}
   /*----------------------------------*/

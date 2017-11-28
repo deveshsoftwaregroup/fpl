@@ -13,13 +13,46 @@ m<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          <!-----------Header---------------->
          <div id="header"></div> 
             <div class="row">
-            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-sx-12 image_ad">
+            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-sx-12  myteam_fantasy_league">
                <img src="images/dream11-img.png" class="img-responsive center-block">
                <div>
-                  <h3>Select playing 11</h3>
-                  <h3>My Team</h3>
+                <div class="row">
+                	<div class="col-lg-8 col-sm-12">
+                		<h3>Select playing 11</h3>
+                 
                   <h3><p>Gameweek ${gameWeekNumber} Deadline : <time datetime="2016-08-27T10:30:00Z" class="league-deadline-bar__deadline">${deadline}</p></h3>
-                  
+                		
+                	</div>
+                	<div class="col-lg-4 col-sm-12 col-xs-12 points_ranking_align_mobile">
+                		<!-- POINTS / RANKINGS -->
+								<div class="ism-panel ism-panel--guttered ism-panel--guttered-mobile">
+									<h3 class="top_main">Points/Rankings</h3>
+									<div class="ism-panel__body">
+
+										<ul class="my_team_points check_points">
+												<li>Overall Points : 
+												<span class="text_right">
+												${sessionScope.user.userGameMap.point}
+												</span>
+												</li>
+												  <li>Overall Rank : 
+												  <span class="text_right">
+												  ${sessionScope.user.userGameMap.rank}
+												  </span>
+												  </li>
+											      <li>Total Players : 
+											      <span class="text_right">
+											      ${fn:length(sessionScope.playerList)}
+											      </span>
+											       </li>
+										</ul>
+									</div>
+									
+								</div>
+                		
+                	</div>
+                </div>
+                                    
                   <div class="row">
                   
 			
@@ -504,34 +537,10 @@ m<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 								</div> --%>
 
 
-								<!-- POINTS / RANKINGS -->
-								<div class="ism-panel ism-panel--guttered ism-panel--guttered-mobile">
-									<h3 class="top_main">Points/Rankings</h3>
-									<div class="ism-panel__body">
-
-										<ul class="my_team_points check_points">
-												<li>Overall Points : 
-												<span class="text_right">
-												${sessionScope.user.userGameMap.point}
-												</span>
-												</li>
-												  <li>Overall Rank : 
-												  <span class="text_right">
-												  ${sessionScope.user.userGameMap.rank}
-												  </span>
-												  </li>
-											      <li>Total Players : 
-											      <span class="text_right">
-											      ${fn:length(sessionScope.playerList)}
-											      </span>
-											       </li>
-										</ul>
-									</div>
-									
-								</div>
-
+								
 								 <!-- LEAGUES -->
-								<div class="ism-panel ism-panel--guttered  ">
+								 <div class="col-lg-4 col-sm-12 choose_captain_mobile_align">
+								<div class="  ">
 								<h3 class="subHeader ism-sub-header">Choose Captain/Vice-Captain</h3>
 									<div class="ism-panel__body">
 										<form action="#">
@@ -550,6 +559,7 @@ m<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 										    <input type="button" class="btn claim_btn" value="Save" onclick="updateCaptain('${sessionScope.user.userId}');">
 										</form>
 									</div>
+								</div>
 								</div>
 							</div> 
 						</div>
