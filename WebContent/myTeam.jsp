@@ -556,7 +556,10 @@ m<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 											   
 											    <select id="vice-captain-select"></select>
 										    </div>
-										    <input type="button" class="btn claim_btn" value="Save" onclick="updateCaptain('${sessionScope.user.userId}');">
+										    
+										   <%--  <input type="button" class="btn claim_btn" value="Save" onclick="updateCaptain('${sessionScope.user.userId}');"> --%>
+										 <a href="#"><button id="save" type="button" class="btn claim_btn" onclick="updateCaptain('${sessionScope.user.userId}')">Save</button></a>    
+										    
 										</form>
 									</div>
 								</div>

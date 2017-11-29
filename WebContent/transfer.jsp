@@ -1567,6 +1567,10 @@ var x = setInterval(function() {
         document.getElementById("countDown").innerHTML = "Team Confirmation is closed for current Gameweek";
         //document.getElementById("confirmTeam").className += " disabled";
         document.getElementById("confirmTeam").setAttribute('disabled','disabled');
+        document.getElementById("captain-select").setAttribute('disabled','disabled');
+        document.getElementById("vice-captain-select").setAttribute('disabled','disabled');
+        document.getElementById("save").setAttribute('disabled','disabled');
+        
     }
 }, 1000);
 </script>
