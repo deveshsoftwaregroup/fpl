@@ -27,11 +27,11 @@
                                         
                                         <a class="accordion-section-title" href="#accordion-1">Squad Size</a>
                                         <div id="accordion-1" class="accordion-section-content">
-                                            <p>To join the game select a fantasy football squad of 11 players, consisting of:
-                                                1 Wicket-Keepers
-                                                4 Bats-Men
-                                                2 All-Rounders
-                                                4 Bowlers</p>
+                                            <p>To join the game select a DreamEleven football squad of 11 players, consisting of:
+                                                1 Goalkeeper
+                                                4 Midfielder
+                                                2 Forward
+                                                4 Defenders</p>
                                             
                                             
                                         </div><!--end .accordion-section-content-->
@@ -53,14 +53,14 @@
 
                                            All your points for the Gameweek will be scored by these 11 players. 
 
-                                           Your team can play in any formation providing that 1 wicket-keeper, at least 3 bats-men and at least 1 all-rounder are selected at all times. 
+                                           Your team can play in any formation providing that 1 Goalkeeper, at least 3 Midfielder,3 Defender and at least 1 Forward are selected at all times. 
 
                                            Selecting a Captain and a Vice-Captain
 
                                            From your starting 11 you nominate a captain and a vice-captain. Your captain's score will be doubled.</p>
                                         </div><!--end .accordion-section-content-->
                                     </div><!--end .accordion-section-->
-                                    <div class="accordion-section">
+                                    <!--  <div class="accordion-section">
                                             <a class="accordion-section-title" href="#accordion-5">Transfers</a>
                                             <div id="accordion-5" class="accordion-section-content">
                                                 <p>After selecting your squad you can buy and sell players in the transfer market. Unlimited transfers can be made at no cost until your first deadline.
@@ -68,15 +68,15 @@
                                                 After your first deadline you will receive 1 free transfer each Gameweek. Each additional transfer you make in the same Gameweek will deduct 4 points from your total score. 
 
                                                 If you do not use your free transfer, you are able to make an additional free transfer the following Gameweek. If you do not use this saved free transfer in the following Gameweek, it will be carried over until you do. You can never have more than 1 saved transfer.</p>
-                                            </div><!--end .accordion-section-content-->
-                                        </div><!--end .accordion-section-->
+                                            </div>end .accordion-section-content
+                                        </div>end .accordion-section
                                         <div class="accordion-section">
                                                 <a class="accordion-section-title" href="#accordion-6">Wildcards</a>
                                                 <div id="accordion-6" class="accordion-section-content">
                                                     <p>To do free transfer in a week, you can use wildcard. One wild card will be free and after that you can avail more wildcard by purchasing it. It will boost your chance to win prizes.</p>
-                                                </div><!--end .accordion-section-content-->
-                                            </div><!--end .accordion-section-->
-                                        <div class="accordion-section">
+                                                </div>end .accordion-section-content
+                                            </div>end .accordion-section -->
+                                        <div class="accordion-section"> 
                                              <a class="accordion-section-title" href="#accordion-7">Player Prices</a>
                                             <div id="accordion-7" class="accordion-section-content">
                                                 <p>
