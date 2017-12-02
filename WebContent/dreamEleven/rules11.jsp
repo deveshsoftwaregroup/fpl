@@ -9,7 +9,7 @@
 <script type="text/javascript" src="${context}/redBlackTheme/js/accordion.js"></script>
 
 <div class="predict11-bg dream_help">
-<div class="container">
+<div class="container-fluid">
 
 	<div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 rules_faq">
