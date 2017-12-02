@@ -22,12 +22,12 @@
 						<c:choose>
 							<c:when test="${sportMgmtRes.result.gameWeek.gameWeekNumber eq '1'}">
 								<a href="javascript:void(0);" title="View previous" class=" btnPrevious">
-									<span>Previous</span>
+									<span>  Previous</span>
 								</a>
 							</c:when>
 							<c:otherwise>
 								<a href="javascript:void(0);" onclick="uploadMyPointView11('${sessionScope.gameDetails.gameId}','${sessionScope.userId}','${sportMgmtRes.result.gameWeek.gameWeekId}','prev');" title="View previous" class=" btnPrevious">
-									<span>Previous</span>
+									<span> < Previous</span>
 								</a>
 							</c:otherwise>
 						</c:choose>
@@ -37,12 +37,12 @@
 						<c:choose>
 							<c:when test="${sportMgmtRes.result.gameWeek.isLatestGameWeek eq 'Y'}">
 								<a href="javascript:void(0);"  title="View next" class="pager-btn btn-next btnNext">
-									<span>Next</span>
+									<span>Next > </span>
 								</a>
 							</c:when>
 							<c:otherwise>
 								<a href="javascript:void(0)" onclick="uploadMyPointView11('${sessionScope.gameDetails.gameId}','${sessionScope.userId}','${sportMgmtRes.result.gameWeek.gameWeekId}','next');" title="View next" class="pager-btn btn-next btnNext">
-									<span>Next</span>
+									<span>Next > </span>
 								</a>
 								</c:otherwise>
 						</c:choose>

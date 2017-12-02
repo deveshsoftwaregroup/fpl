@@ -26,10 +26,11 @@
 }(document, 'script', 'facebook-jssdk'));</script>
   
 <!-- facebook button starts -->
-			<div class="fb-share-button" data-href="http://justthinksports.com"
+			<!-- <div class="fb-share-button" data-href="http://justthinksports.com"
 				 data-layout="button_count" data-size="small" data-mobile-iframe="true">
 				<a class="fb-xfbml-parse-ignore" target="_blank"
 					 href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fjustthinksports.com%3A8090%2FSportMgmt%2Fmvc%2FHomeGuide&amp;src=sdkpreparse">Share</a>
-			</div>  
-			<!-- facebook button ends -->
-</body>
+			</div>   -->
+			<div class="share_buttn"><div class="fb-like" data-href="https://www.facebook.com/Twelfthmantimes/" data-layout="button_count" data-action="recommend" data-size="small" data-show-faces="false" data-share="true"></div>			<!-- facebook button ends -->
+			</div>
+			</body>
