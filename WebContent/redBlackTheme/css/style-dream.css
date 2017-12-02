@@ -488,7 +488,7 @@ td, th {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 130vh; }
+  height: 100vh; }
 #confirm_team_msg {padding-top:50px; text-align:center;}
 .transfers_predict11_map h3, .transfers_predict11_map h4, .transfers_predict11_map p {
   color: #fff; }
@@ -590,7 +590,7 @@ td, th {
   font-family: 'Open Sans', sans-serif; }
 
 .footer_btn ul {
-  margin-left: -30px; }
+  margin-left: -40px; }
 
 .footer_btn ul li {
   list-style: none; }
@@ -978,7 +978,7 @@ tbody tr {
   .coupon_card {
     padding-right: 50px !important;
     padding-left: 50px !important; } }
-@media screen and (min-width: 700px) and (max-width: 768px) {
+@media screen and (min-width: 741px) and (max-width: 768px) {
   .navbar-brand > img {
     margin-top: -48px; }
 
@@ -1082,7 +1082,7 @@ tbody tr {
 
   .prtnr {
     padding: 20px 30px 10px 30px !important; } }
-@media screen and (min-width: 480px) and (max-width: 699px) {
+@media screen and (min-width: 480px) and (max-width: 740px) {
   .marg_top {
     margin-top: 20px !important; }
 
@@ -1179,14 +1179,19 @@ tbody tr {
     max-width: 360px; }
 
   .team_map, .team_map_dream11 {
-    padding-top: 30px; }
+    padding-top: 30px !important; }
 
   .prev_next_btn_myteam {
     padding-left: 31%; }
 
   #bottm_pd_myteam {
     width: 50%; }
+.transfers_predict11_map h3, .transfers_predict11_map h4, .transfers_predict11_map p{text-align:center;}
 
+.ism .ism-pitch__unit--3{ margin-left:18px;}
+#countDown{    right: auto;}
+.claim_btn{margin-right: 0px;}
+.team_map, .team_map_dream11{height: 396px;}
   /*----------------------------------*/
   .overlay {
     height: 0%;
@@ -1299,7 +1304,7 @@ tbody tr {
     margin-top: -18px !important; }
 
   .transfers_predict11 .team_map_dream11 {
-    margin-top: 0px !important;
+    margin-top: 30px !important;
     height: 367px !important; }
 
   .my_transfers .team_map_dream11 {
@@ -1428,16 +1433,19 @@ tbody tr {
     min-height: 80px; }
 
   .ism .ism-pitch__unit--3 {
-    width: 33%; } 
-
+    width: 33%;margin-left:14px; } 
+  .ism .ism-pitch__unit--5{
+  	    width: 20% !important;
+    left: 0% !important;margin-left:9px !important;  }
+    #countDown{font-size:12px;}
   .transfers_predict11_map p {
     padding-left: 10px; }
-
+.transfers_predict11_map p{text-align:center;}
   .mid_text {
     margin-top: 0px; }
 
   .confirm_team_btn{
-    margin-right: 90px; }
+        margin-right: 25%; }
 
   .prev_next_btn_myteam {
     padding-left: 31%; }
@@ -1446,7 +1454,7 @@ tbody tr {
     width: 50%; }
   #paymentModel .modal-body {    padding: 20px !important;} 
   #countDown {  position: unset !important; text-align:center;float:none !important;}
-  .claim_prize_align{padding-left:0px;padding-right:0px; margin-left:-15px;margin-right:-15px;float:none !important;
+  .claim_prize_align{padding-left:0px;padding-right:0px; margin-right:-15px;float:none !important;
     height:100px; }
   .header {padding-top:30px;}
   .pager-left, .pager-right{    width: 30% !important;}
@@ -1488,6 +1496,9 @@ tbody tr {
 
   .overlay::-webkit-scrollbar {
     display: none; } }
+@media screen and (min-width: 330px) and (max-height: 450px) {
+	
+	}
 @media screen and (min-width: 300px) and (max-height: 450px) {
   .overlay {
     overflow-y: auto; }
@@ -1507,6 +1518,14 @@ tbody tr {
   padding-bottom: 10px;
   background-color: rgba(0,0,0,0.7); }
 
+.ism .ism-pitch__unit--3{    width: 26%;}
+.ism .ism-pitch__unit--5{margin-left:12px;  width: 16%;
+    left: 5%;
+    position: relative;}
+@media screen and (min-width: 300px) and (max-height: 320px) {
+	.ism .ism-pitch__unit--5{    width: 24% !important;
+    left: 0% !important;    margin-left: 1px;}
+	}
 /*# sourceMappingURL=style-dream.css.map */
 
 /*# sourceMappingURL=style-dream.css.map */

@@ -284,7 +284,7 @@
 	                                                  
 				</div>
 				
-				 <div class="col-lg-12 pull-right claim_your_prize claim_prize_align">
+				 <div class="col-lg-12 col-xs-12 pull-right claim_your_prize claim_prize_align">
 				 	<p id="countDown"></p>
 	                  <!-- <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#modelPlayOption">Confirm Your Team</button></a> -->
 	                  <!--  <a href="#"><button id="confirmTeam" type="button" class="btn claim_btn" data-toggle="modal" data-target="#modelPlayOption">Confirm Your Team</button></a> -->

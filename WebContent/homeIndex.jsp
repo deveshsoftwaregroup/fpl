@@ -13,8 +13,8 @@
            
             <ul class="bxslider">
             	<li><a target="_blank" href="http://the12thman.in/"><img src="${context}/redBlackTheme/images/banner1.png" /></a></li>
-                <li><a target="_blank" href="http://the12thman.in/"><img src="${context}/redBlackTheme/images/banner1.png" /></a></li>
-                <li><a target="_blank" href="http://the12thman.in/"><img src="${context}/redBlackTheme/images/banner1.png" /></a></li>
+                <!-- <li><a target="_blank" href="http://the12thman.in/"><img src="${context}/redBlackTheme/images/banner1.png" /></a></li>
+                <li><a target="_blank" href="http://the12thman.in/"><img src="${context}/redBlackTheme/images/banner1.png" /></a></li> -->
                   
                 </ul>
             </div>
@@ -98,13 +98,15 @@
                     <a href="" data-toggle="modal" data-target="#myModal"><img src="${context}/redBlackTheme/images/play-fantasy-league_1.png" class="img-responsive center-block"></a>
                    </c:when>
                    <c:otherwise>
-                    <a href="${context}/mvc/user/UserLanding"><img src="${context}/redBlackTheme/images/play-fantasy-league_1.png" class="img-responsive center-block"></a> 
+                    <a href="${context}/mvc/user/UserLanding"><img src="${context}/redBlackTheme/images/play-fantasy-league_1.png" class="img-responsive center-block"></a>
+                    
                   <%--  <a href="" data-toggle="modal" data-target="#myModal"><img src="${context}/redBlackTheme/images/play-fantasy-league_1.png" class="img-responsive center-block"></a> --%>
                    </c:otherwise>
                 </c:choose>
                    
                  <br>
                   <a href="#"><img src="${context}/redBlackTheme/images/google-adbanner.png" class="img-responsive center-block"></a>
+                  <p class="sponsored_ad">sponsored</p>
                  <br>
                  
                 <c:choose>
