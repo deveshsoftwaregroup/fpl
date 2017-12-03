@@ -16,6 +16,7 @@
             <ul class="nav nav-tabs">
                 <li class="active"><a data-toggle="tab" href="#home">RULES</a></li>
                 <li><a data-toggle="tab" href="#menu1">FAQs</a></li>
+                 <li><a data-toggle="tab" href="#menu2">CRITERIA</a></li>
                
               </ul>
 
@@ -27,37 +28,24 @@
                                         
                                         <a class="accordion-section-title" href="#accordion-1">Squad Size</a>
                                         <div id="accordion-1" class="accordion-section-content">
-                                            <p>To join the game select a DreamEleven football squad of 11 players, consisting of:
-                                                1 Goalkeeper
-                                                4 Midfielder
-                                                2 Forward
-                                                4 Defenders</p>
-                                            
-                                            
-                                        </div><!--end .accordion-section-content-->
+                                            <p>You can choose 11 players every week from any of the 20 teams in the Premier League.
+                                            There are no restrictions,and you can pick as many players from the same team.
+                                            The formation however ,will remain 4-3-3.</p>
+                                       </div><!--end .accordion-section-content-->
                                     </div><!--end .accordion-section-->
                         
                                     <div class="accordion-section">
                                         <a class="accordion-section-title" href="#accordion-2">Budget</a>
                                         <div id="accordion-2" class="accordion-section-content">
-                                            <p>The total value of your initial squad must not exceed INR 100 Million.</p>
+                                            <p>You have an unlimited budget.</p>
                                         </div><!--end .accordion-section-content-->
                                     </div><!--end .accordion-section-->
                         
                                     <div class="accordion-section">
                                         <a class="accordion-section-title" href="#accordion-3">Managing your squad</a>
                                         <div id="accordion-3" class="accordion-section-content">
-                                            <p>Choosing your starting 11
-
-                                           From your 11 player squad, select 11 players by the Gameweek deadline to form your team.
-
-                                           All your points for the Gameweek will be scored by these 11 players. 
-
-                                           Your team can play in any formation providing that 1 Goalkeeper, at least 3 Midfielder,3 Defender and at least 1 Forward are selected at all times. 
-
-                                           Selecting a Captain and a Vice-Captain
-
-                                           From your starting 11 you nominate a captain and a vice-captain. Your captain's score will be doubled.</p>
+                                            <p>You have to pick an entirely new squad every week.Your teams should be finalised one hour before the Gameweek.
+                                            Once the gameweek ends,you have to pick a new team from scratch.</p>  
                                         </div><!--end .accordion-section-content-->
                                     </div><!--end .accordion-section-->
                                     <!--  <div class="accordion-section">
@@ -94,6 +82,14 @@
                                 </div><!--end .accordion-->
                             </div>   
                  </div>
+                  <div id="menu2" class="tab-pane fade">
+                  
+                  <p>If two players have similar points,the following criterias would be used to select one,stated in order of priorities.</p>
+                 <p> 1.Goals scored </p>
+                 <p> 2.Assist made  </p>
+                 <p> 3.Their team's goal difference for that gameweek.</p>
+                 <p> 4.League position of player's team in the league.</p>
+                  </div>
                 <div id="menu1" class="tab-pane fade">
                         <div class="main">
                                 <div class="accordion">
