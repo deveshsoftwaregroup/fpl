@@ -48,7 +48,7 @@
 						</c:choose>
 					</div>
 				</div>
-               <h3>My Dream Team</h3>
+               <h3>Team Of The Week</h3>
               	
               	<c:choose>
               		
