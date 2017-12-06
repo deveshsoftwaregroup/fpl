@@ -580,11 +580,14 @@ public class PointRankingUtility {
 	public int getTotalUserPlayerMatchInTopPlayer(List<Map<String,String>> gameWeekPlayerList,List<Integer> topPlayesIdsByRank)
 	{
 		int totalTopPlayerInUserAccount = 0;
-		for(Map<String,String> playerMap:gameWeekPlayerList)
+		if(gameWeekPlayerList != null)
 		{
-			if(topPlayesIdsByRank.contains(new Integer(playerMap.get("gameClubPlayerId"))))
+			for(Map<String,String> playerMap:gameWeekPlayerList)
 			{
-				totalTopPlayerInUserAccount++;
+				if(topPlayesIdsByRank.contains(new Integer(playerMap.get("gameClubPlayerId"))))
+				{
+					totalTopPlayerInUserAccount++;
+				}
 			}
 		}
 		logger.info("----- total Match: "+totalTopPlayerInUserAccount);
