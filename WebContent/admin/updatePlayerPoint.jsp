@@ -49,7 +49,7 @@ $(document).ajaxStart(function(){
 		     			// $('.ism-container').html(resp);
 		     			if(resp.isSuccess == 'true')
 		     			{
-		     				showNotification("Point updated successfully");
+		     				alert("Point updated successfully");
 		     			}
 		     		  },
 		     		  error: function( req, status, err ) {
@@ -76,7 +76,7 @@ $(document).ajaxStart(function(){
 		     			// $('.ism-container').html(resp);
 		     			if(resp.isSuccess == 'true')
 		     			{
-		     				showNotification("Rank updated successfully");
+		     				alert("Rank updated successfully");
 		     			}
 		     		  },
 		     		  error: function( req, status, err ) {
