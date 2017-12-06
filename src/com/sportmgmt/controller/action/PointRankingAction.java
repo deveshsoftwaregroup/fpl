@@ -94,8 +94,11 @@ public class PointRankingAction {
 			logger.info("topElevenPlayer : "+topElevenPlayer);
 			if(topPlayesIdsByRank !=null)
 			{
+				logger.info("topPlayesIdsByRank is not null");
 				List<Map<String,String>> historyPlayerList =(List<Map<String,String>>)sportMgmtResponse.getResult().get("hisotryPlayerList");
+				logger.info("historyPlayerList : "+historyPlayerList);
 				int userPoint = pointRankingUtility.calculateUserPoint(historyPlayerList, topPlayesIdsByRank);
+				logger.info("userPoint : "+userPoint);
 				sportMgmtResponse.getResult().put("topPlayesIdsByRank", topPlayesIdsByRank);
 				sportMgmtResponse.getResult().put("topElevenPlayer", topElevenPlayer);
 				sportMgmtResponse.getResult().put("userPoint", userPoint);
@@ -292,6 +295,7 @@ public class PointRankingAction {
 			result.put("isSuccess", "false");
 			result.put("errorMsg", "Technical error");
 		}
+		logger.info("result=="+result);
 		return result;
 	}
 	
