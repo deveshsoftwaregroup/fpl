@@ -70,6 +70,8 @@
 		      </div>
 		    </div>		
 		  </div>
+		  
+		  
 	<!-- Play Option payment model ends -->	 
 		<!-- payment popup starts -->
 	 	 <div id="paymentModel" class="modal fade" role="dialog">
@@ -130,6 +132,31 @@
         </div>  
 			
 		<!--Payment Popup ends -->
+		<div id="modalMessage" class="modal fade" role="dialog">
+
+		<div id="login-overlay" class="modal-dialog loginForm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">×</span><span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">COMING SOON..</h4>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-xs-12">
+							
+							FANTASY LEAGUE IS COMING SOON TILL THEN PLAY DREAM ELEVEN AND WIN GIFTS.	
+								
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	
 		
 <%-- <script type="text/javascript">
 	//<![CDATA[

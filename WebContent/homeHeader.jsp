@@ -274,7 +274,8 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	
+	
 
 
 	<div id="myModal11" class="modal fade" role="dialog">
