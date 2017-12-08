@@ -23,6 +23,8 @@ import com.sportmgmt.model.entity.Club;
 import com.sportmgmt.model.entity.Game;
 import com.sportmgmt.model.entity.GameClubPlayer;
 import com.sportmgmt.model.entity.Player;
+import com.sportmgmt.model.entity.PlayerGroup;
+import com.sportmgmt.model.entity.PlayerGroupPlayer;
 import com.sportmgmt.model.entity.UserGame;
 import com.sportmgmt.model.entity.UserPlayer;
 import com.sportmgmt.utility.constrant.ErrorConstrant;
@@ -1324,6 +1326,70 @@ public class GameManager {
 		}
 		
 		return isRemoved;
+	}
+	public static void removePlayeOfGameFromHistory(String userId,String gameWeekId)
+	{
+		boolean isRemoved =  false;
+		setErrorMessage("");
+		SessionFactory factory = HibernateSessionFactory.getSessionFacotry();
+		logger.info("--------------- removePlayeOfGameFromHistory ------------> userId:  "+userId+" gameWeekId: "+gameWeekId);
+		if(factory == null)
+		{
+			setErrorCode(ErrorConstrant.SESS_FACT_NULL);
+			setErrorMessage("Technical Error");
+		}
+		else
+		{
+			Session session = factory.openSession();
+			if(session != null)
+			{
+				try
+				{
+					Criteria cr = session.createCriteria(PlayerGroup.class);
+					cr.add(Restrictions.eq("gameWeekId", new Integer(gameWeekId)));
+					cr.add(Restrictions.eq("userId", new Integer(userId)));
+					if(PlayerManager.isDreamEleven())
+					{
+					cr.add(Restrictions.eq("groupType",SportConstrant.DE_GAME_WEEK_HISTORY ));
+					}
+					else
+					{
+						cr.add(Restrictions.eq("groupType",SportConstrant.GAME_WEEK_HISTORY ));	
+					}
+					List results = cr.list();
+					if(results == null || results.size() ==0)
+					{
+						logger.info(" ------- PlayerHistory doesnot exist ");
+						setErrorMessage("Player is  not associated with user");
+						setErrorCode(ErrorConstrant.RECORD_NOT_FOUND);
+					}
+					else
+					{
+						PlayerGroup playerGroup = (PlayerGroup)results.get(0);
+						session.delete(playerGroup);
+						session.beginTransaction().commit();
+						isRemoved = true;
+					}
+				}
+				catch(Exception ex)
+				{
+					logger.error("Exception in deleting Player history: "+ex.getMessage());
+					setErrorMessage("Technical Error");
+					setErrorCode(ErrorConstrant.TRANSACTION_ERROR);
+				}
+				finally
+				{
+					session.close();
+				}
+			}
+			else
+			{
+				setErrorCode(ErrorConstrant.SESS_NULL);
+				setErrorMessage("Technical Error");
+			}
+		}
+		
+		
 	}
 	public static boolean updatePlayeOfGameFromUserAccount(String userId,String gameClubPlayerId,String isPlaying,String playerCategory,String seqNum)
 	{
