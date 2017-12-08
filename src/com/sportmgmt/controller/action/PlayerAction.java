@@ -216,6 +216,9 @@ public class PlayerAction {
 			
 		if(PlayerManager.isGameWeekPlayerHistoryExist(userId, gameWeekId))
 		{
+			
+			GameManager.removePlayeOfGameFromHistory(userId, gameWeekId);	
+			
 	     return true;
 		}
 		else{
