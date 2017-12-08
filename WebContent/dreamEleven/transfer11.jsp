@@ -1156,28 +1156,25 @@
 	     		 dataType: 'html',
 	     		  success: function( resp ) {
 	     			 console.log(resp);
-	     			 if(resp=="true")
-	     			 {
-	     				showNotification('your team is already confirmed for current Gameweek');
-	     			}
-	     			 else
-	     				 {
+	     			  
+	     			 
+	     				 
  		
-	     				url ="/SportMgmt/mvc/player/make-player-history-for-user/"+gameId+"/"+gameWeekId+"/"+userId+"?gameType=dream_eleven" ;
-	    	 			$.ajax({
-	    	 	     		  url: url,
-	    	 	     		 dataType: 'html',
-	    	 	     		  success: function( resp ) {
-	    	 	     			console.log("resp"+resp);
-	    	 	     			showNotification('your team has been confirmed');	    	 	     				 
+	     url ="/SportMgmt/mvc/player/make-player-history-for-user/"+gameId+"/"+gameWeekId+"/"+userId+"?gameType=dream_eleven" ;
+	    	 $.ajax({
+	    	 	   url: url,
+	    	 	   dataType: 'html',
+	    	 	   success: function( resp ) {
+	    	 	    console.log("resp"+resp);
+	    	 	     showNotification('your team has been confirmed');	    	 	     				 
 	    	 	     		},
 	    	 	     		  
-	    	 	     		  error: function( req, status, err ) {
-	    	 	     		    console.log( 'something went wrong', status, err );
+	    	 	     error: function( req, status, err ) {
+	    	 	      console.log( 'something went wrong', status, err );
 	    	 	     		  }
 	    	 	     		    
 	    	 	     		  });
-	     				 }	     		  
+	     				 	     		  
 	     		 },
 	     		 
 	     		   error: function( req, status, err ) {
