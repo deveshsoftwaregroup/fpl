@@ -1460,10 +1460,10 @@ td, th {
     font-size: 19px; }
 
   .ongoing_flex1 {
-    padding-left: 15px;width:115px; }
+    padding-left: 15px;width:100px; }
 
   .ongoing_flex2 {
-    padding-left:5%;width:115px; }
+    padding-left:0%;width:90px; }
  .points {    padding-left:20px;}
   .ongoing_flex2, .ongoing_flex1, .team_points_flex {
     font-size: 13px; }

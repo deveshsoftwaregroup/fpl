@@ -1,27 +1,27 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-	<c:set var="context" value="<%=request.getContextPath()%>" />
+   
 	<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	<c:set var="context" value="<%=request.getContextPath()%>" />
     <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-            <div class="league-pusher leaguejs-page-transition">
+            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1  fixture_img_ad">
+            	<img src="${context}/redBlackTheme/images/dream11-img.png" class="img-responsive center-block">
                 <!-- Primary content -->
-                <div id="leaguer-main" class="league-main">
+                <div id="leaguer-main" class="demo demo_fixtures">
 					<div>
-						<div class="fixtures league-bordered league-bordered--highlight">
-							<div class="fixtures-head">
-								<span class="fixtures-logo">
-										Fixturessss <span></span>
-									</span> 
-									<h5> </h5>
-								<div class="head-main">
+						<div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2">
+							<div id="fixtures-head" class="panel-group">
+								<h3>Fixtures </h3>
+								
+								<div  class="panel-heading">
 									
-									<div class="fixtures-pegination">
-										<a class="peg-lnk" onclick="updateMatchDetails(false);" href="javascript:void(0);">Previous <i class="fa fa-angle-left"></i></a>
-										<img src ="${context}/images/fixture banner1 small.jpg" >   
-										<a class="peg-lnk" onclick="updateMatchDetails(true);" href="javascript:void(0);">Next <i class="fa fa-angle-right"></i></a>
+									<div class="prev_next_btn">
+										<a class="btn  btnPrevious" onclick="updateMatchDetails(false);" href="javascript:void(0);">Previous</a>
+										 <h5></h5>
+										<a class="btn  btnNext" onclick="updateMatchDetails(true);" href="javascript:void(0);">Next</a>
 									</div>
+									
 								</div>
 							</div>
 							<div class="fixtures-team">
@@ -39,7 +39,7 @@
 </div>
                 <!-- Secondary content -->
                 
- <script src="${context}/js/jquery.js"></script> 
+<script src="${context}/redBlackTheme/js/jquery.js"></script>
 
 <script type="text/javascript">
 	$(window).load(function(){
@@ -94,7 +94,7 @@
 		var daycounter = 0;
 		for (var key in matchesMapJson.gameWeekList[matchesMapJson.currentGameWeek-1].matchMap) {
 			
-			html += '<div class="team-row date">'+matchesMapJson.gameWeekList[matchesMapJson.currentGameWeek-1].matchMap[key][0].formatedDate1+'</div>';
+			html += '<div class="date_time">'+matchesMapJson.gameWeekList[matchesMapJson.currentGameWeek-1].matchMap[key][0].formatedDate1+'</div>';
 			if(daycounter ==0)
 			headHtml +=matchesMapJson.gameWeekList[matchesMapJson.currentGameWeek-1].matchMap[key][0].formatedDate2;
 			for(var index = 0;index < matchesMapJson.gameWeekList[matchesMapJson.currentGameWeek-1].matchMap[key].length; index++)
@@ -109,7 +109,7 @@
 				if(parseInt(startHour) < 10)
 				{
 					startHourStr = '0'+startHour;
-					showNotification(startHourStr);
+					//alert(startHourStr);
 				}
 				var startMinuteStr = ''+startMinute;
 				if(parseInt(startMinute) < 10)
@@ -127,16 +127,19 @@
 				}
 				var firstClubCss = clubLogoMap[firstClubId];
 				var secondClubCss = clubLogoMap[secondClubId];
-				html += '<div class="team-row">'+
-				'<div class="row-lft">'+firstClubName +'<span class="badge-25 '+firstClubCss+'"></span></div>'+
-				'<div class="row-mid">'+startTime+'</div>'+
-				'<div class="row-rgt">'+secondClubName +'<span class="badge-25 '+secondClubCss+'"></span></div>'+
+				html += '<div class="fixture_bar_ongoing">'+
+				
+				'<div class="team_points_flex1 ongoing_flex1">'+firstClubName +'<span class="badge-25 '+firstClubCss+'"></span></div>'+
+				'<div class="ongoing_mid_flex1">'+startTime+'</div>'+
+				/* '<div class="team_points_flex1 points"><span></span> </div>'+ */
+				
+				'<div class="team_points_flex1 ongoing_flex2">'+secondClubName +'<span class="badge-25 '+secondClubCss+'"></span></div>'+
 				'</div>';	
 			}
 			daycounter +=1;
 		}
 		$('.fixtures-team').html(html);
-		$('.fixtures-head h5').html(headHtml);
+		$('#fixtures-head h5').html(headHtml);
 	}
 </script>
 <c:if test="${not empty matchesMapJson}">

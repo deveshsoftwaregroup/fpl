@@ -70,14 +70,15 @@
 						                <li>
 						               <a href="javascript:void(0);" onclick="uploadTeamView11('${sessionScope.userId}','${sessionScope.gameDetails.gameId}');" data-nav-tab="squad">My Team</a>		
 						               </li> 
-						             <%--   <li>
-						                   <a href="javascript:void(0);" onclick="uploadMatchView11('${sessionScope.gameDetails.gameId}');" data-nav-tab="squad">Fixtures</a>
-						               </li>   --%>                    
+						                                     
 						               <li>
 						                   <a href="javascript:void(0);" onclick="uploadMyPointView11('${sessionScope.gameDetails.gameId}','${sessionScope.userId}','','');">My Points</a>
 						               </li>   
 						               <li>
 						                   <a href="javascript:void(0);" onclick="uploadCouponsView11('${sessionScope.userId}','${sessionScope.gameDetails.gameId}');">Coupons</a>
+						               </li> 
+						               <li>
+						                   <a href="javascript:void(0);" onclick="uploadMatchView11('${sessionScope.gameDetails.gameId}');" data-nav-tab="squad">Fixtures</a>
 						               </li> 
 						               <li>
 						                   <a href="javascript:void(0)" onclick="uploadRulesView11();">Help</a>
