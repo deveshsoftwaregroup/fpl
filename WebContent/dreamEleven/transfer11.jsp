@@ -284,7 +284,7 @@
 	                                                  
 				</div>
 				
-				 <div class="col-lg-12 pull-right claim_your_prize claim_prize_align">
+				 <div class="col-lg-12 col-xs-12 pull-right claim_your_prize claim_prize_align">
 				 	<p id="countDown"></p>
 	                  <!-- <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#modelPlayOption">Confirm Your Team</button></a> -->
 	                  <!--  <a href="#"><button id="confirmTeam" type="button" class="btn claim_btn" data-toggle="modal" data-target="#modelPlayOption">Confirm Your Team</button></a> -->
@@ -581,7 +581,7 @@
 	 var clubListJson = null;
 	 var userGameJson = null;
 	 var userGameJsonDreamEleven = null;   
-	 var purchableWildCardJson = null;
+	 var purchableGameWeekPlanJson = null;
 </script>
 <c:if test="${not empty sessionScope.gameDetailsJson}">
 	<script type="text/javascript">
@@ -608,17 +608,19 @@
  		userGameJson = ${sessionScope.userGameJsonDreamEleven};
 	</script>
 </c:if>
-<c:if test="${not empty sessionScope.purchableWildCardJson}">
+<c:if test="${not empty sessionScope.purchableGameWeekPlanJson}">
  	<script type="text/javascript">
- 	purchableWildCardJson = ${sessionScope.purchableWildCardJson};
- 	var planDiscountId = '${sessionScope.planDiscountId}';
-	</script>
+ 	purchableGameWeekPlanJson = ${sessionScope.purchableGameWeekPlanJson};
+</script>
 </c:if>
 <c:if test="${not empty sessionScope.userJson}">
 	<script type="text/javascript">
   		userJson = ${sessionScope.userJson};
 	</script>
 </c:if>
+<script type="text/javascript">
+ 	var gameWeekId = '${gameWeekId}';
+</script>
 <script type="text/javascript">	
 	function aa(){
 		var elems2 = '<div class="ismjs-select">'+
@@ -780,30 +782,30 @@
 			//var paymentForm = $("#paymentForm_"+planId);
 			var paymentForm = document.createElement("form");
 		    var plan = document.createElement("input"); 
-		    var discount = document.createElement("input");
+		    var gameWeek = document.createElement("input");
 		    var amount = document.createElement("input");
 		
 		    paymentForm.method = "POST";
-		    paymentForm.action = "/SportMgmt/mvc/payment/MakePayment";   
+		    paymentForm.action = "/SportMgmt/mvc/payment/MakeDreamElevenPayment";   
 		
 		    plan.value=planId;
 		    plan.name="leaguePlanId";
 		    paymentForm.appendChild(plan);  
 		
-		    discount.value=planDiscountId;
-		    discount.name="planDiscountId";
-		    paymentForm.appendChild(discount);
+		    gameWeek.value=gameWeekId;
+		    gameWeek.name="gameWeekId";
+		    paymentForm.appendChild(gameWeek);
 		    amount.name = "amount";
-		    if(purchableWildCardJson != null && typeof purchableWildCardJson != 'undefined')
+		    if(purchableGameWeekPlanJson != null && typeof purchableGameWeekPlanJson != 'undefined')
 		    {
-		    	console.log("Going ot iterate purchableWildCardJson");
-		    	for(var i = 0;i<purchableWildCardJson.length;i++)
+		    	console.log("Going ot iterate purchableGameWeekPlanJson");
+		    	for(var i = 0;i<purchableGameWeekPlanJson.length;i++)
 			    {
-			    	console.log("iterating purchableWildCardJson: planId: "+purchableWildCardJson[i].planId);
-			    	if(purchableWildCardJson[i].planId == planId)
+			    	console.log("iterating purchableGameWeekPlanJson: planId: "+purchableGameWeekPlanJson[i].planId);
+			    	if(purchableGameWeekPlanJson[i].planId == planId)
 			    	{
-			    		console.log("gettting amount :: "+purchableWildCardJson[i].amount);
-			    		amount.value = purchableWildCardJson[i].price;
+			    		console.log("gettting amount :: "+purchableGameWeekPlanJson[i].amount);
+			    		amount.value = purchableGameWeekPlanJson[i].offerPrice;
 			    		paymentForm.appendChild(amount);  
 			    		document.body.appendChild(paymentForm);
 			 			paymentForm.submit();
@@ -933,7 +935,7 @@
 		}
 		/* else if(avialBalance < playerPrice)
 		{
-			alert("Bank Account is less than player price");
+			showNotification("Bank Account is less than player price");
 			ajaxCall = false;
 		} */
 		/* else if(!(userJson.hasActivePlan || userJson.totalTransferForGameWeek <=1 || userJson.gameWeekNumberForPlayerTransfer <=1 || userJson.totalPoint > 4))
@@ -1156,28 +1158,25 @@
 	     		 dataType: 'html',
 	     		  success: function( resp ) {
 	     			 console.log(resp);
-	     			 if(resp=="true")
-	     			 {
-	     				showNotification('your team is already confirmed for current Gameweek');
-	     			}
-	     			 else
-	     				 {
+	     			  
+	     			 
+	     				 
  		
-	     				url ="/SportMgmt/mvc/player/make-player-history-for-user/"+gameId+"/"+gameWeekId+"/"+userId+"?gameType=dream_eleven" ;
-	    	 			$.ajax({
-	    	 	     		  url: url,
-	    	 	     		 dataType: 'html',
-	    	 	     		  success: function( resp ) {
-	    	 	     			console.log("resp"+resp);
-	    	 	     			showNotification('your team has been confirmed');	    	 	     				 
+	     url ="/SportMgmt/mvc/player/make-player-history-for-user/"+gameId+"/"+gameWeekId+"/"+userId+"?gameType=dream_eleven" ;
+	    	 $.ajax({
+	    	 	   url: url,
+	    	 	   dataType: 'html',
+	    	 	   success: function( resp ) {
+	    	 	    console.log("resp"+resp);
+	    	 	     showNotification('your team has been confirmed');	    	 	     				 
 	    	 	     		},
 	    	 	     		  
-	    	 	     		  error: function( req, status, err ) {
-	    	 	     		    console.log( 'something went wrong', status, err );
+	    	 	     error: function( req, status, err ) {
+	    	 	      console.log( 'something went wrong', status, err );
 	    	 	     		  }
 	    	 	     		    
 	    	 	     		  });
-	     				 }	     		  
+	     				 	     		  
 	     		 },
 	     		 
 	     		   error: function( req, status, err ) {

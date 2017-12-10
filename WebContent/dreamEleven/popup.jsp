@@ -81,40 +81,40 @@
                 <table class="table table-striped table-bordered table-hover" width="100%">
                     <tbody>
             
-                      <c:forEach var="wildCard" items="${sessionScope.purchableWildCardList}" >
-                            <form  id="paymentForm_${wildCard.planId}" action="/SportMgmt/mvc/payment/MakePayment" method="post">
-                            <input type="hidden" name="leaguePlanId" value="${wildCard.planId}"></input>
-                            <input type="hidden" name="planDiscountId" value="${sessionScope.planDiscountId}"></input>
-                            <input type="hidden" name="amount" value="${wildCard.price}"></input>
+                      <c:forEach var="gameWeekPlan" items="${sessionScope.purchableGameWeekPlanList}" >
+                            <form  id="paymentForm_${gameWeekPlan.planId}" action="/SportMgmt/mvc/payment/MakePayment" method="post">
+                            <input type="hidden" name="gameWeekPlanId" value="${gameWeekPlan.planId}"></input>
+                            <input type="hidden" name="amount" value="${gameWeekPlan.offerPrice}"></input>
                             </form>
                       <tr>
                         <td>Eligible for</td>
                   
-                        <td>${wildCard.name}</td>
+                        <td>${gameWeekPlan.name}</td>
                       </tr>
-                  
+                  	 <c:choose>
+                  	 <c:when test="${gameWeekPlan.planType eq '2'}">
                       <tr>
                         <td>Price</td>
                   
-                        <td>${wildCard.price}</td>
+                        <td>${gameWeekPlan.price}</td>
                       </tr>
-                  
                       <tr>
-                        <td>Discount</td>
+                        <td>Offer Price</td>
                   
-                        <td><input id="paymentDiscountCode_${wildCard.planId}" type="text" name="discount" value=""></input></td>
+                        <td>${gameWeekPlan.offerPrice}</td>
                       </tr>
-                  
+                      </c:when>
+                      <c:when test="${gameWeekPlan.planType eq '1'}">
                       <tr>
-                        <td>Total Price</td>
+                        <td>Enter Price</td>
                   
-                        <td>${wildCard.price}</td>
+                        <td><input type="number" name="userDefineAmount" onblur="updatePriceToJson('${gameWeekPlan.planId}',this.value)"></td>
                       </tr>
-                  
-                      <tr>
+                      </c:when>
+                      </c:choose>
+                        <tr>
                         <td>Purchase</td>
-                  
-                        <td><button id="paymentButton_${wildCard.planId}" type="button" class="button" >Buy Now</button></td>
+                        <td><button id="paymentButton_${gameWeekPlan.planId}" type="button" class="button" >Buy Now</button></td>
                       </tr>
                      </c:forEach>
                     </tbody>
@@ -147,5 +147,22 @@
 	         	$("#notification").fadeOut("slow");
 	       	});
 	     } 
+		function updatePriceToJson(planId,price)
+		{
+			console.log("update price: "+price+" for planId: "+planId);
+			if(purchableGameWeekPlanJson != null && typeof purchableGameWeekPlanJson != 'undefined')
+		    {
+		    	console.log("Going ot iterate purchableGameWeekPlanJson");
+		    	for(var i = 0;i<purchableGameWeekPlanJson.length;i++)
+			    {
+			    	console.log("iterating purchableGameWeekPlanJson: planId: "+purchableGameWeekPlanJson[i].planId);
+			    	if(purchableGameWeekPlanJson[i].planId == planId)
+			    	{
+			    		purchableGameWeekPlanJson[i].offerPrice=price;;
+			    	}
+			    }
+		    }
+		
+		}
 	</script>
 
