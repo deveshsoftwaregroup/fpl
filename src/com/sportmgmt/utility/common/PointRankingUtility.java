@@ -11,8 +11,14 @@ import java.util.TreeMap;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.sportmgmt.controller.bean.Player;
+import com.sportmgmt.controller.response.SportMgmtResponse;
 import com.sportmgmt.dreamEleven.model.entity.UserPlayer;
 import com.sportmgmt.model.entity.GameClubPlayer;
 import com.sportmgmt.model.entity.GameWeekPlayerReport;
@@ -53,7 +59,7 @@ public class PointRankingUtility {
 	{
 		return logMessage;
 	}
-	private Integer getCurrentGameWeek(String gameId)
+	public Integer getCurrentGameWeek(String gameId)
 	{
 		Integer gameWeekId = null;
 		List<Object[]> currentGameWeek = GameManager.fetchCurrenGametWeek(new Integer(gameId));
@@ -96,6 +102,7 @@ public class PointRankingUtility {
 	private String getLatestGameWeekId(String gameId)
 	{
 		Integer currentGameWeekId =getCurrentGameWeek(gameId);
+		System.out.println(currentGameWeekId);
 		Integer lastGameWeekId = null; 
 		if(currentGameWeekId == null || !isDeadlineStart(currentGameWeekId.toString()))
 		{
@@ -265,6 +272,7 @@ public class PointRankingUtility {
 		Map<String,String> gameWeekForPoint = new HashMap<>();
 		gameWeekForPoint.put("isLatestGameWeek", SportConstrant.NO);
 		String latestGameWeekId = getLatestGameWeekId(gameId);
+		
 		if(latestGameWeekId != null && !latestGameWeekId.equals(""))
 		{
 			List<Integer> sortedGameWeekIds = GameWeeKManager.sortedGameWeekIds(gameId);
@@ -623,6 +631,48 @@ public class PointRankingUtility {
 		 }
 		int totalTopPlayerInUserAccount =getTotalUserPlayerMatchInTopPlayer(gameWeekPlayerList, topPlayesIdsByRank);
 		return totalTopPlayerInUserAccount * pointMultiplyer;
+	}
+	
+	public  SportMgmtResponse createGameWeekHistoryForUsers( String gameId,  String gameType, String gameWeekId, String userId)
+	{
+	
+		SportMgmtResponse sportMgmtResponse = new SportMgmtResponse();
+		boolean isGameExist = GameManager.isGameExistAndActive(gameId);
+		if(isGameExist)
+		{
+			try
+			{
+				if(gameType !=null && gameType.equals("dream_eleven"))
+				setDreamEleven(true);
+				else{
+					setDreamEleven(false);
+				}
+				if(PlayerManager.isGameWeekPlayerHistoryExist(userId, gameWeekId))
+				{
+					
+					GameManager.removePlayeOfGameFromHistory(userId, gameWeekId);	
+					
+			     
+				}
+				
+				List<String> logList =createPlayerHistoryForUsers(gameId,gameWeekId,userId);
+				sportMgmtResponse.setSuccess(true);
+				sportMgmtResponse.setLogList(logList);
+			}
+			catch(SportMgmtException sme)
+			{
+				sportMgmtResponse.setSuccess(false);
+				sportMgmtResponse.setMessage(sme.getMessage());
+				logger.error("--------------- Error Occured: "+sme);
+			}
+			
+		}
+		else
+		{
+			sportMgmtResponse.setSuccess(false);
+			sportMgmtResponse.setMessage("Invalid game Id");
+		}
+		return sportMgmtResponse;
 	}
 	
 }
