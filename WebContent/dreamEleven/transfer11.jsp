@@ -12,13 +12,27 @@
 	.modal td, th {color:#000 !important;}
 @media screen and (min-width: 300px) and (max-width: 439px) {
 .transfers_predict11_map { padding-left:0px; padding-right:0px;}
-	}</style>
+	}
+
+
+	</style>
     
 <s:sportExt retrieve="priceList" />
 <s:sportExt retrieve="deadLine" />
  
 <body class="predict11-bg transfers_predict11 dream_11transfer">
 
+<!-- code for preloader starts -->
+	 <div id="preloader">
+		<div id="status1">&nbsp;</div>
+	</div>  
+	<script type="text/javascript">
+		$(window).on("load", function() { // makes sure the whole site is loaded
+			$('#status1').fadeOut(1000); // will first fade out the loading animation
+			$('#preloader').delay(500).fadeOut(1000); // will fade out the white DIV that covers the website.
+		})
+	</script> 
+	<!-- Code for preloader ends --> 
  
 
 <!-- twitter button starts -->
@@ -416,7 +430,7 @@
 								                    	<c:otherwise>
 								                    		<th><abbr title="Total Score">TS</abbr></th>
 								                    	</c:otherwise>
-								                    </c:choose>
+								                    </c:choose> 
 								                </tr>			            
 									         </table>
 										</div>
@@ -1150,12 +1164,12 @@
 	 	{ 
     	 if(typeof userGameJson != 'undefined' && userGameJson.playerList.length >= 11)
     			 {
-    	 url ="/SportMgmt/mvc/player/check-player-history/"+gameId+"/"+gameWeekId+"/"+userId+"?gameType=dream_eleven" ;
+    /* 	 url ="/SportMgmt/mvc/player/check-player-history/"+gameId+"/"+gameWeekId+"/"+userId+"?gameType=dream_eleven" ;
  			$.ajax({
 	     		  url: url,
 	     		 dataType: 'html',
 	     		  success: function( resp ) {
-	     			 console.log(resp);
+	     			 console.log(resp); */
 	     			  
 	     			 
 	     				 
@@ -1175,12 +1189,12 @@
 	    	 	     		    
 	    	 	     		  });
 	     				 	     		  
-	     		 },
+	     	/* 	 },
 	     		 
 	     		   error: function( req, status, err ) {
 	     		    console.log( 'something went wrong', status, err );
 	     		   }
-	     		}); 
+	     		});  */
     	 }
     	 else
     	 {
