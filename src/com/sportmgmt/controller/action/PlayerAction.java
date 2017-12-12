@@ -156,7 +156,8 @@ public class PlayerAction {
 	{System.out.println("gameId"+gameId);
 	System.out.println("");
 		SportMgmtResponse sportMgmtResponse = new SportMgmtResponse();
-		boolean isGameExist = GameManager.isGameExistAndActive(gameId);
+		sportMgmtResponse = pointRankingUtility.createGameWeekHistoryForUsers(gameId, gameType, gameWeekId, userId);
+		/*boolean isGameExist = GameManager.isGameExistAndActive(gameId);
 		if(isGameExist)
 		{
 			try
@@ -182,7 +183,7 @@ public class PlayerAction {
 		{
 			sportMgmtResponse.setSuccess(false);
 			sportMgmtResponse.setMessage("Invalid game Id");
-		}
+		}*/
 		return sportMgmtResponse;
 	}
 	@RequestMapping(value = "game-week-history/{gameId}/{userId}", method = RequestMethod.GET)
