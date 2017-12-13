@@ -18,6 +18,9 @@ public class SportConstrant {
 	public final static String PAYMENT_SUCS_URL = "paymentSuccessURL";
 	public final static String PAYMENT_FAIL_URL = "paymentFailURL";
 	public final static String PAYMENT_CANCEL_URL = "paymentCancelURL";
+	public final static String DE_PAYMENT_SUCS_URL = "dePaymentSuccessURL";
+	public final static String DE_PAYMENT_FAIL_URL = "dePaymentFailURL";
+	public final static String DE_PAYMENT_CANCEL_URL = "dePaymentCancelURL";
 	public final static String PAYMENT_URL = "paymentURL";
 	public final static String BASE_URL = "baseURL";
 	public final static String VELOCIYY_FILE_LOC = "velocityFileLoc";
@@ -39,6 +42,7 @@ public class SportConstrant {
 	public final static String USER_UPDATE_PAGE = "userUpdate";
 	public final static String CHANGE_PASSWORD_PAGE = "changePassword";
 	public final static String MY_TEAM_PAGE = "myTeam";
+	public final static String MY_TEAM_PAGE11 = "dreamEleven/myTeam11";
 	public final static String MATCH_PAGE = "matchDetails";
 	public final static String MY_POINT_PAGE = "myPoint";
 	public final static String DE_MY_POINT_PAGE = "dreamEleven/myPoint";
@@ -49,6 +53,7 @@ public class SportConstrant {
 	public final static String POINT_TABLE_PAGE = "pointTable";
 	//public final static String LEAGE_HOME_PAGE = "leagueHome";
 	public final static String LEAGE_HOME_PAGE = "homeIndex";
+	public final static String VENDOR_HOME_PAGE = "vendor/vendorIndex";
 	public final static String LEAGUE_LANDING_HOME_PAGE = "homeIndex";
 	public final static String HOME_GAME_GUIDE = "homeGameGuide";
 	public final static String HOME_GUIDE = "homeGuide";
@@ -80,6 +85,7 @@ public class SportConstrant {
 	public final static String DE_GAME_WEEK_HISTORY = "DE_GAME_WEEK_HISTORY";
 	public final static String WEEKLY_COUPON = "WEEKLY_COUPON";
 	public final static String UPDATE_PLAYER_POINT_PAGE = "admin/updatePlayerPoint";
+	public final static String VENDOR_LOGIN_PAGE = "vendor/vendorLogIn";
 	public final static String GAME_WEEK_POINT = "point";
 	public final static String GAME_WEEK_OVERALL_POINT = "totalPoint";
 	public final static String USER_TOTAL_POINT = "totalPoint";

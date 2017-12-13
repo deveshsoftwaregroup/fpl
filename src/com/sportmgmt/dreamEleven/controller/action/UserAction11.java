@@ -23,6 +23,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ravij.crypto.EncodeDecoder;
 import com.sportmgmt.controller.bean.ActivePlan;
+import com.sportmgmt.controller.bean.GameWeekPlan;
 import com.sportmgmt.controller.bean.User;
 import com.sportmgmt.controller.bean.WildCard;
 import com.sportmgmt.dreamEleven.model.manager.GameManager;
@@ -386,7 +387,7 @@ public class UserAction11 {
 				
 			}
 			/* Code start to fetch plan list */
-			String freeWildCardPlanId = LeaguePlanUtil.getFreeWildCardId(userId); 
+			/*String freeWildCardPlanId = LeaguePlanUtil.getFreeGameWeekPlanId(userId);
 			if(freeWildCardPlanId ==null || freeWildCardPlanId.equals(""))
 			{
 				session.setAttribute("hasFreeWildCard", false);
@@ -397,16 +398,16 @@ public class UserAction11 {
 				session.setAttribute("hasFreeWildCard", true);
 				logger.info("------------------- hasFreeWildCard: true");
 				session.setAttribute("freeWildCardPlanId", freeWildCardPlanId);
-			}
-			session.setAttribute("planDiscountId", LeaguePlanUtil.getDefualtPlanDiscountId());
-			List<WildCard> purchableWildCardList = LeaguePlanUtil.getPurchableWildCardList();
-			session.setAttribute("purchableWildCardList", purchableWildCardList);
+			}*/
+			//session.setAttribute("planDiscountId", LeaguePlanUtil.getDefualtPlanDiscountId());
+			List<GameWeekPlan> purchableGameWeekPlanList = LeaguePlanUtil.getPurchableGameWeekPlanList();
+			session.setAttribute("purchableGameWeekPlanList", purchableGameWeekPlanList);
 			
 			try
 			{
 				ObjectMapper mapperObj = new ObjectMapper();
-				String purchableWildCardJson = mapperObj.writeValueAsString(purchableWildCardList);
-				session.setAttribute("purchableWildCardJson", purchableWildCardJson);
+				String purchableGameWeekPlanJson = mapperObj.writeValueAsString(purchableGameWeekPlanList);
+				session.setAttribute("purchableGameWeekPlanJson", purchableGameWeekPlanJson);
 			}
 			catch(Exception ex)
 			 {

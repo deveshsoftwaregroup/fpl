@@ -25,6 +25,7 @@ You are being redirected to Payment gateway...
 <input type="hidden" name="productinfo" value="${productinfo}" />
 <input type="hidden" name="amount" value="${amount}" />
 <input type="hidden" name="email" value="${email}" />
+<input type="hidden" name="udf1" value="${udf1}" />
 </form>
 <script type="text/javascript">
 $(document).ready(function() {

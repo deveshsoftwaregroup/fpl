@@ -77,9 +77,13 @@
         <mapping class="com.sportmgmt.model.entity.PlayerPoint"/>
         <mapping class="com.sportmgmt.model.entity.UserPoint"/>
         <mapping class="com.sportmgmt.model.entity.GameWeekPlayerReport"/>
+        
          
          <!--  Dream Eleven mapping starts -->
          <mapping class="com.sportmgmt.dreamEleven.model.entity.UserPlayer"/>
+         <mapping class="com.sportmgmt.dreamEleven.model.entity.GameWeekPlan"/>
+         <mapping class="com.sportmgmt.dreamEleven.model.entity.UserPayment"/>
+         <mapping class="com.sportmgmt.dreamEleven.model.entity.PaymentExt"/>
          <!--  Dream Eleven mapping ends -->
    </session-factory>
 </hibernate-configuration>

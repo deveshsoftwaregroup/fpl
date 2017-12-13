@@ -10,6 +10,7 @@ import java.util.Map;
 import org.apache.log4j.Logger;
 
 import com.sportmgmt.controller.action.GameAction;
+import com.sportmgmt.controller.bean.GameWeekPlan;
 import com.sportmgmt.controller.bean.WildCard;
 import com.sportmgmt.model.entity.LeaguePlan;
 import com.sportmgmt.model.manager.GameManager;
@@ -30,6 +31,14 @@ public class LeaguePlanUtil {
 		}
 		logger.info("----------Returning freeWildCardPlanId: in Plan Util : "+freeWildCardPlanId);
 		return freeWildCardPlanId;
+	}
+	public static String getFreeGameWeekPlanId(String userId)
+	{
+		logger.info("---------- Started getting free game week in Plan Util ");
+		logger.info("---------- Calling PlanManager.fetchFreeWildCardPlanId() ");
+		String freeGameWeekPlanId = com.sportmgmt.dreamEleven.model.manager.PlanManager.fetchFreePlanId();
+		logger.info("----------Returning freeGameWeekPlanId: in Plan Util : "+freeGameWeekPlanId);
+		return freeGameWeekPlanId;
 	}
 	public static boolean activatePlanForUser(String planId,String userId,String planDiscountId,String transactionId)
 	{
@@ -102,5 +111,33 @@ public class LeaguePlanUtil {
 	public static String getDefualtPlanDiscountId()
 	{
 		return PlanManager.fetchDefualtDiscount();
+	}
+	public static List<GameWeekPlan> getPurchableGameWeekPlanList()
+	{
+		logger.info("---------- Inside getPurchableGameWeekPlanList of Plan Util");
+		List<GameWeekPlan> purchableGameWeekPlanList = new ArrayList<GameWeekPlan>();
+		logger.info("---------- Calling PlanManager.fetchNonFreeActivePlan()");
+		List<com.sportmgmt.dreamEleven.model.entity.GameWeekPlan> gameWeekPlanList = com.sportmgmt.dreamEleven.model.manager.PlanManager.fetchNonFreeActivePlan();
+		logger.info("---------------- gameWeekPlanList: "+gameWeekPlanList);
+		if(gameWeekPlanList != null && gameWeekPlanList.size() > 0)
+		{
+			for(Object gameWeekPlanObj:gameWeekPlanList)
+			{
+				com.sportmgmt.dreamEleven.model.entity.GameWeekPlan gameWeekPlanEntity = (com.sportmgmt.dreamEleven.model.entity.GameWeekPlan)gameWeekPlanObj;
+				GameWeekPlan gameWeekPlan = new GameWeekPlan();
+				gameWeekPlan.setPlanId(gameWeekPlanEntity.getPlanId().toString());
+				gameWeekPlan.setPrice(gameWeekPlanEntity.getPlanAmount().toString());
+				gameWeekPlan.setOfferPrice(gameWeekPlanEntity.getOfferPrice().toString());
+				gameWeekPlan.setWinningAmount(gameWeekPlanEntity.getWiningPrice().toString());
+				gameWeekPlan.setPlanType(gameWeekPlanEntity.getPlanType().toString());
+				/*if(leaguePlan.getTotalNoOfDays() == 1)
+					gameWeekPlan.setName(leaguePlan.getTotalNoOfDays()+" gameweek");
+				else
+					gameWeekPlan.setName(leaguePlan.getTotalNoOfDays()+" gameweeks");	*/
+				purchableGameWeekPlanList.add(gameWeekPlan);
+			}
+		}
+		logger.info("----------------Returning  purchableGameWeekPlanList: "+purchableGameWeekPlanList);
+		return purchableGameWeekPlanList;
 	}
 }
