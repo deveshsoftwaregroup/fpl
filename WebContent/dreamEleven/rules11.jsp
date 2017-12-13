@@ -9,119 +9,66 @@
 <script type="text/javascript" src="${context}/redBlackTheme/js/accordion.js"></script>
 
 <div class="predict11-bg dream_help">
-<div class="container">
+<div class="container-fluid">
 
 	<div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 rules_faq">
             <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#home">RULES</a></li>
+            	<li class="active"><a data-toggle="tab" href="#menu2">CRITERIA</a></li>
+                <li ><a data-toggle="tab" href="#home">RULES</a></li>
                 <li><a data-toggle="tab" href="#menu1">FAQs</a></li>
-               
               </ul>
 
               <div class="tab-content">
-                <div id="home" class="tab-pane fade in active">
+                <div id="home" class="tab-pane fade ">
                         <div class="main">
                                 <div class="accordion">
                                     <div class="accordion-section">
                                         
                                         <a class="accordion-section-title" href="#accordion-1">Squad Size</a>
                                         <div id="accordion-1" class="accordion-section-content">
-                                            <p>To join the game select a fantasy football squad of 11 players, consisting of:
-                                                1 Wicket-Keepers
-                                                4 Bats-Men
-                                                2 All-Rounders
-                                                4 Bowlers</p>
-                                            
-                                            
-                                        </div><!--end .accordion-section-content-->
+                                            <p>You can choose 11 players every week from any of the 20 teams in the Premier League.
+                                            There are no restrictions,and you can pick as many players from the same team.
+                                            The formation however ,will remain 4-3-3.</p>
+                                       </div><!--end .accordion-section-content-->
                                     </div><!--end .accordion-section-->
                         
                                     <div class="accordion-section">
                                         <a class="accordion-section-title" href="#accordion-2">Budget</a>
                                         <div id="accordion-2" class="accordion-section-content">
-                                            <p>The total value of your initial squad must not exceed INR 100 Million.</p>
+                                            <p>You have an unlimited budget.</p>
                                         </div><!--end .accordion-section-content-->
                                     </div><!--end .accordion-section-->
                         
                                     <div class="accordion-section">
                                         <a class="accordion-section-title" href="#accordion-3">Managing your squad</a>
                                         <div id="accordion-3" class="accordion-section-content">
-                                            <p>Choosing your starting 11
-
-                                           From your 11 player squad, select 11 players by the Gameweek deadline to form your team.
-
-                                           All your points for the Gameweek will be scored by these 11 players. 
-
-                                           Your team can play in any formation providing that 1 wicket-keeper, at least 3 bats-men and at least 1 all-rounder are selected at all times. 
-
-                                           Selecting a Captain and a Vice-Captain
-
-                                           From your starting 11 you nominate a captain and a vice-captain. Your captain's score will be doubled.</p>
-                                        </div><!--end .accordion-section-content-->
-                                    </div><!--end .accordion-section-->
-                                    <div class="accordion-section">
-                                            <a class="accordion-section-title" href="#accordion-5">Transfers</a>
-                                            <div id="accordion-5" class="accordion-section-content">
-                                                <p>After selecting your squad you can buy and sell players in the transfer market. Unlimited transfers can be made at no cost until your first deadline.
-
-                                                After your first deadline you will receive 1 free transfer each Gameweek. Each additional transfer you make in the same Gameweek will deduct 4 points from your total score. 
-
-                                                If you do not use your free transfer, you are able to make an additional free transfer the following Gameweek. If you do not use this saved free transfer in the following Gameweek, it will be carried over until you do. You can never have more than 1 saved transfer.</p>
-                                            </div><!--end .accordion-section-content-->
-                                        </div><!--end .accordion-section-->
-                                        <div class="accordion-section">
-                                                <a class="accordion-section-title" href="#accordion-6">Wildcards</a>
-                                                <div id="accordion-6" class="accordion-section-content">
-                                                    <p>To do free transfer in a week, you can use wildcard. One wild card will be free and after that you can avail more wildcard by purchasing it. It will boost your chance to win prizes.</p>
-                                                </div><!--end .accordion-section-content-->
-                                            </div><!--end .accordion-section-->
-                                        <div class="accordion-section">
-                                             <a class="accordion-section-title" href="#accordion-7">Player Prices</a>
-                                            <div id="accordion-7" class="accordion-section-content">
-                                                <p>
-                                             Player prices may change during the season dependent on the popularity of the player. Player prices do not change until the season starts.
-
-                                             The price shown on your transfers page is a player's selling price.
-                                             All changes to your team (starting 11, transfers, captain changes, substitiution priorities) must be made by the Gameweek deadline in order to take effect for that set of matches.
-
-                                             Deadlines are subject to change and will be 1 hour before the kick-off time in the first match of the Gameweek.</p>
-                                            </div><!--end .accordion-section-content-->
-                                        </div><!--end .accordion-section-->
-
-                                              
+                                            <p>You have to pick an entirely new squad every week.Your teams should be finalised one hour before the Gameweek starts.
+                                            Once the gameweek ends,you have to pick a new team from scratch.</p>  
+                                        </div>
+                                    </div>
                                                                                                 
                                 </div><!--end .accordion-->
                             </div>   
                  </div>
+                  <div id="menu2" class="tab-pane fade in active">
+                  
+                  <p>If two players have similar points,the following criterias would be used to select one,stated in order of priorities.</p>
+                 <p> 1.Goals scored </p>
+                 <p> 2.Assist made  </p>
+                 <p> 3.Their team's goal difference for that gameweek.</p>
+                 <p> 4.League position of player's team in the league.</p>
+                  </div>
                 <div id="menu1" class="tab-pane fade">
                         <div class="main">
                                 <div class="accordion">
-                                    <div class="accordion-section">
-                                        
+                                    <div class="accordion-section">                                        
                                         <a class="accordion-section-title" href="#accordion-a">I have forgotten my password. What can I do?</a>
                                         <div id="accordion-a" class="accordion-section-content">
                                             <p>You can click on "Forgot password" on login page". Provide your registered email ID. We will send your password on your email ID.</p>
                                             
-                                                
-                                                
-                                            
-                                            
-                                           
-                                            
                                         </div><!--end .accordion-section-content-->
                                     </div><!--end .accordion-section-->
-                        
-                                    <div class="accordion-section">
-                                        <a class="accordion-section-title" href="#accordion-b">Manage your Squad</a>
-                                        <div id="accordion-b" class="accordion-section-content">
-                                            <h3>Choosing your starting 11</h3>
-                                            <p> select 11 players by the Gameweek deadline to form your team.</p>
-                                            <p>All your points for the Gameweek will be scored by these 11 players, however if one or more doesn't play they may be automatically substituted.</p>
-                                            <p>Your team can play in any formation providing that 1 goalkeeper, at least 3 defenders and at least 1 forward are selected at all times.</p>
-                                        </div><!--end .accordion-section-content-->
-                                    </div><!--end .accordion-section-->
-                        
                                     <div class="accordion-section">
                                         <a class="accordion-section-title" href="#accordion-c">I can't sign in. What do I need to do?</a>
                                         <div id="accordion-c" class="accordion-section-content">
@@ -132,13 +79,7 @@
 			                        <p>If you do not receive the password reminder, please check your Junk folder in your email inbox and add noreply@mailout.users.the12thman.in to your address book.</p>
                                         </div><!--end .accordion-section-content-->
                                     </div><!--end .accordion-section-->
-                                    <div class="accordion-section">
-                                            <a class="accordion-section-title" href="#accordion-d">I have set up a team, but I can't see my History or renew my leagues from previous seasons. Can you link my new account to my old one?</a>
-                                            <div id="accordion-d" class="accordion-section-content">
-                                                <p>Unfortunately, we cannot link your history from an old account to a new one. If you have set up a team for this season using a different email address, you will not be able to view your History from previous seasons on that account </p>
-                                                <p>In order to see previous seasons' scores, you will need to sign in on the homepage using the registered email address and password combination from the previous seasons and set up a team using that account.</p>
-                                            </div><!--end .accordion-section-content-->
-                                        </div><!--end .accordion-section-->
+                                    
                                         <div class="accordion-section">
                                                 <a class="accordion-section-title" href="#accordion-e">I have some suggestions and great ideas. I want to implement my ideas with The12thman. the What should I do?</a>
                                                 <div id="accordion-e" class="accordion-section-content">

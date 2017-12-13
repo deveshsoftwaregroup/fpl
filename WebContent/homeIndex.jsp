@@ -1,5 +1,6 @@
 <jsp:include page="${context}/dreamEleven/facebookPost.jsp" />
 <jsp:include page="homeHeader.jsp" />
+<jsp:include page="popup.jsp" />
 
 
   <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -13,8 +14,8 @@
            
             <ul class="bxslider">
             	<li><a target="_blank" href="http://the12thman.in/"><img src="${context}/redBlackTheme/images/banner1.png" /></a></li>
-                <li><a target="_blank" href="http://the12thman.in/"><img src="${context}/redBlackTheme/images/banner1.png" /></a></li>
-                <li><a target="_blank" href="http://the12thman.in/"><img src="${context}/redBlackTheme/images/banner1.png" /></a></li>
+                <!-- <li><a target="_blank" href="http://the12thman.in/"><img src="${context}/redBlackTheme/images/banner1.png" /></a></li>
+                <li><a target="_blank" href="http://the12thman.in/"><img src="${context}/redBlackTheme/images/banner1.png" /></a></li> -->
                   
                 </ul>
             </div>
@@ -30,12 +31,17 @@
 						      		<img src="${context}/redBlackTheme/images/homeIndex/Webp.net-resizeimage-34.jpg" >
 						    	</div>
 						    	<div class="col-lg-5 col-sm-6 col-tn-6 col-xs-12">
-						      		<h4>From Defender to Contender - Rio Ferdinand marks a return </h4>
-						        	<p>RIO FERDINAND THE FORMER MANCHESTER UNITED AND ENGLAND CAPTAIN HAS CONFIRMED A SHOCK RETURN TO THE PRO SPORTS BY AGREEING TO BECOME A BOXER </p>
-						        	<p><a target="_blank" href="http://the12thman.in/defender-contender-rio-ferdinand-marks-return/"><b> READ MORE </b></a>- <i>the12thman.in</i></p>
+						    	    <c:forEach items="${articleList}" var="item">
+						      		<h4><c:out value="${item.heading}"/> </h4>
+						        	<p><c:out value="${item.content}"/> </p>
+						        	<p><a target="_blank" href="http://the12thman.in/defender-contender-rio-ferdinand-marks-return/"><b> READ MORE </b></a>- <i><c:out value="${item.link}"/></i></p>
+						        	</c:forEach>
 						    	</div>
 						    </div>
 						</li>
+						<c:forEach items="${articleList}" var="item">
+                                  <c:out value="${item.content}"/>
+                               </c:forEach>
 						
 						<li class="home_scout_section"> 
 							<div class="row">
@@ -95,16 +101,20 @@
                 <div class="col-lg-4 col-sm-4 col-tn-12 col-xs-12 all_play">
                 <c:choose>
                     <c:when test="${empty sessionScope.user.displayName}">
-                    <a href="" data-toggle="modal" data-target="#myModal"><img src="${context}/redBlackTheme/images/play-fantasy-league_1.png" class="img-responsive center-block"></a>
+                    <%-- <a href="" data-toggle="modal" data-target="#myModal"><img src="${context}/redBlackTheme/images/play-fantasy-league_1.png" class="img-responsive center-block"></a> --%>
+                    <a href="" data-toggle="modal" data-target="#modalMessage"><img src="${context}/redBlackTheme/images/play-fantasy-league_1.png" class="img-responsive center-block"></a>
                    </c:when>
                    <c:otherwise>
-                   <%-- <a href="${context}/mvc/user/UserLanding"><img src="${context}/redBlackTheme/images/play-fantasy-league_1.png" class="img-responsive center-block"></a> --%>
-                   <a href="" data-toggle="modal" data-target="#myModal"><img src="${context}/redBlackTheme/images/play-fantasy-league_1.png" class="img-responsive center-block"></a>
+                    <%-- <a href="${context}/mvc/user/UserLanding"><img src="${context}/redBlackTheme/images/play-fantasy-league_1.png" class="img-responsive center-block"></a> --%>
+                    <a href="" data-toggle="modal" data-target="#modalMessage"><img src="${context}/redBlackTheme/images/play-fantasy-league_1.png" class="img-responsive center-block"></a>
+                    
+                  <%--  <a href="" data-toggle="modal" data-target="#myModal"><img src="${context}/redBlackTheme/images/play-fantasy-league_1.png" class="img-responsive center-block"></a> --%>
                    </c:otherwise>
                 </c:choose>
                    
                  <br>
                   <a href="#"><img src="${context}/redBlackTheme/images/google-adbanner.png" class="img-responsive center-block"></a>
+                  <p class="sponsored_ad">sponsored</p>
                  <br>
                  
                 <c:choose>

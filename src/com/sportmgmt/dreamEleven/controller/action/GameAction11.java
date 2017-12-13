@@ -509,7 +509,7 @@ public class GameAction11 {
 		 }
 		 modeMap.put("totalPlayingJson", totalPlayingJson);
 			
-		 return SportConstrant.MY_TEAM_PAGE;
+		 return SportConstrant.MY_TEAM_PAGE11;
 	}
 	
 	@RequestMapping(value = "MatchView11/{gameId}", method = RequestMethod.GET)

@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+m<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     
 	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -13,13 +13,46 @@
          <!-----------Header---------------->
          <div id="header"></div> 
             <div class="row">
-            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-sx-12 image_ad">
+            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-sx-12  myteam_fantasy_league">
                <img src="images/dream11-img.png" class="img-responsive center-block">
                <div>
-                  <h3>Select playing 11</h3>
-                  <h3>My Team</h3>
+                <div class="row">
+                	<div class="col-lg-8 col-sm-12">
+                		<h3>Select playing 11</h3>
+                 
                   <h3><p>Gameweek ${gameWeekNumber} Deadline : <time datetime="2016-08-27T10:30:00Z" class="league-deadline-bar__deadline">${deadline}</p></h3>
-                  
+                		
+                	</div>
+                	<div class="col-lg-4 col-sm-12 col-xs-12 points_ranking_align_mobile">
+                		<!-- POINTS / RANKINGS -->
+								<div class="ism-panel ism-panel--guttered ism-panel--guttered-mobile">
+									<h3 class="top_main">Points/Rankings</h3>
+									<div class="ism-panel__body">
+
+										<ul class="my_team_points check_points">
+												<li>Overall Points : 
+												<span class="text_right">
+												${sessionScope.user.userGameMap.point}
+												</span>
+												</li>
+												  <li>Overall Rank : 
+												  <span class="text_right">
+												  ${sessionScope.user.userGameMap.rank}
+												  </span>
+												  </li>
+											      <li>Total Players : 
+											      <span class="text_right">
+											      ${fn:length(sessionScope.playerList)}
+											      </span>
+											       </li>
+										</ul>
+									</div>
+									
+								</div>
+                		
+                	</div>
+                </div>
+                                    
                   <div class="row">
                   
 			
@@ -469,7 +502,7 @@
 										<div class="col-lg-12 pull-right claim_your_prize claim_prize_align">
 												<p id="countDown"></p>
                                              <!-- <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#modelPlayOption">Confirm Your Team</button></a> -->
-                                              <a href="#"><button id="confirmTeam" type="button" class="btn claim_btn confirm_team_btn" onclick="checkPlayerCountAndConfirmTeam()">Confirm Your Team</button></a>
+                                              <a href="#"><button id="confirmTeam" type="button" class="btn claim_btn confirm_team_btn" onclick="createHistory11('${sessionScope.gameDetails.gameId}','${gameWeekId}','${sessionScope.userId}')">Confirm Your Team</button></a>
                                           	<!-- <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#paymentModel">Make Payment</button></a> -->
                                  </div> 
 											</div>
@@ -504,52 +537,32 @@
 								</div> --%>
 
 
-								<!-- POINTS / RANKINGS -->
-								<div class="ism-panel ism-panel--guttered ism-panel--guttered-mobile">
-									<h3 class="top_main">Points/Rankings</h3>
-									<div class="ism-panel__body">
-
-										<ul class="my_team_points check_points">
-												<li>Overall Points : 
-												<span class="text_right">
-												${sessionScope.user.userGameMap.point}
-												</span>
-												</li>
-												  <li>Overall Rank : 
-												  <span class="text_right">
-												  ${sessionScope.user.userGameMap.rank}
-												  </span>
-												  </li>
-											      <li>Total Players : 
-											      <span class="text_right">
-											      ${fn:length(sessionScope.playerList)}
-											      </span>
-											       </li>
-										</ul>
-									</div>
-									
-								</div>
-
+								
 								 <!-- LEAGUES -->
-								<div class="ism-panel ism-panel--guttered  ">
+								 <div class="col-lg-4 col-sm-12 choose_captain_mobile_align">
+								<div class="  ">
 								<h3 class="subHeader ism-sub-header">Choose Captain/Vice-Captain</h3>
 									<div class="ism-panel__body">
 										<form action="#">
 											<div class="form_row">
-											     <input list="choose_cap" name="choose_captain" placeholder="Choose Captain" class="inp-control form-control">
+											   <!--   <input list="choose_cap" name="choose_captain" placeholder="Choose Captain" class="inp-control form-control"> -->
 											  
 											    <select id="captain-select">
 											    </select>
 										    </div>
 										    
 										    <div class="form_row">
-											      <input list="choose_wisecap" name="choose_wisecaptain" placeholder="Choose Vice Captain" class="inp-control form-control">
+										<!-- 	      <input list="choose_wisecap" name="choose_wisecaptain" placeholder="Choose Vice Captain" class="inp-control form-control"> -->
 											   
 											    <select id="vice-captain-select"></select>
 										    </div>
-										    <input type="button" class="btn claim_btn" value="Save" onclick="updateCaptain('${sessionScope.user.userId}');">
+										    
+										   <%--  <input type="button" class="btn claim_btn" value="Save" onclick="updateCaptain('${sessionScope.user.userId}');"> --%>
+										 <a href="#"><button id="save" type="button" class="btn claim_btn" onclick="updateCaptain('${sessionScope.user.userId}')">Save</button></a>    
+										    
 										</form>
 									</div>
+								</div>
 								</div>
 							</div> 
 						</div>
@@ -625,7 +638,7 @@
 		});
 	}
 	});
-	var playerLimits =  {"minCheckLegth":7,"min":{'Goalkeeper':1,"Defender":3,"Midfielder":3,"Forward":1},"max":{'Goalkeeper':1,"Defender":5,"Midfielder":5,"Forward":3},"total":11}
+	var playerLimits =  {"minCheckLegth":7,"min":{'Goalkeeper':1,"Defender":3,"Midfielder":3,"Forward":1},"max":{'Goalkeeper':1,"Defender":4,"Midfielder":4,"Forward":2},"total":11}
 	function activatePlayer(userId,gameClubPlayerId,checkBox)
 	
 	{
@@ -648,14 +661,14 @@
 				console.log("total Player: "+totalPlayingJson["player"]+" , player total limit: "+playerLimits["total"]);
 				if(totalPlayingJson["player"] >= playerLimits["total"])
 				{
-					alert("You can't select more than 11 Players");
+					showNotification("You can't select more than 11 Players");
 					checkBox.checked = false;
 					return;
 				}
 				console.log("total Player of your type:  "+totalPlayingJson[playerType]+" , maximum limit of your type: "+playerLimits["max"][playerType]);
 				if(totalPlayingJson[playerType] >= playerLimits["max"][playerType])
 				{
-					alert(playerType+" Maximum limit is " +playerLimits['max'][playerType]);
+					showNotification(playerType+" Maximum limit is " +playerLimits['max'][playerType]);
 					checkBox.checked = false;
 					return;
 				}
@@ -682,7 +695,7 @@
 				{
 					if(totalPlayingJson[playerType] >= playerLimits["min"][playerType])
 					{
-						alert("Select minimum "+playerLimits["min"]["Goalkeeper"]+" Goalkeeper, "+playerLimits["min"]["Midfielder"]+" Midfielder, "+playerLimits["min"]["Defender"]+" Defender, "+playerLimits["min"]["Forward"]+" Forward");
+						showNotification("Select minimum "+playerLimits["min"]["Goalkeeper"]+" Goalkeeper, "+playerLimits["min"]["Midfielder"]+" Midfielder, "+playerLimits["min"]["Defender"]+" Defender, "+playerLimits["min"]["Forward"]+" Forward");
 						checkBox.checked = false;
 						return;
 
@@ -705,7 +718,7 @@
 		     			  }
 		     			  else
 		    			  {
-		    				  	alert(resp.errorMessage);
+		     				 showNotification(resp.errorMessage);
 		    			  }
 		     		  },
 		     		  error: function( req, status, err ) {
@@ -730,7 +743,7 @@
 		     			  }
 		     			  else
 		    			  {
-		    				  	alert(resp.errorMessage);
+		     				 showNotification(resp.errorMessage);
 		    			  }
 		     		  },
 		     		  error: function( req, status, err ) {
@@ -743,7 +756,7 @@
 	}
 	  function checkPlayerCountAndConfirmTeam()
 	 	{ 
-	 		if(typeof userGameJson == 'undefined' || userGameJson.playerList.length < 15)
+	 		if(totalPlayingJson["player"] < playerLimits["total"])
 	 		{
 	 			showNotification('Please select 11 players');			
 	 		}
@@ -755,6 +768,50 @@
 	 			});
 	 		}
 	 	} 
+		 function createHistory11( gameId, gameWeekId, userId)
+		 	{ 
+			 if(totalPlayingJson["player"] >= playerLimits["total"])
+					 {
+			 url ="/SportMgmt/mvc/player/check-player-history/"+gameId+"/"+gameWeekId+"/"+userId+"?gameType=" ;
+					$.ajax({
+		     		  url: url,
+		     		 dataType: 'html',
+		     		  success: function( resp ) {
+		     			 console.log(resp);
+		     			 if(resp=="true")
+		     			 {
+		     				showNotification('your team is already confirmed for current Gameweek');
+		     			}
+		     			 else
+		     				 {
+				
+		     				url ="/SportMgmt/mvc/player/make-player-history-for-user/"+gameId+"/"+gameWeekId+"/"+userId+"?gameType=" ;
+		    	 			$.ajax({
+		    	 	     		  url: url,
+		    	 	     		 dataType: 'html',
+		    	 	     		  success: function( resp ) {
+		    	 	     			console.log("resp"+resp);
+		    	 	     			showNotification('your team has been confirmed');	    	 	     				 
+		    	 	     		},
+		    	 	     		  
+		    	 	     		  error: function( req, status, err ) {
+		    	 	     		    console.log( 'something went wrong', status, err );
+		    	 	     		  }
+		    	 	     		    
+		    	 	     		  });
+		     				 }	     		  
+		     		 },
+		     		 
+		     		   error: function( req, status, err ) {
+		     		    console.log( 'something went wrong', status, err );
+		     		   }
+		     		}); 
+			 }
+			 else
+			 {
+				 showNotification('Please select 11 players');
+			 }		
+		}
 	$(document).ajaxStart(function(){
  		$("#ajaxloader").css("display", "block");
  		$('.mask').show();
@@ -836,7 +893,7 @@
  	     			  }
  	     			  else
  	    			  {
- 	    				  	alert(resp.errorMessage);
+ 	     				showNotification(resp.errorMessage);
  	    			  }
  	     		  },
  	     		  error: function( req, status, err ) {
@@ -862,7 +919,7 @@
  	     			  }
  	     			  else
  	    			  {
- 	    				  	alert(resp.errorMessage);
+ 	     				showNotification(resp.errorMessage);
  	    			  }
  	     		  },
  	     		  error: function( req, status, err ) {

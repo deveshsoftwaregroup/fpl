@@ -225,28 +225,28 @@
         	var regForm = document.forms['RegisterForm'];
         	if(typeof regForm['displayName'] == 'undefined' || regForm['displayName'].value=='')
         	{
-        		alert("Please input your Name");
+        		showNotification("Please input your Name");
         		return false;
         	}
         	if(typeof regForm['emailId'] == 'undefined' || regForm['emailId'].value=='')
         	{
-        		alert("Please input Email ID");
+        		showNotification("Please input Email ID");
         		return false;
         	}
         	var isEmailValid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(regForm['emailId'].value);
         	if(!isEmailValid)
        		{
-        		alert("Email ID is not valid");
+        		showNotification("Email ID is not valid");
         		return false;
        		}
         	if(typeof regForm['logonPassword'] == 'undefined' || regForm['logonPassword'].value =='')
         	{
-        		alert("Please input password");
+        		showNotification("Please input password");
         		return false;
         	}
         	if(typeof regForm['logonPasswordConfirm'] == 'undefined' || regForm['logonPasswordConfirm'].value !=regForm['logonPassword'].value)
         	{
-        		alert("Password and confirm password should match");
+        		showNotification("Password and confirm password should match");
         		return false;
         	}
         	regForm.submit();

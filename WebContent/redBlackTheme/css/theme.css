@@ -19,8 +19,8 @@
   /* General styles for all menus */
   .cbp-spmenu {
     
-      background-color: rgba(211, 70, 76, 1) !important;
-	
+      /*background-color: rgba(211, 70, 76, 1) !important; */
+	background-color: rgba(0, 0, 0, 0.9) !important;
     position: fixed;
     padding:0;
 	color:#fff;
@@ -159,16 +159,16 @@
 		}
 
 	.navbar-nav > li > a {
-	margin-top:15px !important;
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
+	margin-top:15px ;
+    padding-top: 10px ;
+    padding-bottom: 10px ;
 	padding-left: 15px !important;
 	padding-right:0px !important;
 	font-size:19px !important;
 	text-align:center !important;
   }	
    .navbar-nav > li > p { text-align:center !important; font-family:"Times New Roman";  font-size:13px;}
-	.navbar-nav > li { padding-top:25px; padding-bottom:25px; border-bottom:1px solid #fff;}
+	.navbar-nav > li { padding-top:18px; padding-bottom:21px; border-bottom:1px solid #fff;}
 }
 .listing ul {
 	margin-left: -25px;

@@ -22,12 +22,12 @@
 						<c:choose>
 							<c:when test="${sportMgmtRes.result.gameWeek.gameWeekNumber eq '1'}">
 								<a href="javascript:void(0);" title="View previous" class=" btnPrevious">
-									<span>Previous</span>
+									<span>  Previous</span>
 								</a>
 							</c:when>
 							<c:otherwise>
 								<a href="javascript:void(0);" onclick="uploadMyPointView11('${sessionScope.gameDetails.gameId}','${sessionScope.userId}','${sportMgmtRes.result.gameWeek.gameWeekId}','prev');" title="View previous" class=" btnPrevious">
-									<span>Previous</span>
+									<span> < Previous</span>
 								</a>
 							</c:otherwise>
 						</c:choose>
@@ -37,18 +37,18 @@
 						<c:choose>
 							<c:when test="${sportMgmtRes.result.gameWeek.isLatestGameWeek eq 'Y'}">
 								<a href="javascript:void(0);"  title="View next" class="pager-btn btn-next btnNext">
-									<span>Next</span>
+									<span>Next > </span>
 								</a>
 							</c:when>
 							<c:otherwise>
 								<a href="javascript:void(0)" onclick="uploadMyPointView11('${sessionScope.gameDetails.gameId}','${sessionScope.userId}','${sportMgmtRes.result.gameWeek.gameWeekId}','next');" title="View next" class="pager-btn btn-next btnNext">
-									<span>Next</span>
+									<span>Next > </span>
 								</a>
 								</c:otherwise>
 						</c:choose>
 					</div>
 				</div>
-               <h3>My Dream Team</h3>
+               <h3>Team Of The Week</h3>
               	
               	<c:choose>
               		
@@ -192,7 +192,7 @@
 	                        <div class="col-lg-4 pull-right claim_your_prize">
 	                            <h4>Your points : ${sportMgmtRes.result.userPoint}</h4>
 	                          
-	                           <a href="#"><button type="button" class="btn claim_btn" onclick="uploadCouponsView11('${sessionScope.userId}','${sessionScope.gameDetails.gameId}');">Claim Your Prize</button></a>
+	                          <%--  <a href="#"><button type="button" class="btn claim_btn" onclick="uploadCouponsView11('${sessionScope.userId}','${sessionScope.gameDetails.gameId}');">Claim Your Prize</button></a> --%>
 	                          </div>    
 	                      </div>
 	                       <div class="row pddn_both">

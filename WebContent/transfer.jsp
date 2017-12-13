@@ -17,16 +17,26 @@
 	
 <s:sportExt retrieve="priceList" />
 <s:sportExt retrieve="deadLine" />
-
+<!-- code for preloader starts -->
+ <%-- <div id="preloader">
+		<div id="status">&nbsp;</div>
+	</div>
+	<script type="text/javascript">
+		$(window).on("load", function() { // makes sure the whole site is loaded
+			$('#status').fadeOut(1000); // will first fade out the loading animation
+			$('#preloader').delay(500).fadeOut(2000); // will fade out the white DIV that covers the website.
+		})
+	</script> --%>
+	<!-- Code for preloader ends --> 
 <body predict11-bg transfers_predict11 dream_11transfer>
 <div class="container-fluid ">
 	<div class="row">
 		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 transfers_predict11_map">
 			<img src="${context}/redBlackTheme/images/Dream11/dream11_banner.png" class="img-responsive center-block">
 	            <div id="ismr-main" class=" fantasy_transfer_gameweek_align">	
-	                    <div id="ismr-scoreboard">
+	                    <div id="ismr-scoreboard" class="bg_colr">
 	                     <div class="row">
-                                <div class="col-lg-8">
+                                <div class="col-lg-8 bg_colr_pd">
                             <!-- Scoreboard -->
 								<div>
 									<p>Gameweek ${gameWeekNumber} Deadline: <time datetime="2016-08-27T10:30:00Z" class="league-deadline-bar__deadline">${deadline}</time></p>
@@ -34,7 +44,8 @@
 	                        	<div class="flex-buttons">
 	                        			<div class="flex1 unlimited_transfer">
 											Want unlimited free transfer? : 
-											<c:if test="${sessionScope.hasFreeWildCard}">
+											<c:choose>
+											<c:when test="${sessionScope.hasFreeWildCard}">
 			                                  <input type="button" class="btn claim_btn" value="Use Wild Card" data-toggle="modal" data-target="#myModal-1">		                               
 			                                  <div id="myModal-1" class="modal fade" role="dialog">
 											  <div class="modal-dialog">
@@ -50,11 +61,15 @@
 														<a class="button no-btn" data-dismiss="modal">No</a>
 													</p>
 											      </div> 
-											    </div>
+ 											    </div>
 											  </div>
 											</div>	
-											</c:if>
+											</c:when>
+											 <c:otherwise>
+											
 	                                		<input type="button" class="btn claim_btn" value="Buy Wildcard" data-toggle="modal" data-target="#paymentModel" > 
+	                                		</c:otherwise>
+	                                		</c:choose>
 										</div>
 									</div>
 	                        	</div>
@@ -612,7 +627,17 @@
                                     </select>
                                 </div>
                             </div>
-                        </div>                   
+                        </div> 
+                        <div class="ism-search">
+                <label for="ismjs-element-search" class="ism-form__label">Search Player List</label>
+                <div class="searchInputContainer ism-search">
+                    <input id="ismjs-element-search" class="searchInput ism-search__input" type="search" placeholder="Player name">
+                     
+                                        
+                                        
+                    <div class="searchCommit"><div class="icn search-sm"></div></div>
+                </div>
+            </div>                  
                     </form>
 
                     <!-- <div id="ismr-sideboard"></div>
@@ -1217,7 +1242,7 @@
      {
      	<c:choose>
      	<c:when test="${isUnderDeadline}">
-     	alert("Hey buddy ! You are under deadline. Player can be added after deadline");
+     	showNotification("Hey buddy ! You are under deadline. Player can be added after deadline");
      	</c:when>
      	<c:otherwise>
     	 var playerType = '';
@@ -1247,7 +1272,7 @@
 		}
 		 else if(avialBalance < playerPrice)
 		{
-			alert("Bank Account is less than player price");
+			 showNotification("Bank Account is less than player price");
 			ajaxCall = false;
 		} 
 		 else if(!(userJson.hasActivePlan || userJson.totalTransferForGameWeek <=1 || userJson.gameWeekNumberForPlayerTransfer <=1 || userJson.totalPoint < 4))
@@ -1255,7 +1280,7 @@
 			ajaxCall = false;
 			if(userJson.totalPoint < 4)
 			{
-				alert("Please active wild card to add player");
+				showNotification("Please active wild card to add player");
 			}
 		} 
 		else if (playerType == 'Goalkeeper')
@@ -1265,7 +1290,7 @@
 				if(userGameJson['total']['Goalkeeper'] >=2)
 				{
 					ajaxCall = false;
-					alert("You can add maximum 2 Goalkeeper. Please Remove any one first ");
+					showNotification("You can add maximum 2 Goalkeeper. Please Remove any one first ");
 				}
 			}
 		}
@@ -1276,7 +1301,7 @@
 				if(userGameJson['total']['Midfielder'] >=5)
 				{
 					ajaxCall = false;
-					alert("You can add maximum 5 Midfielder. Please Remove any one first ");
+					showNotification("You can add maximum 5 Midfielder. Please Remove any one first ");
 				}
 			}
 		}
@@ -1287,7 +1312,7 @@
 				if(userGameJson['total']['Forward'] >=3)
 				{
 					ajaxCall = false;
-					alert("You can add maximum 3 All Rounders. Please Remove any one first ");
+					showNotification("You can add maximum 3 All Rounders. Please Remove any one first ");
 				}
 			}
 		}
@@ -1298,7 +1323,7 @@
 				if(userGameJson['total']['Defender'] >=5)
 				{
 					ajaxCall = false;
-					alert("You can add maximum 5 Defender. Please Remove any one first ");
+					showNotification("You can add maximum 5 Defender. Please Remove any one first ");
 				}
 			}
 		}
@@ -1396,7 +1421,7 @@
 	     			  }
 	     			  else
 	    			  {
-	    				  	alert(resp.errorMessage);
+	     				 showNotification(resp.errorMessage);
 	    			  }
 	     		  },
 	     		  error: function( req, status, err ) {
@@ -1442,7 +1467,7 @@
 	     			  }
 	     			  else
 	    			  {
-	    				  	alert(resp.errorMessage);
+	     				 showNotification(resp.errorMessage);
 	    			  }
 	     		  },
 	     		  error: function( req, status, err ) {
@@ -1487,50 +1512,7 @@
   	    $("#ajaxloader").css("display", "none");
   	    $('.mask').hide();
   	}); */
-  	 function createHistory11( gameId, gameWeekId, userId)
- 	{ 
-	 if(typeof userGameJson != 'undefined' && userGameJson.playerList.length >= 15)
-			 {
-	 url ="/SportMgmt/mvc/player/check-player-history/"+gameId+"/"+gameWeekId+"/"+userId+"?gameType=" ;
-			$.ajax({
-     		  url: url,
-     		 dataType: 'html',
-     		  success: function( resp ) {
-     			 console.log(resp);
-     			 if(resp=="true")
-     			 {
-     				showNotification('your team is already confirmed for current Gameweek');
-     			}
-     			 else
-     				 {
-		
-     				url ="/SportMgmt/mvc/player/make-player-history-for-user/"+gameId+"/"+gameWeekId+"/"+userId+"?gameType=" ;
-    	 			$.ajax({
-    	 	     		  url: url,
-    	 	     		 dataType: 'html',
-    	 	     		  success: function( resp ) {
-    	 	     			console.log("resp"+resp);
-    	 	     			showNotification('your team has been confirmed');	    	 	     				 
-    	 	     		},
-    	 	     		  
-    	 	     		  error: function( req, status, err ) {
-    	 	     		    console.log( 'something went wrong', status, err );
-    	 	     		  }
-    	 	     		    
-    	 	     		  });
-     				 }	     		  
-     		 },
-     		 
-     		   error: function( req, status, err ) {
-     		    console.log( 'something went wrong', status, err );
-     		   }
-     		}); 
-	 }
-	 else
-	 {
-		 showNotification('Please select 11 players');
-	 }		
-}
+  
  
   	function share()
 	{			
@@ -1585,6 +1567,10 @@ var x = setInterval(function() {
         document.getElementById("countDown").innerHTML = "Team Confirmation is closed for current Gameweek";
         //document.getElementById("confirmTeam").className += " disabled";
         document.getElementById("confirmTeam").setAttribute('disabled','disabled');
+        document.getElementById("captain-select").setAttribute('disabled','disabled');
+        document.getElementById("vice-captain-select").setAttribute('disabled','disabled');
+        document.getElementById("save").setAttribute('disabled','disabled');
+        
     }
 }, 1000);
 </script>

@@ -52,6 +52,7 @@ public class HomeAction {
 		return SportConstrant.LEAGUE_LANDING_HOME_PAGE;
 
 	}
+	
 	@RequestMapping(value = "HomeGameGuide", method = RequestMethod.GET)
 	public  String homeGameGuide(ModelMap modeMap,HttpServletRequest request)
 	{
