@@ -1,0 +1,156 @@
+#modelPromotion .modal-body{
+     background: url(../images/background.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color:#fff;
+  padding-top:10px;
+  }
+
+ 
+
+
+    .countdownHolder{    width: auto !important;    font: 16px/1.5 'Open Sans Condensed',sans-serif !important;}
+  
+  	
+    .ds-white .ds-element-value{font-size: 1.5em  !important;}
+
+
+.right_text {text-transform: capitalize; padding-top: 1em;}
+#sale {text-align: right;font-size: 3rem;  font-family: 'Capture it'; padding-left: 20%;-webkit-transform: rotate(-90deg) !important;}
+.right_text h2{ font-family: 'Capture it';font-size: 4rem;}
+.right_text h1 {font-family: 'Capture it';color:#8aff3c; font-size: 4rem;    margin-bottom: -20px !important;}
+.right_text h3 {font-family: 'Open Sans', sans-serif;font-size: 3rem;    font-weight: 700; text-transform: capitalize;}
+.right_text .below_date h3{font-family: 'Open Sans', sans-serif;font-size: 2rem;    font-weight: 700; text-transform: capitalize;}
+.right_text h4{font-family: 'Open Sans', sans-serif;font-size: 2rem;  }
+.right_text h4 span{font-size: 3.5rem; color:#8aff3c;}
+
+.register_now { background-color: #ff0000; padding: 10px 20px;font-family: 'Open Sans', sans-serif;font-size: 2rem;  border-radius:0px;}
+.btn_counter {padding-top: 1em;}
+#time_left {padding-top: 5%; padding-right: 2%;font-family: 'Open Sans', sans-serif;font-size: 2rem; color:red}
+
+#modelPromotion .modal-body h4{    padding-top: 0px;
+    padding-bottom: 0px; text-align:left;}
+ 
+
+    
+@font-face {
+    font-family: 'Capture it';
+    src: url('../fonts/Capture it.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Capture it.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/Capture it.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/Capture it.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/Capture it.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/Capture it.svg#svgFontName') format('svg'); /* Legacy iOS */
+  }
+
+
+@font-face {
+    font-family: 'LeagueSpartan-Bold';
+    src: url('../fonts/LeagueSpartan-Bold.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/LeagueSpartan-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/LeagueSpartan-Bold.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/LeagueSpartan-Bold.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/LeagueSpartan-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/LeagueSpartan-Bold.svg#svgFontName') format('svg'); /* Legacy iOS */
+  }
+
+
+
+
+
+
+@media screen and (min-width: 769px) and ( max-width: 1024px) {
+    .right_text{    padding-top: 1em;}
+    .right_text h2{font-size: 5rem;}
+    .right_text h1{font-size: 6rem;}
+    .right_text h3{font-size: 4rem;}
+    #sale{font-size: 5rem;    padding-left: 17%;}
+    .right_text .below_date h3{font-size: 3rem;}
+    .right_text h4{    font-size: 3rem;}
+    .register_now{    padding: 15px 20px;    font-size: 2rem;}
+    .countdownHolder{    width: auto !important;    font: 20px/1.5 'Open Sans Condensed',sans-serif !important;}
+    .right_text h4 span{ font-size: 6rem;}
+    .btn_counter{    padding-top: 2em;}
+    .register{padding-top: 1em;}
+    .ds-white .ds-element-value{font-size: 1.3em  !important;}
+}
+
+@media screen and (min-width: 733px) and ( max-width: 768px) {
+    #modelPromotion .modal-body{padding-top: 60%; top: 0;
+        background: url(../images/background_tab.png) no-repeat center center fixed; text-align: center; padding-bottom: 10px;}
+        .right_text{    padding-top: 1em;}
+        .right_text h2{font-size: 4.5rem; margin-bottom: -15px;}
+        .right_text h1{font-size: 5rem;}
+        .right_text h3{font-size: 3rem;}
+        #sale{font-size: 4rem;    padding-left: 17%;}
+        .right_text .below_date h3{font-size: 3rem;}
+        .right_text h4{    font-size: 3rem;}
+        .register_now{    padding: 15px 20px;    font-size: 2rem;}
+        .countdownHolder{    width: auto !important;    font: 20px/1.5 'Open Sans Condensed',sans-serif !important;}
+        .right_text h4 span{ font-size: 4.5rem;}
+        .btn_counter{    padding-top: 1em;}
+        .register{padding-top: 1em;}
+        #countdown {padding-top: 20px;}
+        .below_date{    padding-top: 0px;}
+        .ds-white .ds-element-value{font-size: 1.3em  !important;}
+        #time_left{padding-top: 3%; padding-left: 25%;}
+}
+
+@media screen and (min-width: 640px) and ( max-width: 732px) {
+    .right_text{    padding-top: 1em;}
+    .right_text h2{font-size: 3rem; margin-top: 15px; margin-bottom: 0px;}
+    .right_text h1{font-size: 3rem;margin-top: 5px;}
+    .right_text h3{font-size: 2rem;}
+    #sale{font-size: 3rem;    padding-left: 17%;}
+    .right_text .below_date h3{font-size: 1.5rem;}
+    .right_text h4{    font-size: 1.5rem;}
+    .register_now{    padding: 5px 20px;    font-size: 1.5rem;}
+    .countdownHolder{    width: auto !important;    font: 15px/1.5 'Open Sans Condensed',sans-serif !important;}
+    .right_text h4 span{ font-size: 2.5rem;}
+    .btn_counter{    padding-top: 0em;}
+    .below_date{padding-top: 0px;}
+    .register{padding-top: 0.2em;}
+    #countdown {padding-top: 10px;}
+    .ds-white .ds-element-value{font-size: 1.2em  !important;}
+    .dsCountDown.ds-white{ padding: 5px !important;font-size: .8em; margin-top: 10px;}
+  
+}
+
+@media screen and (min-width: 320px) and ( max-width: 420px) {
+    #modelPromotion .modal-body{padding-top: 60% !important;
+        background: url(../images/background_mb1.png) no-repeat center center fixed; -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover; text-align: center; }
+        .right_text{    padding-top: 1em;}
+        .right_text h2{font-size: 3rem; margin-top: 15px; margin-bottom: 0px;}
+        .right_text h1{font-size: 3rem;margin-top: 5px;}
+        .right_text h3{font-size: 2rem;}
+        #sale{font-size: 3rem;    padding-left: 17%;}
+        .right_text .below_date h3{font-size: 1.5rem;}
+        .right_text h4{    font-size: 1.2rem;}
+        .register_now{    padding: 5px 20px;    font-size: 1.5rem;}
+        .countdownHolder{    width: auto !important;    font: 20px/1.5 'Open Sans Condensed',sans-serif !important;}
+        .right_text h4 span{ font-size: 2.5rem;}
+        .btn_counter{    padding-top: 1em;}
+        .below_date{padding-top: 0px;}
+        .register{padding-top: 0.2em;}
+        #countdown {padding-top: 10px;}
+        .ds-white .ds-element-value{font-size: 1.3em  !important;}
+        #time_left{font-size: 1.8rem; padding-left: 15px;}
+        .dsCountDown.ds-white {    padding: 10px !important;}
+        .ds-white .ds-element{    padding-right: 5px !important; }
+        .timer{text-align: center;}
+        #modelPromotion .modal-body{padding:0px ;}
+        #modelPromotion .modal-body h4{text-align:center;}
+       
+}
+
+@media screen and (min-width: 320px) and ( max-width: 350px) {
+    #modelPromotion .modal-body{padding-top: 60%;}
+    .ds-white .ds-element-value{font-size: 1.2em  !important;}
+    .dsCountDown.ds-white {    padding: 5px !important;}
+    #modelPromotion .modal-body{padding:0px ;}
+}
