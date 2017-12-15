@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.sportmgmt.model.manager.GameWeeKManager;
 import com.sportmgmt.model.manager.UserManager;
 import com.sportmgmt.utility.constrant.SportConstrant;
 
@@ -28,6 +29,15 @@ public class HomeAction {
 		return new ModelAndView("redirect:/mvc/LeagueHome");
 
 	}
+	@RequestMapping("/Welcome1")
+	public ModelAndView welcome1(ModelMap map)
+	{
+		//UserManager.getCountryStateCityMap();
+		//return SportConstrant.LEAGE_HOME_PAGE;
+		GameWeeKManager.updateGameWeekReport(2, 1, 1, 2, 2, 3);
+		return new ModelAndView("redirect:/mvc/LeagueHome");
+
+	}
 	
 	@RequestMapping("/LeagueHome")
 	public String leagueHome(ModelMap map)
@@ -37,6 +47,22 @@ public class HomeAction {
 		map.put("countryMap", countryMap);
 		TreeMap<String,HashMap<String,ArrayList<String>>> clubMap = UserManager.getClubMap();
 		map.put("clubMap", clubMap);
+		String planId = GameWeeKManager.fetchPlanIdFromDeGameWeekReport(2, 1);
+		System.out.println(planId);
+		return SportConstrant.LEAGE_HOME_PAGE;
+
+	}
+	@RequestMapping("/LeagueHomeWithPromotion")
+	public String leagueHomeWithPromotion(ModelMap map,HttpServletRequest request)
+	{
+		TreeMap<String,HashMap<String,ArrayList<String>>> countryMap = UserManager.getCountryStateCityMap();
+		logger.info("--------- League Home , countryMap: "+countryMap);
+		map.put("countryMap", countryMap);
+		TreeMap<String,HashMap<String,ArrayList<String>>> clubMap = UserManager.getClubMap();
+		map.put("clubMap", clubMap);
+		map.put("displayPromotionPopup", "true");
+		String promotion = "true";
+		request.setAttribute("promotion", promotion);
 		return SportConstrant.LEAGE_HOME_PAGE;
 
 	}
