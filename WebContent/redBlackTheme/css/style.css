@@ -1299,3 +1299,7 @@ a:hover, a:active, a:focus{color:#fff;}
 		@media screen and (min-width : 360px) and (max-width : 479px) {
 		  #status1 { left:65%;}
 		 }
+		 
+#modelPromotion{z-index:99999 !important;}
+#myModal1 {z-index:999999 !important;}
+#thankyou_Modal{z-index:9999999 !important;}

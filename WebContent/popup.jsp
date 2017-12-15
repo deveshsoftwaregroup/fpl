@@ -58,6 +58,244 @@
 			</div> 
         <!--Notification ends--> 
          
+         <!-- 	Registration popup starts -->
+         	<div id="myModal1" class="modal fade" role="dialog">
+
+		<div id="login-overlay" class="modal-dialog loginForm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">×</span><span class="sr-only">Close</span>
+						
+					</button>
+					<h4 class="modal-title" id="myModalLabel">Register Now</h4>
+				</div>
+				<div class="modal-body">
+					<form name="RegisterForm" action="user/register" method="post">
+						<div class="form-group">
+							<input type="text" name="displayName" placeholder="Name" required
+								id="name" class="form-control" />
+						</div>
+						<div class="form-group">
+							<input type="email" name="emailId" placeholder="Email ID"
+								required id="email" class="form-control" />
+						</div>
+						<div class="form-group">
+							<input type="password" name="logonPassword"
+								placeholder="Password" required id="password"
+								class="form-control" />
+						</div>
+						<div class="form-group">
+							<input type="password" name="logonPasswordConfirm"
+								placeholder="Confirm Password" required id="password2"
+								class="form-control" />
+						</div>
+						<div class="form-group">
+							<input type="date" class="form-control" id="dob" name="dob"
+								data-placeholder="Date of Birth"  required id="dob">
+						</div>
+						<div class="form-group">
+							<select name="country" placeholder="Mobile Number" required
+								id="country" class="form-control">
+								<option value="">Select Country</option>
+								<c:forEach var="countryObj" items="${countryMap}">
+									<option value="${countryObj.key}">${countryObj.key}</option>
+								</c:forEach>
+							</select>
+						</div>
+						<div class="form-group">
+							<select name="club" placeholder="Favourite Club" required
+								id="club" class="form-control">
+								<option value="">Select Favourite Club</option>
+								<c:forEach var="clubObj" items="${clubMap}">
+									<option value="${clubObj.key}">${clubObj.key}</option>
+								</c:forEach>
+							</select>
+						</div>
+						<div class="form-group">
+							<input type="input" name="contactNumber"
+								placeholder="Mobile Number" required id="contactNumber"
+								class="form-control" />
+						</div>
+						<div class="form-group">
+							<div class="register-switch">
+							<input type="radio" name="gender" value="M" id="sex_m"
+									class="register-switch-input" checked=""> <label for="sex_m"
+									class="register-switch-label"> Male</label> &emsp;
+								<input type="radio" name="gender" value="F" id="sex_f"
+									class="register-switch-input" > <label
+									for="sex_f" class="register-switch-label"> Female</label> 
+									
+							</div>
+						</div>
+						<div class="form-group">
+							<div align="center">
+								<a href="javascript:void(0);" class="button-lrg"
+									onclick="submitForm();" style="display: block;"><input
+									type="button"
+									class="btn btn-danger btn-block btn-social btn-facebook"
+									value="REGISTER"></a>
+							</div>
+
+							<!-- <div align="center">
+								<br>
+								<button class="loginBtn center-block loginBtn--facebook"
+									onclick="loginWithFB()";>Register with Facebook</button>
+							</div> -->
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- 	Registration popup ends -->
+
+<!-- 	Login popup starts -->
+<div id="myModal11" class="modal fade" role="dialog">
+
+		<div id="login-overlay" class="modal-dialog loginForm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">×</span><span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">Login</h4>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="col-xs-12">
+								<div class="row">
+									<form id="loginForm" name="LoginForme" action="" method="get"
+										onsubmit="event.preventDefault();" autocomplete="off">
+
+										<div class="col-xs-12">
+											<div class="row">
+												<div class="form-group">
+
+													<span class="input input--hoshi">
+													<div class="col-lg-2"> 
+													<span
+															class="input__label-content input__label-content--hoshi">Email
+																ID</span>
+																</div>
+																<div class="col-lg-10"> 
+													<input
+														class="input__field input__field--hoshi" type="email"
+														name="emailId" autocomplete="off" /> <label
+														class="input__label input__label--hoshi input__label--hoshi-color-1"
+														for="email"> 
+														
+													</label>
+													</div>
+													</span>
+												</div>
+											</div>
+										</div>
+
+										<div class="col-xs-12">
+											<div class="row">
+												<div class="form-group">
+
+													<span class="input input--hoshi">
+													<div class="col-lg-2"> 
+													<span
+															class="input__label-content input__label-content--hoshi">Password</span>
+															</div>
+															<div class="col-lg-10">
+													<input
+														class="input__field input__field--hoshi" type="password"
+														name="logonPassword" autocomplete="off" /> <label
+														class="input__label input__label--hoshi input__label--hoshi-color-1"
+														for="logonPassword">
+														 
+													</label>
+													</div>
+													</span>
+
+												</div>
+											</div>
+										</div>
+										<div class="col-xs-12">
+											<div class="row">
+												<div class="col-sm-12">
+													<div class="row">
+														<div class="form-group">
+															<span class="input input--hoshi"> <label
+																class="input__label input__label--hoshi input__label--hoshi-color-1"
+																for="logonPassword"> <a
+																	href="javascript:void(0);" data-toggle="modal"
+																	data-target="#myModal3"><span
+																		class="btn-block forgot_psw">Forgot
+																			Password?</span></a>
+
+															</label>
+															</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+										<div class="col-lg-6 col-lg-offset-3 col-xs-12">
+											
+												<div id="loginErrorMsg" class="alert alert-error hide">Wrong
+													username or password</div>
+												<a href="javascript:void(0);" class=""
+													style="position: relative;">
+													<button type="submit"
+														class="btn btn-block login_btn1"
+														onclick="doLogin11();">Login</button>
+												</a>
+											</div>
+											 <div class="col-lg-6 col-lg-offset-3 col-xs-12 new_user_register">
+											 	<a data-toggle="modal" href="#myModal1"><p>New User?<span> Register Now </span></p></a>
+											 </div>
+										</div>
+									</form>
+								</div>
+							</div>
+
+							<div class="row">
+
+								<div class="col-xs-12">
+									<%-- <div class="row">
+										<div class="col-sm-6">
+											<br>
+											<div class="form-group">
+
+												<a href="javascript:void(0);" data-toggle="modal"
+													data-target="#myModal1"
+													class="loginBtn center-block loginBtn--google"> <span
+													class="fa fa-envelope-o"></span>Sign Up with Email ID
+												</a>
+
+											</div>
+
+										</div> --%>
+										<%-- <div class="col-sm-6">
+											<br>
+											<div class="form-group">
+												<a class="loginBtn center-block loginBtn--facebook"
+													href="javascript:void(0);" onclick="loginWithFB11()"> <span
+													class="fa fa-facebook"></span> Sign Up with Facebook
+												</a>
+
+											</div>
+										</div> --%>
+
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- 	Login popup ends -->
+         
 	<!-- Play Option payment model starts -->
 		 <div id="modelPlayOption" style="display: none;  role="dialog">
 		  <div class="modal-dialog modal-lg">		
@@ -86,7 +324,7 @@
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 
-                <h4 class="modal-title">Make payment1</h4>
+                <h4 class="modal-title">Make payment</h4>
               </div>
               <div class="modal-body">
                 <div class="table-responsive prod-tbl">
@@ -143,16 +381,19 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">
-						<span aria-hidden="true">Ã—</span><span class="sr-only">Close</span>
+						<span >—</span>
 					</button>
 					<h4 class="modal-title" id="myModalLabel">COMING SOON..</h4>
 				</div>
 				<div class="modal-body">
 					<div class="row">
-						<div class="col-xs-12">
+						<div class="col-xs-12" align="center">
 							
-							FANTASY LEAGUE IS COMING SOON TILL THEN PLAY DREAM ELEVEN AND WIN GIFTS.	
-								
+							Fantasy League is coming soon.
+							<br>
+							Till then
+							<br>
+							Play Dream 11 and win cash and gifts.								
 							</div>
 
 						</div>
@@ -180,7 +421,7 @@
         			<div class="col-lg-6 col-lg-offset-6 col-md-7 col-md-offset-5 col-tn-7 col-tn-offset-5 col-sm-12 col-sm-offset-0  right_text">
             			<h2>THE GREAT</h2>
             <h1>FOOTBALL MANIAC</h1>
-            <h3>16-17-18 DEC'17 <span id="sale">SALE</span></h3>
+            <h3>18-19-20 DEC'17 <span id="sale">SALE</span></h3>
             <div class="below_date">
                 <h3>INDIA'S BIGGEST COLLECTION OF <br>
                     <span id="football_merchn">FOOTBALL MERCHANDISE!</span></h3>
@@ -194,7 +435,7 @@
 
             <div class="row btn_counter ">
                 <div class="col-lg-12 ">
-                    <a href="#"><button type="button" class="btn register_now">REGISTER NOW</button></a>
+                    <a href="" data-toggle="modal" data-target="#myModal1"><button type="button" class="btn register_now">REGISTER NOW</button></a>
                 </div>
                 <div class="col-lg-12 timer">
                         <p id="time_left" style="float:left;">Time Left : </p> <div class="demo1" style="float:left;"> </div> 
@@ -207,7 +448,45 @@
 				</div>
 		      </div>
 		    </div>		
-		  </div>
+	</div>
+		  
+	<div class="modal fade" id="thankyou_Modal" role="dialog">
+        <div class="modal-dialog">
+        
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">THANK YOU!</h4>
+            </div>
+            <div class="modal-body">
+              <p><span>${param.message}</span> <br>for<br><b>'The Great Football Maniac Sale'</b><br> Do shopping and avail discount promo code. 
+                Don't forget to play Predict Eleven. It's Fun as well as Rewarding.</p>
+            </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="modal fade" id="NonSuccessRegistrationPopup_Modal" role="dialog">
+        <div class="modal-dialog">
+        
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Sorry!</h4>
+            </div>
+            <div class="modal-body">
+              <p><span>${param.message}</span><br> 
+                </p>
+            </div>
+           
+          </div>
+          
+        </div>
+      </div>
 	
 		
 <%-- <script type="text/javascript">

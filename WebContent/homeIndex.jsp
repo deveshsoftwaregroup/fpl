@@ -10,12 +10,12 @@
   		  
   
           <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 top_banner">
-           <h4 style="color:#4dff4d;">${param.message}</h4>
+           <%-- <h4 style="color:#4dff4d;">${param.message}</h4> --%>
            
             <ul class="bxslider">
-            	<li><a target="_blank" href="http://the12thman.in/"><img src="${context}/redBlackTheme/images/banner1.png" /></a></li>
-                <!-- <li><a target="_blank" href="http://the12thman.in/"><img src="${context}/redBlackTheme/images/banner1.png" /></a></li>
-                <li><a target="_blank" href="http://the12thman.in/"><img src="${context}/redBlackTheme/images/banner1.png" /></a></li> -->
+            	<li><a target="_blank" href="#"><img src="${context}/redBlackTheme/images/banner1.png" /></a></li>
+                <li><a target="_blank" href="#"><img src="${context}/redBlackTheme/images/banner1.png" /></a></li>
+                <li><a target="_blank" href="#"><img src="${context}/redBlackTheme/images/banner1.png" /></a></li>
                   
                 </ul>
             </div>
@@ -186,6 +186,20 @@ function showMyPopup()
 		$("#modelPromotion").fadeOut("slow");
 	});
 }
+function showSuccessRegistrationPopup()
+{
+	$("#thankyou_Modal").modal('show');
+	$(".close").click(function(){			              
+		$("#thankyou_Modal").fadeOut("slow");
+	});
+}
+function showNonSuccessRegistrationPopup()
+{
+	$("#NonSuccessRegistrationPopup_Modal").modal('show');
+	$(".close").click(function(){			              
+		$("#NonSuccessRegistrationPopup_Modal").fadeOut("slow");
+	});
+}
 </script>
 <script>
         jQuery(document).ready(function($){
@@ -196,8 +210,19 @@ function showMyPopup()
         		{
 	        		showMyPopup();
 	                $('.demo1').dsCountDown({
-	                   endDate: new Date("December 16, 2017 23:59:00")
+	                   endDate: new Date("December 17, 2017 23:59:00")
 	                });  
+        		}
+        	//string. !== -1;
+        	if('${param.message}'.indexOf("Congrats")!=-1)
+    			{
+        		//alert("some");
+        		//alert('${param.message}');
+        		showSuccessRegistrationPopup();                
+    			}
+        	if('${param.message}'.indexOf("failed")!=-1)
+        		{
+        		showNonSuccessRegistrationPopup();
         		}
             
         });
@@ -211,7 +236,7 @@ function showMyPopup()
          
                  
       </script> -->
-<script>
+<!-- <script>
 	$(document).on('shown.bs.tab', 'a[data-toggle="tab"]', function (e) 
 	{
 	    var tab = $(e.target);
@@ -227,7 +252,7 @@ function showMyPopup()
 	         console.log('the tab with the content id ' + contentId + ' is NOT visible');
 	    }
 	});
-</script>
+</script> -->
  
 </body>
 </html>

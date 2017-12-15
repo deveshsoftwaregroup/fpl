@@ -44,6 +44,8 @@
 			</div> 
         <!--Notification ends--> 
          
+      
+	    
 	 <!-- Play Option payment model starts -->
 		 <div id="modelPlayOption" class="modal fade"   role="dialog">
 		  <div class="modal-dialog modal-md">		
