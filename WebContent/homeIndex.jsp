@@ -175,7 +175,33 @@
  <jsp:include page="footer.jsp" /> 
 </div>
 
+<script language='javascript' type='text/javascript'>
 
+
+
+function showMyPopup()
+{
+	$("#modelPromotion").modal('show');
+	$(".close").click(function(){			              
+		$("#modelPromotion").fadeOut("slow");
+	});
+}
+</script>
+<script>
+        jQuery(document).ready(function($){
+        	/* alert("tt");
+        	alert('${displayPromotionPopup}'); */
+        	
+        	if('${displayPromotionPopup}'=="true")
+        		{
+	        		showMyPopup();
+	                $('.demo1').dsCountDown({
+	                   endDate: new Date("December 16, 2017 23:59:00")
+	                });  
+        		}
+            
+        });
+    </script>
  
 <!--  <script>
          $("#notification").fadeIn("slow").append('your Notification');
