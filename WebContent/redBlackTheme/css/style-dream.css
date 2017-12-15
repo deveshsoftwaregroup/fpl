@@ -1572,10 +1572,16 @@ tbody tr {
 .ism .ism-pitch__unit--5{margin-left:12px;  width: 16%;
     left: 5%;
     position: relative;}
-@media screen and (min-width: 300px) and (max-height: 320px) {
+@media screen and (min-width: 300px) and (max-width: 320px) {
 	.ism .ism-pitch__unit--5{    width: 24% !important;
     left: 0% !important;    margin-left: 1px;}
+    .fixture_bar_ongoing{    height: 35px !important;    padding-top: 8px !important;}
+    .date_time{ font-size: 12px !important;}
+    .ongoing_flex1{    width: 74px !important;}
+    .ongoing_mid_flex1{    width: 64px !important;}
+    .ongoing_flex2{    width: 90px !important;}
 	}
 /*# sourceMappingURL=style-dream.css.map */
 
 /*# sourceMappingURL=style-dream.css.map */
+

@@ -13,7 +13,12 @@
 		<%@ taglib uri="WEB-INF/sportmgmt.tld" prefix="s" %> 
 		<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>	
         <s:sportExt retrieve="deadLine" />	
-	</head>
+        <%-- <link rel="stylesheet" href="${context}/redBlackTheme/css/bootstrap.css" type="text/css"> --%>
+          <link rel="stylesheet" href="${context}/redBlackTheme/css/style-promotion.css" type="text/css"> 
+         <link rel="stylesheet" href="${context}/redBlackTheme/css/jquery.countdown.css" type="text/css"> 
+			<link href="https://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet">
+			 <link rel='stylesheet' href='${context}/redBlackTheme/css/dscountdown.css' type='text/css' media='all' />
+ 	</head>
 	
 	
 	<body>
@@ -138,7 +143,7 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">
-						<span aria-hidden="true">×</span><span class="sr-only">Close</span>
+						<span aria-hidden="true">Ã—</span><span class="sr-only">Close</span>
 					</button>
 					<h4 class="modal-title" id="myModalLabel">COMING SOON..</h4>
 				</div>
@@ -156,6 +161,53 @@
 				</div>
 			</div>
 		</div>
+		
+	<div id="modelPromotion" class="modal fade"  role="dialog">
+		  <div class="modal-dialog modal-lg">		
+		    
+		    <div class="modal-content">
+		     <!--  <div class="modal-header">
+		     
+		      <button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">x</span><span class="sr-only">Close</span>
+					</button>
+					 <h4 class="modal-title" >Play Option</h4>	       
+		        
+		      </div>-->
+		      <div class="modal-body">
+		      <div class="container-fluid">
+    			<div class="row">
+        			<div class="col-lg-6 col-lg-offset-6 col-md-7 col-md-offset-5 col-tn-7 col-tn-offset-5 col-sm-12 col-sm-offset-0  right_text">
+            			<h2>THE GREAT</h2>
+            <h1>FOOTBALL MANIAC</h1>
+            <h3>16-17-18 DEC'17 <span id="sale">SALE</span></h3>
+            <div class="below_date">
+                <h3>INDIA'S BIGGEST COLLECTION OF <br>
+                    <span id="football_merchn">FOOTBALL MERCHANDISE!</span></h3>
+            </div>
+           
+
+            <div class="register">
+                <h4>Register today to score a discount of </h4>
+                <h4><span>Rs 100</span> on your purchase</h4>
+            </div>
+
+            <div class="row btn_counter ">
+                <div class="col-lg-12 ">
+                    <a href="#"><button type="button" class="btn register_now">REGISTER NOW</button></a>
+                </div>
+                <div class="col-lg-12 timer">
+                        <p id="time_left" style="float:left;">Time Left : </p> <div class="demo1" style="float:left;"> </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+				</div>
+		      </div>
+		    </div>		
+		  </div>
 	
 		
 <%-- <script type="text/javascript">
@@ -180,4 +232,8 @@
 	       	});
 	     } 
 	</script>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  -->   
+<!--<script src="${context}/redBlackTheme/js/bootstrap.js"></script>-->
+<script type="text/javascript" src="${context}/redBlackTheme/js/dscountdown.min.js"></script>
+
 </html>
