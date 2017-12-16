@@ -84,26 +84,6 @@
 
 <body class="full-bg">
 	
-	<!-- Registration success model starts -->
-		 <%-- <div class="modal fade" id="thankyouModal" role="dialog">
-        <div class="modal-dialog">
-        
-          <!-- Modal content-->
-          <div class="modal-content">
-            <div class="modal-header">		        
-		        <h4 class="modal-title">Thank You!<span class="close" data-dismiss="modal"><a title="dismiss this notification">X</a></span></h4>
-		      </div>
-            <div class="modal-body">
-              <p><span>Congratulations!</span> <br>You've successfully registered for the <br><b>'The Great Football Maniac Sale'</b><br> Please check your E-mail for the discount promo code. 
-                Don't forget to play Predict Eleven. It's Fun as well as Rewarding.</p>
-            </div>
-           
-          </div>
-          
-        </div>
-      </div> --%>
-	<!-- Registration success model ends -->	
-	
 	<div id="myModal" class="modal fade" role="dialog">
 
 		<div id="login-overlay" class="modal-dialog loginForm">
@@ -117,94 +97,8 @@
 				<div class="modal-body">
 					<div class="row">
 						<div class="col-xs-12">
-							<!-- <ul class="nav nav-tabs">
-								<li class="active"><a data-toggle="tab" href="#home">Login</a></li>
-								 <li><a data-toggle="modal" href="#myModal1">Register</a></li>
-							</ul> -->
-							<!-- <div class="tab-content">
-								<div id="home" class="tab-pane fade in active"> 
-									<div class="col-xs-12">
-										<form id="loginForm" name="LoginForm" action="" method="get"
-											onsubmit="event.preventDefault();" autocomplete="off">
-											<div class="form-group">
-												<div class="col-sm-3">
-													<label
-														class="input__label input__label--hoshi input__label--hoshi-color-1"
-														for="email"> <span
-														class="input__label-content input__label-content--hoshi">Email
-															ID :</span>
-													</label> 
-													</div>
-													<div class="col-sm-9">
-													<input class="input__field input__field--hoshi"
-														type="email" name="emailId" autocomplete="off" />
-
-												</div>
-											</div>
-											<div class="form-group">
-												<div class="col-sm-3">
-													<span class="input input--hoshi"> <label
-														class="input__label input__label--hoshi input__label--hoshi-color-1"
-														for="logonPassword"> <span
-															class="input__label-content input__label-content--hoshi">Password :</span>
-													</label>
-													</div>
-													<div class="col-sm-9"> 
-													<input class="input__field input__field--hoshi"
-														type="password" name="logonPassword" autocomplete="off" />
-
-													</span>
-												</div>
-											</div>
-											<div class="form-group">
-												<div class="col-sm-12">
-													<a href="javascript:void(0);"
-														class="btn-block forgot_psw1" data-toggle="modal"
-														data-target="#myModal3">Forgot Password?</a>
-												</div>
-											</div>
-											<div class="col-lg-6 col-lg-offset-3 col-xs-12">
-											<div  id="loginErrorMsg" class="alert alert-error hide">Wrong
-												username or password</div>
-											<a href="javascript:void(0);" class=""
-												style="position: relative;">
-												<button type="submit"
-													class="btn btn-block login_btn1"
-													onclick="doLogin();">Login</button>
-											</a>
-											 </div>
-											 <div class="col-lg-6 col-lg-offset-3 col-xs-12 new_user_register">
-											 	<a data-toggle="modal" href="#myModal1"><p>New User? Register Now</p></a>
-											 </div>
-										</form>
-										<div class="row">
-											<div class="col-xs-12">
-												<div class="row align_pd_top">
-													<div class="col-sm-6">
-														<div class="form-group">
-															<a href="javascript:void(0);" data-toggle="modal"
-																data-target="#myModal1"
-																class=" loginBtn loginBtn--google center-block"> <span
-																class="fa fa-envelope-o "></span>Sign Up with Email ID!
-															</a>
-														</div>
-													</div>
-													<div class="col-sm-6">
-														<div class="form-group">
-															<a class="loginBtn center-block loginBtn--facebook"
-																href="javascript:void(0);" onclick="loginWithFB()">
-																<span class="fa fa-facebook"></span> Sign Up with
-																Facebook
-															</a>
-														</div>
-													</div>
-
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								-->
+							
+							
 								<div class="col-xs-12">
 										<form id="loginForm" name="LoginForm" action="" method="get"
 											onsubmit="event.preventDefault();" autocomplete="off">

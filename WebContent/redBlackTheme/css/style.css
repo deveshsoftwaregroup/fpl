@@ -1300,6 +1300,9 @@ a:hover, a:active, a:focus{color:#fff;}
 		  #status1 { left:65%;}
 		 }
 		 
-#modelPromotion{z-index:99999 !important;}
-#myModal1 {z-index:999999 !important;}
-#thankyou_Modal{z-index:9999999 !important;}
+.modelPromotion{z-index:99999 !important;}
+.registration {z-index:999999 !important;}
+.thankyou_Modal{z-index:9999999 !important;}
+.modelPromotion .modal-dialog{margin-top:10px;}
+
+.nonSuccessBackdrop .modal-backdrop.in{opacity:0 !important;}

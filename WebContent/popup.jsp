@@ -59,7 +59,7 @@
         <!--Notification ends--> 
          
          <!-- 	Registration popup starts -->
-         	<div id="myModal1" class="modal fade" role="dialog">
+         	<div id="myModal1" class="modal fade registration" role="dialog">
 
 		<div id="login-overlay" class="modal-dialog loginForm">
 			<div class="modal-content">
@@ -403,7 +403,7 @@
 			</div>
 		</div>
 		
-	<div id="modelPromotion" class="modal fade"  role="dialog">
+	<div id="modelPromotion" class="modal fade modelPromotion"  role="dialog">
 		  <div class="modal-dialog modal-lg">		
 		    
 		    <div class="modal-content">
@@ -416,7 +416,7 @@
 		        
 		      </div>-->
 		      <div class="modal-body">
-		      <div class="container-fluid">
+		      
     			<div class="row">
         			<div class="col-lg-6 col-lg-offset-6 col-md-7 col-md-offset-5 col-tn-7 col-tn-offset-5 col-sm-12 col-sm-offset-0  right_text">
             			<h2>THE GREAT</h2>
@@ -444,13 +444,13 @@
         </div>
     </div>
 
-</div>
+
 				</div>
 		      </div>
 		    </div>		
 	</div>
 		  
-	<div class="modal fade" id="thankyou_Modal" role="dialog">
+	<div class="modal fade thankyou_Modal" id="thankyou_Modal" role="dialog">
         <div class="modal-dialog">
         
           <!-- Modal content-->

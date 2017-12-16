@@ -36,17 +36,6 @@
 		
 	</head>
 	
-	<!-- code for preloader starts -->
-	 <!--  <div id="preloader">
-		<div id="status">&nbsp;</div>
-	</div>  
-	<script type="text/javascript">
-		$(window).on("load", function() { // makes sure the whole site is loaded
-			$('#status').fadeOut(1000); // will first fade out the loading animation
-			$('#preloader').delay(500).fadeOut(2000); // will fade out the white DIV that covers the website.
-		})
-	</script> -->
-	<!-- Code for preloader ends --> 
 	
 	<body class="predict11-bg transfers_predict11">
 		<c:if test="${not empty sessionScope.clubList}">

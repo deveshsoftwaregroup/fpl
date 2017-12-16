@@ -5,7 +5,8 @@
 
   <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
   <c:set var="context" value="<%=request.getContextPath()%>" />
-
+  <div class="container">
+  
   <div class="row">
   		  
   
@@ -170,11 +171,11 @@
 
         <!--  / Wildcard Section -->
        
-       
+     
     
  <jsp:include page="footer.jsp" /> 
-</div>
 
+ </div> 
 <script language='javascript' type='text/javascript'>
 
 

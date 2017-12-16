@@ -23,7 +23,7 @@
 <body class="predict11-bg transfers_predict11 dream_11transfer">
 
 <!-- code for preloader starts -->
-	 <div id="preloader">
+	 <%-- <div id="preloader">
 		<div id="status1">&nbsp;</div>
 	</div>  
 	<script type="text/javascript">
@@ -31,7 +31,7 @@
 			$('#status1').fadeOut(1000); // will first fade out the loading animation
 			$('#preloader').delay(500).fadeOut(1000); // will fade out the white DIV that covers the website.
 		})
-	</script> 
+	</script>  --%>
 	<!-- Code for preloader ends --> 
  
 
