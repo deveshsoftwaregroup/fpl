@@ -15,6 +15,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 
+import com.sportmgmt.dreamEleven.model.entity.DeGameWeekReport;
 import com.sportmgmt.model.entity.Game;
 import com.sportmgmt.model.entity.GameWeek;
 import com.sportmgmt.model.entity.GameWeekReport;
@@ -404,6 +405,64 @@ public class GameWeeKManager {
 		}
 		return false;
 	}
+	public static boolean createGameWeekReport(Integer userId,Integer gameWeekId,Integer point,Integer rank,Integer transfer,Integer planId)
+	{
+		setErrorMessage("");
+		SessionFactory factory = HibernateSessionFactory.getSessionFacotry();
+		logger.info("--------------- createGameWeekReport ------------> userId:  "+userId+" gameWeekId: "+gameWeekId);
+		if(factory == null)
+		{
+			setErrorCode(ErrorConstrant.SESS_FACT_NULL);
+			setErrorMessage("Technical Error");
+		}
+		else
+		{
+			Session session = factory.openSession();
+			if(session != null)
+			{
+				try
+				{
+					DeGameWeekReport gameWeekReport = new DeGameWeekReport();
+					gameWeekReport.setUserId(userId);
+					gameWeekReport.setGameWeekId(gameWeekId);
+					gameWeekReport.setPlanId(planId);
+					if(point !=null)
+					{
+						gameWeekReport.setPoint(point);
+					}
+					if(rank !=null)
+					{
+						gameWeekReport.setRank(rank);
+					}
+					if(transfer !=null)
+					{
+						gameWeekReport.setTransfer(transfer);
+					}
+					logger.info("---------- making entry in game week report: ");
+					session.save(gameWeekReport);
+					session.beginTransaction().commit();
+					logger.info("----------  committed game week report: ");
+					return true;
+				}
+				catch(Exception ex)
+				{
+					logger.error("Exception  createGameWeekReport: "+ex.getMessage());
+					setErrorMessage("Technical Error");
+					setErrorCode(ErrorConstrant.TRANSACTION_ERROR);
+				}
+				finally
+				{
+					session.close();
+				}
+			}
+			else
+			{
+				setErrorCode(ErrorConstrant.SESS_NULL);
+				setErrorMessage("Technical Error");
+			}
+		}
+		return false;
+	}
 	
 	public static boolean updateGameWeekReport(Integer userId,Integer gameWeekId,Integer point,Integer rank,Integer transfer)
 	{
@@ -445,6 +504,76 @@ public class GameWeeKManager {
 						if(transfer !=null)
 						{
 							gameWeekReport.setTransfer(transfer);
+						}
+						logger.info("--------------- Updating Game week Report");
+						session.update(gameWeekReport);
+						session.beginTransaction().commit();
+						logger.info("--------------- ");
+					}
+				}
+				catch(Exception ex)
+				{
+					logger.error("Exception  updateGameWeekReport: "+ex.getMessage());
+					setErrorMessage("Technical Error");
+					setErrorCode(ErrorConstrant.TRANSACTION_ERROR);
+				}
+				finally
+				{
+					session.close();
+				}
+			}
+			else
+			{
+				setErrorCode(ErrorConstrant.SESS_NULL);
+				setErrorMessage("Technical Error");
+			}
+		}
+		return false;
+	}
+	public static boolean updateGameWeekReport(Integer userId,Integer gameWeekId,Integer point,Integer rank,Integer transfer,Integer planId)
+	{
+		setErrorMessage("");
+		SessionFactory factory = HibernateSessionFactory.getSessionFacotry();
+		logger.info("--------------- updateGameWeekReport ------------> userId:  "+userId+" gameWeekId: "+gameWeekId);
+		if(factory == null)
+		{
+			setErrorCode(ErrorConstrant.SESS_FACT_NULL);
+			setErrorMessage("Technical Error");
+		}
+		else
+		{
+			Session session = factory.openSession();
+			if(session != null)
+			{
+				try
+				{
+					Criteria cr = session.createCriteria(DeGameWeekReport.class);
+					cr.add(Restrictions.eq("gameWeekId", gameWeekId));
+					cr.add(Restrictions.eq("userId", userId));
+					List<DeGameWeekReport> gameWeekReports = cr.list();
+					if(gameWeekReports == null || gameWeekReports.isEmpty())
+					{
+						logger.info("Game week Report not found in database, going to make new entry");
+						return createGameWeekReport(userId, gameWeekId, point, rank, transfer,planId);
+					}
+					else
+					{
+						DeGameWeekReport gameWeekReport = gameWeekReports.get(0);
+						if(point !=null)
+						{
+							gameWeekReport.setPoint(point);
+						}
+						if(rank !=null)
+						{
+							gameWeekReport.setRank(rank);
+						}
+						if(transfer !=null)
+						{
+							gameWeekReport.setTransfer(transfer);
+						}
+						if(planId !=null)
+						{
+							gameWeekReport.setPlanId(planId);
 						}
 						logger.info("--------------- Updating Game week Report");
 						session.update(gameWeekReport);
@@ -531,6 +660,64 @@ public class GameWeeKManager {
 		}
 		return 0;
 	}
+	
+	
+	public static  String fetchPlanIdFromDeGameWeekReport(Integer userId,Integer gameWeekId)
+	 {
+	  
+	  List<DeGameWeekReport> planIdList = null;
+	  String planId= null;
+	  setErrorMessage("");
+	  SessionFactory factory = HibernateSessionFactory.getSessionFacotry();
+	  logger.info("--------------- fetchPlanIdFromDeGameWeekReport -------------");
+	  if(factory == null)
+	  {
+	   setErrorCode(ErrorConstrant.SESS_FACT_NULL);
+	   setErrorMessage("Technical Error");
+	  }
+	  else
+	  {
+	   Session session = factory.openSession();
+	   if(session != null)
+	   {
+	    try
+	    {  
+	     Query query  = session.createQuery(QueryConstrant.SELECT_PLANID_FROM_DE_GAME_WEEK_REPORT);
+	     query.setParameter("userId", userId);
+	     query.setParameter("gameWeekId", gameWeekId);
+	     planIdList =query.list();
+	     System.out.println("planIdList"+planIdList);
+	     if(planIdList.size() >= 1)
+	     {
+	    	 planId = String.valueOf((planIdList.get(0)));
+	     }
+	     else
+	     {
+	      setErrorCode(ErrorConstrant.USER_NULL);
+	      setErrorMessage("User with loginId "+planId+ " does not exist");
+	     }
+	    }
+	    catch(Exception ex)
+	    {
+	     logger.error("Exception fetch active event list: "+ex.getMessage());
+	     setErrorMessage("Technical Error");
+	     setErrorCode(ErrorConstrant.TRANSACTION_ERROR);
+	    }
+	    finally
+	    {
+	     session.close();
+	    }
+	   }
+	   else
+	   {
+	    setErrorCode(ErrorConstrant.SESS_NULL);
+	    setErrorMessage("Technical Error");
+	   }
+	  }
+	  logger.info("--------------- Returning planId -------------"+
+	  planId);
+	  return planId;
+	 }
 	
 	public static int getTotalTransfered(Integer userId,Integer gameWeekId)
 	{
