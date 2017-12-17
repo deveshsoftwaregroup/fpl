@@ -28,6 +28,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sportmgmt.controller.bean.GameWeek;
 import com.sportmgmt.controller.bean.MatchDetails;
 import com.sportmgmt.controller.bean.User;
+import com.sportmgmt.controller.response.SportMgmtResponse;
 import com.sportmgmt.model.entity.Match;
 import com.sportmgmt.dreamEleven.model.manager.GameManager;
 import com.sportmgmt.model.manager.GameWeeKManager;
@@ -483,34 +484,7 @@ public class GameAction11 {
 		logger.info("Returning action: with reuslt-- : "+resultMap);
 		return resultMap;
 	}
-	@RequestMapping(value = "MyTeamView11/{userId}/{gameId}", method = RequestMethod.GET)
-	public  String myTeamView(ModelMap modeMap,HttpServletRequest request,@PathVariable String userId,@PathVariable String gameId)
-	{
-		logger.info("---------- IN MyTeamView to : ");
-		 //int player = GameManager.totalPlayingPlayersOfUserByGame(Integer.valueOf(userId),Integer.valueOf(gameId));
-		 HashMap totalPlayingMap= new HashMap();
-		 //totalPlayingMap.put("player", player);
-		 GameManager.updateTotalPlayingPlayerByPostion(Integer.valueOf(userId),Integer.valueOf(gameId),totalPlayingMap);
-		 //modeMap.put("userGameMap",GameManager.getUserGameStatus(userId, gameId));
-		 String totalPlayingJson = "";
-		 modeMap.put("totalPlayingMap", totalPlayingMap);
-		 logger.info("-------- MyTeamView : totalPlayingMap: "+totalPlayingMap);
-		 ObjectMapper mapperObj = new ObjectMapper();
-		 try
-		 {
-			 
-			 totalPlayingJson = mapperObj.writeValueAsString(totalPlayingMap);
-			 logger.info("-------- MyTeamView : totalPlayingJson: "+totalPlayingJson);
-			 
-		 }
-		 catch(Exception ex)
-		 {
-			 logger.error("---------- Entry in parsing map to json: "+ex);
-		 }
-		 modeMap.put("totalPlayingJson", totalPlayingJson);
-			
-		 return SportConstrant.MY_TEAM_PAGE11;
-	}
+	
 	
 	@RequestMapping(value = "MatchView11/{gameId}", method = RequestMethod.GET)
 	public  String matchView(ModelMap modeMap,HttpServletRequest request,@PathVariable String gameId)
