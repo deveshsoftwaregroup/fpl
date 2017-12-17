@@ -3,6 +3,7 @@ package com.sportmgmt.utility.constrant;
 public class QueryConstrant {
 public static final String FROM_COUNTRY_STATE_CITY = "FROM CountryStateCity";
 public static final String FROM_CLUB = "FROM Club";
+public static final String FROM_V_ARTICLE = "FROM V_ARTICLE";
 public static final String SELECT_ACTIVE_GAME = "FROM Game G WHERE G.isActive =:isActive";
 public static final String SELECT_MATCH_BY_GAME = "FROM Match M WHERE M.game =:game";
 public static final String SELECT_POINT_BY_GAME = "FROM Point P WHERE P.gameId =:gameId";
@@ -100,4 +101,6 @@ public static final String SELECT_PLAYERS_CLUBD_OF_GAME_FOR_MATCH = "select gcp.
 public static final String SELECT_PLAYERS_IN_ORDER_BY_NAME = "select gcp.game_club_player_id from GAME_CLUB_PLAYER gcp,PLAYER pl where gcp.player_id = pl.player_id and gcp.game_club_player_id in (:gameClubPlayerIdList) order by pl.player_name";
 
 public static final String SELECT_USER_LIST_OF_PLAYER = "select user_Id from USER_PLAYER where game_club_player_id =:gameClubPlayerId";
+
+public static final String SELECT_PLANID_FROM_DE_GAME_WEEK_REPORT = "select V.planId from DeGameWeekReport V WHERE V.userId =:userId and V.gameWeekId =:gameWeekId  ";
 }
