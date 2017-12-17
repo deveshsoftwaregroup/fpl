@@ -139,7 +139,7 @@
 			{
 				if(typeof userId != 'undefined' && userId != '' && typeof gameId != 'undefined' && gameId != '')
 				{
-					url ="/SportMgmt/mvc/game11/MyTeamView11/"+userId+"/"+gameId;
+					url ="/SportMgmt/mvc/game/MyTeamView11/"+userId+"/"+gameId;
 					$.ajax({
 			     		  url: url,
 			     		  dataType: 'html',
