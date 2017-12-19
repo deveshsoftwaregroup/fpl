@@ -34,7 +34,7 @@ public class HomeAction {
 	{
 		//UserManager.getCountryStateCityMap();
 		//return SportConstrant.LEAGE_HOME_PAGE;
-		//GameWeeKManager.updateGameWeekReport(2, 1, 1, 2, 2, 3);
+		GameWeeKManager.updateGameWeekReport(2, 1, 1, 2, 2, 3);
 		return new ModelAndView("redirect:/mvc/LeagueHome");
 
 	}
@@ -47,8 +47,8 @@ public class HomeAction {
 		map.put("countryMap", countryMap);
 		TreeMap<String,HashMap<String,ArrayList<String>>> clubMap = UserManager.getClubMap();
 		map.put("clubMap", clubMap);
-		//String planId = GameWeeKManager.fetchPlanIdFromDeGameWeekReport(2, 1);
-		//System.out.println(planId);
+		String planId = GameWeeKManager.fetchPlanIdFromDeGameWeekReport(2, 1);
+		System.out.println(planId);
 		return SportConstrant.LEAGE_HOME_PAGE;
 
 	}
