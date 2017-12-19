@@ -14,9 +14,9 @@
            <%-- <h4 style="color:#4dff4d;">${param.message}</h4> --%>
            
             <ul class="bxslider">
-            	<li><a target="_blank" href="#"><img src="${context}/redBlackTheme/images/banner1.png" /></a></li>
-                <li><a target="_blank" href="#"><img src="${context}/redBlackTheme/images/banner1.png" /></a></li>
-                <li><a target="_blank" href="#"><img src="${context}/redBlackTheme/images/banner1.png" /></a></li>
+            	<li><a  href="#"><img src="${context}/redBlackTheme/images/website_banner.png" onclick="showRegistrationPopup()"/></a></li>
+                <%-- <li><a target="_blank" href="#"><img src="${context}/redBlackTheme/images/banner1.png" /></a></li>
+                <li><a target="_blank" href="#"><img src="${context}/redBlackTheme/images/banner1.png" /></a></li> --%>
                   
                 </ul>
             </div>
@@ -179,6 +179,13 @@
 <script language='javascript' type='text/javascript'>
 
 
+function showRegistrationPopup()
+{
+	$("#myModal1").modal('show');
+	$(".close").click(function(){			              
+		$("#myModal1").fadeOut("slow");
+	});
+}
 
 function showMyPopup()
 {
@@ -206,7 +213,7 @@ function showNonSuccessRegistrationPopup()
         jQuery(document).ready(function($){
         	/* alert("tt");
         	alert('${displayPromotionPopup}'); */
-        	
+        	clearListCookies();
         	if('${displayPromotionPopup}'=="true")
         		{
 	        		showMyPopup();
@@ -254,6 +261,31 @@ function showNonSuccessRegistrationPopup()
 	    }
 	});
 </script> -->
+<script type="text/javascript">
+
+
+function clearListCookies()
+{   //alert("hi");
+    var cookies = document.cookie.split(";");
+    for (var i = 0; i < cookies.length; i++)
+    {   
+        var spcook =  cookies[i].split("=");
+        deleteCookie(spcook[0]);
+    }
+    function deleteCookie(cookiename)
+    {
+        var d = new Date();
+        d.setDate(d.getDate() - 1);
+        var expires = ";expires="+d;
+        var name=cookiename;
+        //alert(name);
+        var value="";
+        document.cookie = name + "=" + value + expires + "; path=/acc/html";                    
+    }
+    //window.location = ""; // TO REFRESH THE PAGE
+    window.reload(true);
+}
+</script>
  
 </body>
 </html>

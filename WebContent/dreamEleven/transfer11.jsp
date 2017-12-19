@@ -302,7 +302,7 @@
 				 	<p id="countDown"></p>
 	                  <!-- <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#modelPlayOption">Confirm Your Team</button></a> -->
 	                  <!--  <a href="#"><button id="confirmTeam" type="button" class="btn claim_btn" data-toggle="modal" data-target="#modelPlayOption">Confirm Your Team</button></a> -->
-	                  <a href="#"><button id="confirmTeam" type="button" class="btn claim_btn confirm_team_btn" onclick="checkPlayerCountAndOpenPlayOption()">Confirm Your Team</button></a>
+	                  <button id="confirmTeam" type="button" class="btn claim_btn confirm_team_btn" onclick="checkPlayerCountAndOpenPlayOption()">Confirm Your Team</button>
 	               	<!-- <a href="#"><button type="button" class="btn claim_btn" data-toggle="modal" data-target="#paymentModel">Make Payment</button></a> -->
         		</div>  
 	            

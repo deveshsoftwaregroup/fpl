@@ -1,4 +1,4 @@
-m<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     
 	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -6,12 +6,9 @@ m<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 	 <%@ taglib uri="..//WEB-INF/sportmgmt.tld" prefix="s" %>   
 	<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-	<script src="${context}/redBlackTheme/js/jquery.js"></script>
 <s:sportExt retrieve="deadLine" />
 	  <body class="body predict11-bg transfers_predict11 dream_11transfer ">
-      <div class="container-fluid ">
-         <!-----------Header---------------->
-         <div id="header"></div> 
+      <div class="container-fluid ">         
             <div class="row">
             <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-sx-12  myteam_fantasy_league">
                
@@ -20,7 +17,8 @@ m<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
                 	<div class="col-lg-8 col-sm-12">
 
               
-                  <h3>Team Of Gameweek ${gameWeekNumber}</h3>
+                  <h3 class="subHeader pager-heading">Team Of Gameweek ${gameWeekNumber}</h3>
+                  <h3 class="subHeader pager-heading">Gameweek ${requestScope.sportMgmtRes.result.gameWeek.gameWeekNumber}</h3>
                 		
                 	                </div>
                                     
@@ -38,23 +36,24 @@ m<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	                	<div class="col-lg-8 team_map_dream11">
 	                     <div class="ism-element-row ism-element-row--pitch">
 		                    	<div id="ismr-pos1" class="ism-pitch__unit ism-pitch__unit--4">
-	                              <s:sport position="1" playerType="Goalkeeper" pageName="DE_MY_POINT"/>
+	                              <s:sport position="1" playerType="Goalkeeper" pageName="DE_MY_TEAM"/>
 	                               <div class="ism-element" tabindex="0">
 	                       	        <c:if test="${not empty clubId and clubId ne ''}">
 	                                  <spring:message code="club_${clubId}_image" var="imageSrc" />
-								       <img src="${context}/images/${imageSrc}" alt="'+playerName+'" title="" class="<c:if test='${isPlyaerInTopElevent}'>highlited_plr</c:if>" >
+								       <img src="${context}/images/${imageSrc}" >
 								</c:if> 
 	                              <h4 class="ism-element__name">${playerName}</h4>
 	                              </div>
 	                        </div>
 	                   </div>
+	                   
 	                     <div class="ism-element-row ism-element-row--pitch">
 			                <div id="ismr-pos3" class="ism-pitch__unit ism-pitch__unit--5">
-	                           	  <s:sport position="1" playerType="Defender" pageName="DE_MY_POINT"/>
+	                           	  <s:sport position="1" playerType="Defender" pageName="DE_MY_TEAM"/>
 	                             <div class="ism-element" tabindex="0">
 	                       	       <c:if test="${not empty clubId and clubId ne ''}">
 	                               <spring:message code="club_${clubId}_image" var="imageSrc" />
-							    	<img src="${context}/images/${imageSrc}" alt="'+playerName+'" title="" class="<c:if test='${isPlyaerInTopElevent}'>highlited_plr</c:if>" >
+							    	<img src="${context}/images/${imageSrc}" title="" >
 								     </c:if> 
 	                              <h4 class="ism-element__name">${playerName}</h4>
 	                            </div>
@@ -90,6 +89,7 @@ m<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	                              <h4 class="ism-element__name">${playerName}</h4>
 	                              </div>
 	                     </div>
+	                     
 	             </div>
 	                                 
 	                     
@@ -160,23 +160,20 @@ m<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	                              <h4 class="ism-element__name">${playerName}</h4>
 	                             </div>
 	                       </div>
+	                       </div>
 	                              </div>
 	                      
 	                          
 	                      
-	                      <div class="row">
-	                        <div class="col-lg-4 pull-right claim_your_prize">
-	                            <%-- <h4>Your points : ${sportMgmtRes.result.userPoint}</h4> --%>
-	                          
-	                          <%--  <a href="#"><button type="button" class="btn claim_btn" onclick="uploadCouponsView11('${sessionScope.userId}','${sessionScope.gameDetails.gameId}');">Claim Your Prize</button></a> --%>
-	                          </div>    
-	                      </div>
+	                     
 	                       
 	               	</c:otherwise>
                	</c:choose>
 					
 				</div>
 			</div>
+		</div>
+	</div>
 		</div>
 	</div>
 </body>
