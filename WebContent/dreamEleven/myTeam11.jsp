@@ -17,8 +17,8 @@
                 	<div class="col-lg-8 col-sm-12">
 
               
-                  <h3 class="subHeader pager-heading">Team Of Gameweek ${gameWeekNumber}</h3>
-                  <h3 class="subHeader pager-heading">Gameweek ${requestScope.sportMgmtRes.result.gameWeek.gameWeekNumber}</h3>
+                  <p class="myTeam_header">Team Of Gameweek ${gameWeekNumber}</p>
+                  <%-- <h3 class="subHeader pager-heading">Gameweek ${requestScope.sportMgmtRes.result.gameWeek.gameWeekNumber}</h3> --%>
                 		
                 	                </div>
                                     
@@ -28,7 +28,7 @@
               		
 	              	<c:when test="${empty sportMgmtRes.result.hisotryPlayerList}">
 	              		<div class="col-lg-8">
-	              		<h4>No team was confirmed for this Game Week</h4>
+	              		<p class="myTeam_header">No team was confirmed for this Game Week</p>
 	              		</div>
 	              	</c:when>
 	              	
@@ -40,7 +40,7 @@
 	                               <div class="ism-element" tabindex="0">
 	                       	        <c:if test="${not empty clubId and clubId ne ''}">
 	                                  <spring:message code="club_${clubId}_image" var="imageSrc" />
-								       <img src="${context}/images/${imageSrc}" >
+								       <img src="${context}/images/Goalkeeper_${imageSrc}" >
 								</c:if> 
 	                              <h4 class="ism-element__name">${playerName}</h4>
 	                              </div>

@@ -571,7 +571,7 @@
 	
 </body>
 
-<script>
+<%-- <script>
 	$(document).on('shown.bs.tab', 'a[data-toggle="tab"]', function (e) 
 	{
 	    var tab = $(e.target);
@@ -587,7 +587,7 @@
 	         console.log('the tab with the content id ' + contentId + ' is NOT visible');
 	    } */
 	});
-</script>
+</script> --%>
     
 <script type="text/javascript">
 	 var gameDetailsJson = null;

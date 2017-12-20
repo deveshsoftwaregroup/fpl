@@ -1585,3 +1585,8 @@ tbody tr {
 
 /*# sourceMappingURL=style-dream.css.map */
 
+.myTeam_header {
+font-family:"PremierSans-Bold",Arial,"Helvetica Neue",Helvetica,sans-serif;
+color:#fff;
+font-size:2.5rem
+}

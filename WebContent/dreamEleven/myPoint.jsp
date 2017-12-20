@@ -66,7 +66,7 @@
 	                               <div class="ism-element" tabindex="0">
 	                       	        <c:if test="${not empty clubId and clubId ne ''}">
 	                                  <spring:message code="club_${clubId}_image" var="imageSrc" />
-								       <img src="${context}/images/${imageSrc}" alt="'+playerName+'" title="" class="<c:if test='${isPlyaerInTopElevent}'>highlited_plr</c:if>" >
+								       <img src="${context}/images/Goalkeeper_${imageSrc}" alt="'+playerName+'" title="" class="<c:if test='${isPlyaerInTopElevent}'>highlited_plr</c:if>" >
 								</c:if> 
 	                              <h4 class="ism-element__name">${playerName}</h4>
 	                              </div>
