@@ -108,20 +108,23 @@ public class PointRankingAction {
 		modeMap.put("sportMgmtRes", sportMgmtResponse);
 		return SportConstrant.DE_MY_POINT_PAGE;
 	}
-	@RequestMapping(value = "MyTeamView11/{userId}/{gameId}", method = RequestMethod.GET)
-	public  String myTeamView(ModelMap modeMap,HttpServletRequest request,@PathVariable String userId,@PathVariable String gameId)
+	@RequestMapping(value = "MyTeamView11/{userId}/{gameId}/{gameWeekId}", method = RequestMethod.GET)
+	public  String myTeamView(ModelMap modeMap,HttpServletRequest request,@PathVariable String userId,@PathVariable String gameId,@PathVariable String gameWeekId)
 	{
-		String gameWeekIdParam = request.getParameter("gameWeekId");
-		String direction = request.getParameter("game-week-for");
-		SportMgmtResponse<Map> 	sportMgmtResponse= getDECurrentGameWeeKHistory(gameId, userId, gameWeekIdParam, direction,request);
-		Integer gameWeekId = null;
+		
+		//String gameWeekIdParam = request.getParameter("gameWeekId");
+		System.out.println("gameWeekId="+gameWeekId);
+		/*String direction = request.getParameter("game-week-for");
+		System.out.println("direction="+direction);*/
+		SportMgmtResponse<Map> 	sportMgmtResponse= getDEFutureGameWeeKHistory(gameId, userId, gameWeekId,request);
+		/*Integer gameWeekId = null;
 		Map<String,String> gameWeek = (Map)sportMgmtResponse.getResult().get("gameWeek");
 		if(gameWeek !=null && gameWeek.get("gameWeekId") !=null)
 		{
 			
 			gameWeekId = new Integer(gameWeek.get("gameWeekId"));
-		}
-		if(gameWeekId !=null)
+		}*/
+		/*if(gameWeekId !=null)
 		{
 			List<Player> playersOrderedByRank = pointRankingUtility.getPlayersOrderedByArg(gameWeekId, "rank", null);
 			List<Integer> topPlayesIdsByRank = pointRankingUtility.getTopPlayerIdsOrderedByRankForGameWeek(playersOrderedByRank);
@@ -139,7 +142,7 @@ public class PointRankingAction {
 				sportMgmtResponse.getResult().put("topElevenPlayer", topElevenPlayer);
 				sportMgmtResponse.getResult().put("userPoint", userPoint);
 			}
-		}
+		}*/
 		logger.info("---- SortMgmtResponse: "+sportMgmtResponse);
 		modeMap.put("sportMgmtRes", sportMgmtResponse);
 		 return SportConstrant.MY_TEAM_PAGE11;
@@ -210,12 +213,12 @@ public class PointRankingAction {
 	{
 		SportMgmtResponse<Map> 	sportMgmtResponse = new SportMgmtResponse<>();
 		try
-			{
-				
+			{				
 				Map result = new HashMap();
 				Map<String,String> gameWeek =pointRankingUtility.getGameWeekForPointView(gameId, gameWeekIdParam, direction);
 				logger.info("-------- gameWeek: "+gameWeek);
 				String gameWeekId = gameWeek.get("gameWeekId");
+				System.out.println("gameWeekId...="+gameWeekId);
 				List<Map<String,String>> historyPlayerList = PlayerManager.gameWeekPlayerList(userId, gameWeekId,"DREAM_ELEVEN");
 				if(historyPlayerList !=null && !historyPlayerList.isEmpty())
 				{
@@ -238,8 +241,7 @@ public class PointRankingAction {
 				result.put("gameWeek", gameWeek);
 				result.put("hisotryPlayerList", historyPlayerList);
 				sportMgmtResponse.setSuccess(true);
-				sportMgmtResponse.setResult(result);
-				
+				sportMgmtResponse.setResult(result);				
 			}
 			catch(Exception sme)
 			{
@@ -250,22 +252,31 @@ public class PointRankingAction {
 			
 		return sportMgmtResponse;
 	}
-	private SportMgmtResponse<Map> getDECurrentGameWeeKHistory(String gameId,String userId,String gameWeekIdParam,String direction,HttpServletRequest request)
+	private SportMgmtResponse<Map> getDEFutureGameWeeKHistory(String gameId,String userId,String gameWeekId,HttpServletRequest request)
 	{
 		SportMgmtResponse<Map> 	sportMgmtResponse = new SportMgmtResponse<>();
 		try
 			{
 				
-				//Map result = new HashMap();
-				//int currentGameWeekId =  pointRankingUtility.getCurrentGameWeek(gameId);
+				Map result = new HashMap();
 				//currentGameWeekId= currentGameWeekId+1;
-			Map result = new HashMap();
+			/*Map result = new HashMap();
 			Map<String,String> gameWeek =pointRankingUtility.getGameWeekForPointView(gameId, gameWeekIdParam, direction);
-			logger.info("-------- gameWeek: "+gameWeek);
-			System.out.println("gameWeek"+gameWeek);
-			int currentGameWeekId = new Integer( gameWeek.get("gameWeekId"));
-			currentGameWeekId= currentGameWeekId+1;
-				String gameWeekId = String.valueOf(currentGameWeekId);
+			logger.info(" gameWeek==: "+gameWeek);
+			String currentGameWeekId = gameWeek.get("gameWeekId");
+			logger.info(" currentGameWeekId==: "+currentGameWeekId);
+			if(currentGameWeekId==null)
+			{
+			//This block will run in case of first gameweek	
+				//currentGameWeekId= String.valueOf((Integer.parseInt(currentGameWeekId)+1));
+				currentGameWeekId=String.valueOf(19);
+			}
+			else
+			{
+				currentGameWeekId= String.valueOf((Integer.parseInt(currentGameWeekId)+1));
+			}*/
+				
+				//String gameWeekId = gameWeekId;
 				logger.info("-------- gameWeekId: "+gameWeekId);
 				List<Map<String,String>> historyPlayerList = PlayerManager.gameWeekPlayerList(userId, gameWeekId,"DREAM_ELEVEN");
 				if(historyPlayerList !=null && !historyPlayerList.isEmpty())
@@ -286,7 +297,7 @@ public class PointRankingAction {
 					}
 				}
 				logger.info("-- History player list: "+historyPlayerList);
-				result.put("gameWeek", gameWeek);
+				//result.put("gameWeek", gameWeek);
 				result.put("hisotryPlayerList", historyPlayerList);
 				sportMgmtResponse.setSuccess(true);
 				sportMgmtResponse.setResult(result);
