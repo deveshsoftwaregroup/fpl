@@ -233,9 +233,7 @@ public class PointRankingUtility {
 			PlayerManager.setDreamEleven(isDreamEleven());
 			if(userId !=null)
 			{
-				List<String> logList = new ArrayList<String>();
-				
-				
+				List<String> logList = new ArrayList<String>();				
 					logger.info("Going to create player history of user: "+userId+" for gameWeekId: "+gameWeekId+" of gameId: "+gameId);
 					boolean isSuccess = createPlayerHistoryForGameWeek(gameId,gameWeekId,userId);
 					logger.info("player history creation went :"+isSuccess);
@@ -250,8 +248,6 @@ public class PointRankingUtility {
 							logList.add("Failed userId="+userId+" gameWeekId="+gameWeekId);
 						}
 					}
-					
-				
 				return logList;
 			}
 			else
@@ -269,10 +265,11 @@ public class PointRankingUtility {
 	
 	public Map<String,String> getGameWeekForPointView(String gameId, String gameWeekIdParam,String direction)
 	{
+		System.out.println(gameWeekIdParam+"direction=="+direction);
 		Map<String,String> gameWeekForPoint = new HashMap<>();
 		gameWeekForPoint.put("isLatestGameWeek", SportConstrant.NO);
 		String latestGameWeekId = getLatestGameWeekId(gameId);
-		
+		System.out.println("latestGameWeekId=="+latestGameWeekId);
 		if(latestGameWeekId != null && !latestGameWeekId.equals(""))
 		{
 			List<Integer> sortedGameWeekIds = GameWeeKManager.sortedGameWeekIds(gameId);
@@ -318,16 +315,12 @@ public class PointRankingUtility {
 							break;
 						}
 						gameWeekNumber++;
-					}
-		
-				}
-							
+					}		
+				}							
 			}
-		}
-		
+		}		
 		return gameWeekForPoint;
-	}
-	
+	}	
 	
 	public String gameWeekIdForTransferPlayer(String gameId)
 	{

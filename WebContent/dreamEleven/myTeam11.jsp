@@ -17,7 +17,7 @@
                 	<div class="col-lg-8 col-sm-12">
 
               
-                  <p class="myTeam_header">Team Of Gameweek ${gameWeekNumber}</p>
+                  <p class="myTeam_header">Gameweek ${gameWeekNumber}</p>
                   <%-- <h3 class="subHeader pager-heading">Gameweek ${requestScope.sportMgmtRes.result.gameWeek.gameWeekNumber}</h3> --%>
                 		
                 	                </div>

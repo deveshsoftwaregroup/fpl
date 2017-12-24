@@ -64,7 +64,7 @@
 						               	<a href="javascript:void(0);" onclick="uploadTransferView11();">Transfers</a>
 						               </li> 
 						                <li>
-						               <a href="javascript:void(0);" onclick="uploadTeamView11('${sessionScope.userId}','${sessionScope.gameDetails.gameId}');" data-nav-tab="squad">My Team</a>		
+						               <a href="javascript:void(0);" onclick="uploadTeamView11('${sessionScope.userId}','${sessionScope.gameDetails.gameId}',${gameWeekId});" data-nav-tab="squad">My Team</a>		
 						               </li> 
 						                                     
 						               <li>
@@ -133,13 +133,13 @@
 		     		  }
 		     		});	
 		}
-		function uploadTeamView11(userId,gameId)
+		function uploadTeamView11(userId,gameId,gameWeekID)
 		{
 			if(typeof userGameJson != 'undefined' && userGameJson.playerList.length >= 11)
 			{
 				if(typeof userId != 'undefined' && userId != '' && typeof gameId != 'undefined' && gameId != '')
 				{
-					url ="/SportMgmt/mvc/game/MyTeamView11/"+userId+"/"+gameId;
+					url ="/SportMgmt/mvc/game/MyTeamView11/"+userId+"/"+gameId+"/"+gameWeekId;
 					$.ajax({
 			     		  url: url,
 			     		  dataType: 'html',

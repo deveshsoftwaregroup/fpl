@@ -3,6 +3,7 @@ package com.sportmgmt.model.manager;
 import java.math.BigInteger;
 import java.sql.Date;
 import java.sql.Timestamp;
+//import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -1866,7 +1867,10 @@ public class GameManager {
 					SQLQuery query = session.createSQLQuery(QueryConstrant.FETCH_CURRENT_GAME_WEEK);
 					query.setParameter("gameId", gameId);
 					query.setParameter("date", new Date(System.currentTimeMillis()));
+					//query.setParameter("date", LocalDateTime.now());
 					currentGameWeek =query.list();
+					//System.out.println("in game manager .. "+"gameId"+gameId+"currentGameWeek="+currentGameWeek+"sysdate="+LocalDateTime.now());
+					//System.out.println("in game manager ..sysdate="+new Date(System.currentTimeMillis()));
 				}
 				catch(Exception ex)
 				{

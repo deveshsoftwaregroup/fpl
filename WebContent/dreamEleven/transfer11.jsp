@@ -46,6 +46,7 @@
 				<img src="${context}/redBlackTheme/images/banner12.png" class="img-responsive center-block">
 					<h3>Select Players from List</h3>
 					<p>Gameweek ${gameWeekNumber} Deadline: <time datetime="2016-08-27T10:30:00Z">${deadline}</time><p>
+		            
 		            <p>Player Count: <span class="added-player-count"> </span> </p>	
 								
 					<div class="col-lg-8 team_map_dream11">				                              

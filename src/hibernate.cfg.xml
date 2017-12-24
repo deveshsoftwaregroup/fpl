@@ -28,7 +28,7 @@
         <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
  
         <!-- Disable the second-level cache  -->
-        <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+        <!-- <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property> -->
  
         <!-- Echo all executed SQL to stdout -->
         <property name="show_sql">false</property>
@@ -37,14 +37,21 @@
        <!--  TO FIX CONNECTION TIMEOUT after 8 hours of inactivity -->
  		<property name="spring.datasource.testOnBorrow">true</property>
         <property name="spring.datasource.validationQuery">SELECT 1</property>
-        <property name="connection.maxActive">-1</property>
-        <property name="connection.minEvictableIdleTimeMillis">1800000</property>
-        <property name="connection.timeBetweenEvictionRunsMillis">1800000</property>
-        <property name="connection.numTestsPerEvictionRun">3</property>
-        <property name="connection.testOnBorrow">true</property>
-        <property name="connection.testWhileIdle">true</property>
-        <property name="connection.testOnReturn">true</property>
-        <property name="connection.validationQuery">SELECT 1</property>
+        <property name="maxActive">-1</property>
+        <property name="minEvictableIdleTimeMillis">1800000</property>
+        <property name="timeBetweenEvictionRunsMillis">1800000</property>
+        <property name="numTestsPerEvictionRun">3</property>
+        <property name="testOnBorrow">true</property>
+        <property name="testWhileIdle">true</property>
+        <property name="testOnReturn">true</property>
+        <property name="validationQuery">SELECT 1</property>
+      
+      
+<!-- <property name="c3p0.min_size">5</property>
+<property name="c3p0.max_size">20</property>
+<property name="c3p0.timeout">1800</property>
+<property name="c3p0.max_statements">50</property> -->
+
       
         <!-- Drop and re-create the database schema on startup -->
         <!-- <property name="hbm2ddl.auto">create</property>  -->
