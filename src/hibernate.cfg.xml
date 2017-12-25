@@ -91,6 +91,7 @@
          <mapping class="com.sportmgmt.dreamEleven.model.entity.GameWeekPlan"/>
          <mapping class="com.sportmgmt.dreamEleven.model.entity.UserPayment"/>
          <mapping class="com.sportmgmt.dreamEleven.model.entity.PaymentExt"/>
+         <mapping class="com.sportmgmt.dreamEleven.model.entity.DeGameWeekReport"/>
          <!--  Dream Eleven mapping ends -->
    </session-factory>
 </hibernate-configuration>

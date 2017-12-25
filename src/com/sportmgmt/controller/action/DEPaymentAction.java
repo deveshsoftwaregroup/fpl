@@ -18,17 +18,21 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sportmgmt.controller.bean.ActivePlan;
 import com.sportmgmt.controller.bean.User;
 import com.sportmgmt.dreamEleven.model.manager.PlanManager;
+import com.sportmgmt.model.manager.GameWeeKManager;
 import com.sportmgmt.utility.common.GenerateHashCode;
 import com.sportmgmt.utility.common.LeaguePlanUtil;
 import com.sportmgmt.utility.common.MailUtility;
+import com.sportmgmt.utility.common.PointRankingUtility;
 import com.sportmgmt.utility.common.PropertyFileUtility;
 import com.sportmgmt.utility.constrant.SportConstrant;
+import com.sportmgmt.utility.exception.SportMgmtException;
 
 @Controller
 @RequestMapping("/payment/dream-eleven/")
 public class DEPaymentAction {
 	private Logger logger = Logger.getLogger(DEPaymentAction.class);
 	MailUtility mailUtility;
+	PointRankingUtility pointRankingUtility;
 	public MailUtility getMailUtility() {
 		return mailUtility;
 	}
@@ -42,6 +46,13 @@ public class DEPaymentAction {
 	}
 	public void setPropFileUtility(PropertyFileUtility propFileUtility) {
 		this.propFileUtility = propFileUtility;
+	}
+	
+	public PointRankingUtility getPointRankingUtility() {
+		return pointRankingUtility;
+	}
+	public void setPointRankingUtility(PointRankingUtility pointRankingUtility) {
+		this.pointRankingUtility = pointRankingUtility;
 	}
 	@RequestMapping(value = "MakePayment", method = RequestMethod.POST)
 	public String makePayment(ModelMap modeMap,@RequestParam Map<String,String> paymentMap,HttpServletRequest request)
@@ -130,6 +141,7 @@ public class DEPaymentAction {
 				{
 					udf1 = paymentMap.get("gameWeekId");
 				}
+				udf2=userId;
 				isTransactionBegin = true;
 				modeMap.put("txnid", transactionId);
 				logger.info("----- txnid: "+transactionId);
@@ -156,6 +168,11 @@ public class DEPaymentAction {
 				modeMap.put("paymentURL", paymentURL);
 				logger.info("----- paymentURL: "+paymentURL);
 				modeMap.put("udf1", udf1);
+				modeMap.put("udf2", udf2);
+				modeMap.put("udf3", udf3);
+				modeMap.put("udf4", udf4);
+				modeMap.put("udf5", udf5);
+				
 				logger.info("----- udf1: "+udf1);
 				
 				try
@@ -192,14 +209,22 @@ public class DEPaymentAction {
 	}
 	
 	@RequestMapping(value = "SuccessView", method = RequestMethod.POST)
-	public String suceess(ModelMap modelMap,@RequestParam Map<String,String> paymentMap,HttpServletRequest request)
+	public String suceess(ModelMap modelMap,@RequestParam Map<String,String> paymentMap,HttpServletRequest request) throws NumberFormatException, SportMgmtException
 	{
 		logger.info("------Response From Payment Gateway  "+paymentMap);
 		boolean updateTrasaction = PlanManager.updateTransaction(paymentMap);
 		logger.info("-------------------- Update Transaction is true: "+updateTrasaction);
 		if(updateTrasaction)
 		{
-			logger.info("------------- gameWeekId:"+paymentMap.get("udf1"));
+			String gameWeekId = paymentMap.get("udf1");
+			String userId=paymentMap.get("udf2");
+			String gameWeekPlanId=paymentMap.get("gameWeekPlanId");
+			logger.info("------------- gameWeekId:"+gameWeekId+", userId: "+userId);
+			Integer gameWeekIdInt = new Integer(gameWeekId);
+			Integer gameId=GameWeeKManager.getGameIdByGameWeeKId(gameWeekIdInt);
+			logger.info("------------- gameId: "+gameId);
+			pointRankingUtility.createGameWeekHistoryForUsers(gameId.toString(), "dream_eleven", gameWeekId, userId);
+			GameWeeKManager.updateGameWeekReport(new Integer(userId), gameWeekIdInt, 0, 0, 0, new Integer(gameWeekPlanId));
 		}
 		modelMap.addAllAttributes(paymentMap);
 		return SportConstrant.USER_LANDING_REDIRECT_PAGE11;	
