@@ -40,15 +40,18 @@ public class HomeAction {
 	}
 	
 	@RequestMapping("/LeagueHome")
-	public String leagueHome(ModelMap map)
+	public String leagueHome(ModelMap map,HttpServletRequest request)
 	{
 		TreeMap<String,HashMap<String,ArrayList<String>>> countryMap = UserManager.getCountryStateCityMap();
 		logger.info("--------- League Home , countryMap: "+countryMap);
 		map.put("countryMap", countryMap);
 		TreeMap<String,HashMap<String,ArrayList<String>>> clubMap = UserManager.getClubMap();
 		map.put("clubMap", clubMap);
-		String planId = GameWeeKManager.fetchPlanIdFromDeGameWeekReport(2, 1);
-		System.out.println(planId);
+		/*String planId = GameWeeKManager.fetchPlanIdFromDeGameWeekReport(2, 1);
+		System.out.println(planId);*/
+		map.put("displayPromotionPopup", "true");
+		String promotion = "true";
+		request.setAttribute("promotion", promotion);
 		return SportConstrant.LEAGE_HOME_PAGE;
 
 	}
