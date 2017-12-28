@@ -112,6 +112,11 @@
 
     
     </div>
+    <!-- BEGIN JIVOSITE CODE {literal} -->
+<script type='text/javascript'>
+(function(){ var widget_id = 'v485UnAXDu';var d=document;var w=window;function l(){
+var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
+<!-- {/literal} END JIVOSITE CODE -->
     
     <div class="col-lg-10 col-lg-offset-1  col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1  bottom_copyright margn_left"><p>@ Copyright JustThinkSports.com 2017. All rights reserved.</p></div>
 </div>

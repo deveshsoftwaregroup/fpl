@@ -1804,7 +1804,7 @@ public class GameManager {
 		logger.info("--------------- Returning startGameWeek: -------------"+startGameWeek);
 		return startGameWeek;
 	}
-	public static List<Timestamp> fetchFirstMatchOfGameWeek(Integer gameWeekId)
+	/*public static List<Timestamp> fetchFirstMatchOfGameWeek(Integer gameWeekId)
 	{
 		List<Timestamp> firstMatchOfGameWeek = null;
 		setErrorMessage("");
@@ -1847,7 +1847,7 @@ public class GameManager {
 		}
 		logger.info("--------------- Returning firstMatchOfGameWeek: -------------"+firstMatchOfGameWeek);
 		return firstMatchOfGameWeek;
-	}
+	}*/
 	public static List<Timestamp> lastFirstMatchOfGameWeek(Integer gameWeekId)
 	{
 		List<Timestamp> lastMatchOfGameWeek = null;
