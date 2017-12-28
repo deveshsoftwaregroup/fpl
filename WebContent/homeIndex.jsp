@@ -102,8 +102,8 @@
                 <div class="col-lg-4 col-sm-4 col-tn-12 col-xs-12 all_play">
                 <c:choose>
                     <c:when test="${empty sessionScope.user.displayName}">
-                    <%--  <a href="" data-toggle="modal" data-target="#myModal"><img src="${context}/redBlackTheme/images/play-fantasy-league_1.png" class="img-responsive center-block"></a> --%> 
-                     <a href="" data-toggle="modal" data-target="#modalMessage"><img src="${context}/redBlackTheme/images/play-fantasy-league_1.png" class="img-responsive center-block"></a> 
+                      <a href="" data-toggle="modal" data-target="#myModal"><img src="${context}/redBlackTheme/images/play-fantasy-league_1.png" class="img-responsive center-block"></a>  
+                     <%-- <a href="" data-toggle="modal" data-target="#modalMessage"><img src="${context}/redBlackTheme/images/play-fantasy-league_1.png" class="img-responsive center-block"></a> --%> 
                    </c:when>
                    <c:otherwise>
                     <%-- <a href="${context}/mvc/user/UserLanding"><img src="${context}/redBlackTheme/images/play-fantasy-league_1.png" class="img-responsive center-block"></a> --%>

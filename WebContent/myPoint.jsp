@@ -13,9 +13,9 @@
     
       <div class="row">
       <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 transfers_predict11_map"> 
-         <div>
+         <div class=" align_div_center">
 
-							<div class="league-pager">
+							<div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 league-pager">
 								<div class="pager pager-left">
 									<c:choose>
 									<c:when test="${sportMgmtRes.result.gameWeek.gameWeekNumber eq '1'}">
@@ -30,7 +30,7 @@
 									</c:otherwise>
 									</c:choose>
 								</div>
-								<h3 class="subHeader pager-heading">Gameweek ${requestScope.sportMgmtRes.result.gameWeek.gameWeekNumber}</h3>
+								<h3 class="subHeader pager-heading pager-heading1">Gameweek ${requestScope.sportMgmtRes.result.gameWeek.gameWeekNumber}</h3>
 								
 								<div class="pager pager-right">
 									<c:choose>
@@ -527,9 +527,9 @@
 					
 
                 <!-- Secondary content -->
-                <div id="ismr-side" class="ism-sidebar">
+                <div id="ismr-side" class="col-lg-4 secondary_header_text">
 					<div>
-							<h2 class="subHeader ism-sub-header">${sessionScope.user.displayName}</h2>
+							<h2 class="subHeader1 ism-sub-header">${sessionScope.user.displayName}</h2>
 
 							<div class="ism-bordered ism-bordered--primary">
 

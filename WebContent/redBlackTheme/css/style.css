@@ -38,7 +38,7 @@
   color: #fff;
   font-size: 12px;
   margin-left: 12px; }
-
+.pwr_logo{display:none !important;}
 .get_in_touch {
   position: absolute;
   top: 0px;
@@ -85,7 +85,8 @@ label {font-weight:100;}
 
 .highlited_plr {
   background-color: darkgreen;
-  border-radius: 20px; }
+  border-radius: 20px; 
+  }
 
 .scout_slide .bx-wrapper h4 {
   font-family: 'Source Sans Pro', sans-serif;
@@ -328,8 +329,10 @@ a:hover, a:active, a:focus {border:none;}
   display: none; }
 
 .highlited_plr {
-  background-color: darkgreen;
-  border-radius: 20px; }
+   background-color: darkgreen;
+  border-radius: 20px; 
+   
+  }
 
 /*---------------Login with Fb or Gmail------------------*/
 .modal-body h4 {

@@ -515,7 +515,11 @@ td, th {
   height: 100vh; }
 #confirm_team_msg {padding-top:50px; text-align:center;}
 .transfers_predict11_map h3, .transfers_predict11_map h4, .transfers_predict11_map p {
-  color: #fff; }
+  color: #fff;  }
+ .dream11_transfers_predict11_map h3,.dream11_transfers_predict11_map h4, .dream11_transfers_predict11_map p{text-align:center;}
+ .gameweek_select_headline_bg{  background-color: forestgreen; padding:5px; margin-bottom:0px;}
+ .gameweek_select_bg{ background-color: #000; padding:5px;}
+ 
 .pager-left{margin-left:25%;}
 .pager-left,.pager-right, .league-pager h3 {width:18%; float:left;}
 .league-pager {padding-top: 30px;   padding-bottom: 30px;  margin-bottom: 72px;}

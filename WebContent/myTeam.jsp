@@ -14,43 +14,15 @@ m<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          <div id="header"></div> 
             <div class="row">
             <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-sx-12  myteam_fantasy_league">
-               <img src="images/dream11-img.png" class="img-responsive center-block">
+               <img src="${context}/redBlackTheme/images/dream11-img.png" class="img-responsive center-block">
                <div>
                 <div class="row">
-                	<div class="col-lg-8 col-sm-12">
+                	<div class="col-lg-12 col-sm-12 gameweek_deadline_fantasy">
                 		<h3>Select playing 11</h3>
                  
-                  <h3><p>Gameweek ${gameWeekNumber} Deadline : <time datetime="2016-08-27T10:30:00Z" class="league-deadline-bar__deadline">${deadline}</p></h3>
-                		
+                 <p>Gameweek ${gameWeekNumber} Deadline : <time datetime="2016-08-27T10:30:00Z" class="league-deadline-bar__deadline">${deadline}</p>               		
                 	</div>
-                	<div class="col-lg-4 col-sm-12 col-xs-12 points_ranking_align_mobile">
-                		<!-- POINTS / RANKINGS -->
-								<div class="ism-panel ism-panel--guttered ism-panel--guttered-mobile">
-									<h3 class="top_main">Points/Rankings</h3>
-									<div class="ism-panel__body">
-
-										<ul class="my_team_points check_points">
-												<li>Overall Points : 
-												<span class="text_right">
-												${sessionScope.user.userGameMap.point}
-												</span>
-												</li>
-												  <li>Overall Rank : 
-												  <span class="text_right">
-												  ${sessionScope.user.userGameMap.rank}
-												  </span>
-												  </li>
-											      <li>Total Players : 
-											      <span class="text_right">
-											      ${fn:length(sessionScope.playerList)}
-											      </span>
-											       </li>
-										</ul>
-									</div>
-									
-								</div>
-                		
-                	</div>
+                	
                 </div>
                                     
                   <div class="row">
@@ -539,9 +511,37 @@ m<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 
 								
 								 <!-- LEAGUES -->
-								 <div class="col-lg-4 col-sm-12 choose_captain_mobile_align">
-								<div class="  ">
-								<h3 class="subHeader ism-sub-header">Choose Captain/Vice-Captain</h3>
+								 
+								 <div class="col-lg-4 col-sm-12 col-xs-12 points_ranking_align_mobile">
+                		<!-- POINTS / RANKINGS -->
+								<div class="ism-panel  ism-panel--guttered-mobile">
+									<h3 class="top_main">Points/Rankings</h3>
+									<div class="ism-panel__body">
+
+										<ul class="my_team_points check_points">
+												<li>Overall Points : 
+												<span class="text_right">
+												${sessionScope.user.userGameMap.point}
+												</span>
+												</li>
+												  <li>Overall Rank : 
+												  <span class="text_right">
+												  ${sessionScope.user.userGameMap.rank}
+												  </span>
+												  </li>
+											      <li>Total Players : 
+											      <span class="text_right">
+											      ${fn:length(sessionScope.playerList)}
+											      </span>
+											       </li>
+										</ul>
+									</div>
+									
+								</div>
+                		
+                	
+								<div class="choose_captain_mobile_align  ">
+								<h3 class="subHeader1 ism-sub-header">Choose Captain/Vice-Captain</h3>
 									<div class="ism-panel__body">
 										<form action="#">
 											<div class="form_row">
@@ -558,7 +558,7 @@ m<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 										    </div>
 										    
 										   <%--  <input type="button" class="btn claim_btn" value="Save" onclick="updateCaptain('${sessionScope.user.userId}');"> --%>
-										 <a href="#"><button id="save" type="button" class="btn claim_btn" onclick="updateCaptain('${sessionScope.user.userId}')">Save</button></a>    
+										 <a href="#"><button id="save" type="button" class="btn claim_btn choose_captain_vicecaptain" onclick="updateCaptain('${sessionScope.user.userId}')">Save</button></a>    
 										    
 										</form>
 									</div>

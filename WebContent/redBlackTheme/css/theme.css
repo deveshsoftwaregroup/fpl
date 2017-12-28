@@ -33,9 +33,11 @@
   .navbar-fixed-top .cbp-spmenu {
     bottom:0;
   }
+   .manu_close_btn{position:absolute !important; right:10px;z-index: 999999;}
   /* Orientation-dependent styles for the content of the menu */
   .cbp-spmenu-vertical {
-    width: 200px;
+   /*    width: 200px;*/
+      width: 100%;
     height: 100%;
 
     top: 0;
@@ -62,7 +64,8 @@
   }
   /* Vertical menu that slides from the left or right */
   .cbp-spmenu-left {
-    left: -260px;
+    /*    left: -260px;*/
+       left: -410px;
   }
   .cbp-spmenu-right {
     right: -260px;

@@ -46,7 +46,7 @@
 											Want unlimited free transfer? : 
 											<c:choose>
 											<c:when test="${sessionScope.hasFreeWildCard}">
-			                                  <input type="button" class="btn claim_btn" value="Use Wild Card" data-toggle="modal" data-target="#myModal-1">		                               
+			                                  <input type="button" class="btn claim_btn buy_wild_card" value="Use Wild Card" data-toggle="modal" data-target="#myModal-1">		                               
 			                                  <div id="myModal-1" class="modal fade" role="dialog">
 											  <div class="modal-dialog">
 											    <div class="modal-content">
@@ -74,7 +74,7 @@
 									</div>
 	                        	</div>
 	                        	
-                                <div class="col-lg-4">		
+                                <div class="col-lg-4 bg_colr_4">		
                         			<div id="freeTransUsedDiv">Free Transfer : 
                         				<c:choose>
                         					<c:when test="${sessionScope.user.totalTransferForGameWeek > 1}">

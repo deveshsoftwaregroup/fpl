@@ -8,7 +8,8 @@
 
 <script type="text/javascript" src="${context}/redBlackTheme/js/accordion.js"></script>
 
-<div class="predict11-bg dream_help">
+<!--   <div class="predict11-bg dream_help">-->
+<div class=" dream_help">
 <div class="container">
 
 	<div class="row">
