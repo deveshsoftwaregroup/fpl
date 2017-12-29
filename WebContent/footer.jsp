@@ -46,9 +46,9 @@
                         <h4>Fantasy League</h4>
                     <ul class="left_text">
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="transfer.html">Transfer</a></li>
-                        <li><a href="myTeam.html">My Team</a></li>
-                        <li><a href="fixtures.html">Fixtures</a></li>
+                        <li><a href="#" onclick="uploadTransferView();">Transfer</a></li>
+                        <li><a href="#" onclick="uploadTeamView('${sessionScope.userId}','${sessionScope.gameDetails.gameId}');">My Team</a></li>
+                        <li><a href="#" onclick="uploadMatchView('${sessionScope.gameDetails.gameId}');">Fixtures</a></li>
                         <li><a href="#">Leadership</a></li>
                         <li><a href="#">Stats</a></li>
                         <li><a href="guide.html">Guide</a></li>
@@ -58,7 +58,7 @@
                         
                     </ul>
                 </div>
-                <div class="col-lg-6 col-xs-6 ">
+               <!--  <div class="col-lg-6 col-xs-6 ">
                     <h4>Dream 11</h4>
                     <ul class="left_text">
                             
@@ -70,7 +70,7 @@
                             
                             
                     </ul>
-                </div>
+                </div> -->
             </div>
         <!--<p>We at justthinksports.com provide ONE STOP solution for sports lovers.</p>-->
     

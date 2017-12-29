@@ -173,7 +173,7 @@
        
      
     
- <jsp:include page="footer.jsp" /> 
+ <jsp:include page="homeFooter.jsp" /> 
 
  </div> 
 <script language='javascript' type='text/javascript'>

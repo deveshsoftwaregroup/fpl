@@ -42,11 +42,11 @@
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 btm_ftr">
                 
                
-                <div class="col-lg-6  col-xs-6 ">
+               <!--  <div class="col-lg-6  col-xs-6 ">
                         <h4>Fantasy League</h4>
                     <ul class="left_text">
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="transfer.html">Transfer</a></li>
+                        <li><a href="#" onclick="uploadTransferView();">Transfer</a></li>
                         <li><a href="myTeam.html">My Team</a></li>
                         <li><a href="fixtures.html">Fixtures</a></li>
                         <li><a href="#">Leadership</a></li>
@@ -57,21 +57,22 @@
                         
                         
                     </ul>
-                </div>
+                </div> -->
                 <div class="col-lg-6 col-xs-6 ">
                     <h4>Dream 11</h4>
                     <ul class="left_text">
                             
-                            <li><a href="Dream11-transfer.html">Transfer</a></li>
-                            <li><a href="Dream11-myTeam.html">My Team</a></li>
-                            <li><a href="Dream11-fixtures.html">Fixtures</a></li>
-                            <li><a href="guide.html">Guide</a></li>
-                            <li><a href="gifts.html">Coupon</a></li>
+                            <li><a href="#" onclick="uploadTransferView11();">Transfers</a></li>
+                            <li><a href="#" onclick="uploadTeamView11('${sessionScope.userId}','${sessionScope.gameDetails.gameId}',${gameWeekId});" data-nav-tab="squad">My Team</a></li>
+                            <li><a href="#" onclick="uploadMatchView11('${sessionScope.gameDetails.gameId}');" data-nav-tab="squad">Fixtures</a></li>
+                            <li><a href="javascript:void(0);"  onclick="homeGuide();">Guide</a></li>
+                            <li><a href="#" onclick="uploadCouponsView11('${sessionScope.userId}','${sessionScope.gameDetails.gameId}');">Coupon</a></li>
                             
                             
                     </ul>
                 </div>
             </div>
+            
         <!--<p>We at justthinksports.com provide ONE STOP solution for sports lovers.</p>-->
     
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
