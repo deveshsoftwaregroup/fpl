@@ -82,7 +82,8 @@
 		<%@ include	file="header.jsp"%>
 		<div class="ism-container">
 			<%@ include	file="transfer.jsp"%>
-		</div>		  
+		</div>
+		<br>	<br><br>	  
 		<%@ include file="footer.jsp"%>
 		</main>
 	</body>    
