@@ -18,7 +18,7 @@
 							<div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 league-pager">
 								<div class="pager pager-left">
 									<c:choose>
-									<c:when test="${sportMgmtRes.result.gameWeek.gameWeekNumber eq '1'}">
+									<c:when test="${sportMgmtRes.result.gameWeek.gameWeekNumber eq '19'}">
 									<a href="javascript:void(0);" title="View previous" class="btnPrevious">
 										<span>Previous</span>
 									</a>
