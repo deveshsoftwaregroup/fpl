@@ -245,7 +245,7 @@
 																	<div class="ismjs-remove ism-element__control ism-element__control--primary">
 																		<input class="5-box" type="checkbox" name="boxes" value="check_5" <c:if test="${isPlaying eq 'Y'}">checked</c:if> onclick="activatePlayer('${sessionScope.userId}','${gameClubPlayerId}',this);"/>
 																	</div>
-																	< <div class="leaguejs-info league-element__control league-element__control--info">
+																	 <div class="leaguejs-info league-element__control league-element__control--info">
 																		<a href="javascript:void(0);" title="View player information" class="fa fa-info" onclick="showPlayerDetails('${gameClubPlayerId}');"></a>
 																	</div> 
 																</div>
