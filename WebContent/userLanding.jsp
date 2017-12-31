@@ -41,7 +41,7 @@
 		<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/jquery.bxslider.css">
 		<!--  <link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/style-dream.css">-->
 		<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/style-fantasy.css">
-		<!--<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/style-dream.css">  --> 
+		 
 		<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/theme.css">
 		<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/demo.css">
 		<link rel="stylesheet" type="text/css" href="${context}/redBlackTheme/css/tab-style.css">
@@ -82,7 +82,8 @@
 		<%@ include	file="header.jsp"%>
 		<div class="ism-container">
 			<%@ include	file="transfer.jsp"%>
-		</div>		  
+		</div>
+		<br>	<br><br>	  
 		<%@ include file="footer.jsp"%>
 		</main>
 	</body>    

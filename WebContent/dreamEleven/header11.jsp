@@ -57,6 +57,9 @@
 					       	</div>
 					       	<div class="collapse navbar-collapse cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="bs-example-navbar-collapse-1">
 						        <ul class="nav navbar-nav">
+						        	<!--  Close Btn -->
+                 <button type="button" class="navbar-toggle manu_close_btn toggle-menu menu-left jPushMenuBtn menu-active" data-toggle="collapse">X</button>
+                   <!-- / Close Btn -->
 									<li>                            
 						                      <a href="javascript:void(0);" onclick="openHomeHome();">League Home</a>
 						                  </li> 

@@ -70,6 +70,7 @@ $('html[manifest=saveappoffline.appcache]').attr('content', '');
 <link
 	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,400,600,700"
 	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Oswald:400,500" rel="stylesheet">
 
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -103,6 +104,8 @@ $('html[manifest=saveappoffline.appcache]').attr('content', '');
 	border: 1px solid #ddd;
 }
 </style>
+<script> window._izq = window._izq || []; window._izq.push(["init"]); </script>
+<script src="https://cdn.izooto.com/scripts/974898d27dd45be07343e1a8a41e44c462902a47.js"></script>
 </head>
 
 <body class="full-bg">
@@ -320,6 +323,9 @@ $('html[manifest=saveappoffline.appcache]').attr('content', '');
 						class="collapse navbar-collapse cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left"
 						id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav">
+							<!--  Close Btn -->
+                 <button type="button" class="navbar-toggle manu_close_btn toggle-menu menu-left jPushMenuBtn menu-active" data-toggle="collapse">X</button>
+                   <!-- / Close Btn -->
 							<li class="active"><a href="javascript:void(0);"
 								onclick="openHomeHome();">HOME</a></li>
 							<li><a href="javascript:void(0);" onclick="homeGuide();">GUIDE</a></li>

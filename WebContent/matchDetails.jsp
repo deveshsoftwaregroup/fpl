@@ -5,12 +5,12 @@
 	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 	<c:set var="context" value="<%=request.getContextPath()%>" />
     <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1  fixture_img_ad">
+            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0 fixture_img_ad">
             	<img src="${context}/redBlackTheme/images/dream11-img.png" class="img-responsive center-block">
                 <!-- Primary content -->
                 <div id="leaguer-main" class="demo demo_fixtures">
 					<div>
-						<div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2">
+						<div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-xs-12 col-xs-offset-0">
 							<div id="fixtures-head" class="panel-group">
 								<h3>Fixtures </h3>
 								

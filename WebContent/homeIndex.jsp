@@ -102,14 +102,14 @@
                 <div class="col-lg-4 col-sm-4 col-tn-12 col-xs-12 all_play">
                 <c:choose>
                     <c:when test="${empty sessionScope.user.displayName}">
-                    <%-- <a href="" data-toggle="modal" data-target="#myModal"><img src="${context}/redBlackTheme/images/play-fantasy-league_1.png" class="img-responsive center-block"></a> --%>
-                    <a href="" data-toggle="modal" data-target="#modalMessage"><img src="${context}/redBlackTheme/images/play-fantasy-league_1.png" class="img-responsive center-block"></a>
+                      <a href="" data-toggle="modal" data-target="#myModal"><img src="${context}/redBlackTheme/images/play-fantasy-league_1.png" class="img-responsive center-block"></a>  
+                     <%-- <a href="" data-toggle="modal" data-target="#modalMessage"><img src="${context}/redBlackTheme/images/play-fantasy-league_1.png" class="img-responsive center-block"></a> --%> 
                    </c:when>
                    <c:otherwise>
-                    <%-- <a href="${context}/mvc/user/UserLanding"><img src="${context}/redBlackTheme/images/play-fantasy-league_1.png" class="img-responsive center-block"></a> --%>
-                    <a href="" data-toggle="modal" data-target="#modalMessage"><img src="${context}/redBlackTheme/images/play-fantasy-league_1.png" class="img-responsive center-block"></a>
+                    <a href="${context}/mvc/user/UserLanding"><img src="${context}/redBlackTheme/images/play-fantasy-league_1.png" class="img-responsive center-block"></a> 
+                   <%--  <a href="" data-toggle="modal" data-target="#modalMessage"><img src="${context}/redBlackTheme/images/play-fantasy-league_1.png" class="img-responsive center-block"></a>  --%>
                     
-                  <%--  <a href="" data-toggle="modal" data-target="#myModal"><img src="${context}/redBlackTheme/images/play-fantasy-league_1.png" class="img-responsive center-block"></a> --%>
+                    <%-- <a href="" data-toggle="modal" data-target="#myModal"><img src="${context}/redBlackTheme/images/play-fantasy-league_1.png" class="img-responsive center-block"></a>  --%>
                    </c:otherwise>
                 </c:choose>
                    
@@ -173,7 +173,7 @@
        
      
     
- <jsp:include page="footer.jsp" /> 
+ <jsp:include page="homeFooter.jsp" /> 
 
  </div> 
 <script language='javascript' type='text/javascript'>
@@ -211,16 +211,16 @@ function showNonSuccessRegistrationPopup()
 </script>
 <script>
         jQuery(document).ready(function($){
-        	/* alert("tt");
-        	alert('${displayPromotionPopup}'); */
-        	clearListCookies();
-        	if('${displayPromotionPopup}'=="true")
+        	 //alert("tt");
+        	//alert('${displayPromotionPopup}');
+        	//clearListCookies();
+        	/* if('${displayPromotionPopup}'=="true")
         		{
 	        		showMyPopup();
 	                $('.demo1').dsCountDown({
 	                   endDate: new Date("December 17, 2017 23:59:00")
 	                });  
-        		}
+        		} */
         	//string. !== -1;
         	if('${param.message}'.indexOf("Congrats")!=-1)
     			{
@@ -264,7 +264,7 @@ function showNonSuccessRegistrationPopup()
 <script type="text/javascript">
 
 
-function clearListCookies()
+/* function clearListCookies()
 {   //alert("hi");
     var cookies = document.cookie.split(";");
     for (var i = 0; i < cookies.length; i++)
@@ -284,7 +284,7 @@ function clearListCookies()
     }
     //window.location = ""; // TO REFRESH THE PAGE
     window.reload(true);
-}
+} */
 </script>
  
 </body>

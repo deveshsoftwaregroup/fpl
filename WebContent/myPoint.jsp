@@ -13,12 +13,12 @@
     
       <div class="row">
       <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 transfers_predict11_map"> 
-         <div>
+         <div class=" align_div_center">
 
-							<div class="league-pager">
+							<div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 league-pager">
 								<div class="pager pager-left">
 									<c:choose>
-									<c:when test="${sportMgmtRes.result.gameWeek.gameWeekNumber eq '1'}">
+									<c:when test="${sportMgmtRes.result.gameWeek.gameWeekNumber eq '19'}">
 									<a href="javascript:void(0);" title="View previous" class="btnPrevious">
 										<span>Previous</span>
 									</a>
@@ -30,7 +30,7 @@
 									</c:otherwise>
 									</c:choose>
 								</div>
-								<h3 class="subHeader pager-heading">Gameweek ${requestScope.sportMgmtRes.result.gameWeek.gameWeekNumber}</h3>
+								<h3 class="subHeader pager-heading pager-heading1">Gameweek ${requestScope.sportMgmtRes.result.gameWeek.gameWeekNumber}</h3>
 								
 								<div class="pager pager-right">
 									<c:choose>
@@ -245,7 +245,7 @@
 																	<div class="ismjs-remove ism-element__control ism-element__control--primary">
 																		<input class="5-box" type="checkbox" name="boxes" value="check_5" <c:if test="${isPlaying eq 'Y'}">checked</c:if> onclick="activatePlayer('${sessionScope.userId}','${gameClubPlayerId}',this);"/>
 																	</div>
-																	< <div class="leaguejs-info league-element__control league-element__control--info">
+																	 <div class="leaguejs-info league-element__control league-element__control--info">
 																		<a href="javascript:void(0);" title="View player information" class="fa fa-info" onclick="showPlayerDetails('${gameClubPlayerId}');"></a>
 																	</div> 
 																</div>
@@ -527,9 +527,9 @@
 					
 
                 <!-- Secondary content -->
-                <div id="ismr-side" class="ism-sidebar">
+                <div id="ismr-side" class="col-lg-4 secondary_header_text">
 					<div>
-							<h2 class="subHeader ism-sub-header">${sessionScope.user.displayName}</h2>
+							<h2 class="subHeader1 ism-sub-header">${sessionScope.user.displayName}</h2>
 
 							<div class="ism-bordered ism-bordered--primary">
 

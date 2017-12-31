@@ -335,10 +335,14 @@ header {
   font-family: 'Legend M54';
   color: #fff;
   padding-left: 0px; }
-
+.choose_captain_vicecaptain{margin-right:0px ;}
+.gameweek_deadline_fantasy h3{background-color:red; padding:10px;margin-bottom:0px;}
+.gameweek_deadline_fantasy p{background-color:#000; padding:10px; color:#fff;}
+.gameweek_deadline_fantasy h3, .gameweek_deadline_fantasy p {text-align:center;}
+.league-squad-wrapper {margin-top:30px;}
 .top_main {
   width: 100%;
-  border-radius: 5px;
+  border-radius: 0px;
   padding-top: 5px;
   padding-bottom: 5px;
   background-color: #dfe5df;
@@ -396,7 +400,7 @@ header {
 
 #right_bdr {
   border-right: 1px solid #055127; }
-.transfers_predict11_map {padding-bottom:80px;}
+.transfers_predict11_map {padding-bottom:0px;}
 .ism-shirt {height:38px;}
 .my_team_points tr td:nth-child(2) { width:50% ;}
 .my_team_points td img {height:25px;}
@@ -407,9 +411,20 @@ header {
 	right:30%;
     float: left ; padding:10px;    padding-top: 7px; font-size:14px; font-weight:100;}
  
- .bg_colr{background-color:#019e56 ;margin-bottom:50px;}
+ .bg_colr{background-color:#000 ;margin-bottom:50px;}
  .bg_colr_pd {padding-left:30px; padding-top:10px;}
+ .bg_colr_4 {}
+ .bg_colr_4 p { font-size:14px !important;}
  .transfers_predict11_map .bg_colr p{font-weight: 100;}
+ .subHeader1 { background-color:red; margin-top:10px; margin-bottom:0px; padding:10px;}
+ .pager-heading1, .pager{float:left;}
+ .league-pager .btnNext, .league-pager .btnPrevious{ margin-right: 0px;   padding-right: 20px;     padding-left: 20px;}
+ .league-pager, .align_div_center{text-align:center;}
+.league-pager{margin-bottom:50px;}
+ .pager-heading1{font-size:18px; padding-left:20px; padding-right:20px;}
+ .pager-left, .pager-right {width:30%;}
+ .pager-heading1{width:40%;}
+ .secondary_header_text h2{text-align:center;color:#fff;}
 /*--------------/ My Team----------------------*/
 /*--------------Fixtures----------------------*/
 .fixture_img_ad {
@@ -550,7 +565,7 @@ td, th {
 
 .top_main_dream11 {
   width: 100%;
-  border-radius: 5px;
+  border-radius: 0px;
   padding-top: 5px;
   padding-bottom: 5px;
   background-color: #dfe5df;
@@ -964,11 +979,15 @@ td, th {
 
   .closebtn {
     display: none; } 
-  .team_map, .team_map_dream11{
+  .team_map {
   	 height:507px !important;
   	 margin-bottom:100px;
   	 margin-top:20px;
-  	 
+  }
+  .team_map_dream11{
+  	 height:507px !important;
+  	 margin-bottom:0px;
+  	 margin-top:20px;
   }
   .ism .ism-sidebar{  padding-top: 0rem;}
    .transfers_predict11_map p {font-size:19px;}
@@ -1415,7 +1434,7 @@ td, th {
     margin-left: 5px; }
 
   .unlimited_transfer {
-    width: 80% !important; }
+    /* width: 80% !important; */}
 
   .navbar {
     height: 50px !important; }
@@ -1507,12 +1526,13 @@ td, th {
   .prev_next_btn h5 {
   	font-size:20px;
   }
-  .choose_captain_mobile_align{margin-top:150px; margin-bottom:200px;}
-  .points_ranking_align_mobile{position:absolute; top:90%;  }
+  .choose_captain_mobile_align{}
+  .points_ranking_align_mobile{position:relative; margin-top:10%;  }
  .ongoing_mid_flex1 {    letter-spacing: 8px;}
   .team_points_flex1 img, .team_points_flex img {
     height: 20px !important; }
-
+  .bg_colr_pd, .bg_colr_4{text-align:center;}
+  .subHeader1 { background-color:red; margin-top:10px;}
   .ism .ism-element-row {
     padding: 0px; }
 
@@ -1536,6 +1556,7 @@ td, th {
 
   .claim_btn {
     margin-right: 20px; }
+  .choose_captain_vicecaptain{margin-right:0px !important;}
   .confirm_team_btn {margin-right:30%;}
   .claim_prize_align{padding-left:0px;padding-right:0px; margin-left:-15px;margin-right:-15px;float:none !important;
     height:115px; }
@@ -1563,6 +1584,12 @@ td, th {
   .ism .ism-panel--guttered-mobile{ overflow: initial;}
   .prev_next_btn a, .prev_next_btn h5 { float:none !important; margin:auto;}
   .panel-group .panel-heading {height:170px;}
+  .league-pager{    font-size: 11px;
+    padding-left: 5px;
+    padding-right: 5px;}
+  .pager-heading1{background-color:none !important;font-size:12px;}
+.league-pager{margin-bottom:90px;}
+.league-pager .btnNext, .league-pager .btnPrevious{    padding-right: 10px;    padding-left: 10px;}
   /*----------------------------------*/
   .overlay {
     height: 0%;

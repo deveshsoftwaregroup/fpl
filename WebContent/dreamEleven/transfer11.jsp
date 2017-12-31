@@ -42,13 +42,11 @@
 
  <div class="container-fluid ">
 		<div class="row">
-			<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 transfers_predict11_map">
+			<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 transfers_predict11_map dream11_transfers_predict11_map">
 				<img src="${context}/redBlackTheme/images/banner12.png" class="img-responsive center-block">
-					<h3>Select Players from List</h3>
-					<p>Gameweek ${gameWeekNumber} Deadline: <time datetime="2016-08-27T10:30:00Z">${deadline}</time><p>
-		            
-		            <p>Player Count: <span class="added-player-count"> </span> </p>	
-								
+					<h3 class="gameweek_select_headline_bg">Select Players</h3>
+					<p class="gameweek_select_bg">Gameweek ${gameWeekNumber} &nbsp;  | &nbsp; Deadline: <time datetime="2016-08-27T10:30:00Z">${deadline} &nbsp; | &nbsp; Player Count: <span class="added-player-count"> </span></time><p>
+		            	
 					<div class="col-lg-8 team_map_dream11">				                              
 						<div class="ism-element-row ism-element-row--pitch">
 	                    	<div id="ismr-pos1" class="ism-pitch__unit ism-pitch__unit--4"> 							
