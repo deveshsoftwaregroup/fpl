@@ -31,7 +31,9 @@ import com.sportmgmt.utility.exception.SportMgmtException;
 @RequestMapping("/payment/dream-eleven/")
 public class DEPaymentAction {
 	private Logger logger = Logger.getLogger(DEPaymentAction.class);
+	@Autowired
 	MailUtility mailUtility;
+	@Autowired
 	PointRankingUtility pointRankingUtility;
 	public MailUtility getMailUtility() {
 		return mailUtility;
@@ -142,6 +144,7 @@ public class DEPaymentAction {
 					udf1 = paymentMap.get("gameWeekId");
 				}
 				udf2=userId;
+				udf3=paymentMap.get("gameWeekPlanId");
 				isTransactionBegin = true;
 				modeMap.put("txnid", transactionId);
 				logger.info("----- txnid: "+transactionId);
@@ -218,8 +221,8 @@ public class DEPaymentAction {
 		{
 			String gameWeekId = paymentMap.get("udf1");
 			String userId=paymentMap.get("udf2");
-			String gameWeekPlanId=paymentMap.get("gameWeekPlanId");
-			logger.info("------------- gameWeekId:"+gameWeekId+", userId: "+userId);
+			String gameWeekPlanId=paymentMap.get("udf3");
+			logger.info("------------- gameWeekId:"+gameWeekId+", userId: "+userId+", gameWeekPlanId: "+gameWeekPlanId);
 			Integer gameWeekIdInt = new Integer(gameWeekId);
 			Integer gameId=GameWeeKManager.getGameIdByGameWeeKId(gameWeekIdInt);
 			logger.info("------------- gameId: "+gameId);

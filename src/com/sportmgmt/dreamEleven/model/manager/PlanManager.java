@@ -193,7 +193,7 @@ public class PlanManager {
 					try
 					{
 						//session.beginTransaction().begin();;UserPayment userPayment = new UserPayment();
-						com.sportmgmt.dreamEleven.model.entity.UserPayment userPayment = (com.sportmgmt.dreamEleven.model.entity.UserPayment)session.load(com.sportmgmt.dreamEleven.model.entity.UserPayment.class, new Integer(transactionId));
+						com.sportmgmt.dreamEleven.model.entity.UserPayment userPayment = (com.sportmgmt.dreamEleven.model.entity.UserPayment)session.get(com.sportmgmt.dreamEleven.model.entity.UserPayment.class, new Integer(transactionId));
 						//userPayment.setTransactionId(Integer.valueOf(transactionId));
 						if(paymentDetails.get("amount") != null && !paymentDetails.get("amount").equals(""))
 						userPayment.setAmount(Double.valueOf((String)paymentDetails.get("amount")));
