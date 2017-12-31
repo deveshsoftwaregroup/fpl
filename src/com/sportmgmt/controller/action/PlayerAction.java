@@ -23,6 +23,7 @@ import com.sportmgmt.model.manager.GameWeeKManager;
 import com.sportmgmt.model.manager.PlayerManager;
 import com.sportmgmt.model.manager.PointRankManager;
 import com.sportmgmt.utility.common.ApplicationDataUtility;
+import com.sportmgmt.utility.common.LeaguePlanUtil;
 import com.sportmgmt.utility.common.PointRankingUtility;
 import com.sportmgmt.utility.common.SortUtility;
 import com.sportmgmt.utility.constrant.SportConstrant;
@@ -157,6 +158,9 @@ public class PlayerAction {
 	System.out.println("");
 		SportMgmtResponse sportMgmtResponse = new SportMgmtResponse();
 		sportMgmtResponse = pointRankingUtility.createGameWeekHistoryForUsers(gameId, gameType, gameWeekId, userId);
+		String gameWeekPlanId=LeaguePlanUtil.getFreeGameWeekPlanId(userId);
+		logger.info("----- free game week plan Id: "+gameWeekPlanId);
+		GameWeeKManager.updateGameWeekReport(new Integer(userId), new Integer(gameWeekId), 0, 0, 0, new Integer(gameWeekPlanId));
 		/*boolean isGameExist = GameManager.isGameExistAndActive(gameId);
 		if(isGameExist)
 		{
