@@ -481,11 +481,13 @@ header {
   background: url(../images/Dream11/fixture_bar.png) no-repeat center;
   height: 50px;
   background-size: contain;
-  font-family: 'Reckoner_Bold';
+  /* font-family: 'Reckoner_Bold'; */
+  font-family: 'Oswald', sans-serif;
   font-weight: 600;
-  letter-spacing: 2px;
-  font-size: 20px; 
-  padding-top:15px; }
+  letter-spacing: 0px;
+  font-size: 20px;
+ text-transform: uppercase;
+      padding-top: 15px;}
 
 .team_points_flex1 {
   display: -webkit-inline-box; }
@@ -532,23 +534,25 @@ td, th {
 
 .date_time {
   text-align: center;
-  color: #000;
-  background-color: #f3f3f3;
-  width: 50%;
-  margin: auto;
-  border-radius: 5px 5px 0px 0px; }
+    color: #fff;
+    background-color: #0d5265;
+    width: 50%;
+    margin: auto;
+    border-radius: 5px 5px 0px 0px;
+    padding: 5px; }
 
 .date_time p {
   margin-bottom: 0px;
   padding: 8px;
   font-weight: 500;
   font-family: 'roboto'; }
-.ongoing_mid_flex1{      padding-left: 44px;
+.ongoing_mid_flex1{      
+	 padding-left: 44px;
     font-size: 16px;
     width: 150px;
     float: left;
-    letter-spacing: 12px;
-    color:#fff;}
+    letter-spacing: 5px;
+    color: #fff;}
 /*--------------/ Fixtures----------------------*/
 /*-------------------Dream 11 Transfer -----------------------*/
 .predict11-bg {
@@ -1479,7 +1483,7 @@ td, th {
     font-size: 19px; }
 
   .ongoing_flex1 {
-    padding-left: 15px;width:100px; }
+    padding-left: 15px;width:95px; }
 
   .ongoing_flex2 {
     padding-left:0%;width:90px; }
@@ -1528,7 +1532,10 @@ td, th {
   }
   .choose_captain_mobile_align{}
   .points_ranking_align_mobile{position:relative; margin-top:10%;  }
- .ongoing_mid_flex1 {    letter-spacing: 8px;}
+ .ongoing_mid_flex1 {       padding-left: 20px;
+    font-size: 12px;
+    width: 90px;
+    letter-spacing: 5px;}
   .team_points_flex1 img, .team_points_flex img {
     height: 20px !important; }
   .bg_colr_pd, .bg_colr_4{text-align:center;}
@@ -1561,8 +1568,9 @@ td, th {
   .claim_prize_align{padding-left:0px;padding-right:0px; margin-left:-15px;margin-right:-15px;float:none !important;
     height:115px; }
   .date_time {
-    margin-bottom: -5px;padding-top: 10px;
-    padding-bottom: 10px; }
+    width: 65% !important;     margin-bottom: -5px;
+    padding-top: 10px;
+    padding-bottom: 10px;}
 
   .my_team .extra_player ul li a img {
     height: 44px !important; }
@@ -1579,7 +1587,7 @@ td, th {
   .Payment_detail {
     margin-top: 28%; }
  .fixture_bar_ongoing {height:40px; padding-top:10px;}
- .ongoing_mid_flex1{padding-left: 10px;    font-size: 16px; width:90px;}
+ 
   #countDown {  position: unset !important; text-align:center;float:none !important;}
   .ism .ism-panel--guttered-mobile{ overflow: initial;}
   .prev_next_btn a, .prev_next_btn h5 { float:none !important; margin:auto;}
@@ -1678,28 +1686,73 @@ td, th {
   .extra_player ul li h4 {
     font-size: 12px !important; } }
 /*----------------------*/
-#paymentModel1 td, #paymentModel1 th {
-  color: #000 !important; }
+#paymentModel1 td, #paymentModel1 th{color:#000 !important;}
+ #paymentModel .modal-body {padding: 10px;}
+#paymentModel table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  
+}
 
-#paymentModel1 thead {
-  float: left; }
+#paymentModel table caption {
+  font-size: 1.5em;
+  margin: .25em 0 .75em;
+}
 
-#paymentModel1 thead th {
+#paymentModel table tr {
+  background: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+
+#paymentModel table th, #paymentModel1 table td {
+  padding: .625em;
+  text-align: center;
+}
+
+#paymentModel table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+#paymentModel table td img { text-align: center; }
+@media screen and (max-width: 600px) {
+
+#paymentModel table { border: 0; }
+
+#paymentModel table caption { font-size: 1.3em; }
+
+#paymentModel table thead { display: none; }
+
+#paymentModel table tr {
+  border-bottom: 3px solid #ddd;
   display: block;
-  height: 40px; }
+  margin-bottom: .625em;
+}
 
-#paymentModel1 tbody {
-  float: left;
-  padding-top: 0px; }
-
-#paymentModel1 tbody td {
+#paymentModel table td {
+  border-bottom: 1px solid #ddd;
   display: block;
-  height: 40px; }
+  font-size: .8em;
+  text-align: right;
+}
 
-.a1a {
+#paymentModel table td:before {
+  content: attr(data-label);
   float: left;
-  display: block; }
+  font-weight: bold;
+  text-transform: uppercase;
+}
 
+#paymentModel table td:last-child { border-bottom: 0; }
+}
+           
+#css-script-menu{position:fixed;height:90px;width:100%;top:0;left:0;border-top:5px solid #16a1e7;background:#fff;-moz-box-shadow:0 2px 3px 0px rgba(0,0,0,0.16);-webkit-box-shadow:0 2px 3px 0px rgba(0,0,0,0.16);box-shadow:0 2px 3px 0px rgba(0,0,0,0.16);z-index:999999;padding:10px 0;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;}.css-script-center{width:960px;margin:0 auto;}.css-script-center ul{width:212px;float:left;line-height:45px;margin:0;padding:0;list-style:none;}.css-script-center a{text-decoration:none;}.css-script-ads{width:728px;height:90px;float:right;}.css-script-clear{clear:both;height:0;}
+ 
 @media (min-width: 64em){
 	.ism .ism-element{left:0px !important;}
 }

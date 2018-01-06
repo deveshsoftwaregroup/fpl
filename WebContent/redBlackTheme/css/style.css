@@ -471,8 +471,9 @@ a:hover, a:active, a:focus {border:none;}
   position: fixed;
   
   /* Set to 0 or wherever */
-  width: 80%;
-  left:10%;
+  width: 40%;
+  left:30%;
+  top:50%;
   /* set to 100% if space is available */
   z-index: 99999;
   box-shadow: 5px 5px 5px #555;
@@ -482,7 +483,7 @@ a:hover, a:active, a:focus {border:none;}
   font-weight: bold;
   color: #000;
   background-color: #fff;
-  padding: 10px;
+  padding:  10px;
   border-radius: 5px; }
 
 #notification span.dismiss {
@@ -558,19 +559,19 @@ a:hover, a:active, a:focus {border:none;}
 
 @media screen and (min-width: 1500px) and (max-width: 1920px) {
   #notification {
-    width: 80% !important; }
+    width: 40% !important; }
 
   .prtnr {
     padding-left: 125px !important; } }
 @media screen and (min-width: 1401px) and (max-width: 1499px) {
   #notification {
-    width: 80% !important; }
+    width: 40% !important; }
 
   .prtnr {
     padding-left: 125px !important; } }
 @media screen and (min-width: 1301px) and (max-width: 1400px) {
   #notification {
-    width: 80% !important; }
+    width: 40% !important; }
 
   .prtnr {
     padding-left: 125px !important; } }
@@ -588,7 +589,9 @@ a:hover, a:active, a:focus {border:none;}
     bottom: 23px !important; }
 
   .prtnr {
-    padding-left: 125px !important; } }
+    padding-left: 125px !important; }
+  #notification {
+    width: 40% !important; } }
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   .left_img, .right_img {
     left: -10px !important; }
@@ -632,7 +635,9 @@ a:hover, a:active, a:focus {border:none;}
     margin-top: 10%; }
 
   .glyphicon-menu-right {
-    padding-left: 47% !important; } }
+    padding-left: 47% !important; }
+    #notification {
+    width: 40% !important; } }
 @media screen and (min-width: 741px) and (max-width: 768px) {
   .left_img, .right_img {
     left: -10px !important; }
@@ -711,7 +716,9 @@ a:hover, a:active, a:focus {border:none;}
     text-align: left; }
 
   .socialBtn {
-    padding: 15px 12px; } }
+    padding: 15px 12px; }
+    #notification {
+    width: 40% !important; } }
 @media screen and (min-width: 601px) and (max-width: 740px) {
   .marg_top {
     margin-top: 20px !important; }
@@ -821,7 +828,8 @@ a:hover, a:active, a:focus {border:none;}
   .socialBtn {
     padding: 15px 12px; }
     .pager-left, .pager-right, .league-pager h3{width: 26% !important;margin-left: 7% !important;    font-size: 16px;}
-    
+  #notification {
+    width: 40% !important; }  
      }
 @media screen and (min-width: 480px) and (max-width: 600px) {
   .marg_top {
@@ -933,6 +941,9 @@ a:hover, a:active, a:focus {border:none;}
   .socialBtn {
     padding: 15px 12px; }
   .pager-left, .pager-right, .league-pager h3{width: 26% !important;margin-left: 7% !important;    font-size: 16px;}
+  #notification {
+    width: 50% !important; left:25%; }
+  
    }
 @media screen and (min-width: 370px) and (max-width: 479px) {
   .marg_top {
@@ -1086,7 +1097,12 @@ a:hover, a:active, a:focus {border:none;}
     height: 350px; }
 
   .socialBtn {
-    padding: 15px 12px; } }
+    padding: 15px 12px; }
+    #notification {
+    width: 90% !important; left:5%;padding:20px; }
+    #myModal1 .modal-body {padding:10px 30px 50px 30px;}
+	#myModal1 .form-group{height:30px;}
+ }
 @media screen and (min-width: 601px) and (max-width: 739px) {
   .all_play {
     margin-top: -363% !important; }
@@ -1125,6 +1141,7 @@ a:hover, a:active, a:focus {border:none;}
     margin-top: 800px; }
   .fb_iframe_widget iframe {top:1%; left:0%;} 
   .btm_ftr2 p{ padding-left:10px;} 
+  
      }
 @media screen and (min-width: 300px) and (max-width: 369px) {
   .marg_top {
@@ -1252,6 +1269,11 @@ a:hover, a:active, a:focus {border:none;}
     z-index: 1;
     position: relative; }
   .fb_iframe_widget iframe {top:1%; left:0%;}    
+  #notification {
+    width: 90% !important; left:5%; padding:20px; }
+  #myModal1 .modal-body {padding:10px 30px 50px 30px;}
+	#myModal1 .form-group{height:30px;}
+	
      }
 @media screen and (min-width: 326px) and (max-width: 369px) {
   .all_play {
@@ -1273,7 +1295,7 @@ a:hover, a:active, a:focus {border:none;}
 
 a:hover, a:active, a:focus{color:#fff;}
 .modal input{color:#000;}
-.share_buttn{position:fixed; right:20px; bottom:0px; background-color:#000; padding:10px 20px; z-index:999;}
+.share_buttn{position:fixed; left:10px; bottom:0px; background-color:#000; padding:10px 20px; z-index:999;}
 #abc{text-transform: uppercase;}
 /*# sourceMappingURL=style.css.map */
 
@@ -1302,7 +1324,14 @@ a:hover, a:active, a:focus{color:#fff;}
 		@media screen and (min-width : 360px) and (max-width : 479px) {
 		  #status1 { left:65%;}
 		 }
-		 
+@media screen and (min-width : 620px){
+	#myModal1 .modal-dialog{width:400px !important;}
+	#myModal1 .modal-body {padding:10px 30px 50px 30px;}
+	#myModal1 .form-group{height:30px;}
+}
+
+
+	 
 .modelPromotion{z-index:99999 !important;}
 .registration {z-index:999999 !important;}
 .thankyou_Modal{z-index:9999999 !important;}

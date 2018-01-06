@@ -4,7 +4,7 @@
     <div class="row">
             <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1  ">
             <div class="row clearfix socialLinksCont">
-                    <div class="col-xs-6 noPadding"><a href="https://www.facebook.com/the12thman.in/" target="_blank" class="text-uppercase socialBtn facebookBtn btn btn-default btn-block"><span class="fa fa-facebook socialBtnIcon"></span><span class="socialBtnTxt">Facebook</span></a></div>
+                    <div class="col-xs-6 noPadding"><a href="https://www.facebook.com/Twelfthmantimes/" target="_blank" class="text-uppercase socialBtn facebookBtn btn btn-default btn-block"><span class="fa fa-facebook socialBtnIcon"></span><span class="socialBtnTxt">Facebook</span></a></div>
                     <div class="col-xs-6 noPadding">
                         <a href="https://twitter.com/the12thmantimes" target="_blank" class="text-uppercase socialBtn twitterBtn btn btn-default btn-block"><span class="fa fa-twitter socialBtnIcon"></span><span class="socialBtnTxt">Twitter</span></a></div>
                 </div>

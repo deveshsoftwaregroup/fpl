@@ -137,11 +137,11 @@
 									value="REGISTER"></a>
 							</div>
 
-							<!-- <div align="center">
+							 <div align="center">
 								<br>
 								<button class="loginBtn center-block loginBtn--facebook"
 									onclick="loginWithFB()";>Register with Facebook</button>
-							</div> -->
+							</div> 
 						</div>
 					</form>
 				</div>
@@ -328,7 +328,7 @@
               </div>
               <div class="modal-body">
                 <div class="table-responsive prod-tbl">
-                <table class="table table-striped table-bordered table-hover" width="100%">
+                <!-- <table class="table table-striped table-bordered table-hover" width="100%">
                     <tbody>
             
                       <c:forEach var="wildCard" items="${sessionScope.purchableWildCardList}" >
@@ -368,6 +368,37 @@
                      </c:forEach>
                     </tbody>
                   </table>
+                  -->
+                  
+   <table class="table table-striped table-bordered table-hover">
+  
+  <thead>
+    <tr>
+      <th scope="col">Eligible for</th>
+      <th scope="col">Price</th>
+      <th scope="col">Discount</th>
+      <th scope="col">Total Price</th>
+      <th scope="col">Purchase</th>
+    </tr>
+  </thead>
+  <tbody>
+     <!-- <c:forEach var="wildCard" items="${sessionScope.purchableWildCardList}" >
+                            <form  id="paymentForm_${wildCard.planId}" action="/SportMgmt/mvc/payment/MakePayment" method="post">
+                            <input type="hidden" name="leaguePlanId" value="${wildCard.planId}"></input>
+                            <input type="hidden" name="planDiscountId" value="${sessionScope.planDiscountId}"></input>
+                            <input type="hidden" name="amount" value="${wildCard.price}"></input>
+                            </form>  --> 
+    <tr>
+      <td scope="row" data-label="Eligible">${wildCard.name}</td>
+      <td data-label="Price">${wildCard.price}</td>
+      <td data-label="Discount"><input id="paymentDiscountCode_${wildCard.planId}" type="text" name="discount" value=""></input></td>
+      <td data-label="Total Price">${wildCard.price}</td>
+      <td data-label="Purchase"><button id="paymentButton_${wildCard.planId}" type="button" class="button" >Buy Now</button></td>
+    </tr>
+   
+<!-- </c:forEach> -->
+  </tbody>
+</table>
                 </div>
               </div>
             </div>      
