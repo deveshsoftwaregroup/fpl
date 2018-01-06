@@ -31,6 +31,9 @@
 				<a class="fb-xfbml-parse-ignore" target="_blank"
 					 href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fjustthinksports.com%3A8090%2FSportMgmt%2Fmvc%2FHomeGuide&amp;src=sdkpreparse">Share</a>
 			</div>   -->
-			<div class="share_buttn"><div class="fb-like" data-href="https://www.facebook.com/Twelfthmantimes/" data-layout="button_count" data-action="recommend" data-size="small" data-show-faces="false" data-share="true"></div>			<!-- facebook button ends -->
+			<div class="share_buttn"><div class="fb-like" data-href="https://www.facebook.com/Twelfthmantimes/" data-layout="button_count" data-action="recommend" data-size="small" data-show-faces="false" data-share="true"></div><div><a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+ <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+ <link rel="canonical"
+  href="https://twitter.com/the12thmantimes"></div>			<!-- facebook button ends -->
 			</div>
 			</body>
