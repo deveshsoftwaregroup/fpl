@@ -93,6 +93,7 @@ public class SportConstrant {
 	public final static String GAME_WEEK_RANK = "rank";
 	public final static String GAME_WEEK_OVERALL_RANK = "totalRank";
 	public final static String DE_COUPON_LIST_REDIRECT_PAGE = "redirect:/mvc/coupon/dream-elevent/list";
+	public final static String COUPON_LIST_REDIRECT_PAGE = "redirect:/mvc/coupon/list";
 	
 	public final static String HIBERNATE_CONNECTION_URL = "hibernate.connection.url";
 	public final static String HIBERNATE_CONNECTION_USERNAME = "hibernate.connection.username";

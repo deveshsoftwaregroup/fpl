@@ -187,10 +187,11 @@ public class CouponUtility {
 		String isActive = coupon.getIsActive();
 		logger.info("---- Coupon:code: "+couponCode);
 		logger.info("coupon isActive: "+isActive);
+		boolean isAlloted = false;
 		if(isActive.equals(SportConstrant.YES))
 		{
 			Integer couponCategoryId = coupon.getCouponCategory().getCouponCategoryId();
-			boolean isAlloted =CouponManager.allotCouponToUser(gameWeekId, userId, couponId,  Integer.valueOf(couponCategoryId), null);
+			isAlloted =CouponManager.allotCouponToUser(gameWeekId, userId, couponId,  Integer.valueOf(couponCategoryId), null);
 			logger.info("Coupon Alloted: "+isAlloted);
 			int totalCoupon = coupon.getTotal();
 			logger.info("totalCoupon: "+totalCoupon);
@@ -203,15 +204,21 @@ public class CouponUtility {
 				{
 					CouponManager.deActivateCoupon(couponId);
 				}
-				return couponCode;
 			}
-			
 		}
 		else
 		{
 			throw new SportMgmtException("Coupon is aread used");
 		}
-		return null;
+		if(isAlloted)
+		{
+			return couponCode;
+		}
+		else
+		{
+			return null;
+		}
+		
 	}
 	
 	public String getUsedCouponCodeOfUserByCategoryForGameWeek(String gameWeekId,Integer userId,Integer couponCategoryId)

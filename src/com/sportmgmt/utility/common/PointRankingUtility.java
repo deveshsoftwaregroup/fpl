@@ -67,9 +67,16 @@ public class PointRankingUtility {
 		 {
 			 gameWeekId = (Integer)currentGameWeek.get(0)[0];
 		 }
+		else
+		{
+			currentGameWeek = GameManager.fetchStartGametWeek(new Integer(gameId));
+			if(currentGameWeek != null && currentGameWeek.size() > 0)
+   		 	{
+				 gameWeekId = (Integer)currentGameWeek.get(0)[0];
+   		 	}
+		}
 	 return gameWeekId;
 	}
-	
 	private boolean isDeadlineStart(String gameWeekId)
 	{
 		List<Timestamp> firstMatchOfGameWeek = GameManager.fetchFirstMatchOfGameWeek(new Integer(gameWeekId));

@@ -58,7 +58,7 @@ public class CouponAction {
 	}
 	
 	@RequestMapping(value = "list/{userId}/{gameId}", method = RequestMethod.GET)
-	public String couponList(ModelMap modeMap,@PathVariable String userId,@PathVariable String gameId)
+	public String couponList(ModelMap modeMap,@PathVariable String userId,@PathVariable String gameId,HttpServletRequest request)
 	{
 		Integer lastGameWeekId = PointRankManager.getLastGameWeekId(gameId);
 		if(lastGameWeekId == null)
@@ -89,6 +89,16 @@ public class CouponAction {
 			{
 				 logger.error("---------- Error in parsing map to json: "+ex);
 			}
+			String couponCode = (String)request.getParameter("couponCode");
+			logger.info("---- couponCode from parameter: "+couponCode);
+			if(couponCode ==null || couponCode.equals(""))
+			{
+				couponCode = couponUtility.getUsedCouponCodeOfUserByCategoryForGameWeek(lastGameWeekId.toString(), new Integer(userId), couponUtility.getCouponCategoryId());
+			}
+			logger.info("couponCode : "+couponCode);
+			modeMap.put("couponCode", couponCode);
+			modeMap.put("isTechnicalError", request.getParameter("isTechnicalError"));
+			modeMap.put("isCouponAlreadyUsed", request.getParameter("isCouponAlreadyUsed"));
 			
 		}
 		return "couponList";
@@ -154,7 +164,7 @@ public class CouponAction {
 		return "dreamEleven/couponList";
 	}
 	@RequestMapping(value = "list/{userId}/{gameId}/{vendorName}", method = RequestMethod.GET)
-	public @ResponseBody java.util.Map couponList(@PathVariable String userId,@PathVariable String gameId,@PathVariable String vendorName)
+	public @ResponseBody java.util.Map couponList(@PathVariable String userId,@PathVariable String gameId,@PathVariable String vendorName,HttpServletRequest request)
 	{
 		java.util.Map resultMap = new java.util.HashMap();
 		Integer lastGameWeekId = PointRankManager.getLastGameWeekId(gameId);
@@ -164,36 +174,60 @@ public class CouponAction {
 			List<Coupon> couponList =couponUtility.getCouponList(userId, lastGameWeekId.toString(),vendorName);
 			logger.info("couponList: "+couponList);
 			resultMap.put("couponList", couponList);
-			
+			String couponCode = (String)request.getParameter("couponCode");
+			if(couponCode ==null || couponCode.equals(""))
+			{
+				couponCode = couponUtility.getUsedCouponCodeOfUserByCategoryForGameWeek(lastGameWeekId.toString(), new Integer(userId), couponUtility.getCouponCategoryId());
+			}
+			logger.info("couponCode : "+couponCode);
+			resultMap.put("couponCode", couponCode);
+			resultMap.put("isTechnicalError", request.getParameter("isTechnicalError"));
+			resultMap.put("isCouponAlreadyUsed", request.getParameter("isCouponAlreadyUsed"));
 		}
 		return resultMap;
 	}
 	
 	@RequestMapping(value = "avail", method = RequestMethod.POST)
-	public @ResponseBody java.util.Map avail(@RequestParam("userId") String userId,@RequestParam("gameWeekId") String gameWeekId,@RequestParam("couponId") String couponId)
+	public String avail(@RequestParam("userId") String userId,@RequestParam("gameId") String gameId,@RequestParam("couponId") String couponId)
 	{
 		java.util.Map resultMap = new java.util.HashMap();
 		resultMap.put("isAvialed", true);
+		boolean isCouponAlreadyUsed = false; 
+		boolean isTechnicalError = false;
 		resultMap.put("message", "Coupon is availed");
 		Integer couponIdInt = new Integer(couponId);
 		Integer userIdInt = new Integer(userId);
-		Integer gameWeekIdInt = new Integer(gameWeekId);
+		Integer lastGameWeekId = PointRankManager.getLastGameWeekId(gameId);
+		if(lastGameWeekId == null)
+		{
+			List<Integer> sortedGAmeWeekIds=  GameWeeKManager.sortedGameWeekIds(gameId);
+			if(sortedGAmeWeekIds !=null && !sortedGAmeWeekIds.isEmpty())
+			{
+				lastGameWeekId = sortedGAmeWeekIds.get(0);
+			}
+			
+		};
+		String couponCode="";
 		try
 		{
-			String couponCode = couponUtility.allotCoupon(gameWeekIdInt, userIdInt, couponIdInt);
-			resultMap.put("couponCode",couponCode);
+			couponCode = couponUtility.allotCoupon(lastGameWeekId, userIdInt, couponIdInt);
+			//resultMap.put("couponCode",couponCode);
 		}
 		catch(SportMgmtException sme)
 		{
-			resultMap.put("isAvialed", false);
-			resultMap.put("message", "Sorry Coupon is not available, Pls choose other coupon");
+			//resultMap.put("isAvialed", false);
+			//resultMap.put("message", "Sorry Coupon is not available, Pls choose other coupon");
+			isCouponAlreadyUsed = true;
 		}
 		catch(Exception ex)
 		{
-			resultMap.put("isAvialed", false);
-			resultMap.put("message", "Technical issue");
+			//resultMap.put("isAvialed", false);
+			//resultMap.put("message", "Technical issue");
+			isTechnicalError = true;
 		}
-		return resultMap;
+		String redirectURL=SportConstrant.COUPON_LIST_REDIRECT_PAGE+"/"+userId+"/"+gameId+"?couponCode="+couponCode+"&isTechnicalError="+isTechnicalError+"&isCouponAlreadyUsed="+isCouponAlreadyUsed;
+		logger.info("----------- Redirecting to coupon list page : "+redirectURL);
+		return redirectURL;	
 	}
 	@RequestMapping(value = "dream-eleven-avail", method = RequestMethod.POST)
 	public String dreamElevenAvail(@RequestParam("userId") String userId,@RequestParam("gameId") String gameId,@RequestParam("couponId") String couponId)

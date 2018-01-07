@@ -83,7 +83,7 @@ function allotCoupon(userId,gameId,couponId)
 {
 	if(typeof gameId != 'undefined' && gameId != '')
 	{
-		url ="/SportMgmt/mvc/coupon/dream-eleven-avail?userId="+userId+"&gameId="+gameId+"&couponId="+couponId;
+		url ="/SportMgmt/mvc/coupon/avail?userId="+userId+"&gameId="+gameId+"&couponId="+couponId;
 		$.ajax({
      		  url: url,
      		  method: 'post',

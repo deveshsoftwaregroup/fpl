@@ -76,9 +76,11 @@
 	                       <%--  <li class="ism-nav__list__item">
 	                            <a href="javascript:void(0);" onclick="uploadPointTableView('${sessionScope.gameDetails.gameId}');">Point Table</a>
 	                        </li>  --%> 
-	                                     
-	                            
-	                        <li>
+	                          <li>
+			                   <a href="javascript:void(0);" onclick="uploadCouponsView('${sessionScope.userId}','${sessionScope.gameDetails.gameId}');">Coupons</a>
+			                </li> 
+	                                 
+	                          <li>
 	                             <a href="javascript:void(0)" onclick="uploadRulesView();">Help</a>
 	                        </li>
 	                        <!-- <li>
@@ -98,9 +100,8 @@
 				</div>
 			</div> 
 		</header>    
-		     
-   
-	<script type="text/javascript">
+	   
+   	<script type="text/javascript">
 		function openHomeHome()
 		{
 			window.location="/SportMgmt/mvc/LeagueLandingHome";			
@@ -192,6 +193,23 @@
 		     		  dataType: 'html',
 		     		  success: function( resp ) {
 		     			 //console.log(resp); 
+		     			 $('.ism-container').html(resp);
+		     		  },
+		     		  error: function( req, status, err ) {
+		     		    console.log( 'something went wrong', status, err );
+		     		  }
+		     		});	
+			}
+		}
+		function uploadCouponsView(userId, gameId)
+		{
+			if(typeof userId != 'undefined' && userId != '' && typeof gameId != 'undefined' && gameId != '')
+			{
+				url ="/SportMgmt/mvc/coupon/list/"+userId+"/"+gameId;
+				$.ajax({
+		     		  url: url,
+		     		  dataType: 'html',
+		     		  success: function( resp ) {
 		     			 $('.ism-container').html(resp);
 		     		  },
 		     		  error: function( req, status, err ) {

@@ -93,14 +93,14 @@ public class SportMgmtExtTag extends TagSupport{
     	 if(gameId != null && !gameId.equals(""))
     	 {
     		 List<Object[]> currentGameWeek = GameManager.fetchCurrenGametWeek(new Integer(gameId));
-    		System.out.println("inside SportMgmtExt currentGameWeek="+currentGameWeek);
+    		logger.info("inside SportMgmtExt currentGameWeek="+currentGameWeek);
     		 if(currentGameWeek == null || currentGameWeek.size() ==0)
     		 {
-    			 System.out.println("inside SportMgmtExt going to fetch StartGametWeek");
+    			 logger.info("inside SportMgmtExt going to fetch StartGametWeek");
     			 //fetchStartGametWeek() this method will also give next upcoming gameweek in case
     			 // if current date is not in between of any gameweek
     			 currentGameWeek = GameManager.fetchStartGametWeek(new Integer(gameId));
-    			 System.out.println("inside SportMgmtExt StartGametWeek.. currentGameWeek="+currentGameWeek);
+    			 logger.info("inside SportMgmtExt StartGametWeek.. currentGameWeek="+currentGameWeek);
     		 }
     		 logger.info("Current Game Week: "+currentGameWeek);
     		 if(currentGameWeek != null && currentGameWeek.size() > 0)
