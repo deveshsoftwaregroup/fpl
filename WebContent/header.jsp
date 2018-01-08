@@ -69,6 +69,9 @@
 	                        </li> 
 	                        <li>
 	                            <a href="javascript:void(0);" onclick="uploadMatchView('${sessionScope.gameDetails.gameId}');">Fixtures</a>
+	                        </li> 
+	                        <li>
+	                        	<a href="javascript:void(0);" onclick="uploadLeadershipView();">Leadership</a>
 	                        </li>                      
 	                        <li>
 	                            <a href="javascript:void(0);" onclick="uploadMyPointView('${sessionScope.gameDetails.gameId}','${sessionScope.userId}','','');">My Points</a>
@@ -167,6 +170,21 @@
 		function uploadRankingView()
 		{
 			url ="/SportMgmt/ranking.jsp";
+				$.ajax({
+		     		  url: url,
+		     		  dataType: 'html',
+		     		  success: function( resp ) {
+		     			 //console.log(resp); 
+		     			 $('.ism-container').html(resp);
+		     		  },
+		     		  error: function( req, status, err ) {
+		     		    console.log( 'something went wrong', status, err );
+		     		  }
+		     		});	
+		}
+		function uploadLeadershipView()
+		{
+			url ="/SportMgmt/Leadership.jsp";
 				$.ajax({
 		     		  url: url,
 		     		  dataType: 'html',
