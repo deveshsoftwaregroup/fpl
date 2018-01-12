@@ -273,7 +273,7 @@
 											</div>
 
 										</div> --%>
-										<%-- <div class="col-sm-6">
+										  <div class="col-sm-6">
 											<br>
 											<div class="form-group">
 												<a class="loginBtn center-block loginBtn--facebook"
@@ -282,7 +282,7 @@
 												</a>
 
 											</div>
-										</div> --%>
+										</div>  
 
 									</div>
 								</div>

@@ -77,11 +77,12 @@
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 btm_ftr1">
                 <h4>More</h4>
                 <ul class="mid_text">
-                    <li><a href="#">About</a></li>
+                    <li><a href="javascript:void(0);" onclick="openAboutUs();">About Us</a></li>
                     <li><a href="http://the12thman.in/">Blog</a></li>
                     <li><a href="scout.html">Scout</a></li>
                     <li><a href="#">Terms & Conditions</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
+                    <li> <a href="javascript:void(0);" onclick="openPrivacyPolicy();">Privacy Policy</a></li>
+                    
                     <li><a href="help.html">Help</a></li>
                     
                 </ul>
@@ -103,7 +104,17 @@
 </div>
 <!-- BEGIN JIVOSITE CODE {literal} -->
 <script type='text/javascript'>
-(function(){ var widget_id = 'v485UnAXDu';var d=document;var w=window;function l(){
+(function(){ var widget_id = 'haxROgpGFC';var d=document;var w=window;function l(){
 var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
 <!-- {/literal} END JIVOSITE CODE -->
 </div>
+<script>
+function openPrivacyPolicy()
+{
+	window.location="/SportMgmt/mvc/PrivacyPolicy";			
+}
+function openAboutUs()
+{
+	window.location="/SportMgmt/mvc/AboutUs";			
+}
+</script>

@@ -182,7 +182,7 @@ $('html[manifest=saveappoffline.appcache]').attr('content', '');
 										<div class="row">
 											<div class="col-xs-12">
 												<div class="row align_pd_top">
-													<div class="col-sm-6">
+													<%-- <div class="col-sm-6">
 														<div class="form-group">
 															<a href="javascript:void(0);" data-toggle="modal"
 																data-target="#myModal1"
@@ -190,7 +190,7 @@ $('html[manifest=saveappoffline.appcache]').attr('content', '');
 																class="fa fa-envelope-o "></span>Sign Up with Google
 															</a>
 														</div>
-													</div>
+													</div> --%>
 													<div class="col-sm-6">
 														<div class="form-group">
 															<a class="loginBtn center-block loginBtn--facebook"
@@ -275,10 +275,19 @@ $('html[manifest=saveappoffline.appcache]').attr('content', '');
 
 	<div class="container">
 		<div class="row">
-			<div
-				class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 top-bnr-mobile">
+			<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 top-bnr-mobile">
 				<img src="${context}/redBlackTheme/images/simple-bannr.png"
-					class="img-responsive">
+					class="img-responsive"> 
+					<%-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+									<!-- justthinksports_homepage_top -->
+									<ins class="adsbygoogle"
+									     style="display:inline-block;width:728px;height:90px"
+									     data-ad-client="ca-pub-9891586352099803"
+									     data-ad-slot="3401696803"></ins>
+									<script>
+									(adsbygoogle = window.adsbygoogle || []).push({});
+									</script> --%>
+			
 			</div>
 			<div
 				class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1  marg_top">
@@ -291,9 +300,20 @@ $('html[manifest=saveappoffline.appcache]').attr('content', '');
 							<li class="pwr_text flex-item"></li>
 							<li class="flex-item"><img src=""
 								class="img-responsive pwr_logo"></li>
-							<li class="flex-item"><img
+							<li class="flex-item">
+							<%-- <img
 								src="${context}/redBlackTheme/images/simple-bannr.png"
-								class="img-responsive pull-right"></li>
+								class="img-responsive pull-right"> --%>
+								<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+									<!-- justthinksports_homepage_top -->
+									<ins class="adsbygoogle"
+									     style="display:inline-block;width:728px;height:90px"
+									     data-ad-client="ca-pub-9891586352099803"
+									     data-ad-slot="3401696803"></ins>
+									<script>
+									(adsbygoogle = window.adsbygoogle || []).push({});
+									</script>
+								</li>
 						</ul>
 					</div>
 				</div>
@@ -304,7 +324,29 @@ $('html[manifest=saveappoffline.appcache]').attr('content', '');
 		<div class="row">
 			<div class="col-lg-1 col-sm-1">
 				<div class="left_img">
-					<img src="${context}/redBlackTheme/images/left_image.png">
+					<%-- <img src="${context}/redBlackTheme/images/left_image.png"> --%>
+					
+					<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+					<!-- justthinksports_homepage_left_sidebar -->
+						<ins class="adsbygoogle"
+    					 style="display:inline-block;width:120px;height:600px"
+    					 data-ad-client="ca-pub-9891586352099803"
+     					data-ad-slot="4098742947"></ins>
+					<script>
+						(adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+					
+						<br><br>
+						
+					<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+					<!-- justhinksports_homepage_left_sidebar2 -->
+					<ins class="adsbygoogle"
+					     style="display:inline-block;width:120px;height:600px"
+					     data-ad-client="ca-pub-9891586352099803"
+					     data-ad-slot="5792766864"></ins>
+					<script>
+						(adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
 				</div>
 			</div>
 			<div class="col-lg-10 col-md-10 col-sm-10  ">
@@ -359,14 +401,34 @@ $('html[manifest=saveappoffline.appcache]').attr('content', '');
 			</div>
 			<div class="col-lg-1  col-sm-1">
 				<div class="right_img">
-					<img src="${context}/redBlackTheme/images/left_image.png">
+					<%-- <img src="${context}/redBlackTheme/images/left_image.png"> --%>
+					
+					<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+					<!-- justthinksports_homepage_right_sidebar -->
+					<ins class="adsbygoogle"
+					     style="display:inline-block;width:120px;height:600px"
+					     data-ad-client="ca-pub-9891586352099803"
+					     data-ad-slot="1178023996"></ins>
+					<script>
+					(adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+					<br><br>
+					<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+						<!-- justthinksports_homepage_rightsidebar2 -->
+						<ins class="adsbygoogle"
+						     style="display:inline-block;width:120px;height:600px"
+						     data-ad-client="ca-pub-9891586352099803"
+						     data-ad-slot="7568882961"></ins>
+						<script>
+						(adsbygoogle = window.adsbygoogle || []).push({});
+						</script>
 				</div>
 			</div>
 			</nav>
 		</div>
 		</header>
 
-
+    
 
 
 
