@@ -255,6 +255,8 @@ input[type="date"]:valid::before {
   
   z-index: 4;
    }
+ .twitter-share-button {margin-top:10px;}
+
 .inlineBlock ._2tga ._49ve{    padding: 20px !important;}
 ._2tga._49ve{
     height: 50px !important; border-radius:0px !important;}
