@@ -41,7 +41,19 @@
     				
 	    <header>
 			<div class="row">
-				<div class="col-lg-1 col-sm-1"><div class="left_img"><img src="${context}/redBlackTheme/images/left_image.png"></div></div>    
+				<div class="col-lg-1 col-sm-1"><div class="left_img">
+				<%-- <img src="${context}/redBlackTheme/images/left_image.png"> --%>
+						<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+					<!-- justthinksports_homepage_left_sidebar -->
+						<ins class="adsbygoogle"
+    					 style="display:inline-block;width:120px;height:600px"
+    					 data-ad-client="ca-pub-9891586352099803"
+     					data-ad-slot="4098742947"></ins>
+					<script>
+						(adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+				</div>
+				</div>    
 				<div class="col-lg-10 col-md-10 col-sm-10  ">
 					<nav class="navbar ">
 						<div class="container-fluid">
@@ -99,7 +111,18 @@
 					</nav>  
 				</div>  
 				<div class="col-lg-1  col-sm-1">
-					<div class="right_img"><img src="${context}/redBlackTheme/images/left_image.png"></div>
+					<div class="right_img">
+					<%-- <img src="${context}/redBlackTheme/images/left_image.png"> --%>
+					<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+					<!-- justthinksports_homepage_right_sidebar -->
+					<ins class="adsbygoogle"
+					     style="display:inline-block;width:120px;height:600px"
+					     data-ad-client="ca-pub-9891586352099803"
+					     data-ad-slot="1178023996"></ins>
+					<script>
+					(adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+					</div>
 				</div>
 			</div> 
 		</header>    
