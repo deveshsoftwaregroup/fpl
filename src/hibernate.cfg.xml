@@ -93,5 +93,12 @@
          <mapping class="com.sportmgmt.dreamEleven.model.entity.PaymentExt"/>
          <mapping class="com.sportmgmt.dreamEleven.model.entity.DeGameWeekReport"/>
          <!--  Dream Eleven mapping ends -->
+         
+          <!--  Vendor mapping starts -->
+         <mapping class="com.sportmgmt.vendor.model.entity.V_Article"/>
+         <mapping class="com.sportmgmt.vendor.model.entity.V_Position"/>
+         <mapping class="com.sportmgmt.vendor.model.entity.V_Position_Price"/>
+        <!--  <mapping class="com.sportmgmt.vendor.model.entity.V_Vendor_Position"/> -->
+         <!--  Vendor mapping ends -->
    </session-factory>
 </hibernate-configuration>
