@@ -6,7 +6,7 @@ public static final String FROM_CLUB = "FROM Club";
 public static final String FROM_V_ARTICLE = "FROM V_Article V WHERE V.position_price_id=:position_price_id";
 public static final String SELECT_ACTIVE_GAME = "FROM Game G WHERE G.isActive =:isActive";
 public static final String SELECT_POSITION_ID_BY_PAGENAME = "select position_id from V_Position P WHERE P.page_name =:page_name";
-public static final String SELECT_POSITION_PRICE_ID_BY_POSITION_ID = "select position_Price_id from V_Position_Price P WHERE P.position_id =:position_id order by P.position_priority";
+public static final String SELECT_POSITION_PRICE_ID_BY_POSITION_ID = "select position_Price_id from V_Position_Price P WHERE P.position_id =:position_id order by P.position_priority desc";
 public static final String SELECT_POSITION_CODE_BY_POSITION_ID = "select position_code from V_Position P WHERE P.position_id =:position_id";
 public static final String SELECT_MATCH_BY_GAME = "FROM Match M WHERE M.game =:game";
 public static final String SELECT_POINT_BY_GAME = "FROM Point P WHERE P.gameId =:gameId";
