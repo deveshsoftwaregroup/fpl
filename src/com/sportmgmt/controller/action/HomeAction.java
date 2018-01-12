@@ -2,6 +2,7 @@ package com.sportmgmt.controller.action;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.TreeMap;
 
 import javax.servlet.http.HttpServletRequest;
@@ -17,6 +18,8 @@ import org.springframework.web.servlet.ModelAndView;
 import com.sportmgmt.model.manager.GameWeeKManager;
 import com.sportmgmt.model.manager.UserManager;
 import com.sportmgmt.utility.constrant.SportConstrant;
+import com.sportmgmt.vendor.model.manager.VendorManager;
+import com.sportmgmt.vendor.model.entity.V_Article;;
 
 @Controller
 public class HomeAction {
@@ -40,7 +43,7 @@ public class HomeAction {
 	}
 	
 	@RequestMapping("/LeagueHome")
-	public String leagueHome(ModelMap map,HttpServletRequest request)
+	public String leagueHome(ModelMap map,HttpServletRequest request,String pageName)
 	{
 		TreeMap<String,HashMap<String,ArrayList<String>>> countryMap = UserManager.getCountryStateCityMap();
 		logger.info("--------- League Home , countryMap: "+countryMap);
@@ -49,9 +52,14 @@ public class HomeAction {
 		map.put("clubMap", clubMap);
 		/*String planId = GameWeeKManager.fetchPlanIdFromDeGameWeekReport(2, 1);
 		System.out.println(planId);*/
-		map.put("displayPromotionPopup", "true");
-		String promotion = "true";
-		request.setAttribute("promotion", promotion);
+		HashMap<String,List<V_Article>> articleMap= VendorManager.fetchPositionIdByPageName(pageName);
+		map.put("articleMap", articleMap);
+		System.out.println("articleMapppppppp"+articleMap);
+		//map.put("displayPromotionPopup", "true");
+		//String promotion = "true";
+		//request.setAttribute("promotion", promotion);
+		
+		
 		return SportConstrant.LEAGE_HOME_PAGE;
 
 	}
@@ -87,6 +95,18 @@ public class HomeAction {
 	{
 		logger.info("---------- Forwardng to : "+SportConstrant.HOME_GAME_GUIDE);
 		 return SportConstrant.HOME_GAME_GUIDE;
+	}
+	@RequestMapping(value = "PrivacyPolicy", method = RequestMethod.GET)
+	public  String PrivacyPolicy(ModelMap modeMap,HttpServletRequest request)
+	{
+		logger.info("---------- Forwardng to : "+SportConstrant.PRIVACY_POLICY);
+		 return SportConstrant.PRIVACY_POLICY;
+	}
+	@RequestMapping(value = "AboutUs", method = RequestMethod.GET)
+	public  String AboutUs(ModelMap modeMap,HttpServletRequest request)
+	{
+		logger.info("---------- Forwardng to : "+SportConstrant.PRIVACY_POLICY);
+		 return SportConstrant.ABOUT_US;
 	}
 	@RequestMapping(value = "HomeGuide", method = RequestMethod.GET)
 	public  String homeGuide(ModelMap map,HttpServletRequest request)
