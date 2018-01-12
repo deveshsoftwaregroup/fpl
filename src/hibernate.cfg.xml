@@ -98,7 +98,7 @@
          <mapping class="com.sportmgmt.vendor.model.entity.V_Article"/>
          <mapping class="com.sportmgmt.vendor.model.entity.V_Position"/>
          <mapping class="com.sportmgmt.vendor.model.entity.V_Position_Price"/>
-        <!--  <mapping class="com.sportmgmt.vendor.model.entity.V_Vendor_Position"/> -->
+         <mapping class="com.sportmgmt.vendor.model.entity.Vendor"/> 
          <!--  Vendor mapping ends -->
    </session-factory>
 </hibernate-configuration>

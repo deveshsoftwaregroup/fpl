@@ -41,6 +41,27 @@ public class HomeAction {
 		return new ModelAndView("redirect:/mvc/LeagueHome");
 
 	}
+	@RequestMapping("/VendorHome")
+	public String VendorHome(ModelMap map,HttpServletRequest request)
+	{
+		TreeMap<String,HashMap<String,ArrayList<String>>> countryMap = UserManager.getCountryStateCityMap();
+		logger.info("--------- League Home , countryMap: "+countryMap);
+		map.put("countryMap", countryMap);
+		TreeMap<String,HashMap<String,ArrayList<String>>> clubMap = UserManager.getClubMap();
+		map.put("clubMap", clubMap);
+		/*String planId = GameWeeKManager.fetchPlanIdFromDeGameWeekReport(2, 1);
+		System.out.println(planId);*/
+		//HashMap<String,List<V_Article>> articleMap= VendorManager.fetchPositionIdByPageName(pageName);
+		//map.put("articleMap", articleMap);
+		//System.out.println("articleMapppppppp"+articleMap);
+		//map.put("displayPromotionPopup", "true");
+		//String promotion = "true";
+		//request.setAttribute("promotion", promotion);
+		
+		
+		return SportConstrant.VENDOR_HOME_PAGE;
+
+	}
 	
 	@RequestMapping("/LeagueHome")
 	public String leagueHome(ModelMap map,HttpServletRequest request,String pageName)

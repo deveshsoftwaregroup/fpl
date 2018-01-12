@@ -36,7 +36,6 @@ public class SportConstrant {
 	public final static String USER_VER_URL = "userVerifyURL";
 	public final static String USER_LANDING_PAGE = "userLanding";
 	public final static String USER_LANDING_PAGE11 = "dreamEleven/userLanding11";
-	
 	public final static String USER_LANDING_REDIRECT_PAGE = "redirect:/mvc/user/UserLanding";
 	public final static	 String USER_LANDING_REDIRECT_PAGE11 = "redirect:/mvc/user11/UserLanding11";
 	public final static String USER_UPDATE_PAGE = "userUpdate";
@@ -53,7 +52,7 @@ public class SportConstrant {
 	public final static String POINT_TABLE_PAGE = "pointTable";
 	//public final static String LEAGE_HOME_PAGE = "leagueHome";
 	public final static String LEAGE_HOME_PAGE = "homeIndex";
-	public final static String VENDOR_HOME_PAGE = "vendor/vendorIndex";
+	public final static String VENDOR_HOME_PAGE = "vendor/vendorHomeheader";
 	public final static String LEAGUE_LANDING_HOME_PAGE = "homeIndex";
 	public final static String HOME_GAME_GUIDE = "homeGameGuide";
 	public final static String PRIVACY_POLICY = "privacyPolicy";
