@@ -53,6 +53,7 @@ public class SportConstrant {
 	//public final static String LEAGE_HOME_PAGE = "leagueHome";
 	public final static String LEAGE_HOME_PAGE = "homeIndex";
 	public final static String VENDOR_HOME_PAGE = "vendor/vendorHomeheader";
+	public final static String VENDOR_LOG_IN_PAGE = "vendor/vendorIndex";
 	public final static String LEAGUE_LANDING_HOME_PAGE = "homeIndex";
 	public final static String HOME_GAME_GUIDE = "homeGameGuide";
 	public final static String PRIVACY_POLICY = "privacyPolicy";

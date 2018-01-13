@@ -111,6 +111,188 @@
 		</div>
 	</div>
 <!-- 	Registration popup ends -->
+<div class="modal fade thankyou_Modal" id="thankyou_Modal" role="dialog">
+        <div class="modal-dialog">
+        
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">THANK YOU!</h4>
+            </div>
+            <div class="modal-body">
+              <p><span>${param.message}</span> <br>for<br><b>'The Great Football Maniac Sale'</b><br> Do shopping and avail discount promo code. 
+                Don't forget to play Predict Eleven. It's Fun as well as Rewarding.</p>
+            </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="modal fade" id="NonSuccessRegistrationPopup_Modal" role="dialog">
+        <div class="modal-dialog">
+        
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Sorry!</h4>
+            </div>
+            <div class="modal-body">
+              <p><span>${param.message}</span><br> 
+                </p>
+            </div>
+           
+          </div>
+          
+        </div>
+      </div>
+      <!-- 	Login popup starts -->
+<div id="vendor-login" class="modal fade" role="dialog">
+
+		<div id="login-overlay" class="modal-dialog loginForm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">×</span><span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">Login</h4>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="col-xs-12">
+								<div class="row">
+									<form id="loginForm" name="LoginForme" action="" method="get"
+										onsubmit="event.preventDefault();" autocomplete="off">
+
+										<div class="col-xs-12">
+											<div class="row">
+												<div class="form-group">
+
+													<span class="input input--hoshi">
+													<div class="col-lg-2"> 
+													<span
+															class="input__label-content input__label-content--hoshi">Email
+																ID</span>
+																</div>
+																<div class="col-lg-10"> 
+													<input
+														class="input__field input__field--hoshi" type="email"
+														name="emailId" autocomplete="off" /> <label
+														class="input__label input__label--hoshi input__label--hoshi-color-1"
+														for="email"> 
+														
+													</label>
+													</div>
+													</span>
+												</div>
+											</div>
+										</div>
+
+										<div class="col-xs-12">
+											<div class="row">
+												<div class="form-group">
+
+													<span class="input input--hoshi">
+													<div class="col-lg-2"> 
+													<span
+															class="input__label-content input__label-content--hoshi">Password</span>
+															</div>
+															<div class="col-lg-10">
+													<input
+														class="input__field input__field--hoshi" type="password"
+														name="logonPassword" autocomplete="off" /> <label
+														class="input__label input__label--hoshi input__label--hoshi-color-1"
+														for="logonPassword">
+														 
+													</label>
+													</div>
+													</span>
+
+												</div>
+											</div>
+										</div>
+										<div class="col-xs-12">
+											<div class="row">
+												<div class="col-sm-12">
+													<div class="row">
+														<div class="form-group">
+															<span class="input input--hoshi"> <label
+																class="input__label input__label--hoshi input__label--hoshi-color-1"
+																for="logonPassword"> <a
+																	href="javascript:void(0);" data-toggle="modal"
+																	data-target="#myModal3"><span
+																		class="btn-block forgot_psw">Forgot
+																			Password?</span></a>
+
+															</label>
+															</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+										<div class="col-lg-6 col-lg-offset-3 col-xs-12">
+											
+												<div id="loginErrorMsg" class="alert alert-error hide">Wrong
+													username or password</div>
+												<a href="javascript:void(0);" class=""
+													style="position: relative;">
+													<button type="submit"
+														class="btn btn-block login_btn1"
+														onclick="doLogin();">Login</button>
+												</a>
+											</div>
+											 <<%-- div class="col-lg-6 col-lg-offset-3 col-xs-12 new_user_register">
+											 	<a data-toggle="modal" href="#myModal1"><p>New User?<span> Register Now </span></p></a>
+											 </div> --%>
+										</div>
+									</form>
+								</div>
+							</div>
+
+							<div class="row">
+
+								<div class="col-xs-12">
+									<%-- <div class="row">
+										<div class="col-sm-6">
+											<br>
+											<div class="form-group">
+
+												<a href="javascript:void(0);" data-toggle="modal"
+													data-target="#myModal1"
+													class="loginBtn center-block loginBtn--google"> <span
+													class="fa fa-envelope-o"></span>Sign Up with Email ID
+												</a>
+
+											</div>
+
+										</div> --%>
+										  <div class="col-sm-6">
+											<br>
+											<%-- <div class="form-group">
+												<a class="loginBtn center-block loginBtn--facebook"
+													href="javascript:void(0);" onclick="loginWithFB11()"> <span
+													class="fa fa-facebook"></span> Sign Up with Facebook
+												</a>
+
+											</div>
+ --%>										</div>  
+
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- 	Login popup ends -->
 
 
 </body>

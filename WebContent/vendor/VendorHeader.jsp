@@ -389,7 +389,7 @@ $('html[manifest=saveappoffline.appcache]').attr('content', '');
 										</c:otherwise>
 							</c:choose> --%>
 									<li><a href="" data-toggle="modal"
-										data-target="#myModal11">SIGN IN</a></li>
+										data-target="#vendor-login">SIGN IN</a></li>
 
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
@@ -544,14 +544,14 @@ $('html[manifest=saveappoffline.appcache]').attr('content', '');
 				}
 
 				//alert(loginForm['emailId']);
-				var url = "user/validate?logonId=" + loginForm['emailId'].value
+				var url = "vendor/validate?logonId=" + loginForm['emailId'].value
 						+ "&logonPassword=" + loginForm['logonPassword'].value
 				$.ajax({
 					url : url,
 					dataType : 'json',
 					success : function(resp) {
 						if (resp.isValidUser) {
-							window.location = "user/login/" + resp.userId;
+							window.location = "vendor/login/" + resp.vendorId;
 						} else {
 							showNotification(resp.errorMessage);
 						}

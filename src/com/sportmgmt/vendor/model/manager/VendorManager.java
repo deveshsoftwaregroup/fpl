@@ -426,5 +426,82 @@ public class VendorManager {
 		
 		return true;
 	}
+	public static boolean validateUser(String logonId,String logonPassword)
+	{
+		setErrorMessage(SportConstrant.NULL);
+		setErrorCode(SportConstrant.NULL);
+		setVendorId(SportConstrant.NULL);
+		SessionFactory factory = HibernateSessionFactory.getSessionFacotry();
+		if(factory == null)
+		{
+			setErrorCode(ErrorConstrant.SESS_FACT_NULL);
+			setErrorMessage("Technical Error");
+			return false;
+		}
+		else
+		{
+			Session session = factory.openSession();
+			if(session != null)
+			{
+				try
+				{
+					Query query	 = session.createQuery("FROM Vendor U WHERE U.logonID =:logonId");
+					query.setParameter("logonId", logonId);
+					List userRecord =query.list();
+					if(userRecord.size() >= 1)
+					{
+						Vendor vendor = ((Vendor)userRecord.get(0));
+						if(vendor.getStatus().equals(SportConstrant.INACTIVE))
+						{
+							setErrorCode(ErrorConstrant.ACCOUNT_INACTIVE);
+							setErrorMessage("Acount is not active");
+							return false;
+						}
+						if(vendor.getStatus().equals(SportConstrant.LOCKED))
+						{
+							setErrorCode(ErrorConstrant.ACCOUNT_LOCKED);
+							setErrorMessage("Acount is locked");
+							return false;
+						}
+						if(!vendor.getLogonPassword().equals(logonPassword))
+						{
+							setErrorCode(ErrorConstrant.INVLID_PASS);
+							setErrorMessage("Incorect Password");
+							return false;
+						}
+						else
+						{
+							setVendorId(vendor.getVendorId().toString());
+						}
+					}
+					else
+					{
+						setErrorCode(ErrorConstrant.USER_NULL);
+						setErrorMessage("Logon Id does not exist");
+						return false;
+					}
+				}
+				catch(Exception ex)
+				{
+					logger.error("Exception in save user: "+ex);
+					session.beginTransaction().rollback();
+					setErrorMessage("Technical Error");
+					setErrorCode(ErrorConstrant.TRANSACTION_ERROR);
+					return false;
+				}
+				finally
+				{
+					session.close();
+				}
+			}
+			else
+			{
+				setErrorCode(ErrorConstrant.SESS_NULL);
+				setErrorMessage("Technical Error");
+				return false;
+			}
+		}
+		return true;
+	}
 
 }
