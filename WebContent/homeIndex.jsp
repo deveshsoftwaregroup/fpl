@@ -26,21 +26,28 @@
             <div class="row">
                 <div class="col-lg-8 col-sm-8 col-tn-12 col-xs-12 scout_slide">
                    <ul class="bxslider_1">
+                   <c:forEach items="${articleMap}" var="item">
+                   <c:if test="${item.key=='HOMEPAGE_SLIDER'}">
+                   <c:forEach items="${item.value}" var="article">
 						<li class="home_scout_section">
 							<div class="row ">
 						    	<div class="col-lg-7 col-sm-6 col-tn-6 col-xs-12">
-						      		<img src="${context}/redBlackTheme/images/homeIndex/Webp.net-resizeimage-34.jpg" >
+						    	<%-- <c:out value="${context}/${article.image_path}"/> --%>
+						      		<img src="<% System.getProperty("catalina.home"); %>/images/${article.image_path}" >
 						    	</div>
 						    	<div class="col-lg-5 col-sm-6 col-tn-6 col-xs-12">
-						    	    <c:forEach items="${articleList}" var="item">
-						      		<h4><c:out value="${item.heading}"/> </h4>
-						        	<p><c:out value="${item.content}"/> </p>
-						        	<p><a target="_blank" href="http://the12thman.in/defender-contender-rio-ferdinand-marks-return/"><b> READ MORE </b></a>- <i><c:out value="${item.link}"/></i></p>
-						        	</c:forEach>
+						      		<h4><c:out value="${article.heading}"/> </h4>
+						        	<p><c:out value="${article.content}"/> </p>
+						        	<p><a target="_blank" href="${article.link}"><b> READ MORE </b></a>- <i>the12thman.in</i></p>
+						        	
 						    	</div>
 						    </div>
 						</li>
-						<c:forEach items="${articleList}" var="item">
+						</c:forEach>
+							    </c:if>
+						</c:forEach>
+						
+						<%-- <c:forEach items="${articleList}" var="item">
                                   <c:out value="${item.content}"/>
                                </c:forEach>
 						
@@ -67,17 +74,27 @@
 	                                  <p><a target="_blank" href="http://the12thman.in/joses-star-opens-contract-talk-manchester-united/"><b> READ MORE </b></a>- <i>the12thman.in</i></p>   
 	                          	</div>
 						    </div>
-						</li>
+						</li> --%>
                        
 
                 </ul>
                     <ul class="scout_list ">
+                    <c:forEach items="${articleMap}" var="item">
+                    <%-- <c:out value="${item.key}"></c:out> --%>
+                    <c:if test="${item.key=='HOMEPAGE_MIDDLE_BLOG'}">
+                    <c:forEach items="${item.value}" var="article">
                         <li>
-                            <h4>pep Guardiola praises Manchester City players but insists that the title is far away </h4>
-                              <p>MANCHESTER CITY BOSS PEP GUARDIOLA HAS INSISTED THAT HIS TEAM CANNOT CALL THEMSELVES AS GOOD AS CHELSEA AFTER LAST SEASON PERFORMANCE. </p>
-                              <p><a target="_blank" href="http://the12thman.in/pep-guardiola-praises-manchester-city-players-insists-title-far-away/"><b>READ MORE</b></a>- <i>the12thman.in</i></p>
+                            <h4><!-- pep Guardiola praises Manchester City players but insists that the title is far away --><c:out value="${article.heading}"/></h4>
+                              <!-- <p><!-- MANCHESTER CITY BOSS PEP GUARDIOLA HAS INSISTED THAT HIS TEAM CANNOT CALL THEMSELVES AS GOOD AS CHELSEA AFTER LAST SEASON PERFORMANCE.  </p>-->
+                              <!-- <p><a target="_blank" href="http://the12thman.in/pep-guardiola-praises-manchester-city-players-insists-title-far-away/"><b>READ MORE</b></a>- <i>the12thman.in</i></p> --> -->
+                              <p><c:out value="${article.content}"/> </p>
+						      <p><a target="_blank" href="${article.link}"><b> READ MORE </b></a>- <i>the12thman.in</i></p>
+						      <hr>
                         </li>
-                        <hr>
+                        </c:forEach>
+                        </c:if>
+                        </c:forEach>
+                        <!-- <hr>
                         <li>
                             <h4>Golden Boy 2017 Nominees: 7 players from Premier League Nominated </h4>
                               <p>Last season of football was surely the season of highly rated young talents all across the globe. Be it Kylian Mbapp rise from Monaco or Dembels performance for Dortmund which lead to the talented youngster sealing the dream move to FC Barcelona. </p>
@@ -94,7 +111,7 @@
                             <h4>Aguero form a major boost for Manchester City </h4>
                               <p>SERGIO AGUERO DISPLAYED AN ABSOLUTE MASTERCLASS PERFORMANCE AGAINST WATFORD ON SATURDAY SCORING A BRILLIANT HAT-TRICK IN CITY 6-0 RIOT AT VICARAGE ROAD. </p>
                               <p><a target="_blank" href="http://the12thman.in/agueros-form-major-boost-manchester-city/"><b>READ MORE</b></a>- <i>the12thman.in</i></p>
-                        </li>
+                        </li> -->
                       
                     </ul>
  
@@ -102,12 +119,12 @@
                 <div class="col-lg-4 col-sm-4 col-tn-12 col-xs-12 all_play">
                 <c:choose>
                     <c:when test="${empty sessionScope.user.displayName}">
-                      <a href="" data-toggle="modal" data-target="#myModal"><img src="${context}/redBlackTheme/images/play-fantasy-league_1.png" class="img-responsive center-block"></a>  
-                     <%-- <a href="" data-toggle="modal" data-target="#modalMessage"><img src="${context}/redBlackTheme/images/play-fantasy-league_1.png" class="img-responsive center-block"></a> --%> 
+                       <a href="" data-toggle="modal" data-target="#myModal"><img src="${context}/redBlackTheme/images/play-fantasy-league_1.png" class="img-responsive center-block"></a>  
+                      <%-- <a href="" data-toggle="modal" data-target="#modalMessage"><img src="${context}/redBlackTheme/images/play-fantasy-league_1.png" class="img-responsive center-block"></a>  --%> 
                    </c:when>
                    <c:otherwise>
-                    <a href="${context}/mvc/user/UserLanding"><img src="${context}/redBlackTheme/images/play-fantasy-league_1.png" class="img-responsive center-block"></a> 
-                   <%--  <a href="" data-toggle="modal" data-target="#modalMessage"><img src="${context}/redBlackTheme/images/play-fantasy-league_1.png" class="img-responsive center-block"></a>  --%>
+                     <a href="${context}/mvc/user/UserLanding"><img src="${context}/redBlackTheme/images/play-fantasy-league_1.png" class="img-responsive center-block"></a>  
+                     <%-- <a href="" data-toggle="modal" data-target="#modalMessage"><img src="${context}/redBlackTheme/images/play-fantasy-league_1.png" class="img-responsive center-block"></a> --%>  
                     
                     <%-- <a href="" data-toggle="modal" data-target="#myModal"><img src="${context}/redBlackTheme/images/play-fantasy-league_1.png" class="img-responsive center-block"></a>  --%>
                    </c:otherwise>
@@ -115,7 +132,16 @@
                    
                  <br>
                   <a href="#"><img src="${context}/redBlackTheme/images/google-adbanner.png" class="img-responsive center-block"></a>
-                  <p class="sponsored_ad">sponsored</p>
+                  <p class="sponsored_ad">sponsored</p> 
+                  <!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+					justthinksports_homepage_centre
+					<ins class="adsbygoogle"
+					     style="display:inline-block;width:300px;height:250px"
+					     data-ad-client="ca-pub-9891586352099803"
+					     data-ad-slot="1980803920"></ins>
+					<script>
+					(adsbygoogle = window.adsbygoogle || []).push({});
+					</script> -->
                  <br>
                  
                 <c:choose>
@@ -170,8 +196,6 @@
         </div>
 
         <!--  / Wildcard Section -->
-       
-     
     
  <jsp:include page="homeFooter.jsp" /> 
 
