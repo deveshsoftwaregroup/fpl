@@ -27,8 +27,8 @@ public class Coupon {
 	private String description;
 	
 	@ManyToOne(cascade=CascadeType.ALL,fetch=FetchType.EAGER)
-	@JoinColumn(name="COUPON_CATEGORY_ID",insertable=true, updatable=true,nullable=true,unique=true)
-	private CouponCategory couponCategory;
+	@JoinColumn(name="POINT_CATEGORY_ID",insertable=true, updatable=true,nullable=true,unique=true)
+	private PointCategory couponCategory;
 	
 	@Column(name="TYPE")
 	private String type;
@@ -81,11 +81,11 @@ public class Coupon {
 		this.description = description;
 	}
 
-	public CouponCategory getCouponCategory() {
+	public PointCategory getCouponCategory() {
 		return couponCategory;
 	}
 
-	public void setCouponCategory(CouponCategory couponCategory) {
+	public void setCouponCategory(PointCategory couponCategory) {
 		this.couponCategory = couponCategory;
 	}
 
@@ -161,5 +161,4 @@ public class Coupon {
 		this.field2 = field2;
 	}
 
-		
 }

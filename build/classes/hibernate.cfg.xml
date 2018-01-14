@@ -78,7 +78,7 @@
         <mapping class="com.sportmgmt.model.entity.PlayerGroupPlayer"/>
         <mapping class="com.sportmgmt.model.entity.GameWeekReport"/>
         <mapping class="com.sportmgmt.model.entity.Coupon"/>
-        <mapping class="com.sportmgmt.model.entity.CouponCategory"/>
+        <mapping class="com.sportmgmt.model.entity.PointCategory"/>
         <mapping class="com.sportmgmt.model.entity.UsedCoupon"/>
         <mapping class="com.sportmgmt.model.entity.Offer"/>
         <mapping class="com.sportmgmt.model.entity.PlayerPoint"/>
@@ -93,5 +93,12 @@
          <mapping class="com.sportmgmt.dreamEleven.model.entity.PaymentExt"/>
          <mapping class="com.sportmgmt.dreamEleven.model.entity.DeGameWeekReport"/>
          <!--  Dream Eleven mapping ends -->
+         
+          <!--  Vendor mapping starts -->
+         <mapping class="com.sportmgmt.vendor.model.entity.V_Article"/>
+         <mapping class="com.sportmgmt.vendor.model.entity.V_Position"/>
+         <mapping class="com.sportmgmt.vendor.model.entity.V_Position_Price"/>
+         <mapping class="com.sportmgmt.vendor.model.entity.Vendor"/> 
+         <!--  Vendor mapping ends -->
    </session-factory>
 </hibernate-configuration>

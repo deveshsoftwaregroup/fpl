@@ -10,7 +10,7 @@ import org.apache.log4j.Logger;
 
 import com.sportmgmt.controller.bean.Coupon;
 import com.sportmgmt.utility.exception.SportMgmtException;
-import com.sportmgmt.model.entity.CouponCategory;
+import com.sportmgmt.model.entity.PointCategory;
 import com.sportmgmt.model.manager.CouponManager;
 import com.sportmgmt.model.manager.GameWeeKManager;
 import com.sportmgmt.utility.constrant.SportConstrant;
@@ -40,7 +40,7 @@ public class CouponUtility {
 		logger.info(" gameWeeKReport: "+gameWeeKReport);
 		if(gameWeeKReport !=null && !gameWeeKReport.isEmpty() && gameWeeKReport.get("point") !=null)
 		{
-			CouponCategory couponCategory = CouponManager.getCouponCategory(new Integer(gameWeeKReport.get("point")));
+			PointCategory couponCategory = CouponManager.getCouponCategory(new Integer(gameWeeKReport.get("point")));
 			if(couponCategory !=null)
 			{
 				setCouponCategoryId(couponCategory.getCouponCategoryId());
@@ -104,7 +104,7 @@ public class CouponUtility {
 		logger.info(" gameWeeKReport: "+gameWeeKReport);
 		if(gameWeeKReport !=null && !gameWeeKReport.isEmpty() && gameWeeKReport.get("point") !=null)
 		{
-			CouponCategory couponCategory = CouponManager.getCouponCategory(new Integer(gameWeeKReport.get("point")));
+			PointCategory couponCategory = CouponManager.getCouponCategory(new Integer(gameWeeKReport.get("point")));
 			if(couponCategory !=null)
 			{
 				getCouponListByCategory(gameWeekId, couponCategory);
@@ -116,7 +116,7 @@ public class CouponUtility {
 	public List<Coupon> getDreamElevenCouponList(Integer point,String gameWeekId)
     {
 		logger.info("method: getDreamElevenCouponList, point:"+point+" , gameWeeKId: "+gameWeekId);
-		CouponCategory couponCategory = CouponManager.getCouponCategory(point,"DL_WEEKLY_COUPON");
+		PointCategory couponCategory = CouponManager.getCouponCategory(point,"DE_WEEKLY_COUPON");
 		if(couponCategory !=null)
 		{
 			getCouponListByCategory(gameWeekId, couponCategory);
@@ -124,10 +124,10 @@ public class CouponUtility {
 	
 		return couponList;
     }
-	private void getCouponListByCategory(CouponCategory couponCategory) {
+	private void getCouponListByCategory(PointCategory couponCategory) {
 		getCouponListByCategory(null,couponCategory);
 	}
-	private void getCouponListByCategory(String gameWeekId, CouponCategory couponCategory) {
+	private void getCouponListByCategory(String gameWeekId, PointCategory couponCategory) {
 		setCouponCategoryId(couponCategory.getCouponCategoryId());
 		couponList = new ArrayList<Coupon>();
 		List<com.sportmgmt.model.entity.Coupon> allCouponList= couponCategory.getCouponList();

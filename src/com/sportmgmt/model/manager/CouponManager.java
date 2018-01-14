@@ -13,7 +13,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 
 import com.sportmgmt.model.entity.Coupon;
-import com.sportmgmt.model.entity.CouponCategory;
+import com.sportmgmt.model.entity.PointCategory;
 import com.sportmgmt.model.entity.UsedCoupon;
 import com.sportmgmt.utility.constrant.ErrorConstrant;
 import com.sportmgmt.utility.constrant.QueryConstrant;
@@ -94,16 +94,16 @@ public class CouponManager {
 		}
 		return null;
 	}
-	public static CouponCategory getCouponCategory(Integer userPoint)
+	public static PointCategory getCouponCategory(Integer userPoint)
 	{
 		return getCouponCategory(userPoint,SportConstrant.WEEKLY_COUPON);
 	}
-	public static CouponCategory getCouponCategory(Integer userPoint,String couponType)
+	public static PointCategory getCouponCategory(Integer userPoint,String couponType)
 	{
 		logger.info("----- Inside getCouponCategory ---- userPoint: "+userPoint+" , couponType: "+couponType);
 		setErrorMessage(SportConstrant.NULL);
 		setErrorCode(SportConstrant.NULL);
-		List<CouponCategory> couponCategoryList = null;
+		List<PointCategory> couponCategoryList = null;
 		SessionFactory factory = HibernateSessionFactory.getSessionFacotry();
 		if(factory == null)
 		{
@@ -118,7 +118,7 @@ public class CouponManager {
 			{
 				try
 				{
-					Criteria criteria = session.createCriteria(CouponCategory.class);
+					Criteria criteria = session.createCriteria(PointCategory.class);
 					criteria.add(Restrictions.eq("isActive", SportConstrant.YES));
 					criteria.add(Restrictions.eq("type", couponType));
 					criteria.add(Restrictions.le("minPoint", userPoint));

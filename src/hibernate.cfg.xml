@@ -78,7 +78,7 @@
         <mapping class="com.sportmgmt.model.entity.PlayerGroupPlayer"/>
         <mapping class="com.sportmgmt.model.entity.GameWeekReport"/>
         <mapping class="com.sportmgmt.model.entity.Coupon"/>
-        <mapping class="com.sportmgmt.model.entity.CouponCategory"/>
+        <mapping class="com.sportmgmt.model.entity.PointCategory"/>
         <mapping class="com.sportmgmt.model.entity.UsedCoupon"/>
         <mapping class="com.sportmgmt.model.entity.Offer"/>
         <mapping class="com.sportmgmt.model.entity.PlayerPoint"/>
