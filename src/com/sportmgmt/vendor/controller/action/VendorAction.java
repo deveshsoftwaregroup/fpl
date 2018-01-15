@@ -29,6 +29,8 @@ import com.sportmgmt.model.manager.UserManager;
 import com.sportmgmt.utility.common.LeaguePlanUtil;
 import com.sportmgmt.utility.constrant.ErrorConstrant;
 import com.sportmgmt.utility.constrant.SportConstrant;
+import com.sportmgmt.vendor.model.entity.Vendor;
+import com.sportmgmt.vendor.model.manager.VendorArticleUpdateManager;
 import com.sportmgmt.vendor.model.manager.VendorManager;
 
 @Controller
@@ -141,6 +143,8 @@ public @ResponseBody Map validateUser(@RequestParam("logonId") String logonId, @
 public  String doLogin(ModelMap modeMap,@PathVariable String vendorId,HttpServletRequest request)
 {
  logger.info("---------- Entry in login  ---- Path Variable vendorId :  "+vendorId);
+ List vendorPositionPriceList=VendorArticleUpdateManager.fetchPositionPriceIdByVendorId(vendorId);
+ modeMap.put("vendorPositionPriceList", vendorPositionPriceList); 
  //modeMap.clear();
  /*if(userId == null || userId.equals(SportConstrant.NULL))
  {

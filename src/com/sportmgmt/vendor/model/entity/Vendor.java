@@ -16,9 +16,9 @@ public class Vendor {
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
 	@Column(name="VENDOR_ID")
-	private Integer vendorId;
+	private  Integer vendorId;
 	
-	public Integer getVendorId() {
+	public  Integer getVendorId() {
 		return vendorId;
 	}
 

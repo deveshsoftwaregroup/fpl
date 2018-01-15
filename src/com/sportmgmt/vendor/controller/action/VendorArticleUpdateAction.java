@@ -1,5 +1,6 @@
 package com.sportmgmt.vendor.controller.action;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -17,6 +18,7 @@ import com.sportmgmt.model.manager.GameWeeKManager;
 import com.sportmgmt.model.manager.PointRankManager;
 import com.sportmgmt.utility.constrant.SportConstrant;
 import com.sportmgmt.vendor.model.manager.VendorArticleUpdateManager;
+import com.sportmgmt.vendor.model.manager.VendorManager;
 import com.sportmgmt.vendor.model.entity.V_Article;
 
 @Controller
@@ -49,21 +51,36 @@ public class VendorArticleUpdateAction {
 	public  @ResponseBody Map<String, String> updateVendorArticle(ModelMap modeMap, @RequestParam Map<String,String>requestParam, HttpServletRequest request) 
 	
 	{
-		Integer articleId = Integer.valueOf(requestParam.get("articleId"));
-		Integer vendorId = Integer.valueOf(requestParam.get("vendorId"));
-		Integer positionId = Integer.valueOf(requestParam.get("positionId"));
-		String category = requestParam.get("category");
-		String heading = requestParam.get("heading");
-		String content = requestParam.get("content");
-		String link = requestParam.get("link");
-        System.out.println(category.toString());
-		logger.info("------- gooing to insert article for vendor-");
 		Map<String,String> result = new java.util.HashMap<>();
-		result.put("isSuccess", "true");
 		try
 		{
+			Integer vendorId = Integer.valueOf(requestParam.get("vendorId"));
+			logger.info("------- vendorId-"+vendorId);
+			List positionIdList = VendorArticleUpdateManager.fetchPositionIdByVendorId(String.valueOf(vendorId));
+			Integer positionId = (Integer) positionIdList.get(0);
+			logger.info("------- positionId-"+positionId);
+			/*List positionPriceIdList = VendorManager.fetchPositionPriceIdByPositionId(String.valueOf(positionId));
+			Integer positionPriceId =(Integer) positionPriceIdList.get(0);*/
+			Integer positionPriceID = Integer.valueOf(requestParam.get("positionPriceID"));
+			logger.info("------- positionPriceID-"+positionPriceID);
+			//List articleIdList =  VendorArticleUpdateManager.fetchArticleIdByVendorId(String.valueOf(vendorId));
+			//Integer articleId =(Integer) articleIdList.get(0);
+			//logger.info("------- articleId-"+articleId);
+			
+			
+			
+			
+			String category = requestParam.get("category");
+			String heading = requestParam.get("heading");
+			String content = requestParam.get("content");
+			String link = requestParam.get("link");
+	        System.out.println(category.toString());
+			logger.info("------- gooing to insert article for vendor-");
+			
+			result.put("isSuccess", "true");
+		
 			//Integer gameId = GameWeeKManager.getGameIdByGameWeeKId(gameWeekId);
-			java.util.List<Integer> vendorArticleToUpdateList = VendorArticleUpdateManager.insertVendorArticle(articleId,vendorId,positionId,category,heading,content,link);
+			java.util.List<Integer> vendorArticleToUpdateList = VendorArticleUpdateManager.insertVendorArticle(vendorId,positionId,positionPriceID,category,heading,content,link);
              System.out.println("jjjjjjjjjjj");
              
 	}

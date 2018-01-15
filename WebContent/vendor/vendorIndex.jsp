@@ -30,24 +30,27 @@ $(document).ajaxStart(function(){
 	    $("#ajaxloader").css("display", "none");
 	    $('.mask').hide();
 	});
-	function updateVendorArticle()
+	function updateVendorArticle(positionPriceID)
 	{
 			//var player = $("#player");
 			//var point = $("#point");
-			var link = $("#link").val();
-			alert("uuu")
-		    var content = $("#content").val();
-		    var heading = $("#heading").val();
-            var category = $("#category").val();
-			var articleId = $("#articleId").val();
+			var link = $("#link"+positionPriceID).val();
+			alert(link);
+			alert(positionPriceID);
+		    var content = $("#content"+positionPriceID).val();
+		    alert(content);
+		    var heading = $("#heading"+positionPriceID).val();
+            var category = $("#category"+positionPriceID).val();
+			/* var articleId = $("#articleId").val(); */
 			var vendorId = $("#vendorId").val();
-			var positionId = $("#positionId").val();
+			 //var positionPriceId = positionPrice; 
+			 //alert("positionPriceId="+positionPriceId);
 			console.log("articleId: "+articleId+" , vendorId:"+vendorId+", positionId:"+positionId+",category:"+category);
 			if(articleId !='undefined' && vendorId !='undefined' && positionId!='undefined')
 			{
 				
 				
-				url ="/SportMgmt/mvc/game/VendorHome?articleId="+articleId+"&vendorId="+vendorId+"&positionId="+positionId+"&category="+category+"&content="+content+"&heading="+heading+"&link="+link;
+				url ="/SportMgmt/mvc/game/VendorHome?vendorId="+vendorId+"&positionPriceID="+positionPriceID+"&category="+category+"&content="+content+"&heading="+heading+"&link="+link;
 				alert("hhhh");
 				$.ajax({
 		     		  url: url,
@@ -79,25 +82,29 @@ $(document).ajaxStart(function(){
  <input type="hidden" id="articleId" value="${articleId}" />
 <input type="hidden" id="vendorId" value="${vendorId}" />
 <input type="hidden" id="positionId" value="${positionId}" /> 
+
+					<c:forEach items="${vendorPositionPriceList}" var="positionPriceID">
+					    <c:out value="${positionPriceID}"></c:out>
                          <div class="form-group">
-				     Category:  <input type="text" id="category"  value="${category}"placeholder="Category"
+				     Category:  <input type="text" id="category${positionPriceID}"  value="${category}"placeholder="Category"
 								required id="category" class="form-control" />
 					    </div>
 						 <div class="form-group">
-					 Heading:	<input type="text" id="heading" value="${heading}"   placeholder="Heading"
+					 Heading:	<input type="text" id="heading${positionPriceID}" value="${heading}"   placeholder="Heading"
 								required id="heading" class="form-control" />
 						</div>
 						 <div class="form-group">
-					 Content:	<input type="text" id="content" value="${content}"   placeholder="Content"
+					 Content:	<input type="text" id="content${positionPriceID}" value="${content}"   placeholder="Content"
 								required id="content" class="form-control" />
 						</div>
 						<div class="form-group">
-					   Link:    <input type="text" id="link"    value="${link}"   placeholder="Link"
+					   Link:    <input type="text" id="link${positionPriceID}"    value="${link}"   placeholder="Link"
 								required id="link" class="form-control" />
 						</div>
 						<br/><br/>
-<button onclick="updateVendorArticle();">Save</button>
+<button onclick="updateVendorArticle(${positionPriceID});">Save</button>
 <br/><br/>
+</c:forEach>
  <%-- </c:when>
 </c:choose> --%> 
 </body>

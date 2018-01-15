@@ -33,7 +33,16 @@
 							<div class="row ">
 						    	<div class="col-lg-7 col-sm-6 col-tn-6 col-xs-12">
 						    	<%-- <c:out value="${context}/${article.image_path}"/> --%>
-						      		<img src="<% System.getProperty("catalina.home"); %>/images/${article.image_path}" >
+						    	<% 
+						    	out.print("hello");
+						    	System.getProperty("catalina.home");
+						    	out.print(System.getProperty("catalina.home"));
+						    	//File f = new File("D:/projects/FPL/related_software/apache-tomcat-7.0.69-windows-x64/apache-tomcat-7.0.69/images/Josep-Maria-Bartomeu1-min.jpg");
+						    	%>
+						    	<c:out value="${article.image_path}"></c:out>
+						      		<%-- <img src="<%= System.getProperty("catalina.home") %>\images\/${article.image_path}" > --%>
+						    	
+						    	<img width="100" height="100" src="D://projects/FPL/related_software/apache-tomcat-7.0.69-windows-x64/apache-tomcat-7.0.69/images/Josep-Maria-Bartomeu1-min.jpg">
 						    	</div>
 						    	<div class="col-lg-5 col-sm-6 col-tn-6 col-xs-12">
 						      		<h4><c:out value="${article.heading}"/> </h4>

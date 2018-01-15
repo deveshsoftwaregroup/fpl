@@ -75,7 +75,7 @@ public class VendorManager {
 					
 					SQLQuery query = session.createSQLQuery(QueryConstrant.SELECT_POSITION_ID_BY_PAGENAME);
 					if (pageName==null){
-						pageName = "homepage";
+						pageName = "HOME";
 						query.setParameter("page_name", pageName);	
 					}
 					else

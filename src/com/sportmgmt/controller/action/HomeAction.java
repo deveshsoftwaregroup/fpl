@@ -18,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.sportmgmt.model.manager.GameWeeKManager;
 import com.sportmgmt.model.manager.UserManager;
 import com.sportmgmt.utility.constrant.SportConstrant;
+import com.sportmgmt.vendor.model.manager.VendorArticleUpdateManager;
 import com.sportmgmt.vendor.model.manager.VendorManager;
 import com.sportmgmt.vendor.model.entity.V_Article;;
 
@@ -49,14 +50,7 @@ public class HomeAction {
 		map.put("countryMap", countryMap);
 		TreeMap<String,HashMap<String,ArrayList<String>>> clubMap = UserManager.getClubMap();
 		map.put("clubMap", clubMap);
-		/*String planId = GameWeeKManager.fetchPlanIdFromDeGameWeekReport(2, 1);
-		System.out.println(planId);*/
-		//HashMap<String,List<V_Article>> articleMap= VendorManager.fetchPositionIdByPageName(pageName);
-		//map.put("articleMap", articleMap);
-		//System.out.println("articleMapppppppp"+articleMap);
-		//map.put("displayPromotionPopup", "true");
-		//String promotion = "true";
-		//request.setAttribute("promotion", promotion);
+		List positionPriceList = VendorArticleUpdateManager.fetchPositionPriceIdByVendorId("1");
 		
 		
 		return SportConstrant.VENDOR_HOME_PAGE;
@@ -67,7 +61,10 @@ public class HomeAction {
 	public String leagueHome(ModelMap map,HttpServletRequest request,String pageName)
 	{
 		TreeMap<String,HashMap<String,ArrayList<String>>> countryMap = UserManager.getCountryStateCityMap();
-		logger.info("--------- League Home , countryMap: "+countryMap);
+		logger.info("--------- League Homee , countryMap: "+countryMap);
+		logger.info(System.getProperty("catalina.base"));
+		logger.info(System.getProperty("catalina.home"));
+		logger.info(System.getenv("CATALINA_HOME"));
 		map.put("countryMap", countryMap);
 		TreeMap<String,HashMap<String,ArrayList<String>>> clubMap = UserManager.getClubMap();
 		map.put("clubMap", clubMap);
