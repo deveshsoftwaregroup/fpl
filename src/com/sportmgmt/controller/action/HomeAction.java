@@ -8,6 +8,7 @@ import java.util.TreeMap;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,16 +16,30 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.sportmgmt.model.entity.PointCategory;
+import com.sportmgmt.model.manager.CouponManager;
 import com.sportmgmt.model.manager.GameWeeKManager;
 import com.sportmgmt.model.manager.UserManager;
+import com.sportmgmt.utility.common.CouponUtility;
 import com.sportmgmt.utility.constrant.SportConstrant;
 import com.sportmgmt.vendor.model.manager.VendorArticleUpdateManager;
 import com.sportmgmt.vendor.model.manager.VendorManager;
-import com.sportmgmt.vendor.model.entity.V_Article;;
+import com.sportmgmt.vendor.model.entity.V_Article;
+import com.sportmgmt.utility.common.CouponUtility;
 
 @Controller
 public class HomeAction {
 	private Logger logger = Logger.getLogger(HomeAction.class);
+	@Autowired
+	private CouponUtility couponUtility;
+
+	public CouponUtility getCouponUtility() {
+		return couponUtility;
+	}
+
+	public void setCouponUtility(CouponUtility couponUtility) {
+		this.couponUtility = couponUtility;
+	}
 	@RequestMapping("/Welcome")
 	public ModelAndView welcome(ModelMap map)
 	{
@@ -36,9 +51,9 @@ public class HomeAction {
 	@RequestMapping("/Welcome1")
 	public ModelAndView welcome1(ModelMap map)
 	{
-		//UserManager.getCountryStateCityMap();
-		//return SportConstrant.LEAGE_HOME_PAGE;
-		GameWeeKManager.updateGameWeekReport(2, 1, 1, 2, 2, 3);
+		//Integer point = couponUtility.calculateDreamElevenPrizeAmount(50, "DE_WEEKLY_AMOUNT");
+		
+		//System.out.println("point"+point);
 		return new ModelAndView("redirect:/mvc/LeagueHome");
 
 	}

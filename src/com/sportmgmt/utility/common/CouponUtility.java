@@ -234,4 +234,46 @@ public class CouponUtility {
 		}
 		return null;
 	}
+	public Integer calculateDreamElevenPrizeAmount(Integer point,String couponType)
+    {
+		logger.info("method: getDreamElevenCouponList, point:"+point+" , couponType: "+couponType);
+		PointCategory couponCategory = CouponManager.getCouponCategory(point,couponType);
+		int cash =point;
+		String algo = couponCategory.getAlgo();
+        String [] arrOfStr = algo.split("\\|");
+    	String amount = arrOfStr[0];
+    	System.out.println(amount);
+    	System.out.println(arrOfStr[1]);
+        System.out.println(arrOfStr[2]);
+        
+        if("PER".equalsIgnoreCase(arrOfStr[2]))
+        {
+        	if("ADD".equalsIgnoreCase(arrOfStr[1]))
+        	{
+        		cash=cash+(cash*Integer.valueOf(amount)/100);
+        	}
+        	else
+        	{
+        		cash=cash-(cash*Integer.valueOf(amount)/100);
+        	}
+        }
+        else if("VAL".equalsIgnoreCase(arrOfStr[2]))
+        {
+        	if("ADD".equalsIgnoreCase(arrOfStr[1]))
+        	{
+        		cash=cash+Integer.valueOf(amount);
+        	}
+        	else
+        	{
+        		cash=cash-Integer.valueOf(amount);
+        	}
+        	
+        }
+        else{
+        	System.out.println("no match found n databse to modify prizemoney");
+        }
+	
+		return cash;
+    }
+	
 }

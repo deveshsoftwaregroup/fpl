@@ -49,6 +49,14 @@ public class PointCategory {
 	@Column(name="ALGO")
 	private String algo;
 	
+	public String getAlgo() {
+		return algo;
+	}
+
+	public void setAlgo(String algo) {
+		this.algo = algo;
+	}
+
 	@Column(name="FIELD1")
 	private String field1;
 
