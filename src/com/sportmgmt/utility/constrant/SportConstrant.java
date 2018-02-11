@@ -102,6 +102,7 @@ public class SportConstrant {
 	public final static String HIBERNATE_CONNECTION_PASSWORD = "hibernate.connection.password";
 	
 	public final static String POINT_MULTIPLYER = "pointMultiplyer";
+	public final static String LEADER_SHIP_PAGE = "Leadership.jsp";
 	
 
 }

@@ -161,7 +161,7 @@ public class UserManager {
 					}
 					if(userMap.get("club") != null && !userMap.get("club").equals(""))
 					{
-						user.setField_string((String)userMap.get("club"));
+						user.setField1_string((String)userMap.get("club"));
 					}
 					if(userMap.get("pinCode") != null && !userMap.get("pinCode").equals(""))
 					{
@@ -570,7 +570,7 @@ public class UserManager {
 				controllerUser.setContactNumber(modelUser.getContactNumber());
 				controllerUser.setGender(modelUser.getGender());
 				controllerUser.setField1_integer(modelUser.getField1_integer());
-				controllerUser.setField_string(modelUser.getField_string());
+				controllerUser.setFavClub(modelUser.getField1_string());
 				controllerUser.setField1_date(modelUser.getField1_date());
 				controllerUser.setField2(modelUser.getField2());
 				controllerUser.setField3(modelUser.getField3());

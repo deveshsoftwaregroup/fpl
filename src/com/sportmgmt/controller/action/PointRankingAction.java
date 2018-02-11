@@ -312,7 +312,7 @@ public class PointRankingAction {
 			
 		return sportMgmtResponse;
 	}
-
+	/*** This action is for getting playing players and decided point for activity *****/
 	@RequestMapping(value = "updatePlayerPoint/{gameWeekId}/{matchId}", method = RequestMethod.GET)
 	public  String updatePointForm(ModelMap modeMap,@PathVariable String gameWeekId,@PathVariable String matchId,HttpServletRequest request) throws Exception
 	{
@@ -350,6 +350,7 @@ public class PointRankingAction {
 		return SportConstrant.UPDATE_PLAYER_POINT_PAGE;
 	}
 	
+	/*** This action for updating player point, user total point and user point for gameweek ***/
 	@RequestMapping(value = "updatePoint", method = RequestMethod.POST)
 	public @ResponseBody  Map<String,String> updatePoint(ModelMap modeMap, @RequestParam Map<String,String>requestParam, HttpServletRequest request)
 	{
@@ -384,7 +385,7 @@ public class PointRankingAction {
 						Map<Integer,Integer> userIdAndPointMap= PointRankManager.updateUserTotalPointForUserList(userIdList, gameId, pointToUpdate);
 						logger.info("----- Going to update game week point of users");
 						PointRankManager.updateGameWeekPointForUsers(userIdAndPointMap, gameWeekId, pointToUpdate);
-				}
+					}
 				}
 			}
 		}
@@ -453,5 +454,9 @@ public class PointRankingAction {
 		}
 		return result;
 	}
-	
+	@RequestMapping(value = "MyRank/{gameId}/{userId}", method = RequestMethod.GET)
+	public String getRank(ModelMap modeMap,@PathVariable String gameId,@PathVariable String userId,HttpServletRequest request)
+	{
+		return SportConstrant.LEADER_SHIP_PAGE;
+	}
 }

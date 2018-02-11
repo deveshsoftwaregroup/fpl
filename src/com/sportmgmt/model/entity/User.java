@@ -67,7 +67,7 @@ public class User {
 	private Integer field1_integer;
 	
 	@Column(name="FIELD1_STRING")
-	private String field_string;
+	private String field1_string;
 	
 	@Column(name="FIELD1_DATE")
 	private Date field1_date;
@@ -211,12 +211,12 @@ public class User {
 		this.field1_integer = field1_integer;
 	}
 
-	public String getField_string() {
-		return field_string;
+	public String getField1_string() {
+		return field1_string;
 	}
 
-	public void setField_string(String field_string) {
-		this.field_string = field_string;
+	public void setField1_string(String field1_string) {
+		this.field1_string = field1_string;
 	}
 
 	public Date getField1_date() {

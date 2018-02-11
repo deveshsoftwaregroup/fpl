@@ -39,7 +39,7 @@ public class User {
 		
 		private Integer field1_integer;
 		
-		private String field_string;
+		private String favClub;
 		
 		private Date field1_date;
 		
@@ -184,14 +184,6 @@ public class User {
 
 		public void setField1_integer(Integer field1_integer) {
 			this.field1_integer = field1_integer;
-		}
-
-		public String getField_string() {
-			return field_string;
-		}
-
-		public void setField_string(String field_string) {
-			this.field_string = field_string;
 		}
 
 		public Date getField1_date() {
@@ -386,5 +378,13 @@ public class User {
 		public void setTotalTransferForGameWeek(Integer totalTransferForGameWeek) {
 			this.totalTransferForGameWeek = totalTransferForGameWeek;
 		}
-	
+
+		public String getFavClub() {
+			return favClub;
+		}
+
+		public void setFavClub(String favClub) {
+			this.favClub = favClub;
+		}
+		
 	}

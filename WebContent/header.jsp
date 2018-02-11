@@ -83,7 +83,7 @@
 	                            <a href="javascript:void(0);" onclick="uploadMatchView('${sessionScope.gameDetails.gameId}');">Fixtures</a>
 	                        </li> 
 	                        <li>
-	                        	<a href="javascript:void(0);" onclick="uploadLeadershipView();">Leadership</a>
+	                        	<a href="javascript:void(0);" onclick="uploadLeadershipView('${sessionScope.gameDetails.gameId}','${sessionScope.userId}','');">Leadership</a>
 	                        </li>                      
 	                        <li>
 	                            <a href="javascript:void(0);" onclick="uploadMyPointView('${sessionScope.gameDetails.gameId}','${sessionScope.userId}','','');">My Points</a>
@@ -205,9 +205,13 @@
 		     		  }
 		     		});	
 		}
-		function uploadLeadershipView()
+		function uploadLeadershipView(gameId,userId,gameWeekId)
 		{
-			url ="/SportMgmt/Leadership.jsp";
+			url ="/SportMgmt/mvc/game/MyRank/"+gameId+"/"+userId;
+			if(gameWeekId !=null && gameWeekId !='')
+			{
+				url = url+"?gameWeekId="+gameWeekId;
+			}
 				$.ajax({
 		     		  url: url,
 		     		  dataType: 'html',
